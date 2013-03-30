@@ -1,0 +1,227 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ultimate Notifier Script - xythobuz.org</title>
+    <meta name="description" content="Sending Push Notifications to an iPhone from a Bash Script" />
+    <meta name="keywords" content="xythobuz" />
+    <link rel="author" href="/xythobuz@xythobuz.org">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script type="text/javascript" src="/js/sh_main.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/sh_bright.min.css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" title="Blog Feed" href="/rss.xml">
+    <link rel="stylesheet" href="/css/gh-fork-ribbon.css" />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+/* <![CDATA[ */
+(function() {
+var s = document.createElement('script');
+var t = document.getElementsByTagName('script')[0];
+s.type = 'text/javascript';
+s.async = true;
+s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=xythobuz&category=text';
+t.parentNode.insertBefore(s, t);
+})();
+/* ]]> */
+</script>
+</head>
+<body onload="sh_highlightDocument('/js/sh/', '.min.js');">
+    
+    <div id="header">
+        <h1>xythobuz.org</h1>
+        <h2>Ultimate Notifier Script</h2>
+    </div>
+    <div id="lang"><span id="lang">Translation: 
+<a href='ultimatenotifier.de.html'>de</a> | <a href='ultimatenotifier.html'>en</a>
+</span></div>
+    <div class="colmask leftmenu"><div class="colleft">
+        <div class="content">
+
+            <div id="flattr">
+<a class="FlattrButton" href="http://www.xythobuz.org/ultimatenotifier.de.html" title="Ultimate Notifier Script">Sending Push Notifications to an iPhone from a Bash Script</a>
+</div>
+<div id="twitter">
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="xythobuz" data-dnt="true" data-related="xythobuz" data-count="vertical">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+<div id="reddit">
+<script type="text/javascript">reddit_url = "http://www.xythobuz.org/ultimatenotifier.de.html";</script>
+<script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script>
+</div>
+
+            <h1>Ultimate Notifier Script</h1>
+<p>Der Dienst <a href="http://ultimatenotifier.com/">Ultimate Notifier</a> erlaubt es relativ problemlos, zum Beispiel mittels curl Push-Notifications an ein iPhone zu senden. Darauf basierend können Shell Skripte geschrieben werden, welche regelmäßig als Cron-Job gestartet werden. So kann man sich zum Beispiel über eine geänderte Public IP informieren lassen. Dafür muss dieses Skript irgendwo gespeichert werden:</p>
+<pre class="sh_sh">
+#!/bin/sh
+
+ipfile=".currentip"
+service="ifconfig.me"
+user="username"
+pass="password"
+message="IP:"
+
+ip=`curl -s $service`
+touch $ipfile
+lastip=`cat $ipfile`
+if [ "$ip" != "$lastip" ]; then
+    echo "New public IP. Sending notification!"
+    curl -s "https://www.ultimatenotifier.com/items/User/send/${user}/message=${message}%20${ip}/password=${pass}"
+fi
+cp /dev/null $ipfile
+echo $ip > $ipfile
+</pre>
+
+<p>Es liest die aktuelle öffentliche IP mittels curl vom Dienst <a href="http://ifconfig.me">ifconfig.me</a> aus und vergleicht diese mit der zwischengespeicherten IP in einer Datei namens .currentip. Unterscheiden sich die IPs, wird eine Push Notification gesendet und die neue IP gespeichert.</p>
+<p>Mit dem Befehl</p>
+<pre>crontab -e</pre>
+
+<p>Kann ein Eintrag ins cronfile hinzugefügt werden, sodass das Skript regelmäßig gestartet wird. Ein Beispiel, für 30 Minuten:</p>
+<pre>*/30 * * * * /Users/anon/bin/ipnotify.sh</pre>
+
+<p>Der Code findet sich auch auf <a href="https://github.com/xythobuz/Snippets/blob/master/ipnotify.sh">GitHub</a>.</p>
+<p>Natürlich kann dieses Prinzip beliebig erweitert werden. Dieses Bash Skript wird auf meinem Server alle 5 Minuten von cron gestartet und berichtet über eventuelle Probleme.</p>
+<pre class="sh_sh">
+#!/bin/bash
+
+# Checks for Health of Server and sends notifications to iPhone in case of error
+# Checks for:
+# - HDD Temperature
+# - HDD Space
+# - CPU Usage
+# Sends a notification via UltimateNotifier
+# Depends on bash, wget, hddtemp, grep, awk, sed, ps, sort and head.
+
+# ------------------------------
+# ------------------------------
+
+# Your UltimateNotifier Password
+UNUsername="YourUserName"
+UNPassword="YourPassWord"
+
+# Check for free space
+hddMountPoint="bay" # greps for this in mounted hdds
+maxPercentFull=75 # minimum percentage to send notification
+
+# Check for CPU Usage of processes
+maxCpuUsage=750 # Is in tenths of a percent (420 => 42%)
+
+# Checks hdd temperature
+# Depends on hddtemp tool
+hddDevice="/dev/sda"
+maxHddTemp=50
+
+# ------------------------------
+# ------------------------------
+
+# Set $message to your Message and then call this...
+function sendNotification {
+  wget "https://www.ultimatenotifier.com/items/User/send/${UNUsername}/message=${message}/password=${UNPassword}" -O /dev/null -q
+  echo "$message"
+}
+
+# ------------------------------
+# ------------------------------
+
+# Check for hdd temperature
+hddTemp=`/usr/sbin/hddtemp ${hddDevice} | awk '{print $4}' | awk -F 'Â°' '{print $1}'`
+if [ $hddTemp -gt $maxHddTemp ]; then
+  message="Marvin's HDD has reached ${hddTemp}Â°C!"
+  sendNotification
+fi
+
+# Check for free space on hdd
+spaceUsed=`df -h | grep ${hddMountPoint} | awk '{print $5}' | sed 's/%//'`
+if [ $spaceUsed -gt $maxPercentFull ]; then
+  message="Marvin's HDD is ${spaceUsed}% full!"
+  sendNotification
+fi
+
+# Check for most cpu intensive process, report if usage too high
+processName=`ps -e -o cp,args | sed -e 's/^[ \\t]*//' | awk -F " " '{print $1, $2}' | sed -e '1d' | sort -rn | head -1 | awk '{print $2}'`
+processUsage=`ps -e -o cp,args | sed -e 's/^[ \\t]*//' | awk -F " " '{print $1, $2}' | sed -e '1d' | sort -rn | head -1 | awk '{print $1}'`
+if [ $processUsage -gt $maxCpuUsage ]; then
+  processUsage=`echo "${processUsage} / 10.0" | bc -q`
+  message="${processName} needs ${processUsage}% CPU!"
+  sendNotification
+fi
+</pre>
+
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_shortname = "xythobuz";
+(function() {
+var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async = true;
+dsq.src = "http://" + disqus_shortname + ".disqus.com/embed.js";
+(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        </div>
+        <div class="nav">
+            <h3>Thomas Buck</h3>
+
+            <div id="logo"><img id="logo" src="http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=180" alt="Avatar"></div>
+
+            <p id="bio">
+                19 year old Information Engineering student from Germany.
+                Making cool stuff, mostly with AVR microcontrollers.
+            </p>
+
+            <iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder=0></iframe>
+
+            <ul id="menuList">
+            <li><a href="/index.html">Home</a></li>
+<li><a href="/blog.html">Blog</a></li>
+<li><a href="/contact.html">Contact</a></li>
+<br>
+<li><a href="/ledcube.html">8x8x8 LED Cube</a></li>
+<li><a href="/yasab.html">YASAB AVR Bootloader</a></li>
+<li><a href="/avrnetstack.html">avrNetStack</a></li>
+<li><a href="/avrserial.html">AVR Serial Library</a></li>
+<li><a href="/serialdebug.html">Serial Debug</a></li>
+<li><a href="/ledmatrix.html">LED Matrix</a></li>
+<li><a href="/ssop28.html">SSOP28 - DIL Adapter</a></li>
+<li><a href="/xyrobot.html">xyRobot</a></li>
+<li><a href="/bluetooth.html">Bluetooth UART (BTM-222)</a></li>
+<li><a href="/k6x4008.html">K6x4008 SRAM</a></li>
+<li><a href="/xyrobotremote.html">xyRobotRemote</a></li>
+<li><a href="/rremote.html">rRemote</a></li>
+<br>
+<li><a href="/c250.html">Mio C250 Unlock</a></li>
+<li><a href="/nas.html">IB-NAS6210 Linux</a></li>
+<li><a href="/ultimatenotifier.html">Ultimate Notifier Script</a></li>
+<li><a href="/serialhelper.html">Serial Helper</a></li>
+            </ul>
+
+            <div id="recent">
+                Recent blog posts:
+                <ul id="recentList">
+                <li class="recentList"><a href="/2013_03_25_doxygen.html">xyControl Doxygen Dokumentation</a></li><li class="recentDate">2013-03-25</li>
+<li class="recentList"><a href="/2013_03_16_pid.html">xyCopter PID-Parameter</a></li><li class="recentDate">2013-03-16</li>
+<li class="recentList"><a href="/2013_03_13_test_rig.html">Quadrocopter Test Rig Video</a></li><li class="recentDate">2013-03-13</li>
+<li class="recentList"><a href="/2013_03_12_test_rig.html">Quadrocopter Testvorrichtung</a></li><li class="recentDate">2013-03-12</li>
+<li class="recentList"><a href="/2013_03_10_yasab.html">xyCopter loves YASAB</a></li><li class="recentDate">2013-03-10</li>
+                </ul>
+            </div>
+        </div>
+    </div></div>
+
+    <img id="dude" alt="The Dude" src="/img/dude.png">
+
+    <div id="footer">
+        Built with <a href="http://bitbucket.org/obensonne/poole">Poole</a>
+        &middot;
+        Licensed as <a href="http://creativecommons.org/licenses/by/3.0">CC-BY</a>
+        &middot;
+        <a href="http://validator.w3.org/check?uri=referer">Validate HTML</a>
+        &middot;
+        <a href="http://jigsaw.w3.org/css-validator/validator?uri=xythobuz.org%2Fstyle.css&amp;profile=css3">Validate CSS</a>
+        &middot;
+        <a href="http://feed1.w3.org/check.cgi?url=http://www.xythobuz.org/rss.xml">Validate RSS</a>
+        &middot;
+        <a href="http://www.validome.org/google/validate?url=http://www.xythobuz.org&amp;googleTyp=SITEMAP">Validate Sitemap</a>
+    </div>
+    <script src="http://gitforked.com/api/1.1/button.js" type="text/javascript"></script>
+</body>
+</html>

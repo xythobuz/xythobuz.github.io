@@ -1,0 +1,237 @@
+/*
+ * Color Combination
+ * #000000 - Text
+ * #FF9900 - Link, Hover Link, Dashes
+ * #FFFFFF - Background
+ * #666666 - Visited Link, Footer
+ * #EEEEEC - <pre>
+ */
+
+body {
+    font-family: 'Droid Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0; /* This removes the border around the viewport in old versions of IE */
+    width: 100%;
+    min-width: 600px; /* Minimum width of layout - remove line if not required */
+    color: #000000;
+}
+
+a {
+    color: #FF9900;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #848484;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF9900;
+    text-decoration: underline;
+}
+
+#header {
+    clear: both;
+    float: left;
+    width: 95%;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: dashed #FF9900 2px;
+}
+
+#header h1 {
+    display: inline;
+    padding-right: 0.5em;
+    font-size: 3.5em;
+}
+
+#header h2 {
+    display: inline;
+    font-size: 2em;
+}
+
+#flattr {
+    padding-right: 1.5em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    float: right;
+    clear: both;
+}
+
+#twitter {
+    padding-right: 1.5em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    float: right;
+    clear: both;
+}
+
+#reddit {
+    padding-right: 1.5em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    float: right;
+    clear: both;
+}
+
+#github {
+    padding-right: 3em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    float: right;
+    clear: both;
+}
+
+div#lang {
+    text-align: right;
+    padding-right: 10em;
+}
+
+span#lang {
+    line-height: 2em;
+}
+
+.colmask {
+    position: relative; /* This fixes the IE7 overflow hidden bug */
+    clear: both;
+    float: left;
+    width: 100%; /* width of whole page */
+    overflow: hidden; /* This chops off any overhanging divs */
+}
+
+.colleft {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.content {
+    float: left;
+    position: relative;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    overflow: hidden;
+}
+
+.nav {
+    float: left;
+    position: relative;
+    padding: 0 0 0 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    z-index: 1;
+}
+
+div#logo {
+    width: 180px;
+    height: 180px;
+    box-shadow: 0px 0px 10px #666666;
+    border-radius: 8px;
+    border: solid #FF9900 3px;
+    background-color: #FF9900;
+    overflow: hidden;
+    padding: 10px;
+    margin: 10px;
+}
+
+img#logo {
+    padding: 0;
+    border-radius: 8px;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+}
+
+ul#menuList {
+    list-style-type: none;
+    padding: 0.5em;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+#recent {
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+ul#recentList {
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+li.recentDate {
+    padding-left: 1em;
+    padding-bottom: 0.7em;
+}
+
+li.recentList {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+li.recentList:before {
+    content: "→ ";
+}
+
+.leftmenu {
+    background: #FFFFFF; /* right column background colour */
+}
+
+.leftmenu .colleft {
+    right: 75%; /* right column width */
+    background: #FFFFFF; /* left column background colour */
+}
+
+.leftmenu .content {
+    width: 70%; /* right column content width */
+    left: 102%; /* 100% plus left column left padding */
+}
+
+.leftmenu .nav {
+    width: 21%; /* left column content width (column width minus left and right padding) */
+    left: 6%; /* (right column left and right padding) plus (left column left padding) */
+}
+
+#dude {
+    position: fixed;
+    bottom: 0px;
+    left: 10px;
+    max-width: 20%;
+}
+
+#footer {
+    clear: both;
+    float: left;
+    width: 95%;
+    text-align: center;
+    font-size: small;
+    color: gray;
+    margin: 1em;
+}
+
+#footer a {
+    color: #666666;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: #666666;
+    text-decoration: underline;
+}
+
+#footer a:visited {
+    color: #666666;
+    text-decoration: none;
+}
+
+pre {
+    border: dotted black 2px;
+    background: #EEEEEC;
+    padding: 1em;
+    overflow: scroll;
+}

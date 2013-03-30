@@ -1,0 +1,5 @@
+#!/bin/sh
+
+poole.py --build
+cp output/* /var/www/
+cp static/* /var/www/

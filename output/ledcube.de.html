@@ -1,0 +1,170 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>8x8x8 LED Wuerfel - xythobuz.org</title>
+    <meta name="description" content="AVR LED Cube with Java Software and Music Visualization" />
+    <meta name="keywords" content="xythobuz" />
+    <link rel="author" href="/xythobuz@xythobuz.org">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script type="text/javascript" src="/js/sh_main.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/sh_bright.min.css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" title="Blog Feed" href="/rss.xml">
+    <link rel="stylesheet" href="/css/gh-fork-ribbon.css" />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+/* <![CDATA[ */
+(function() {
+var s = document.createElement('script');
+var t = document.getElementsByTagName('script')[0];
+s.type = 'text/javascript';
+s.async = true;
+s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=xythobuz&category=text';
+t.parentNode.insertBefore(s, t);
+})();
+/* ]]> */
+</script>
+</head>
+<body onload="sh_highlightDocument('/js/sh/', '.min.js');">
+    <div class="github-fork-ribbon-wrapper right">
+<div class="github-fork-ribbon"><a href="
+https://github.com/xythobuz/LED-Cube
+">Fork me on GitHub</a></div></div>
+    <div id="header">
+        <h1>xythobuz.org</h1>
+        <h2><a href="http://www.liveleak.com/view?i=0cd_1295609192">"It turns blue..."</a></h2>
+    </div>
+    <div id="lang"><span id="lang">Translation: 
+<a href='ledcube.de.html'>de</a> | <a href='ledcube.html'>en</a>
+</span></div>
+    <div class="colmask leftmenu"><div class="colleft">
+        <div class="content">
+
+            <div id="flattr">
+<a class="FlattrButton" href="http://www.xythobuz.org/ledcube.de.html" title="8x8x8 LED Wuerfel">AVR LED Cube with Java Software and Music Visualization</a>
+</div>
+<div id="twitter">
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="xythobuz" data-dnt="true" data-related="xythobuz" data-count="vertical">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+<div id="reddit">
+<script type="text/javascript">reddit_url = "http://www.xythobuz.org/ledcube.de.html";</script>
+<script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script>
+</div>
+<div id="github">
+<a href="https://github.com/xythobuz/LED-Cube" class="gitforked-button gitforked-forks gitforked-watchers">Fork</a>
+</div>
+
+            <h1>8x8x8 LED Wuerfel</h1>
+<p>Downloade die <a href="https://github.com/xythobuz/LED-Cube/zipball/master">aktuelle Codebase als Zip</a>.</p>
+<p>Als Schulprojekt und für den Explore-IT Wettbewerb von SAP in Markdorf haben meine zwei Teamkollegen, Max <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#117;&#116;&#97;&#116;&#116;&#101;&#100;&#111;&#110;&#109;&#121;&#97;&#114;&#109;&#64;&#109;&#101;&#46;&#99;&#111;&#109;">&#104;&#117;&#116;&#97;&#116;&#116;&#101;&#100;&#111;&#110;&#109;&#121;&#97;&#114;&#109;&#64;&#109;&#101;&#46;&#99;&#111;&#109;</a> und Felix, zusammen mit mir diesen einfarbigen 8x8x8 LED Cube gebaut. Für Interessierte hier alle Software sowie Schaltplan und Boardlayout unter der GPLv3. Viel Freude damit.</p>
+<p><a href="/img/cube14.jpg"><img alt="Foto 1" src="/img/cube14_small.jpg" /></a>
+<a href="/img/cube11.jpg"><img alt="Foto 2" src="/img/cube11_small.jpg" /></a></p>
+<h2>Hardware</h2>
+<p>Ein AtMega32 steuert über einen 8bit Bus 8 Latches. Diese 64 bit steuern über je einen PNP Transistor die Anoden von jeweils 8 übereinander liegenden LEDs.</p>
+<p>Des weiteren steuert der Prozessor 8 N-Kanal MOSFETs welche die Kathoden von 64 in einer x-z Ebene liegenden LEDs steuern.</p>
+<p>Ausserdem kommuniziert der AtMega32 über einen FT232RL per USB mit einem PC. Ãœber den TWI (I2C) Bus wird auf ein 1MBit FRAM zugegriffen.</p>
+<p>Zusätzlich ist ein AtMega8 auf der Platine. Dieser liest über einen MSGEQ7 ein Audiosignal und sendet dieses über TWI an den AtMega32.</p>
+<p>Eine ausführlichere Bauteilliste findet sich im Github Repository, im Ordner Hardware als parts.txt.</p>
+<p><a href="/img/cube10.jpg"><img alt="Foto 3" src="/img/cube10_small.jpg" /></a>
+<a href="/img/cube12.jpg"><img alt="Foto 4" src="/img/cube12_small.jpg" /></a></p>
+<h2>Software</h2>
+<p>Die Software besteht aus 3 großen Teilen, die CubeFirmware für den AtMega32, die AudioFirmware für den AtMega8 und CubeControl. Letzteres ist eine Plattformunabhängige Java Software, welche es erlaubt, Animationen für den LED Cube zu erstellen und diese an den Cube zu übertragen. Hierfür wird Java3D benötigt.</p>
+<h3>Cube Firmware</h3>
+<p>Die Hauptaufgabe der CubeFirmware ist es, Animationen aus dem FRAM zu laden und anzuzeigen. Nebenbei wird auf Anfragen per USB gewartet und entsprechend gehandelt. Auf Knopfdruck steuert die CubeFirmware den AtMega8 an, um Audio Daten zu visualisieren.</p>
+<p><a href="/img/kuehler1.jpg"><img alt="Foto 7" src="/img/kuehler1_small.jpg" /></a>
+<a href="/img/kuehler2.jpg"><img alt="Foto 8" src="/img/kuehler2_small.jpg" /></a></p>
+<h3>Audio Firmware</h3>
+<p>Die AudioFirmware liest den MSGEQ7 aus, um bei entsprechender Anfrage über TWI diese Daten zu übertragen.</p>
+<h3>CubeControl</h3>
+<p>Neben einigen Java Klassen um einen 3D LED Würfel darzustellen und mit diesem zu interagieren, besteht CubeControl auch aus einer Java Native Interface (JNI) Library, welche sowohl unter Windows als auch unter Unix die serielle Kommunikation für CubeControl ermöglicht. Für die 3D Darstellung wird <a href="http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138252.html">Java3D</a> benötigt. In der OS X Lion Variante von Java ist dies bereits enthalten, für Windows und Linux muss es separat heruntergeladen werden.</p>
+<p><a href="/img/cubecontrol.png"><img alt="Screenshot" src="/img/cubecontrol_small.png" /></a>
+<a href="/img/cubeschem.png"><img alt="Schematic" src="/img/cubeschem_small.png" /></a></p>
+<h3>Hardware Emulator</h3>
+<p>Ein kleines Projekt, welches unter Unix ein Pseudo Terminal öffnet und die Cube Hardware emuliert. Kann zum testen von CubeControl genutzt werden.</p>
+<h3>UploadTest</h3>
+<p>Ein kleines CLI Tool um Testdaten und mit CubeControl gespeicherte Animationen an den Cube zu senden.</p>
+<h2>Download</h2>
+<p>Im <a href="https://github.com/xythobuz/LED-Cube">GitHub Repository</a> findet sich der gesamte Code sowie die Eagle Dateien und Schaltplan und Layout als PNGs.</p>
+<p><a href="/img/cube13.jpg"><img alt="Foto 5" src="/img/cube13_small.jpg" /></a>
+<a href="/img/cube15.jpg"><img alt="Foto 6" src="/img/cube15_small.jpg" /></a></p>
+
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_shortname = "xythobuz";
+(function() {
+var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async = true;
+dsq.src = "http://" + disqus_shortname + ".disqus.com/embed.js";
+(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        </div>
+        <div class="nav">
+            <h3>Thomas Buck</h3>
+
+            <div id="logo"><img id="logo" src="http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=180" alt="Avatar"></div>
+
+            <p id="bio">
+                19 year old Information Engineering student from Germany.
+                Making cool stuff, mostly with AVR microcontrollers.
+            </p>
+
+            <iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder=0></iframe>
+
+            <ul id="menuList">
+            <li><a href="/index.html">Home</a></li>
+<li><a href="/blog.html">Blog</a></li>
+<li><a href="/contact.html">Contact</a></li>
+<br>
+<li><a href="/ledcube.html">8x8x8 LED Cube</a></li>
+<li><a href="/yasab.html">YASAB AVR Bootloader</a></li>
+<li><a href="/avrnetstack.html">avrNetStack</a></li>
+<li><a href="/avrserial.html">AVR Serial Library</a></li>
+<li><a href="/serialdebug.html">Serial Debug</a></li>
+<li><a href="/ledmatrix.html">LED Matrix</a></li>
+<li><a href="/ssop28.html">SSOP28 - DIL Adapter</a></li>
+<li><a href="/xyrobot.html">xyRobot</a></li>
+<li><a href="/bluetooth.html">Bluetooth UART (BTM-222)</a></li>
+<li><a href="/k6x4008.html">K6x4008 SRAM</a></li>
+<li><a href="/xyrobotremote.html">xyRobotRemote</a></li>
+<li><a href="/rremote.html">rRemote</a></li>
+<br>
+<li><a href="/c250.html">Mio C250 Unlock</a></li>
+<li><a href="/nas.html">IB-NAS6210 Linux</a></li>
+<li><a href="/ultimatenotifier.html">Ultimate Notifier Script</a></li>
+<li><a href="/serialhelper.html">Serial Helper</a></li>
+            </ul>
+
+            <div id="recent">
+                Recent blog posts:
+                <ul id="recentList">
+                <li class="recentList"><a href="/2013_03_25_doxygen.html">xyControl Doxygen Dokumentation</a></li><li class="recentDate">2013-03-25</li>
+<li class="recentList"><a href="/2013_03_16_pid.html">xyCopter PID-Parameter</a></li><li class="recentDate">2013-03-16</li>
+<li class="recentList"><a href="/2013_03_13_test_rig.html">Quadrocopter Test Rig Video</a></li><li class="recentDate">2013-03-13</li>
+<li class="recentList"><a href="/2013_03_12_test_rig.html">Quadrocopter Testvorrichtung</a></li><li class="recentDate">2013-03-12</li>
+<li class="recentList"><a href="/2013_03_10_yasab.html">xyCopter loves YASAB</a></li><li class="recentDate">2013-03-10</li>
+                </ul>
+            </div>
+        </div>
+    </div></div>
+
+    <img id="dude" alt="The Dude" src="/img/dude.png">
+
+    <div id="footer">
+        Built with <a href="http://bitbucket.org/obensonne/poole">Poole</a>
+        &middot;
+        Licensed as <a href="http://creativecommons.org/licenses/by/3.0">CC-BY</a>
+        &middot;
+        <a href="http://validator.w3.org/check?uri=referer">Validate HTML</a>
+        &middot;
+        <a href="http://jigsaw.w3.org/css-validator/validator?uri=xythobuz.org%2Fstyle.css&amp;profile=css3">Validate CSS</a>
+        &middot;
+        <a href="http://feed1.w3.org/check.cgi?url=http://www.xythobuz.org/rss.xml">Validate RSS</a>
+        &middot;
+        <a href="http://www.validome.org/google/validate?url=http://www.xythobuz.org&amp;googleTyp=SITEMAP">Validate Sitemap</a>
+    </div>
+    <script src="http://gitforked.com/api/1.1/button.js" type="text/javascript"></script>
+</body>
+</html>
