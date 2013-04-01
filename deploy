@@ -1,7 +1,6 @@
 #!/bin/sh
 
-echo $USER
-git reset --hard
+git reset --hard HEAD
 
 /home/thomas/poole/poole.py --build
 echo "lollipop123Tunguska" | sudo -S cp -r /home/thomas/poole/output/* /var/www/
