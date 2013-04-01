@@ -6,14 +6,6 @@ if (isset($_GET['p'])) {
         $_GET['p'] .= EN;
     }
     switch($_GET['p']) {
-        case "home":
-            $loc = "/index.de.html";
-            break;
-
-        case "homeEN":
-            $loc = "/index.html";
-            break;
-
         case "blogEN":
             $loc = "/blog.html";
             break;
@@ -22,12 +14,12 @@ if (isset($_GET['p'])) {
             $loc = "/contact.html";
             break;
 
-        case "cube":
-            $loc = "/ledcube.de.html";
+        case "home":
+            $loc = "/index.de.html";
             break;
 
-        case "cubeEN":
-            $loc = "/ledcube.html";
+        case "homeEN":
+            $loc = "/index.html";
             break;
 
         case "avrserlib":
@@ -38,14 +30,6 @@ if (isset($_GET['p'])) {
             $loc = "/avrserial.html";
             break;
 
-        case "nas":
-            $loc = "/nas.de.html";
-            break;
-
-        case "nasEN":
-            $loc = "/nas.html";
-            break;
-
         case "c250":
             $loc = "/c250.de.html";
             break;
@@ -54,44 +38,12 @@ if (isset($_GET['p'])) {
             $loc = "/c250.html";
             break;
 
-        case "ssop28":
-            $loc = "/ssop28.de.html";
+        case "cube":
+            $loc = "/ledcube.de.html";
             break;
 
-        case "ssop28EN":
-            $loc = "/ssop28.html";
-            break;
-
-        case "serialhelper":
-            $loc = "/serialhelper.de.html";
-            break;
-
-        case "serialhelperEN":
-            $loc = "/serialhelper.html";
-            break;
-
-        case "yasab":
-            $loc = "/yasab.de.html";
-            break;
-
-        case "yasabEN":
-            $loc = "/yasab.html";
-            break;
-
-        case "notifier":
-            $loc = "/ultimatenotifier.de.html";
-            break;
-
-        case "notifierEN":
-            $loc = "/ultimatenotifier.html";
-            break;
-
-        case "serialdebug":
-            $loc = "/serialdebug.de.html";
-            break;
-
-        case "serialdebugEN":
-            $loc = "/serialdebug.html";
+        case "cubeEN":
+            $loc = "/ledcube.html";
             break;
 
         case "ledmatrix":
@@ -102,20 +54,60 @@ if (isset($_GET['p'])) {
             $loc = "/ledmatrix.html";
             break;
 
-        case "xyrobotremote":
-            $loc = "/xyrobotremote.de.html";
+        case "nas":
+            $loc = "/nas.de.html";
             break;
 
-        case "xyrobotremoteEN":
-            $loc = "/xyrobotremote.html";
+        case "nasEN":
+            $loc = "/nas.html";
             break;
 
-        case "rob":
-            $loc = "/xyrobot.de.html";
+        case "serialdebug":
+            $loc = "/serialdebug.de.html";
             break;
 
-        case "robEN":
-            $loc = "/xyrobot.html";
+        case "serialdebugEN":
+            $loc = "/serialdebug.html";
+            break;
+
+        case "serialhelper":
+            $loc = "/serialhelper.de.html";
+            break;
+
+        case "serialhelperEN":
+            $loc = "/serialhelper.html";
+            break;
+
+        case "ssop28":
+            $loc = "/ssop28.de.html";
+            break;
+
+        case "ssop28EN":
+            $loc = "/ssop28.html";
+            break;
+
+        case "notifier":
+            $loc = "/ultimatenotifier.de.html";
+            break;
+
+        case "notifierEN":
+            $loc = "/ultimatenotifier.html";
+            break;
+
+        case "yasab":
+            $loc = "/yasab.de.html";
+            break;
+
+        case "yasabEN":
+            $loc = "/yasab.html";
+            break;
+
+        case "bt":
+            $loc = "/bluetooth.de.html";
+            break;
+
+        case "btEN":
+            $loc = "/bluetooth.html";
             break;
 
         case "sram":
@@ -134,12 +126,20 @@ if (isset($_GET['p'])) {
             $loc = "/rremote.html";
             break;
 
-        case "bt":
-            $loc = "/bluetooth.de.html";
+        case "rob":
+            $loc = "/xyrobot.de.html";
             break;
 
-        case "btEN":
-            $loc = "/bluetooth.html";
+        case "robEN":
+            $loc = "/xyrobot.html";
+            break;
+
+        case "xyrobotremote":
+            $loc = "/xyrobotremote.de.html";
+            break;
+
+        case "xyrobotremoteEN":
+            $loc = "/xyrobotremote.html";
             break;
 
         default:
