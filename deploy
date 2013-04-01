@@ -1,5 +1,8 @@
 #!/bin/sh
 
-poole.py --build
-sudo cp -r output/* /var/www/
-sudo cp -r static/* /var/www/
+./poole.py --build
+echo "lollipop123Tunguska" | sudo -S cp -r output/* /var/www/
+echo "lollipop123Tunguska" | sudo -S cp -r static/* /var/www/
+
+host=`hostname`
+/home/thomas/bin/notify "Deployed to ${host}"
