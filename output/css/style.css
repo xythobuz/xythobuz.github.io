@@ -216,6 +216,14 @@ li.recentList:before {
     max-width: 20%;
 }
 
+#dude:hover {
+    z-index: 2;
+}
+
+#walter:hover {
+    z-index: 2;
+}
+
 #footer {
     clear: both;
     float: left;
