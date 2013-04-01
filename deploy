@@ -2,7 +2,7 @@
 
 git reset --hard
 
-./poole.py --build
+/home/thomas/poole/poole.py --build
 echo "lollipop123Tunguska" | sudo -S cp -r output/* /var/www/
 echo "lollipop123Tunguska" | sudo -S cp -r static/* /var/www/
 
