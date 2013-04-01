@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo $USER
 git reset --hard
 
 /home/thomas/poole/poole.py --build
