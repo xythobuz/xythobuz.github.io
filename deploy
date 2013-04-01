@@ -3,8 +3,8 @@
 git reset --hard
 
 /home/thomas/poole/poole.py --build
-echo "lollipop123Tunguska" | sudo -S cp -r output/* /var/www/
-echo "lollipop123Tunguska" | sudo -S cp -r static/* /var/www/
+echo "lollipop123Tunguska" | sudo -S cp -r /home/thomas/poole/output/* /var/www/
+echo "lollipop123Tunguska" | sudo -S cp -r /home/thomas/poole/static/* /var/www/
 
 host=`hostname`
 /home/thomas/bin/notify "Deployed to ${host}"
