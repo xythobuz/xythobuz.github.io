@@ -115,6 +115,8 @@ span#lang2 {
     padding-left: 0.5em;
     padding-right: 0.5em;
     overflow: hidden;
+    z-index: 1;
+    background-color: #FFFFFF;
 }
 
 .nav {
@@ -203,7 +205,14 @@ li.recentList:before {
 #dude {
     position: fixed;
     bottom: 0px;
-    left: 10px;
+    left: 30px;
+    max-width: 20%;
+}
+
+#walter {
+    position: fixed;
+    bottom: 0px;
+    right: 30px;
     max-width: 20%;
 }
 
