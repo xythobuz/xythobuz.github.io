@@ -125,6 +125,7 @@ span#lang2 {
     overflow: hidden;
     background-color: #FFFFFF;
     border-right: solid #FF9900 1px;
+    border-bottom: solid #FF9900 1px;
     z-index: 1;
 }
 
