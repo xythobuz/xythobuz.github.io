@@ -1,133 +1,134 @@
 <?xml version="1.0"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>xythobuz.org Blog</title>
-<link>/blog.html</link>
-<description>xythobuz Electronics & Software Projects</description>
+<link>http://www.xythobuz.org/blog.html</link>
+<atom:link href="http://www.xythobuz.org/rss.xml" rel="self" type="application/rss+xml" />
+<description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Sat, 30 Mar 2013 15:08:57 -0000</pubDate>
-<lastBuildDate>Sat, 30 Mar 2013 15:08:57 -0000</lastBuildDate>
+<pubDate>Mon, 01 Apr 2013 14:39:08 -0000</pubDate>
+<lastBuildDate>Mon, 01 Apr 2013 14:39:08 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
 
 <item>
     <title>xyControl Doxygen Dokumentation</title>
-    <link>/2013_03_25_doxygen.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_03_25_doxygen.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Mon, 25 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_03_25_doxygen.html</guid>
+    <guid>http://www.xythobuz.org/2013_03_25_doxygen.html</guid>
 </item>
 
 <item>
     <title>xyCopter PID-Parameter</title>
-    <link>/2013_03_16_pid.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_03_16_pid.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Sat, 16 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_03_16_pid.html</guid>
+    <guid>http://www.xythobuz.org/2013_03_16_pid.html</guid>
 </item>
 
 <item>
     <title>Quadrocopter Test Rig Video</title>
-    <link>/2013_03_13_test_rig.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_03_13_test_rig.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Wed, 13 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_03_13_test_rig.html</guid>
+    <guid>http://www.xythobuz.org/2013_03_13_test_rig.html</guid>
 </item>
 
 <item>
     <title>Quadrocopter Testvorrichtung</title>
-    <link>/2013_03_12_test_rig.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_03_12_test_rig.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Tue, 12 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_03_12_test_rig.html</guid>
+    <guid>http://www.xythobuz.org/2013_03_12_test_rig.html</guid>
 </item>
 
 <item>
     <title>xyCopter loves YASAB</title>
-    <link>/2013_03_10_yasab.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_03_10_yasab.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Sun, 10 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_03_10_yasab.html</guid>
+    <guid>http://www.xythobuz.org/2013_03_10_yasab.html</guid>
 </item>
 
 <item>
     <title>xyCopter mit GraphView</title>
-    <link>/2013_03_05_graphview.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_03_05_graphview.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Tue, 05 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_03_05_graphview.html</guid>
+    <guid>http://www.xythobuz.org/2013_03_05_graphview.html</guid>
 </item>
 
 <item>
     <title>xyCopter Android App</title>
-    <link>/2013_02_25_android.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_02_25_android.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Mon, 25 Feb 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_02_25_android.html</guid>
+    <guid>http://www.xythobuz.org/2013_02_25_android.html</guid>
 </item>
 
 <item>
     <title>Quadrocopter Motor Test</title>
-    <link>/2013_02_11_motor_test.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_02_11_motor_test.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Mon, 11 Feb 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_02_11_motor_test.html</guid>
+    <guid>http://www.xythobuz.org/2013_02_11_motor_test.html</guid>
 </item>
 
 <item>
     <title>Odys Genio USB Debugging am Mac</title>
-    <link>/2013_01_31_odys_genio.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_01_31_odys_genio.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Thu, 31 Jan 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_01_31_odys_genio.html</guid>
+    <guid>http://www.xythobuz.org/2013_01_31_odys_genio.html</guid>
 </item>
 
 <item>
     <title>Quadrocopter Ueberblick</title>
-    <link>/2013_01_20_quadrocopter.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2013_01_20_quadrocopter.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Sun, 20 Jan 2013 11:00:00 -0000</pubDate>
-    <guid>/2013_01_20_quadrocopter.html</guid>
+    <guid>http://www.xythobuz.org/2013_01_20_quadrocopter.html</guid>
 </item>
 
 <item>
     <title>RC-Heli Absturz</title>
-    <link>/2012_12_25_heli.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2012_12_25_heli.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Tue, 25 Dec 2012 11:00:00 -0000</pubDate>
-    <guid>/2012_12_25_heli.html</guid>
-</item>
-
-<item>
-    <title>Docking in Kerbal Orbit</title>
-    <link>/2012_12_22_docking.html</link>
-    <description>Electronics & Software Projects</description>
-    <pubDate>Sat, 22 Dec 2012 11:00:00 -0000</pubDate>
-    <guid>/2012_12_22_docking.html</guid>
+    <guid>http://www.xythobuz.org/2012_12_25_heli.html</guid>
 </item>
 
 <item>
     <title>Quadrocopter Motor Test</title>
-    <link>/2012_12_22_motor_test.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2012_12_22_motor_test.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Sat, 22 Dec 2012 11:00:00 -0000</pubDate>
-    <guid>/2012_12_22_motor_test.html</guid>
+    <guid>http://www.xythobuz.org/2012_12_22_motor_test.html</guid>
+</item>
+
+<item>
+    <title>Docking in Kerbal Orbit</title>
+    <link>http://www.xythobuz.org/2012_12_22_docking.html</link>
+    <description>Electronics &amp; Software Projects</description>
+    <pubDate>Sat, 22 Dec 2012 11:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.org/2012_12_22_docking.html</guid>
 </item>
 
 <item>
     <title>Mun Landing</title>
-    <link>/2012_12_16_mun.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2012_12_16_mun.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Sun, 16 Dec 2012 11:00:00 -0000</pubDate>
-    <guid>/2012_12_16_mun.html</guid>
+    <guid>http://www.xythobuz.org/2012_12_16_mun.html</guid>
 </item>
 
 <item>
     <title>xyControl PCB angekommen</title>
-    <link>/2012_12_05_xycontrol.html</link>
-    <description>Electronics & Software Projects</description>
+    <link>http://www.xythobuz.org/2012_12_05_xycontrol.html</link>
+    <description>Electronics &amp; Software Projects</description>
     <pubDate>Wed, 05 Dec 2012 11:00:00 -0000</pubDate>
-    <guid>/2012_12_05_xycontrol.html</guid>
+    <guid>http://www.xythobuz.org/2012_12_05_xycontrol.html</guid>
 </item>
 
 </channel>

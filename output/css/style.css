@@ -91,7 +91,7 @@ div#lang {
     padding-right: 10em;
 }
 
-span#lang {
+span#lang2 {
     line-height: 2em;
 }
 
@@ -121,8 +121,10 @@ span#lang {
     float: left;
     position: relative;
     padding: 0 0 0 0;
+    padding-right: 1em;
     overflow: hidden;
     background-color: #FFFFFF;
+    border-right: solid #FF9900 1px;
     z-index: 1;
 }
 
@@ -138,7 +140,7 @@ div#logo {
     margin: 10px;
 }
 
-img#logo {
+img#logoImg {
     padding: 0;
     border-radius: 8px;
     width: 180px;

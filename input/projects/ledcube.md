@@ -104,6 +104,8 @@ lang: de
 
 Downloade die [aktuelle Codebase als Zip][1].
 
+<iframe width="640" height="360" src="http://www.youtube.com/embed/czxCxTBSgHM?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+
 Als Schulprojekt und für den Explore-IT Wettbewerb von SAP in Markdorf haben meine zwei Teamkollegen, Max <hutattedonmyarm@me.com> und Felix, zusammen mit mir diesen einfarbigen 8x8x8 LED Cube gebaut. Für Interessierte hier alle Software sowie Schaltplan und Boardlayout unter der GPLv3. Viel Freude damit.
 
 [![Foto 1][2]][3]

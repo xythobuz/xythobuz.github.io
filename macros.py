@@ -28,13 +28,13 @@ def hook_preconvert_anotherlang():
         for lang, text in text_grouped.iteritems():
             spath = p.fname.split(os.path.sep)
             langs.append(lang)
-            
+
             if lang == "en":
                 filename = re.sub(MKD_PATT, "%s\g<0>" % "", p.fname).split(os.path.sep)[-1]
             else:
                 filename = re.sub(MKD_PATT, ".%s\g<0>" % lang, p.fname).split(os.path.sep)[-1]
 
-            vp = Page(filename, virtual=text) 
+            vp = Page(filename, virtual=text)
             # Copy real page attributes to the virtual page
             for attr in p:
                 if not vp.has_key(attr):
@@ -52,7 +52,7 @@ def hook_preconvert_anotherlang():
                 else:
                     vp["post"] = vp["post"][:-len(lang) - 1]
             page_vpages[lang] = vp
-            
+
         # Each virtual page has to know about its sister vpages
         for lang, vpage in page_vpages.iteritems():
             vpage["lang_links"] = dict([(l, v["url"]) for l, v in page_vpages.iteritems()])
@@ -137,10 +137,11 @@ def hook_preconvert_sitemap():
 # -----------------------------------------------------------------------------
 
 _RSS = """<?xml version="1.0"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>%s</title>
 <link>%s</link>
+<atom:link href="%s" rel="self" type="application/rss+xml" />
 <description>%s</description>
 <language>en-us</language>
 <pubDate>%s</pubDate>
@@ -168,8 +169,8 @@ def hook_postconvert_rss():
     posts.sort(key=lambda p: p.date, reverse=True)
     for p in posts:
         title = p.post
-        link = "%s/%s" % (options.base_url.rstrip("/"), p.url)
-        desc = p.get("description", "Electronics & Software Projects")
+        link = "%s/%s" % (BASE_URL, p.url)
+        desc = htmlspecialchars(p.get("description", "Electronics & Software Projects"))
         date = time.mktime(time.strptime("%s 12" % p.date, "%Y-%m-%d %H"))
         date = email.utils.formatdate(date)
         items.append(_RSS_ITEM % (title, link, desc, date, link))
@@ -177,11 +178,12 @@ def hook_postconvert_rss():
     items = "".join(items)
 
     title = "xythobuz.org Blog"
-    link = "%s/blog.html" % options.base_url.rstrip("/")
-    desc = "xythobuz Electronics & Software Projects"
+    link = "%s/blog.html" % BASE_URL
+    feed = "%s/rss.xml" % BASE_URL
+    desc = htmlspecialchars("xythobuz Electronics & Software Projects")
     date = email.utils.formatdate()
 
-    rss = _RSS % (title, link, desc, date, date, items)
+    rss = _RSS % (title, link, feed, desc, date, date, items)
 
     fp = open(os.path.join(output, "rss.xml"), 'w')
     fp.write(rss)

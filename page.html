@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="{{ htmlspecialchars(__encoding__) }}" />
@@ -43,7 +44,7 @@
     </div>
     <!--%
         # if len("".join(["%s" % lang for lang in page["lang_links"]])) > 2:
-        print '<div id="lang"><span id="lang">Translation: '
+        print '<div id="lang"><span id="lang2">Translation: '
         print " | ".join(["<a href='%s'>%s</a>" % (url, lang) for lang, url in page["lang_links"].iteritems()])
         print "</span></div>"
     %-->
@@ -126,14 +127,14 @@
         <div class="nav">
             <h3>Thomas Buck</h3>
 
-            <div id="logo"><img id="logo" src="http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=180" alt="Avatar"></div>
+            <div id="logo"><img id="logoImg" src="http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=180" alt="Avatar"></div>
 
             <p id="bio">
                 19 year old Information Engineering student from Germany.
                 Making cool stuff, mostly with AVR microcontrollers.
             </p>
 
-            <iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder=0></iframe>
+            <iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;"></iframe>
 
             <ul id="menuList">
             <!--%
@@ -144,10 +145,10 @@
                 for p in mpages:
                     if int(p["menu-position"]) >= 10 and blanked == "a":
                         blanked = "b"
-                        print '<br>'
+                        print '<li>&nbsp;</li>'
                     if int(p["menu-position"]) >= 55 and blanked == "b":
                         blanked = "c"
-                        print '<br>'
+                        print '<li>&nbsp;</li>'
                     print(entry % (htmlspecialchars(p["url"]), htmlspecialchars(p["title"])))
             %-->
             </ul>

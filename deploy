@@ -1,5 +1,5 @@
 #!/bin/sh
 
 poole.py --build
-cp output/* /var/www/
-cp static/* /var/www/
+sudo cp -r output/* /var/www/
+sudo cp -r static/* /var/www/
