@@ -96,9 +96,9 @@ def hook_preconvert_compat():
     fp.write("}\n")
     fp.write("if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {\n")
     fp.write("    if (php_sapi_name() == 'cgi') {\n")
-    fp.write("        header('Status: 303 See Other');\n")
+    fp.write("        header('Status: 301 Moved Permanently');\n")
     fp.write("    } else {\n")
-    fp.write("        header('HTTP/1.1 303 See Other');\n")
+    fp.write("        header('HTTP/1.1 301 Moved Permanently');\n")
     fp.write("    }\n")
     fp.write("}\n");
     fp.write("header('Location: '.$loc);\n")
