@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="{{ htmlspecialchars(__encoding__) }}" />
-    <title>{{ htmlspecialchars(page.title) }} - xythobuz.org</title>
+    <title>{{ htmlspecialchars(page.title) }} - xythobuz.de</title>
     <meta name="description" content="{{ htmlspecialchars(page.get("description", "Electronics & Software Projects")) }}" />
     <meta name="keywords" content="{{ htmlspecialchars(page.get("keywords", "xythobuz")) }}" />
     <link rel="author" href="xythobuz@me.com">
@@ -39,7 +39,7 @@
             print '">Fork me on GitHub</a></div></div>'
     %-->
     <div id="header">
-        <h1>xythobuz.org</h1>
+        <h1>xythobuz.de</h1>
         <h2>{{ page.get("funny", htmlspecialchars(page["title"])) }}</h2>
     </div>
     <!--%
@@ -178,7 +178,7 @@
         &middot;
         <a href="http://validator.w3.org/check?uri=referer">Validate HTML</a>
         &middot;
-        <a href="http://jigsaw.w3.org/css-validator/validator?uri=xythobuz.org%2Fstyle.css&amp;profile=css3">Validate CSS</a>
+        <a href="http://jigsaw.w3.org/css-validator/validator?uri=xythobuz.de%2Fstyle.css&amp;profile=css3">Validate CSS</a>
         &middot;
         <a href="http://feed1.w3.org/check.cgi?url={{ BASE_URL }}/rss.xml">Validate RSS</a>
         &middot;

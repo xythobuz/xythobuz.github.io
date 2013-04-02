@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 
 DEFAULT_LANG = "en"
-BASE_URL = "http://www.xythobuz.org"
+BASE_URL = "http://www.xythobuz.de"
 
 # -----------------------------------------------------------------------------
 # preconvert hooks
@@ -177,7 +177,7 @@ def hook_postconvert_rss():
 
     items = "".join(items)
 
-    title = "xythobuz.org Blog"
+    title = "xythobuz.de Blog"
     link = "%s/blog.html" % BASE_URL
     feed = "%s/rss.xml" % BASE_URL
     desc = htmlspecialchars("xythobuz Electronics & Software Projects")

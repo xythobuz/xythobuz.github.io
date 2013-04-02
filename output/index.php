@@ -149,9 +149,9 @@ if (isset($_GET['p'])) {
 }
 if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
     if (php_sapi_name() == 'cgi') {
-        header('Status: 303 See Other');
+        header('Status: 301 Moved Permanently');
     } else {
-        header('HTTP/1.1 303 See Other');
+        header('HTTP/1.1 301 Moved Permanently');
     }
 }
 header('Location: '.$loc);

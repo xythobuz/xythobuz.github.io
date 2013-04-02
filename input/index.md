@@ -26,7 +26,7 @@ GCS/E/MU d-(--)>--- s:++ a-- C++++>$ UBLX+++>++++$ P+ L+ !E--- W+++ N+ !o K--? !
 <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/xythobuz" data-widget-id="318732638158471170">Tweets by @xythobuz</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
- [1]: http://www.xythobuz.org/cubehook.php
+ [1]: http://www.xythobuz.de/cubehook.php
  [2]: http://en.wikipedia.org/wiki/HD_DVD_encryption_key_controversy
  [3]: http://www.yalelawtech.org/trusted-computing-drm/46-dc-ea-d3-17-fe-45-d8-09-23-eb-97-e4-95-64-10-d4-cd-b2-c2/
 
@@ -52,6 +52,6 @@ GCS/E/MU d-(--)>--- s:++ a-- C++++>$ UBLX+++>++++$ P+ L+ !E--- W+++ N+ !o K--? !
 <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/xythobuz" data-widget-id="318732638158471170">Tweets by @xythobuz</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
- [1]: http://www.xythobuz.org/cubehook.php
+ [1]: http://www.xythobuz.de/cubehook.php
  [2]: http://en.wikipedia.org/wiki/HD_DVD_encryption_key_controversy
  [3]: http://www.yalelawtech.org/trusted-computing-drm/46-dc-ea-d3-17-fe-45-d8-09-23-eb-97-e4-95-64-10-d4-cd-b2-c2/

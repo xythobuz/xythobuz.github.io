@@ -142,6 +142,13 @@
 </url>
 
 <url>
+    <loc>/2013_04_02_zaphod.html</loc>
+    <lastmod>2013-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>/avrnetstack.html</loc>
     <lastmod>2013-04-02</lastmod>
     <changefreq>monthly</changefreq>

@@ -8,7 +8,7 @@ compat: kontakt
 
 You can always use this [PGP Key][1]
 
-Mail: <xythobuz@xythobuz.org>
+Mail: <xythobuz@me.com>
 
 Jabber: xythobuz@jabber.ccc.de
 

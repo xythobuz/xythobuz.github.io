@@ -27,9 +27,9 @@ reddit: true
 2.  Hardware access (by me, really short version) 
     *   This is really long and I'm not in the mood to translate this... Sorry :)
     *   But I saw that googles translator does a really "good" job translating my text...
-    *   Try to look at [my article in English][1]!
+    *   Try to look at [my article translated to English][1]!
 
- [1]: http://translate.google.de/translate?sl=de&tl=en&js=n&u=http%3A%2F%2Fwww.xythobuz.org%2Fnas.de.html
+ [1]: http://translate.google.de/translate?sl=de&tl=en&js=n&u=http%3A%2F%2Fwww.xythobuz.de%2Fnas.de.html
 
 lang: de
 
