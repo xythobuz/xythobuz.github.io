@@ -10,7 +10,7 @@ compat: home
 
 I'm publishing some informations about my projects here. Please give feedback and have fun!
 
-If you are interested in my newest work, enter your mail address in my [Github Post Receive Hook][1] and select a repository. You will then get a mail for every new commit.
+<iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;"></iframe>
 
 [09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0][2]
 
@@ -36,7 +36,7 @@ lang: de
 
 Hier findest du (immer mehr) Informationen zu Projekten von mir. Gerne höre ich Feedback über E-Mail. Viel Spaß!
 
-Solltest du an meiner neuesten Arbeit interessiert sein, kannst du dich in meinem [GitHub Post Receive Hook][1] mit deiner E-Mail Adresse für bestimmte Repositories eintragen. Du bekommst dann bei jedem Commit eine E-Mail.
+<iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;"></iframe>
 
 [09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0][2]
 
