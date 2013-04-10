@@ -10,7 +10,7 @@ compat: home
 
 I'm publishing some informations about my projects here. Please give feedback and have fun!
 
-<iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;"></iframe>
+<iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 110px;width: 200px;overflow: hidden;"></iframe>
 
 [09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0][2]
 
@@ -39,7 +39,7 @@ lang: de
 
 Hier findest du (immer mehr) Informationen zu Projekten von mir. Gerne höre ich Feedback über E-Mail. Viel Spaß!
 
-<iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;"></iframe>
+<iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 110px;width: 200px;overflow: hidden;"></iframe>
 
 [09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0][2]
 
