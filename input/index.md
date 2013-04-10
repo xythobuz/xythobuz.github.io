@@ -23,10 +23,10 @@ GCS/E/MU d-(--)>--- s:++ a-- C++++>$ UBLX+++>++++$ P+ L+ !E--- W+++ N+ !o K--? !
 ------END GEEK CODE BLOCK------
 </pre>
 
-![Bitcoin Donation QR][4]
-
 <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/xythobuz" data-widget-id="318732638158471170">Tweets by @xythobuz</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+![Bitcoin Donation QR][4]
 
  [1]: http://www.xythobuz.de/cubehook.php
  [2]: http://en.wikipedia.org/wiki/HD_DVD_encryption_key_controversy
@@ -52,10 +52,10 @@ GCS/E/MU d-(--)>--- s:++ a-- C++++>$ UBLX+++>++++$ P+ L+ !E--- W+++ N+ !o K--? !
 ------END GEEK CODE BLOCK------
 </pre>
 
-![Bitcoin Donation QR][4]
-
 <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/xythobuz" data-widget-id="318732638158471170">Tweets by @xythobuz</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+![Bitcoin Donation QR][4]
 
  [1]: http://www.xythobuz.de/cubehook.php
  [2]: http://en.wikipedia.org/wiki/HD_DVD_encryption_key_controversy
