@@ -3,6 +3,7 @@ import itertools
 import email.utils
 import os.path
 import time
+import codecs
 from datetime import datetime
 
 DEFAULT_LANG = "en"
@@ -160,6 +161,7 @@ _RSS_ITEM = """
     <description>%s</description>
     <pubDate>%s</pubDate>
     <guid>%s</guid>
+    <content>%s</content>
 </item>
 """
 
@@ -167,13 +169,15 @@ def hook_postconvert_rss():
     items = []
     posts = [p for p in pages if "post" in p] # get all blog post pages
     posts.sort(key=lambda p: p.date, reverse=True)
+    posts = posts[:10]
     for p in posts:
         title = p.post
         link = "%s/%s" % (BASE_URL, p.url)
         desc = htmlspecialchars(p.get("description", "Electronics & Software Projects"))
         date = time.mktime(time.strptime("%s 12" % p.date, "%Y-%m-%d %H"))
         date = email.utils.formatdate(date)
-        items.append(_RSS_ITEM % (title, link, desc, date, link))
+        content = htmlspecialchars(p.html)
+        items.append(_RSS_ITEM % (title, link, desc, date, link, content))
 
     items = "".join(items)
 
@@ -185,6 +189,6 @@ def hook_postconvert_rss():
 
     rss = _RSS % (title, link, feed, desc, date, date, items)
 
-    fp = open(os.path.join(output, "rss.xml"), 'w')
+    fp = codecs.open(os.path.join(output, "rss.xml"), "w", "utf-8")
     fp.write(rss)
     fp.close()
