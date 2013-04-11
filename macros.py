@@ -161,7 +161,6 @@ _RSS_ITEM = """
     <description>%s</description>
     <pubDate>%s</pubDate>
     <guid>%s</guid>
-    <content>%s</content>
 </item>
 """
 
@@ -173,11 +172,10 @@ def hook_postconvert_rss():
     for p in posts:
         title = p.post
         link = "%s/%s" % (BASE_URL, p.url)
-        desc = htmlspecialchars(p.get("description", "Electronics & Software Projects"))
+        desc = htmlspecialchars(p.html)
         date = time.mktime(time.strptime("%s 12" % p.date, "%Y-%m-%d %H"))
         date = email.utils.formatdate(date)
-        content = htmlspecialchars(p.html)
-        items.append(_RSS_ITEM % (title, link, desc, date, link, content))
+        items.append(_RSS_ITEM % (title, link, desc, date, link))
 
     items = "".join(items)
 

@@ -6,138 +6,128 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Thu, 11 Apr 2013 16:35:42 -0000</pubDate>
-<lastBuildDate>Thu, 11 Apr 2013 16:35:42 -0000</lastBuildDate>
+<pubDate>Thu, 11 Apr 2013 16:38:55 -0000</pubDate>
+<lastBuildDate>Thu, 11 Apr 2013 16:38:55 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
 
 <item>
     <title>Kein DRM in HTML5</title>
     <link>http://www.xythobuz.de/2013_04_04_html5.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Thu, 04 Apr 2013 10:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_04_04_html5.html</guid>
-    <content>&lt;h2&gt;Kein DRM in HTML5&lt;/h2&gt;
+    <description>&lt;h2&gt;Kein DRM in HTML5&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at April 04, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Habe gerade unterzeichnet. Tut es auch!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.defectivebydesign.org/no-drm-in-html5&quot;&gt;&lt;img alt=&quot;Stop the Hollyweb! No DRM in HTML5.&quot; src=&quot;http://static.fsf.org/dbd/hollywebshare.jpeg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;a href=&quot;http://www.defectivebydesign.org/no-drm-in-html5&quot;&gt;&lt;img alt=&quot;Stop the Hollyweb! No DRM in HTML5.&quot; src=&quot;http://static.fsf.org/dbd/hollywebshare.jpeg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    <pubDate>Thu, 04 Apr 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_04_04_html5.html</guid>
 </item>
 
 <item>
     <title>Neuer Webserver</title>
     <link>http://www.xythobuz.de/2013_04_02_zaphod.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Tue, 02 Apr 2013 10:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_04_02_zaphod.html</guid>
-    <content>&lt;h2&gt;Neuer Webserver&lt;/h2&gt;
+    <description>&lt;h2&gt;Neuer Webserver&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at April 02, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Jetzt habe ich zu einem Rundumschlag ausgeholt. Wenn du diesen Text liest, kommt er bereits von meinem neuen vServer bei Hetzner. Hostname: &lt;a href=&quot;http://en.wikipedia.org/wiki/Zaphod_Beeblebrox&quot;&gt;Zaphod&lt;/a&gt; :)&lt;/p&gt;
-&lt;p&gt;Außerdem siehst du dann auch schon die neue Webseite, gebaut mit &lt;a href=&quot;https://bitbucket.org/obensonne/poole&quot;&gt;Poole&lt;/a&gt;. Das ist tolle Software!&lt;/p&gt;</content>
+&lt;p&gt;Außerdem siehst du dann auch schon die neue Webseite, gebaut mit &lt;a href=&quot;https://bitbucket.org/obensonne/poole&quot;&gt;Poole&lt;/a&gt;. Das ist tolle Software!&lt;/p&gt;</description>
+    <pubDate>Tue, 02 Apr 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_04_02_zaphod.html</guid>
 </item>
 
 <item>
     <title>xyControl Doxygen Dokumentation</title>
     <link>http://www.xythobuz.de/2013_03_25_doxygen.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Mon, 25 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_25_doxygen.html</guid>
-    <content>&lt;h2&gt;xyControl Doxygen Dokumentation&lt;/h2&gt;
+    <description>&lt;h2&gt;xyControl Doxygen Dokumentation&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 25, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Ich hab jetzt mal eine hübsche Doxygen Dokumentation für die xyControl Firmware angelegt. Kann auch mit &quot;make doc&quot; erstellt werden. Neben HTML wird auch Latex ausgegeben, im Ordner ist ein Makefile um daraus eine PDF zu setzen. &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.xythobuz.de/xycontrol/index.html&quot;&gt;HTML Dokumentation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.xythobuz.de/xycontrol.pdf&quot;&gt;PDF Dokumentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;/ul&gt;</description>
+    <pubDate>Mon, 25 Mar 2013 11:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_03_25_doxygen.html</guid>
 </item>
 
 <item>
     <title>xyCopter PID-Parameter</title>
     <link>http://www.xythobuz.de/2013_03_16_pid.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Sat, 16 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_16_pid.html</guid>
-    <content>&lt;h2&gt;xyCopter PID-Parameter&lt;/h2&gt;
+    <description>&lt;h2&gt;xyCopter PID-Parameter&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 16, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;So, jetzt fehlen hoffentlich nur noch die richtigen PID Parameter um den Quadrocopter in der Schwebe zu halten...&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;img/xyCopterOsci.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;img/xyCopterOsci_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;a href=&quot;img/xyCopterOsci.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;img/xyCopterOsci_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    <pubDate>Sat, 16 Mar 2013 11:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_03_16_pid.html</guid>
 </item>
 
 <item>
     <title>Quadrocopter Test Rig Video</title>
     <link>http://www.xythobuz.de/2013_03_13_test_rig.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Wed, 13 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_13_test_rig.html</guid>
-    <content>&lt;h2&gt;Quadrocopter Test Rig Video&lt;/h2&gt;
+    <description>&lt;h2&gt;Quadrocopter Test Rig Video&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 13, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Ja, das ist alles ganz schön wackelig. Jetzt hab ich mehr Gewicht drauf. Und die Parameter find ich irgendwann auch noch :)&lt;/p&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube-nocookie.com/embed/b5MhLgDhQ2c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</content>
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube-nocookie.com/embed/b5MhLgDhQ2c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    <pubDate>Wed, 13 Mar 2013 11:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_03_13_test_rig.html</guid>
 </item>
 
 <item>
     <title>Quadrocopter Testvorrichtung</title>
     <link>http://www.xythobuz.de/2013_03_12_test_rig.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Tue, 12 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_12_test_rig.html</guid>
-    <content>&lt;h2&gt;Quadrocopter Testvorrichtung&lt;/h2&gt;
+    <description>&lt;h2&gt;Quadrocopter Testvorrichtung&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 12, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Hab mal ein bisschen mit Opa im Keller gebastelt. Ergebnis ist diese Testvorrichtung, um besser die PID-Parameter anhand einer einzelnen Achse zu bestimmen. Und Fehler im Code zu finden. Das gibts ja immer... :)&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;img/quadRig1.jpg&quot;&gt;&lt;img alt=&quot;Foto 1&quot; src=&quot;img/quadRig1_small.jpg&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;img/quadRig2.jpg&quot;&gt;&lt;img alt=&quot;Foto 2&quot; src=&quot;img/quadRig2_small.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;img/quadRig3.jpg&quot;&gt;&lt;img alt=&quot;Foto 3&quot; src=&quot;img/quadRig3_small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+&lt;a href=&quot;img/quadRig3.jpg&quot;&gt;&lt;img alt=&quot;Foto 3&quot; src=&quot;img/quadRig3_small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    <pubDate>Tue, 12 Mar 2013 11:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_03_12_test_rig.html</guid>
 </item>
 
 <item>
     <title>xyCopter loves YASAB</title>
     <link>http://www.xythobuz.de/2013_03_10_yasab.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Sun, 10 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_10_yasab.html</guid>
-    <content>&lt;h2&gt;xyCopter loves YASAB&lt;/h2&gt;
+    <description>&lt;h2&gt;xyCopter loves YASAB&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 10, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Jetzt hat meine xyCopter App eine YASAB Implementation. So kann man per Bluetooth die Firmware des Quadrocopters vom Tablet aus neu flashen. Und woher hat die App das Firmware Hexfile? Aus Dropbox! Wenn das mal nicht geil ist... :D&lt;/p&gt; &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;img/xyCopterFirmware.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;img/xyCopterFirmware_small.png&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;Allerdings funktioniert Dropbox Integration und OpenSource nicht so wirklich... Man muss sich also eine &lt;a href=&quot;https://www.dropbox.com/developers/apps&quot;&gt;eigene App bei Dropbox registrieren&lt;/a&gt; und den Key und das Secret dann im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/AndroidManifest.xml&quot;&gt;Manifest&lt;/a&gt; und im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/src/org/xythobuz/xycopter/MainActivity.java&quot;&gt;Code&lt;/a&gt; eintragen...&lt;/p&gt;</content>
+&lt;p&gt;Allerdings funktioniert Dropbox Integration und OpenSource nicht so wirklich... Man muss sich also eine &lt;a href=&quot;https://www.dropbox.com/developers/apps&quot;&gt;eigene App bei Dropbox registrieren&lt;/a&gt; und den Key und das Secret dann im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/AndroidManifest.xml&quot;&gt;Manifest&lt;/a&gt; und im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/src/org/xythobuz/xycopter/MainActivity.java&quot;&gt;Code&lt;/a&gt; eintragen...&lt;/p&gt;</description>
+    <pubDate>Sun, 10 Mar 2013 11:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_03_10_yasab.html</guid>
 </item>
 
 <item>
     <title>xyCopter mit GraphView</title>
     <link>http://www.xythobuz.de/2013_03_05_graphview.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Tue, 05 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_05_graphview.html</guid>
-    <content>&lt;h2&gt;xyCopter mit GraphView&lt;/h2&gt;
+    <description>&lt;h2&gt;xyCopter mit GraphView&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 05, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Jetzt hab ich &lt;a href=&quot;https://github.com/Lauszus/GraphView&quot;&gt;GraphView&lt;/a&gt; in xyCopter eingebaut:&lt;br /&gt;
-&lt;a href=&quot;img/xyCopterNew.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;img/xyCopterNew_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+&lt;a href=&quot;img/xyCopterNew.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;img/xyCopterNew_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    <pubDate>Tue, 05 Mar 2013 11:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_03_05_graphview.html</guid>
 </item>
 
 <item>
     <title>xyCopter Android App</title>
     <link>http://www.xythobuz.de/2013_02_25_android.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Mon, 25 Feb 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_02_25_android.html</guid>
-    <content>&lt;h2&gt;xyCopter Android App&lt;/h2&gt;
+    <description>&lt;h2&gt;xyCopter Android App&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at February 25, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Die erste Version meiner Quadrocopter Fernsteuerungs App für Android ist fertig und funktioniert soweit. Hier ein Screenshot:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;img/xyCopter.png&quot;&gt;&lt;img alt=&quot;xyCopter Screenshot&quot; src=&quot;img/xyCopter_small.png&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;Und natürlich auch die &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter-1.0.apk?raw=true&quot;&gt;unsignierte APK zum Download&lt;/a&gt;...&lt;/p&gt;</content>
+&lt;p&gt;Und natürlich auch die &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter-1.0.apk?raw=true&quot;&gt;unsignierte APK zum Download&lt;/a&gt;...&lt;/p&gt;</description>
+    <pubDate>Mon, 25 Feb 2013 11:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_02_25_android.html</guid>
 </item>
 
 <item>
     <title>Quadrocopter Motor Test</title>
     <link>http://www.xythobuz.de/2013_02_11_motor_test.html</link>
-    <description>Electronics &amp; Software Projects</description>
-    <pubDate>Mon, 11 Feb 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_02_11_motor_test.html</guid>
-    <content>&lt;h2&gt;Quadrocopter Motor Test&lt;/h2&gt;
+    <description>&lt;h2&gt;Quadrocopter Motor Test&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at February 11, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Nun ist mein Quadrocopter soweit zusammengebaut...&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/5AOkSvRz64c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;Das sieht doch schon ganz vielversprechend aus... :)&lt;/p&gt;</content>
+&lt;p&gt;Das sieht doch schon ganz vielversprechend aus... :)&lt;/p&gt;</description>
+    <pubDate>Mon, 11 Feb 2013 11:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_02_11_motor_test.html</guid>
 </item>
 
 </channel>
