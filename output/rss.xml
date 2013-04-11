@@ -6,8 +6,8 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Thu, 11 Apr 2013 16:45:50 -0000</pubDate>
-<lastBuildDate>Thu, 11 Apr 2013 16:45:50 -0000</lastBuildDate>
+<pubDate>Thu, 11 Apr 2013 16:50:13 -0000</pubDate>
+<lastBuildDate>Thu, 11 Apr 2013 16:50:13 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
 
@@ -20,6 +20,17 @@
 &lt;p&gt;&lt;a href=&quot;http://www.defectivebydesign.org/no-drm-in-html5&quot;&gt;&lt;img alt=&quot;Stop the Hollyweb! No DRM in HTML5.&quot; src=&quot;http://static.fsf.org/dbd/hollywebshare.jpeg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Thu, 04 Apr 2013 10:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_04_04_html5.html</guid>
+</item>
+
+<item>
+    <title>RSS Probleme</title>
+    <link>http://www.xythobuz.de/2013_04_11_rss.html</link>
+    <description>&lt;h2&gt;RSS Probleme&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at April 04, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;An alle Abonennten meines RSS Feeds: Tut mir leid! :)&lt;/p&gt;
+&lt;p&gt;Mittlerweile sollten alle Probleme behoben sein. Außerdem ist der Blog-Post Inhalt wieder mit im Feed. Deshalb validiert er zwar nicht mehr, dank Youtube Embedding, aber damit kann ich leben...&lt;/p&gt;</description>
+    <pubDate>Thu, 04 Apr 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_04_11_rss.html</guid>
 </item>
 
 <item>
@@ -115,19 +126,6 @@
 &lt;p&gt;Und natürlich auch die &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter-1.0.apk?raw=true&quot;&gt;unsignierte APK zum Download&lt;/a&gt;...&lt;/p&gt;</description>
     <pubDate>Mon, 25 Feb 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_02_25_android.html</guid>
-</item>
-
-<item>
-    <title>Quadrocopter Motor Test</title>
-    <link>http://www.xythobuz.de/2013_02_11_motor_test.html</link>
-    <description>&lt;h2&gt;Quadrocopter Motor Test&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at February 11, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Nun ist mein Quadrocopter soweit zusammengebaut...&lt;/p&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/5AOkSvRz64c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Das sieht doch schon ganz vielversprechend aus... :)&lt;/p&gt;</description>
-    <pubDate>Mon, 11 Feb 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_02_11_motor_test.html</guid>
 </item>
 
 </channel>

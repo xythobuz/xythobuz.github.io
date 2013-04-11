@@ -156,6 +156,13 @@
 </url>
 
 <url>
+    <loc>/2013_04_11_rss.html</loc>
+    <lastmod>2013-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>/avrnetstack.html</loc>
     <lastmod>2013-04-11</lastmod>
     <changefreq>monthly</changefreq>
