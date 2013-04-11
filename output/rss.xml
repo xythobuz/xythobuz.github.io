@@ -6,8 +6,8 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Thu, 11 Apr 2013 16:38:55 -0000</pubDate>
-<lastBuildDate>Thu, 11 Apr 2013 16:38:55 -0000</lastBuildDate>
+<pubDate>Thu, 11 Apr 2013 16:45:50 -0000</pubDate>
+<lastBuildDate>Thu, 11 Apr 2013 16:45:50 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
 
@@ -53,7 +53,7 @@
     <description>&lt;h2&gt;xyCopter PID-Parameter&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 16, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;So, jetzt fehlen hoffentlich nur noch die richtigen PID Parameter um den Quadrocopter in der Schwebe zu halten...&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;img/xyCopterOsci.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;img/xyCopterOsci_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/xyCopterOsci.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopterOsci_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Sat, 16 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_16_pid.html</guid>
 </item>
@@ -75,9 +75,9 @@
     <description>&lt;h2&gt;Quadrocopter Testvorrichtung&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 12, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Hab mal ein bisschen mit Opa im Keller gebastelt. Ergebnis ist diese Testvorrichtung, um besser die PID-Parameter anhand einer einzelnen Achse zu bestimmen. Und Fehler im Code zu finden. Das gibts ja immer... :)&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;img/quadRig1.jpg&quot;&gt;&lt;img alt=&quot;Foto 1&quot; src=&quot;img/quadRig1_small.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;img/quadRig2.jpg&quot;&gt;&lt;img alt=&quot;Foto 2&quot; src=&quot;img/quadRig2_small.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;img/quadRig3.jpg&quot;&gt;&lt;img alt=&quot;Foto 3&quot; src=&quot;img/quadRig3_small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/quadRig1.jpg&quot;&gt;&lt;img alt=&quot;Foto 1&quot; src=&quot;http://www.xythobuz.de/img/quadRig1_small.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://www.xythobuz.de/img/quadRig2.jpg&quot;&gt;&lt;img alt=&quot;Foto 2&quot; src=&quot;http://www.xythobuz.de/img/quadRig2_small.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://www.xythobuz.de/img/quadRig3.jpg&quot;&gt;&lt;img alt=&quot;Foto 3&quot; src=&quot;http://www.xythobuz.de/img/quadRig3_small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Tue, 12 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_12_test_rig.html</guid>
 </item>
@@ -88,7 +88,7 @@
     <description>&lt;h2&gt;xyCopter loves YASAB&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 10, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Jetzt hat meine xyCopter App eine YASAB Implementation. So kann man per Bluetooth die Firmware des Quadrocopters vom Tablet aus neu flashen. Und woher hat die App das Firmware Hexfile? Aus Dropbox! Wenn das mal nicht geil ist... :D&lt;/p&gt; &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;img/xyCopterFirmware.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;img/xyCopterFirmware_small.png&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/xyCopterFirmware.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopterFirmware_small.png&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;Allerdings funktioniert Dropbox Integration und OpenSource nicht so wirklich... Man muss sich also eine &lt;a href=&quot;https://www.dropbox.com/developers/apps&quot;&gt;eigene App bei Dropbox registrieren&lt;/a&gt; und den Key und das Secret dann im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/AndroidManifest.xml&quot;&gt;Manifest&lt;/a&gt; und im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/src/org/xythobuz/xycopter/MainActivity.java&quot;&gt;Code&lt;/a&gt; eintragen...&lt;/p&gt;</description>
     <pubDate>Sun, 10 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_10_yasab.html</guid>
@@ -100,7 +100,7 @@
     <description>&lt;h2&gt;xyCopter mit GraphView&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 05, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Jetzt hab ich &lt;a href=&quot;https://github.com/Lauszus/GraphView&quot;&gt;GraphView&lt;/a&gt; in xyCopter eingebaut:&lt;br /&gt;
-&lt;a href=&quot;img/xyCopterNew.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;img/xyCopterNew_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;a href=&quot;http://www.xythobuz.de/img/xyCopterNew.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopterNew_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Tue, 05 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_05_graphview.html</guid>
 </item>
@@ -111,7 +111,7 @@
     <description>&lt;h2&gt;xyCopter Android App&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at February 25, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Die erste Version meiner Quadrocopter Fernsteuerungs App für Android ist fertig und funktioniert soweit. Hier ein Screenshot:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;img/xyCopter.png&quot;&gt;&lt;img alt=&quot;xyCopter Screenshot&quot; src=&quot;img/xyCopter_small.png&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/xyCopter.png&quot;&gt;&lt;img alt=&quot;xyCopter Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopter_small.png&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;Und natürlich auch die &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter-1.0.apk?raw=true&quot;&gt;unsignierte APK zum Download&lt;/a&gt;...&lt;/p&gt;</description>
     <pubDate>Mon, 25 Feb 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_02_25_android.html</guid>
