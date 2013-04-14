@@ -9,6 +9,7 @@ github: https://github.com/xythobuz/LED-Cube
 compat: cube
 twitter: xythobuz
 reddit: true
+print: true
 ---
 
 # {{ page.title }}

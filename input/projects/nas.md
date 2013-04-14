@@ -8,11 +8,12 @@ funny: Kernel Hacking 101
 compat: nas
 twitter: xythobuz
 reddit: true
+print: true
 ---
 
 # {{ page.title }}
 
-1.  root Access (by Jayare) 
+1.  root Access (by Jayare)
     *   Install the device like a normal user would
     *   Have at least one user with administrator access (either add one, or use the main account) - in my case this is 'admin' but could be any user with administrator rights
     *   Fire up an SSH connection to box (e.g. putty)
@@ -24,7 +25,7 @@ reddit: true
     *   You'll now be logged in to the ICY BOX with the 'regular' user
     *   sudo -E -s
     *   reenter your regular pwd. It'll give you an 'audit\_log\_user_command(): connection refused' and give you root access
-2.  Hardware access (by me, really short version) 
+2.  Hardware access (by me, really short version)
     *   This is really long and I'm not in the mood to translate this... Sorry :)
     *   But I saw that googles translator does a really "good" job translating my text...
     *   Try to look at [my article translated to English][1]!
@@ -52,7 +53,7 @@ Jayare hat mir per E-Mail mitgeteilt, dass er einen Weg gefunden hat, root Zugan
 <pre>
 [Benutzername]_hipserv2_raidsonic_[Produktcode]
 </pre>
-*   In unserem Fall: 
+*   In unserem Fall:
 <pre>
 admin_hipserv2_raidsonic_XXXX-XXXX-XXXX-XXXX
 </pre>
@@ -78,7 +79,7 @@ Um das Starten einer anderen Linux Distribution über USB oder eSata zu ermögli
 Ein passender Adapter um den Port an den Computer anzuschliessen ist schnell gemacht. Hierzu habe ich einen FT232R auf meine [DIP Adapterplatine][9] gelötet und wie folgt beschaltet (Klick vergrößert):
 
 [![Schaltplan][10]][11]
-[![Fertiger Adapter][12]][13] 
+[![Fertiger Adapter][12]][13]
 
 ## Software
 

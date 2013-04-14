@@ -8,6 +8,7 @@ funny: mildly useful
 compat: serialdebug
 twitter: xythobuz
 reddit: true
+print: true
 ---
 
 # {{ page.title }}

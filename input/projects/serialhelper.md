@@ -8,6 +8,7 @@ github: https://github.com/xythobuz/SerialHelper
 compat: serialhelper
 twitter: xythobuz
 reddit: true
+print: true
 ---
 
 # {{ page.title }}

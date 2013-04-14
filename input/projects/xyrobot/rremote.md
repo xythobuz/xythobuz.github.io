@@ -7,6 +7,7 @@ flattr: true
 compat: rrem
 twitter: xythobuz
 reddit: true
+print: true
 ---
 
 # {{ page.title }}

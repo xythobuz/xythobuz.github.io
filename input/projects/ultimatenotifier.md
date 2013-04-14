@@ -7,6 +7,7 @@ flattr: true
 compat: notifier
 twitter: xythobuz
 reddit: true
+print: true
 ---
 
 # {{ page.title }}

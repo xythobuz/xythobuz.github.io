@@ -8,6 +8,7 @@ github: https://github.com/xythobuz/xyRobot/tree/master/xyRobotRemote
 compat: xyrobotremote
 twitter: xythobuz
 reddit: true
+print: true
 ---
 
 # {{ page.title }}

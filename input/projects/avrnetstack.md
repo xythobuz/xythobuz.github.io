@@ -7,6 +7,7 @@ flattr: true
 github: https://github.com/xythobuz/avrNetStack
 twitter: xythobuz
 reddit: true
+print: true
 ---
 
 # {{ page.title }}
