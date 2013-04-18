@@ -51,12 +51,14 @@
     <div class="colmask leftmenu"><div class="colleft">
         <div class="content">
 
+            {{ __content__ }}
+
             <!--%
                 import sys
 
                 # Flattr Button
                 if page.get("flattr", "false") == "true":
-                    print '<div id="flattr">'
+                    print '<span id="flattr">'
                     sys.stdout.write('<a class="FlattrButton" href="')
                     sys.stdout.write(BASE_URL)
                     sys.stdout.write('/')
@@ -66,11 +68,11 @@
                     sys.stdout.write('">')
                     sys.stdout.write(htmlspecialchars(page.get("description", page.title)))
                     sys.stdout.write("</a>\n")
-                    print '</div>'
+                    print '</span>'
 
                 # Twitter Button
                 if page.get("twitter", "") != "":
-                    print '<div id="twitter">'
+                    print '<span id="twitter">'
                     sys.stdout.write('<a href="https://twitter.com/share" class="twitter-share-button" data-via="')
                     sys.stdout.write(page.twitter)
                     sys.stdout.write('" data-dnt="true" data-related="')
@@ -78,11 +80,11 @@
                     sys.stdout.write('" data-count="vertical">Tweet</a>')
                     sys.stdout.write('<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");')
                     sys.stdout.write("</script>\n")
-                    print '</div>'
+                    print '</span>'
 
                 # Reddit Button
                 if page.get("reddit", "") != "":
-                    print '<div id="reddit">'
+                    print '<span id="reddit">'
                     sys.stdout.write('<script type="text/javascript">reddit_url = "')
                     if (page.reddit == "true"):
                         sys.stdout.write(BASE_URL)
@@ -94,23 +96,21 @@
                     sys.stdout.write("\n")
                     sys.stdout.write('<script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script>')
                     sys.stdout.write("\n")
-                    print '</div>'
+                    print '</span>'
 
                 # GitHub Fork Button
                 if page.get("github", "") != "":
-                    print '<div id="github">'
+                    print '<span id="github">'
                     sys.stdout.write('<a href="')
                     sys.stdout.write(page.github)
                     sys.stdout.write('" class="gitforked-button gitforked-forks gitforked-watchers">Fork</a>')
                     sys.stdout.write("\n")
-                    print '</div>'
+                    print '</span>'
             %-->
-
-            {{ __content__ }}
 
         <!--%
         if page.get("print", "false") == "true":
-            print """<script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if('https:' == document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-print-icon.gif" width="16" height="15" alt="Print Friendly Version of this page" />Print <img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-pdf-icon.gif" width="12" height="12" alt="Get a PDF version of this webpage" />PDF</a>"""
+            print """<div id="print"><script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if('https:' == document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-print-icon.gif" width="16" height="15" alt="Print Friendly Version of this page" />Print <img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-pdf-icon.gif" width="12" height="12" alt="Get a PDF version of this webpage" />PDF</a></div>"""
 
         if page.get("comments", "false") == "true":
             print '<div id="disqus_thread"></div>'

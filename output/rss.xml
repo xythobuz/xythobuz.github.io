@@ -6,10 +6,22 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Sun, 14 Apr 2013 09:05:25 -0000</pubDate>
-<lastBuildDate>Sun, 14 Apr 2013 09:05:25 -0000</lastBuildDate>
+<pubDate>Thu, 18 Apr 2013 21:26:41 -0000</pubDate>
+<lastBuildDate>Thu, 18 Apr 2013 21:26:41 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>Abi Pruefungen</title>
+    <link>http://www.xythobuz.de/2013_04_17_abi.html</link>
+    <description>&lt;h2&gt;Abi Pruefungen&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at April 17, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Ahhh... Das war's, alle Abi Prüfungen sind geschrieben. Und es lief überall besser als erwartet. In diesem Sinne:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;Party Hard&quot; src=&quot;http://www.xythobuz.de/img/party1.gif&quot; /&gt;
+&lt;img alt=&quot;Party Harder&quot; src=&quot;http://www.xythobuz.de/img/party2.gif&quot; /&gt;&lt;/p&gt;</description>
+    <pubDate>Wed, 17 Apr 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_04_17_abi.html</guid>
+</item>
 
 <item>
     <title>RSS Probleme</title>
@@ -114,18 +126,6 @@
 &lt;a href=&quot;http://www.xythobuz.de/img/xyCopterNew.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopterNew_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Tue, 05 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_05_graphview.html</guid>
-</item>
-
-<item>
-    <title>xyCopter Android App</title>
-    <link>http://www.xythobuz.de/2013_02_25_android.html</link>
-    <description>&lt;h2&gt;xyCopter Android App&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at February 25, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Die erste Version meiner Quadrocopter Fernsteuerungs App für Android ist fertig und funktioniert soweit. Hier ein Screenshot:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/xyCopter.png&quot;&gt;&lt;img alt=&quot;xyCopter Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopter_small.png&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;Und natürlich auch die &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter-1.0.apk?raw=true&quot;&gt;unsignierte APK zum Download&lt;/a&gt;...&lt;/p&gt;</description>
-    <pubDate>Mon, 25 Feb 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_02_25_android.html</guid>
 </item>
 
 </channel>

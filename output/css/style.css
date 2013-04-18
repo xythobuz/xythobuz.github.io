@@ -55,35 +55,23 @@ a:hover {
 }
 
 #flattr {
-    padding-right: 1.5em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    float: right;
-    clear: both;
+    padding: 1em;
 }
 
 #twitter {
-    padding-right: 1.5em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    float: right;
-    clear: both;
+    padding: 1em;
 }
 
 #reddit {
-    padding-right: 1.5em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    float: right;
-    clear: both;
+    padding: 1em;
 }
 
 #github {
-    padding-right: 3em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    float: right;
-    clear: both;
+    padding: 1em;
+}
+
+#print {
+    padding: 1em;
 }
 
 div#lang {
@@ -207,6 +195,7 @@ li.recentList:before {
     bottom: 0px;
     left: 30px;
     max-width: 20%;
+    max-height: 50%;
 }
 
 #walter {
@@ -214,6 +203,7 @@ li.recentList:before {
     bottom: 0px;
     right: 30px;
     max-width: 20%;
+    max-height: 50%;
 }
 
 #dude:hover {
