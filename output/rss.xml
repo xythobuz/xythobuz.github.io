@@ -6,10 +6,21 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Thu, 18 Apr 2013 21:26:41 -0000</pubDate>
-<lastBuildDate>Thu, 18 Apr 2013 21:26:41 -0000</lastBuildDate>
+<pubDate>Fri, 19 Apr 2013 07:19:04 -0000</pubDate>
+<lastBuildDate>Fri, 19 Apr 2013 07:19:04 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>Just Dance</title>
+    <link>http://www.xythobuz.de/2013_04_19_ekstasie.html</link>
+    <description>&lt;h2&gt;Just Dance&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at April 19, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Aww yiss, teh feelz!&lt;/p&gt;
+&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;http://www.youtube-nocookie.com/embed/l0mmVPV4w7c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    <pubDate>Fri, 19 Apr 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_04_19_ekstasie.html</guid>
+</item>
 
 <item>
     <title>Abi Pruefungen</title>
@@ -115,17 +126,6 @@
 &lt;p&gt;Allerdings funktioniert Dropbox Integration und OpenSource nicht so wirklich... Man muss sich also eine &lt;a href=&quot;https://www.dropbox.com/developers/apps&quot;&gt;eigene App bei Dropbox registrieren&lt;/a&gt; und den Key und das Secret dann im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/AndroidManifest.xml&quot;&gt;Manifest&lt;/a&gt; und im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/src/org/xythobuz/xycopter/MainActivity.java&quot;&gt;Code&lt;/a&gt; eintragen...&lt;/p&gt;</description>
     <pubDate>Sun, 10 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_10_yasab.html</guid>
-</item>
-
-<item>
-    <title>xyCopter mit GraphView</title>
-    <link>http://www.xythobuz.de/2013_03_05_graphview.html</link>
-    <description>&lt;h2&gt;xyCopter mit GraphView&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at March 05, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Jetzt hab ich &lt;a href=&quot;https://github.com/Lauszus/GraphView&quot;&gt;GraphView&lt;/a&gt; in xyCopter eingebaut:&lt;br /&gt;
-&lt;a href=&quot;http://www.xythobuz.de/img/xyCopterNew.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopterNew_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-    <pubDate>Tue, 05 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_05_graphview.html</guid>
 </item>
 
 </channel>
