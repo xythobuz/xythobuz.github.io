@@ -6,10 +6,21 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Fri, 19 Apr 2013 07:19:04 -0000</pubDate>
-<lastBuildDate>Fri, 19 Apr 2013 07:19:04 -0000</lastBuildDate>
+<pubDate>Tue, 23 Apr 2013 19:17:58 -0000</pubDate>
+<lastBuildDate>Tue, 23 Apr 2013 19:17:58 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>Just Dance</title>
+    <link>http://www.xythobuz.de/2013_04_23_pad.html</link>
+    <description>&lt;h2&gt;Just Dance&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at April 23, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Och Mensch. Jetzt hab ich tatsächlich ein Pad auf einem meiner Motortreiber abgerissen. So eine scheiße. Hoffentlich kann ich das noch irgendwie retten, aber da das eine 4-lagige Leiterplatte ist, stehen die Chancen eher schlecht...&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/padTot.jpg&quot;&gt;&lt;img alt=&quot;Photo of damaged Pad&quot; src=&quot;http://www.xythobuz.de/img/padTot_small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    <pubDate>Tue, 23 Apr 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_04_23_pad.html</guid>
+</item>
 
 <item>
     <title>Just Dance</title>
@@ -114,18 +125,6 @@
 &lt;a href=&quot;http://www.xythobuz.de/img/quadRig3.jpg&quot;&gt;&lt;img alt=&quot;Foto 3&quot; src=&quot;http://www.xythobuz.de/img/quadRig3_small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Tue, 12 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_12_test_rig.html</guid>
-</item>
-
-<item>
-    <title>xyCopter loves YASAB</title>
-    <link>http://www.xythobuz.de/2013_03_10_yasab.html</link>
-    <description>&lt;h2&gt;xyCopter loves YASAB&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at March 10, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Jetzt hat meine xyCopter App eine YASAB Implementation. So kann man per Bluetooth die Firmware des Quadrocopters vom Tablet aus neu flashen. Und woher hat die App das Firmware Hexfile? Aus Dropbox! Wenn das mal nicht geil ist... :D&lt;/p&gt; &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/xyCopterFirmware.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopterFirmware_small.png&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;Allerdings funktioniert Dropbox Integration und OpenSource nicht so wirklich... Man muss sich also eine &lt;a href=&quot;https://www.dropbox.com/developers/apps&quot;&gt;eigene App bei Dropbox registrieren&lt;/a&gt; und den Key und das Secret dann im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/AndroidManifest.xml&quot;&gt;Manifest&lt;/a&gt; und im &lt;a href=&quot;https://github.com/xythobuz/xyControl/blob/master/tools/xyCopter/src/org/xythobuz/xycopter/MainActivity.java&quot;&gt;Code&lt;/a&gt; eintragen...&lt;/p&gt;</description>
-    <pubDate>Sun, 10 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_10_yasab.html</guid>
 </item>
 
 </channel>
