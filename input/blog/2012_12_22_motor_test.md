@@ -16,5 +16,6 @@ print "*Posted at %s.*" % date
 xyControl ist fertig bestückt und funktioniert (größtenteils)! Also konnte ich auch gleich den Motor sowie seinen Treiber [testen][1]:
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/GxKMCVwqaKk" frameborder="0" allowfullscreen></iframe>
+[`Youtube Direktlink`](http://www.youtube.com/watch?v=GxKMCVwqaKk)
 
  [1]: http://youtu.be/GxKMCVwqaKk

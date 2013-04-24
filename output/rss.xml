@@ -6,8 +6,8 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Wed, 24 Apr 2013 15:01:59 -0000</pubDate>
-<lastBuildDate>Wed, 24 Apr 2013 15:01:59 -0000</lastBuildDate>
+<pubDate>Wed, 24 Apr 2013 15:24:17 -0000</pubDate>
+<lastBuildDate>Wed, 24 Apr 2013 15:24:17 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
 
@@ -38,7 +38,9 @@
     <description>&lt;h2&gt;Just Dance&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at April 19, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Aww yiss, teh feelz!&lt;/p&gt;
-&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;http://www.youtube-nocookie.com/embed/l0mmVPV4w7c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;http://www.youtube-nocookie.com/embed/l0mmVPV4w7c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=l0mmVPV4w7c&quot;&gt;&lt;code&gt;Youtube Direktlink&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Fri, 19 Apr 2013 10:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_04_19_ekstasie.html</guid>
 </item>
@@ -119,7 +121,9 @@
     <description>&lt;h2&gt;Quadrocopter Test Rig Video&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Posted at March 13, 2013.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Ja, das ist alles ganz schön wackelig. Jetzt hab ich mehr Gewicht drauf. Und die Parameter find ich irgendwann auch noch :)&lt;/p&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube-nocookie.com/embed/b5MhLgDhQ2c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube-nocookie.com/embed/b5MhLgDhQ2c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=b5MhLgDhQ2c&quot;&gt;&lt;code&gt;Youtube Direktlink&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Wed, 13 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_13_test_rig.html</guid>
 </item>

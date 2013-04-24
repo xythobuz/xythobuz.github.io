@@ -16,7 +16,8 @@ print: true
 
 Get the [current Codebase as Zip][1].
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/czxCxTBSgHM?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/czxCxTBSgHM" frameborder="0" allowfullscreen></iframe>
+[`Youtube Link`](http://www.youtube.com/watch?v=czxCxTBSgHM)
 
 My friends Max (<hutattedonmyarm@me.com>) and Felix built this single-color 8x8x8 LED Cube with me. On this page, you can get the Software as well as Schematics and the PCB Layout licensed under the GPLv3. Have fun!
 
@@ -106,6 +107,7 @@ lang: de
 Downloade die [aktuelle Codebase als Zip][1].
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/czxCxTBSgHM?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+[`Youtube Direktlink`](http://www.youtube.com/watch?v=czxCxTBSgHM)
 
 Als Schulprojekt und für den Explore-IT Wettbewerb von SAP in Markdorf haben meine zwei Teamkollegen, Max <hutattedonmyarm@me.com> und Felix, zusammen mit mir diesen einfarbigen 8x8x8 LED Cube gebaut. Für Interessierte hier alle Software sowie Schaltplan und Boardlayout unter der GPLv3. Viel Freude damit.
 
