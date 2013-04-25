@@ -6,8 +6,16 @@ if (isset($_GET['p'])) {
         $_GET['p'] .= EN;
     }
     switch($_GET['p']) {
+        case "blog":
+            $loc = "/blog.de.html";
+            break;
+
         case "blogEN":
             $loc = "/blog.html";
+            break;
+
+        case "kontakt":
+            $loc = "/contact.de.html";
             break;
 
         case "kontaktEN":
