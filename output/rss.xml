@@ -6,10 +6,22 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Thu, 25 Apr 2013 21:51:05 -0000</pubDate>
-<lastBuildDate>Thu, 25 Apr 2013 21:51:05 -0000</lastBuildDate>
+<pubDate>Fri, 26 Apr 2013 13:24:07 -0000</pubDate>
+<lastBuildDate>Fri, 26 Apr 2013 13:24:07 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>iPhone Linse</title>
+    <link>http://www.xythobuz.de/2013_04_26_iphone_lens.html</link>
+    <description>&lt;h2&gt;iPhone Linse&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at April 26, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Gerade kam &lt;a href=&quot;http://www.amazon.de/gp/product/B006YLD290/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1638&amp;amp;creative=19454&amp;amp;creativeASIN=B006YLD290&amp;amp;linkCode=as2&amp;amp;tag=xythobuzorg-21&quot;&gt;diese&lt;/a&gt; (Amazon Affiliate Link!) Linse fürs iPhone bei mir an. Für das Geld beschwer ich mich ja überhaupt nicht, aber auch so lassen sich die Bilder sehen. Funktioniert entweder als Weitwinkel- (zusammengeschraubt) oder als Makrolinse (auseinandergeschraubt). Hält magnetisch fest, man muss also nen kleinen Metallring um die Kamera kleben.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/lens1.jpg&quot;&gt;&lt;img alt=&quot;Macro&quot; src=&quot;http://www.xythobuz.de/img/lens1_small.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://www.xythobuz.de/img/lens2.jpg&quot;&gt;&lt;img alt=&quot;Wide&quot; src=&quot;http://www.xythobuz.de/img/lens2_small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    <pubDate>Fri, 26 Apr 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_04_26_iphone_lens.html</guid>
+</item>
 
 <item>
     <title>Softwareverrottung</title>
@@ -113,19 +125,6 @@
 &lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/xyCopterOsci.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopterOsci_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Sat, 16 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_16_pid.html</guid>
-</item>
-
-<item>
-    <title>Quadrocopter Test Rig Video</title>
-    <link>http://www.xythobuz.de/2013_03_13_test_rig.html</link>
-    <description>&lt;h2&gt;Quadrocopter Test Rig Video&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at March 13, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Ja, das ist alles ganz schön wackelig. Jetzt hab ich mehr Gewicht drauf. Und die Parameter find ich irgendwann auch noch :)&lt;/p&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube-nocookie.com/embed/b5MhLgDhQ2c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=b5MhLgDhQ2c&quot;&gt;&lt;code&gt;Youtube Direktlink&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;</description>
-    <pubDate>Wed, 13 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_13_test_rig.html</guid>
 </item>
 
 </channel>
