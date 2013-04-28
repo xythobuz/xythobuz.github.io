@@ -42,8 +42,24 @@ https://github.com/xythobuz/avrSerial
         <div class="content">
 
             <h1>AVR Serial Library</h1>
-<p>Die avrSerial Library ermöglicht problemlos die serielle Kommunikation für AVR Prozessoren. Unterstützt werden momentan folgende AtMega Typen: 8, 16, 32, 323, 640, 1280, 1281, 2560, 2561, 8515, 8535. Es können jedoch problemlos weitere Prozessoren hinzugefügt werden. Dafür müssen nur die Registernamen aus dem Datenblatt in die Header Datei eingefügt werden.</p>
+<p>Die avrSerial Library ermöglicht Interruptgesteuerte UART kommunikation mit allen verfügbaren UART Modulen. Jedes Modul hat einen eigenen Sende- und Empfangspuffer. XON/XOFF Flow Control kann auf Empfangsseite aktiviert werden. Unterstützt werden momentan folgende AtMega Typen:</p>
+<pre><code>AtMega8
+AtMega16
+AtMega32
+AtMega8515
+AtMega8535
+AtMega323
+AtMega2560
+AtMega2561
+AtMega1280
+AtMega1281
+AtMega640
+AtMega168
+</code></pre>
+<p>Es können jedoch problemlos weitere Prozessoren hinzugefügt werden. Dafür müssen nur die Registernamen aus dem Datenblatt in die Header Datei eingefügt werden.</p>
 <p><a href="https://github.com/xythobuz/avrSerial">Code auf GitHub</a></p>
+<p><a href="http://www.xythobuz.org/avrserial/">Doxygen Dokumentation (HTML)</a></p>
+<p><a href="http://www.xythobuz.org/avrserial.pdf">Doxygen Dokumentation (PDF)</a></p>
 
             <span id="flattr">
 <a class="FlattrButton" href="http://www.xythobuz.de/avrserial.de.html" title="AVR Serial Library">Hardware UART library for many AVR MCUs</a>
