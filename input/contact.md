@@ -24,10 +24,13 @@ PSN: xythobuz
 
 Youtube: [xythobuz][4]
 
+Vimeo: [xythobuz][5]
+
  [1]: files/xythobuz.gpg
  [2]: https://twitter.com/xythobuz
  [3]: https://www.facebook.com/vballert
  [4]: http://www.youtube.com/user/xythobuz
+ [5]: https://vimeo.com/xythobuz
 
 lang: de
 
@@ -51,7 +54,10 @@ PSN: xythobuz
 
 Youtube: [xythobuz][4]
 
+Vimeo: [xythobuz][5]
+
  [1]: files/xythobuz.gpg
  [2]: https://twitter.com/xythobuz
  [3]: https://www.facebook.com/vballert
  [4]: http://www.youtube.com/user/xythobuz
+ [5]: https://vimeo.com/xythobuz
