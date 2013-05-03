@@ -126,7 +126,7 @@ def hook_preconvert_sitemap():
     date = datetime.strftime(datetime.now(), "%Y-%m-%d")
     urls = []
     for p in pages:
-        urls.append(_SITEMAP_URL % (options.base_url.rstrip('/'), p.url, date, p.get("changefreq", "monthly"), p.get("priority", "0.5")))
+        urls.append(_SITEMAP_URL % (BASE_URL, p.url, date, p.get("changefreq", "monthly"), p.get("priority", "0.5")))
     fname = os.path.join(options.project, "output", "sitemap.xml")
     fp = open(fname, 'w')
     fp.write(_SITEMAP % "".join(urls))
