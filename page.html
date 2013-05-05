@@ -43,10 +43,10 @@
         <h2>{{ page.get("funny", htmlspecialchars(page["title"])) }}</h2>
     </div>
     <!--%
-        # if len("".join(["%s" % lang for lang in page["lang_links"]])) > 2:
-        print '<div id="lang"><span id="lang2">Translation: '
-        print " | ".join(["<a href='%s'>%s</a>" % (url, lang) for lang, url in page["lang_links"].iteritems()])
-        print "</span></div>"
+        if len("".join(["%s" % lang for lang in page["lang_links"]])) > 2:
+            print '<div id="lang"><span id="lang2">Translation: '
+            print " | ".join(["<a href='%s'>%s</a>" % (url, lang) for lang, url in page["lang_links"].iteritems()])
+            print "</span></div>"
     %-->
     <div class="colmask leftmenu"><div class="colleft">
         <div class="content">
