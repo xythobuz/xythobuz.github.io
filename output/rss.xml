@@ -6,8 +6,8 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Sun, 05 May 2013 15:44:16 -0000</pubDate>
-<lastBuildDate>Sun, 05 May 2013 15:44:16 -0000</lastBuildDate>
+<pubDate>Sun, 05 May 2013 21:15:55 -0000</pubDate>
+<lastBuildDate>Sun, 05 May 2013 21:15:55 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
 
@@ -35,7 +35,9 @@ sudo apt-get dist-upgrade
 reboot
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Ich glaube, das hätte auch soweit problemlos funktioniert, wäre da nicht Dovecot. Das hatte ich vorher nämlich aus den &lt;a href=&quot;http://packages.debian.org/de/squeeze-backports/dovecot-core&quot;&gt;Squeeze-Backports&lt;/a&gt; installiert, jetzt kommt es aber aus der &lt;a href=&quot;http://packages.debian.org/de/wheezy/dovecot-core&quot;&gt;normalen Distribution&lt;/a&gt;. Das hat jetzt irgendwie die gesamte Dovecot + Postfix Konfiguration zerschossen. Mittlerweile hab ich versucht, die Authentifizierung durch LDAP zu lösen, das wollte aber auch gar nicht funktionieren.&lt;/p&gt;
-&lt;p&gt;Ergebniss von all dem ist also, das ich keine Mails mehr @xythobuz.de oder @xythobuz.com oder @xythobuz.org oder @sapcube.de empfangen kann. Blöd, aber auch kein Weltuntergang... :)&lt;/p&gt;</description>
+&lt;p&gt;Ergebniss von all dem ist also, das ich keine Mails mehr @xythobuz.de oder @xythobuz.com oder @xythobuz.org oder @sapcube.de empfangen kann. Blöd, aber auch kein Weltuntergang... :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Jetzt funktioniert der Mail Empfang und Versand wieder. Grund für die ganze Aufregung war, daß Dovecot seine Config nun nicht mehr nur in einer Datei stehen hat. Da alles sehr ausführlich kommentiert ist, war die Reparatur aber auch nur ein wenig Copy &amp;amp; Paste...&lt;/p&gt;</description>
     <pubDate>Sun, 05 May 2013 10:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_05_05_debian.html</guid>
 </item>
