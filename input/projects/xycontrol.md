@@ -12,6 +12,11 @@ print: true
 
 ![Logo][logo]
 
+### Current Progress
+
+<iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/b5MhLgDhQ2c" frameborder="0" allowfullscreen></iframe>
+[`Youtube Link`](http://www.youtube.com/watch?v=b5MhLgDhQ2c)
+
 [xyControl][gh] is a Quadrocopter Flight Controller based on Atmels Atmega2560 microcontroller.
 It features 512KB SRAM on-board, using the external memory interface of this processor.
 Also included is a switched power supply as well as a USB connection to communicate with and program the target.
