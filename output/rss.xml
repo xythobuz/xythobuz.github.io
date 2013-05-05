@@ -6,10 +6,39 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Fri, 03 May 2013 21:49:21 -0000</pubDate>
-<lastBuildDate>Fri, 03 May 2013 21:49:21 -0000</lastBuildDate>
+<pubDate>Sun, 05 May 2013 15:44:16 -0000</pubDate>
+<lastBuildDate>Sun, 05 May 2013 15:44:16 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>Debian Update</title>
+    <link>http://www.xythobuz.de/2013_05_05_debian.html</link>
+    <description>&lt;h2&gt;Debian Update&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at May 05, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Heute wurde ja Debian 7.0 Wheezy &lt;a href=&quot;http://www.debian.org/News/2013/20130504&quot;&gt;veröffentlicht&lt;/a&gt;. Da mein zweiter Vorname &lt;em&gt;Gefahr&lt;/em&gt; lautet, habe ich auch sogleich das Squeeze auf diesem Server upgegradet :)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Squeeze -&amp;gt; Wheezy
+sudo vim /etc/apt/sources.list
+
+sudo apt-get update
+sudo apt-get upgrade
+
+dpkg -l | grep linux-image
+# Meta Packet
+sudo apt-get install linux-image-amd64
+
+# Zur Sicherheit
+sudo update-grup
+
+sudo apt-get install udev
+sudo apt-get dist-upgrade
+reboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ich glaube, das hätte auch soweit problemlos funktioniert, wäre da nicht Dovecot. Das hatte ich vorher nämlich aus den &lt;a href=&quot;http://packages.debian.org/de/squeeze-backports/dovecot-core&quot;&gt;Squeeze-Backports&lt;/a&gt; installiert, jetzt kommt es aber aus der &lt;a href=&quot;http://packages.debian.org/de/wheezy/dovecot-core&quot;&gt;normalen Distribution&lt;/a&gt;. Das hat jetzt irgendwie die gesamte Dovecot + Postfix Konfiguration zerschossen. Mittlerweile hab ich versucht, die Authentifizierung durch LDAP zu lösen, das wollte aber auch gar nicht funktionieren.&lt;/p&gt;
+&lt;p&gt;Ergebniss von all dem ist also, das ich keine Mails mehr @xythobuz.de oder @xythobuz.com oder @xythobuz.org oder @sapcube.de empfangen kann. Blöd, aber auch kein Weltuntergang... :)&lt;/p&gt;</description>
+    <pubDate>Sun, 05 May 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_05_05_debian.html</guid>
+</item>
 
 <item>
     <title>iPhone Linse</title>
@@ -114,17 +143,6 @@
 &lt;/ul&gt;</description>
     <pubDate>Mon, 25 Mar 2013 11:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_03_25_doxygen.html</guid>
-</item>
-
-<item>
-    <title>xyCopter PID-Parameter</title>
-    <link>http://www.xythobuz.de/2013_03_16_pid.html</link>
-    <description>&lt;h2&gt;xyCopter PID-Parameter&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at March 16, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;So, jetzt fehlen hoffentlich nur noch die richtigen PID Parameter um den Quadrocopter in der Schwebe zu halten...&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/xyCopterOsci.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyCopterOsci_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-    <pubDate>Sat, 16 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_16_pid.html</guid>
 </item>
 
 </channel>

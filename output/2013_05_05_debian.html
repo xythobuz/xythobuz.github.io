@@ -13,18 +13,7 @@
     <link rel="alternate" type="application/rss+xml" title="Blog" href="/rss.xml">
     <link rel="stylesheet" href="/css/gh-fork-ribbon.css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <script type='text/javascript'>
-/* <![CDATA[ */
-(function() {
-var s = document.createElement('script');
-var t = document.getElementsByTagName('script')[0];
-s.type = 'text/javascript';
-s.async = true;
-s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=xythobuz&category=text';
-t.parentNode.insertBefore(s, t);
-})();
-/* ]]> */
-</script>
+    
 </head>
 <body onload="sh_highlightDocument('/js/sh/', '.min.js');">
     
@@ -33,22 +22,35 @@ t.parentNode.insertBefore(s, t);
         <h2>Blog</h2>
     </div>
     <div id="lang"><span id="lang2">Translation: 
-<a href='2013_03_16_pid.html'>en</a>
+<a href='2013_05_05_debian.html'>en</a>
 </span></div>
     <div class="colmask leftmenu"><div class="colleft">
         <div class="content">
 
-            <h2>xyCopter PID-Parameter</h2>
-<p><em>Posted at March 16, 2013.</em></p>
-<p>So, jetzt fehlen hoffentlich nur noch die richtigen PID Parameter um den Quadrocopter in der Schwebe zu halten...</p>
-<p><a href="/img/xyCopterOsci.png"><img alt="Screenshot" src="/img/xyCopterOsci_small.png" /></a></p>
+            <h2>Debian Update</h2>
+<p><em>Posted at May 05, 2013.</em></p>
+<p>Heute wurde ja Debian 7.0 Wheezy <a href="http://www.debian.org/News/2013/20130504">veröffentlicht</a>. Da mein zweiter Vorname <em>Gefahr</em> lautet, habe ich auch sogleich das Squeeze auf diesem Server upgegradet :)</p>
+<pre><code># Squeeze -&gt; Wheezy
+sudo vim /etc/apt/sources.list
 
-            <span id="flattr">
-<a class="FlattrButton" href="http://www.xythobuz.de/2013_03_16_pid.html" title="Blog">Blog</a>
-</span>
-<span id="twitter">
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="xythobuz" data-dnt="true" data-related="xythobuz" data-count="vertical">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</span>
+sudo apt-get update
+sudo apt-get upgrade
+
+dpkg -l | grep linux-image
+# Meta Packet
+sudo apt-get install linux-image-amd64
+
+# Zur Sicherheit
+sudo update-grup
+
+sudo apt-get install udev
+sudo apt-get dist-upgrade
+reboot
+</code></pre>
+<p>Ich glaube, das hätte auch soweit problemlos funktioniert, wäre da nicht Dovecot. Das hatte ich vorher nämlich aus den <a href="http://packages.debian.org/de/squeeze-backports/dovecot-core">Squeeze-Backports</a> installiert, jetzt kommt es aber aus der <a href="http://packages.debian.org/de/wheezy/dovecot-core">normalen Distribution</a>. Das hat jetzt irgendwie die gesamte Dovecot + Postfix Konfiguration zerschossen. Mittlerweile hab ich versucht, die Authentifizierung durch LDAP zu lösen, das wollte aber auch gar nicht funktionieren.</p>
+<p>Ergebniss von all dem ist also, das ich keine Mails mehr @xythobuz.de oder @xythobuz.com oder @xythobuz.org oder @sapcube.de empfangen kann. Blöd, aber auch kein Weltuntergang... :)</p>
+
+            
 
         <div id="disqus_thread"></div>
 <script type="text/javascript">
