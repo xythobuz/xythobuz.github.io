@@ -31,10 +31,10 @@ The Board can be powered from an external stable 5V supply, USB or 7V or more, v
 
 Three tasks are controlling the Quadrocopter Orientation in Space.
 
-+ The Orientation Task reads the Gyroscope and Accelerometer and calculates the current Roll and Pitch angles. They are stored in the global struct "orientation".
-+ The PID Task is then feeding these angles into two PID controllers. Their output is then used by...
-+ The Set Task, which calculates the motor speeds and gives them to...
-+ The motor task, which sends the new values via TWI to the motor controllers.
++ The [Orientation Task][orient] reads the Gyroscope and Accelerometer and calculates the current Roll and Pitch angles. They are stored in the global struct "orientation".
++ The [PID Task][pid] is then feeding these angles into two PID controllers. Their output is then used by...
++ The [Set Task][set], which calculates the motor speeds and gives them to...
++ The [motor task][motor], which sends the new values via TWI to the motor controllers.
 
 # Supported Hardware
 
@@ -44,7 +44,7 @@ Three tasks are controlling the Quadrocopter Orientation in Space.
 + Brushless Motor Driver [BL-Ctrl V1.2][ctrl] with eg. the [Robbe Roxxy Outrunner 2824-34][mot] Brushless Motor.
 + BTM-222 Bluetooth UART Bridge ([PCB][bt])
 
-## External Memory (xmem.h)
+## External Memory ([xmem.h][xmem])
 
 The external memory consists of a 512Kx8 SRAM, bank-switched onto the 16bit avr address space.
 This gives us 8 memory banks, consisting of 56KB. All memory from 0x0000 to 0x21FF is the AVRs internal memory. The memory banks are switched into 0x2200 to 0xFFFF.
@@ -52,13 +52,13 @@ This gives us 8 banks with 56KB each, resulting in 448KB external RAM.
 
 The data and bss memory sections, as well as the Stack are located in the internal RAM. The external RAM is used only for dynamically allocated memory.
 
-## Orientation Calculation (orientation.h)
+## Orientation Calculation ([orientation.h][orient])
 
 Calculates the current angles of the platform, using Gyroscope and Accelerometer Data with a Kalman Filter. It is using this slightly modified [Kalman Filter Implementation][kalman] by Linus Helgesson.
 
 # PC and Android Tools
 
-You can find some PC Software in the 'tools' directory. Each one should be accompanied by it's own Readme file.
+You can find some PC Software in the [tools][tools] directory. Each one should be accompanied by it's own Readme file.
 
 ## UART-Flight Status Packet Format
 
@@ -93,8 +93,14 @@ Everything else is released under a BSD-Style license. See the [accompanying COP
  [pololu]: http://www.pololu.com/catalog/product/1268
  [ctrl]: http://www.mikrokopter.de/ucwiki/en/BL-Ctrl_V1.2
  [mot]: http://www.conrad.de/ce/de/product/231867
- [bt]: http://xythobuz.org/index.php?p=bt
+ [bt]: http://xythobuz.de/bluetooth.html
  [kalman]: http://www.linushelgesson.se/2012/04/pitch-and-roll-estimating-kalman-filter-for-stabilizing-quadrocopters/
  [fleury]: http://homepage.hispeed.ch/peterfleury/avr-software.html
  [gpl]: http://www.gnu.org/licenses/gpl.html
  [bsd]: https://github.com/xythobuz/xyControl/blob/master/COPYING
+ [xmem]: https://github.com/xythobuz/xyControl/blob/master/include/xmem.h
+ [orient]: https://github.com/xythobuz/xyControl/blob/master/include/orientation.h
+ [tools]: https://github.com/xythobuz/xyControl/tree/master/tools
+ [pid]: https://github.com/xythobuz/xyControl/blob/master/include/pid.h
+ [set]: https://github.com/xythobuz/xyControl/blob/master/include/set.h
+ [motor]: https://github.com/xythobuz/xyControl/blob/master/include/motor.h
