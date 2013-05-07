@@ -3,7 +3,7 @@
 $loc = 'index.de.html';
 if (isset($_GET['p'])) {
     if (isset($_GET['lang'])) {
-        $_GET['p'] .= EN;
+        $_GET['p'] .= 'EN';
     }
     switch($_GET['p']) {
         case "blog":

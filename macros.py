@@ -82,7 +82,7 @@ def hook_preconvert_compat():
     fp.write("$loc = 'index.de.html';\n")
     fp.write("if (isset($_GET['p'])) {\n")
     fp.write("    if (isset($_GET['lang'])) {\n")
-    fp.write("        $_GET['p'] .= EN;\n")
+    fp.write("        $_GET['p'] .= 'EN';\n")
     fp.write("    }\n")
     fp.write("    switch($_GET['p']) {\n")
     for p in pages:
