@@ -124,6 +124,8 @@
             print '</script>'
             print '<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>'
             print '<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>'
+        elif page.get("comments", "false") != "false":
+            print '<p><a href="%s">Head over here to discuss this article!</a></p>' % page.get("comments", "false")
         %-->
 
         </div>
