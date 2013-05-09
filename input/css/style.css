@@ -45,13 +45,16 @@ a:hover {
 
 #header h1 {
     display: inline;
-    padding-right: 0.5em;
     font-size: 3.5em;
 }
 
 #header h2 {
     display: inline;
     font-size: 2em;
+}
+
+#header p {
+    display: inline;
 }
 
 #flattr {
