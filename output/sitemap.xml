@@ -219,6 +219,13 @@
 </url>
 
 <url>
+    <loc>http://www.xythobuz.de/2013_05_09_itunes.html</loc>
+    <lastmod>2013-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>http://www.xythobuz.de/avrnetstack.html</loc>
     <lastmod>2013-05-09</lastmod>
     <changefreq>monthly</changefreq>

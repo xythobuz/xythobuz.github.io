@@ -13,18 +13,7 @@
     <link rel="alternate" type="application/rss+xml" title="Blog" href="/rss.xml">
     <link rel="stylesheet" href="/css/gh-fork-ribbon.css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <script type='text/javascript'>
-/* <![CDATA[ */
-(function() {
-var s = document.createElement('script');
-var t = document.getElementsByTagName('script')[0];
-s.type = 'text/javascript';
-s.async = true;
-s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=xythobuz&category=text';
-t.parentNode.insertBefore(s, t);
-})();
-/* ]]> */
-</script>
+    
 </head>
 <body onload="sh_highlightDocument('/js/sh/', '.min.js');">
     
@@ -37,18 +26,28 @@ t.parentNode.insertBefore(s, t);
     <div class="colmask leftmenu"><div class="colleft">
         <div class="content">
 
-            <h2>Docking in Kerbal Orbit</h2>
-<p><em>Posted at December 22, 2012.</em></p>
-<p>Yay! My Kerbal Space Station is beginning to form:</p>
-<p><a href="/img/kss1.png"><img alt="Screenshot 1" src="/img/kss1_small.png" /></a>
-<a href="/img/kss2.png"><img alt="Screenshot 2" src="/img/kss2_small.png" /></a></p>
+            <h2>Musikgeschmack</h2>
+<p><em>Posted at May 09, 2013.</em></p>
+<p>Ich könnte mir ja jetzt irgend ne seltsame, künstlerisch anmutende Begründung ausdenken, um das zu rechtfertigen. Eigentlich war mir aber nur ein bisschen langweilig. Und außerdem, wofür hat man denn heutzutage so viel Rechenleistung überall.</p>
+<p>In diesem Sinne kann man sich jetzt anschauen, <a href="http://xythobuz.de/lastmusic">welche Musik ich gerade höre</a>. Erreichbar ist die Seite auch über den Notenschlüssel oben neben der Überschrift.</p>
+<p>Und wie funktioniert das ganze? Auf meinem Rechner laufen, dank <a href="http://projects.tynsoe.org/en/geektool/">GeekTool</a>, einige AppleScripts um unter anderem Song-Informationen auf dem Desktop zu haben. Eines davon ruft jetzt ein Shell Script auf, was ungefähr wie folgt ausschaut:</p>
+<pre class="sh_sh">
+#!/bin/sh
 
-            <span id="flattr">
-<a class="FlattrButton" href="http://www.xythobuz.de/2012_12_22_docking.html" title="Blog">Blog</a>
-</span>
-<span id="twitter">
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="xythobuz" data-dnt="true" data-related="xythobuz" data-count="vertical">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</span>
+lasttrack=`cat /Users/thomas/.lasttrack`
+host=`hostname`
+
+if [ "$1" != "$lasttrack" ]; then
+    if [ "$1" != "" ]; then
+        ssh zaphod "echo \"&lt;html&gt;&lt;head&gt;&lt;meta charset="utf-8" /&gt;&lt;title&gt;Last Song&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;\" &gt; /var/www/lastmusic; echo \"Last song played on &lt;b&gt;${host}&lt;/b&gt; iTunes:\" &gt;&gt; /var/www/lastmusic; echo &gt;&gt; /var/www/lastmusic; echo \"&lt;b&gt;$1&lt;/b&gt; by &lt;b&gt;$2&lt;/b&gt; on the Album &lt;b&gt;$3&lt;/b&gt;\" &gt;&gt; /var/www/lastmusic; echo &gt;&gt; /var/www/lastmusic; echo `date` &gt;&gt; /var/www/lastmusic; echo \"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;\" &gt;&gt; /var/www/lastmusic"
+        echo $1 &gt; /Users/thomas/.lasttrack
+    fi
+fi
+</pre>
+
+<p>Es kriegt also den Songnamen, Interpreten und Albumtitel als Parameter und schreibt per SSH die Seite auf meinem Server neu. Nicht hübsch, funktioniert aber... :D</p>
+
+            
 
         <div id="disqus_thread"></div>
 <script type="text/javascript">

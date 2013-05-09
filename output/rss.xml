@@ -6,10 +6,37 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Thu, 09 May 2013 15:53:21 -0000</pubDate>
-<lastBuildDate>Thu, 09 May 2013 15:53:21 -0000</lastBuildDate>
+<pubDate>Thu, 09 May 2013 17:10:29 -0000</pubDate>
+<lastBuildDate>Thu, 09 May 2013 17:10:29 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>Musikgeschmack</title>
+    <link>http://www.xythobuz.de/2013_05_09_itunes.html</link>
+    <description>&lt;h2&gt;Musikgeschmack&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at May 09, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Ich könnte mir ja jetzt irgend ne seltsame, künstlerisch anmutende Begründung ausdenken, um das zu rechtfertigen. Eigentlich war mir aber nur ein bisschen langweilig. Und außerdem, wofür hat man denn heutzutage so viel Rechenleistung überall.&lt;/p&gt;
+&lt;p&gt;In diesem Sinne kann man sich jetzt anschauen, &lt;a href=&quot;http://xythobuz.de/lastmusic&quot;&gt;welche Musik ich gerade höre&lt;/a&gt;. Erreichbar ist die Seite auch über den Notenschlüssel oben neben der Überschrift.&lt;/p&gt;
+&lt;p&gt;Und wie funktioniert das ganze? Auf meinem Rechner laufen, dank &lt;a href=&quot;http://projects.tynsoe.org/en/geektool/&quot;&gt;GeekTool&lt;/a&gt;, einige AppleScripts um unter anderem Song-Informationen auf dem Desktop zu haben. Eines davon ruft jetzt ein Shell Script auf, was ungefähr wie folgt ausschaut:&lt;/p&gt;
+&lt;pre class=&quot;sh_sh&quot;&gt;
+#!/bin/sh
+
+lasttrack=`cat /Users/thomas/.lasttrack`
+host=`hostname`
+
+if [ &quot;$1&quot; != &quot;$lasttrack&quot; ]; then
+    if [ &quot;$1&quot; != &quot;&quot; ]; then
+        ssh zaphod &quot;echo \&quot;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&quot;utf-8&quot; /&amp;gt;&amp;lt;title&amp;gt;Last Song&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;pre&amp;gt;\&quot; &amp;gt; /var/www/lastmusic; echo \&quot;Last song played on &amp;lt;b&amp;gt;${host}&amp;lt;/b&amp;gt; iTunes:\&quot; &amp;gt;&amp;gt; /var/www/lastmusic; echo &amp;gt;&amp;gt; /var/www/lastmusic; echo \&quot;&amp;lt;b&amp;gt;$1&amp;lt;/b&amp;gt; by &amp;lt;b&amp;gt;$2&amp;lt;/b&amp;gt; on the Album &amp;lt;b&amp;gt;$3&amp;lt;/b&amp;gt;\&quot; &amp;gt;&amp;gt; /var/www/lastmusic; echo &amp;gt;&amp;gt; /var/www/lastmusic; echo `date` &amp;gt;&amp;gt; /var/www/lastmusic; echo \&quot;&amp;lt;/pre&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;\&quot; &amp;gt;&amp;gt; /var/www/lastmusic&quot;
+        echo $1 &amp;gt; /Users/thomas/.lasttrack
+    fi
+fi
+&lt;/pre&gt;
+
+&lt;p&gt;Es kriegt also den Songnamen, Interpreten und Albumtitel als Parameter und schreibt per SSH die Seite auf meinem Server neu. Nicht hübsch, funktioniert aber... :D&lt;/p&gt;</description>
+    <pubDate>Thu, 09 May 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_05_09_itunes.html</guid>
+</item>
 
 <item>
     <title>Debian Update</title>
@@ -131,20 +158,6 @@ reboot
 &lt;p&gt;Außerdem siehst du dann auch schon die neue Webseite, gebaut mit &lt;a href=&quot;https://bitbucket.org/obensonne/poole&quot;&gt;Poole&lt;/a&gt;. Das ist tolle Software!&lt;/p&gt;</description>
     <pubDate>Tue, 02 Apr 2013 10:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_04_02_zaphod.html</guid>
-</item>
-
-<item>
-    <title>xyControl Doxygen Dokumentation</title>
-    <link>http://www.xythobuz.de/2013_03_25_doxygen.html</link>
-    <description>&lt;h2&gt;xyControl Doxygen Dokumentation&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at March 25, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Ich hab jetzt mal eine hübsche Doxygen Dokumentation für die xyControl Firmware angelegt. Kann auch mit &quot;make doc&quot; erstellt werden. Neben HTML wird auch Latex ausgegeben, im Ordner ist ein Makefile um daraus eine PDF zu setzen. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.xythobuz.de/xycontrol/index.html&quot;&gt;HTML Dokumentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.xythobuz.de/xycontrol.pdf&quot;&gt;PDF Dokumentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    <pubDate>Mon, 25 Mar 2013 11:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_03_25_doxygen.html</guid>
 </item>
 
 </channel>
