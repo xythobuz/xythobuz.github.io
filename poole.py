@@ -590,35 +590,6 @@ def build(project, opts):
             fp.write(out)
 
     # -------------------------------------------------------------------------
-    # render mobile HTML pages
-    # -------------------------------------------------------------------------
-
-    with codecs.open(opj(project, "mobile.html"), 'r', opts.input_enc) as fp:
-        skeleton = fp.read()
-
-    for page in pages:
-
-        print("info   : render %s" % re.sub(".html", ".mob.html", page.url))
-
-        # replace expressions and statements in page.html
-        macros["page"] = page
-        macros["__content__"] = page.html
-        out = regx_eval.sub(repl_eval, skeleton)
-        out = regx_exec.sub(repl_exec, out)
-
-        # un-escape escaped python code blocks
-        out = regx_escp.sub(repl_escp, out)
-
-        # make relative links absolute
-        out = regx_rurl.sub(repl_rurl, out)
-
-        # write HTML page
-        fname = page.fname.replace(dir_in, dir_out)
-        fname = re.sub(MKD_PATT, ".mob.html", fname)
-        with codecs.open(fname, 'w', opts.output_enc) as fp:
-            fp.write(out)
-
-    # -------------------------------------------------------------------------
     # remove empty subfolders
     # -------------------------------------------------------------------------
 
