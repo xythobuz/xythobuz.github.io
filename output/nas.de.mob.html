@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>IB-NAS6210 Linux - xythobuz.de</title>
+    <meta name="description" content="Booting your own Linux on an Icybox NAS6210 box" />
+    <meta name="keywords" content="xythobuz" />
+    <link rel="author" href="/xythobuz@xythobuz.de">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script type="text/javascript" src="/js/sh_main.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/sh_bright.min.css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" title="Blog" href="/rss.xml">
+    <link rel="stylesheet" href="/css/gh-fork-ribbon.css" />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+/* <![CDATA[ */
+(function() {
+var s = document.createElement('script');
+var t = document.getElementsByTagName('script')[0];
+s.type = 'text/javascript';
+s.async = true;
+s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=xythobuz&category=text';
+t.parentNode.insertBefore(s, t);
+})();
+/* ]]> */
+</script>
+</head>
+<body onload="sh_highlightDocument('/js/sh/', '.min.js');">
+    
+    <div id="header">
+        <h1>xythobuz.de</h1>
+        <p><a href="http://xythobuz.de/lastmusic">♫</a></p>
+        <h2>Kernel Hacking 101</h2>
+    </div>
+    <div id="lang"><span id="lang2">Translation: 
+<a href='nas.de.html'>de</a> | <a href='nas.html'>en</a>
+</span></div>
+    <div class="colmask leftmenu"><div class="colleft">
+        <div class="content">
+
+            <h1>IB-NAS6210 Linux</h1>
+<p>Diese Anleitung gilt ebenso für den IB-NAS6220. Dieser besitzt 2 HDD Schächte und ein völlig anderes Webinterface. Über dieses ist es möglich, das root Passwort zu ändern (siehe diesen <a href="http://forum.nas-portal.org/showthread.php?12855-Ib-nas6220-b&amp;p=55718&amp;viewfull=1#post55718">Forenbeitrag</a>), was evtl. eine Neuinstallation einer Linux Distribution erübrigt.</p>
+<p>Der <a href="http://www.amazon.de/gp/product/B003DODPGG/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;tag=xythobuzorg-21&amp;linkCode=as2&amp;camp=1638&amp;creative=6742&amp;creativeASIN=B003DODPGG">Icy Box IB-NAS6210</a> (Affiliate Link) hat mit seiner hauseigenen Firmware nur einen beschränkten Funktionsumfang. Es ist kein <a href="http://de.wikipedia.org/wiki/Apple_Filing_Protocol">AFP</a> oder <a href="http://de.wikipedia.org/wiki/Digital_Audio_Access_Protocol">DAAP</a> möglich, was als Mac User von großem Nachteil ist. Deshalb muss Linux her, welches auf der verbauten ARM CPU hervorragend läuft. Es ist zwar bereits ein Linux System installiert, leider ist aber der root User nicht zugänglich.</p>
+<p>Die Basisplattform des NAS6210 bildet die Kirkwood Plattform, welche auch im <a href="http://de.wikipedia.org/wiki/SheevaPlug">SheevaPlug</a> und im <a href="http://open-rd.org/">OpenRD</a> zum Einsatz kommt. Dies erleichtert die Suche nach einer fertigen Linux Distribution.</p>
+<h2>Update</h2>
+<p>Jayare hat mir per E-Mail mitgeteilt, dass er einen Weg gefunden hat, root Zugang zum Installierten Linux System zu bekommen. Dafür folgende Schritte befolgen:</p>
+<ul>
+<li>Das Gerät normal in Betrieb nehmen.</li>
+<li>Einen Administrator Account anlegen oder den vorhandenen Haupt Account nutzen. Im folgenden Beispiel lautet der Benutzername admin.</li>
+<li>Mittels SSH eine Verbindung zum NAS herstellen.</li>
+<li>Benutzername nach folgendem Schema:
+<pre>
+[Benutzername]<em>hipserv2_raidsonic</em>[Produktcode]
+</pre></li>
+<li>In unserem Fall:
+<pre>
+admin_hipserv2_raidsonic_XXXX-XXXX-XXXX-XXXX
+</pre></li>
+<li>Das Passwort ist das, welches beim erstellen des Benutzers angegeben wurde.</li>
+<li>Nun hat man eingeschränkte Zugriffsrechte.</li>
+<li>Der Befehl:
+<pre>
+sudo -E -s
+</pre></li>
+<li>Die erneute Eingabe des Passwortes führt zur Ausgabe einer Fehlermeldung.</li>
+<li>Man hat nun trotzdem root Zugriff.</li>
+</ul>
+<p>Dies ähnelt den Methoden, die bei Netgear und Seagate Geräten zum root Zugriff führen. Vielen Dank dafür, Jayare!</p>
+<h2>Hardware Modifikation</h2>
+<p>Um das Starten einer anderen Linux Distribution über USB oder eSata zu ermöglichen, benötigen wir Zugang zum Bootloader <a href="http://sourceforge.net/projects/u-boot/">Das U-Boot</a>. Dieser gibt beim Booten Statusmeldungen über den internen Seriellen Port des NAS aus und ermöglicht, den Bootprozess zu unterbrechen. Anschliessend kann ein anderer Kernel und eine passende Ramdisk zum Booten ausgewählt werden. Eine bebilderte Anleitung zum aufspüren des Seriellen Ports findet sich, auf Englisch, <a href="http://simon.baatz.info/raidsonic-icy-box-ib-nas6210-my-new-sheevaplug/">hier</a>. Kurz zusammengefasst müssen die hintere Abdeckung und die hinteren Füße weggeschraubt werden, danach lässt sich die Platine mitsamt der Rückwand heraus schieben. Dabei sollte der Festplattenrahmen vorher entfernt worden sein. Unter dem Lüfter befinden sich einige Steckverbindungen auf der Platine. Davon ist eine 4 polige unbelegt. Dies ist der serielle Anschluss. Er arbeitet mit 3,3V Pegeln. Wenn der Stecker an der oberen linken Ecke sitzt, ist die Belegung wie folgt:</p>
+<pre>
+(GND) (TX) (RX) (3V3)
+</pre>
+
+<p>Ein passender Adapter um den Port an den Computer anzuschliessen ist schnell gemacht. Hierzu habe ich einen FT232R auf meine <a href="/ssop28.de.html">DIP Adapterplatine</a> gelötet und wie folgt beschaltet (Klick vergrößert):</p>
+<p><a href="/img/ft232plan.jpg"><img alt="Schaltplan" src="/img/ft232plansmall.jpg" /></a>
+<a href="/img/ft232fertig.jpg"><img alt="Fertiger Adapter" src="/img/ft232fertigsmall.jpg" /></a></p>
+<h2>Software</h2>
+<p>Nun besteht also eine Verbindung zwischen meinem Computer und dem NAS mit 115200bps. Wird letzterer nun gebootet, erscheinen U-Boots Statusmeldungen in meinem Terminal. Früher oder später erscheint ein Countdown. Wird dieser mit dem drücken einer beliebigen Taste unterbrochen, findet man sich in U-Boots Kommandozeile wieder. Hier kann zum Beispiel U-Boots eigenes USB System gestartet werden, damit ein Kernel von einem angeschlossenen USB Stick geladen werden kann. Alternativ kann ein Kernel von einem TFTP Server geladen und gestartet werden. Ausserdem können Umbgebungsvariablen angezeigt, geändert, und im NAND gespeichert werden:</p>
+<pre>
+printenv
+setenv name wert
+saveenv
+</pre>
+
+<p>Zum Starten eines anderen Kernels muss zunächst die Variable "mainlineLinux" auf "yes" gesetzt werden. Anschliessend ändern wir die "arcNumber" auf "2361". Dies gaukelt dem Debian Linux Kernel ein anderes System vor, da es den NAS6210 nicht kennt und deshalb sonst nicht booten will. Die Originale arcNumber lautet 3104. Nun wird noch "ipaddr" auf die gewünschte NAS IP gesetzt und "serverip" auf die IP des Rechners, der im nächsten Schritt einen TFTP Server startet. Geschrieben werden die Änderungen dann mit saveenv.</p>
+<pre>
+setenv mainlineLinux yes
+setenv arcNumber 2361
+setenv ipaddr 192.169.2.107
+setenv serverip 192.168.2.101
+saveenv
+</pre>
+
+<p>Nun wird auf einem Rechner im selben Netzwerk ein TFTP Server gestartet. Ich habe auf meinem Mac <a href="http://schimana.net/2008/03/it/tftp-server-fuer-mac-os-x/">TftpServer</a> verwendet. Dieser muss ein <a href="http://ftp.debian.org/debian/dists/stable/main/installer-armel/current/images/kirkwood/netboot/marvell/openrd/uImage">uImage</a> und eine <a href="http://ftp.debian.org/debian/dists/stable/main/installer-armel/current/images/kirkwood/netboot/marvell/openrd/uInitrd">uInitrd</a> zur Verfügung stellen. Die verlinkten Dateien sind die des <a href="http://ftp.debian.org/debian/dists/stable/main/installer-armel/current/images/kirkwood/netboot/marvell/openrd/">aktuellen Armel OpenRD Debian Installers</a>. Der Installer wird nun auf dem NAS gebootet:</p>
+<pre>
+tftpboot 0x01100000 uInitrd
+tftpboot 0x00800000 uImage
+setenv bootargs console=ttyS0,115200n8 base-installer/initramfs-tools/driver-policy=most
+bootm 0x00800000 0x01100000
+</pre>
+
+<p>Die Installation kann sowohl auf einem USB-Stick, einem eSATA oder einem internen SATA Laufwerk erfolgen. Ich habe Debian auf einen 8GB USB-Stick installiert. Beim Debian Support gibt es <a href="http://www.debian.org/releases/stable/armel/">Hilfe zur Installation</a>. Ist die Installation abgeschlossen, muss U-Boot konfiguriert werden, um sie zu starten. Zuerst die folgenden 2 Zeilen eingeben:</p>
+<pre>
+setenv bootargs_console console=ttyS0,115200
+setenv bootcmd 'setenv bootargs $(bootargs_console); run bootcmd_slk; bootm 0x00800000 0x01100000'
+</pre>
+
+<p>Für eine USB-Stick Installation nun folgendes Eingeben:</p>
+<pre>
+setenv bootcmd_slk 'usb start; ext2load usb 0:1 0x01100000 /uInitrd; ext2load usb 0:1 0x00800000 /uImage'
+</pre>
+
+<p>Dieses Kommando funktioniert so nur, wenn /boot auf der ersten, als ext2 formatierten Partition liegt. Ansonsten den Pfad anpassen. Ext3 und 4 werden von U-Boot nicht unterstützt.</p>
+<p>Für SATA oder eSATA:</p>
+<pre>
+setenv bootcmd_slk 'ide reset; ext2load ide 0:1 0x01100000 /uInitrd; ext2load ide 0:1 0x00800000 /uImage'
+</pre>
+
+<p>Nun noch ein "saveenv", um das ganze zu speichern. Jetzt reicht "run bootcmd" um die U-Boot Kommandozeile zu verlassen und das neu Installierte Debian zu booten.</p>
+<h2>Ein neuer Kernel muss her</h2>
+<p>Der Standard Kernel von Debian unterstützt den NAS6210 nicht wirklich, weshalb die grüne LED dauernd blinkt und das Gerät nach dem herunterfahren nicht ausgeht. Abhilfe schafft ein selbst kompilierter Linux Kernel mit dem richtigen Patch. Dieser ist auf der oben verlinkten Tutorial Seite zu finden, oder auch <a href="http://simon.baatz.info/downloads/linux-3.1-rc9.nas6210.patch">hier</a>. Wer sich die Mühe machen will, kann seinen eigenen Kernel nach <a href="http://kernel-handbook.alioth.debian.org/ch-common-tasks.html">diesem Ausschnitt des Debian Kernel Handbook</a> selbst konfigurieren und kompilieren. Ich habe mir diese Mühe bereits gemacht, und <a href="/files/linuxnas.zip">fertige .deb Pakete erstellt (18MB)</a>, welche nur noch mittels diesem Befehl installiert werden müssen:</p>
+<pre>
+dpkg -i linux-image-3.1.0-rc742_xy42_armel.deb
+</pre>
+
+<p>Im /boot Verzeichnis des NAS findet sich nun der neue Kernel als "vmlinuz-3.1.0-rc742" und die neue Ramdisk als "initrd.img-3.1.0-rc742". Diese 2 Dateien müssen nun mittels mkimage in U-Boot Images verwandelt werden:</p>
+<pre>
+mkimage -A arm -O linux -T kernel -C none -a 0x8000 -n Kernel -d vmlinuz-3.1.0-rc742 uImageN
+mkimage -A arm -O linux -T ramdisk -C gzip -a 0x8C800000 -n RamDisk -d initrd.img-3.1.0-rc742 uInitrdN
+</pre>
+
+<p>Das erzeugt die Dateien uInitrdN und uImageN, welche gebootet werden müssen. Dazu neu starten und folgendes im U-Boot Prompt eingeben:</p>
+<pre>
+setenv bootcmd_slk 'usb start; ext2load usb 0:1 0x01100000 /uInitrdN; ext2load usb 0:1 0x00800000 /uImageN'
+setenv arcNumber 3104
+saveenv
+</pre>
+
+<p>Ausserdem wird die arcNumber auf die des NAS6210 gestellt, welche dem neuen Kernel bekannt ist. Falls du nicht auf einen USB-Stick installiert hast, musst du das SATA Kommando von oben entsprechend anpassen.</p>
+<p>Das wars! Nun kann beliebige Software installiert werden, um den Server für die eigenen Bedürfnisse anzupassen. Bei mir läuft folgendes:</p>
+<ul>
+<li><a href="http://netatalk.sourceforge.net/">Netatalk</a></li>
+<li>Avahi als Zeroconf Implementation für Netatalk</li>
+<li><a href="http://httpd.apache.org/">Apache</a></li>
+<li><a href="http://www.mysql.de/">MySQL</a></li>
+<li><a href="http://www.php.net/">PHP</a></li>
+<li><a href="https://github.com/jasonmc/forked-daapd">forked-daapd</a></li>
+<li><a href="http://www.cups.org/">CUPS</a></li>
+<li><a href="http://www.webmin.com/">Webmin</a></li>
+<li><a href="http://www.transmissionbt.com/">Transmission für Torrents</a></li>
+</ul>
+<h2>Power Button nutzen</h2>
+<p>Per E-Mail hat mich Waepu auf seinen Weg aufmerksam gemacht, den Power Button nutzbar zu machen. Dafür muss ein neuer Kernel kompiliert werden. Neben dem oben verlinkten Patch muss folgende kleine Änderung angewendet werden:</p>
+<pre class="sh_c">
+static unsigned int nas6210_mpp_config[] __initdata = {
+  MPP0_NF_IO2,
+  MPP1_NF_IO3,
+  MPP2_NF_IO4,
+  MPP3_NF_IO5,
+  MPP4_NF_IO6,
+  MPP5_NF_IO7,
+  MPP18_NF_IO0,
+  MPP19_NF_IO1,
+
+  MPP20_SATA1_ACTn,    /* HD1 LED red */
+  MPP21_SATA0_ACTn,    /* HD0 LED red */
+  MPP22_GPIO,    /* Power LED red */
+  MPP23_GPIO,    /* Power button */
+
+  MPP24_GPIO,    /* Power off device */
+  MPP25_GPIO,    /* Power LED green */
+  MPP27_GPIO,    /* USB transfer LED */
+  MPP28_GPIO,    /* Reset button */
+  MPP29_GPIO,    /* USB Copy button */
+  0
+};
+</pre>
+
+<p>Erst wenn im Struct MPP23_GPIO hinzugefügt wird, funktioniert folgendes Bash Script.</p>
+<pre class="sh_sh">
+#!/bin/sh
+echo 23 > /sys/class/gpio/export
+while : ; do
+  s=`cat /sys/class/gpio/gpio23/value`
+  if test "$s" == 0 ; then
+    shutdown -h now
+    exit 0
+  fi
+  sleep 1
+done
+</pre>
+
+<p>Der Button auf MPP23_GPIO hat eine Art Flip-Flop Funktion. Wenn man den Button für ein paar Sekunden hält, ändert sich der Status von MPP23_GPIO und bleibt so bis zum Reboot.</p>
+<p>Ersetzt man im Kernel MPP20_SATA1_ACTn und MPP21_SATA0_ACTn durch MPP20_GPIO und MPP21_GPIO können per Bash auch die HDD LEDs angesteuert werden. Dann funktioniert jedoch die Anzeige der Festplattenaktivität nicht mehr.</p>
+<p>Vielen Dank an Waepu hierfür!</p>
+
+            <span id="flattr">
+<a class="FlattrButton" href="http://www.xythobuz.de/nas.de.html" title="IB-NAS6210 Linux">Booting your own Linux on an Icybox NAS6210 box</a>
+</span>
+<span id="twitter">
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="xythobuz" data-dnt="true" data-related="xythobuz" data-count="vertical">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</span>
+<span id="reddit">
+<script type="text/javascript">reddit_url = "http://www.xythobuz.de/nas.de.html";</script>
+<script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script>
+</span>
+
+        <div id="print"><script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if('https:' == document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-print-icon.gif" width="16" height="15" alt="Print Friendly Version of this page" />Print <img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-pdf-icon.gif" width="12" height="12" alt="Get a PDF version of this webpage" />PDF</a></div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_shortname = "xythobuz";
+(function() {
+var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async = true;
+dsq.src = "http://" + disqus_shortname + ".disqus.com/embed.js";
+(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        </div>
+        <div class="nav">
+            <h3>Thomas Buck</h3>
+
+            <div id="logo"><img id="logoImg" src="http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=180" alt="Avatar"></div>
+
+            <p id="bio">
+                I'm a 19 year old Information Engineering student from Germany, mostly building cool stuff with AVR microcontrollers. All of my projects are released as <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a> on my <a href="https://github.com/xythobuz">GitHub Profile</a>.
+            </p>
+
+            <ul id="menuList">
+            <li><a href="/index.html">Home</a></li>
+<li><a href="/blog.html">Blog</a></li>
+<li><a href="/contact.html">Contact</a></li>
+<li>&nbsp;</li>
+<li><a href="/ledcube.html">8x8x8 LED Cube</a></li>
+<li><a href="/yasab.html">YASAB AVR Bootloader</a></li>
+<li><a href="/avrnetstack.html">avrNetStack</a></li>
+<li><a href="/xycontrol.html">xyControl</a></li>
+<li><a href="/avrserial.html">AVR Serial Library</a></li>
+<li><a href="/serialdebug.html">Serial Debug</a></li>
+<li><a href="/ledmatrix.html">LED Matrix</a></li>
+<li><a href="/ssop28.html">SSOP28 - DIL Adapter</a></li>
+<li><a href="/xyrobot.html">xyRobot</a></li>
+<li><a href="/bluetooth.html">Bluetooth UART (BTM-222)</a></li>
+<li><a href="/k6x4008.html">K6x4008 SRAM</a></li>
+<li><a href="/xyrobotremote.html">xyRobotRemote</a></li>
+<li><a href="/rremote.html">rRemote</a></li>
+<li>&nbsp;</li>
+<li><a href="/c250.html">Mio C250 Unlock</a></li>
+<li><a href="/nas.html">IB-NAS6210 Linux</a></li>
+<li><a href="/ultimatenotifier.html">Ultimate Notifier Script</a></li>
+<li><a href="/serialhelper.html">Serial Helper</a></li>
+            </ul>
+
+            <div id="recent">
+                Recent blog posts:
+                <ul id="recentList">
+                <li class="recentList"><a href="/2013_05_09_itunes.html">Musikgeschmack</a></li><li class="recentDate">2013-05-09</li>
+<li class="recentList"><a href="/2013_05_05_debian.html">Debian Update</a></li><li class="recentDate">2013-05-05</li>
+<li class="recentList"><a href="/2013_04_26_iphone_lens.html">iPhone Linse</a></li><li class="recentDate">2013-04-26</li>
+<li class="recentList"><a href="/2013_04_24_bitrot.html">Softwareverrottung</a></li><li class="recentDate">2013-04-24</li>
+<li class="recentList"><a href="/2013_04_23_pad.html">PCB Pads suck</a></li><li class="recentDate">2013-04-23</li>
+                </ul>
+            </div>
+        </div>
+    </div></div>
+
+    <img id="dude" alt="The Dude abides..." src="/img/dude.png">
+    <img id="walter" alt="Mark it zero!" src="/img/walter.png">
+
+    <div id="footer">
+        Built with <a href="http://bitbucket.org/obensonne/poole">Poole</a>
+        &middot;
+        Licensed as <a href="http://creativecommons.org/licenses/by/3.0">CC-BY</a>
+        &middot;
+        <a href="http://validator.w3.org/check?uri=referer">Validate HTML</a>
+        &middot;
+        <a href="http://jigsaw.w3.org/css-validator/validator?uri=xythobuz.de%2Fstyle.css&amp;profile=css3">Validate CSS</a>
+        &middot;
+        <a href="http://feed1.w3.org/check.cgi?url=http://www.xythobuz.de/rss.xml">Validate RSS</a>
+        &middot;
+        <a href="http://www.validome.org/google/validate?url=http://www.xythobuz.de&amp;googleTyp=SITEMAP">Validate Sitemap</a>
+    </div>
+    <img src="/stats/count.php?img" alt="Analytics">
+    <script src="http://gitforked.com/api/1.1/button.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-39163591-1']);
+        _gaq.push(['_setDomainName', 'xythobuz.org']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>

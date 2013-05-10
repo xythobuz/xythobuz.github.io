@@ -104,6 +104,7 @@ def hook_preconvert_compat():
     fp.write("}\n");
     fp.write("header('Location: '.$loc);\n")
     fp.write("?>")
+    fp.close()
 
 
 
@@ -191,4 +192,48 @@ def hook_postconvert_rss():
 
     fp = codecs.open(os.path.join(output, "rss.xml"), "w", "utf-8")
     fp.write(rss)
+    fp.close()
+
+_COMPAT_MOB = """        case "%s":
+            $loc = "%s/%s";
+            break;
+"""
+
+_COMPAT_404_MOB = """        default:
+            $loc = "%s";
+            break;
+"""
+
+def hook_postconvert_mobilecompat():
+    directory = os.path.join(output, "mobile")
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    fp = codecs.open(os.path.join(directory, "index.php"), "w", "utf-8")
+    fp.write("<?\n")
+    fp.write("// Auto generated xyCMS compatibility mobile/index.php\n")
+    fp.write("$loc = 'index.de.mob.html';\n")
+    fp.write("if (isset($_GET['p'])) {\n")
+    fp.write("    if (isset($_GET['lang'])) {\n")
+    fp.write("        $_GET['p'] .= 'EN';\n")
+    fp.write("    }\n")
+    fp.write("    switch($_GET['p']) {\n")
+    for p in pages:
+        if p.get("compat", "") != "":
+            tmp = p["compat"]
+            if p.get("lang", DEFAULT_LANG) == DEFAULT_LANG:
+                tmp = tmp + "EN"
+            fp.write(_COMPAT_MOB % (tmp, options.base_url.rstrip('/'), re.sub(".html", ".mob.html", p.url)))
+            fp.write("\n")
+    fp.write(_COMPAT_404_MOB % "/404.mob.html")
+    fp.write("    }\n")
+    fp.write("}\n")
+    fp.write("if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {\n")
+    fp.write("    if (php_sapi_name() == 'cgi') {\n")
+    fp.write("        header('Status: 301 Moved Permanently');\n")
+    fp.write("    } else {\n")
+    fp.write("        header('HTTP/1.1 301 Moved Permanently');\n")
+    fp.write("    }\n")
+    fp.write("}\n");
+    fp.write("header('Location: '.$loc);\n")
+    fp.write("?>")
     fp.close()
