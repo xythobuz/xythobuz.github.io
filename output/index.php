@@ -1,153 +1,153 @@
 <?
 // Auto generated xyCMS compatibility index.php
-$loc = 'index.de.html';
+$loc = 'http://xythobuz.de/index.de.html';
 if (isset($_GET['p'])) {
     if (isset($_GET['lang'])) {
         $_GET['p'] .= 'EN';
     }
     switch($_GET['p']) {
         case "blog":
-            $loc = "/blog.de.html";
+            $loc = "http://xythobuz.de/blog.de.html";
             break;
 
         case "blogEN":
-            $loc = "/blog.html";
+            $loc = "http://xythobuz.de/blog.html";
             break;
 
         case "kontakt":
-            $loc = "/contact.de.html";
+            $loc = "http://xythobuz.de/contact.de.html";
             break;
 
         case "kontaktEN":
-            $loc = "/contact.html";
+            $loc = "http://xythobuz.de/contact.html";
             break;
 
         case "home":
-            $loc = "/index.de.html";
+            $loc = "http://xythobuz.de/index.de.html";
             break;
 
         case "homeEN":
-            $loc = "/index.html";
+            $loc = "http://xythobuz.de/index.html";
             break;
 
         case "avrserlib":
-            $loc = "/avrserial.de.html";
+            $loc = "http://xythobuz.de/avrserial.de.html";
             break;
 
         case "avrserlibEN":
-            $loc = "/avrserial.html";
+            $loc = "http://xythobuz.de/avrserial.html";
             break;
 
         case "c250":
-            $loc = "/c250.de.html";
+            $loc = "http://xythobuz.de/c250.de.html";
             break;
 
         case "c250EN":
-            $loc = "/c250.html";
+            $loc = "http://xythobuz.de/c250.html";
             break;
 
         case "cube":
-            $loc = "/ledcube.de.html";
+            $loc = "http://xythobuz.de/ledcube.de.html";
             break;
 
         case "cubeEN":
-            $loc = "/ledcube.html";
+            $loc = "http://xythobuz.de/ledcube.html";
             break;
 
         case "ledmatrix":
-            $loc = "/ledmatrix.de.html";
+            $loc = "http://xythobuz.de/ledmatrix.de.html";
             break;
 
         case "ledmatrixEN":
-            $loc = "/ledmatrix.html";
+            $loc = "http://xythobuz.de/ledmatrix.html";
             break;
 
         case "nas":
-            $loc = "/nas.de.html";
+            $loc = "http://xythobuz.de/nas.de.html";
             break;
 
         case "nasEN":
-            $loc = "/nas.html";
+            $loc = "http://xythobuz.de/nas.html";
             break;
 
         case "serialdebug":
-            $loc = "/serialdebug.de.html";
+            $loc = "http://xythobuz.de/serialdebug.de.html";
             break;
 
         case "serialdebugEN":
-            $loc = "/serialdebug.html";
+            $loc = "http://xythobuz.de/serialdebug.html";
             break;
 
         case "serialhelper":
-            $loc = "/serialhelper.de.html";
+            $loc = "http://xythobuz.de/serialhelper.de.html";
             break;
 
         case "serialhelperEN":
-            $loc = "/serialhelper.html";
+            $loc = "http://xythobuz.de/serialhelper.html";
             break;
 
         case "ssop28":
-            $loc = "/ssop28.de.html";
+            $loc = "http://xythobuz.de/ssop28.de.html";
             break;
 
         case "ssop28EN":
-            $loc = "/ssop28.html";
+            $loc = "http://xythobuz.de/ssop28.html";
             break;
 
         case "notifier":
-            $loc = "/ultimatenotifier.de.html";
+            $loc = "http://xythobuz.de/ultimatenotifier.de.html";
             break;
 
         case "notifierEN":
-            $loc = "/ultimatenotifier.html";
+            $loc = "http://xythobuz.de/ultimatenotifier.html";
             break;
 
         case "yasab":
-            $loc = "/yasab.de.html";
+            $loc = "http://xythobuz.de/yasab.de.html";
             break;
 
         case "yasabEN":
-            $loc = "/yasab.html";
+            $loc = "http://xythobuz.de/yasab.html";
             break;
 
         case "bt":
-            $loc = "/bluetooth.de.html";
+            $loc = "http://xythobuz.de/bluetooth.de.html";
             break;
 
         case "btEN":
-            $loc = "/bluetooth.html";
+            $loc = "http://xythobuz.de/bluetooth.html";
             break;
 
         case "sram":
-            $loc = "/k6x4008.de.html";
+            $loc = "http://xythobuz.de/k6x4008.de.html";
             break;
 
         case "sramEN":
-            $loc = "/k6x4008.html";
+            $loc = "http://xythobuz.de/k6x4008.html";
             break;
 
         case "rrem":
-            $loc = "/rremote.de.html";
+            $loc = "http://xythobuz.de/rremote.de.html";
             break;
 
         case "rremEN":
-            $loc = "/rremote.html";
+            $loc = "http://xythobuz.de/rremote.html";
             break;
 
         case "rob":
-            $loc = "/xyrobot.de.html";
+            $loc = "http://xythobuz.de/xyrobot.de.html";
             break;
 
         case "robEN":
-            $loc = "/xyrobot.html";
+            $loc = "http://xythobuz.de/xyrobot.html";
             break;
 
         case "xyrobotremote":
-            $loc = "/xyrobotremote.de.html";
+            $loc = "http://xythobuz.de/xyrobotremote.de.html";
             break;
 
         case "xyrobotremoteEN":
-            $loc = "/xyrobotremote.html";
+            $loc = "http://xythobuz.de/xyrobotremote.html";
             break;
 
         default:

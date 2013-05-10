@@ -79,7 +79,7 @@ def hook_preconvert_compat():
     fp = open(os.path.join(options.project, "output", "index.php"), 'w')
     fp.write("<?\n")
     fp.write("// Auto generated xyCMS compatibility index.php\n")
-    fp.write("$loc = 'index.de.html';\n")
+    fp.write("$loc = 'http://xythobuz.de/index.de.html';\n")
     fp.write("if (isset($_GET['p'])) {\n")
     fp.write("    if (isset($_GET['lang'])) {\n")
     fp.write("        $_GET['p'] .= 'EN';\n")
@@ -90,7 +90,7 @@ def hook_preconvert_compat():
             tmp = p["compat"]
             if p.get("lang", DEFAULT_LANG) == DEFAULT_LANG:
                 tmp = tmp + "EN"
-            fp.write(_COMPAT % (tmp, options.base_url.rstrip('/'), p.url))
+            fp.write(_COMPAT % (tmp, "http://xythobuz.de", p.url))
             fp.write("\n")
     fp.write(_COMPAT_404 % "/404.html")
     fp.write("    }\n")
@@ -211,7 +211,7 @@ def hook_postconvert_mobilecompat():
     fp = codecs.open(os.path.join(directory, "index.php"), "w", "utf-8")
     fp.write("<?\n")
     fp.write("// Auto generated xyCMS compatibility mobile/index.php\n")
-    fp.write("$loc = 'index.de.mob.html';\n")
+    fp.write("$loc = 'http://www.xythobuz.de/index.de.mob.html';\n")
     fp.write("if (isset($_GET['p'])) {\n")
     fp.write("    if (isset($_GET['lang'])) {\n")
     fp.write("        $_GET['p'] .= 'EN';\n")
@@ -222,7 +222,7 @@ def hook_postconvert_mobilecompat():
             tmp = p["compat"]
             if p.get("lang", DEFAULT_LANG) == DEFAULT_LANG:
                 tmp = tmp + "EN"
-            fp.write(_COMPAT_MOB % (tmp, options.base_url.rstrip('/'), re.sub(".html", ".mob.html", p.url)))
+            fp.write(_COMPAT_MOB % (tmp, "http://xythobuz.de", re.sub(".html", ".mob.html", p.url)))
             fp.write("\n")
     fp.write(_COMPAT_404_MOB % "/404.mob.html")
     fp.write("    }\n")
