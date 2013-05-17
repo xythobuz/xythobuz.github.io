@@ -6,10 +6,52 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Fri, 10 May 2013 14:06:25 -0000</pubDate>
-<lastBuildDate>Fri, 10 May 2013 14:06:25 -0000</lastBuildDate>
+<pubDate>Fri, 17 May 2013 15:13:12 -0000</pubDate>
+<lastBuildDate>Fri, 17 May 2013 15:13:12 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>Musik Script History</title>
+    <link>http://www.xythobuz.de/2013_05_17_itunes.html</link>
+    <description>&lt;h2&gt;Musik Script History&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at May 17, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Ja, ich gebe zu, daß mein &lt;a href=&quot;http://xythobuz.de/2013_05_09_itunes.html&quot;&gt;Shell Skript&lt;/a&gt; wirklich sehr hässlich war. Jetzt ist es zwar immer noch hässlich, aber nicht ganz so sehr. Und es merkt sich die letzten 10 gespielten Songs. Fuck yeah :D&lt;/p&gt;
+&lt;p&gt;Der Output ist nach wie vor &lt;a href=&quot;http://xythobuz.de/lastmusic&quot;&gt;hier zu sehen&lt;/a&gt;...&lt;/p&gt;
+&lt;pre class=&quot;sh_sh&quot;&gt;
+#!/bin/sh
+
+lasttrack=`cat /Users/thomas/.lasttrack`
+host=`hostname`
+datum=`date`
+
+if [ &quot;$1&quot; != &quot;$lasttrack&quot; ]; then
+    if [ &quot;$1&quot; != &quot;&quot; ]; then
+        echo &quot;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=\&quot;utf-8\&quot; /&amp;gt;&amp;lt;title&amp;gt;xythobuz listened to...&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;pre&amp;gt;&quot; &amp;gt; /Users/thomas/.tmpfile
+        echo &quot;Last song played on &amp;lt;b&amp;gt;${host}&amp;lt;/b&amp;gt;'s iTunes:&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &quot;  &amp;lt;b&amp;gt;$1&amp;lt;/b&amp;gt;&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &quot;by&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &quot;  &amp;lt;b&amp;gt;$2&amp;lt;/b&amp;gt;&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &quot;on the Album&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &quot;  &amp;lt;b&amp;gt;$3&amp;lt;/b&amp;gt;&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &quot;at&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &quot;  &amp;lt;i&amp;gt;${datum}&amp;lt;/i&amp;gt;&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &quot;Last Songs played:&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        cat /Users/thomas/.trackhistory &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+        echo &quot;&amp;lt;/pre&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&quot; &amp;gt;&amp;gt; /Users/thomas/.tmpfile
+
+        scp /Users/thomas/.tmpfile zaphod:/var/www/lastmusic
+        echo $1 &amp;gt; /Users/thomas/.lasttrack
+        echo &quot;&amp;lt;b&amp;gt;$1&amp;lt;/b&amp;gt; by &amp;lt;b&amp;gt;$2&amp;lt;/b&amp;gt; on &amp;lt;b&amp;gt;$3&amp;lt;/b&amp;gt; at &amp;lt;i&amp;gt;${datum}&amp;lt;/i&amp;gt;&quot; &amp;gt;&amp;gt; /Users/thomas/.trackhistory
+        tail -n 10 /Users/thomas/.trackhistory | tee /Users/thomas/.trackhistory
+    fi
+fi
+&lt;/pre&gt;</description>
+    <pubDate>Fri, 17 May 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_05_17_itunes.html</guid>
+</item>
 
 <item>
     <title>Musikgeschmack</title>
@@ -147,17 +189,6 @@ reboot
 &lt;p&gt;&lt;a href=&quot;http://www.defectivebydesign.org/no-drm-in-html5&quot;&gt;&lt;img alt=&quot;Stop the Hollyweb! No DRM in HTML5.&quot; src=&quot;http://static.fsf.org/dbd/hollywebshare.jpeg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Thu, 04 Apr 2013 10:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_04_04_html5.html</guid>
-</item>
-
-<item>
-    <title>Neuer Webserver</title>
-    <link>http://www.xythobuz.de/2013_04_02_zaphod.html</link>
-    <description>&lt;h2&gt;Neuer Webserver&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at April 02, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Jetzt habe ich zu einem Rundumschlag ausgeholt. Wenn du diesen Text liest, kommt er bereits von meinem neuen vServer bei Hetzner. Hostname: &lt;a href=&quot;http://en.wikipedia.org/wiki/Zaphod_Beeblebrox&quot;&gt;Zaphod&lt;/a&gt; :)&lt;/p&gt;
-&lt;p&gt;Außerdem siehst du dann auch schon die neue Webseite, gebaut mit &lt;a href=&quot;https://bitbucket.org/obensonne/poole&quot;&gt;Poole&lt;/a&gt;. Das ist tolle Software!&lt;/p&gt;</description>
-    <pubDate>Tue, 02 Apr 2013 10:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_04_02_zaphod.html</guid>
 </item>
 
 </channel>

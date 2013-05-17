@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>SSOP28 - DIL Adapter - xythobuz.de</title>
-    <meta name="description" content="SSOP28 to DIL Adapter with EAGLE board file" />
+    <title>Blog - xythobuz.de</title>
+    <meta name="description" content="Electronics &amp; Software Projects" />
     <meta name="keywords" content="xythobuz" />
     <link rel="author" href="/xythobuz@xythobuz.de">
     <link rel="shortcut icon" href="/img/favicon.ico">
@@ -13,47 +13,56 @@
     <link rel="alternate" type="application/rss+xml" title="Blog" href="/rss.xml">
     <link rel="stylesheet" href="/css/gh-fork-ribbon.css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <script type='text/javascript'>
-/* <![CDATA[ */
-(function() {
-var s = document.createElement('script');
-var t = document.getElementsByTagName('script')[0];
-s.type = 'text/javascript';
-s.async = true;
-s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=xythobuz&category=text';
-t.parentNode.insertBefore(s, t);
-})();
-/* ]]> */
-</script>
+    
 </head>
 <body onload="sh_highlightDocument('/js/sh/', '.min.js');">
     
     <div id="header">
         <h1>xythobuz.de</h1>
         <p><a href="http://xythobuz.de/lastmusic">♫</a></p>
-        <h2>SSOP28 - DIL Adapter</h2>
+        <h2>Blog</h2>
     </div>
-    <div id="lang"><span id="lang2">Translation: 
-<a href='ssop28.de.html'>de</a> | <a href='ssop28.html'>en</a>
-</span></div>
+    
     <div class="colmask leftmenu"><div class="colleft">
         <div class="content">
 
-            <h1>SSOP28 - DIL Adapter</h1>
-<p>Hier das Layout eines SSOP28 - DIL Adapters:</p>
-<p><img alt="Layout" src="/img/ssop28.png" /></p>
-<p><a href="/files/ssop28.brd">Eagle brd File</a></p>
+            <h2>Musik Script History</h2>
+<p><em>Posted at May 17, 2013.</em></p>
+<p>Ja, ich gebe zu, daß mein <a href="http://xythobuz.de/2013_05_09_itunes.html">Shell Skript</a> wirklich sehr hässlich war. Jetzt ist es zwar immer noch hässlich, aber nicht ganz so sehr. Und es merkt sich die letzten 10 gespielten Songs. Fuck yeah :D</p>
+<p>Der Output ist nach wie vor <a href="http://xythobuz.de/lastmusic">hier zu sehen</a>...</p>
+<pre class="sh_sh">
+#!/bin/sh
 
-            <span id="flattr">
-<a class="FlattrButton" href="http://www.xythobuz.de/ssop28.de.html" title="SSOP28 - DIL Adapter">SSOP28 to DIL Adapter with EAGLE board file</a>
-</span>
-<span id="twitter">
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="xythobuz" data-dnt="true" data-related="xythobuz" data-count="vertical">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</span>
-<span id="reddit">
-<script type="text/javascript">reddit_url = "http://www.xythobuz.de/ssop28.de.html";</script>
-<script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script>
-</span>
+lasttrack=`cat /Users/thomas/.lasttrack`
+host=`hostname`
+datum=`date`
+
+if [ "$1" != "$lasttrack" ]; then
+    if [ "$1" != "" ]; then
+        echo "&lt;html&gt;&lt;head&gt;&lt;meta charset=\"utf-8\" /&gt;&lt;title&gt;xythobuz listened to...&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;" &gt; /Users/thomas/.tmpfile
+        echo "Last song played on &lt;b&gt;${host}&lt;/b&gt;'s iTunes:" &gt;&gt; /Users/thomas/.tmpfile
+        echo &gt;&gt; /Users/thomas/.tmpfile
+        echo "  &lt;b&gt;$1&lt;/b&gt;" &gt;&gt; /Users/thomas/.tmpfile
+        echo "by" &gt;&gt; /Users/thomas/.tmpfile
+        echo "  &lt;b&gt;$2&lt;/b&gt;" &gt;&gt; /Users/thomas/.tmpfile
+        echo "on the Album" &gt;&gt; /Users/thomas/.tmpfile
+        echo "  &lt;b&gt;$3&lt;/b&gt;" &gt;&gt; /Users/thomas/.tmpfile
+        echo "at" &gt;&gt; /Users/thomas/.tmpfile
+        echo "  &lt;i&gt;${datum}&lt;/i&gt;" &gt;&gt; /Users/thomas/.tmpfile
+        echo &gt;&gt; /Users/thomas/.tmpfile
+        echo "Last Songs played:" &gt;&gt; /Users/thomas/.tmpfile
+        cat /Users/thomas/.trackhistory &gt;&gt; /Users/thomas/.tmpfile
+        echo "&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;" &gt;&gt; /Users/thomas/.tmpfile
+
+        scp /Users/thomas/.tmpfile zaphod:/var/www/lastmusic
+        echo $1 &gt; /Users/thomas/.lasttrack
+        echo "&lt;b&gt;$1&lt;/b&gt; by &lt;b&gt;$2&lt;/b&gt; on &lt;b&gt;$3&lt;/b&gt; at &lt;i&gt;${datum}&lt;/i&gt;" &gt;&gt; /Users/thomas/.trackhistory
+        tail -n 10 /Users/thomas/.trackhistory | tee /Users/thomas/.trackhistory
+    fi
+fi
+</pre>
+
+            
 
         <div id="disqus_thread"></div>
 <script type="text/javascript">
