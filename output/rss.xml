@@ -6,10 +6,21 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Fri, 17 May 2013 15:13:12 -0000</pubDate>
-<lastBuildDate>Fri, 17 May 2013 15:13:12 -0000</lastBuildDate>
+<pubDate>Mon, 20 May 2013 13:22:31 -0000</pubDate>
+<lastBuildDate>Mon, 20 May 2013 13:22:31 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>Just Cause 2 Capture</title>
+    <link>http://www.xythobuz.de/2013_05_20_just_cause.html</link>
+    <description>&lt;h2&gt;Just Cause 2 Capture&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at May 20, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Jetzt hab ich auch mal das Video-Capturing und den Youtube-Upload in &lt;a href=&quot;http://www.amazon.de/gp/product/B002VYDUBY/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1638&amp;amp;creative=19454&amp;amp;creativeASIN=B002VYDUBY&amp;amp;linkCode=as2&amp;amp;tag=xythobuzorg-21&quot;&gt;Just Cause 2&lt;/a&gt; (Affiliate Link) ausprobiert. Bin ja nicht so von der Qualität überzeugt... :/&lt;/p&gt;
+&lt;p&gt;&lt;object width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube-nocookie.com/v/iSIPDDkLbs0?hl=de_DE&amp;amp;version=3&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube-nocookie.com/v/iSIPDDkLbs0?hl=de_DE&amp;amp;version=3&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;640&quot; height=&quot;360&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;</description>
+    <pubDate>Mon, 20 May 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_05_20_just_cause.html</guid>
+</item>
 
 <item>
     <title>Musik Script History</title>
@@ -178,17 +189,6 @@ reboot
 &lt;p&gt;Mittlerweile sollten alle Probleme behoben sein. Außerdem ist der Blog-Post Inhalt wieder mit im Feed. Deshalb validiert er zwar nicht mehr, dank Youtube Embedding, aber damit kann ich leben...&lt;/p&gt;</description>
     <pubDate>Thu, 11 Apr 2013 10:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_04_11_rss.html</guid>
-</item>
-
-<item>
-    <title>Kein DRM in HTML5</title>
-    <link>http://www.xythobuz.de/2013_04_04_html5.html</link>
-    <description>&lt;h2&gt;Kein DRM in HTML5&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at April 04, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Habe gerade unterzeichnet. Tut es auch!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.defectivebydesign.org/no-drm-in-html5&quot;&gt;&lt;img alt=&quot;Stop the Hollyweb! No DRM in HTML5.&quot; src=&quot;http://static.fsf.org/dbd/hollywebshare.jpeg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-    <pubDate>Thu, 04 Apr 2013 10:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_04_04_html5.html</guid>
 </item>
 
 </channel>
