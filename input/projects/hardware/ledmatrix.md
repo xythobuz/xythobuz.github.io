@@ -1,7 +1,8 @@
 title: LED Matrix
 title_de: LED Matrix
 description: ATTiny2313 displaying simple animations on an 8x10 LED Matrix
-menu-position: 35
+parent: hardware
+position: 5
 comments: true
 flattr: true
 compat: ledmatrix

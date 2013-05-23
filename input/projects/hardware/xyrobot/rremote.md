@@ -1,7 +1,8 @@
 title: rRemote
 title_de: rRemote
 description: Remote Control Casio FX9860-GII Calculator AddIn
-menu-position: 49
+parent: xyrobot
+position: 2
 comments: true
 flattr: true
 compat: rrem

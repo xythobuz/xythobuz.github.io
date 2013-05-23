@@ -37,6 +37,20 @@
 </url>
 
 <url>
+    <loc>http://www.xythobuz.de/hardware.de.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/hardware.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>http://www.xythobuz.de/index.de.html</loc>
     <lastmod>2013-05-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -45,6 +59,20 @@
 
 <url>
     <loc>http://www.xythobuz.de/index.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/software.de.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/software.html</loc>
     <lastmod>2013-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -240,41 +268,6 @@
 </url>
 
 <url>
-    <loc>http://www.xythobuz.de/avrnetstack.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/avrserial.de.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/avrserial.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/c250.de.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/c250.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
     <loc>http://www.xythobuz.de/ledcube.de.html</loc>
     <lastmod>2013-05-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -303,20 +296,6 @@
 </url>
 
 <url>
-    <loc>http://www.xythobuz.de/nas.de.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/nas.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
     <loc>http://www.xythobuz.de/serialdebug.de.html</loc>
     <lastmod>2013-05-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -325,20 +304,6 @@
 
 <url>
     <loc>http://www.xythobuz.de/serialdebug.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/serialhelper.de.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/serialhelper.html</loc>
     <lastmod>2013-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -359,35 +324,7 @@
 </url>
 
 <url>
-    <loc>http://www.xythobuz.de/ultimatenotifier.de.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/ultimatenotifier.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
     <loc>http://www.xythobuz.de/xycontrol.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/yasab.de.html</loc>
-    <lastmod>2013-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/yasab.html</loc>
     <lastmod>2013-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -458,6 +395,97 @@
 
 <url>
     <loc>http://www.xythobuz.de/xyrobotremote.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/avrnetstack.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/avrserial.de.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/avrserial.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/c250.de.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/c250.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/nas.de.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/nas.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/serialhelper.de.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/serialhelper.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/ultimatenotifier.de.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/ultimatenotifier.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/yasab.de.html</loc>
+    <lastmod>2013-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/yasab.html</loc>
     <lastmod>2013-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

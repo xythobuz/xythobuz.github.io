@@ -1,6 +1,7 @@
 title: Home
 title_de: Home
-menu-position: 0
+parent: main
+position: 0
 flattr: true
 funny: Electronics &amp; Software
 compat: home

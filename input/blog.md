@@ -1,5 +1,6 @@
 title: Blog
-menu-position: 1
+parent: main
+position: 1
 changefreq: daily
 priority: 0.8
 funny: a day in the life of...

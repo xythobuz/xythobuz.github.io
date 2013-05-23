@@ -1,7 +1,8 @@
 title: Bluetooth UART (BTM-222)
 title_de: Bluetooth UART (BTM-222)
 description: PCB for the BTM-222 and 5V level converters
-menu-position: 46
+parent: xyrobot
+position: 0
 comments: true
 flattr: true
 compat: bt

@@ -3,8 +3,10 @@
  * #000000 - Text
  * #FF9900 - Link, Hover Link, Dashes
  * #FFFFFF - Background
- * #666666 - Visited Link, Footer
+ * #848484 - Visited Link
+ * #666666 - ooter
  * #EEEEEC - <pre>
+ * #BF8630 - NavButton pressed
  */
 
 body {
@@ -18,7 +20,7 @@ body {
 }
 
 a {
-    color: #FF9900;
+    color: #0D58A6;
     font-weight: bold;
     text-decoration: none;
 }
@@ -29,15 +31,14 @@ a:visited {
 }
 
 a:hover {
-    color: #FF9900;
+    color: #0D58A6;
     text-decoration: underline;
 }
 
 #header {
-    clear: both;
-    float: left;
-    width: 95%;
-    padding-left: 1em;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border-bottom: dashed #FF9900 2px;
@@ -77,49 +78,11 @@ a:hover {
     padding: 1em;
 }
 
-div#lang {
-    text-align: right;
-    padding-right: 10em;
-}
-
-span#lang2 {
-    line-height: 2em;
-}
-
-.colmask {
-    position: relative; /* This fixes the IE7 overflow hidden bug */
-    clear: both;
-    float: left;
-    width: 100%; /* width of whole page */
-    overflow: hidden; /* This chops off any overhanging divs */
-}
-
-.colleft {
-    float: left;
-    width: 100%;
-    position: relative;
-}
-
-.content {
-    float: left;
-    position: relative;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    overflow: hidden;
-    z-index: 1;
+div#content {
+    width: 70%;
+    padding-left: 15%;
+    padding-right: 15%;
     background-color: #FFFFFF;
-}
-
-.nav {
-    float: left;
-    position: relative;
-    padding: 0 0 0 0;
-    padding-right: 1em;
-    overflow: hidden;
-    background-color: #FFFFFF;
-    border-right: solid #FF9900 1px;
-    border-bottom: solid #FF9900 1px;
-    z-index: 1;
 }
 
 div#logo {
@@ -142,85 +105,7 @@ img#logoImg {
     overflow: hidden;
 }
 
-ul#menuList {
-    list-style-type: none;
-    padding: 0.5em;
-    padding-top: 0;
-    margin-top: 0;
-}
-
-#recent {
-    padding-top: 1.5em;
-    padding-bottom: 0.5em;
-}
-
-ul#recentList {
-    list-style: none;
-    padding:0;
-    margin:0;
-}
-
-li.recentDate {
-    padding-left: 1em;
-    padding-bottom: 0.7em;
-}
-
-li.recentList {
-    padding-left: 1em;
-    text-indent: -1em;
-}
-
-li.recentList:before {
-    content: "→ ";
-}
-
-.leftmenu {
-    background: #FFFFFF; /* right column background colour */
-}
-
-.leftmenu .colleft {
-    right: 75%; /* right column width */
-    background: #FFFFFF; /* left column background colour */
-}
-
-.leftmenu .content {
-    width: 70%; /* right column content width */
-    left: 102%; /* 100% plus left column left padding */
-}
-
-.leftmenu .nav {
-    width: 21%; /* left column content width (column width minus left and right padding) */
-    left: 6%; /* (right column left and right padding) plus (left column left padding) */
-}
-
-#dude {
-    position: fixed;
-    bottom: 0px;
-    left: 30px;
-    max-width: 20%;
-    max-height: 50%;
-}
-
-#walter {
-    position: fixed;
-    bottom: 0px;
-    right: 30px;
-    max-width: 20%;
-    max-height: 50%;
-}
-
-#dude:hover {
-    z-index: 2;
-}
-
-#walter:hover {
-    z-index: 2;
-}
-
 #footer {
-    clear: both;
-    float: left;
-    width: 95%;
     text-align: center;
     font-size: small;
     color: gray;
@@ -247,4 +132,79 @@ pre {
     background: #EEEEEC;
     padding: 1em;
     overflow: scroll;
+}
+
+nav ul ul {
+    display: none;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav {
+    text-align: right;
+    padding-right: 15%;
+}
+
+nav ul {
+    list-style: none;
+    position: relative;
+    display: inline-table;
+}
+
+nav ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+nav ul li {
+    float: left;
+    border: solid #FF9900 1px;
+}
+
+nav ul li:hover {
+    background: #BF8630;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+}
+
+nav ul li a:visited {
+    color: #0D58A6;
+}
+
+nav ul ul {
+    background: #FFFFFF;
+    border: solid #FF9900 1px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+}
+
+nav ul ul li {
+    float: none;
+    position: relative;
+}
+
+nav ul ul li a {
+    padding: 1em;
+}
+
+nav ul ul li a:visited {
+    color: #0D58A6;
+}
+
+nav ul ul li a:hover {
+    background: #BF8630;
+}
+
+nav ul ul ul {
+    position: absolute;
+    left: 100%;
+    top:0;
 }
