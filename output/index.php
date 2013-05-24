@@ -46,6 +46,38 @@ if (isset($_GET['p'])) {
             $loc = "http://xythobuz.de/software.html";
             break;
 
+        case "avrserlib":
+            $loc = "http://xythobuz.de/avrserial.de.html";
+            break;
+
+        case "avrserlibEN":
+            $loc = "http://xythobuz.de/avrserial.html";
+            break;
+
+        case "bt":
+            $loc = "http://xythobuz.de/bluetooth.de.html";
+            break;
+
+        case "btEN":
+            $loc = "http://xythobuz.de/bluetooth.html";
+            break;
+
+        case "c250":
+            $loc = "http://xythobuz.de/c250.de.html";
+            break;
+
+        case "c250EN":
+            $loc = "http://xythobuz.de/c250.html";
+            break;
+
+        case "sram":
+            $loc = "http://xythobuz.de/k6x4008.de.html";
+            break;
+
+        case "sramEN":
+            $loc = "http://xythobuz.de/k6x4008.html";
+            break;
+
         case "cube":
             $loc = "http://xythobuz.de/ledcube.de.html";
             break;
@@ -62,12 +94,36 @@ if (isset($_GET['p'])) {
             $loc = "http://xythobuz.de/ledmatrix.html";
             break;
 
+        case "nas":
+            $loc = "http://xythobuz.de/nas.de.html";
+            break;
+
+        case "nasEN":
+            $loc = "http://xythobuz.de/nas.html";
+            break;
+
+        case "rrem":
+            $loc = "http://xythobuz.de/rremote.de.html";
+            break;
+
+        case "rremEN":
+            $loc = "http://xythobuz.de/rremote.html";
+            break;
+
         case "serialdebug":
             $loc = "http://xythobuz.de/serialdebug.de.html";
             break;
 
         case "serialdebugEN":
             $loc = "http://xythobuz.de/serialdebug.html";
+            break;
+
+        case "serialhelper":
+            $loc = "http://xythobuz.de/serialhelper.de.html";
+            break;
+
+        case "serialhelperEN":
+            $loc = "http://xythobuz.de/serialhelper.html";
             break;
 
         case "ssop28":
@@ -78,28 +134,12 @@ if (isset($_GET['p'])) {
             $loc = "http://xythobuz.de/ssop28.html";
             break;
 
-        case "bt":
-            $loc = "http://xythobuz.de/bluetooth.de.html";
+        case "notifier":
+            $loc = "http://xythobuz.de/ultimatenotifier.de.html";
             break;
 
-        case "btEN":
-            $loc = "http://xythobuz.de/bluetooth.html";
-            break;
-
-        case "sram":
-            $loc = "http://xythobuz.de/k6x4008.de.html";
-            break;
-
-        case "sramEN":
-            $loc = "http://xythobuz.de/k6x4008.html";
-            break;
-
-        case "rrem":
-            $loc = "http://xythobuz.de/rremote.de.html";
-            break;
-
-        case "rremEN":
-            $loc = "http://xythobuz.de/rremote.html";
+        case "notifierEN":
+            $loc = "http://xythobuz.de/ultimatenotifier.html";
             break;
 
         case "rob":
@@ -116,46 +156,6 @@ if (isset($_GET['p'])) {
 
         case "xyrobotremoteEN":
             $loc = "http://xythobuz.de/xyrobotremote.html";
-            break;
-
-        case "avrserlib":
-            $loc = "http://xythobuz.de/avrserial.de.html";
-            break;
-
-        case "avrserlibEN":
-            $loc = "http://xythobuz.de/avrserial.html";
-            break;
-
-        case "c250":
-            $loc = "http://xythobuz.de/c250.de.html";
-            break;
-
-        case "c250EN":
-            $loc = "http://xythobuz.de/c250.html";
-            break;
-
-        case "nas":
-            $loc = "http://xythobuz.de/nas.de.html";
-            break;
-
-        case "nasEN":
-            $loc = "http://xythobuz.de/nas.html";
-            break;
-
-        case "serialhelper":
-            $loc = "http://xythobuz.de/serialhelper.de.html";
-            break;
-
-        case "serialhelperEN":
-            $loc = "http://xythobuz.de/serialhelper.html";
-            break;
-
-        case "notifier":
-            $loc = "http://xythobuz.de/ultimatenotifier.de.html";
-            break;
-
-        case "notifierEN":
-            $loc = "http://xythobuz.de/ultimatenotifier.html";
             break;
 
         case "yasab":
