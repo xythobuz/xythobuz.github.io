@@ -191,6 +191,7 @@ dsq.src = "http://" + disqus_shortname + ".disqus.com/embed.js";
         _gaq.push(['_setDomainName', 'xythobuz.org']);
         _gaq.push(['_setAllowLinker', true]);
         _gaq.push(['_trackPageview']);
+        setTimeout("_gaq.push(['_trackEvent', '30_seconds', 'read'])", 30000);
         (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
