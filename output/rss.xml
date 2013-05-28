@@ -6,10 +6,21 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Sat, 25 May 2013 14:55:56 -0000</pubDate>
-<lastBuildDate>Sat, 25 May 2013 14:55:56 -0000</lastBuildDate>
+<pubDate>Tue, 28 May 2013 15:17:04 -0000</pubDate>
+<lastBuildDate>Tue, 28 May 2013 15:17:04 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>Regelschwingungen</title>
+    <link>http://www.xythobuz.de/2013_05_28_pid.html</link>
+    <description>&lt;h2&gt;Regelschwingungen&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at May 28, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Ich kann nicht behaupten, viel weiter gekommen zu sein...&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/xyargh.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyargh_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    <pubDate>Tue, 28 May 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_05_28_pid.html</guid>
+</item>
 
 <item>
     <title>Just Cause 2 Capture</title>
@@ -178,17 +189,6 @@ reboot
 &lt;img alt=&quot;Party Harder&quot; src=&quot;http://www.xythobuz.de/img/party2.gif&quot; /&gt;&lt;/p&gt;</description>
     <pubDate>Wed, 17 Apr 2013 10:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_04_17_abi.html</guid>
-</item>
-
-<item>
-    <title>RSS Probleme</title>
-    <link>http://www.xythobuz.de/2013_04_11_rss.html</link>
-    <description>&lt;h2&gt;RSS Probleme&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at April 11, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;An alle Abonennten meines RSS Feeds: Tut mir leid! :)&lt;/p&gt;
-&lt;p&gt;Mittlerweile sollten alle Probleme behoben sein. Außerdem ist der Blog-Post Inhalt wieder mit im Feed. Deshalb validiert er zwar nicht mehr, dank Youtube Embedding, aber damit kann ich leben...&lt;/p&gt;</description>
-    <pubDate>Thu, 11 Apr 2013 10:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_04_11_rss.html</guid>
 </item>
 
 </channel>
