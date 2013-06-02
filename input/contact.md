@@ -1,7 +1,6 @@
 title: Contact
 parent: main
 position: 2
-funny: drop a message!
 compat: kontakt
 ---
 

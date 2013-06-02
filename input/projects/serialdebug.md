@@ -5,7 +5,6 @@ parent: hardware
 position: 4
 comments: true
 flattr: true
-funny: mildly useful
 compat: serialdebug
 twitter: xythobuz
 reddit: true

@@ -5,7 +5,6 @@ parent: hardware
 position: 0
 comments: true
 flattr: true
-funny: <a href="http://www.liveleak.com/view?i=0cd_1295609192">"It turns blue..."</a>
 github: https://github.com/xythobuz/LED-Cube
 compat: cube
 twitter: xythobuz

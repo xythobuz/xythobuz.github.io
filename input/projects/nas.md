@@ -5,7 +5,6 @@ parent: software
 position: 3
 comments: true
 flattr: true
-funny: Kernel Hacking 101
 compat: nas
 twitter: xythobuz
 reddit: true
