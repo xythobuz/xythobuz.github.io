@@ -13,7 +13,7 @@ All of my projects are released as [Free Software][fs] on my [GitHub Profile][gh
 
 It would be nice if you could use this [Amazon.de Affiliate Link][ama].
 
-<div style="width: 400px; height: 110px; margin-left: auto; margin-right: auto; margin-top: 1em; margin-bottom: 1em;">
+<div style="margin-left: auto; margin-right: auto; margin-top: 1em; margin-bottom: 1em;">
 <iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 110px;width: 200px;overflow: hidden;"></iframe>
 <div style="width: 110px; height: 110px; float: right; border: 2px, solid, #000000; border-radius: 10px; background-image: url(http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=110)"></div>
 </div>
