@@ -1,7 +1,8 @@
 title: xyRobot
 title_de: xyRobot
 description: ATMega2560 robotics platform with Gameboy Camera
-menu-position: 45
+parent: hardware
+position: 2
 comments: true
 flattr: true
 github: https://github.com/xythobuz/xyRobot

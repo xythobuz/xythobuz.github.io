@@ -1,7 +1,8 @@
 title: SSOP28 - DIL Adapter
 title_de: SSOP28 - DIL Adapter
 description: SSOP28 to DIL Adapter with EAGLE board file
-menu-position: 40
+parent: hardware
+position: 3
 comments: true
 flattr: true
 compat: ssop28

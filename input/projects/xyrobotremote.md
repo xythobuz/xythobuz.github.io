@@ -1,7 +1,8 @@
 title: xyRobotRemote
 title_de: xyRobotRemote
 description: Java Swing App to remote-control a robot
-menu-position: 48
+parent: xyrobot
+position: 3
 comments: true
 flattr: true
 github: https://github.com/xythobuz/xyRobot/tree/master/xyRobotRemote

@@ -1,10 +1,10 @@
 title: IB-NAS6210 Linux
 title_de: IB-NAS6210 Linux
 description: Booting your own Linux on an Icybox NAS6210 box
-menu-position: 62
+parent: software
+position: 4
 comments: true
 flattr: true
-funny: Kernel Hacking 101
 compat: nas
 twitter: xythobuz
 reddit: true

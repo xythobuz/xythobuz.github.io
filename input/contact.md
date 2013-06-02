@@ -1,6 +1,6 @@
 title: Contact
-menu-position: 2
-funny: drop a message!
+parent: main
+position: 2
 compat: kontakt
 ---
 

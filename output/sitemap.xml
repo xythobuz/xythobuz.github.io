@@ -37,6 +37,20 @@
 </url>
 
 <url>
+    <loc>http://www.xythobuz.de/hardware.de.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/hardware.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>http://www.xythobuz.de/index.de.html</loc>
     <lastmod>2013-06-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -45,6 +59,20 @@
 
 <url>
     <loc>http://www.xythobuz.de/index.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/software.de.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/software.html</loc>
     <lastmod>2013-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -275,6 +303,20 @@
 </url>
 
 <url>
+    <loc>http://www.xythobuz.de/bluetooth.de.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/bluetooth.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>http://www.xythobuz.de/c250.de.html</loc>
     <lastmod>2013-06-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -283,6 +325,20 @@
 
 <url>
     <loc>http://www.xythobuz.de/c250.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/k6x4008.de.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/k6x4008.html</loc>
     <lastmod>2013-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -325,6 +381,20 @@
 
 <url>
     <loc>http://www.xythobuz.de/nas.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/rremote.de.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/rremote.html</loc>
     <lastmod>2013-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -394,62 +464,6 @@
 </url>
 
 <url>
-    <loc>http://www.xythobuz.de/yasab.de.html</loc>
-    <lastmod>2013-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/yasab.html</loc>
-    <lastmod>2013-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/bluetooth.de.html</loc>
-    <lastmod>2013-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/bluetooth.html</loc>
-    <lastmod>2013-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/k6x4008.de.html</loc>
-    <lastmod>2013-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/k6x4008.html</loc>
-    <lastmod>2013-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/rremote.de.html</loc>
-    <lastmod>2013-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
-    <loc>http://www.xythobuz.de/rremote.html</loc>
-    <lastmod>2013-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-
-<url>
     <loc>http://www.xythobuz.de/xyrobot.de.html</loc>
     <lastmod>2013-06-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -472,6 +486,20 @@
 
 <url>
     <loc>http://www.xythobuz.de/xyrobotremote.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/yasab.de.html</loc>
+    <lastmod>2013-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>http://www.xythobuz.de/yasab.html</loc>
     <lastmod>2013-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

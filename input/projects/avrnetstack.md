@@ -1,7 +1,8 @@
 title: avrNetStack
 title_de: avrNetStack
 description: Modular AVR TCP/IP Stack with Ethernet and WiFi support
-menu-position: 22
+parent: software
+position: 0
 comments: true
 flattr: true
 github: https://github.com/xythobuz/avrNetStack
