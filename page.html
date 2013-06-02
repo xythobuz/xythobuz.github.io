@@ -49,7 +49,7 @@
                     mpages.sort(key=lambda p: int(p["position"]))
                     entry = '<li><a href="%s">%s</a></li>'
                     newEntry = '<li class="dropdown"><a href="%s" class="dropdown-toggle" data-toggle="dropdown">%s<b class="caret"></b></a><ul class="dropdown-menu">'
-                    newEntry2 = '<li class="dropdown-submenu"><a href="%s" class="dropdown-toggle" data-toggle="dropdown">%s</a><ul class="dropdown-menu">'
+                    newEntry2 = '<li class="dropdown-submenu"><a href="%s" class="dropdown-toggle disabled" data-toggle="dropdown">%s</a><ul class="dropdown-menu">'
                     for p in mpages:
                         sub = [r for r in pages if r.get("parent", "") == p.url.replace("/", "").replace(".html", "") and r.lang == "en"]
                         sub.sort(key=lambda r: int(r["position"]))
