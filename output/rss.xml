@@ -6,10 +6,33 @@
 <atom:link href="http://www.xythobuz.de/rss.xml" rel="self" type="application/rss+xml" />
 <description>xythobuz Electronics &amp; Software Projects</description>
 <language>en-us</language>
-<pubDate>Sun, 02 Jun 2013 15:30:55 -0000</pubDate>
-<lastBuildDate>Sun, 02 Jun 2013 15:30:55 -0000</lastBuildDate>
+<pubDate>Sun, 02 Jun 2013 15:56:29 -0000</pubDate>
+<lastBuildDate>Sun, 02 Jun 2013 15:56:29 -0000</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+
+<item>
+    <title>BTS555 Leistungsschalter</title>
+    <link>http://www.xythobuz.de/2013_06_02_bts555.html</link>
+    <description>&lt;h2&gt;BTS555 Leistungsschalter&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at June 02, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Heute habe ich im Briefkasten den &lt;a href=&quot;http://plischka.at/BTS555-Schalter.html&quot;&gt;BTS555 Leistungsschalter&lt;/a&gt; von &lt;a href=&quot;http://plischka.at&quot;&gt;Peter Plischka&lt;/a&gt; entdeckt. Sehr nützlich, diese Teilchen, um meinen Quadrocopter endlich per Schalter und nicht nur per Stecker An- und Auszuschalten. Dieses Vorhaben gestaltet sich nämlich als mehr oder weniger schwierig, da unter Volllast auch mal knapp 50A über die Leitung fließen. Das macht über 500W!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/plischka1.jpg&quot;&gt;&lt;img alt=&quot;Foto 1&quot; src=&quot;http://www.xythobuz.de/img/plischka1_small.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://www.xythobuz.de/img/plischka2.jpg&quot;&gt;&lt;img alt=&quot;Foto 2&quot; src=&quot;http://www.xythobuz.de/img/plischka2_small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    <pubDate>Sun, 02 Jun 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_06_02_bts555.html</guid>
+</item>
+
+<item>
+    <title>Regelschwingungen</title>
+    <link>http://www.xythobuz.de/2013_05_28_pid.html</link>
+    <description>&lt;h2&gt;Regelschwingungen&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Posted at May 28, 2013.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Ich kann nicht behaupten, viel weiter gekommen zu sein...&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.xythobuz.de/img/xyargh.png&quot;&gt;&lt;img alt=&quot;Screenshot&quot; src=&quot;http://www.xythobuz.de/img/xyargh_small.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    <pubDate>Tue, 28 May 2013 10:00:00 -0000</pubDate>
+    <guid>http://www.xythobuz.de/2013_05_28_pid.html</guid>
+</item>
 
 <item>
     <title>Just Cause 2 Capture</title>
@@ -166,29 +189,6 @@ reboot
 &lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=l0mmVPV4w7c&quot;&gt;&lt;code&gt;Youtube Direktlink&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;</description>
     <pubDate>Fri, 19 Apr 2013 10:00:00 -0000</pubDate>
     <guid>http://www.xythobuz.de/2013_04_19_ekstasie.html</guid>
-</item>
-
-<item>
-    <title>Abi Pruefungen</title>
-    <link>http://www.xythobuz.de/2013_04_17_abi.html</link>
-    <description>&lt;h2&gt;Abi Pruefungen&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at April 17, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Ahhh... Das war's, alle Abi Prüfungen sind geschrieben. Und es lief überall besser als erwartet. In diesem Sinne:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&quot;Party Hard&quot; src=&quot;http://www.xythobuz.de/img/party1.gif&quot; /&gt;
-&lt;img alt=&quot;Party Harder&quot; src=&quot;http://www.xythobuz.de/img/party2.gif&quot; /&gt;&lt;/p&gt;</description>
-    <pubDate>Wed, 17 Apr 2013 10:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_04_17_abi.html</guid>
-</item>
-
-<item>
-    <title>RSS Probleme</title>
-    <link>http://www.xythobuz.de/2013_04_11_rss.html</link>
-    <description>&lt;h2&gt;RSS Probleme&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Posted at April 11, 2013.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;An alle Abonennten meines RSS Feeds: Tut mir leid! :)&lt;/p&gt;
-&lt;p&gt;Mittlerweile sollten alle Probleme behoben sein. Außerdem ist der Blog-Post Inhalt wieder mit im Feed. Deshalb validiert er zwar nicht mehr, dank Youtube Embedding, aber damit kann ich leben...&lt;/p&gt;</description>
-    <pubDate>Thu, 11 Apr 2013 10:00:00 -0000</pubDate>
-    <guid>http://www.xythobuz.de/2013_04_11_rss.html</guid>
 </item>
 
 </channel>
