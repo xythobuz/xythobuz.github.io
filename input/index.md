@@ -8,7 +8,10 @@ compat: home
 
 # Welcome
 
-I'm publishing some informations about my projects here. Please give feedback and have fun!
+I'm a 19 year old Information Engineering student from Germany, mostly building cool stuff with AVR microcontrollers.
+All of my projects are released as [Free Software][fs] on my [GitHub Profile][gh], as well as on this Website. Have fun!
+
+It would be nice if you could use this [Amazon.de Affiliate Link][ama].
 
 <div style="width: 400px; height: 110px; margin-left: auto; margin-right: auto; margin-top: 1em; margin-bottom: 1em;">
 <iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 110px;width: 200px;overflow: hidden;"></iframe>
@@ -29,6 +32,9 @@ GCS/E/MU d-(--)>--- s:++ a-- C++++>$ UBLX+++>++++$ P+ L+ !E--- W+++ N+ !o K--? !
  [1]: http://www.xythobuz.de/cubehook.php
  [2]: http://en.wikipedia.org/wiki/HD_DVD_encryption_key_controversy
  [3]: http://www.yalelawtech.org/trusted-computing-drm/46-dc-ea-d3-17-fe-45-d8-09-23-eb-97-e4-95-64-10-d4-cd-b2-c2/
+ [fs]: http://www.gnu.org/philosophy/free-sw.html
+ [gh]: https://github.com/xythobuz
+ [ama]: http://www.amazon.de/?_encoding=UTF8&amp;camp=1638&amp;creative=19454&amp;linkCode=ur2&amp;site-redirect=de&amp;tag=xythobuzorg-21
 
 lang: de
 
@@ -55,3 +61,6 @@ GCS/E/MU d-(--)>--- s:++ a-- C++++>$ UBLX+++>++++$ P+ L+ !E--- W+++ N+ !o K--? !
  [1]: http://www.xythobuz.de/cubehook.php
  [2]: http://en.wikipedia.org/wiki/HD_DVD_encryption_key_controversy
  [3]: http://www.yalelawtech.org/trusted-computing-drm/46-dc-ea-d3-17-fe-45-d8-09-23-eb-97-e4-95-64-10-d4-cd-b2-c2/
+ [fs]: http://www.gnu.org/philosophy/free-sw.html
+ [gh]: https://github.com/xythobuz
+ [ama]: http://www.amazon.de/?_encoding=UTF8&amp;camp=1638&amp;creative=19454&amp;linkCode=ur2&amp;site-redirect=de&amp;tag=xythobuzorg-21
