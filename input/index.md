@@ -15,7 +15,7 @@ It would be nice if you could use this [Amazon.de Affiliate Link][ama].
 
 <div style="margin-left: auto; margin-right: auto; margin-top: 1em; margin-bottom: 1em;">
 <iframe src="http://githubbadge.appspot.com/badge/xythobuz?a=0" style="border: 0;height: 110px;width: 200px;overflow: hidden;"></iframe>
-<div style="width: 110px; height: 110px; float: right; border: 2px, solid, #000000; border-radius: 10px; background-image: url(http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=110)"></div>
+<div style="width: 150px; height: 150px; float: right; border: 2px, solid, #000000; border-radius: 10px; background-image: url(http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=150)"></div>
 </div>
 
 [09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0][2]
@@ -28,6 +28,11 @@ Version: 3.12
 GCS/E/MU d-(--)>--- s:++ a-- C++++>$ UBLX+++>++++$ P+ L+ !E--- W+++ N+ !o K--? !w--- !O M++ !V PS+++ PE-- Y+ PGP++ !t !5 !X !R tv-- b+ DI+ D+ G e h r y?*
 ------END GEEK CODE BLOCK------
 </pre>
+
+<div style="width: 520px; max-width: 100%; margin-left: auto; margin-right: auto;">
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/xythobuz" data-widget-id="318732638158471170">Tweets by @xythobuz</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
 
  [1]: http://www.xythobuz.de/cubehook.php
  [2]: http://en.wikipedia.org/wiki/HD_DVD_encryption_key_controversy
@@ -57,6 +62,11 @@ Version: 3.12
 GCS/E/MU d-(--)>--- s:++ a-- C++++>$ UBLX+++>++++$ P+ L+ !E--- W+++ N+ !o K--? !w--- !O M++ !V PS+++ PE-- Y+ PGP++ !t !5 !X !R tv-- b+ DI+ D+ G e h r y?*
 ------END GEEK CODE BLOCK------
 </pre>
+
+<div style="width: 520px; max-width: 100%; margin-left: auto; margin-right: auto;">
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/xythobuz" data-widget-id="318732638158471170">Tweets by @xythobuz</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
 
  [1]: http://www.xythobuz.de/cubehook.php
  [2]: http://en.wikipedia.org/wiki/HD_DVD_encryption_key_controversy
