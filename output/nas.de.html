@@ -60,21 +60,22 @@ t.parentNode.insertBefore(s, t);
 <li><a href="/serialdebug.html">Serial Debug</a></li>
 <li><a href="/ledmatrix.html">LED Matrix</a></li>
 </ul>
+                <li class="divider-vertical"></li>
+                <li><div class="btn-group"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Language<span class="caret"></span></a><ul class="dropdown-menu">
+<li><a href='nas.de.html'>Deutsch</a></li> <li><a href='nas.html'>English</a></li>
+</ul></div></li>
+
+                <li class="divider-vertical"></li>
+                <li>
+                    <p class="navbar-text">
+                        Kernel Hacking 101
+                    </p>
+                </li>
             </ul>
         </div>
     </div>
 
-    <div id="header">
-        <h1>xythobuz.de</h1>
-        <p><a href="http://xythobuz.de/lastmusic">♫</a></p>
-        <h2>Kernel Hacking 101</h2>
-    </div>
-
-    <div class="btn-group"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Language<span class="caret"></span></a><ul class="dropdown-menu">
-<li><a href='IB-NAS6210 Linux'>title_de</a></li> | <li><a href='Kernel Hacking 101'>funny</a></li> | <li><a href='true'>reddit</a></li> | <li><a href='Booting your own Linux on an Icybox NAS6210 box'>description</a></li> | <li><a href='software'>parent</a></li> | <li><a href='IB-NAS6210 Linux'>title</a></li> | <li><a href='nas.de.html'>url</a></li> | <li><a href='xythobuz'>twitter</a></li> | <li><a href='nas'>compat</a></li> | <li><a href='true'>comments</a></li> | <li><a href='de'>lang</a></li> | <li><a href='{u'de': u'nas.de.html', 'en': u'nas.html'}'>lang_links</a></li> | <li><a href='./input/nas.de.md'>fname</a></li> | <li><a href='[u'de', 'en']'>other_lang</a></li> | <li><a href='true'>print</a></li> | <li><a href='3'>position</a></li> | <li><a href='true'>flattr</a></li>
-</ul></div>
-
-    <div id="content">
+    <div style="width: 75%; margin-left: auto; margin-right: auto;">
         <h1>IB-NAS6210 Linux</h1>
 <p>Diese Anleitung gilt ebenso für den IB-NAS6220. Dieser besitzt 2 HDD Schächte und ein völlig anderes Webinterface. Über dieses ist es möglich, das root Passwort zu ändern (siehe diesen <a href="http://forum.nas-portal.org/showthread.php?12855-Ib-nas6220-b&amp;p=55718&amp;viewfull=1#post55718">Forenbeitrag</a>), was evtl. eine Neuinstallation einer Linux Distribution erübrigt.</p>
 <p>Der <a href="http://www.amazon.de/gp/product/B003DODPGG/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;tag=xythobuzorg-21&amp;linkCode=as2&amp;camp=1638&amp;creative=6742&amp;creativeASIN=B003DODPGG">Icy Box IB-NAS6210</a> (Affiliate Link) hat mit seiner hauseigenen Firmware nur einen beschränkten Funktionsumfang. Es ist kein <a href="http://de.wikipedia.org/wiki/Apple_Filing_Protocol">AFP</a> oder <a href="http://de.wikipedia.org/wiki/Digital_Audio_Access_Protocol">DAAP</a> möglich, was als Mac User von großem Nachteil ist. Deshalb muss Linux her, welches auf der verbauten ARM CPU hervorragend läuft. Es ist zwar bereits ein Linux System installiert, leider ist aber der root User nicht zugänglich.</p>

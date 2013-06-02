@@ -70,24 +70,24 @@
                         else:
                             print(entry % (htmlspecialchars(p["url"]), htmlspecialchars(p["title"])))
                 %-->
+                <li class="divider-vertical"></li>
+                <!--%
+                        print '<li><div class="btn-group"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Language<span class="caret"></span></a><ul class="dropdown-menu">'
+                        print " ".join(["<li><a href='%s'>%s</a></li>" % (url, lang) for lang, url in page["lang_links"].iteritems()]).replace(">en<", ">English<").replace(">de<", ">Deutsch<")
+                        print "</ul></div></li>"
+                        print ''
+                %-->
+                <li class="divider-vertical"></li>
+                <li>
+                    <p class="navbar-text">
+                        {{ page.get("funny", htmlspecialchars(page["title"])) }}
+                    </p>
+                </li>
             </ul>
         </div>
     </div>
 
-    <div id="header">
-        <h1>xythobuz.de</h1>
-        <p><a href="http://xythobuz.de/lastmusic">♫</a></p>
-        <h2>{{ page.get("funny", htmlspecialchars(page["title"])) }}</h2>
-    </div>
-
-    <!--%
-        if len("".join(["%s" % lang for lang in page["lang_links"]])) > 2:
-            print '<div class="btn-group"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Language<span class="caret"></span></a><ul class="dropdown-menu">'
-            print " | ".join(["<li><a href='%s'>%s</a></li>" % (url, lang) for lang, url in page.iteritems()])
-            print "</ul></div>"
-    %-->
-
-    <div id="content">
+    <div style="width: 75%; margin-left: auto; margin-right: auto;">
         {{ __content__ }}
         <!--%
             import sys
