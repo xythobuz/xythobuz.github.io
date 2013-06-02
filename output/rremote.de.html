@@ -5,14 +5,17 @@
     <title>rRemote (#) xythobuz.de</title>
     <meta name="description" content="Remote Control Casio FX9860-GII Calculator AddIn" />
     <meta name="keywords" content="xythobuz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="author" href="/xythobuz@xythobuz.de">
     <link rel="shortcut icon" href="/img/favicon.ico">
-    <script type="text/javascript" src="/js/sh_main.js"></script>
-    <link type="text/css" rel="stylesheet" href="/css/sh_bright.min.css" />
-    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
     <link rel="alternate" type="application/rss+xml" title="Blog" href="/rss.xml">
+    <link type="text/css" rel="stylesheet" href="/css/sh_bright.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/css/gh-fork-ribbon.css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/js/sh_main.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type='text/javascript'>
 /* <![CDATA[ */
 (function() {
@@ -28,69 +31,48 @@ t.parentNode.insertBefore(s, t);
 </head>
 <body onload="sh_highlightDocument('/js/sh/', '.min.js');">
     
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="http://xythobuz.de/lastmusic">♫</a>
+            <ul class="nav">
+                <li><a href="/index.html">Home</a></li>
+<li><a href="/blog.html">Blog</a></li>
+<li><a href="/contact.html">Contact</a></li>
+<li class="dropdown"><a href="/software.html" class="dropdown-toggle" data-toggle="dropdown">Software<b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="/avrnetstack.html">avrNetStack</a></li>
+<li><a href="/avrserial.html">AVR Serial Library</a></li>
+<li><a href="/c250.html">Mio C250 Unlock</a></li>
+<li><a href="/nas.html">IB-NAS6210 Linux</a></li>
+<li><a href="/serialhelper.html">Serial Helper</a></li>
+<li><a href="/ultimatenotifier.html">Ultimate Notifier Script</a></li>
+<li><a href="/yasab.html">YASAB AVR Bootloader</a></li>
+</ul>
+<li class="dropdown"><a href="/hardware.html" class="dropdown-toggle" data-toggle="dropdown">Hardware<b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="/ledcube.html">8x8x8 LED Cube</a></li>
+<li><a href="/xycontrol.html">xyControl</a></li>
+<li class="dropdown-submenu"><a href="/xyrobot.html" class="dropdown-toggle" data-toggle="dropdown">xyRobot</a><ul class="dropdown-menu">
+<li><a href="/bluetooth.html">Bluetooth UART (BTM-222)</a></li>
+<li><a href="/k6x4008.html">K6x4008 SRAM</a></li>
+<li><a href="/rremote.html">rRemote</a></li>
+<li><a href="/xyrobotremote.html">xyRobotRemote</a></li>
+</ul>
+<li><a href="/ssop28.html">SSOP28 - DIL Adapter</a></li>
+<li><a href="/serialdebug.html">Serial Debug</a></li>
+<li><a href="/ledmatrix.html">LED Matrix</a></li>
+</ul>
+            </ul>
+        </div>
+    </div>
+
     <div id="header">
         <h1>xythobuz.de</h1>
         <p><a href="http://xythobuz.de/lastmusic">♫</a></p>
         <h2>rRemote</h2>
     </div>
 
-    <nav>
-        <ul id="menu">
-        <li><a href="/index.html">Home</a>
-</li>
-<li><a href="/blog.html">Blog</a>
-</li>
-<li><a href="/contact.html">Contact</a>
-</li>
-<li><a href="/software.html">Software</a>
-<ul>
-<li><a href="/avrnetstack.html">avrNetStack</a>
-</li>
-<li><a href="/avrserial.html">AVR Serial Library</a>
-</li>
-<li><a href="/c250.html">Mio C250 Unlock</a>
-</li>
-<li><a href="/nas.html">IB-NAS6210 Linux</a>
-</li>
-<li><a href="/serialhelper.html">Serial Helper</a>
-</li>
-<li><a href="/ultimatenotifier.html">Ultimate Notifier Script</a>
-</li>
-<li><a href="/yasab.html">YASAB AVR Bootloader</a>
-</li>
-</ul>
-</li>
-<li><a href="/hardware.html">Hardware</a>
-<ul>
-<li><a href="/ledcube.html">8x8x8 LED Cube</a>
-</li>
-<li><a href="/xycontrol.html">xyControl</a>
-</li>
-<li><a href="/xyrobot.html">xyRobot</a>
-<ul>
-<li><a href="/bluetooth.html">Bluetooth UART (BTM-222)</a>
-</li>
-<li><a href="/k6x4008.html">K6x4008 SRAM</a>
-</li>
-<li><a href="/rremote.html">rRemote</a>
-</li>
-<li><a href="/xyrobotremote.html">xyRobotRemote</a>
-</li>
-</ul>
-</li>
-<li><a href="/ssop28.html">SSOP28 - DIL Adapter</a>
-</li>
-<li><a href="/serialdebug.html">Serial Debug</a>
-</li>
-<li><a href="/ledmatrix.html">LED Matrix</a>
-</li>
-</ul>
-</li>
-        </ul>
-        <div>Translation: 
-<a href='rremote.de.html'>de</a> | <a href='rremote.html'>en</a>
-</div>
-    </nav>
+    <div class="btn-group"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Language<span class="caret"></span></a><ul class="dropdown-menu">
+<li><a href='rRemote'>title_de</a></li> | <li><a href='rrem'>compat</a></li> | <li><a href='true'>reddit</a></li> | <li><a href='Remote Control Casio FX9860-GII Calculator AddIn'>description</a></li> | <li><a href='xyrobot'>parent</a></li> | <li><a href='rRemote'>title</a></li> | <li><a href='rremote.de.html'>url</a></li> | <li><a href='xythobuz'>twitter</a></li> | <li><a href='true'>comments</a></li> | <li><a href='de'>lang</a></li> | <li><a href='{u'de': u'rremote.de.html', 'en': u'rremote.html'}'>lang_links</a></li> | <li><a href='./input/rremote.de.md'>fname</a></li> | <li><a href='[u'de', 'en']'>other_lang</a></li> | <li><a href='true'>print</a></li> | <li><a href='2'>position</a></li> | <li><a href='true'>flattr</a></li>
+</ul></div>
 
     <div id="content">
         <h1>rRemote</h1>
@@ -122,18 +104,14 @@ dsq.src = "http://" + disqus_shortname + ".disqus.com/embed.js";
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 
-    <div id="footer">
+    <div style="color: gray; text-align: center;">
         Built with <a href="http://bitbucket.org/obensonne/poole">Poole</a>
         &middot;
+        Made with <a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a>
+        &middot;
+        Using <a href="http://shjs.sourceforge.net">SHJS</a>
+        &middot;
         Licensed as <a href="http://creativecommons.org/licenses/by/3.0">CC-BY</a>
-        &middot;
-        <a href="http://validator.w3.org/check?uri=referer">Validate HTML</a>
-        &middot;
-        <a href="http://jigsaw.w3.org/css-validator/validator?uri=xythobuz.de%2Fstyle.css&amp;profile=css3">Validate CSS</a>
-        &middot;
-        <a href="http://feed1.w3.org/check.cgi?url=http://www.xythobuz.de/rss.xml">Validate RSS</a>
-        &middot;
-        <a href="http://www.validome.org/google/validate?url=http://www.xythobuz.de&amp;googleTyp=SITEMAP">Validate Sitemap</a>
     </div>
     <img src="/stats/count.php?img" alt="Analytics">
     <script src="http://gitforked.com/api/1.1/button.js" type="text/javascript"></script>
