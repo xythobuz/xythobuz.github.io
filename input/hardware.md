@@ -4,7 +4,7 @@ position: 4
 compat: hw
 ---
 
-# Software
+# {{ page.title }}
 
 These are my mostly hardware-related projects and articles.
 
@@ -17,7 +17,7 @@ for p in mpages:
 
 lang: de
 
-# Software
+# {{ page.title }}
 
 Dies sind meine Projekte, deren Schwerpunkt eher im Bereich Hardware liegen.
 

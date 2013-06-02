@@ -4,7 +4,7 @@ position: 3
 compat: sw
 ---
 
-# Software
+# {{ page.title }}
 
 These are my mostly software-related projects and articles.
 
@@ -17,7 +17,7 @@ for p in mpages:
 
 lang: de
 
-# Software
+# {{ page.title }}
 
 Dies sind meine Projekte, deren Schwerpunkt eher im Bereich Software liegen.
 
