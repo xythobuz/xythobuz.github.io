@@ -98,6 +98,15 @@
         <!--%
             import sys
 
+            # Horizontal Line and Centered DIV
+            if page.get("flattr", "false") == "true" or page.get("twitter", "") != "" or page.get("reddit", "") != "" or page.get("github", "") != "" or page.get("print", "false") == "true":
+                print '<hr>'
+                print '<div style="text-align: center;">'
+
+            # Print and PDF Buttons
+            if page.get("print", "false") == "true":
+                print """<script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if('https:' == document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-print-icon.gif" width="16" height="15" alt="Print Friendly Version of this page" />Print <img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-pdf-icon.gif" width="12" height="12" alt="Get a PDF version of this webpage" />PDF</a>"""
+
             # Flattr Button
             if page.get("flattr", "false") == "true":
                 print '<span id="flattr">'
@@ -140,7 +149,7 @@
                 sys.stdout.write("\n")
                 print '</span>'
 
-            # GitHub Fork Button
+            # GitHub Fork Button. Place this last!
             if page.get("github", "") != "":
                 print '<span id="github">'
                 sys.stdout.write('<a href="')
@@ -149,11 +158,15 @@
                 sys.stdout.write("\n")
                 print '</span>'
 
-            if page.get("print", "false") == "true":
-                print """<div id="print"><script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if('https:' == document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-print-icon.gif" width="16" height="15" alt="Print Friendly Version of this page" />Print <img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-pdf-icon.gif" width="12" height="12" alt="Get a PDF version of this webpage" />PDF</a></div>"""
+            # Close DIV, horizontal line when no comments
+            if page.get("flattr", "false") == "true" or page.get("twitter", "") != "" or page.get("reddit", "") != "" or page.get("github", "") != "" or page.get("print", "false") == "true":
+                print '</div>'
+                if page.get("comments", "false") != "true":
+                    print '<hr>'
 
+            # Disqus Comments
             if page.get("comments", "false") == "true":
-                print '<div id="disqus_thread"></div>'
+                print '<hr><div id="disqus_thread"></div>'
                 print '<script type="text/javascript">'
                 print 'var disqus_shortname = "xythobuz";'
                 print '(function() {'
