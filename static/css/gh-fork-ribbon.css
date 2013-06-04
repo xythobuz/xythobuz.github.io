@@ -25,7 +25,8 @@
   z-index: 9999;
 }
 
-.github-fork-ribbon a {
+.github-fork-ribbon a,
+.github-fork-ribbon a:hover {
   /* Set the font */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -57,6 +58,11 @@
   position: absolute;
   overflow: hidden;
   top: 0;
+  z-index: 9999;
+}
+
+.github-fork-ribbon-wrapper.fixed {
+  position: fixed;
 }
 
 .github-fork-ribbon-wrapper.left {

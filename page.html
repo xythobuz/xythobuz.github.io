@@ -37,12 +37,12 @@
     <!--%
         if page.get("github", "") != "":
             # GitHub Fork-Me Ribbon
-            print '<div class="github-fork-ribbon-wrapper right">'
+            print '<div class="github-fork-ribbon-wrapper right fixed">'
             print '<div class="github-fork-ribbon"><a href="'
             print page.github
             print '">Fork me on GitHub</a></div></div>'
     %-->
-    <div class="navbar">
+    <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <ul class="nav">
                 <!--%
@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    <div style="width: 75%; margin-left: auto; margin-right: auto;">
+    <div style="width: 75%; margin-left: auto; margin-right: auto; padding-top: 50px;">
         {{ __content__ }}
         <!--%
             import sys
