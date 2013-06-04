@@ -161,8 +161,9 @@
             # Close DIV, horizontal line when no comments
             if page.get("flattr", "false") == "true" or page.get("twitter", "") != "" or page.get("reddit", "") != "" or page.get("github", "") != "" or page.get("print", "false") == "true":
                 print '</div>'
-                if page.get("comments", "false") != "true":
-                    print '<hr>'
+
+            if page.get("comments", "false") != "true":
+                print '<hr>'
 
             # Disqus Comments
             if page.get("comments", "false") == "true":
