@@ -34,6 +34,15 @@ Now some pictures:
 [![Foto 12][30]][31]
 [![Foto 13][32]][33]
 
+Other articles that are part of xyRobot:
+
+<!--%
+mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
+mpages.sort(key=lambda p: int(p["position"]))
+for p in mpages:
+    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
+%-->
+
  [1]: bluetooth.html
  [2]: http://www.angelfire.com/de3/juliprograms/amr/gbcam.htm
  [3]: k6x4008.html
@@ -68,15 +77,6 @@ Now some pictures:
  [32]: img/roboter_platine.png
  [33]: img/roboter_platine_big.png
 
-Other articles that are part of xyRobot:
-
-<!--%
-mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
-mpages.sort(key=lambda p: int(p["position"]))
-for p in mpages:
-    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
-%-->
-
 lang: de
 
 # {{ page.title_de }}
@@ -101,7 +101,7 @@ Hier nun einige Bilder meines Roboters:
 [![Foto 12][30]][31]
 [![Foto 13][32]][33]
 
-Andere Artike die zu xyRobot gehören:
+Andere Artikel die zu xyRobot gehören:
 
 <!--%
 mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "de"]
