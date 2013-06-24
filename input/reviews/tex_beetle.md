@@ -1,6 +1,8 @@
 title: Tex Beetle Review
 parent: none
 comments: true
+flattr: true
+reddit: http://www.reddit.com/r/MechanicalKeyboards/comments/1gx7gk/review_small_tex_beetle_review_my_first/
 ---
 
 # {{ page.title }}
