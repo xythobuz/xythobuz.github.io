@@ -2,7 +2,7 @@ title: Serial Debug
 title_de: Serial Debug
 description: Displaying incoming UART characters on a 8x5 LED Matrix with an ATTiny2313
 parent: hardware
-position: 4
+position: 3
 comments: true
 flattr: true
 compat: serialdebug

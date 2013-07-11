@@ -1,7 +1,7 @@
 title: xyControl
 title_de: xyControl
 description: AVR base Quadrocopter Flight Controller
-parent: hardware
+parent: none
 position: 1
 comments: true
 flattr: true
