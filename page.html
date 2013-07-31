@@ -11,6 +11,7 @@
     <link rel="alternate" type="application/rss+xml" title="Blog" href="rss.xml">
     <link type="text/css" rel="stylesheet" href="css/sh_bright.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/gh-fork-ribbon.css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/sh_main.js"></script>
@@ -32,7 +33,7 @@
             print "</script>"
     %-->
 </head>
-<body onload="sh_highlightDocument('/js/sh/', '.min.js');" style="font-size: 1.8em; font-family: 'Droid Sans', sans-serif;">
+<body onload="sh_highlightDocument('/js/sh/', '.min.js');" style="font-size: 1.1em; font-family: 'Droid Sans', sans-serif;">
     <!--%
         if page.get("github", "") != "":
             # GitHub Fork-Me Ribbon
@@ -43,12 +44,12 @@
     %-->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
-            <ul class="nav navbar-nav">
+            <ul class="nav">
                 <!--%
                     mpages = [p for p in pages if p.get("parent", "") == "main" and p.lang == "en"]
                     mpages.sort(key=lambda p: int(p["position"]))
                     entry = '<li><a href="%s">%s</a></li>'
-                    newEntry = '<li class="dropdown"><a href="%s" class="dropdown-toggle" data-toggle="dropdown">%s <b class="caret"></b></a><ul class="dropdown-menu">'
+                    newEntry = '<li class="dropdown"><a href="%s" class="dropdown-toggle" data-toggle="dropdown">%s<b class="caret"></b></a><ul class="dropdown-menu">'
                     newEntry2 = '<li class="dropdown-submenu"><a href="%s" class="dropdown-toggle disabled" data-toggle="dropdown">%s</a><ul class="dropdown-menu">'
                     for p in mpages:
                         sub = [r for r in pages if r.get("parent", "") == p.url.replace("/", "").replace(".html", "") and r.lang == "en"]
@@ -75,7 +76,7 @@
                         tmp = [p for p in page["lang_links"].iteritems()]
                         if len(tmp) > 1:
                             print '<li class="divider-vertical"></li>'
-                            print '<li class="dropdown"><a href="language.html" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a><ul class="dropdown-menu">'
+                            print '<li class="dropdown"><a href="language.html" class="dropdown-toggle" data-toggle="dropdown">Language<b class="caret"></b></a><ul class="dropdown-menu">'
                             print " ".join(["<li><a href='%s'>%s</a></li>" % (url, lang) for lang, url in page["lang_links"].iteritems()]).replace(">en<", ">English<").replace(">de<", ">Deutsch<")
                             print "</ul></li>"
                             print ''
@@ -86,9 +87,9 @@
                         curobj.q.value = "site:xythobuz.de " + curobj.r.value
                     }
                 </script>
-                <form class="navbar-form pull-right" action="http://www.google.com/search" method="get" onSubmit="sitesearch(this)">
+                <form class="navbar-search" action="http://www.google.com/search" method="get" onSubmit="sitesearch(this)">
                     <input name="q" type="hidden" />
-                    <input name="r" type="text" class="form-control" placeholder="Search..." />
+                    <input name="r" type="text" class="search-query span2" placeholder="Search..." />
                 </form>
             </ul>
         </div>
