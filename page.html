@@ -69,15 +69,18 @@
                         else:
                             print(entry % (htmlspecialchars(p["url"]), htmlspecialchars(p["title"])))
                 %-->
+                <li class="divider-vertical"></li>
                 <li><a href="http://xythobuz.de/lastmusic">♫</a></li>
                 <!--%
                         tmp = [p for p in page["lang_links"].iteritems()]
                         if len(tmp) > 1:
+                            print '<li class="divider-vertical"></li>'
                             print '<li class="dropdown"><a href="language.html" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a><ul class="dropdown-menu">'
                             print " ".join(["<li><a href='%s'>%s</a></li>" % (url, lang) for lang, url in page["lang_links"].iteritems()]).replace(">en<", ">English<").replace(">de<", ">Deutsch<")
                             print "</ul></li>"
                             print ''
                 %-->
+                <li class="divider-vertical"></li>
                 <script type="text/javascript">
                     function sitesearch(curobj) {
                         curobj.q.value = "site:xythobuz.de " + curobj.r.value
