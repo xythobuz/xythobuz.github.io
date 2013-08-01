@@ -1,7 +1,7 @@
 title: avrNetStack
 title_de: avrNetStack
 description: Modular AVR TCP/IP Stack with Ethernet and WiFi support
-parent: software
+parent: none
 position: 0
 comments: true
 flattr: true
