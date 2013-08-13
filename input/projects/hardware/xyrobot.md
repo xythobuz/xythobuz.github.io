@@ -12,7 +12,7 @@ reddit: true
 print: true
 ---
 
-# {{ page.title }}
+### {{ page.title }}
 
 This is my robot project. A self-made PCB with an AtMega2560 controls everything. The robot has a [Bluetooth module][1], a [Gameboy Camera][2] and my [RAM module][3]. I bought the [RN-KeyLCD][4] and the [RN-VN2][5] from [Roboternetz][6].
 
@@ -79,7 +79,7 @@ for p in mpages:
 
 lang: de
 
-# {{ page.title_de }}
+### {{ page.title_de }}
 
 Dies ist mein kleines Roboterprojekt. Eine eigene Platine mit einem AtMega2560 steuert den Roboter. Angeschlossen sind unter anderem mein [Bluetooth Modul][1], eine [Gameboy Kamera][2] und mein [RAM Modul][3]. Vom [Roboternetz][4] stammen das [RN-KeyLCD][5] und der [RN-VN2 Motortreiber][6].
 

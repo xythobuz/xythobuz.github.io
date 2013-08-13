@@ -11,7 +11,7 @@ reddit: true
 print: true
 ---
 
-# {{ page.title }}
+### {{ page.title }}
 
 Here's the Layout of a BTM-222 Bluetooth PCB, following the [Roboternetz Guidelines Mini Format][1]. The circuit comes from [Robotfreak][2], but is basically the minimal circuit described in the [datasheet (370kB)][3].
 
@@ -35,7 +35,7 @@ Here's the Layout of a BTM-222 Bluetooth PCB, following the [Roboternetz Guideli
 
 Soldering the standard parts should be no problem. You should use a find soldering iron to connect each pin of the BTM-222, one after another. A 31mm long piece of wire can be used as antenna.
 
-## Interfacing the BTM-222
+### Interfacing the BTM-222
 
 Before using the BTM-222 you have to configure it. You can change the speed, data format, name, PIN and some other things. You have to connect the hardware serial interface of the BTM-222 to a PC and issue the AT-Commands documented in the datasheet. It is very important to use only '\r' as Line-End-Character. Using '\n' or "\r\n" will result in error messages from the module.
 
@@ -54,7 +54,7 @@ Before using the BTM-222 you have to configure it. You can change the speed, dat
 
 lang: de
 
-# {{ page.title_de }}
+### {{ page.title_de }}
 
 Hier das Layout einer Adapterplatine für den BTM-222 Bluetooth IC im [Roboternetz Mini Format][1]. Die Schaltung stammt von [Robotfreak][2], entspricht aber im Prinzip der Minimalbeschaltung aus dem [Datenblatt][3].
 
@@ -78,7 +78,7 @@ Hier das Layout einer Adapterplatine für den BTM-222 Bluetooth IC im [Roboterne
 
 Das löten der Standard-Bauteile sollte kein Problem darstellen. Beim BTM-222 empfiehlt es sich, mit einem feinen Lötkolben jeden Pin einzeln anzulöten. Als Antenne kann ein 3,1cm langer Draht verwendet werden.
 
-## Ansteuerung des BTM-222
+### Ansteuerung des BTM-222
 
 Vor der ersten Verwendung muss das BTM-222 Modul konfiguriert werden. Dort werden Geschwindigkeit, Format, Name, PIN und weitere Einstellungen getroffen. Dabei muss das Modul per Hardware-Schnittstelle an einen Computer angeschlossen werden. Nun können die im Datenblatt dokumentierten AT Befehle eingegeben werden. Sehr wichtig hierbei ist, dass das Modul als Zeilenendzeichen nur '\r' erwartet. Wird '\n' oder "\r\n" verwendet quittiert das Modul jegliche Eingabe mit Error.
 

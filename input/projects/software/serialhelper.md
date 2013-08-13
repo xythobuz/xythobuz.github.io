@@ -12,7 +12,7 @@ reddit: true
 print: true
 ---
 
-# {{ page.title }}
+### {{ page.title }}
 
 SerialHelper is a Cross-Platform (Windows, Unix systems) Command Line Utility allowing read and write access to serial ports. Additionally, it can list the available serial ports.
 
@@ -49,7 +49,7 @@ Terminal Mode (send stdin and recieve to stdout):
 
 lang: de
 
-# {{ page.title_de }}
+### {{ page.title_de }}
 
 SerialHelper ist ein Cross Plattform (Windows, Unix Systeme) Kommandozeilen Programm welches den Zugriff auf serielle Ports ermöglicht. Ausserdem können vorhandene serielle Ports aufgelistet werden.
 

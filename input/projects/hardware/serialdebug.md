@@ -11,7 +11,7 @@ reddit: true
 print: true
 ---
 
-# {{ page.title }}
+### {{ page.title }}
 
 A 8x5 LED Matrix controlled by an AtTiny2313 which communicates via a FT232R with a PC. Received characters are displayed by the matrix. This is useful for debugging serial applications.
 
@@ -31,7 +31,7 @@ A 8x5 LED Matrix controlled by an AtTiny2313 which communicates via a FT232R wit
 
 lang: de
 
-# {{ page.title_de }}
+### {{ page.title_de }}
 
 Eine 8x5 LED Matrix an einem AtTiny2313, welcher über einen FT232R mit einem Computer kommuniziert. Empfangene Zeichen werden auf der LED Matrix angezeigt. Dies ist hilfreich beim Debuggen von Computerprogrammen, welche mit einer seriellen Schnittstelle kommunizieren.
 

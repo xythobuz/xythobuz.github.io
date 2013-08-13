@@ -11,7 +11,7 @@ reddit: true
 print: true
 ---
 
-# {{ page.title }}
+### {{ page.title }}
 
 This is a school project: an 8x10 LED matrix. The circuit is based on [this][1], only the resistor values and transistors were changed. Take two of these and add a AtTiny2313 and voilà, you get this:
 
@@ -26,7 +26,7 @@ This is a school project: an 8x10 LED matrix. The circuit is based on [this][1],
 
 lang: de
 
-# {{ page.title_de }}
+### {{ page.title_de }}
 
 Hier ein kleines Schulprojekt: Eine 8x10 LED Matrix. Die Schaltung basiert [hierauf][1], nur die Widerstandswerte und Transistoren wurden der Matrix entsprechend verändert. Diese Schaltung 2x aufbauen und an einen AtTiny2313 anschliessen und schon kommt das dabei heraus:
 

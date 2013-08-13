@@ -11,7 +11,7 @@ reddit: true
 print: true
 ---
 
-# {{ page.title }}
+### {{ page.title }}
 
 The service [Ultimate Notifier][1] allows you to send Push-Notification to your iPhone easily. Based on this, you can write shell scripts that are executed regularly via cron. This could inform you about a changed public IP. To do this, save this script somewhere:
 
@@ -41,7 +41,7 @@ With the command
 
 <pre>crontab -e</pre>
 
->You can add a cronfile entry. To execute the script every 30 minutes, use this:
+You can add a cronfile entry. To execute the script every 30 minutes, use this:
 
 <pre>*/30 * * * * /Users/anon/bin/ipnotify.sh</pre>
 
@@ -121,7 +121,7 @@ fi
 
 lang: de
 
-# {{ page.title_de }}
+### {{ page.title_de }}
 
 Der Dienst [Ultimate Notifier][1] erlaubt es relativ problemlos, zum Beispiel mittels curl Push-Notifications an ein iPhone zu senden. Darauf basierend können Shell Skripte geschrieben werden, welche regelmäßig als Cron-Job gestartet werden. So kann man sich zum Beispiel über eine geänderte Public IP informieren lassen. Dafür muss dieses Skript irgendwo gespeichert werden:
 

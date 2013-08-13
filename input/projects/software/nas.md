@@ -11,7 +11,7 @@ reddit: true
 print: true
 ---
 
-# {{ page.title }}
+### {{ page.title }}
 
 1.  root Access (by Jayare)
     *   Install the device like a normal user would

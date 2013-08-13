@@ -10,7 +10,7 @@ twitter: xythobuz
 reddit: true
 ---
 
-# {{ page.title }}
+### {{ page.title }}
 
 This is a small PCB to use a SSOP28 SMT IC in a Breadboard or similar with 1" (2,54mm) pin-distance:
 
@@ -23,7 +23,7 @@ This is a small PCB to use a SSOP28 SMT IC in a Breadboard or similar with 1" (2
 
 lang: de
 
-# {{ page.title_de }}
+### {{ page.title_de }}
 
 Hier das Layout eines SSOP28 - DIL Adapters:
 

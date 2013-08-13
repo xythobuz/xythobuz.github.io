@@ -12,7 +12,7 @@ reddit: true
 print: true
 ---
 
-# YASAB - Yet another simple AVR Bootloader
+### YASAB - Yet another simple AVR Bootloader
 
 YASAB is a simple AVR Bootloader, written in C for the [AVR libc][1]. A PC Program sends the data to be programmed with a simple protocol via UART to the AVR. If the bootloader was compiled for the ATmega168, 128x or 256x, it will listen on both USART0 and USART1 for serial communication attempts. [The most recent source code can be found in the Github Repository][2]. The Upload software can easily be used in place of avrdude in makefiles.
 
@@ -46,7 +46,7 @@ Upload finished after 28.0 seconds.
 
 lang: de
 
-# YASAB - Yet another simple AVR Bootloader
+### YASAB - Yet another simple AVR Bootloader
 
 YASAB ist ein einfacher AVR Bootloader, geschrieben in C für die [AVR libc][1]. Von einem PC-Programm aus werden die Daten über ein simples Protokoll per UART an den AVR gesendet. Wurde der Bootloader für den ATmega168, 128x oder 256x kompiliert, wird sowohl auf USART0 als auch auf USART1 Daten erwartet. [Der aktuellste Quellcode findet sich stets im Github Repository][2]. Die Upload Software kann einfach statt avrdude oder ähnlichem in makefiles eingebaut werden.
 

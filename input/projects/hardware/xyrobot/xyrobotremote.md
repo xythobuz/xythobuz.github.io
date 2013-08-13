@@ -12,7 +12,7 @@ reddit: true
 print: true
 ---
 
-# {{ page.title }}
+### {{ page.title }}
 
 xyRobotRemote is a Cross-Platform Java GUI App. It controls the [xyRobot][1].
 
@@ -41,7 +41,7 @@ That's what the GUI looked like earlier, when it was written as X11 App.
 
 lang: de
 
-# {{ page.title_de }}
+### {{ page.title_de }}
 
 xyRobotRemote ist eine Cross-Plattform Java GUI App. Sie dient der Fernsteuerung des [xyRobot][1] Roboters.
 
