@@ -3,6 +3,13 @@ body {
     font-family: 'Droid Sans', sans-serif;
 }
 
+#nav {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: orange;
+    margin-bottom: 2em;
+}
+
 #nav ul {
     list-style-type: none;
 }
