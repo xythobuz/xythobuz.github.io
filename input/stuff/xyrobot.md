@@ -1,8 +1,8 @@
 title: xyRobot
 title_de: xyRobot
 description: ATMega2560 robotics platform with Gameboy Camera
-parent: hardware
-position: 1
+parent: stuff
+position: 10
 comments: true
 flattr: true
 github: https://github.com/xythobuz/xyRobot
@@ -17,6 +17,15 @@ print: true
 This is my robot project. A self-made PCB with an AtMega2560 controls everything. The robot has a [Bluetooth module][1], a [Gameboy Camera][2] and my [RAM module][3]. I bought the [RN-KeyLCD][4] and the [RN-VN2][5] from [Roboternetz][6].
 
 The current software as well as Eagle files of the PCB are on [GitHub][7].
+
+Other articles that are part of xyRobot:
+
+<!--%
+mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
+mpages.sort(key=lambda p: int(p["position"]))
+for p in mpages:
+    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
+%-->
 
 Now some pictures:
 
@@ -33,15 +42,6 @@ Now some pictures:
 [![Foto 11][28]][29]
 [![Foto 12][30]][31]
 [![Foto 13][32]][33]
-
-Other articles that are part of xyRobot:
-
-<!--%
-mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
-mpages.sort(key=lambda p: int(p["position"]))
-for p in mpages:
-    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
-%-->
 
  [1]: bluetooth.html
  [2]: http://www.angelfire.com/de3/juliprograms/amr/gbcam.htm
@@ -85,6 +85,15 @@ Dies ist mein kleines Roboterprojekt. Eine eigene Platine mit einem AtMega2560 s
 
 Die aktuelle Software sowie Eagle Dateien der Platine finden sich auf [GitHub][7].
 
+Andere Artikel die zu xyRobot gehören:
+
+<!--%
+mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "de"]
+mpages.sort(key=lambda p: int(p["position"]))
+for p in mpages:
+    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
+%-->
+
 Hier nun einige Bilder meines Roboters:
 
 [![Foto 5][8]][9]
@@ -100,15 +109,6 @@ Hier nun einige Bilder meines Roboters:
 [![Foto 11][28]][29]
 [![Foto 12][30]][31]
 [![Foto 13][32]][33]
-
-Andere Artikel die zu xyRobot gehören:
-
-<!--%
-mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "de"]
-mpages.sort(key=lambda p: int(p["position"]))
-for p in mpages:
-    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
-%-->
 
  [1]: bluetooth.html
  [2]: http://www.angelfire.com/de3/juliprograms/amr/gbcam.htm

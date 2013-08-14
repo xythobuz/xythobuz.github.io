@@ -1,6 +1,6 @@
 title: Blog
 parent: main
-position: 1
+position: 20
 changefreq: daily
 priority: 0.8
 compat: blog

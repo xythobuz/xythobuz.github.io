@@ -1,8 +1,8 @@
 title: 8x8x8 LED Cube
 title_de: 8x8x8 LED Wuerfel
 description: AVR LED Cube with Java Software and Music Visualization
-parent: hardware
-position: 0
+parent: projects
+position: 10
 comments: true
 flattr: true
 github: https://github.com/xythobuz/LED-Cube

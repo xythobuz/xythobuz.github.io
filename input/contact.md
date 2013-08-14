@@ -1,6 +1,6 @@
 title: Contact
 parent: main
-position: 2
+position: 50
 compat: kontakt
 ---
 

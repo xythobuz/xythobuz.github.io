@@ -1,13 +1,12 @@
-title: Software
+title: Stuff
 parent: main
-position: 3
-compat: sw
+position: 40
 ---
 
 ### {{ page.title }}
 
 <!--%
-mpages = [p for p in pages if p.get("parent", "") == "software" and p.lang == "en"]
+mpages = [p for p in pages if p.get("parent", "") == "stuff" and p.lang == "en"]
 mpages.sort(key=lambda p: int(p["position"]))
 for p in mpages:
     print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item

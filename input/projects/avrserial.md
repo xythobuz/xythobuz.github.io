@@ -1,8 +1,8 @@
 title: AVR Serial Library
 title_de: AVR Serial Library
 description: Hardware UART library for many AVR MCUs
-parent: software
-position: 1
+parent: projects
+position: 20
 comments: true
 flattr: true
 github: https://github.com/xythobuz/avrSerial

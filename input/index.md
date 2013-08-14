@@ -1,7 +1,6 @@
 title: Home
-title_de: Home
 parent: main
-position: 0
+position: 10
 flattr: true
 compat: home
 ---
@@ -13,7 +12,7 @@ All of my projects are released as [Free Software][fs] on my [GitHub Profile][gh
 
 It would be nice if you could use this [Amazon.de Affiliate Link][ama].
 
-### Recent Posts
+### Recent Blog Posts
 
 <!--%
 from datetime import datetime
@@ -23,7 +22,7 @@ for p in posts[0:4]:
     date = datetime.strptime(p.date, "%Y-%m-%d").strftime("%B %d, %Y")
     print "  * **[%s](%s)** - %s" % (p.post, p.url, date) # markdown list item
 %-->
-  * **[more...](blog.html)**
+  * [more...](blog.html)
 
 ### Tweets
 

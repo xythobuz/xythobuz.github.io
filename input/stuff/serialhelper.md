@@ -1,8 +1,8 @@
 title: Serial Helper
 title_de: Serial Helper
 description: Reading and Writing a Serial Port from the Command Line
-parent: software
-position: 5
+parent: stuff
+position: 60
 comments: true
 flattr: true
 github: https://github.com/xythobuz/SerialHelper

@@ -1,8 +1,8 @@
 title: Ultimate Notifier Script
 title_de: Ultimate Notifier Script
 description: Sending Push Notifications to an iPhone from a Bash Script
-parent: software
-position: 6
+parent: stuff
+position: 70
 comments: true
 flattr: true
 compat: notifier
