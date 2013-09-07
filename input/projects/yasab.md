@@ -35,14 +35,16 @@ Sending data length...
 Upload finished after 28.0 seconds.
 </pre>
 
-[![xyCopter Screenshot][5]][6]
+<div class="yoxview">
+    <a href="img/xyCopterFirmware.png" class="thumbnail">
+        <img src="img/xyCopterFirmware_small.png" alt="Photo" title="xyCopter Screenshot">
+    </a>
+</div>
 
  [1]: http://www.nongnu.org/avr-libc/
  [2]: https://github.com/xythobuz/yasab
  [3]: https://github.com/xythobuz/xyControl/tree/master/tools/xyCopter
  [4]: bluetooth.html
- [5]: img/xyCopterFirmware_small.png
- [6]: img/xyCopterFirmware.png
 
 lang: de
 
@@ -69,14 +71,16 @@ Sending data length...
 Upload finished after 28.0 seconds.
 </pre>
 
-[![xyCopter Screenshot][5]][6]
+<div class="yoxview">
+    <a href="img/xyCopterFirmware.png" class="thumbnail">
+        <img src="img/xyCopterFirmware_small.png" alt="Photo" title="xyCopter Screenshot">
+    </a>
+</div>
 
  [1]: http://www.nongnu.org/avr-libc/
  [2]: https://github.com/xythobuz/yasab
  [3]: https://github.com/xythobuz/xyControl/tree/master/tools/xyCopter
  [4]: bluetooth.html
- [5]: img/xyCopterFirmware_small.png
- [6]: img/xyCopterFirmware.png
 
 
 

@@ -21,8 +21,14 @@ Get the [current Codebase as Zip][1].
 
 My friends Max (<hutattedonmyarm@me.com>) and Felix built this single-color 8x8x8 LED Cube with me. On this page, you can get the Software as well as Schematics and the PCB Layout licensed under the GPLv3. Have fun!
 
-[![Foto 1][2]][3]
-[![Foto 2][4]][5]
+<div class="yoxview">
+    <a href="img/cube14.jpg" class="thumbnail">
+        <img src="img/cube14_small.jpg" alt="Photo" title="Prototype Cube">
+    </a>
+    <a href="img/cube11.jpg" class="thumbnail">
+        <img src="img/cube11_small.jpg" alt="Photo" title="PCB Soldering">
+    </a>
+</div>
 
 ## Hardware
 
@@ -36,8 +42,14 @@ There's also an AtMega8 which acts as a TWI Slave and sends audio data to the At
 
 An extensive part list can be found in the Github repository, in Hardware, called parts.txt.
 
-[![Foto 3][6]][7]
-[![Foto 4][8]][9]
+<div class="yoxview">
+    <a href="img/cube10.jpg" class="thumbnail">
+        <img src="img/cube10_small.jpg" alt="Photo" title="Prototype in Action">
+    </a>
+    <a href="img/cube12.jpg" class="thumbnail">
+        <img src="img/cube12_small.jpg" alt="Photo" title="PCB in Action">
+    </a>
+</div>
 
 ## Software
 
@@ -47,8 +59,14 @@ The software is composed of 3 parts. The CubeFirmware for the AtMega32, the Audi
 
 It's main work is to load images from the FRAM or the AtMega8 and display it. It also monitors the serial Port and reacts accordingly.
 
-[![Foto 7][20]][21]
-[![Foto 8][22]][23]
+<div class="yoxview">
+    <a href="img/kuehler1.jpg" class="thumbnail">
+        <img src="img/kuehler1_small.jpg" alt="Photo" title="Voltage Regulator Mount">
+    </a>
+    <a href="img/kuehler2.jpg" class="thumbnail">
+        <img src="img/kuehler2_small.jpg" alt="Photo" title="Voltage Regulator Mount">
+    </a>
+</div>
 
 ### AudioFirmware
 
@@ -58,8 +76,14 @@ It gets data from the MSGEQ7 and sends it via TWI.
 
 Depends on [Java3D][10]. It renders a rotatable 3D View of the cube. You can then create animations, load and save them, and upload them to the Cube. It has it's own C Library for Windows and Unix to talk to the serial port.
 
-[![Screenshot][11]][12]
-[![Schematic][13]][14]
+<div class="yoxview">
+    <a href="img/cubecontrol.png" class="thumbnail">
+        <img src="img/cubecontrol_small.png" alt="Photo" title="Screenshot">
+    </a>
+    <a href="img/cubeschem.png" class="thumbnail">
+        <img src="img/cubeschem_small.png" alt="Photo" title="Schematic">
+    </a>
+</div>
 
 ### Hardware Emulator
 
@@ -73,32 +97,18 @@ Small CLI tool to send testdata or stored animations from CubeControl. Unix only
 
 Get the whole code, as well as schematics and the PCB layout as PNG and Eagle files, from the [GitHub Repository][15].
 
-[![Foto 5][16]][17]
-[![Foto 6][18]][19]
+<div class="yoxview">
+    <a href="img/cube13.jpg" class="thumbnail">
+        <img src="img/cube13_small.jpg" alt="Photo" title="PCB">
+    </a>
+    <a href="img/cube15.jpg" class="thumbnail">
+        <img src="img/cube15_small.jpg" alt="Photo" title="Final Cube">
+    </a>
+</div>
 
  [1]: https://github.com/xythobuz/LED-Cube/zipball/master
- [2]: img/cube14_small.jpg
- [3]: img/cube14.jpg
- [4]: img/cube11_small.jpg
- [5]: img/cube11.jpg
- [6]: img/cube10_small.jpg
- [7]: img/cube10.jpg
- [8]: img/cube12_small.jpg
- [9]: img/cube12.jpg
  [10]: http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138252.html
- [11]: img/cubecontrol_small.png
- [12]: img/cubecontrol.png
- [13]: img/cubeschem_small.png
- [14]: img/cubeschem.png
  [15]: https://github.com/xythobuz/LED-Cube
- [16]: img/cube13_small.jpg
- [17]: img/cube13.jpg
- [18]: img/cube15_small.jpg
- [19]: img/cube15.jpg
- [20]: img/kuehler1_small.jpg
- [21]: img/kuehler1.jpg
- [22]: img/kuehler2_small.jpg
- [23]: img/kuehler2.jpg
 
 lang: de
 
@@ -111,8 +121,14 @@ Downloade die [aktuelle Codebase als Zip][1].
 
 Als Schulprojekt und für den Explore-IT Wettbewerb von SAP in Markdorf haben meine zwei Teamkollegen, Max <hutattedonmyarm@me.com> und Felix, zusammen mit mir diesen einfarbigen 8x8x8 LED Cube gebaut. Für Interessierte hier alle Software sowie Schaltplan und Boardlayout unter der GPLv3. Viel Freude damit.
 
-[![Foto 1][2]][3]
-[![Foto 2][4]][5]
+<div class="yoxview">
+    <a href="img/cube14.jpg" class="thumbnail">
+        <img src="img/cube14_small.jpg" alt="Photo" title="Prototyp Cube">
+    </a>
+    <a href="img/cube11.jpg" class="thumbnail">
+        <img src="img/cube11_small.jpg" alt="Photo" title="Platine löten">
+    </a>
+</div>
 
 ## Hardware
 
@@ -126,8 +142,14 @@ Zusätzlich ist ein AtMega8 auf der Platine. Dieser liest über einen MSGEQ7 ein
 
 Eine ausführlichere Bauteilliste findet sich im Github Repository, im Ordner Hardware als parts.txt.
 
-[![Foto 3][6]][7]
-[![Foto 4][8]][9]
+<div class="yoxview">
+    <a href="img/cube10.jpg" class="thumbnail">
+        <img src="img/cube10_small.jpg" alt="Photo" title="Prototyp in Aktion">
+    </a>
+    <a href="img/cube12.jpg" class="thumbnail">
+        <img src="img/cube12_small.jpg" alt="Photo" title="Platine in Aktion">
+    </a>
+</div>
 
 ## Software
 
@@ -137,8 +159,14 @@ Die Software besteht aus 3 großen Teilen, die CubeFirmware für den AtMega32, d
 
 Die Hauptaufgabe der CubeFirmware ist es, Animationen aus dem FRAM zu laden und anzuzeigen. Nebenbei wird auf Anfragen per USB gewartet und entsprechend gehandelt. Auf Knopfdruck steuert die CubeFirmware den AtMega8 an, um Audio Daten zu visualisieren.
 
-[![Foto 7][20]][21]
-[![Foto 8][22]][23]
+<div class="yoxview">
+    <a href="img/kuehler1.jpg" class="thumbnail">
+        <img src="img/kuehler1_small.jpg" alt="Photo" title="Kühlkörper Spannungsregler">
+    </a>
+    <a href="img/kuehler2.jpg" class="thumbnail">
+        <img src="img/kuehler2_small.jpg" alt="Photo" title="Kühlkörper Spannungsregler">
+    </a>
+</div>
 
 ### Audio Firmware
 
@@ -148,8 +176,14 @@ Die AudioFirmware liest den MSGEQ7 aus, um bei entsprechender Anfrage über TWI 
 
 Neben einigen Java Klassen um einen 3D LED Würfel darzustellen und mit diesem zu interagieren, besteht CubeControl auch aus einer Java Native Interface (JNI) Library, welche sowohl unter Windows als auch unter Unix die serielle Kommunikation für CubeControl ermöglicht. Für die 3D Darstellung wird [Java3D][10] benötigt. In der OS X Lion Variante von Java ist dies bereits enthalten, für Windows und Linux muss es separat heruntergeladen werden.
 
-[![Screenshot][11]][12]
-[![Schematic][13]][14]
+<div class="yoxview">
+    <a href="img/cubecontrol.png" class="thumbnail">
+        <img src="img/cubecontrol_small.png" alt="Photo" title="Screenshot">
+    </a>
+    <a href="img/cubeschem.png" class="thumbnail">
+        <img src="img/cubeschem_small.png" alt="Photo" title="Schaltplan">
+    </a>
+</div>
 
 ### Hardware Emulator
 
@@ -163,29 +197,15 @@ Ein kleines CLI Tool um Testdaten und mit CubeControl gespeicherte Animationen a
 
 Im [GitHub Repository][15] findet sich der gesamte Code sowie die Eagle Dateien und Schaltplan und Layout als PNGs.
 
-[![Foto 5][16]][17]
-[![Foto 6][18]][19]
+<div class="yoxview">
+    <a href="img/cube13.jpg" class="thumbnail">
+        <img src="img/cube13_small.jpg" alt="Photo" title="Platine">
+    </a>
+    <a href="img/cube15.jpg" class="thumbnail">
+        <img src="img/cube15_small.jpg" alt="Photo" title="Fertiger Cube">
+    </a>
+</div>
 
  [1]: https://github.com/xythobuz/LED-Cube/zipball/master
- [2]: img/cube14_small.jpg
- [3]: img/cube14.jpg
- [4]: img/cube11_small.jpg
- [5]: img/cube11.jpg
- [6]: img/cube10_small.jpg
- [7]: img/cube10.jpg
- [8]: img/cube12_small.jpg
- [9]: img/cube12.jpg
  [10]: http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138252.html
- [11]: img/cubecontrol_small.png
- [12]: img/cubecontrol.png
- [13]: img/cubeschem_small.png
- [14]: img/cubeschem.png
  [15]: https://github.com/xythobuz/LED-Cube
- [16]: img/cube13_small.jpg
- [17]: img/cube13.jpg
- [18]: img/cube15_small.jpg
- [19]: img/cube15.jpg
- [20]: img/kuehler1_small.jpg
- [21]: img/kuehler1.jpg
- [22]: img/kuehler2_small.jpg
- [23]: img/kuehler2.jpg
