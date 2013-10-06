@@ -6,21 +6,13 @@ compat: kontakt
 
 ### {{ page.title }}
 
-You can always use this [PGP Key][1]
+You can always use this [PGP Key][1]!
 
 Mail: <xythobuz@xythobuz.de>
-
-Jabber: xythobuz@jabber.ccc.de
-
-Skype: xythobuz
-
-ICQ: 347449811
 
 Twitter: [@xythobuz][2]
 
 Facebook: [Ver Ballert][3]
-
-PSN: xythobuz
 
 Youtube: [xythobuz][4]
 
