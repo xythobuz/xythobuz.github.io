@@ -29,5 +29,9 @@ for p in posts[0:4]:
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
 
+<div style="width: 200px; height: 60px; margin-left: auto; margin-right: auto;">
+<a href="http://projecteuler.net/problems"><img src="http://projecteuler.net/profile/xythobuz.png" alt="Project Euler profile"></a>
+</div>
+
  [fs]: http://www.gnu.org/philosophy/free-sw.html
  [gh]: https://github.com/xythobuz
