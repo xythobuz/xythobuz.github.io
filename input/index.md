@@ -8,7 +8,7 @@ compat: home
 <div style="width: 150px; height: 150px; float: right; border: 2px, solid, #000000; border-radius: 10px; background-image: url(http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=150); margin-left: 2em; margin-bottom: 1em;"></div>
 
 I'm a 19 year old Information Engineering student from Germany, mostly building stuff with AVR microcontrollers.
-All of my projects are released as [Free Software][fs] on my [GitHub profile][gh], with more informations here. Have fun!
+All of my projects are released as [Free Software](http://www.gnu.org/philosophy/free-sw.html) on my [GitHub profile](https://github.com/xythobuz), with more informations here. Have fun!
 
 ### Recent Blog Posts
 
@@ -28,10 +28,3 @@ for p in posts[0:4]:
 <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/xythobuz" data-widget-id="318732638158471170" data-chrome="noheader nofooter">Tweets by @xythobuz</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
-
-<div style="width: 200px; height: 60px; margin-left: auto; margin-right: auto;">
-<a href="http://projecteuler.net/problems"><img src="http://projecteuler.net/profile/xythobuz.png" alt="Project Euler profile"></a>
-</div>
-
- [fs]: http://www.gnu.org/philosophy/free-sw.html
- [gh]: https://github.com/xythobuz
