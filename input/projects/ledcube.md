@@ -32,6 +32,8 @@ My friends Max (<hutattedonmyarm@me.com>) and Felix built this single-color 8x8x
 
 ## Hardware
 
+**Warning:** Frank mailed me and explained that the FRAM is operating outside of it's absolute maximum ratings. It should get 3.3V, not 5V. I'll probably update the board and schematic, soon. **Beware!**
+
 An AtMega32 controls 8 8bit Latches. These 64 bits control, via a PNP Transistor, the anodes of 8 LEDs, each.
 
 There are also 8 N-Channel MOSFETs connected to the AtMega32. They each control the cathodes of 64 LEDs on a Y-Plane.
@@ -131,6 +133,8 @@ Als Schulprojekt und für den Explore-IT Wettbewerb von SAP in Markdorf haben me
 </div>
 
 ## Hardware
+
+**Achtung:** Frank hat mir gemailt und erklärt, dass das FRAM außerhalb der Spezifikation betrieben wird. Es sollte 3,3V statt 5V bekommen. Ich werde vermutlich bald Schaltplan und Layout updaten. **Vorsicht!**
 
 Ein AtMega32 steuert über einen 8bit Bus 8 Latches. Diese 64 bit steuern über je einen PNP Transistor die Anoden von jeweils 8 übereinander liegenden LEDs.
 
