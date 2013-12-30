@@ -1,5 +1,4 @@
 title: IB-NAS6210 Linux
-title_de: IB-NAS6210 Linux
 description: Booting your own Linux on an Icybox NAS6210 box
 parent: stuff
 position: 20
@@ -12,29 +11,6 @@ print: true
 ---
 
 ### {{ page.title }}
-
-1.  root Access (by Jayare)
-    *   Install the device like a normal user would
-    *   Have at least one user with administrator access (either add one, or use the main account) - in my case this is 'admin' but could be any user with administrator rights
-    *   Fire up an SSH connection to box (e.g. putty)
-    *   Login with the following details:
-    *   [username]\_hipserv2\_raidsonic_[PRODUCTCODE]
-    *   so in my case that would be
-    *   admin\_hipserv2\_raidsonic_XXXX-XXXX-XXXX-XXXX
-    *   It'll echo the ICY BOX version (in my case ICY BOX version 10.0.x) and ask for a password. Enter the regular password for the user.
-    *   You'll now be logged in to the ICY BOX with the 'regular' user
-    *   sudo -E -s
-    *   reenter your regular pwd. It'll give you an 'audit\_log\_user_command(): connection refused' and give you root access
-2.  Hardware access (by me, really short version)
-    *   This is really long and I'm not in the mood to translate this... Sorry :)
-    *   But I saw that googles translator does a really "good" job translating my text...
-    *   Try to look at [my article translated to English][1]!
-
- [1]: http://translate.google.de/translate?sl=de&tl=en&js=n&u=http%3A%2F%2Fwww.xythobuz.de%2Fnas.de.html
-
-lang: de
-
-# {{ page.title_de }}
 
 Diese Anleitung gilt ebenso für den IB-NAS6220. Dieser besitzt 2 HDD Schächte und ein völlig anderes Webinterface. Über dieses ist es möglich, das root Passwort zu ändern (siehe diesen [Forenbeitrag][1]), was evtl. eine Neuinstallation einer Linux Distribution erübrigt.
 
@@ -214,9 +190,9 @@ while : ; do
 done
 </pre>
 
-Der Button auf MPP23\_GPIO hat eine Art Flip-Flop Funktion. Wenn man den Button für ein paar Sekunden hält, ändert sich der Status von MPP23\_GPIO und bleibt so bis zum Reboot.
+Der Button auf MPP23_GPIO hat eine Art Flip-Flop Funktion. Wenn man den Button für ein paar Sekunden hält, ändert sich der Status von MPP23_GPIO und bleibt so bis zum Reboot.
 
-Ersetzt man im Kernel MPP20\_SATA1\_ACTn und MPP21\_SATA0\_ACTn durch MPP20\_GPIO und MPP21\_GPIO können per Bash auch die HDD LEDs angesteuert werden. Dann funktioniert jedoch die Anzeige der Festplattenaktivität nicht mehr.
+Ersetzt man im Kernel MPP20_SATA1_ACTn und MPP21_SATA0_ACTn durch MPP20_GPIO und MPP21_GPIO können per Bash auch die HDD LEDs angesteuert werden. Dann funktioniert jedoch die Anzeige der Festplattenaktivität nicht mehr.
 
 Vielen Dank an Waepu hierfür!
 

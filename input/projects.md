@@ -11,3 +11,7 @@ mpages.sort(key=lambda p: int(p["position"]))
 for p in mpages:
     print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
 %-->
+
+### Mac Apps
+
+ * **[BaconBar](http://xythobuz.de/baconbar/)** Reddit Client
