@@ -7,7 +7,7 @@ compat: home
 
 <div style="width: 150px; height: 150px; float: right; border: 2px, solid, #000000; border-radius: 10px; background-image: url(http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=150); margin-left: 2em; margin-bottom: 1em;"></div>
 
-I'm a 19 year old Information Engineering student from Germany, mostly building stuff with AVR microcontrollers.
+I'm a 20 year old Information Engineering student from Germany, mostly building stuff with AVR microcontrollers.
 All of my projects are released as [Free Software](http://www.gnu.org/philosophy/free-sw.html) on my [GitHub profile](https://github.com/xythobuz), with more informations here. Have fun!
 
 ### Recent Blog Posts
