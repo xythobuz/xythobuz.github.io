@@ -145,7 +145,7 @@ Ein AtMega32 steuert über einen 8bit Bus 8 Latches. Diese 64 bit steuern über 
 
 Des weiteren steuert der Prozessor 8 N-Kanal MOSFETs welche die Kathoden von 64 in einer x-z Ebene liegenden LEDs steuern.
 
-Ausserdem kommuniziert der AtMega32 über einen FT232RL per USB mit einem PC. Ãœber den TWI (I2C) Bus wird auf ein 1MBit FRAM zugegriffen.
+Ausserdem kommuniziert der AtMega32 über einen FT232RL per USB mit einem PC. Über den TWI (I2C) Bus wird auf ein 1MBit FRAM zugegriffen.
 
 Zusätzlich ist ein AtMega8 auf der Platine. Dieser liest über einen MSGEQ7 ein Audiosignal und sendet dieses über TWI an den AtMega32.
 
