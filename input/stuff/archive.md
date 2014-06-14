@@ -11,6 +11,12 @@ Here I'm mirroring/archiving stuff that could get lost.
 
 * * *
 
+#### Leikkuri/Cutter
+
+Simple utility to modify hardcoded TR4 font table. [Download](files/leikkuri_v043.rar) [Source](http://trep.trlevel.de/en/downloads.html)
+
+* * *
+
 #### XDumb 0.9.9 PS2 HDD utility for Mac OS X
 
 Should work on PPC and Intel, starting from Mac OS X 10.3.9. [Download](files/xdumb.zip) [Source](http://www.theisozone.com/downloads/playstation/ps2-homebrew/xdumb---ps2-hdd-utility-for-mac-users/)
