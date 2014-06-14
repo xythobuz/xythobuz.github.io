@@ -11,7 +11,7 @@ Here I'm mirroring/archiving stuff that could get lost.
 
 * * *
 
-#### Leikkuri/Cutter
+#### Leikkuri/Cutter v0.43
 
 Simple utility to modify hardcoded TR4 font table. [Download](files/leikkuri_v043.rar) [Source](http://trep.trlevel.de/en/downloads.html)
 
