@@ -1,0 +1,483 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0034)/web/20071204181458/http://www.trsearch.org/AODDoc.htm -->
+<HTML><HEAD>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+<TITLE>TRAOD Formats</TITLE>
+<META http-equiv=Content-Language content=nl>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1476" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId></HEAD>
+<BODY>
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app1.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/www.trlcsoft.com\/TRTOOLS\/FILEFORMATS\/TRAODFormats.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "4";
+var displayMonth = "Dec";
+var displayYear = "2007";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://www.trlcsoft.com/TRTOOLS/FILEFORMATS/TRAODFormats.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20071204181458" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="/web/20071010092614/http://www.trlcsoft.com/TRTOOLS/FILEFORMATS/TRAODFormats.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="10 Oct 2007"><strong>OCT</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:14:58 Dec 4, 2007">DEC</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Jan
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="/web/20071010092614/http://www.trlcsoft.com/TRTOOLS/FILEFORMATS/TRAODFormats.htm" title="9:26:14 Oct 10, 2007" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:14:58 Dec 4, 2007">4</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2006
+                       
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:14:58 Dec 4, 2007">2007</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2008
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="/web/20071204181458*/http://www.trlcsoft.com/TRTOOLS/FILEFORMATS/TRAODFormats.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>2 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">10 Oct 07 - 4 Dec 07</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:11:000000000101_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000000000_2012:-1:000000000000_2013:-1:000000000000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+<H1 align=center>TRAOD Formats</H1>
+<P align=left>Tomb Raider: angel of darkness features a brand new game engine. 
+That means new file formats had to be made. While the first engine had files 
+with 1 big structure, with the new game engine the level files are split up into 
+smaller parts. This means there are a lot of pointers inside the files. This way 
+just a part where you are playing can be loaded, which means less memory is 
+needed and a level loads faster. However, a single level is shorter this way 
+which causes the game to load a new (part of a) level more often.</P>
+<P align=left>&nbsp;</P>
+<P align=left>&nbsp;</P>
+<DIV align=center>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <H2 align=center>1. GMX Files</H2>
+      <CENTER></CENTER>
+      <P align=left>The .gmx files are big files containing a full level. They 
+      include all textures, animations, meshes and the rooms. But these are 
+      seperated from each other. The gmx files contains some smaller files for 
+      animations, characters and rooms.</P></TD></TR>
+  <CENTER>
+  <TR>
+    <TD width="100%"><FONT face=Courier size=2><FONT color=#0000ff>struct 
+      </FONT>GMXFile_Pointer<BR>{<BR>&nbsp; <FONT color=#0000ff>long 
+      </FONT>ID;<FONT color=#0000ff><BR>&nbsp; long </FONT>Pointer;<FONT 
+      color=#0000ff><BR>&nbsp; long </FONT>Size;<FONT 
+      color=#0000ff><BR></FONT>};<FONT color=#0000ff><BR><BR>struct</FONT> 
+      GMXFile<BR>{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Version;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// 0x40666666</FONT><BR>&nbsp; <FONT 
+      color=#0000ff>int</FONT> NumPointers;<BR>&nbsp; <FONT 
+      color=#0000ff>int</FONT> Unknown1;<BR>&nbsp; GMXFile_Pointer 
+      *Pointers;<BR>};</FONT></TD></TR>
+  <TR>
+    <TD width="100%">Each pointer in the GMXFile_Pointer gives you another 
+      file. They appear to be in random order. The ID field is unknown. It seems 
+      to be a unique ID for each filename.</TD></TR>
+  <TR>
+    <TD width="100%">
+      <H3><BR>1.1 Character files</H3>
+      <P>One of the files that you can find are characters files 
+  (.chr).</P></TD></TR>
+  <TR>
+    <TD width="100%"><FONT size=2><FONT face=Courier><FONT 
+      color=#0000ff>struct </FONT>CHRFile_TextData<BR>{<BR>&nbsp; <FONT 
+      color=#0000ff>char</FONT> 
+      Format[4];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// 'DXT1', 'DXT3' or 0x00000015 
+      (B8G8R8A8).<BR></FONT>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Unknown1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// Mostly set to 2 or 4<BR></FONT>&nbsp; <FONT 
+      color=#0000ff>long</FONT> 
+      Unknown2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// Always 1?<BR></FONT>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Levels;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> XSize;<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      YSize;<BR>&nbsp; <FONT color=#0000ff>long</FONT> DataSize;<BR>&nbsp; <FONT 
+      color=#0000ff>char</FONT> *Data;<BR>};&nbsp;<FONT 
+      color=#0000ff><BR><BR>struct </FONT>CHRFile_TextInfo<BR>{<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown1;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown2;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown3;<FONT color=#0000ff><BR></FONT>&nbsp; 
+      <FONT color=#0000ff>long</FONT> Unknown4;<FONT 
+      color=#0000ff><BR></FONT>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Unknown5;<FONT color=#0000ff><BR></FONT>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown6;<BR>};<FONT 
+      color=#0000ff><BR><BR>struct </FONT>CHRFile_Textures<FONT 
+      color=#0000ff><BR></FONT>{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      NumTextInfo;<BR>&nbsp; <FONT color=#0000ff>long</FONT> Unknown1;<BR>&nbsp; 
+      CHRFile_TextInfo *TextInfo;<BR>&nbsp; CHRFile_TextData 
+      *TextData;<BR>};<FONT color=#0000ff><BR><BR>struct 
+      </FONT>CHRFile_Mesh<BR>{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Unknown1;<BR>&nbsp; <FONT color=#0000ff>char</FONT> Name[64];<BR>&nbsp; 
+      <FONT color=#0000ff>char</FONT> 
+      Unknown2[380];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// Lots unknown data<BR></FONT>};<FONT 
+      color=#0000ff><BR><BR></FONT></FONT><FONT face="Courier New"><FONT 
+      color=#0000ff>struct</FONT> CHRFile_MeshData_Unk2 {<BR>&nbsp;&nbsp; <FONT 
+      color=#0000ff>unsigned</FONT> <FONT color=#0000ff>short</FONT> 
+      Unknown1;<BR>&nbsp;&nbsp; <FONT color=#0000ff>unsigned short</FONT> 
+      Unknown2;<BR><FONT color=#0000ff>&nbsp;&nbsp; unsigned long</FONT> 
+      Unknown3;<BR><FONT color=#0000ff>&nbsp;&nbsp; unsigned long</FONT> 
+      Unknown4;<BR>};</FONT></FONT> 
+      <P><FONT face="Courier New" size=2><FONT color=#0000ff>struct</FONT> 
+      CHRFile_MeshData_Vertex {<BR>&nbsp;&nbsp;&nbsp; <FONT 
+      color=#0000ff>char</FONT> 
+      Unknown[19];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// (first </FONT></FONT><FONT face=Courier><FONT 
+      color=#008080>CHRFile_MeshData</FONT> </FONT><FONT face="Courier New" 
+      color=#008080 size=2>structure has 38 bytes per Vertex</FONT><FONT 
+      face="Courier New" size=2><FONT color=#008080>)<BR></FONT>};</FONT></P>
+      <P><FONT size=2><FONT face="Courier New"><FONT color=#0000ff>struct</FONT> 
+      </FONT><FONT face=Courier>CHRFile_MeshData </FONT><FONT 
+      face="Courier New">{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Unknown1[3];<BR><BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      NumVertices;<BR>&nbsp; CHR_MeshData_Vertex *Vertices;<BR>&nbsp; <BR>&nbsp; 
+      <FONT color=#0000ff>long</FONT> NumIndex;<BR>&nbsp; <FONT 
+      color=#0000ff>short</FONT> *Index;<BR><BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> NumUnknown2;<BR>&nbsp; CHR_MeshData_Unk2 
+      *Unknown2;<BR><BR>&nbsp; <FONT color=#0000ff>long</FONT> Unknown3; 
+      <BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Unknown4;<BR>};<BR></FONT></FONT><FONT face=Courier size=2><FONT 
+      color=#0000ff><BR>struct</FONT> CHRFile<BR>{<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> 
+      Unknown1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// Seems to be always 0<BR></FONT>&nbsp; <FONT 
+      color=#0000ff>long</FONT> 
+      TexturePointer;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// Pointer to the textures<BR></FONT>&nbsp; <FONT 
+      color=#0000ff>long</FONT> 
+      MeshPointer;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// Pointer to the beginning of the first 
+      CHRFile_Mesh</FONT> <FONT color=#008080>structure</FONT><BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> 
+      Unknown1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// Pointer to the something<BR></FONT>&nbsp; <FONT 
+      color=#0000ff>long</FONT> 
+      MeshDataPointer;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+      color=#008080>// A pointer to first CHRFile_MeshData 
+      structure<BR></FONT>&nbsp; <FONT color=#0000ff>long</FONT> 
+      NumMeshes;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <FONT color=#008080>// Number of CHRFile_Mesh you must read at the</FONT> 
+      <FONT color=#008080>MeshPointer offset</FONT><BR>};</FONT></P></TD></TR>
+  <TR>
+    <TD width="100%">&nbsp; 
+      <H3>1.2 Map files</H3>
+      <P>Map files contain (part of) a level. Big levels are split in multiple 
+      maps. At some placed the screen goes black and a new map is loaded. This 
+      is done to reduce the size of textures and vertex/index buffers.</P></TD></TR>
+  <TR>
+    <TD width="100%"><FONT face=Courier size=2><FONT color=#008080>// First 
+      structure looks like some room definition, not sure however</FONT><FONT 
+      color=#0000ff><BR><BR>struct</FONT> MAP_Rooms<BR>{<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> NumRooms;<BR>&nbsp; MAP_RoomPointer 
+      *Rooms;<BR>};<BR><BR><FONT color=#0000ff>struct</FONT> 
+      MAP_RoomPointer<BR>{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Unknown1;<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Pointer;<BR>};<BR><BR><FONT color=#0000ff>struct</FONT> 
+      MAP_Room<BR>{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Unknown1;<BR>&nbsp; <FONT color=#0000ff>long</FONT> Unknown2;<BR>&nbsp; 
+      <FONT color=#0000ff>long</FONT> Pointer1;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Pointer2;<BR>};<BR><BR><FONT color=#008080>// 
+      Textures in Direct3D Format. Can be simply loaded to a surface, included 
+      mipmaps.</FONT><BR><BR><FONT color=#0000ff>struct</FONT> 
+      MAP_Textures<BR>{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      NumTextInfo;<BR>&nbsp; <FONT color=#0000ff>long</FONT> Unknown1;<BR>&nbsp; 
+      <FONT color=#0000ff>long</FONT> NumTextData;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown2;<BR>&nbsp; MAP_TextInfo 
+      *TextInfo;<BR>&nbsp; MAP_TextDataHeader *TextDataHeader;<BR>&nbsp; 
+      MAP_TextData *TextData;<BR>};<BR><BR><FONT color=#0000ff>struct</FONT> 
+      MAP_TextInfo<BR>{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      Unknown1;<BR>&nbsp; <FONT color=#0000ff>long</FONT> Unknown2;<BR>&nbsp; 
+      <FONT color=#0000ff>long</FONT> Unknown3;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown4;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown5;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown6;<BR>};<BR><BR><FONT 
+      color=#0000ff>struct</FONT> MAP_TextDataHeader<BR>{<BR>&nbsp; <FONT 
+      color=#0000ff>char</FONT> Format[4]; // 'DXT1', 'DXT3' or 0x15000000. Last 
+      one is uncompressed A8R8G8B8 format.<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown1;&nbsp; // 2 or 4<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown2;&nbsp; // Always 1<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Unknown3;&nbsp; // Always 30<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Levels;&nbsp;&nbsp;&nbsp; // Number of levels in 
+      this texture. 7 for 256x256 textures, 2 for 8x8 textures.<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> XSize;<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      YSize;<BR>&nbsp; <FONT color=#0000ff>long</FONT> DataSize;&nbsp; // Size 
+      of this texture.<BR>&nbsp; <FONT color=#0000ff>long</FONT> Unknown4;&nbsp; 
+      // Always 0?<BR>&nbsp; <FONT color=#0000ff>long</FONT> Unknown5;&nbsp; // 
+      Always 0?<BR>};<BR><BR><FONT color=#0000ff>struct</FONT> 
+      MAP_TextData<BR>{<BR>&nbsp; <FONT color=#0000ff>char</FONT> 
+      *Data;<BR>};<BR><BR><FONT color=#0000ff>struct</FONT> 
+      MAPFile<BR>{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      RoomPointer;<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      TexturePointer;<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      UnknownPointer1;<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      UnknownPointer2;<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      UnknownPointer3;<BR>};</FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P align=center>&nbsp;</P>
+<DIV align=center>
+<CENTER>
+<TABLE height=413 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%" height=104>
+      <H2 align=center>2. DB Files</H2>
+      <CENTER></CENTER>
+      <P align=left>The data folder from aod contains 3 .db files and have all 
+      their own format. These files contain important data for the game. The 
+      actor.db file contains a lot of information about all friends and enemies 
+      in the game. The function of the other 2 files, weapon.db and invent.db, 
+      is not known yet. But the weapon.db must have something to do with the 
+      guns and ammo and invent seems to be about pickups.</P></TD></TR>
+  <CENTER>
+  <TR>
+    <TD width="100%" height=62>
+      <H3><BR>2.1 Actor.db</H3>
+      <P>As said before, actor.db is all about the NPCs (Non Player Characters). 
+      It's a easy format, which can be explained with just 2 
+  structures:</P></TD></TR>
+  <TR>
+    <TD width="100%" height=226><FONT face=Courier size=2><FONT 
+      color=#0000ff>struct</FONT> ActorDB<BR>{<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> NumActors;<BR>&nbsp; ActorDB_Item 
+      *Actors;<BR>};<BR><BR><FONT color=#0000ff>struct</FONT> 
+      ActorDB_Item<BR>{<BR>&nbsp; <FONT color=#0000ff>long</FONT> 
+      ActorID;<BR>&nbsp; <FONT color=#0000ff>long</FONT> HitPoints;<BR>&nbsp; 
+      <FONT color=#0000ff>long</FONT> Type;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> BaseID;<BR>&nbsp; <FONT 
+      color=#0000ff>long</FONT> Flags;<BR>};</FONT></TD></TR>
+  <TR>
+    <TD width="100%" height=21>The ActorID is an unique number for each actor. 
+      You cannot have 2 actors with the same id. Some actors can have shared 
+      animations. An enemy takes the animations from the base actor. This is set 
+      by the BaseID. If an enemy has it's own animations, BaseID must be set to 
+      it's own id. Else it points to the actor where the animations are used 
+      from.<BR>Different from the other TR games, the main actor data is no 
+      longer hardcoded. The hit points of an enemy can be set using the 
+      HitPoints field. It's not clear to say how much time you must shoot an 
+      enemy to kill based on the hit points. It depends on the type of gun you 
+      use and the distance to the enemy. For example, a rat far away can take 
+      more shots then a guard right in front of you.<BR>The Type value can be 
+      set to 4 values. If an character is playable, it has a type of 1. Friendly 
+      characters that cannot be shot have the type set to 2. Enemies which can 
+      be fired at have type 3. Finally there is a type 4 which seems to be used 
+      for animating objects.<BR>The last value, Flags, can be set to 0, 1 and 3. 
+      The meaning of it is still unknown, but proberly it has something to do 
+      with the type of 
+actor.</TD></TR></TBODY></TABLE></CENTER></DIV></CENTER></CENTER></BODY></HTML>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:14:58 Dec 4, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:44:24 Aug 1, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

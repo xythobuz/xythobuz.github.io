@@ -11,6 +11,17 @@ Here I'm mirroring/archiving stuff that could get lost.
 
 * * *
 
+#### Tomb Raider docs
+
+Here’s some reverse-engineered documentation about the Tomb Raider games found in the depths of the web.
+
+* TR1 - TR5 file format listing (as [PDF](tr_docs/LevelFormats.pdf) or as [XLS](tr_docs/LevelFormats.xls))
+* TR2 TombPC.dat script file format description as [PDF](tr_docs/TombPC_TR2.pdf)
+* TRLE WAD file format description as [PDF](tr_docs/TR_WAD_file_format.pdf)
+* TRAOD file format description as [HTML](tr_docs/TRAOD_Formats.html)
+
+* * *
+
 #### Leikkuri/Cutter v0.43
 
 Simple utility to modify hardcoded TR4 font table. [Download](files/leikkuri_v043.rar) [Source](http://trep.trlevel.de/en/downloads.html)
