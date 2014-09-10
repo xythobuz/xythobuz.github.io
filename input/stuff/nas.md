@@ -117,6 +117,8 @@ Der Standard Kernel von Debian unterstützt den NAS6210 nicht wirklich, weshalb 
 dpkg -i linux-image-3.1.0-rc742_xy42_armel.deb
 </pre>
 
+**Achtung**: dpkg scheint nicht mehr mit Buchstaben in der Versionsnummer (“xy42”) klarzukommen. Bei Problemen, bitte eigenen Kernel kompilieren!
+
 Im /boot Verzeichnis des NAS findet sich nun der neue Kernel als "vmlinuz-3.1.0-rc742" und die neue Ramdisk als "initrd.img-3.1.0-rc742". Diese 2 Dateien müssen nun mittels mkimage in U-Boot Images verwandelt werden:
 
 <pre>
