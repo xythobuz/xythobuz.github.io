@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/xythobuz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://xythobuz.de
+  * I am xythobuz (https://keybase.io/xythobuz) on keybase.
+  * I have a public key with fingerprint A37C 346C 471C 1A13 829A  B2E8 4CBB 7193 158A D8D3
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "a37c346c471c1a13829ab2e84cbb7193158ad8d3",
+            "host": "keybase.io",
+            "key_id": "4cbb7193158ad8d3",
+            "uid": "839b7c380c5f2dbf4df3f78168184d00",
+            "username": "xythobuz"
+        },
+        "service": {
+            "hostname": "xythobuz.de",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1411415361,
+    "expire_in": 157680000,
+    "prev": "87286d24c29a7e042552de1384cb16236890e253e18047e69e50115858f14c9e",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+owGbwMvMwMUotFZo1qMnX6sZTx/4mMQQolDrWq2UlJ9SqWRVrZSdCqbSMvPSU4sK
+ijLzSpSslBKNzZONTcySTcwNkw0TDY0tjCwTk4xSLUySk5LMDS2NDU0tElMsUoyV
+dJQy8otBOoDGJCUWp+pl5gPFgJz4zBSgKBb1pWAJC2PLJKAVFgbJpmlGKUlpJilp
+xmnmFoZmFoYWJikGBiCFxalFeYm5qUDVFZUlGflJpVVKtTpKQNGyzORUkJtBVqOp
+0EtJBWotKMovyU/OzwFKZJSUFFiB9JVUFoAUlqcmxUONiE/KzEsBehuooSy1qDgz
+P0/JyhCoMrkkE2SmoYkhEJkamxnqKKVWFGQWpcZnglSYmptZGAAByJrUMpBfzI0s
+zFKMTJKBgWSeamBiZGpqlJIKDDSg7w3NjIzNLCwNUo1MjVMNLQxMzFPNLFNNDQyB
+IWJqkWZokmwJcnBxamFevpKVKdCZielAI4sz0/MSS0qLUpVquToZZVgYGLkY2FiZ
+QDHHwMUpAIvPWZ4cDCvSNZWvirwqaG9+f182xkRiW5GIynU+xXuijEvar01y2L4o
+PMTppE9AmXGP+OUnXowXWjZYXud7YeKeu/BOy7T8pgpuXkUvKabHJvnsMg/0+E6u
+aTY+ffvwWlXpomcHw45cOPera6WMcX4W0/c/e1c9Onx32d2f7E5nlNQqI3Uf7/0Q
+MdOgw2V7xQnZvEtfP4WV/zj6IkPuf/k0vfSr1dNDRFxjeCp2rcuYxHBZ3+q52cm3
+MQ76AoYpklINSv9ZTacb2f79PnPuslVc2nsebp0hx8xgb864K6vw1YJLdmvb6l8z
+td9zebjoWL2Bp9nHmtw82bs745RvPwnhmVMV6KLsPmW3/1SvGM21C9a4AAA=
+=ecD9
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/xythobuz
+
+==================================================================
+
