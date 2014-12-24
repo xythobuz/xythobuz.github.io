@@ -117,13 +117,13 @@
                 print '</span>'
 
             # GitHub Fork Button. Place this last!
-            if page.get("github", "") != "":
-                print '<span id="github">'
-                sys.stdout.write('<a href="')
-                sys.stdout.write(page.github)
-                sys.stdout.write('" class="gitforked-button gitforked-forks gitforked-watchers"></a>')
-                sys.stdout.write("\n")
-                print '</span>'
+            #if page.get("github", "") != "":
+            #    print '<span id="github">'
+            #    sys.stdout.write('<a href="')
+            #    sys.stdout.write(page.github)
+            #    sys.stdout.write('" class="gitforked-button gitforked-forks gitforked-watchers"></a>')
+            #    sys.stdout.write("\n")
+            #    print '</span>'
 
             # Close DIV, horizontal line when no comments
             if page.get("flattr", "false") == "true" or page.get("twitter", "") != "" or page.get("reddit", "") != "" or page.get("github", "") != "" or page.get("print", "false") == "true":
@@ -176,6 +176,5 @@
     </script>
     <noscript><p><img src="http://xythobuz.de/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
     <!-- End Piwik Code -->
-    <script src="http://gitforked.com/api/1.1/button.js" type="text/javascript"></script>
 </body>
 </html>
