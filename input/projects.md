@@ -12,6 +12,9 @@ for p in mpages:
     print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
 %-->
 
-### Mac Apps
+### Abandoned Projects
 
+ * [avrNetStack](http://xythobuz.de/avrnetstack.html)
+ * [xyControl](http://xythobuz.de/xycontrol.html)
  * **[BaconBar](http://xythobuz.de/baconbar/)** Reddit Client
+
