@@ -93,7 +93,7 @@ After this finished, I just had to run the latest Clover installer, pointing it 
 
 I'm not sure why, but it seems to be common in the Hackintosh community to delete the `VBoxHfs-64.efi` driver from the EFI partition just filled by the installer, and replace it by the (proprietary) [HFSPlus.efi](https://github.com/JrCs/CloverGrowerPro/blob/master/Files/HFSPlus/X64/HFSPlus.efi?raw=true). Maybe it is (or was) more stable.
 
-I also added the [AppleIntelE1000e.kext](http://www.tonymacx86.com/downloads.php?do=cat&id=11) driver for networking support. Sadly I haven't yet found the upstream source of this kernel extension.
+I also added the [AppleIntelE1000e.kext](http://osx86drivers.sourceforge.net/#AppleIntelE1000e) driver for networking support.
 
 The other necessary kernel extensions are [HWSensors](http://hwsensors.com) ([GitHub](https://github.com/kozlek/HWSensors)), mainly FakeSMC.kext to emulate hardware only found in real Apple computers. But I see no reason not to install the other HWSensors extensions and the App, as it allows you to see the computers temperatures and other important data.
 
