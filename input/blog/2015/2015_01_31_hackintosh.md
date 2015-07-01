@@ -245,6 +245,8 @@ Reboot, then open the Network PrefPanel and delete + recreate the offending devi
 
 iMessage support seems to be another beast. To get it to work, you need valid serial numbers for your "Mac", as well as main board identifiers. There are many threads concerning this, some users report getting their iCloud Account blacklisted, and Apple seems to be in the middle of some changes regarding their authentication schemes. That's why I haven't yet tackled this topic. I guess in a month or so the situation will be different.
 
+*Update:* Apple has reverted their authentication changes, so iMessage now seems to work fine out of the box.
+
 ### Benchmarks
 
     $ cd OpenRaider/build
