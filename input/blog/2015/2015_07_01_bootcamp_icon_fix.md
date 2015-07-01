@@ -24,9 +24,12 @@ First, set the icon you wish to use like you always would (right-click, Get Info
 Next, we need to create a little shell script that copies this file again after it is lost on reboot:
 
     vim /Users/thomas/bin/fixBootcamp.sh
+    
     #!/bin/sh
     cp /Users/thomas/Pictures/Icons/VolumeIcon.icns /Volumes/TX-55/.VolumeIcon.icns
+    
     :wq
+    chmod a+x /Users/thomas/bin/fixBootcamp.sh
 
 Finally create a LaunchAgent property list:
 
@@ -55,5 +58,5 @@ To test it without logging out and back in:
 
     launchctl start de.xythobuz.fixBootcamp
 
-That was easy, right? :)
+That was easy, right? :) *Tested on OS X Yosemite 10.10.4...*
 
