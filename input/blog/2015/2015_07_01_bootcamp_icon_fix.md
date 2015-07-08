@@ -21,12 +21,13 @@ First, set the icon you wish to use like you always would (right-click, Get Info
 
     cp /Volumes/TX-55/.VolumeIcon.icns /Users/thomas/Pictures/Icons/VolumeIcon.icns
 
-Next, we need to create a little shell script that copies this file again after it is lost on reboot:
+Next, we need to create a little shell script that copies this file again and sets the icon flag after they are lost on reboot:
 
     vim /Users/thomas/bin/fixBootcamp.sh
     
     #!/bin/sh
     cp /Users/thomas/Pictures/Icons/VolumeIcon.icns /Volumes/TX-55/.VolumeIcon.icns
+    SetFile -a C /Volumes/TX-55
     
     :wq
     chmod a+x /Users/thomas/bin/fixBootcamp.sh
