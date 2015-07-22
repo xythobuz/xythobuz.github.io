@@ -13,9 +13,9 @@ date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
 print "*Posted at %s.*" % date
 %-->
 
-Ich quäle mich immer noch mit der unfassbar schlechten Weboberfläche meines Telekom Routers herum... Man sollte denken, den Neustart des Routers über die Weboberfläche sollte mit ein paar einfachen curl Kommandos begonnen werden kann. Aber nein, weit gefehlt. Ich musste den Traffic schon mit Wireshark capturen und nachbauen, denn wenn z.B. der Referer nicht stimmt geht gar nix.
+Ich quäle mich immer noch mit der unfassbar schlechten Weboberfläche meines Telekom Routers herum... Man sollte denken, den Neustart des Routers über die Weboberfläche könnte man mit ein paar einfachen curl Kommandos beginnen. Aber nein, weit gefehlt. Ich musste den Traffic schon mit Wireshark capturen und nachbauen, denn wenn z.B. der Referer nicht stimmt geht gar nix.
 
-Hier also das Ergebniss meiner Anstrengungen :D
+Hier also das Ergebnis meiner Anstrengungen :D
 
     #!/bin/bash
     
