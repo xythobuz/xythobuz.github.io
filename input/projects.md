@@ -9,7 +9,10 @@ position: 30
 mpages = [p for p in pages if p.get("parent", "") == "projects" and p.lang == "en"]
 mpages.sort(key=lambda p: int(p["position"]))
 for p in mpages:
-    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
+    if p.title == "Blog":
+        print "  * **[%s](%s)**" % (p.post, p.url) # markdown list item
+    else:
+        print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
 %-->
 
 ### Abandoned Projects
