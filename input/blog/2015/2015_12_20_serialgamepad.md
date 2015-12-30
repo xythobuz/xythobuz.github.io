@@ -22,7 +22,7 @@ In the last couple of months I’ve finally built a FPV capable Quadcopter. Fort
 
 <div class="yoxview">
     <a href="img/flysky1.png" class="thumbnail">
-        <img src="img/flysky1.png" alt="Photo" title="FlySky FS-CT6A"">
+        <img src="img/flysky1.png" alt="Photo" title="FlySky FS-CT6A">
     </a>
     <a href="img/flysky2.jpg" class="thumbnail">
         <img src="img/flysky2_small.jpg" alt="Photo" title="HK-T6A">
