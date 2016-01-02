@@ -3,7 +3,6 @@ post: Telekom Speedport Reset Script
 date: 2015-07-22
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

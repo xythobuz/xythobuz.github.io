@@ -3,7 +3,6 @@ post: Quadrocopter Motor Test
 date: 2013-02-11
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

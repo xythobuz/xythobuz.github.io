@@ -3,7 +3,6 @@ post: Quadrocopter Ueberblick
 date: 2013-01-20
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

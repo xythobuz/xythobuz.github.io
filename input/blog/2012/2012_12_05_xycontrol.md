@@ -3,7 +3,6 @@ post: xyControl PCB angekommen
 date: 2012-12-05
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

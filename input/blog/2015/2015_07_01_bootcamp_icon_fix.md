@@ -3,7 +3,6 @@ post: Bootcamp Icon fix
 date: 2015-07-01
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

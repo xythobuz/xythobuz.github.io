@@ -6,9 +6,6 @@ position: 0
 comments: true
 flattr: true
 compat: bt
-twitter: xythobuz
-reddit: true
-print: true
 ---
 
 ### {{ page.title }}

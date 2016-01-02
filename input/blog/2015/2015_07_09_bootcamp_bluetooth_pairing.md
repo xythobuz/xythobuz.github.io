@@ -3,7 +3,6 @@ post: Automatic Bluetooth Pairing in OS X and Windows
 date: 2015-07-09
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

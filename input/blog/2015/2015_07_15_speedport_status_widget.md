@@ -3,7 +3,6 @@ post: Telekom Speedport Status Widget
 date: 2015-07-15
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

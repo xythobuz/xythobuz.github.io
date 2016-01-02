@@ -6,9 +6,6 @@ position: 70
 comments: true
 flattr: true
 compat: notifier
-twitter: xythobuz
-reddit: true
-print: true
 ---
 
 ### {{ page.title }}

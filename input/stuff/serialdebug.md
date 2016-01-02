@@ -6,9 +6,6 @@ position: 50
 comments: true
 flattr: true
 compat: serialdebug
-twitter: xythobuz
-reddit: true
-print: true
 ---
 
 ### {{ page.title }}

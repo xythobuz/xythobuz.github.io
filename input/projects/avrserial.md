@@ -7,9 +7,6 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/avrSerial
 compat: avrserlib
-twitter: xythobuz
-reddit: true
-print: true
 ---
 
 ### {{ page.title }}

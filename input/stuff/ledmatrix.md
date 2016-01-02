@@ -6,9 +6,6 @@ position: 40
 comments: true
 flattr: true
 compat: ledmatrix
-twitter: xythobuz
-reddit: true
-print: true
 ---
 
 ### {{ page.title }}

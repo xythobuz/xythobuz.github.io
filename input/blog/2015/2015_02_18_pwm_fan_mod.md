@@ -3,7 +3,6 @@ post: GA-Z97X-UD5H PWM Fan Mod
 date: 2015-02-18
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

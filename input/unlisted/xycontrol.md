@@ -6,9 +6,6 @@ position: 1
 comments: true
 flattr: true
 github: https://github.com/xythobuz/xyControl
-twitter: xythobuz
-reddit: true
-print: true
 ---
 
 ![Logo][logo]

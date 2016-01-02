@@ -3,7 +3,6 @@ post: Flysky Mac OS X joystick driver
 date: 2015-12-20
 comments: true
 flattr: true
-twitter: xythobuz
 github: https://github.com/xythobuz/SerialGamepad
 parent: projects
 position: 50

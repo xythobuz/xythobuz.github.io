@@ -3,7 +3,6 @@ post: OpenRaider fork
 date: 2014-03-22
 comments: true
 flattr: true
-twitter: xythobuz
 github: https://github.com/xythobuz/OpenRaider
 ---
 

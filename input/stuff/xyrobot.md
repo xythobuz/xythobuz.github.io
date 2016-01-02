@@ -7,9 +7,6 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/xyRobot
 compat: rob
-twitter: xythobuz
-reddit: true
-print: true
 ---
 
 ### {{ page.title }}

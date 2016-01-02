@@ -3,7 +3,6 @@ post: Core Storage Partition resizing
 date: 2015-08-06
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

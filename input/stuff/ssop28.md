@@ -6,8 +6,6 @@ position: 80
 comments: true
 flattr: true
 compat: ssop28
-twitter: xythobuz
-reddit: true
 ---
 
 ### {{ page.title }}

@@ -46,7 +46,7 @@
             <!--%
                 mpages = [p for p in pages if p.get("parent", "") == "main" and p.lang == "en"]
                 mpages.sort(key=lambda p: int(p["position"]))
-                entry = '<li><a href="%s">%s</a></li>'
+                entry = '            <li><a href="%s">%s</a></li>'
                 for p in mpages[1:]:
                     print(entry % (htmlspecialchars(p["url"]), htmlspecialchars(p["title"])))
             %-->
@@ -55,7 +55,7 @@
             <!--%
                 tmp = [p for p in page["lang_links"].iteritems()]
                 if len(tmp) > 1:
-                    print '<li>'
+                    print '            <li>'
                     print " ".join(["<li><a href='%s'>%s</a></li>" % (url, lang) for lang, url in page["lang_links"].iteritems()]).replace(">en<", '><img src="img/en.png" alt="English"><').replace(">de<", '><img src="img/de.png" alt="Deutsch"><')
                     print "</li>"
             %-->
@@ -67,15 +67,9 @@
             import sys
 
             # Centered DIV
-            if page.get("flattr", "false") == "true" or page.get("twitter", "") != "" or page.get("reddit", "") != "" or page.get("github", "") != "" or page.get("print", "false") == "true":
-                print '<div style="margin-top: 1em; text-align: center;">'
-
-            # Print and PDF Buttons
-            if page.get("print", "false") == "true":
-                print """<script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if('https:' == document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-print-icon.gif" width="16" height="15" alt="Print Friendly Version of this page" />Print <img style="border:none;margin:0 6px"  src="https://pf-cdn.printfriendly.com/images/icons/pf-pdf-icon.gif" width="12" height="12" alt="Get a PDF version of this webpage" />PDF</a>"""
-
             # Flattr Button
             if page.get("flattr", "false") == "true":
+                print '<div style="margin-top: 1em; text-align: center;">'
                 print '<span id="flattr">'
                 sys.stdout.write('<a class="FlattrButton" href="')
                 sys.stdout.write(BASE_URL)
@@ -87,46 +81,6 @@
                 sys.stdout.write(htmlspecialchars(page.get("description", page.title)))
                 sys.stdout.write("</a>\n")
                 print '</span>'
-
-            # Twitter Button
-            if page.get("twitter", "") != "":
-                print '<span id="twitter">'
-                sys.stdout.write('<a href="https://twitter.com/share" class="twitter-share-buttdata-via="')
-                sys.stdout.write(page.twitter)
-                sys.stdout.write('" data-dnt="true" data-related="')
-                sys.stdout.write(page.twitter)
-                sys.stdout.write('" data-count="vertical">Tweet</a>')
-                sys.stdout.write('<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twi.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitwjs");')
-                sys.stdout.write("</script>\n")
-                print '</span>'
-
-            # Reddit Button
-            if page.get("reddit", "") != "":
-                print '<span id="reddit">'
-                sys.stdout.write('<script type="text/javascript">reddit_url = "')
-                if (page.reddit == "true"):
-                    sys.stdout.write(BASE_URL)
-                    sys.stdout.write('/')
-                    sys.stdout.write(page.url)
-                else:
-                    sys.stdout.write(page.reddit)
-                sys.stdout.write('";</script>')
-                sys.stdout.write("\n")
-                sys.stdout.write('<script type="text/javascript" src="http://www.redcom/static/button/button2.js"></script>')
-                sys.stdout.write("\n")
-                print '</span>'
-
-            # GitHub Fork Button. Place this last!
-            #if page.get("github", "") != "":
-            #    print '<span id="github">'
-            #    sys.stdout.write('<a href="')
-            #    sys.stdout.write(page.github)
-            #    sys.stdout.write('" class="gitforked-button gitforked-forks gitforked-watchers"></a>')
-            #    sys.stdout.write("\n")
-            #    print '</span>'
-
-            # Close DIV, horizontal line when no comments
-            if page.get("flattr", "false") == "true" or page.get("twitter", "") != "" or page.get("reddit", "") != "" or page.get("github", "") != "" or page.get("print", "false") == "true":
                 print '</div>'
 
             # Disqus Comments

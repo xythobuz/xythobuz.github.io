@@ -3,7 +3,6 @@ post: CaseLights
 date: 2015-12-30
 comments: true
 flattr: true
-twitter: xythobuz
 github: https://github.com/xythobuz/CaseLights
 parent: projects
 position: 60

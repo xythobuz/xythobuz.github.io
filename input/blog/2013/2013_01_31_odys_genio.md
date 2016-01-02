@@ -3,7 +3,6 @@ post: Odys Genio USB Debugging am Mac
 date: 2013-01-31
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

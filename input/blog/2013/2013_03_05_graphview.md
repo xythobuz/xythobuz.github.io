@@ -3,7 +3,6 @@ post: xyCopter mit GraphView
 date: 2013-03-05
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

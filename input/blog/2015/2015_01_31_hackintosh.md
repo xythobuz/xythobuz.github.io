@@ -3,7 +3,6 @@ post: My first Hackintosh
 date: 2015-01-31
 comments: true
 flattr: true
-twitter: xythobuz
 ---
 
 ## {{ page["post"] }}

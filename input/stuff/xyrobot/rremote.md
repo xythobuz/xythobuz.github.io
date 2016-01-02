@@ -6,9 +6,6 @@ position: 2
 comments: true
 flattr: true
 compat: rrem
-twitter: xythobuz
-reddit: true
-print: true
 ---
 
 ### {{ page.title }}

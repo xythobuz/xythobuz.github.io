@@ -5,9 +5,6 @@ position: 20
 comments: true
 flattr: true
 compat: nas
-twitter: xythobuz
-reddit: true
-print: true
 ---
 
 ### {{ page.title }}
