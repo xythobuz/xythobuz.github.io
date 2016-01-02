@@ -42,7 +42,7 @@ In the last couple of months I’ve finally built a FPV capable Quadcopter. Fort
 
 As you can see, in the back is a small transmitter PCB (in green) marked with FlySky. That’s how I found out it’s just a rebranding. This module only has 4 pins, +5V, GND, PPM Signal and a connection for the bind button. This means you can replace it with most other modules, as I did with the (discontinued) [Fr-Sky DHT](http://www.frsky-rc.com/product/pro.php?pro_id=95).
 
-This line of Transmitters also has a PC-Link port in the back (a 4-pin mini-DIN connector), that’s simply a RS232 port (most probably in TTL logic). The packaging includes a USB-Serial adaptor with this connector and a [Prolific PL2303](http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=229&pcid=41) chipset. You may need to install the driver for this.
+This line of Transmitters also has a PC-Link port in the back (a 4-pin mini-DIN connector), that’s simply a RS232 port (most probably in TTL logic). The packaging includes a USB-Serial adaptor with this connector and a [Silicon Labs CP2102](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx) or [Prolific PL2303](http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=229&pcid=41) chipset. You may need to install the driver for one of these. To find out which one, open the System Information App, find the USB device corresponding to the dongle and check its name.
 
 A (pretty crappy) Visual Basic Windows Software is included to configure the transmitter, called T6config or TXsetup. There are [some alternatives](http://www.mycoolheli.com/t6Alternate.html), like [TurborixConfig for Mac OS X](http://www.zenoshrdlu.com/turborix/).
 
