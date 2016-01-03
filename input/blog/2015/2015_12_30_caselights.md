@@ -69,11 +69,13 @@ The RGB Lights can be set to some static colors, with a modifiable brightness. A
 
 Using the included [JSystemInfoKit](https://github.com/jBot-42/JSystemInfoKit), different things like CPU/GPU/RAM/VRAM usage or hardware temperatures can be visualized with colors from red, over yellow, to green.
 
-And finally, a display output device connected to the Mac can be selected. The CaseLights App will then create a Screenshot 10-times per second and display the average color.
+You can also select a display output device connected to the Mac. The CaseLights App will then create a Screenshot 10-times per second and display the average color.
+
+And you can select one of the system audio input devices to visualize sounds and music. To be able to directly route the system audio output into CaseLights, use the open kernel extension [Soundflower](https://github.com/mattingalls/Soundflower).
 
 <div class="yoxview">
     <a href="img/CaseLights.png" class="thumbnail">
-        <img src="img/CaseLights_small.png" alt="Screenshot" title="CaseLights App">
+        <img src="img/CaseLights_small.png" alt="Screenshot" title="CaseLights App (old screenshot)">
     </a>
 </div>
 
