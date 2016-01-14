@@ -506,6 +506,10 @@ def build(project, opts):
             elif re.search(MKD_PATT, f):
                 page = Page(opj(cwd, f))
                 pages.append(page)
+                foo = opj(cwd, f)
+                bar = opj(dir_out, f)
+                print('info   : copy %s' % bar)
+                shutil.copyfile(foo, bar)
             else:
                 # either use a custom converter or do a plain copy
                 for patt, (func, ext) in custom_converter.items():
