@@ -27,8 +27,8 @@ difference_in_years = date_as_float(end_date) - date_as_float(start_date)
 
 print int(difference_in_years)
 
-%--> year old Information Engineering student from Germany, mostly building stuff with AVR microcontrollers.
-All of my projects are released as [Free Software](http://www.gnu.org/philosophy/free-sw.html) on my [GitHub profile](https://github.com/xythobuz), with more informations here. Have fun!
+%--> year old hard- and software developer from Germany.
+All of my projects are released as free or open-source software on my [GitHub profile](https://github.com/xythobuz), with more information here. Have fun!
 
 ### Recent Blog Posts
 
@@ -36,7 +36,7 @@ All of my projects are released as [Free Software](http://www.gnu.org/philosophy
 from datetime import datetime
 posts = [p for p in pages if "post" in p] # get all blog post pages
 posts.sort(key=lambda p: p.get("date"), reverse=True) # sort post pages by date
-for p in posts[0:4]:
+for p in posts[0:5]:
     date = datetime.strptime(p.date, "%Y-%m-%d").strftime("%B %d, %Y")
     print "  * **[%s](%s)** - %s" % (p.post, p.url, date) # markdown list item
 %-->
