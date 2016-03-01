@@ -19,5 +19,5 @@ for p in mpages:
 
  * [avrNetStack](http://xythobuz.de/avrnetstack.html)
  * [xyControl](http://xythobuz.de/xycontrol.html)
- * **[BaconBar](http://xythobuz.de/baconbar/)** Reddit Client
+ * **[BaconBar](http://xythobuz.de/baconbar/)** Reddit Client ([Softpedia Review](http://mac.softpedia.com/get/Internet-Utilities/BaconBar.shtml))
 
