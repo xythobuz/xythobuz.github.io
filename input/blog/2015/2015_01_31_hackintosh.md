@@ -184,7 +184,7 @@ The patched kext will be replaced after every system update, so you have to do t
 
 Now you may notice that the sound output will no longer work after waking the Hackintosh from sleep. That's because OS X is disabling amplifiers when entering sleep, but does not enable them again. But again there is an open-source solution to this, called [CodecCommander](https://github.com/Dolnor/EAPD-Codec-Commander).
 
-Just clone the repository and build it using `xcodebuild`. Then edit the Info.plist in the newly built kext by changing the Codec Address Number to 2 (this is all described in great detail in the CodecCommander Read me).
+Just clone the repository and build it using `xcodebuild`. Then edit the Info.plist in the newly built kext by changing the Codec Address Number to 2 (this is all described in great detail in the CodecCommander Read me). You can download [my modified Info.plist here](files/CodecCommander_Info.plist).
 
 Put the CodecCommander kext into `/System/Library/Extensions`, it can not be injected using Clover. Make sure you have enabled the "kext-dev-mode=1" kernel boot flag in Clovers Info.plist for this to work.
 
