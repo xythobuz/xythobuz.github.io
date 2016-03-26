@@ -320,6 +320,8 @@ index c75acd8..aa43d90 100644
 2.7.2
 </pre>
 
+This is another patch that improves the feel of the rotary encoder on the display.
+
 <pre class="sh_diff">
 From 6a5672200c4246a92abe34e7efa8ab3ec52861a8 Mon Sep 17 00:00:00 2001
 From: Thomas Buck <xythobuz@xythobuz.de>
@@ -365,6 +367,92 @@ index aa43d90..aec7aa0 100644
 +#undef BTN_EN2
 +#define BTN_EN2 31
 +
+-- 
+2.7.2
+</pre>
+
+And another patch, this time enabling some more features in the current Marlin version.
+
+<pre class="sh_diff">
+From 46abce978ebd67723fc7f66d0ecd14272aa96feb Mon Sep 17 00:00:00 2001
+From: Thomas Buck <xythobuz@xythobuz.de>
+Date: Sat, 26 Mar 2016 22:10:01 +0100
+Subject: [PATCH 1/1] Tuned Fabrikator Mini config
+
+---
+ Marlin/Configuration.h     | 12 ++++++------
+ Marlin/Configuration_adv.h |  4 ++--
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/Marlin/Configuration.h b/Marlin/Configuration.h
+index 507f36e..f20419d 100644
+--- a/Marlin/Configuration.h
++++ b/Marlin/Configuration.h
+@@ -419,8 +419,8 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
+ //=========================== Manual Bed Leveling ===========================
+ //===========================================================================
+ 
+-//#define MANUAL_BED_LEVELING  // Add display menu option for bed leveling.
+-//#define MESH_BED_LEVELING    // Enable mesh bed leveling.
++#define MANUAL_BED_LEVELING  // Add display menu option for bed leveling.
++#define MESH_BED_LEVELING    // Enable mesh bed leveling.
+ 
+ #if ENABLED(MANUAL_BED_LEVELING)
+   #define MBL_Z_STEP 0.025  // Step size while manually probing Z axis.
+@@ -592,7 +592,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
+ #define DEFAULT_MAX_ACCELERATION      {200,200,50,2000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
+ 
+ #define DEFAULT_ACCELERATION          300    // X, Y, Z and E acceleration in mm/s^2 for printing moves
+-#define DEFAULT_RETRACT_ACCELERATION  2000    // E acceleration in mm/s^2 for retracts
++#define DEFAULT_RETRACT_ACCELERATION  300    // E acceleration in mm/s^2 for retracts
+ #define DEFAULT_TRAVEL_ACCELERATION   300    // X, Y, Z acceleration in mm/s^2 for travel (non printing) moves
+ 
+ // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
+@@ -625,7 +625,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
+ // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
+ // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
+ //define this to enable EEPROM support
+-//#define EEPROM_SETTINGS
++#define EEPROM_SETTINGS
+ 
+ #if ENABLED(EEPROM_SETTINGS)
+   // To disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
+@@ -642,11 +642,11 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
+ // Preheat Constants
+ #define PLA_PREHEAT_HOTEND_TEMP 180
+ #define PLA_PREHEAT_HPB_TEMP 0
+-#define PLA_PREHEAT_FAN_SPEED 127   // Insert Value between 0 and 255
++#define PLA_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
+ 
+ #define ABS_PREHEAT_HOTEND_TEMP 200
+ #define ABS_PREHEAT_HPB_TEMP 0
+-#define ABS_PREHEAT_FAN_SPEED 127   // Insert Value between 0 and 255
++#define ABS_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
+ 
+ //==============================LCD and SD support=============================
+ // @section lcd
+diff --git a/Marlin/Configuration_adv.h b/Marlin/Configuration_adv.h
+index 41d61d2..7ecf285 100644
+--- a/Marlin/Configuration_adv.h
++++ b/Marlin/Configuration_adv.h
+@@ -214,7 +214,7 @@
+ #define Y_HOME_BUMP_MM 5
+ #define Z_HOME_BUMP_MM 2
+ #define HOMING_BUMP_DIVISOR {2, 2, 4}  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
+-//#define QUICK_HOME  //if this is defined, if both x and y are to be homed, a diagonal move will be performed initially.
++#define QUICK_HOME  //if this is defined, if both x and y are to be homed, a diagonal move will be performed initially.
+ 
+ // When G28 is called, this option will make Y home before X
+ //#define HOME_Y_BEFORE_X
+@@ -298,7 +298,7 @@
+   #define SD_DETECT_INVERTED
+ 
+   #define SD_FINISHED_STEPPERRELEASE true  //if sd support and the file is finished: disable steppers?
+-  #define SD_FINISHED_RELEASECOMMAND "M84 X Y Z E" // You might want to keep the z enabled so your bed stays in place.
++  #define SD_FINISHED_RELEASECOMMAND "M84 Y Z E" // You might want to keep the z enabled so your bed stays in place.
+ 
+   #define SDCARD_RATHERRECENTFIRST  //reverse file order of sd card menu display. Its sorted practically after the file system block order.
+   // if a file is deleted, it frees a block. hence, the order is not purely chronological. To still have auto0.g accessible, there is again the option to do that.
 -- 
 2.7.2
 </pre>
