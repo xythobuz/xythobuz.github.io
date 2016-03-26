@@ -56,7 +56,14 @@ const bool Z_MAX_ENDSTOP_INVERTING = true;
 #define DEFAULT_ACCELERATION          300
 #define DEFAULT_RETRACT_ACCELERATION  2000
 #define DEFAULT_TRAVEL_ACCELERATION   300
+#define PLA_PREHEAT_HPB_TEMP 0
+#define PLA_PREHEAT_FAN_SPEED 127
+#define ABS_PREHEAT_HOTEND_TEMP 200
+#define ABS_PREHEAT_HPB_TEMP 0
+#define ABS_PREHEAT_FAN_SPEED 127
 #define SDSUPPORT
+#define ENCODER_PULSES_PER_STEP 4
+#define ENCODER_STEPS_PER_MENU_ITEM 1
 #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 // Configuration_adv.h
@@ -64,11 +71,19 @@ const bool Z_MAX_ENDSTOP_INVERTING = true;
 //#define ENDSTOPS_ONLY_FOR_HOMING // Comment this!
 </pre>
 
-With its default firmware, the Fabrikator Mini by default runs the fan as soon as the extruder temperature exceeds 50 degrees Celsius. To get this behavior from the Marlin Firmware, `EXTRUDER_0_AUTO_FAN_PIN` is set to the same value as `FAN_PIN`. This leads to a compile error. To fix this, `FAN_PIN` has to be undefined. This can be achieved by modifying the `pins.h` file corresponding to the mainboard used, in this case `Marlin/pins_RAMPS_13_EFB.h`, adding these two lines at the end:
+With its default firmware, the Fabrikator Mini by default runs the fan as soon as the extruder temperature exceeds 50 degrees Celsius. To get this behavior from the Marlin Firmware, `EXTRUDER_0_AUTO_FAN_PIN` is set to the same value as `FAN_PIN`. This leads to a compile error. To fix this, `FAN_PIN` has to be undefined. This can be achieved by modifying the `pins.h` file corresponding to the mainboard used, in this case `Marlin/pins_RAMPS_13_EFB.h`, adding these lines at the end:
 
 <pre class="sh_cpp">
+// Disable normal fan to be able to enable auto fan
 #undef FAN_PIN
 #define FAN_PIN -1
+
+// Reverse encoder direction
+#undef BTN_EN1
+#define BTN_EN1 33
+
+#undef BTN_EN2
+#define BTN_EN2 31
 </pre>
 
 That’s it. You can now open the `Marlin/Marlin.ino` file in the Arduino IDE, select `Arduino Mega 2560` as device and the Fabrikator Mini USB port and hit upload. If this is your first time compiling Marlin with Graphic LCD support, you need to install the `u8glib` from the Arduino IDE library manager.
@@ -300,6 +315,55 @@ index c75acd8..aa43d90 100644
 +
 +#undef FAN_PIN
 +#define FAN_PIN -1
++
+-- 
+2.7.2
+</pre>
+
+<pre class="sh_diff">
+From 6a5672200c4246a92abe34e7efa8ab3ec52861a8 Mon Sep 17 00:00:00 2001
+From: Thomas Buck <xythobuz@xythobuz.de>
+Date: Sat, 26 Mar 2016 18:51:30 +0100
+Subject: [PATCH 1/1] Slightly improved Fabrikator Mini Configuration.
+
+---
+ Marlin/Configuration.h     | 4 ++--
+ Marlin/pins_RAMPS_13_EFB.h | 8 ++++++++
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/Marlin/Configuration.h b/Marlin/Configuration.h
+index c0411cf..507f36e 100644
+--- a/Marlin/Configuration.h
++++ b/Marlin/Configuration.h
+@@ -670,8 +670,8 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
+ //#define SDSLOW // Use slower SD transfer mode (not normally needed - uncomment if you're getting volume init error)
+ //#define SDEXTRASLOW // Use even slower SD transfer mode (not normally needed - uncomment if you're getting volume init error)
+ //#define SD_CHECK_AND_RETRY // Use CRC checks and retries on the SD communication
+-//#define ENCODER_PULSES_PER_STEP 1 // Increase if you have a high resolution encoder
+-//#define ENCODER_STEPS_PER_MENU_ITEM 5 // Set according to ENCODER_PULSES_PER_STEP or your liking
++#define ENCODER_PULSES_PER_STEP 4 // Increase if you have a high resolution encoder
++#define ENCODER_STEPS_PER_MENU_ITEM 1 // Set according to ENCODER_PULSES_PER_STEP or your liking
+ //#define ULTIMAKERCONTROLLER //as available from the Ultimaker online store.
+ //#define ULTIPANEL  //the UltiPanel as on Thingiverse
+ //#define SPEAKER // The sound device is a speaker - not a buzzer. A buzzer resonates with his own frequency.
+diff --git a/Marlin/pins_RAMPS_13_EFB.h b/Marlin/pins_RAMPS_13_EFB.h
+index aa43d90..aec7aa0 100644
+--- a/Marlin/pins_RAMPS_13_EFB.h
++++ b/Marlin/pins_RAMPS_13_EFB.h
+@@ -8,6 +8,14 @@
+ 
+ #include "pins_RAMPS_13.h"
+ 
++// Disable normal fan to be able to enable auto fan
+ #undef FAN_PIN
+ #define FAN_PIN -1
+ 
++// Reverse encoder direction
++#undef BTN_EN1
++#define BTN_EN1 33
++
++#undef BTN_EN2
++#define BTN_EN2 31
 +
 -- 
 2.7.2
