@@ -29,8 +29,6 @@ My friends Max (<hutattedonmyarm@me.com>) and Felix built this single-color 8x8x
 
 ## Hardware
 
-**Warning:** Frank mailed me and explained that the FRAM is operating outside of it's absolute maximum ratings. It should get 3.3V, not 5V. I'll probably update the board and schematic, soon. It seems to work, regardless. **Beware!**
-
 An AtMega32 controls 8 8bit Latches. These 64 bits control, via a PNP Transistor, the anodes of 8 LEDs, each.
 
 There are also 8 N-Channel MOSFETs connected to the AtMega32. They each control the cathodes of 64 LEDs on a Y-Plane.
@@ -40,6 +38,10 @@ It can talk to a PC via USB with a FT232RL. A 1Mbit FRAM is accessed over TWI (o
 There's also an AtMega8 which acts as a TWI Slave and sends audio data to the AtMega32. This data comes from a MSGEQ7.
 
 An extensive part list can be found in the Github repository, in Hardware, called parts.txt.
+
+Frank mailed me and explained that the FRAM is operating outside of it's absolute maximum ratings. It should get 3.3V, not 5V. I'll probably update the board and schematic, soon. It seems to work, regardless.
+
+Kay also mailed me. It seems as if the FRAM used is no longer available, but FM24C04BG is a viable replacement part. It has the same pinout and package, and even supports 5V operation, so the problem Frank encountered has solved itself.
 
 <div class="yoxview">
     <a href="img/cube10.jpg" class="thumbnail">
