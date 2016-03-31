@@ -20,3 +20,10 @@ for p in mpages:
 * **[cppcheck](https://trac.macports.org/browser/trunk/dports/devel/cppcheck/Portfile)** static code analysis
 * **[mp3cat](https://trac.macports.org/browser/trunk/dports/audio/mp3cat/Portfile)** read and write mp3 files
 
+### 3D Print Designs
+
+* [Fabrikator Mini Filament Spool Holder](http://www.thingiverse.com/thing:1427890)
+* [Fabrikator Mini Full Graphics Display Holder](http://www.thingiverse.com/thing:1441146)
+* [Fabrikator Mini V1.5 Y-Axis Fan Holder](http://www.thingiverse.com/thing:1454399)
+* [Sony 600TVL Camera Lens Cap](http://www.thingiverse.com/thing:1443462)
+
