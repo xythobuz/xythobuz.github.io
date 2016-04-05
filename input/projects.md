@@ -17,7 +17,8 @@ for p in mpages:
 
 ### Abandoned Projects
 
- * [avrNetStack](http://xythobuz.de/avrnetstack.html)
- * [xyControl](http://xythobuz.de/xycontrol.html)
+ * **[avrNetStack](http://xythobuz.de/avrnetstack.html)**
+ * **[xyControl](http://xythobuz.de/xycontrol.html)**
  * **[BaconBar](http://xythobuz.de/baconbar/)** Reddit Client ([Softpedia Review](http://mac.softpedia.com/get/Internet-Utilities/BaconBar.shtml))
+ * **[OpenRaider](https://github.com/xythobuz/OpenRaider)** Free and Open Source classic Tomb Raider game engine
 
