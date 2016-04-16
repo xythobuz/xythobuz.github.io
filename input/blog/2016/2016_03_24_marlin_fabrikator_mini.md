@@ -12,6 +12,16 @@ date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
 print "*Posted at %s.*" % date
 %-->
 
+**Update:**
+
+As the Marlin Firmware is changing quite often, I’m maintaining [a branch with my configuration on my git server](http://xythobuz.de/git/marlin-fabrikator-mini/). Get it like this:
+
+<pre class="sh_sh">
+git clone http://xythobuz.de/git/marlin-fabrikator-mini/
+</pre>
+
+<hr>
+
 I’ve recently aquired a [Turnigy Fabrikator Mini V1.5](http://www.hobbyking.com/hobbyking/store/__82020__Fabrikator_Mini_3D_Printer_V1_5_Transparent_EU_230V.html) from HobbyKing. This is a very cheap 3D printer with surprisingly good quality.
 
 Many 3D printers are based on an Arduino with some stepper motor drivers, commonly on a [RAMPS shield](http://reprap.org/wiki/RAMPS_1.4). The Fabrikator Mini is using an [MKS-Base board](http://reprap.org/wiki/MKS_BASE), which is basically an Arduino Mega (with an ATmega2560) and a RAMPS 1.4 shield on a single PCB.
