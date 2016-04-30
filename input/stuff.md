@@ -25,6 +25,7 @@ for p in mpages:
 * [Fabrikator Mini Filament Spool Holder](http://www.thingiverse.com/thing:1427890)
 * [Fabrikator Mini Full Graphics Display Holder](http://www.thingiverse.com/thing:1441146)
 * [Fabrikator Mini V1.5 Y-Axis Fan Holder](http://www.thingiverse.com/thing:1454399)
+* [Fabrikator Mini Logitech C270 Webcam Holder](http://www.thingiverse.com/thing:1531522)
 * [Sony 600TVL Camera Lens Cap](http://www.thingiverse.com/thing:1443462)
 * [Simple Customizable Fan Feet](http://www.thingiverse.com/thing:1465392)
 
