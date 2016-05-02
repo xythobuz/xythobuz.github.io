@@ -30,4 +30,5 @@ for p in mpages:
 * [Sony 600TVL Camera Lens Cap](http://www.thingiverse.com/thing:1443462)
 * [Simple Customizable Fan Feet](http://www.thingiverse.com/thing:1465392)
 * [Simple Customizable Thumb Screw Rosettes](http://www.thingiverse.com/thing:1531544)
+* [Replacement Abus Smoke Detector Holder](http://www.thingiverse.com/thing:1534421)
 
