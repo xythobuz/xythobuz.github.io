@@ -32,20 +32,20 @@ The My Book Studio uses hardware encryption with it's SATA adaptor. This means, 
 
 Also, the data on the replacement drive won't be readable in the enclosure. So get off your data before switching the drives, and put your new data on it afterwards!
 
-<div class="yoxview">
-    <a href="img/wd-1.jpg" class="thumbnail">
-        <img src="img/wd-1_small.jpg" alt="Photo" title="Only four screws outside">
+<div class="lightgallery">
+    <a href="img/wd-1.jpg">
+        <img src="img/wd-1_small.jpg" alt="Only four screws outside">
     </a>
-    <a href="img/wd-2.jpg" class="thumbnail">
-        <img src="img/wd-2_small.jpg" alt="Photo" title="Slide the case open">
+    <a href="img/wd-2.jpg">
+        <img src="img/wd-2_small.jpg" alt="Slide the case open">
     </a>
-    <a href="img/wd-3.jpg" class="thumbnail">
-        <img src="img/wd-3_small.jpg" alt="Photo" title="There are no clips. Just use some force!">
+    <a href="img/wd-3.jpg">
+        <img src="img/wd-3_small.jpg" alt="There are no clips. Just use some force!">
     </a>
-    <a href="img/wd-4.jpg" class="thumbnail">
-        <img src="img/wd-4_small.jpg" alt="Photo" title="Slide out the HDD to it's printed side">
+    <a href="img/wd-4.jpg">
+        <img src="img/wd-4_small.jpg" alt="Slide out the HDD to it's printed side">
     </a>
-    <a href="img/wd-5.jpg" class="thumbnail">
-        <img src="img/wd-5_small.jpg" alt="Photo" title="Done">
+    <a href="img/wd-5.jpg">
+        <img src="img/wd-5_small.jpg" alt="Done">
     </a>
 </div>

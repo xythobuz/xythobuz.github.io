@@ -37,24 +37,24 @@ Combining all the parts was not really difficult. The cooler seems to be mountab
 
 The included case fans are three non-PWM 3pin 120mm fans. They're not exactly quiet, but also not too loud. The loudest part currently seems to be the HDD, besides the Intel boxed cooler, which was really bad.
 
-<div class="yoxview">
-    <a href="img/hackintosh1.jpg" class="thumbnail">
-        <img src="img/hackintosh1_small.jpg" alt="Photo" title="Case closed">
+<div class="lightgallery">
+    <a href="img/hackintosh1.jpg">
+        <img src="img/hackintosh1_small.jpg" alt="Case closed">
     </a>
-    <a href="img/hackintosh2.jpg" class="thumbnail">
-        <img src="img/hackintosh2_small.jpg" alt="Photo" title="Case open">
+    <a href="img/hackintosh2.jpg">
+        <img src="img/hackintosh2_small.jpg" alt="Case open">
     </a>
-    <a href="img/hackintosh3.jpg" class="thumbnail">
-        <img src="img/hackintosh3_small.jpg" alt="Photo" title="Case open 2">
+    <a href="img/hackintosh3.jpg">
+        <img src="img/hackintosh3_small.jpg" alt="Case open 2">
     </a>
-    <a href="img/hackintosh4.jpg" class="thumbnail">
-        <img src="img/hackintosh4_small.jpg" alt="Photo" title="Case open 3">
+    <a href="img/hackintosh4.jpg">
+        <img src="img/hackintosh4_small.jpg" alt="Case open 3">
     </a>
-    <a href="img/hackintosh5.jpg" class="thumbnail">
-        <img src="img/hackintosh5_small.jpg" alt="Photo" title="Case open back">
+    <a href="img/hackintosh5.jpg">
+        <img src="img/hackintosh5_small.jpg" alt="Case open back">
     </a>
-    <a href="img/hackintosh6.jpg" class="thumbnail">
-        <img src="img/hackintosh6_small.jpg" alt="Photo" title="Case back">
+    <a href="img/hackintosh6.jpg">
+        <img src="img/hackintosh6_small.jpg" alt="Case back">
     </a>
 </div>
 
@@ -168,9 +168,9 @@ After the last installation step finishes, it should jump right to the setup and
 
 Get the Clover installer again, and install for UEFI booting only, with the OsxAptioFixDrv-64 and `Install RC scripts on target volume`, on your SSD/HDD. Then do the same steps as before, now with your main EFI partition, namely installing FakeSMC, the HWSensors, the Ethernet driver and HFSPlus.efi, as well as the config.plist.
 
-<div class="yoxview">
-    <a href="img/clover.png" class="thumbnail">
-        <img src="img/clover_small.png" alt="Screenshot" title="Clover installer settings">
+<div class="lightgallery">
+    <a href="img/clover.png">
+        <img src="img/clover_small.png" alt="Clover installer settings">
     </a>
 </div>
 

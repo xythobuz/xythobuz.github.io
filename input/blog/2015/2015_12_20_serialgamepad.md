@@ -19,24 +19,24 @@ print "*Posted at %s.*" % date
 
 In the last couple of months I’ve finally built a FPV capable Quadcopter. Fortunately, I could use the Transmitter I already had for a number of years. It’s a Modelcraft MP-26-DT, a rebranded Flysky FS-CT6x Transmitter. There are many different versions of this Transmitter on the market, all basically the same, like the HobbyKing HK-T6A.
 
-<div class="yoxview">
-    <a href="img/flysky1.png" class="thumbnail">
-        <img src="img/flysky1.png" alt="Photo" title="FlySky FS-CT6A">
+<div class="lightgallery">
+    <a href="img/flysky1.png">
+        <img src="img/flysky1.png" alt="FlySky FS-CT6A">
     </a>
-    <a href="img/flysky2.jpg" class="thumbnail">
-        <img src="img/flysky2_small.jpg" alt="Photo" title="HK-T6A">
+    <a href="img/flysky2.jpg">
+        <img src="img/flysky2_small.jpg" alt="HK-T6A">
     </a>
-    <a href="img/flysky3.jpg" class="thumbnail">
-        <img src="img/flysky3_small.jpg" alt="Photo" title="MP-26-DT">
+    <a href="img/flysky3.jpg">
+        <img src="img/flysky3_small.jpg" alt="MP-26-DT">
     </a>
-    <a href="img/flysky4.jpg" class="thumbnail">
-        <img src="img/flysky4_small.jpg" alt="Photo" title="MP-26-DT back">
+    <a href="img/flysky4.jpg">
+        <img src="img/flysky4_small.jpg" alt="MP-26-DT back">
     </a>
-    <a href="img/flysky5.jpg" class="thumbnail">
-        <img src="img/flysky5_small.jpg" alt="Photo" title="MP-26-DT mod">
+    <a href="img/flysky5.jpg">
+        <img src="img/flysky5_small.jpg" alt="MP-26-DT mod">
     </a>
-    <a href="img/flysky6.jpg" class="thumbnail">
-        <img src="img/flysky6_small.jpg" alt="Photo" title="MP-26-DT mod near">
+    <a href="img/flysky6.jpg">
+        <img src="img/flysky6_small.jpg" alt="MP-26-DT mod near">
     </a>
 </div>
 
@@ -87,12 +87,12 @@ The result can be seen in the creatively-named command line app [foohid](https:/
 
 The only thing left was packaging this into a nicer GUI application for ease-of-use. So, I present, [SerialGamepad](https://github.com/xythobuz/SerialGamepad/blob/master/src/foohid.c). Basically the same functionality as the command line apps, packaged into [an Installer package](https://github.com/xythobuz/SerialGamepad/releases) including the foohid dependency, so Users only need to install a single package.
 
-<div class="yoxview">
-    <a href="img/serialgamepad1.png" class="thumbnail">
-        <img src="img/serialgamepad1_small.png" alt="Screenshot" title="SerialGamepad">
+<div class="lightgallery">
+    <a href="img/serialgamepad1.png">
+        <img src="img/serialgamepad1_small.png" alt="SerialGamepad">
     </a>
-    <a href="img/serialgamepad2.png" class="thumbnail">
-        <img src="img/serialgamepad2_small.png" alt="Screenshot" title="protocol CLI">
+    <a href="img/serialgamepad2.png">
+        <img src="img/serialgamepad2_small.png" alt="protocol CLI">
     </a>
 </div>
 

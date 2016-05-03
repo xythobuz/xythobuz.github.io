@@ -31,9 +31,9 @@ Buildroot supports the OLinuXino out-of-the-box, but is using the Freescale-Prov
 
 You can get the results [from GitHub](https://github.com/xythobuz/camcorder-buildroot) or [my Server](http://xythobuz.de/git/camcorder-buildroot/). Follow the instructions in the README.md to create your own Image using the current 4.4.x mainline Linux Kernel and flash it.
 
-<div class="yoxview">
-    <a href="img/olinuxino.jpg" class="thumbnail">
-        <img src="img/olinuxino_small.jpg" alt="Photo" title="Photo of OLinuXino Setup">
+<div class="lightgallery">
+    <a href="img/olinuxino.jpg">
+        <img src="img/olinuxino_small.jpg" alt="Photo of OLinuXino Setup">
     </a>
 </div>
 

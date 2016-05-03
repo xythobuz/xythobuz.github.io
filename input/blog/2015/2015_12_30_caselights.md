@@ -27,30 +27,30 @@ Incidentally, there’s still a unused RS232 port directly on my Motherboard tha
 
 So I bought a five-pack of cheap [Arduino Pro Mini](https://www.arduino.cc/en/Main/ArduinoBoardProMini) clones from china. I still had some [IRF530 N-Channel MOSFETS](https://arduinodiy.wordpress.com/2012/05/02/using-mosfets-with-ttl-levels/) left over from the [LED-Cube](http://xythobuz.de/ledcube.html) that can be used for this. And I needed to build a small [RS232-TTL converter](http://picprojects.org.uk/projects/simpleSIO/ssio.htm) (using 2N3904 and 2N3906 as Transistors).
 
-<div class="yoxview">
-    <a href="img/CaseLights-schem.png" class="thumbnail">
-        <img src="img/CaseLights-schem_small.png" alt="Schematic" title="Basic Schematic">
+<div class="lightgallery">
+    <a href="img/CaseLights-schem.png">
+        <img src="img/CaseLights-schem_small.png" alt="Basic Schematic">
     </a>
-    <a href="img/CL_Test1.jpg" class="thumbnail">
-        <img src="img/CL_Test1_small.jpg" alt="Photo" title="First Test">
+    <a href="img/CL_Test1.jpg">
+        <img src="img/CL_Test1_small.jpg" alt="First Test">
     </a>
-    <a href="img/CL_Test2.jpg" class="thumbnail">
-        <img src="img/CL_Test2_small.jpg" alt="Photo" title="First Test near">
+    <a href="img/CL_Test2.jpg">
+        <img src="img/CL_Test2_small.jpg" alt="First Test near">
     </a>
-    <a href="img/CL_Test3.jpg" class="thumbnail">
-        <img src="img/CL_Test3_small.jpg" alt="Photo" title="First Test working">
+    <a href="img/CL_Test3.jpg">
+        <img src="img/CL_Test3_small.jpg" alt="First Test working">
     </a>
-    <a href="img/CL_Final1.jpg" class="thumbnail">
-        <img src="img/CL_Final1_small.jpg" alt="Photo" title="Final Board">
+    <a href="img/CL_Final1.jpg">
+        <img src="img/CL_Final1_small.jpg" alt="Final Board">
     </a>
-    <a href="img/CL_Final2.jpg" class="thumbnail">
-        <img src="img/CL_Final2_small.jpg" alt="Photo" title="Board in Case">
+    <a href="img/CL_Final2.jpg">
+        <img src="img/CL_Final2_small.jpg" alt="Board in Case">
     </a>
-    <a href="img/CL_Final3.jpg" class="thumbnail">
-        <img src="img/CL_Final3_small.jpg" alt="Photo" title="Finished Case">
+    <a href="img/CL_Final3.jpg">
+        <img src="img/CL_Final3_small.jpg" alt="Finished Case">
     </a>
-    <a href="img/CL_gif.gif" class="thumbnail">
-        <img src="img/CL_gif_small.gif" alt="GIF" title="Animation Test">
+    <a href="img/CL_gif.gif">
+        <img src="img/CL_gif_small.gif" alt="Animation Test">
     </a>
 </div>
 
@@ -73,9 +73,9 @@ You can also select a display output device connected to the Mac. The CaseLights
 
 And you can select one of the system audio input devices to visualize sounds and music. To be able to directly route the system audio output into CaseLights, use the open kernel extension [Soundflower](https://github.com/mattingalls/Soundflower).
 
-<div class="yoxview">
-    <a href="img/CaseLights.png" class="thumbnail">
-        <img src="img/CaseLights_small.png" alt="Screenshot" title="CaseLights App (old screenshot)">
+<div class="lightgallery">
+    <a href="img/CaseLights.png">
+        <img src="img/CaseLights_small.png" alt="CaseLights App (old screenshot)">
     </a>
 </div>
 

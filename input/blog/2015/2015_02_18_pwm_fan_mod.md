@@ -18,12 +18,12 @@ So I bought three Silent Wings 2 140mm PWM fans and one Thermaltake Pure 200mm f
 
 After some days, I began to worry. It did not seem as if the fans were really PWM controlled. That’s when I took a deeper look into the Mainboard manual.
 
-<div class="yoxview">
-    <a href="img/fans1.png" class="thumbnail">
-        <img src="img/fans1_small.png" alt="Photo" title="Manual excerpt">
+<div class="lightgallery">
+    <a href="img/fans1.png">
+        <img src="img/fans1_small.png" alt="Manual excerpt">
     </a>
-    <a href="img/fans2.png" class="thumbnail">
-        <img src="img/fans2_small.png" alt="Photo" title="Mainboard review excerpt">
+    <a href="img/fans2.png">
+        <img src="img/fans2_small.png" alt="Mainboard review excerpt">
     </a>
 </div>
 
@@ -37,21 +37,21 @@ There is an official [Intel PWM fan specification](http://www.formfactors.org/de
 
 Adapting this circuit, I first tested it on a PCB and then slimmed it down even more to get it into the back of my case. That’s it, works like a charm.
 
-<div class="yoxview">
-    <a href="img/fans3.jpg" class="thumbnail">
-        <img src="img/fans3_small.jpg" alt="Photo" title="First schematic drawings">
+<div class="lightgallery">
+    <a href="img/fans3.jpg">
+        <img src="img/fans3_small.jpg" alt="First schematic drawings">
     </a>
-    <a href="img/fans4.jpg" class="thumbnail">
-        <img src="img/fans4_small.jpg" alt="Photo" title="Final schematic">
+    <a href="img/fans4.jpg">
+        <img src="img/fans4_small.jpg" alt="Final schematic">
     </a>
-    <a href="img/fans5.jpg" class="thumbnail">
-        <img src="img/fans5_small.jpg" alt="Photo" title="First PCB test">
+    <a href="img/fans5.jpg">
+        <img src="img/fans5_small.jpg" alt="First PCB test">
     </a>
-    <a href="img/fans6.jpg" class="thumbnail">
-        <img src="img/fans6_small.jpg" alt="Photo" title="First PCB, wrapped">
+    <a href="img/fans6.jpg">
+        <img src="img/fans6_small.jpg" alt="First PCB, wrapped">
     </a>
-    <a href="img/fans7.jpg" class="thumbnail">
-        <img src="img/fans7_small.jpg" alt="Photo" title="Final form">
+    <a href="img/fans7.jpg">
+        <img src="img/fans7_small.jpg" alt="Final form">
     </a>
 </div>
 

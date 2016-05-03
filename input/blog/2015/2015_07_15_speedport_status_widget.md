@@ -58,12 +58,12 @@ Die Ausgabe sieht dann so aus:
       Upstream: 10048 kBit/s
         IPv4: 87.162.241.165
 
-<div class="yoxview">
-    <a href="img/widget1.png" class="thumbnail">
-        <img src="img/widget1.png" alt="Screenshot" title="Screenshot 1">
+<div class="lightgallery">
+    <a href="img/widget1.png">
+        <img src="img/widget1.png" alt="Screenshot 1">
     </a>
-    <a href="img/widget2.png" class="thumbnail">
-        <img src="img/widget2_small.png" alt="Screenshot" title="Screenshot 2">
+    <a href="img/widget2.png">
+        <img src="img/widget2_small.png" alt="Screenshot 2">
     </a>
 </div>
 

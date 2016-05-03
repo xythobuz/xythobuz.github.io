@@ -32,9 +32,9 @@ Sending data length...
 Upload finished after 28.0 seconds.
 </pre>
 
-<div class="yoxview">
-    <a href="img/xyCopterFirmware.png" class="thumbnail">
-        <img src="img/xyCopterFirmware_small.png" alt="Photo" title="xyCopter Screenshot">
+<div class="lightgallery">
+    <a href="img/xyCopterFirmware.png">
+        <img src="img/xyCopterFirmware_small.png" alt="xyCopter Screenshot">
     </a>
 </div>
 
@@ -68,9 +68,9 @@ Sending data length...
 Upload finished after 28.0 seconds.
 </pre>
 
-<div class="yoxview">
-    <a href="img/xyCopterFirmware.png" class="thumbnail">
-        <img src="img/xyCopterFirmware_small.png" alt="Photo" title="xyCopter Screenshot">
+<div class="lightgallery">
+    <a href="img/xyCopterFirmware.png">
+        <img src="img/xyCopterFirmware_small.png" alt="xyCopter Screenshot">
     </a>
 </div>
 
