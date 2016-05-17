@@ -33,4 +33,5 @@ for p in mpages:
 * [Replacement Abus Smoke Detector Holder](http://www.thingiverse.com/thing:1534421)
 * [Xiaomi Yi frame for Quanum Trifecta](http://www.thingiverse.com/thing:1563684)
 * [Customizable 700TVL FPV camera backplate](http://www.thingiverse.com/thing:1568475)
+* [Quanum Trifecta combined GoPro FPV camera holder](http://www.thingiverse.com/thing:1569820)
 
