@@ -1,39 +1,38 @@
 body {
     font-size: 1.2em;
     font-family: 'Droid Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
 
 #nav {
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom-color: orange;
-    margin-bottom: 2em;
+    background-color: white;
+    width: 100%;
 }
 
-#nav ul {
-    list-style-type: none;
+#content {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#nav ul li {
-    display: inline;
-    margin-right: 0.5em;
-}
+@media (min-height: 750px) {
+    #nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 
-#home {
-    font-size: 2.5em;
-    margin-right: 0.5em;
-}
+    #content {
+        padding-top: 5em;
+    }
 
-#nav a:link {
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-#nav a:visited {
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
+    #index-avatar {
+        margin-top: 1.5em;
+    }
 }
 
 pre {
@@ -48,8 +47,30 @@ pre {
     border-radius: 10px;
 }
 
-iframe[id^='twitter-widget-'] {
-    width: 100%;
+#home {
+    font-size: 2.5em;
+    margin-right: 0.5em;
+}
+
+#nav ul {
+    list-style-type: none;
+}
+
+#nav ul li {
+    display: inline;
+    margin-right: 0.5em;
+}
+
+#nav a:link {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#nav a:visited {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 #footer {
@@ -66,3 +87,24 @@ iframe[id^='twitter-widget-'] {
 #footer a:visited {
     color: gray;
 }
+
+#index-avatar {
+    width: 150px;
+    height: 150px;
+    float: right; border: 2px, solid, #000000;
+    border-radius: 10px;
+    background-image: url(http://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=150);
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+#index-twitter-page {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+iframe[id^='twitter-widget-'] {
+    width: 100%;
+}
+
