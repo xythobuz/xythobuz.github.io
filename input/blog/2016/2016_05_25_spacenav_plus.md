@@ -5,7 +5,7 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/spacenav-plus
 parent: stuff
-position: 100
+position: 90
 ---
 
 ## {{ page["post"] }}
