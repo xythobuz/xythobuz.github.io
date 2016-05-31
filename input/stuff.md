@@ -27,6 +27,7 @@ for p in mpages:
 * [Fabrikator Mini V1.5 Y-Axis Fan Holder](http://www.thingiverse.com/thing:1454399)
 * [Fabrikator Mini Logitech C270 Webcam Holder](http://www.thingiverse.com/thing:1531522)
 * [Fabrikator Mini Z-Axis Fan Shroud](http://www.thingiverse.com/thing:1531538)
+* [Fabrikator Mini V1.5 Z-Axis Wobble Fix](http://www.thingiverse.com/thing:1600007)
 * [Sony 600TVL Camera Lens Cap](http://www.thingiverse.com/thing:1443462)
 * [Simple Customizable Fan Feet](http://www.thingiverse.com/thing:1465392)
 * [Simple Customizable Thumb Screw Rosettes](http://www.thingiverse.com/thing:1531544)
