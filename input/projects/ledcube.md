@@ -112,6 +112,14 @@ Frank built this Cube, slightly improved the code and made a Slow-Motion movie. 
 <iframe width="640" height="480" src="//www.youtube.com/embed/fezxkVmkyYw" frameborder="0" allowfullscreen></iframe>
 [`Youtube Link`](http://www.youtube.com/watch?v=fezxkVmkyYw)
 
+Andrej built this cube and sent an X-Ray photograph that he made at his workplace, manufacturing the [Eledus - SCIOX X-Ray inspection device](http://www.eledus.cz/en/sciox/). Thanks!
+
+<div class="lightgallery">
+    <a href="img/cube_xray.png">
+        <img src="img/cube_xray_small.png" alt="X-Ray photo">
+    </a>
+</div>
+
  [1]: https://github.com/xythobuz/LED-Cube/zipball/master
  [10]: http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138252.html
  [15]: https://github.com/xythobuz/LED-Cube
@@ -218,6 +226,14 @@ Frank hat den Cube nachgebaut, den Code etwas verbessert und dieses Slow-Motion 
 
 <iframe width="640" height="480" src="//www.youtube.com/embed/fezxkVmkyYw" frameborder="0" allowfullscreen></iframe>
 [`Youtube Direktlink`](http://www.youtube.com/watch?v=fezxkVmkyYw)
+
+Andrej hat den Würfel nachgebaut und eine Röntgenaufnahme der Platine angefertigt, da sein Arbeitgeber das [Eledus - SCIOX X-Ray inspection device](http://www.eledus.cz/en/sciox/) produziert. Vielen Dank dafür!
+
+<div class="lightgallery">
+    <a href="img/cube_xray.png">
+        <img src="img/cube_xray_small.png" alt="X-Ray photo">
+    </a>
+</div>
 
  [1]: https://github.com/xythobuz/LED-Cube/zipball/master
  [10]: http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138252.html
