@@ -35,4 +35,5 @@ for p in mpages:
 * [Xiaomi Yi frame for Quanum Trifecta](http://www.thingiverse.com/thing:1563684)
 * [Customizable 700TVL FPV camera backplate](http://www.thingiverse.com/thing:1568475)
 * [Quanum Trifecta combined GoPro FPV camera holder](http://www.thingiverse.com/thing:1569820)
+* [Customizable AVR ESR meter case](http://www.thingiverse.com/thing:1625664)
 
