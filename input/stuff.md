@@ -36,4 +36,5 @@ for p in mpages:
 * [Customizable 700TVL FPV camera backplate](http://www.thingiverse.com/thing:1568475)
 * [Quanum Trifecta combined GoPro FPV camera holder](http://www.thingiverse.com/thing:1569820)
 * [Customizable AVR ESR meter case](http://www.thingiverse.com/thing:1625664)
+* [Quanum Trifecta rear landing gear](http://www.thingiverse.com/thing:1642129)
 
