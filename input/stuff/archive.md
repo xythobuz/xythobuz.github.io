@@ -15,6 +15,7 @@ Here I'm mirroring/archiving stuff that could get lost.
 
 Here’s some reverse-engineered documentation about the Tomb Raider games found in the depths of the web.
 
+* [Tomb Raider Rosetta Stone](files/TRosettaStone.html)
 * TR1 - TR5 file format listing (as [PDF](tr_docs/LevelFormats.pdf) or as [XLS](tr_docs/LevelFormats.xls))
 * TR2 TombPC.dat script file format description as [PDF](tr_docs/TombPC_TR2.pdf)
 * TRLE WAD file format description as [PDF](tr_docs/TR_WAD_file_format.pdf)
