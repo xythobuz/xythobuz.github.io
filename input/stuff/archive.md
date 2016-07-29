@@ -11,6 +11,10 @@ Here I'm mirroring/archiving stuff that could get lost.
 
 * * *
 
+* [Radio Wauland (WDR3, 20.12.2011)](files/2011-12-20_Radio_Wauland.mp3) ([more infos](https://netzpolitik.org/2011/radio-wauland-tune-in-turn-on-and-hack-yourself/))
+
+* * *
+
 #### Tomb Raider docs
 
 Here’s some reverse-engineered documentation about the Tomb Raider games found in the depths of the web.
