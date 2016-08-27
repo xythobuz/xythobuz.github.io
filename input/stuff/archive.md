@@ -46,3 +46,6 @@ There are also these modified server ELFs, version u0.8.6 and 0.9.1 as well as 0
 #### GBDK 2.96 binaries for Mac OS X
 
 Compiled for Snow Leopard, works on Mavericks. Not all examples are buildable. By ProGM. [Download](files/gbdk-2.96-mac.zip) [Source](http://gbdev.gg8.se/forums/viewtopic.php?pid=409#p409)
+
+Be warned though: this release could have problems. One thing I've noticed: the font_min is broken, all 'u's look like 'k's. That's a simple fix, just open `gbdk/lib/small/asxxxx/gb/f_min.o` and change the '15' in line 19 and 23 to '1F'.
+
