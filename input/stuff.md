@@ -39,4 +39,5 @@ for p in mpages:
 * [Quanum Trifecta rear landing gear](http://www.thingiverse.com/thing:1642129)
 * [Quanum Trifecta FPV top plate](http://www.thingiverse.com/thing:1642135)
 * [Customizable long GoPro screw knob](http://www.thingiverse.com/thing:1643650)
+* [LiPo Battery Holder](http://www.thingiverse.com/thing:1903936)
 
