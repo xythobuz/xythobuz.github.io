@@ -67,3 +67,11 @@ Die Ausgabe sieht dann so aus:
     </a>
 </div>
 
+**Aktualisierung vom April 2017:**
+
+Die Telekom hat es mittlerweile tatsächlich geschafft auch unseren Anschluss mit IPv6 zu versorgen. Daher muss noch das folgende Kommando an die lange phantomjs Kommandozeile angehängt werden:
+
+     | sed -E 's/Zugewies. Präfix IPv6:/\'$'\nIPv6: /g'
+
+Damit wird der IPv6 Präfix direkt unter der IPv4 Adresse angezeigt.
+
