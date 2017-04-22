@@ -85,21 +85,13 @@
                 print '</span>'
                 print '</div>'
 
-            # Disqus Comments
+            # Disqus Comments (only show button to load afterwards)
             if page.get("comments", "false") == "true":
+                print '<div style="margin-top: 1em; text-align: center;">'
+                print '<button class="show-comments">Load Disqus comments</button>'
+                print '</div>'
                 print '<div id="disqus_thread"></div>'
-                print '<script type="text/javascript">'
-                print 'var disqus_shortname = "xythobuz";'
-                print 'var disqus_identifier = "http://xythobuz.org/' + page["url"] + '";'
-                print 'var disqus_url = "http://xythobuz.org/' + page["url"] + '";'
-                print '(function() {'
-                print 'var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async  = true;'
-                print 'dsq.src = "http://" + disqus_shortname + ".disqus.com/embed.js";'
-                print '(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]    ).appendChild(dsq);'
-                print '})();'
-                print '</script>'
                 print '<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>'
-                print '<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>'
             elif page.get("comments", "false") != "false":
                 print '<p><a href="%s">Head over here to discuss this article!</a></p>' % page.get("comments", "false")
         %-->
@@ -123,6 +115,25 @@
         <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&nav=1&email=xythobuz@me.com">PayPal</a>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <!--%
+        # Dynamically load Disqus comments after user requested it
+        if page.get("comments", "false") == "true":
+            print '<script type="text/javascript">'
+            print 'var disqus_shortname = "xythobuz";'
+            print 'var disqus_identifier = "http://xythobuz.org/' + page["url"] + '";'
+            print 'var disqus_url = "http://xythobuz.org/' + page["url"] + '";'
+            print '$(document).ready(function() {'
+            print '$(".show-comments").on("click", function(){'
+            print '(function() {'
+            print 'var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async  = true;'
+            print 'dsq.src = "http://" + disqus_shortname + ".disqus.com/embed.js";'
+            print '(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]    ).appendChild(dsq);'
+            print '})();'
+            print '$(this).fadeOut();'
+            print '});'
+            print '});'
+            print '</script>'
+    %-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.18/js/lightgallery-all.min.js"></script>
     <script type="text/javascript">

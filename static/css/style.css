@@ -47,6 +47,15 @@ pre {
     border-radius: 10px;
 }
 
+.show-comments {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    border-bottom: 1px solid blue;
+    color: blue;
+}
+
 #home {
     font-size: 2.5em;
     margin-right: 0.5em;
