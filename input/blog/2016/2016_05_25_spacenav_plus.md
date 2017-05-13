@@ -15,7 +15,7 @@ date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
 print "*Posted at %s.*" % date
 %-->
 
-Since I've got my [Fabrikator Mini 3D printer](http://solid-snake.local/2016_03_24_marlin_fabrikator_mini.html), I've spent some timer [creating things](http://www.thingiverse.com/xythobuz/designs), mainly with [OpenSCAD](http://www.openscad.org).
+Since I've got my [Fabrikator Mini 3D printer](http://xythobuz.de/2016_03_24_marlin_fabrikator_mini.html), I've spent some timer [creating things](http://www.thingiverse.com/xythobuz/designs), mainly with [OpenSCAD](http://www.openscad.org).
 
 I've still got an old [Spacemouse Classic](http://spacemice.org/index.php?title=Spacemouse_Classic) laying around. It's 20 years old at this point and my model connects to a computer using a RS232 serial connection.
 
