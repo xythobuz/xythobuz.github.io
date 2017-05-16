@@ -54,6 +54,12 @@
             <li><a href="http://xythobuz.de/git/">Git</a></li>
             <li><a href="http://xythobuz.de/lastmusic">🎵</a></li>
             <li><a href="http://xythobuz.de/printer.jpg">🔨</a></li>
+            <div class="fonts">
+                <li><span class="font-big">Text:</span></li>
+                <li><a class="dec" href="#"><span class="font-big">A</span><span class="font-small">A</span></a></li>
+                <li><a class="reset" href="#"><span class="font-big">A</span><span class="font-big">A</span></a></li>
+                <li><a class="inc" href="#"><span class="font-small">A</span><span class="font-big">A</span></a></li>
+            </div>
             <!--%
                 tmp = [p for p in page["lang_links"].iteritems()]
                 if len(tmp) > 1:
@@ -134,6 +140,28 @@
             print '});'
             print '</script>'
     %-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var fontSize = parseInt($('body').css('font-size'), 10);
+            var initialFontSize = fontSize;
+            $('.inc').on('click', function() {
+                fontSize += 1;
+                $('body').css('font-size', fontSize + 'px');
+            })
+            $('.dec').on('click', function() {
+                if (fontSize > 1) {
+                    fontSize -= 1;
+                    $('body').css('font-size', fontSize + 'px');
+                }
+            })
+            $('.reset').on('click', function() {
+                if (fontSize != initialFontSize) {
+                    fontSize = initialFontSize;
+                    $('body').css('font-size', initialFontSize + 'px');
+                }
+            })
+        })
+    </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.18/js/lightgallery-all.min.js"></script>
     <script type="text/javascript">

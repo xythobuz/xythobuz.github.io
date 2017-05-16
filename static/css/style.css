@@ -117,3 +117,17 @@ iframe[id^='twitter-widget-'] {
     width: 100%;
 }
 
+div.fonts {
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+span.font-big {
+    font-size: 0.9em;
+}
+
+span.font-small {
+    font-size: 0.6em;
+}
+
