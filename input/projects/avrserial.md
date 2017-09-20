@@ -19,12 +19,24 @@ The avrSerial Library enables interrupt-driven UART communication on all availab
     AtMega8515
     AtMega8535
     AtMega323
-    AtMega2560
-    AtMega2561
-    AtMega1280
-    AtMega1281
-    AtMega640
     AtMega168
+    AtMega328
+    AtMega48
+    AtMega88
+    AtMega168p
+    AtMega328p
+    AtMega48p
+    AtMega88p
+    AtMega2561
+    AtMega1281
+    AtMega1284p
+    AtMega2560
+    AtMega1280
+    AtMega640
+    AtTiny2313
+    AtTiny2313a
+    AtTiny4313
+    AtXMega128a1
 
 To add another processor, just get the register names from the data sheet and put them in the header file.
 
@@ -50,12 +62,24 @@ Die avrSerial Library ermöglicht Interruptgesteuerte UART kommunikation mit all
     AtMega8515
     AtMega8535
     AtMega323
-    AtMega2560
-    AtMega2561
-    AtMega1280
-    AtMega1281
-    AtMega640
     AtMega168
+    AtMega328
+    AtMega48
+    AtMega88
+    AtMega168p
+    AtMega328p
+    AtMega48p
+    AtMega88p
+    AtMega2561
+    AtMega1281
+    AtMega1284p
+    AtMega2560
+    AtMega1280
+    AtMega640
+    AtTiny2313
+    AtTiny2313a
+    AtTiny4313
+    AtXMega128a1
 
 Es können jedoch problemlos weitere Prozessoren hinzugefügt werden. Dafür müssen nur die Registernamen aus dem Datenblatt in die Header Datei eingefügt werden.
 
