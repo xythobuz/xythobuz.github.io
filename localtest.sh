@@ -1,4 +1,10 @@
 #!/bin/bash
+
+rm -rf output
+mkdir output
+
 ./poole.py --build
-cp -r output/* ../apache/
-cp -r static/* ../apache/
+
+cp -r static/* output/
+
+./poole.py --serve
