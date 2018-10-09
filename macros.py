@@ -243,7 +243,7 @@ def hook_postconvert_size():
     def matched_link(matchobj):
         try:
             path = matchobj.group(1)
-            if path.startswith("http") or path.startswith("//"):
+            if path.startswith("http") or path.startswith("//") or path.startswith("ftp"):
                 return '<a href=\"%s\">%s</a>' % (matchobj.group(1), matchobj.group(3))
             elif path.startswith("/"):
                 path = path.strip("/")
