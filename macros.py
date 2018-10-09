@@ -239,7 +239,7 @@ def hook_postconvert_mobilecompat():
     fp.close()
 
 def hook_postconvert_size():
-    file_ext = '|'.join(['pdf', 'zip', 'rar', 'odp', 'exe', 'brd', 'mp3', 'mp4', 'plist']).encode("utf-8")
+    file_ext = '|'.join(['pdf', 'zip', 'rar', 'ods', 'odt', 'odp', 'doc', 'xls', 'ppt', 'docx', 'xlsx', 'pptx', 'exe', 'brd', 'mp3', 'mp4', 'plist'])
     def matched_link(matchobj):
         try:
             path = matchobj.group(1)
