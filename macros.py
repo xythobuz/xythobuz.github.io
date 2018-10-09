@@ -237,3 +237,27 @@ def hook_postconvert_mobilecompat():
     fp.write("header('Location: '.$loc);\n")
     fp.write("?>")
     fp.close()
+
+def hook_postconvert_size():
+    file_ext = '|'.join(['pdf', 'zip', 'rar', 'odp', 'exe', 'brd', 'mp3', 'mp4', 'plist']).encode("utf-8")
+    def matched_link(matchobj):
+        try:
+            path = matchobj.group(1)
+            if path.startswith("http") or path.startswith("//"):
+                return '<a href=\"%s\">%s</a>' % (matchobj.group(1), matchobj.group(3))
+            elif path.startswith("/"):
+                path = path.strip("/")
+            path = os.path.join("static/", path)
+            size = os.path.getsize(path)
+            if size >= (1024 * 1024):
+                return  "<a href=\"%s\">%s</a>&nbsp;(%.1f MiB)" % (matchobj.group(1), matchobj.group(3), size / (1024.0 * 1024.0))
+            elif size >= 1024:
+                return  "<a href=\"%s\">%s</a>&nbsp;(%d KiB)" % (matchobj.group(1), matchobj.group(3), size // 1024)
+            else:
+                return  "<a href=\"%s\">%s</a>&nbsp;(%d Byte)" % (matchobj.group(1), matchobj.group(3), size)
+        except:
+            print "Unable to estimate file size for %s" % matchobj.group(1)
+            return '<a href=\"%s\">%s</a>' % (matchobj.group(1), matchobj.group(3))
+    _re_url = '<a href=\"([^\"]*?\.(%s))\">(.*?)<\/a>' % file_ext
+    for p in pages:
+        p.html = re.sub(_re_url, matched_link, p.html)
