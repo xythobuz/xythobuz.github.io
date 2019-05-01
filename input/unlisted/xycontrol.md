@@ -84,14 +84,14 @@ Everything else is released under a BSD-Style license. See the [accompanying COP
  [xy1]: img/xycontrol1.jpg
  [xy2s]: img/xycontrol2_small.jpg
  [xy2]: img/xycontrol2.jpg
- [gh]: http://www.xythobuz.de/xycontrol/
- [logo]: http://www.xythobuz.de/xycontrol/logo.png
+ [gh]: xycontrol
+ [logo]: xycontrol/logo.png
  [adafruit]: https://github.com/adafruit/Adafruit_L3GD20
  [pololucode]: https://github.com/pololu/LSM303
  [pololu]: http://www.pololu.com/catalog/product/1268
  [ctrl]: http://www.mikrokopter.de/ucwiki/en/BL-Ctrl_V1.2
  [mot]: http://www.conrad.de/ce/de/product/231867
- [bt]: http://xythobuz.de/bluetooth.html
+ [bt]: bluetooth.html
  [kalman]: http://www.linushelgesson.se/2012/04/pitch-and-roll-estimating-kalman-filter-for-stabilizing-quadrocopters/
  [fleury]: http://homepage.hispeed.ch/peterfleury/avr-software.html
  [gpl]: http://www.gnu.org/licenses/gpl.html

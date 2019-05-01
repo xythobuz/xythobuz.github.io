@@ -29,12 +29,12 @@ This page contains photos from the Webcams on my 3D printers, live-updated every
 
 <div id="date-1">
     <noscript>
-        <img src="//xythobuz.de/printer.jpg" alt="Fabrikator Mini V1.5">
+        <img src="printer.jpg" alt="Fabrikator Mini V1.5">
     </noscript>
 </div>
 
 <script type="text/javascript">
-    var rt = LastModUsingHeader("//xythobuz.de/printer.jpg", function(i, u) {
+    var rt = LastModUsingHeader("printer.jpg", function(i, u) {
         var img = document.createElement("img");
         img.src = window.URL.createObjectURL(i);
         img.alt = "Fabrikator Mini V1.5";
@@ -54,12 +54,12 @@ This page contains photos from the Webcams on my 3D printers, live-updated every
 
 <div id="date-2">
     <noscript>
-        <img style="transform: rotate(180deg);" src="//xythobuz.de/printer-2.jpg" alt="CTC i3 Pro B">
+        <img style="transform: rotate(180deg);" src="printer-2.jpg" alt="CTC i3 Pro B">
     </noscript>
 </div>
 
 <script type="text/javascript">
-    var rt = LastModUsingHeader("//xythobuz.de/printer-2.jpg", function(i, u) {
+    var rt = LastModUsingHeader("printer-2.jpg", function(i, u) {
         var img = document.createElement("img");
         img.src = window.URL.createObjectURL(i);
         img.alt = "CTC i3 Pro B";
