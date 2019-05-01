@@ -14,10 +14,12 @@ print "*Posted at %s.*" % date
 
 **Update:**
 
-As the Marlin Firmware is changing quite often, I’m maintaining [a branch with my configuration on my git server](http://xythobuz.de/git/marlin-fabrikator-mini/). Get it like this:
+As the Marlin Firmware is changing quite often, I’m maintaining [a branch with my configuration on my git server](https://git.xythobuz.de/thomas/marlin/src/branch/fabrikator-mini). Get it like this:
 
 <pre class="sh_sh">
-git clone http://xythobuz.de/git/marlin-fabrikator-mini/
+git clone https://git.xythobuz.de/thomas/marlin.git
+cd marlin
+git checkout fabrikator-mini
 </pre>
 
 <hr>
