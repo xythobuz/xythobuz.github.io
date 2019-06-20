@@ -15,7 +15,7 @@ for p in mpages:
         print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
 %-->
 
-### 3D Print Designs ([Repository](http://xythobuz.de/git/3d-print-designs/))
+### 3D Print Designs ([Repository](https://git.xythobuz.de/thomas/3d-print-designs))
 
 * [Fabrikator Mini Filament Spool Holder](http://www.thingiverse.com/thing:1427890)
 * [Fabrikator Mini Full Graphics Display Holder](http://www.thingiverse.com/thing:1441146)

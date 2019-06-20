@@ -63,7 +63,7 @@ Der Time Tracking Screenshot kommt übrigens aus der ganz tollen Mac App [Timing
  [timing]: http://timingapp.com
  [openraider]: http://openraider.sourceforge.net
  [github]: https://github.com/xythobuz/OpenRaider/
- [zaphod]: http://xythobuz.de/git/openraider/
+ [zaphod]: https://git.xythobuz.de/thomas/OpenRaider
  [screen2small]: img/openraider_old_small.png
  [screen2]: img/openraider_old.png
  [screen3small]: img/openraider_old2_small.png
