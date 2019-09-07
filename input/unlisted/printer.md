@@ -54,7 +54,7 @@ This page contains photos from the Webcams on my 3D printers, live-updated every
 
 <div id="date-2">
     <noscript>
-        <img style="transform: rotate(180deg);" src="//www.xythobuz.de/printer-2.jpg" alt="CTC i3 Pro B">
+        <img src="//www.xythobuz.de/printer-2.jpg" alt="CTC i3 Pro B">
     </noscript>
 </div>
 
@@ -63,7 +63,6 @@ This page contains photos from the Webcams on my 3D printers, live-updated every
         var img = document.createElement("img");
         img.src = window.URL.createObjectURL(i);
         img.alt = "CTC i3 Pro B";
-        img.style = "transform: rotate(180deg);";
 
         var up = document.createElement("p");
         up.appendChild(document.createTextNode("Upload Date: " + u));
