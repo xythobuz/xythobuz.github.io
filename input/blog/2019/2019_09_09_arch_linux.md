@@ -545,3 +545,10 @@ sudo systemctl daemon-reload
 sudo systemctl enable linux-modules-cleanup
 </pre>
 
+Of course this project is forever ongoing.
+In the future, I'm planning to properly use the other harddisks in my machine, as I'm currently only utilizing the NVMe SSD in there.
+For this, I want to combine them all, probably with some kind of RAID, using LVM.
+I also have a couple more SSDs in there, so I will probably use one SSD for root, one for home and one as swap.
+And of course, I also want to enable full-disk-encryption, but I'm not yet sure how exactly.
+This will probably come in another blog post further down the road.
+

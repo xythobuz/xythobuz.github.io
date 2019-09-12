@@ -102,15 +102,57 @@ Fortunately, [plasticmonk already designed a very good fan mount solution](https
 TODO photo
 TODO wiring hotend heatbed part-fan hotend-fan
 
+### Full Graphics Smart LCD
+
+To be able to properly control the printer and print from the SD Card (before I was using OctoPrint), it is very useful to install some kind of display for status informations and changing settings on-the-fly.
+One of the most common solutions there is the [Full Graphics Smart Controller](https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller) that is available as cheap chinese clones easily.
+As there was no good mounting solution available that could also be printed with the Fabrikator Mini itself, I designed [these small mounting brackets](https://www.thingiverse.com/thing:1441146) to hang the display from the front acrylic plate cutout of the machine.
+The controller board already has connectors available for the LCD. Just take care that the pinout matches, if I remember correctly I had to switch the connectors around.
+
+TODO photo
+
+### Raspberry Pi Zero
+
+Of course, to really properly utilize a 3D printer, you need OctoPrint!
+This is normally used in conjunction with a Raspberry Pi connected to the printer.
+It is not recommended to use low-powered Pis (below 2), but I decided to go with a Zero anyways.
+I had it lying around without a useful project and the formfactor matches the small Fabrikator Mini perfectly.
+As it is also printing very slowly, there's really not much load on the Pi itself, and I never had any problems printing from it.
+I do have to admit however, that the OctoPrint webinterface sometimes takes very long to load with this setup.
+But once it's there it works fine.
+I'm even doing all my slicing for the Fabrikator Mini on the Pi Zero.
+
+TODO describe power supply situation for Pi, with modded USB cable
+
+TODO photo
+
+### Relay Board
+
+To fully utilize OctoPrint, it also needs a way to control the power supply to the printer.
+One popular method to achieve this is an ATX computer power supply.
+As I already had my power supply, and because the current of the small Fabrikator Mini is not that huge (and it's not switched under full load), I decided to use a simple two-channel relay board connected to the Pi.
+
+TODO more text or link to OctoPrint page section?
+
+TODO photo
+
+### Webcam
+
+TODO
+
+### LED-Strip
+
+Depending on where the printer is located, it can be very hard to see any details of the printing process.
+That's why one of the first modifications I did, long before using OctoPrint, consisted of sticking two pieces of white 12V LED-Strips inside to the backside of the front acrylic plate.
+Initially, I wired it to the main 12V connection to the printer, so the light was always turned on whenever the printer was powered.
+Nowadays I'm using the second relay connected to the Raspberry Pi Zero to switch the light on and off independently from the printer itself.
+This is very convenient to turn the lights off when printing overnight.
+
 ### TODO
 
 * Firmware
 * Feet
-* Display mount
 * Spool mount
-* Webcam Mount
-* Raspberry Pi mount
-* Relais board mount
 * Slicing Profiles
 * Print Results Pictures
 
