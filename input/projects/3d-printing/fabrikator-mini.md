@@ -100,6 +100,7 @@ As there is not a lot of room available, there aren't many options, especially i
 Fortunately, [plasticmonk already designed a very good fan mount solution](https://www.thingiverse.com/thing:1469078), allowing a standard 5015 radial fan to be mounted to the bottom two screws of the hotend fan.
 
 TODO photo
+
 TODO wiring hotend heatbed part-fan hotend-fan
 
 ### Full Graphics Smart LCD
@@ -138,7 +139,17 @@ TODO photo
 
 ### Webcam
 
-TODO
+No OctoPrint experience is complete without having a webcam connected to the Raspberry Pi.
+So I bought the, in my view, standard model for 3D printing needs: the Logitech C270.
+It is cheaply available on Amazon and can record with 720p.
+Even better, the front-plate can be removed and replaced by some 3D printed parts that allow the focus to be adjusted.
+Then I still had the problem of mounting the camera to the printer.
+So one of my first self-made designs became the Webam Holder: an attachment piece for the printer acrylic plates, some connecting bars and adaptor pieces, and the connector to the webcam.
+
+ * [Logitech C270 Manual Focus System](https://www.thingiverse.com/thing:3081838)
+ * [Fabrikator Mini C270 Webcam Holder](https://www.thingiverse.com/thing:1531522)
+
+TODO photos
 
 ### LED-Strip
 
