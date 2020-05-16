@@ -15,6 +15,11 @@ date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
 print "*Posted at %s.*" % date
 %-->
 
+**Update from May 2020:**
+I've now switched to using Arch Linux full-time, so I'm no longer using my port of spacenav to use my spacemouse.
+Fortunately, a spacenav-plus package has recently [appeared in the AUR](https://aur.archlinux.org/packages/spacenav-plus/) and works just fine.
+Also, Blender, FreeCAD and OpenSCAD now all support spacenav out-of-the-box without any patches required!
+
 Since I've got my [Fabrikator Mini 3D printer](http://xythobuz.de/2016_03_24_marlin_fabrikator_mini.html), I've spent some timer [creating things](http://www.thingiverse.com/xythobuz/designs), mainly with [OpenSCAD](http://www.openscad.org).
 
 I've still got an old [Spacemouse Classic](http://spacemice.org/index.php?title=Spacemouse_Classic) laying around. It's 20 years old at this point and my model connects to a computer using a RS232 serial connection.
