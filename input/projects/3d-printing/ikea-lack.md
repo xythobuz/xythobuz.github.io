@@ -85,3 +85,23 @@ The small parts at the edges where the concrete slightly got under the frame can
 </div>
 
 And it works perfectly, the noise of the printer is greatly reduced!
+
+Here are some more photos of the second slab I made.
+
+<div class="lightgallery">
+    <a href="img/ikea_lack_concrete_v2_1.jpg">
+        <img src="img/ikea_lack_concrete_v2_1_small.jpg" alt="">
+    </a>
+    <a href="img/ikea_lack_concrete_v2_2.jpg">
+        <img src="img/ikea_lack_concrete_v2_2_small.jpg" alt="">
+    </a>
+    <a href="img/ikea_lack_concrete_v2_3.jpg">
+        <img src="img/ikea_lack_concrete_v2_3_small.jpg" alt="">
+    </a>
+    <a href="img/ikea_lack_concrete_v2_4.jpg">
+        <img src="img/ikea_lack_concrete_v2_4_small.jpg" alt="">
+    </a>
+    <a href="img/ikea_lack_concrete_v2_5.jpg">
+        <img src="img/ikea_lack_concrete_v2_5_small.jpg" alt="">
+    </a>
+</div>
