@@ -545,6 +545,14 @@ sudo systemctl daemon-reload
 sudo systemctl enable linux-modules-cleanup
 </pre>
 
+One other small thing I noticed: in the KDE system settings GUI I could set my language to English and my localization settings regarding Currency, Dates, etc. to German.
+This resulted in a locale-setting of "en_DE" which does not actually exist, so some programs complain.
+To be able to properly set this locale in '/etc/locale.gen' and create it with 'sudo locale-gen', first run this command:
+
+<pre class="sh_sh">
+sudo ln -s /usr/share/i18n/locales/en_US /usr/share/i18n/locales/en_DE
+</pre>
+
 Of course this project is forever ongoing.
 In the future, I'm planning to properly use the other harddisks in my machine, as I'm currently only utilizing the NVMe SSD in there.
 For this, I want to combine them all, probably with some kind of RAID, using LVM.
