@@ -80,6 +80,16 @@ In 2017, we rebuilt Ubabot as part of the Maker Challenge of the Makerfaire Frie
 
 [A video of our machine in action can be found on heise online](https://www.heise.de/make/meldung/Maker-Faire-Bodensee-2017-Cocktails-Cosplay-und-Casemodding-3772515.html#nav_im_wettbewerb_0) (scroll down).
 
+### Stuff
+
+I designed a 3D model for a cap enclosing the large open glass bottles we have for some ingredients. It is a 2-color model that can be printed with a dual-nozzle printer, or you can just leave out the "filling" and print it with a single-nozzle printer. The design [can be found in my Git Repo](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/cocktail-maschine).
+
+<div class="lightgallery">
+    <a href="img/drinkrobotics_deckel.png">
+        <img src="img/drinkrobotics_deckel_small.png" alt="The 3D design of the bottle cap.">
+    </a>
+</div>
+
 ## Arduino-Cocktail
 
 Also in 2017, as part of some experiments regarding dispensing drinks in a cocktail machine using carbon dioxide, I've built my own small Cubalibre machine.
@@ -142,4 +152,5 @@ The Arduino firmware can be found on [Github](https://github.com/drinkrobotics/A
 
 This machine has also been presented next to Ubabot at Makerfaires in Friedrichshafen and Hannover.
 It was used properly, to actually dispense drinks, at a birthday party.
-Unfortunately, I don't have any photos or videos of the machine being in use.
+Unfortunately I don't have any photos or videos of the machine being in use.
+Also the Sodastream bottle and pressure reducer were only borrowed from a friend and I no longer have them.
