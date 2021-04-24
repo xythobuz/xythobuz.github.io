@@ -7,9 +7,9 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/SerialHelper
 compat: serialhelper
+date: 2012-02-18
+update: 2012-02-28
 ---
-
-### {{ page.title }}
 
 SerialHelper is a Cross-Platform (Windows, Unix systems) Command Line Utility allowing read and write access to serial ports. Additionally, it can list the available serial ports.
 
@@ -45,8 +45,6 @@ Terminal Mode (send stdin and recieve to stdout):
  [3]: files/serialHelperWin-0.5.exe
 
 lang: de
-
-### {{ page.title_de }}
 
 SerialHelper ist ein Cross Plattform (Windows, Unix Systeme) Kommandozeilen Programm welches den Zugriff auf serielle Ports ermöglicht. Ausserdem können vorhandene serielle Ports aufgelistet werden.
 

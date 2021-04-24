@@ -4,13 +4,6 @@ date: 2013-12-14
 comments: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Recently, I set out to get OS X 10.9 running as VirtualBox Guest, with Mavericks as Host. This should be easy enough, right? Just download the Mavericks Installer from the AppStore, get the Image from inside the App Package, as you would do to get a bootable USB Stick. Done!
 
 It turns out that Apple started using strange Aliases in their Install Image with Mountain Lion. You have to do some moving around to get an ISO you can plug into VirtualBox.

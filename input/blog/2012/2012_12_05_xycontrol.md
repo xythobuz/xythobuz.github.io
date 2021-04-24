@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Gerade war der nette Typ von UPS da, mit dieser Schönheit im Gepäck... :)  
 [![PCB Photo][1]][2]
 

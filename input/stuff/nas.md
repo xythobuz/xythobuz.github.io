@@ -5,9 +5,8 @@ position: 20
 comments: true
 flattr: true
 compat: nas
+date: 2011-10-31
 ---
-
-### {{ page.title }}
 
 Diese Anleitung gilt ebenso für den IB-NAS6220. Dieser besitzt 2 HDD Schächte und ein völlig anderes Webinterface. Über dieses ist es möglich, das root Passwort zu ändern (siehe diesen [Forenbeitrag][1]), was evtl. eine Neuinstallation einer Linux Distribution erübrigt.
 

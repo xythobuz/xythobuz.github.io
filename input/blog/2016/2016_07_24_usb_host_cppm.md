@@ -8,13 +8,6 @@ parent: projects
 position: 80
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 [This project](https://github.com/xythobuz/Saitek-X52-PPM) allows using an AVR-based Arduino with a USB-Host-Shield to be connected to a [Saitek X52](http://www.saitek.com/uk/prod/x52.html) ([Pro](http://www.saitek.com/uk/prod/x52pro.html)) flight control joystick, generating a CPPM-Signal that can be fed to most common RC transmitters.
 
 <div class="lightgallery">

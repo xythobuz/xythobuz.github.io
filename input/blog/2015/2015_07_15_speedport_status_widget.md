@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Manche von uns haben das große Vergnügen, mit einem Speedport Router der Telekom gesegnet zu sein. So steht auch bei uns ein Speedport W723V Typ B.
 
 Zur Zeit habe ich kein großes Vergnügen mit meiner Internetanbindung, daher wäre es angehenm, die Ausgaben der Statusseite des Routers per [GeekTool](http://projects.tynsoe.org/en/geektool/) auf dem Desktop anzuzeigen.

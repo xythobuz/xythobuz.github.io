@@ -4,9 +4,10 @@ position: 20
 changefreq: daily
 priority: 0.8
 compat: blog
+noheader: true
 ---
 
-### Blog Archive
+# Blog Archive
 
 To receive my latest updates, you can subscribe to the [RSS Feed! ![RSS Logo][logo]][rss]
 

@@ -4,8 +4,6 @@ parent: projects
 position: 9
 ---
 
-# {{ page.title }}
-
 ## Ubabot
 
 Starting in 2017, I did some work for the robot lab of the RWU.

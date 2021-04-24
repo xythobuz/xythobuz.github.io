@@ -8,13 +8,6 @@ parent: projects
 position: 50
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 ### Hardware
 
 In the last couple of months I’ve finally built a FPV capable Quadcopter. Fortunately, I could use the Transmitter I already had for a number of years. It’s a Modelcraft MP-26-DT, a rebranded Flysky FS-CT6x Transmitter. There are many different versions of this Transmitter on the market, all basically the same, like the HobbyKing HK-T6A.

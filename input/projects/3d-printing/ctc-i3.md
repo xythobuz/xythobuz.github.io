@@ -8,8 +8,6 @@ flattr: true
 
 <span style="font-size: small;">[...back to 3D-Printing overview](3d-printing.html)</span>
 
-# {{ page.title }}
-
 **More content coming soon!**
 
 * Power Supply Replacement

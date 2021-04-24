@@ -3,7 +3,6 @@ parent: main
 position: 30
 ---
 
-### {{ page.title }}
 
 <!--%
 mpages = [p for p in pages if p.get("parent", "") == "projects" and p.lang == "en"]

@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Wie auf Twitter bereits zu sehen war, arbeite Ich momentan an meiner eigenen Quadrocopter Plattform. Kern der ganzen Geschichte ist [xyControl][1]:
 
 [![Photo 1][2]][3]

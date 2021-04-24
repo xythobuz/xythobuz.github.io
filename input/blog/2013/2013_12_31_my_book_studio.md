@@ -4,13 +4,6 @@ date: 2013-12-31
 comments: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 I had some problems trying to disassemble and replace a Western Digital My Book Studio external hard disk drive.
 
 There are four screws on the outside, one of them under a warranty label. I guess with a Heatgun or something similar you could remove the label without destroying it.

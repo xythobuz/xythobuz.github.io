@@ -7,6 +7,9 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/yasab
 compat: yasab
+date: 2012-10-09
+update: 2016-07-09
+notitle: true
 ---
 
 ### YASAB - Yet another simple AVR Bootloader

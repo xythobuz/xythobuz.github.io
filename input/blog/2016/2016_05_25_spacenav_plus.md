@@ -8,13 +8,6 @@ parent: stuff
 position: 90
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 **Update from May 2020:**
 I've now switched to using Arch Linux full-time, so I'm no longer using my port of spacenav to use my spacemouse.
 Fortunately, a spacenav-plus package has recently [appeared in the AUR](https://aur.archlinux.org/packages/spacenav-plus/) and works just fine.

@@ -69,6 +69,35 @@
         </ul>
     </div>
     <div id="content">
+        <!--%
+            from datetime import datetime
+
+            if page.get("noheader", "false") == "false":
+                if page.get("title", "") == "Blog":
+                    print "<h1>%s</h1>" % (page.get("post", ""))
+                else:
+                    if page.get("lang", "en") == "de":
+                        print "<h1>%s</h1>" % (page.get("title_de", ""))
+                    else:
+                        print "<h1>%s</h1>" % (page.get("title", ""))
+
+                if page.get("date", "") != "":
+                    date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
+                    if page.get("lang", "en") == "de":
+                        print "<i>Veroeffentlicht am %s.</i>" % date
+                    else:
+                        print "<i>Published at %s.</i>" % date
+
+                if page.get("date", "") != "" and page.get("update", "") != "":
+                    print "<br>"
+
+                if page.get("update", "") != "":
+                    date = datetime.strptime(page["update"], "%Y-%m-%d").strftime("%B %d, %Y")
+                    if page.get("lang", "en") == "de":
+                        print "<i>Zuletzt aktualisiert am %s.</i>" % date
+                    else:
+                        print "<i>Last updated at %s.</i>" % date
+        %-->
         {{ __content__ }}
         <!--%
             import sys

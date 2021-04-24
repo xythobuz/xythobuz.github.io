@@ -6,9 +6,9 @@ position: 70
 comments: true
 flattr: true
 compat: notifier
+date: 2012-12-31
+update: 2013-02-11
 ---
-
-### {{ page.title }}
 
 The service [Ultimate Notifier][1] allows you to send Push-Notification to your iPhone easily. Based on this, you can write shell scripts that are executed regularly via cron. This could inform you about a changed public IP. To do this, save this script somewhere:
 

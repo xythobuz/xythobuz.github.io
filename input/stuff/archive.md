@@ -3,8 +3,6 @@ parent: stuff
 position: 1000
 ---
 
-### {{ page.title }}
-
 There is this trend of releasing binaries or small utility programs in Web-Forums or loading them onto one-click hosters.  Some years in the future, these forums or hosters probably won't exist anymore, while there is still a need for the software that was provided from there.
 
 Here I'm mirroring/archiving stuff that could get lost.

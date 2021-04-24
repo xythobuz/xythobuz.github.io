@@ -6,13 +6,6 @@ flattr: true
 github: https://github.com/xythobuz/camcorder-buildroot
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 For my FPV Groundstation, I was looking for a cheap way to record the analog video received. Unfortunately, I don’t have much space left in this box, so I thought of the Raspberry Pi Zero. Too bad that it is not available anywhere in the world, only two shops in Europe are receiving shipments every two weeks that are sold-out immediately.
 
 So I went looking for an alternative, and found the [iMX233-OlinuXino-Nano](https://www.olimex.com/Products/OLinuXino/iMX233/iMX233-OLinuXino-NANO/open-source-hardware). Taking a closer look at this series, there’s also the [iMX233-OLinuXino-Micro](https://www.olimex.com/Products/OLinuXino/iMX233/iMX233-OLinuXino-MICRO/open-source-hardware) that has a TV-Out, which would allow me to view a status message about the recording on my Groundstation-Display.

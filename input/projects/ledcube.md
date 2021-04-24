@@ -7,9 +7,9 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/LED-Cube
 compat: cube
+date: 2011-10-27
+update: 2016-04-03
 ---
-
-# {{ page.title }}
 
 Get the [current Codebase as Zip][1].
 
@@ -125,8 +125,6 @@ Andrej built this cube and sent an X-Ray photograph that he made at his workplac
  [15]: https://github.com/xythobuz/LED-Cube
 
 lang: de
-
-# {{ page.title_de }}
 
 Downloade die [aktuelle Codebase als Zip][1].
 

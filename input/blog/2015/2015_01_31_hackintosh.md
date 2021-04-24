@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Recently I celebrated my 21st birthday. After using my MacBook Pro 13" 2010 as my only computer for more than four years, I could no longer stand its non-existent performance. So my present for myself is this quite performant Hackintosh build... :)
 
 ### Hardware

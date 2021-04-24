@@ -4,8 +4,6 @@ position: 50
 compat: kontakt
 ---
 
-### {{ page.title }}
-
 You can always use this [PGP Key][1]!
 
 Mail: <xythobuz@xythobuz.de>

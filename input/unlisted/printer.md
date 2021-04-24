@@ -2,6 +2,7 @@ title: 3D Printers
 description: Live updated images of my 3D printers
 parent: none
 position: 0
+noheader: true
 ---
 
 <script type="text/javascript">

@@ -8,13 +8,6 @@ parent: projects
 position: 90
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 I've now built multiple model aircraft, all using the FrSky remote control and telemetry system with the FrSky DHT module included in my modified cheap RC transmitter. This system allows transmitting digital data streams and analog voltages from the aircraft back to the transmitter, which can be used to implement a battery voltage gauge and low-voltage alarm. All that's required is a simple voltage divider using two resistors, to bring the battery voltage down into a range the receiver can measure (3.3V).
 
 To output the telemetry data, the FrSky transmitter module has an RS232 serial port. To connect it to an Arduino or TTL-level USB-UART adapter, you need to use an adaptor or [modify your transmitter module, removing the level shifter](http://majek.mamy.to/en/frsky-dht-ttl-mod/).

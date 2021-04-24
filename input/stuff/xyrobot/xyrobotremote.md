@@ -9,8 +9,6 @@ github: https://github.com/xythobuz/xyRobot/tree/master/xyRobotRemote
 compat: xyrobotremote
 ---
 
-### {{ page.title }}
-
 xyRobotRemote is a Cross-Platform Java GUI App. It controls the [xyRobot][1].
 
 [![New Screenshot][2]][3]
@@ -37,8 +35,6 @@ That's what the GUI looked like earlier, when it was written as X11 App.
  [11]: img/panWork.png
 
 lang: de
-
-### {{ page.title_de }}
 
 xyRobotRemote ist eine Cross-Plattform Java GUI App. Sie dient der Fernsteuerung des [xyRobot][1] Roboters.
 

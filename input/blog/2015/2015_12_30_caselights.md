@@ -8,13 +8,6 @@ parent: projects
 position: 60
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 ### Background
 
 I’ve recently (accidentally) bought a dead-simple [12V RGB LED strip](http://www.hobbyking.com/hobbyking/store/__28515__LED_Red_Green_Blue_RGB_Strip_50cm_w_Flying_Lead.html), aiming to mount it on my Quadcopter, thinking it would be made of individually addressable LEDs. Of course, I didn’t read the description and was wrong. So, what to do?

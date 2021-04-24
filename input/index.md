@@ -3,7 +3,10 @@ parent: main
 position: 10
 flattr: true
 compat: home
+noheader: true
 ---
+
+# Hi there!
 
 <div id="index-avatar"></div>
 

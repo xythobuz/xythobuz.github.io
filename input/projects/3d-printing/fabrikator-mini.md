@@ -8,8 +8,6 @@ flattr: true
 
 <span style="font-size: small;">[...back to 3D-Printing overview](3d-printing.html)</span>
 
-# {{ page.title }}
-
 **More content coming soon!**
 
 I bought the [Fabrikator Mini V1.5 from HobbyKing](https://hobbyking.com/en_us/fabrikator-mini-3d-printer-transparent-eu-230v-v1-5.html) in about March 2016.

@@ -8,13 +8,6 @@ parent: projects
 position: 100
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 DisplayBacklight is an Ambilight-clone made with an Arduino controlled by a macOS machine.
 
 <div class="lightgallery">

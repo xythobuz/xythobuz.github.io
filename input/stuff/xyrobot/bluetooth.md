@@ -8,8 +8,6 @@ flattr: true
 compat: bt
 ---
 
-### {{ page.title }}
-
 Here's the Layout of a BTM-222 Bluetooth PCB, following the [Roboternetz Guidelines Mini Format][1]. The circuit comes from [Robotfreak][2], but is basically the minimal circuit described in the [datasheet (370kB)][3].
 
 [![PCB Top][4]][5]
@@ -50,8 +48,6 @@ Before using the BTM-222 you have to configure it. You can change the speed, dat
  [12]: files/bluetooth.zip
 
 lang: de
-
-### {{ page.title_de }}
 
 Hier das Layout einer Adapterplatine für den BTM-222 Bluetooth IC im [Roboternetz Mini Format][1]. Die Schaltung stammt von [Robotfreak][2], entspricht aber im Prinzip der Minimalbeschaltung aus dem [Datenblatt][3].
 

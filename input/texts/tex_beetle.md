@@ -4,8 +4,6 @@ comments: true
 flattr: true
 ---
 
-### {{ page.title }}
-
 On June 5th I ordered the [Tex Beetle][texbeetle] from [MechanicalKeyboards.com][shop]. It shipped one day later and after about two weeks I received a notification from the German customs office. Including import sales tax and shipping, I had to pay 160 Euros.
 
 [![Photo][overviewSmall]][overview]

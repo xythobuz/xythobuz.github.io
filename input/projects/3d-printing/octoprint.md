@@ -8,8 +8,6 @@ flattr: true
 
 <span style="font-size: small;">[...back to 3D-Printing overview](3d-printing.html)</span>
 
-# {{ page.title }}
-
 All my 3D printers are connected to a Raspberry Pi running [OctoPrint](https://octoprint.org/).
 For ease of use, I suggest downloading and installing a pre-made [OctoPi image](https://octoprint.org/download/).
 Here on this page I describe some common steps and improvements I do on each of them.

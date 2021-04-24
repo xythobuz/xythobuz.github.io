@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 The [f.lux utility](https://justgetflux.com) is a Mac OS X application that allows 'warming up' the colors of your monitors at night to reduce strain on the eyes. Of course, this distorts the colors at night, so it of course has the ability to whitelist certain apps. As long as these apps are in the foreground, the f.lux effect is disabled.
 
 F.lux just lives in the system nav bar, so there's no proper GUI that would allow adding or removing apps from the whitelist. Instead, you can only enable or disable whitelisting for the current foreground App. Of course, this gets problematic when the app in question is only in fullscreen-mode and does not allow the mouse pointer to leave the window.

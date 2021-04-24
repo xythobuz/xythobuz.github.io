@@ -4,13 +4,6 @@ date: 2013-04-26
 comments: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Gerade kam [diese][amazon] (Amazon Affiliate Link!) Linse fürs iPhone bei mir an. Für das Geld beschwer ich mich ja überhaupt nicht, aber auch so lassen sich die Bilder sehen. Funktioniert entweder als Weitwinkel- (zusammengeschraubt) oder als Makrolinse (auseinandergeschraubt). Hält magnetisch fest, man muss also nen kleinen Metallring um die Kamera kleben.
 
 [![Macro][small]][big]

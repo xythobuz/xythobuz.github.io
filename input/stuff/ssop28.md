@@ -8,8 +8,6 @@ flattr: true
 compat: ssop28
 ---
 
-### {{ page.title }}
-
 This is a small PCB to use a SSOP28 SMT IC in a Breadboard or similar with 1" (2,54mm) pin-distance:
 
 ![Layout][1]
@@ -20,8 +18,6 @@ This is a small PCB to use a SSOP28 SMT IC in a Breadboard or similar with 1" (2
  [2]: /files/ssop28.brd
 
 lang: de
-
-### {{ page.title_de }}
 
 Hier das Layout eines SSOP28 - DIL Adapters:
 

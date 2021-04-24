@@ -7,9 +7,9 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/avrSerial
 compat: avrserlib
+date: 2012-10-15
+update: 2017-09-15
 ---
-
-### {{ page.title }}
 
 The avrSerial Library enables interrupt-driven UART communication on all available UART modules. Each module has it's own receive and transmit buffer. XON/XOFF Flow Control for the receiving end can be enabled. At the moment, the following AtMega types are supported:
 
@@ -51,8 +51,6 @@ To add another processor, just get the register names from the data sheet and pu
  [3]: http://www.xythobuz.org/avrserial.pdf
 
 lang: de
-
-### {{ page.title_de }}
 
 Die avrSerial Library ermöglicht Interruptgesteuerte UART kommunikation mit allen verfügbaren UART Modulen. Jedes Modul hat einen eigenen Sende- und Empfangspuffer. XON/XOFF Flow Control kann auf Empfangsseite aktiviert werden. Unterstützt werden momentan folgende AtMega Typen:
 

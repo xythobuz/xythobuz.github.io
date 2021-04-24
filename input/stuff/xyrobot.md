@@ -7,9 +7,9 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/xyRobot
 compat: rob
+date: 2011-07-28
+update: 2012-08-30
 ---
-
-### {{ page.title }}
 
 This is my robot project. A self-made PCB with an AtMega2560 controls everything. The robot has a [Bluetooth module][1], a [Gameboy Camera][2] and my [RAM module][3]. I bought the [RN-KeyLCD][4] and the [RN-VN2][5] from [Roboternetz][6].
 

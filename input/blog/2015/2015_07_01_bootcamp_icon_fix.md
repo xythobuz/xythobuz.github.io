@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 If you like to give each disk appearing on your Macs desktop it’s own icon, and are a Bootcamp user, you’re probably aware that the Bootcamp drive icon is reset after each reboot. Fortunately, this can be fixed in an easy automated fashion.
 
 The only requirement is NTFS write support. To get this, install osxfuse and ntfs-3g, or enable the built-in NTFS write support ([find details here](http://apple.stackexchange.com/questions/152661/write-to-ntfs-formated-drives-on-yosemite)).

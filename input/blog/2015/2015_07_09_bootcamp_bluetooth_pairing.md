@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 I’m using an Apple Magic Trackpad that is connected to my Computer using Bluetooth. It works under Mac OS X and also under Windows, but it does not pair automatically out-of-the-box. If it was previously paired with OS X, it has to be re-paired under Windows, and also the other way round.
 
 The reason for this is simple. These Bluetooth devices not only identify each other using their MAC addresses, they also share an encryption key that is stored in the Trackpad and the OS, and is generated in the pairing process. If this key is the same on both OS, the Bluetooth device will pair automatically every time.

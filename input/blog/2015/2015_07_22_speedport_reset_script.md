@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Ich quäle mich immer noch mit der unfassbar schlechten Weboberfläche meines Telekom Routers herum... Man sollte denken, den Neustart des Routers über die Weboberfläche könnte man mit ein paar einfachen curl Kommandos beginnen. Aber nein, weit gefehlt. Ich musste den Traffic schon mit Wireshark capturen und nachbauen, denn wenn z.B. der Referer nicht stimmt geht gar nix.
 
 Hier also das Ergebnis meiner Anstrengungen :D

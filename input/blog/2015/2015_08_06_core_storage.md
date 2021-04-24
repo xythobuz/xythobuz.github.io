@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Basically, Disk Utility in Yosemite started using Core Storage sometimes when creating new partitions. Unfortunately, if it then encounters a Core Storage Volume, it completely shits its pants and doesn’t do anything anymore.
 
 Presumably, this will be fixed in the next release, El Capitan.

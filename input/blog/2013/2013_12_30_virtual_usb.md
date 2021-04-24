@@ -4,13 +4,6 @@ date: 2013-12-30
 comments: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 You can't just boot from a USB Stick with VirtualBox because it's BIOS does not support USB.
 However, you can still get it to boot from USB.
 But first, you have to convince OS X not to remount your USB Stick everytime it's `/dev/diskX` file is accessed.

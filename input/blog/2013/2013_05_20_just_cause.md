@@ -4,13 +4,6 @@ date: 2013-05-20
 comments: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Jetzt hab ich auch mal das Video-Capturing und den Youtube-Upload in [Just Cause 2][am] (Affiliate Link) ausprobiert. Bin ja nicht so von der Qualität überzeugt... :/
 
 <object width="640" height="360"><param name="movie" value="http://www.youtube-nocookie.com/v/iSIPDDkLbs0?hl=de_DE&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/iSIPDDkLbs0?hl=de_DE&amp;version=3" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>

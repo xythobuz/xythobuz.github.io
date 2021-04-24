@@ -3,8 +3,6 @@ parent: main
 position: 40
 ---
 
-### {{ page.title }}
-
 <!--%
 mpages = [p for p in pages if p.get("parent", "") == "stuff" and p.lang == "en"]
 mpages.sort(key=lambda p: int(p["position"]))

@@ -6,13 +6,6 @@ flattr: true
 github: https://github.com/xythobuz/OpenRaider
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Hier war ja im (nicht mehr ganz) neuen Jahr bisher noch nicht so viel los.
 
 Der Grund hierfür ist eigentlich recht klar. Ich habe viel mehr Zeit, als mir eigentlich lieb ist, in mein neues Pet-Project gesteckt (bisher etwa 90h).

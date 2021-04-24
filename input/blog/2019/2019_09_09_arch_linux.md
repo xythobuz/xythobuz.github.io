@@ -4,13 +4,6 @@ date: 2019-09-09
 comments: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 I've now been running Arch Linux on my Desktop for over a year.
 After exclusively running Mac OS X for many years before, this was my first real step into a Desktop Linux distribution.
 It has been surprisingly painless and I'm very happy with my machine.

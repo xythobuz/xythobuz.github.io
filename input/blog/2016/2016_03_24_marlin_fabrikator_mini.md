@@ -5,13 +5,6 @@ comments: true
 flattr: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 **Update:**
 
 As the Marlin Firmware is changing quite often, I’m maintaining [a branch with my configuration on my git server](https://git.xythobuz.de/thomas/marlin/src/branch/fabrikator-mini). Get it like this:

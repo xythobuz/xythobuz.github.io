@@ -4,13 +4,6 @@ date: 2013-11-19
 comments: true
 ---
 
-## {{ page["post"] }}
-<!--%
-from datetime import datetime
-date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-print "*Posted at %s.*" % date
-%-->
-
 Jetzt hab ich mir und ein paar Freunden auch mal einen Minecraft Server aufgesetzt. Basierend auf [CraftBukkit](http://forums.bukkit.org/threads/craftbukkit-1-6-4-r2-0-is-now-available.189237/) und mit [Ahtenus Init Script](https://github.com/Ahtenus/minecraft-init) ist schnell das nötigste am laufen.
 
 Vorher musste ich noch eine JRE installieren, aber das sollte ja kein Problem sein:
