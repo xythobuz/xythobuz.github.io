@@ -55,8 +55,8 @@ Two float switches are used to tell the fill-height of the water tank.
 The ESP32 also provides a simple webinterface to allow the same controls as from the userinterface.
 
 <div class="lightgallery">
-    <a href="img/giessomat_5.jpg">
-        <img src="img/giessomat_5_small.jpg" alt="Float switch and valve used">
+    <a href="img/giessomat_web.png">
+        <img src="img/giessomat_web_small.png" alt="Screenshot of the webinterface">
     </a>
 </div>
 
@@ -79,6 +79,12 @@ Most of the parts I had lying around in the workshop.
 I only had to buy the outlet valves after realizing one of the big valves I still had was no longer working.
 Also the pumps, hoses and hose-adapters had to be bought.
 
+<div class="lightgallery">
+    <a href="img/giessomat_5.jpg">
+        <img src="img/giessomat_5_small.jpg" alt="Float switch and valve used">
+    </a>
+</div>
+
 The software can easily be configured to run with more or less fertilizers and outlets, as much as the ESP32 GPIOs can provide.
 Alternatively, you can also use an Arduino for the controller instead of the ESP, losing the webinterface.
 Or you can also compile the software to run both UI and control on one Arduino, as long as it has enough GPIOs for your needs (or an ESP, but I haven't tested that).
@@ -100,6 +106,11 @@ It still has to be started manually via the userinterface.
 But recently I got a different sensor from a colleague of mine, which is from another project called [Giesomat](https://www.ramser-elektro.at/shop/bausaetze-und-platinen/giesomat-kapazitiver-bodenfeuchtesensor-erdfeuchtesensor-mit-beschichtung/).
 The similar name was totally incidental, I only heard of it after naming my own project like this.
 I will test it and report the results here sometime in the future.
+
+Also, it would of course be possible to design a custom PCB for the hardware.
+But to be quite honest, I don't see the appeal in that currently.
+It would lose the ability to use a different number of pumps and valves, as needed by the specific application.
+And building all this up on perf-boards is really not much work.
 
 ## Links
 
