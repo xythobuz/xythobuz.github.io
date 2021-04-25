@@ -6,6 +6,7 @@ position: 80
 comments: true
 flattr: true
 compat: ssop28
+date: 2011-07-03
 ---
 
 This is a small PCB to use a SSOP28 SMT IC in a Breadboard or similar with 1" (2,54mm) pin-distance:

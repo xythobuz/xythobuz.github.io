@@ -1,6 +1,6 @@
 title: Home
 parent: main
-position: 10
+position: 1
 flattr: true
 compat: home
 noheader: true
@@ -33,17 +33,19 @@ print int(difference_in_years)
 %--> year old hard- and software developer from Germany.
 All of my projects are released as free or open-source software on my [GitHub profile](https://github.com/xythobuz) and here on my website. Have fun!
 
-### Recent Blog Posts
+### Recent Posts
 
 <!--%
 from datetime import datetime
-posts = [p for p in pages if "post" in p] # get all blog post pages
-posts.sort(key=lambda p: p.get("date"), reverse=True) # sort post pages by date
+posts = [p for p in pages if "date" in p]
+posts.sort(key=lambda p: p.get("date"), reverse=True)
 for p in posts[0:5]:
     date = datetime.strptime(p.date, "%Y-%m-%d").strftime("%B %d, %Y")
-    print "  * **[%s](%s)** - %s" % (p.post, p.url, date) # markdown list item
+    if "post" in p:
+        print "  * **[%s](%s)** - %s" % (p.post, p.url, date)
+    else:
+        print "  * **[%s](%s)** - %s" % (p.title, p.url, date)
 %-->
-  * [more...](blog.html)
 
 ### Tweets
 

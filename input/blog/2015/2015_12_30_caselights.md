@@ -1,11 +1,12 @@
 title: Blog
 post: CaseLights
-date: 2015-12-30
 comments: true
 flattr: true
 github: https://github.com/xythobuz/CaseLights
 parent: projects
 position: 60
+date: 2015-12-30
+update: 2020-06-07
 ---
 
 ### Background

@@ -1,11 +1,13 @@
 title: xyControl
 title_de: xyControl
 description: AVR base Quadrocopter Flight Controller
-parent: none
-position: 1
+parent: projects
+position: 40
 comments: true
 flattr: true
 github: https://github.com/xythobuz/xyControl
+date: 2012-11-12
+update: 2014-09-01
 ---
 
 ![Logo][logo]

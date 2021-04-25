@@ -1,14 +1,14 @@
 title: avrNetStack
 title_de: avrNetStack
 description: Modular AVR TCP/IP Stack with Ethernet and WiFi support
-parent: none
-position: 0
+parent: projects
+position: 50
 comments: true
 flattr: true
 github: https://github.com/xythobuz/avrNetStack
+date: 2012-08-10
+update: 2014-09-28
 ---
-
-# {{ page.title }}
 
 [avrNetStack][github] aims to be a very modular Networking Stack running on AVR Microcontrollers and supporting different Network Hardware (ENC28J60, MRF24WB).
 Select your MCU and hardware driver in the makefile.

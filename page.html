@@ -50,8 +50,9 @@
                 for p in mpages[1:]:
                     print(entry % (htmlspecialchars(p["url"]), htmlspecialchars(p["title"])))
             %-->
+            <li>-</li>
+            <li><a href="https://git.xythobuz.de/explore/repos">Gitea</a></li>
             <li><a href="https://github.com/xythobuz">GitHub</a></li>
-            <li><a href="https://git.xythobuz.de/explore/repos">Git</a></li>
             <li><a href="printer.html">🔨</a></li>
             <div class="fonts">
                 <li><span class="font-big">Text:</span></li>
@@ -82,20 +83,22 @@
                         print "<h1>%s</h1>" % (page.get("title", ""))
 
                 if page.get("date", "") != "":
-                    date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
                     if page.get("lang", "en") == "de":
-                        print "<i>Veroeffentlicht am %s.</i>" % date
+                        date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%d.%m.%Y")
+                        print "<i>Ver&ouml;ffentlicht am %s.</i>" % date
                     else:
+                        date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
                         print "<i>Published at %s.</i>" % date
 
                 if page.get("date", "") != "" and page.get("update", "") != "":
                     print "<br>"
 
                 if page.get("update", "") != "":
-                    date = datetime.strptime(page["update"], "%Y-%m-%d").strftime("%B %d, %Y")
                     if page.get("lang", "en") == "de":
+                        date = datetime.strptime(page["update"], "%Y-%m-%d").strftime("%d.%m.%Y")
                         print "<i>Zuletzt aktualisiert am %s.</i>" % date
                     else:
+                        date = datetime.strptime(page["update"], "%Y-%m-%d").strftime("%B %d, %Y")
                         print "<i>Last updated at %s.</i>" % date
         %-->
         {{ __content__ }}
