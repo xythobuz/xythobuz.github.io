@@ -21,9 +21,9 @@ A solenoid valve controls the mains-water-line inlet to the tank.
 Small amounts of fertilizer mixture can be added to the tank using peristaltic pumps.
 The whole system is mounted high-up on the top of my plant shelf.
 That way, gravity is feeding the water from the tank to the outlets, controlled by more solenoid valves.
-Of course, the outlet valves can also be replace by pumps, so everything can be mounted level, or the machine below the plants.
+Of course, the outlet valves can also be replaced by pumps, so everything can be mounted level, or the machine below the plants.
 
-Even though the software uses float-switches to measure the fill-height in the tank, maximum safety timeouts are implemented for every action, so the chance of flooding the house are minimized.
+Even though the software uses float-switches to measure the fill-height in the tank, maximum safety timeouts are implemented for every action, so the chances of flooding the house are minimized.
 Still, I always manually close the mains-water-inlet with a proper hand-controlled valve after using the machine and open it only when needed, just in case!
 
 (I'm a software developer by trade, so I'm relatively confident the software works, but I don't trust my plumbing skills too much...) 😊
