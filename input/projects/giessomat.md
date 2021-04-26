@@ -32,7 +32,7 @@ Still, I always manually close the mains-water-inlet with a proper hand-controll
 
 The machine is using two microcontrollers, an [Arduino Nano clone](https://amzn.to/3sQ4Otl) and an [ESP32](https://amzn.to/3xmDh6k).
 
-The Arduino provides the userinterface, using a 20x4 LCD from a now-obsolete Sparkfun project called [SerialLCD](https://www.sparkfun.com/products/retired/9568).
+The Arduino provides the user interface, using a 20x4 LCD from a now-obsolete Sparkfun project called [SerialLCD](https://www.sparkfun.com/products/retired/9568).
 It is connected to the Arduino via serial.
 Input is done using a cheap 3x4 Keymatrix directly conencted to the Arduino GPIOs.
 I also added a power switch and some voltmeters for the different voltage regulators and a main power switch.
@@ -52,11 +52,11 @@ Using these, it controls five valves (one inlet and four outlets) as well as thr
 For the outlet valves I'm using cheap small chinese solenoid valves.
 For the inlet, I'm using a more expensive metal solenoid valve from Germany that is able to resist the mains-water-pressure (up to 8bar) that I still had from my cocktail machine experiments.
 Two float switches are used to tell the fill-height of the water tank.
-The ESP32 also provides a simple webinterface to allow the same controls as from the userinterface.
+The ESP32 also provides a simple web interface to allow the same controls as from the user interface.
 
 <div class="lightgallery">
     <a href="img/giessomat_web.png">
-        <img src="img/giessomat_web_small.png" alt="Screenshot of the webinterface">
+        <img src="img/giessomat_web_small.png" alt="Screenshot of the web interface">
     </a>
 </div>
 
@@ -86,9 +86,9 @@ Also the pumps, hoses and hose-adapters had to be bought.
 </div>
 
 The software can easily be configured to run with more or less fertilizers and outlets, as much as the ESP32 GPIOs can provide.
-Alternatively, you can also use an Arduino for the controller instead of the ESP, losing the webinterface.
+Alternatively, you can also use an Arduino for the controller instead of the ESP, losing the web interface.
 Or you can also compile the software to run both UI and control on one Arduino, as long as it has enough GPIOs for your needs (or an ESP, but I haven't tested that).
-You can of course also just leave out the UI and use solely the webinterface on the ESP. See the [README.md of the project](https://git.xythobuz.de/thomas/giess-o-mat/src/branch/master/README.md) for more details.
+You can of course also just leave out the UI and use solely the web interface on the ESP. See the [README.md of the project](https://git.xythobuz.de/thomas/giess-o-mat/src/branch/master/README.md) for more details.
 
 Doing some programming, it would also be possible to use some kind of port-extender or run also the UI on an ESP.
 And of course also the now-obsolete SerialLCD could be replaced with something different without too much work.
@@ -101,7 +101,7 @@ They of course don't corrode as fast as the resistive-measurement-based sensors,
 I tried to work-around that by using [Plastik70](http://www.kontaktchemie.com/koc/KOCproductdetail.csp?division=&product=PLASTIK%2070&ilang=en&plang=en) in liberal amounts with multiple coatings on the sensor, but even with that they show quite considerable drift over a couple of months.
 The data is good enough to see when I watered the plants, but it is difficult to determine a value where automatic watering should occur.
 Because of that, I have not yet added completely automated watering into the system.
-It still has to be started manually via the userinterface.
+It still has to be started manually via the user interface.
 
 But recently I got a different sensor from a colleague of mine, which is from another project called [Giesomat](https://www.ramser-elektro.at/shop/bausaetze-und-platinen/giesomat-kapazitiver-bodenfeuchtesensor-erdfeuchtesensor-mit-beschichtung/).
 The similar name was totally incidental, I only heard of it after naming my own project like this.
