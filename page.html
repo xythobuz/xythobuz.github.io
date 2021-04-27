@@ -12,7 +12,6 @@
     <link type="text/css" rel="stylesheet" href="css/style.css" />
     <link type="text/css" rel="stylesheet" href="css/sh_bright.min.css" />
     <link type="text/css" rel="stylesheet" href="css/gh-fork-ribbon.css" />
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" />
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.18/css/lightgallery.min.css" />
     <script type="text/javascript" src="js/sh_main.js"></script>
     <!--%
@@ -177,18 +176,18 @@
             var initialFontSize = fontSize;
             $('.inc').on('click', function() {
                 fontSize += 1;
-                $('body').css('font-size', fontSize + 'px');
+                $('#content').css('font-size', fontSize + 'px');
             })
             $('.dec').on('click', function() {
                 if (fontSize > 1) {
                     fontSize -= 1;
-                    $('body').css('font-size', fontSize + 'px');
+                    $('#content').css('font-size', fontSize + 'px');
                 }
             })
             $('.reset').on('click', function() {
                 if (fontSize != initialFontSize) {
                     fontSize = initialFontSize;
-                    $('body').css('font-size', initialFontSize + 'px');
+                    $('#content').css('font-size', initialFontSize + 'px');
                 }
             })
         })
