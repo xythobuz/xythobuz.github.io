@@ -14,21 +14,6 @@
     <link type="text/css" rel="stylesheet" href="css/gh-fork-ribbon.css" />
     <link type="text/css" rel="stylesheet" href="css/lightgallery.min.css" />
     <script type="text/javascript" src="js/sh_main.js"></script>
-    <!--%
-        if page.get("flattr", "false") == "true":
-            print "<script type='text/javascript'>"
-            print "/* <![CDATA[ */"
-            print "(function() {"
-            print "var s = document.createElement('script');"
-            print "var t = document.getElementsByTagName('script')[0];"
-            print "s.type = 'text/javascript';"
-            print "s.async = true;"
-            print "s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=xythobuz&category=text';"
-            print "t.parentNode.insertBefore(s, t);"
-            print "})();"
-            print "/* ]]> */"
-            print "</script>"
-    %-->
 </head>
 <body onload="sh_highlightDocument('/js/sh/', '.min.js');">
     <!--%
@@ -102,25 +87,6 @@
         %-->
         {{ __content__ }}
         <!--%
-            import sys
-
-            # Centered DIV
-            # Flattr Button
-            if page.get("flattr", "false") == "true":
-                print '<div style="margin-top: 1em; text-align: center;">'
-                print '<span id="flattr">'
-                sys.stdout.write('<a class="FlattrButton" href="')
-                sys.stdout.write(BASE_URL)
-                sys.stdout.write('/')
-                sys.stdout.write(page.url)
-                sys.stdout.write('" title="')
-                sys.stdout.write(htmlspecialchars(page.title))
-                sys.stdout.write('" data-flattr-button="compact">')
-                sys.stdout.write(htmlspecialchars(page.get("description", page.title)))
-                sys.stdout.write("</a>\n")
-                print '</span>'
-                print '</div>'
-
             # Disqus Comments (only show button to load afterwards)
             if page.get("comments", "false") == "true":
                 print '<div style="margin-top: 1em; text-align: center;">'
@@ -134,7 +100,7 @@
     </div>
 
     <div id="footer">
-        <a href="http://bitbucket.org/obensonne/poole">Poole</a>
+        <a href="https://hg.sr.ht/~obensonne/poole">Poole</a>
         &middot;
         <a href="http://shjs.sourceforge.net">SHJS</a>
         &middot;
