@@ -12,7 +12,7 @@
     <link type="text/css" rel="stylesheet" href="css/style.css" />
     <link type="text/css" rel="stylesheet" href="css/sh_bright.min.css" />
     <link type="text/css" rel="stylesheet" href="css/gh-fork-ribbon.css" />
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.18/css/lightgallery.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/lightgallery.min.css" />
     <script type="text/javascript" src="js/sh_main.js"></script>
     <!--%
         if page.get("flattr", "false") == "true":
@@ -150,7 +150,7 @@
         &middot;
         <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&nav=1&email=xythobuz@me.com">PayPal</a>
     </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <!--%
         # Dynamically load Disqus comments after user requested it
         if page.get("comments", "false") == "true":
@@ -192,11 +192,32 @@
             })
         })
     </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.18/js/lightgallery-all.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/lightgallery-all.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $(".lightgallery").lightGallery(); 
+            var lg = document.getElementsByClassName("lightgallery");
+            for (var i = 0; i < lg.length; i++) {
+                $(lg.item(i)).lightGallery({
+                    loadYoutubeThumbnail: true,
+                    youtubeThumbSize: 'mqdefault',
+                    loadVimeoThumbnail: true,
+                    vimeoThumbSize: 'thumbnail_medium',
+                    youtubePlayerParams: {
+                        modestbranding: 1,
+                        showinfo: 0,
+                        rel: 0
+                    },
+                    vimeoPlayerParams: {
+                        byline: 0,
+                        portrait: 0
+                    },
+                    thumbnail:true,
+                    animateThumb: true,
+                    showThumbByDefault: false,
+                    galleryId: i
+                });
+            }
         });
     </script>
     <script>
