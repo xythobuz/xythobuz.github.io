@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html>
+<!--%
+if page.get("lang", "en") == "de":
+    print '<html lang="de">'
+else:
+    print '<html lang="en">'
+%-->
 <head>
     <meta charset="{{ htmlspecialchars(__encoding__) }}" />
     <title>{{ htmlspecialchars(page.title) }} - xythobuz.de</title>
