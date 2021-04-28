@@ -24,7 +24,7 @@
             print page.github
             print '">Fork me on GitHub</a></div></div>'
     %-->
-    <div id="nav">
+    <div id="wrap"><div id="nav">
         <ul>
             <li id="home"><a href="index.html">xythobuz.de</a></li>
             <!--%
@@ -52,7 +52,7 @@
                     print "</li>"
             %-->
         </ul>
-    </div>
+    </div></div>
     <div id="content">
         <!--%
             from datetime import datetime
@@ -137,7 +137,12 @@
             print '</script>'
     %-->
     <script type="text/javascript">
+        jQuery(window).resize(function() {
+            $('#wrap').css('height', $('#nav').css('height'));
+        });
         $(document).ready(function(){
+            $('#wrap').css('height', $('#nav').css('height'));
+
             var fontSize = parseInt($('body').css('font-size'), 10);
             var initialFontSize = fontSize;
             $('.inc').on('click', function() {

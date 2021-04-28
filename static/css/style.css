@@ -30,12 +30,8 @@ hr {
         left: 0;
     }
 
-    #content {
-        padding-top: 5em;
-    }
-
-    #index-avatar {
-        margin-top: 1.5em;
+    #wrap {
+        height: 5em;
     }
 }
 
