@@ -5,10 +5,14 @@ body {
     padding: 0px;
 }
 
+hr {
+    color: purple; /* green; */ /* orange; */
+}
+
 #nav {
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    border-bottom-color: green; /* orange; */
+    border-bottom-color: purple; /* green; */ /* orange; */
     background-color: white;
     width: 100%;
 }
@@ -43,7 +47,7 @@ pre {
     margin: 1em;
     border-style: solid;
     border-width: 2px;
-    border-color: green; /* orange; */
+    border-color: purple; /* green; */ /* orange; */
     border-radius: 10px;
 }
 
