@@ -1,0 +1,61 @@
+.wrap {
+    display: none;
+}
+
+.github-fork-ribbon-wrapper {
+    display: none;
+}
+
+#nav {
+    display: none;
+}
+
+pre {
+    max-height: 100%;
+    font-size: 0.9em;
+    padding: 10px;
+    margin: 1em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: purple; /* green; */ /* orange; */
+    border-radius: 10px;
+}
+
+.show-comments {
+    display: none;
+}
+
+#footer {
+    color: gray;
+    text-align: center;
+    margin-top: 1em;
+    font-size: small;
+}
+
+#footer a:link {
+    color: gray;
+}
+
+#footer a:visited {
+    color: gray;
+}
+
+#index-avatar {
+    width: 150px;
+    height: 150px;
+    float: right; border: 2px, solid, #000000;
+    border-radius: 10px;
+    background-image: url(https://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=150);
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+#index-twitter-page {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+iframe[id^='twitter-widget-'] {
+    width: 100%;
+}
