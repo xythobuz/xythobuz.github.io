@@ -72,12 +72,6 @@ For the inlet, I'm using a more expensive metal solenoid valve from Germany that
 Two float switches are used to tell the fill-height of the water tank.
 The ESP32 also provides a simple web interface to allow the same controls as from the user interface.
 
-Both UI and controller are connected to each other using I2C.
-All relevant signals are transmitted with a simple DB-9 cable.
-
-All this is mounted on an old piece of shelf-board, using some custom designed 3D printed parts.
-The water tank is realized using a generic 5l liquid tank, with two holes drilled for the fill switches. The holders for the fertilizer bottles, as well as the bottlecaps, are specifically designed to fit my 1l fertilizer bottles.
-
 <div class="lightgallery">
     <a href="img/giessomat_4.jpg">
         <img src="img/giessomat_4_small.jpg" alt="Top view of the machine">
@@ -87,6 +81,45 @@ The water tank is realized using a generic 5l liquid tank, with two holes drille
     </a>
     <a href="img/giessomat_15.jpg">
         <img src="img/giessomat_15_small.jpg" alt="Back of controller PCB">
+    </a>
+</div>
+
+Both UI and controller are connected to each other using I2C.
+All relevant signals are transmitted with a simple DB-9 cable.
+
+All this is mounted on an old piece of shelf-board, using some custom designed 3D printed parts.
+The water tank is realized using a generic 5l liquid tank, with two holes drilled for the fill switches. The holders for the fertilizer bottles, as well as the bottlecaps, are specifically designed to fit my 1l fertilizer bottles.
+
+I designed all the 3D printed parts with OpenSCAD.
+You can find [the files](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/giessomat) on my Gitea.
+
+<div class="lightgallery">
+    <a href="img/giessomat_3d_2.png">
+        <img src="img/giessomat_3d_2_small.png" alt="User Interface">
+    </a>
+    <a href="img/giessomat_3d_1.png">
+        <img src="img/giessomat_3d_1_small.png" alt="Bottlecap for Fertilizer">
+    </a>
+    <a href="img/giessomat_3d_3.png">
+        <img src="img/giessomat_3d_3_small.png" alt="Fertilizer bottle mount">
+    </a>
+    <a href="img/giessomat_3d_9.png">
+        <img src="img/giessomat_3d_9_small.png" alt="Watertank holder">
+    </a>
+    <a href="img/giessomat_3d_4.png">
+        <img src="img/giessomat_3d_4_small.png" alt="Hose sieve/filter">
+    </a>
+    <a href="img/giessomat_3d_5.png">
+        <img src="img/giessomat_3d_5_small.png" alt="Hose fix for pumps">
+    </a>
+    <a href="img/giessomat_3d_6.png">
+        <img src="img/giessomat_3d_6_small.png" alt="Light-proofing for hose hole">
+    </a>
+    <a href="img/giessomat_3d_7.png">
+        <img src="img/giessomat_3d_7_small.png" alt="Large valve mount">
+    </a>
+    <a href="img/giessomat_3d_8.png">
+        <img src="img/giessomat_3d_8_small.png" alt="Small valve mount">
     </a>
 </div>
 
