@@ -9,6 +9,19 @@ from datetime import datetime
 DEFAULT_LANG = "en"
 BASE_URL = "https://www.xythobuz.de"
 
+def lightgallery(links):
+    print '<div class="lightgallery">'
+    for l in links:
+        link = img = alt = ""
+        if len(l) == 3:
+            link, img, alt = l
+        else:
+            link, alt = l
+            x = link.rfind('.')
+            img = link[:x] + '_small' + link[x:]
+        print '<a href="' + link + '"><img src="' + img + '" alt="' + alt + '"></a>'
+    print '</div>'
+
 # -----------------------------------------------------------------------------
 # preconvert hooks
 # -----------------------------------------------------------------------------

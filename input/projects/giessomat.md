@@ -14,14 +14,13 @@ And this year I also have quite a selection of different Paprika/Chili strains g
 
 So it seemed natural to build a machine that can help me with watering the plants and mixing in some fertilizer solution into the water once in a while.
 
-<div class="lightgallery">
-    <a href="img/giessomat_1.jpg">
-        <img src="img/giessomat_1_small.jpg" alt="Front of the UI unit">
-    </a>
-    <a href="img/giessomat_3.jpg">
-        <img src="img/giessomat_3_small.jpg" alt="Side view of the machine">
-    </a>
-</div>
+<!--%
+lightgallery([
+    [ "img/giessomat_1.jpg", "Front of the UI unit" ],
+    [ "img/giessomat_3.jpg", "Side view of the machine" ],
+    [ "https://www.youtube.com/watch?v=q-sjvPYs-EQ", "img/giessomat_thumbnail_small.png", "Demo Video" ]
+])
+%-->
 
 ## Overview
 
@@ -37,11 +36,11 @@ Still, I always manually close the mains-water-inlet with a proper hand-controll
 
 (I'm a software developer by trade, so I'm relatively confident the software works, but I don't trust my plumbing skills too much...) 😊
 
-<div class="lightgallery">
-    <a href="img/giessomat_web.png">
-        <img src="img/giessomat_web_small.png" alt="Screenshot of the web interface">
-    </a>
-</div>
+<!--%
+lightgallery([
+    [ "img/giessomat_web.png", "Screenshot of the web interface" ]
+])
+%-->
 
 ## Implementation
 
@@ -53,17 +52,13 @@ Input is done using a cheap 3x4 Keymatrix directly conencted to the Arduino GPIO
 I also added a power switch and some voltmeters for the different voltage regulators and a main power switch.
 All this is mounted in a simple 3D-printed frontpanel.
 
-<div class="lightgallery">
-    <a href="img/giessomat_2.jpg">
-        <img src="img/giessomat_2_small.jpg" alt="Back of the UI unit">
-    </a>
-    <a href="img/giessomat_6.jpg">
-        <img src="img/giessomat_6_small.jpg" alt="Front of UI PCB">
-    </a>
-    <a href="img/giessomat_7.jpg">
-        <img src="img/giessomat_7_small.jpg" alt="Back of UI PCB">
-    </a>
-</div>
+<!--%
+lightgallery([
+    [ "img/giessomat_2.jpg", "Back of the UI unit" ],
+    [ "img/giessomat_6.jpg", "Front of UI PCB" ],
+    [ "img/giessomat_7.jpg", "Back of UI PCB" ]
+])
+%-->
 
 The actual control is done on an ESP32 which is connected to two [4-channel relais boards](https://amzn.to/2QW0Sty).
 Using these, it controls five valves (one inlet and four outlets) as well as three pumps for the fertilizers.
@@ -72,17 +67,13 @@ For the inlet, I'm using a more expensive metal solenoid valve from Germany that
 Two float switches are used to tell the fill-height of the water tank.
 The ESP32 also provides a simple web interface to allow the same controls as from the user interface.
 
-<div class="lightgallery">
-    <a href="img/giessomat_4.jpg">
-        <img src="img/giessomat_4_small.jpg" alt="Top view of the machine">
-    </a>
-    <a href="img/giessomat_14.jpg">
-        <img src="img/giessomat_14_small.jpg" alt="Front of controller PCB">
-    </a>
-    <a href="img/giessomat_15.jpg">
-        <img src="img/giessomat_15_small.jpg" alt="Back of controller PCB">
-    </a>
-</div>
+<!--%
+lightgallery([
+    [ "img/giessomat_4.jpg", "Top view of the machine" ],
+    [ "img/giessomat_14.jpg", "Front of controller PCB" ],
+    [ "img/giessomat_15.jpg", "Back of controller PCB" ]
+])
+%-->
 
 Both UI and controller are connected to each other using I2C.
 All relevant signals are transmitted with a simple DB-9 cable.
@@ -93,63 +84,35 @@ The water tank is realized using a generic 5l liquid tank, with two holes drille
 I designed all the 3D printed parts with OpenSCAD.
 You can find [the files](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/giessomat) on my Gitea.
 
-<div class="lightgallery">
-    <a href="img/giessomat_3d_2.png">
-        <img src="img/giessomat_3d_2_small.png" alt="User Interface">
-    </a>
-    <a href="img/giessomat_3d_1.png">
-        <img src="img/giessomat_3d_1_small.png" alt="Bottlecap for Fertilizer">
-    </a>
-    <a href="img/giessomat_3d_3.png">
-        <img src="img/giessomat_3d_3_small.png" alt="Fertilizer bottle mount">
-    </a>
-    <a href="img/giessomat_3d_9.png">
-        <img src="img/giessomat_3d_9_small.png" alt="Watertank holder">
-    </a>
-    <a href="img/giessomat_3d_4.png">
-        <img src="img/giessomat_3d_4_small.png" alt="Hose sieve/filter">
-    </a>
-    <a href="img/giessomat_3d_5.png">
-        <img src="img/giessomat_3d_5_small.png" alt="Hose fix for pumps">
-    </a>
-    <a href="img/giessomat_3d_6.png">
-        <img src="img/giessomat_3d_6_small.png" alt="Light-proofing for hose hole">
-    </a>
-    <a href="img/giessomat_3d_7.png">
-        <img src="img/giessomat_3d_7_small.png" alt="Large valve mount">
-    </a>
-    <a href="img/giessomat_3d_8.png">
-        <img src="img/giessomat_3d_8_small.png" alt="Small valve mount">
-    </a>
-</div>
+<!--%
+lightgallery([
+    [ "img/giessomat_3d_2.png", "User Interface" ],
+    [ "img/giessomat_3d_1.png", "Bottlecap for Fertilizer" ],
+    [ "img/giessomat_3d_3.png", "Fertilizer bottle mount" ],
+    [ "img/giessomat_3d_9.png", "Watertank holder" ],
+    [ "img/giessomat_3d_4.png", "Hose sieve/filter" ],
+    [ "img/giessomat_3d_5.png", "Hose fix for pumps" ],
+    [ "img/giessomat_3d_6.png", "Light-proofing for hose hole" ],
+    [ "img/giessomat_3d_7.png", "Large valve mount" ],
+    [ "img/giessomat_3d_8.png", "Small valve mount" ]
+])
+%-->
 
 Most of the parts I had lying around in the workshop.
 I only had to buy the outlet valves after realizing one of the big valves I still had was no longer working.
 Also the pumps, hoses and hose-adapters had to be bought.
 
-<div class="lightgallery">
-    <a href="img/giessomat_8.jpg">
-        <img src="img/giessomat_8_small.jpg" alt="Front of switch PCB">
-    </a>
-    <a href="img/giessomat_9.jpg">
-        <img src="img/giessomat_9_small.jpg" alt="Back of switch PCB">
-    </a>
-    <a href="img/giessomat_16.jpg">
-        <img src="img/giessomat_16_small.jpg" alt="Front of valve PCB">
-    </a>
-    <a href="img/giessomat_17.jpg">
-        <img src="img/giessomat_17_small.jpg" alt="Back of valve PCB">
-    </a>
-    <a href="img/giessomat_5.jpg">
-        <img src="img/giessomat_5_small.jpg" alt="Float switch and valve used">
-    </a>
-    <a href="img/giessomat_12.jpg">
-        <img src="img/giessomat_12_small.jpg" alt="Front of pump">
-    </a>
-    <a href="img/giessomat_13.jpg">
-        <img src="img/giessomat_13_small.jpg" alt="Back of pump">
-    </a>
-</div>
+<!--%
+lightgallery([
+    [ "img/giessomat_8.jpg", "Front of switch PCB" ],
+    [ "img/giessomat_9.jpg", "Back of switch PCB" ],
+    [ "img/giessomat_16.jpg", "Front of valve PCB" ],
+    [ "img/giessomat_17.jpg", "Back of valve PCB" ],
+    [ "img/giessomat_5.jpg", "Float switch and valve used" ],
+    [ "img/giessomat_12.jpg", "Front of pump" ],
+    [ "img/giessomat_13.jpg", "Back of pump" ]
+])
+%-->
 
 The software can easily be configured to run with more or less fertilizers and outlets, as much as the ESP32 GPIOs can provide.
 Alternatively, you can also use an Arduino for the controller instead of the ESP, losing the web interface.
@@ -159,14 +122,12 @@ You can of course also just leave out the UI and use solely the web interface on
 Doing some programming, it would also be possible to use some kind of port-extender or run also the UI on an ESP.
 And of course also the now-obsolete SerialLCD could be replaced with something different without too much work.
 
-<div class="lightgallery">
-    <a href="img/giessomat_10.jpg">
-        <img src="img/giessomat_10_small.jpg" alt="Interconnect PCB and debug power switch, front side">
-    </a>
-    <a href="img/giessomat_11.jpg">
-        <img src="img/giessomat_11_small.jpg" alt="Interconnect PCB and debug power switch, back side">
-    </a>
-</div>
+<!--%
+lightgallery([
+    [ "img/giessomat_10.jpg", "Interconnect PCB and debug power switch, front side" ],
+    [ "img/giessomat_11.jpg", "Interconnect PCB and debug power switch, back side" ]
+])
+%-->
 
 ## Future Extensions
 
@@ -178,14 +139,12 @@ The data is good enough to see when I watered the plants, but it is difficult to
 Because of that, I have not yet added completely automated watering into the system.
 It still has to be started manually via the user interface.
 
-<div class="lightgallery">
-    <a href="img/giessomat_grafana_1.png">
-        <img src="img/giessomat_grafana_1_small.png" alt="Data of new sensors">
-    </a>
-    <a href="img/giessomat_grafana_2.png">
-        <img src="img/giessomat_grafana_2_small.png" alt="Data after about half a year">
-    </a>
-</div>
+<!--%
+lightgallery([
+    [ "img/giessomat_grafana_1.png", "Data of new sensors" ],
+    [ "img/giessomat_grafana_2.png", "Data after about half a year" ]
+])
+%-->
 
 If you look closely you can also see some glitches in the data where my ESP had problems and did not store new values.
 Also consider that in the timeframes seen in the graph above, I always watered the plants manually as soon as the soil felt dry about 3cm deep.
