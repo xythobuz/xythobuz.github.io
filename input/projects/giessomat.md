@@ -4,7 +4,7 @@ parent: projects
 position: 6
 github: https://git.xythobuz.de/thomas/giess-o-mat
 date: 2021-03-29
-update: 2021-04-27
+update: 2021-05-01
 ---
 
 Since moving into my own flat in 2019 I started growing quite a bunch of plants.
@@ -41,6 +41,10 @@ lightgallery([
     [ "img/giessomat_web.png", "Screenshot of the web interface" ]
 ])
 %-->
+
+The web interface is using JS and Websockets to dynamically update the page, showing the same output that is visible on the physical display.
+Keypad button presses can be executed that way as well.
+Also, the debug logs that are normally provided on the serial port are also sent out to clients connected via the web interface.
 
 ## Implementation
 
@@ -161,3 +165,22 @@ And building all this up on perf-boards is really not much work.
 ## Links
 
 You can find [all the source code for the device itself](https://git.xythobuz.de/thomas/giess-o-mat) (both the UI and the Controller) as well as the OpenSCAD [design files for the 3D printed parts](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/giessomat) on my [Gitea instance](https://git.xythobuz.de).
+
+## License
+
+Giess-o-mat is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+    Copyright (c) 2021 Thomas Buck <thomas@xythobuz.de>
+
+    Giess-o-mat is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Giess-o-mat is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Giess-o-mat.  If not, see <https://www.gnu.org/licenses/>.
