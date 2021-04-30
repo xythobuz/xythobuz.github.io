@@ -143,14 +143,15 @@ else:
             print '</script>'
     %-->
     <script type="text/javascript">
-        jQuery(window).resize(function() {
-            $('#wrap').css('height', $('#nav').css('height'));
-        });
-        $(document).ready(function(){
+        $(document).ready(function() {
+            jQuery(window).resize(function() {
+                $('#wrap').css('height', $('#nav').css('height'));
+            });
             $('#wrap').css('height', $('#nav').css('height'));
 
             var fontSize = parseInt($('body').css('font-size'), 10);
             var initialFontSize = fontSize;
+
             $('.inc').on('click', function() {
                 fontSize += 1;
                 $('#content').css('font-size', fontSize + 'px');
@@ -167,6 +168,25 @@ else:
                     $('#content').css('font-size', initialFontSize + 'px');
                 }
             })
+
+            $(document).keypress(function(event) {
+                if (event.charCode == '+'.charCodeAt(0)) {
+                    fontSize += 1;
+                    $('#content').css('font-size', fontSize + 'px');
+                }
+                if (event.charCode == '-'.charCodeAt(0)) {
+                    if (fontSize > 1) {
+                        fontSize -= 1;
+                        $('#content').css('font-size', fontSize + 'px');
+                    }
+                }
+                if (event.charCode == '0'.charCodeAt(0)) {
+                    if (fontSize != initialFontSize) {
+                        fontSize = initialFontSize;
+                        $('#content').css('font-size', initialFontSize + 'px');
+                    }
+                }
+            });
         })
     </script>
     <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
