@@ -9,17 +9,49 @@ from datetime import datetime
 DEFAULT_LANG = "en"
 BASE_URL = "https://www.xythobuz.de"
 
+# -----------------------------------------------------------------------------
+# lightgallery helper macro
+# -----------------------------------------------------------------------------
+
+# call this macro like this
+# lightgallery([
+#     [ "image-link", "description" ],
+#     [ "image-link", "thumbnail-link", "description" ],
+#     [ "youtube-link", "thumbnail-link", "description" ],
+#     [ "video-link", "mime", "thumbnail-link", "image-link", "description" ]
+# ])
+
 def lightgallery(links):
+    videos = [l for l in links if len(l) == 5]
+    v_i = 0
+    for v in videos:
+        link, mime, thumb, poster, alt = v
+        v_i += 1
+        print '<div style="display:none;" id="video' + str(v_i) + '">'
+        print '<video class="lg-video-object lg-html5" controls preload="none">'
+        print '<source src="' + link + '" type="' + mime + '">'
+        print 'Your browser does not support HTML5 video.'
+        print '</video>'
+        print '</div>'
+        
     print '<div class="lightgallery">'
+    v_i = 0
     for l in links:
-        link = img = alt = ""
-        if len(l) == 3:
-            link, img, alt = l
+        if (len(l) == 3) or (len(l) == 2):
+            link = img = alt = ""
+            if len(l) == 3:
+                link, img, alt = l
+            else:
+                link, alt = l
+                x = link.rfind('.')
+                img = link[:x] + '_small' + link[x:]
+            print '<div class="border" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"></a></div>'
+        elif len(l) == 5:
+            v_i += 1
+            link, mime, thumb, poster, alt = v
+            print '<div class="border" data-poster="' + poster + '" data-sub-html="' + alt + '" data-html="#video' + str(v_i) + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>'
         else:
-            link, alt = l
-            x = link.rfind('.')
-            img = link[:x] + '_small' + link[x:]
-        print '<div class="border" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"></a></div>'
+            raise NameError('Invalid number of arguments for lightgallery')
     print '</div>'
 
 # -----------------------------------------------------------------------------
