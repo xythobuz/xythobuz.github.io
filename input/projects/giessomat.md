@@ -16,9 +16,9 @@ So it seemed natural to build a machine that can help me with watering the plant
 
 <!--%
 lightgallery([
+    [ "https://www.youtube.com/watch?v=q-sjvPYs-EQ", "img/giessomat_thumbnail_small.png", "Demo Video" ],
     [ "img/giessomat_1.jpg", "Front of the UI unit" ],
-    [ "img/giessomat_3.jpg", "Side view of the machine" ],
-    [ "https://www.youtube.com/watch?v=q-sjvPYs-EQ", "img/giessomat_thumbnail_small.png", "Demo Video" ]
+    [ "img/giessomat_3.jpg", "Side view of the machine" ]
 ])
 %-->
 
