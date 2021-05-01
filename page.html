@@ -195,7 +195,7 @@ else:
         $(document).ready(function() {
             var lg = document.getElementsByClassName("lightgallery");
             for (var i = 0; i < lg.length; i++) {
-                $(lg.item(i)).lightGallery({
+                var settings = {
                     loadYoutubeThumbnail: true,
                     youtubeThumbSize: 'mqdefault',
                     loadVimeoThumbnail: true,
@@ -213,7 +213,12 @@ else:
                     animateThumb: true,
                     showThumbByDefault: false,
                     galleryId: i
-                });
+                };
+                var d = lg.item(i);
+                if ($(d).find(".border").length > 0) {
+                    settings.selector = '.border';
+                }
+                $(d).lightGallery(settings);
             }
         });
     </script>

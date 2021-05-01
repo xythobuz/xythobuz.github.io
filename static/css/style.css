@@ -15,6 +15,7 @@ hr {
     border-bottom-color: purple; /* green; */ /* orange; */
     background-color: white;
     width: 100%;
+    z-index: 2;
 }
 
 #content {
@@ -131,3 +132,21 @@ span.font-small {
     font-size: 0.6em;
 }
 
+.border {
+    overflow: hidden;
+    height: auto;
+    display: inline-block;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin: 3px 0 3px 0;
+}
+
+.border .pic {
+    transition: transform 0.1s;
+    vertical-align: bottom;
+}
+
+.border:hover .pic {
+    transform: scale(1.1, 1.1);
+    filter: brightness(75%);
+}

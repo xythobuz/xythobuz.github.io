@@ -10,6 +10,11 @@
     display: none;
 }
 
+.border {
+    display: inline-block;
+    border-radius: 10px;
+}
+
 pre {
     max-height: 100%;
     font-size: 0.9em;

@@ -19,7 +19,7 @@ def lightgallery(links):
             link, alt = l
             x = link.rfind('.')
             img = link[:x] + '_small' + link[x:]
-        print '<a href="' + link + '"><img src="' + img + '" alt="' + alt + '"></a>'
+        print '<div class="border" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"></a></div>'
     print '</div>'
 
 # -----------------------------------------------------------------------------
