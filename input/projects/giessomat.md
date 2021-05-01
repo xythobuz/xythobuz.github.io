@@ -133,6 +133,109 @@ lightgallery([
 ])
 %-->
 
+These are the circuit diagrams for the controller and user interface.
+
+<div class="textwrap"><pre class="ascii gallery">
+Giess-o-mat Controller Schematic
+
+             -------|USB|-------                        -----------
+            |       |___|       |             +12V <---|x IN  OUT x|---> +5V_ESP
+            |  P06         +5V x|---> +5V_ESP          |  5V Buck  |
+            |  P07         CMD  |              GND <---|x GND GND x|
+            |  P08         P10  |                       -----------
+     R5 <---|x P15         P09  |
+     R6 <---|x P02         P13 x|                       -----------
+     R7 <---|x P00         GND x|---> GND     +12V <---|x IN  OUT x|---> +5V_R
+     R8 <---|x P04    E    P12 x|                      |  5V Buck  |
+            |  P16    S    P14 x|---> R2       GND <---|x GND GND x|
+            |  P17    P    P27 x|---> R1                -----------
+     R3 <---|x P05    -    P26 x|---> SW_B
+     R4 <---|x P18    3    P25 x|---> SW_T              -----------
+            |x P19    2    P33 x|             +12V <---|x IN  OUT x|---> +6V
+    GND <---|x GND         P32 x|                      |  6V Buck  |
+ESP_SDA <---|x P21         P35  |              GND <---|x GND GND x|
+            |  P03         P34  |                       -----------
+            |  P01          SN  |
+ESP_SCL <---|x P22          SP  |                        -------
+            |x P23          EN  |              +12V <---|x +12V |
+    GND <---|x GND        +3V3 x|---> +3V3  ESP_SDA <---|x SDA  | UI
+            |                   |           ESP_SCL <---|x SCL  | Conn.
+             -------------------                GND <---|x GND  |
+                                                         -------
+
+           ---------------------                       ---------------------
+          |        Relais       |                     |        Relais       |
+  GND <---|x GND    ----   NC1 x|             GND <---|x GND    ----   NC1 x|
+   R1 <---|x R1    |    | COM1 x|---> +12V     R5 <---|x R1    |    | COM1 x|---> +12V
+   R2 <---|x R2     ----   NO1 x|---> V1       R6 <---|x R2     ----   NO1 x|---> V5
+   R3 <---|x R3     ----   NC2 x|              R7 <---|x R3     ----   NC2 x|
+   R4 <---|x R4    |    | COM2 x|---> +12V     R8 <---|x R4    |    | COM2 x|---> +6V
+ +3V3 <---|x VCC    ----   NO2 x|---> V2     +3V3 <---|x VCC    ----   NO2 x|---> P1
+          |         ----   NC3 x|                     |         ----   NC3 x|
+          |        |    | COM3 x|---> +12V            |        |    | COM3 x|---> +6V
+          |         ----   NO3 x|---> V3              |         ----   NO3 x|---> P2
+          |         ----   NC4 x|                     |         ----   NC4 x|
+          |        |    | COM4 x|---> +12V            |        |    | COM4 x|---> +6V
+          |         ----   NO4 x|---> V4              |         ----   NO4 x|---> P3
+          |x VCC                |                     |x VCC                |
++5V_R <---|x JC-VCC             |           +5V_R <---|x JC-VCC             |
+           ---------------------                       ---------------------
+
+  GND <---------> Float Switch 1 COM        GND <---------> Float Switch 1 COM
+ SW_B <---------> Float Switch 1 NO        SW_B <---------> Float Switch 1 NO
+           |                                         |
+          ---                                       ---
+      LED / \-->                                LED / \-->
+          ---                                       ---
+           |                                         |
+          ---                                       ---
+         |   |                                     |   |
+      1k |   |                                  1k |   |
+         |   |                                     |   |
+          ---                                       ---
+           |                                         |
+         +3.3V                                     +3.3V
+</pre><pre class="ascii gallery">
+Giess-o-mat User Interface Schematic
+
+            -------|USB|-------
+           |       |___|       |
+           |x D13         D12 x|                         Level Conv.
+           |x 3V3    A    D11 x|                         -----------
+           |x REF    R    D10 x|---> LCD_TX  +5V_UI <---|x 5V   3V x|
+           |x A0     D     D9 x|                GND <---|x GND GND x|
+           |x A1     U     D8 x|---> KP_R4   SDA_UI <---|x D5   D3 x|---> ESP_SDA
+           |x A2     I     D7 x|---> KP_R3   SCL_UI <---|x C5   C3 x|---> ESP_SCL
+           |x A3     N     D6 x|---> KP_R2               -----------
+SDA_UI <---|x A4     O     D5 x|---> KP_R1
+SCL_UI <---|x A5           D4 x|---> KP_C3               Connector
+           |x A6           D3 x|---> KP_C2                -------
+           |x A7     N     D2 x|---> KP_C1      +12V <---|x +12V |
++5V_UI <---|x 5V     A    GND x|---> GND     ESP_SDA <---|x SDA  |
+           |x RST    N    RST x|             ESP_SCL <---|x SCL  |
+   GND <---|x GND    O     RX x|                 GND <---|x GND  |
+  +12V <---|x VIN          TX x|                          -------
+           |                   |
+            -------------------                  ----------
+                                    ESP_SDA <---|   2.2k   |---
+            KP_C1 KP_C2 KP_C3                    ----------    |--> 3.3V
+              |     |     |         ESP_SCL <---|   2.2k   |---
+           -------------------                   ----------
+          |  ---   ---   ---  |
+KP_R1 <---| | 1 | | 2 | | 3 | |                 --------------------------
+          |  ---   ---   ---  |     +5V_UI <---|x VCC                     |
+          |  ---   ---   ---  |     LCD_TX <---|x RX                      |
+KP_R2 <---| | 4 | | 5 | | 6 | |        GND <---|x GND                     |
+          |  ---   ---   ---  |                |   --------------------   |
+          |  ---   ---   ---  |                |  |                    |  |
+KP_R3 <---| | 7 | | 8 | | 9 | |                |  |         LCD        |  |
+          |  ---   ---   ---  |                |  |        20x4        |  |
+          |  ---   ---   ---  |                |  |                    |  |
+KP_R4 <---| | * | | 0 | | # | |                |   --------------------   |
+          |  ---   ---   ---  |                |                          |
+           -------------------                  --------------------------
+</pre></div>
+
 ## Future Extensions
 
 I have now been running capacitive ground moisture level sensors in a couple of my plants for around a year, logging the data using my [ESP-Env project](https://git.xythobuz.de/thomas/esp-env) to an [InfluxDB](https://www.influxdata.com/) instance running on my NAS, with a [Grafana](https://grafana.com/) UI running on there as well.

@@ -46,6 +46,22 @@ pre {
     border-radius: 10px;
 }
 
+.ascii {
+    font-size: 0.7em;
+    line-height: 1;
+    max-height: max-content;
+    overflow-y: auto;
+    font-weight: bold;
+    width: max-content;
+}
+
+.textwrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .show-comments {
     background: none;
     border: none;
