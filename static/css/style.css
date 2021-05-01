@@ -131,9 +131,16 @@ span.font-small {
     font-size: 0.6em;
 }
 
+.lightgallery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .border {
     overflow: hidden;
-    height: auto;
+    height: max-content;
     display: inline-block;
     border-radius: 10px;
     vertical-align: middle;

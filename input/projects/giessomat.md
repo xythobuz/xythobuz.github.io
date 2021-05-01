@@ -165,6 +165,7 @@ And building all this up on perf-boards is really not much work.
 ## Links
 
 You can find [all the source code for the device itself](https://git.xythobuz.de/thomas/giess-o-mat) (both the UI and the Controller) as well as the OpenSCAD [design files for the 3D printed parts](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/giessomat) on my [Gitea instance](https://git.xythobuz.de).
+The project is also [mirrored on GitHub](https://github.com/xythobuz/giess-o-mat).
 
 ## License
 
