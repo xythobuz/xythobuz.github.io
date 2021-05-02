@@ -4,7 +4,7 @@ parent: projects
 position: 6
 github: https://git.xythobuz.de/thomas/giess-o-mat
 date: 2021-03-29
-update: 2021-05-01
+update: 2021-05-02
 ---
 
 Since moving into my own flat in 2019 I started growing quite a bunch of plants.
@@ -134,8 +134,12 @@ lightgallery([
 %-->
 
 These are the circuit diagrams for the controller and user interface.
+Everything is powered by a 12V power supply.
+I am using two 5V regulators, one for powering the ESP32 and one for powering the relais coils.
+This was my quick-and-dirty way of getting the power rails clean enough that the ESP is not resetting when toggling a relais.
+The valves are directly fed 12V and another regulator produces 6V for the peristaltic pumps.
 
-<div class="textwrap"><pre class="ascii gallery">
+<div class="textwrap"><pre class="ascii">
 Giess-o-mat Controller Schematic
 
              -------|USB|-------                        -----------
@@ -181,20 +185,20 @@ ESP_SCL <---|x P22          SP  |                        -------
 +5V_R <---|x JC-VCC             |           +5V_R <---|x JC-VCC             |
            ---------------------                       ---------------------
 
-  GND <---------> Float Switch 1 COM        GND <---------> Float Switch 1 COM
- SW_B <---------> Float Switch 1 NO        SW_B <---------> Float Switch 1 NO
-           |                                         |
-          ---                                       ---
-      LED / \-->                                LED / \-->
-          ---                                       ---
-           |                                         |
-          ---                                       ---
-         |   |                                     |   |
-      1k |   |                                  1k |   |
-         |   |                                     |   |
-          ---                                       ---
-           |                                         |
-         +3.3V                                     +3.3V
+  GND <--------------> Float Switch 1 COM     GND <--------------> Float Switch 1 COM
+ SW_B <--------------> Float Switch 1 NO     SW_B <--------------> Float Switch 1 NO
+          |      |                                    |      |
+         ---     |                                   ---     |
+     LED / \-->  |                               LED / \-->  |
+         ---     |                                   ---     |
+          |      |                                    |      |
+         ---    ---                                  ---    ---
+        |   |  |   |                                |   |  |   |
+     1k |   |  |   | 1k                          1k |   |  |   | 1k
+        |   |  |   |                                |   |  |   |
+         ---    ---                                  ---    ---
+          |      |                                    |      |
+        +3.3V ---                                   +3.3V ---
 </pre><pre class="ascii gallery">
 Giess-o-mat User Interface Schematic
 
@@ -235,6 +239,14 @@ KP_R4 <---| | * | | 0 | | # | |                |   --------------------   |
           |  ---   ---   ---  |                |                          |
            -------------------                  --------------------------
 </pre></div>
+
+As you can see, the schematic is relatively simple, not doing much more than connecting some modules with each other.
+I did not (have to) add any kind of filtering or other passive circuitry.
+
+On the schematic above, only the four required connections between controller and user interface are shown.
+I have used a DB-9 connector, running the power switch as well as the other voltages generated on the controller over it.
+This is so the machine can be turned on and off at the UI.
+I also placed some cheap little voltmeter modules on the UI, showing the other voltages.
 
 ## Future Extensions
 
