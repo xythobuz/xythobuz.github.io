@@ -1,5 +1,6 @@
 title: Blog
 post: Arch Linux Installation
+description: List of commands needed for my Arch install
 date: 2019-09-09
 comments: true
 ---

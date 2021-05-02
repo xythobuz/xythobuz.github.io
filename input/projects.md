@@ -40,9 +40,7 @@ for p in mpages:
         dateto = " (%s - %s)" % (year, p.get("update", "")[0:4])
 
     print "  * **[%s](%s)**%s" % (title, p.url, dateto)
+
+    if p.get("description", "") != "":
+        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
 %-->
-
-Some other things not explicitly documented on this page are linked below.
-
- * **[BaconBar](baconbar)** Reddit Client ([Softpedia Review](http://mac.softpedia.com/get/Internet-Utilities/BaconBar.shtml))
- * **[OpenRaider](https://github.com/xythobuz/OpenRaider)** Free and Open Source classic Tomb Raider game engine

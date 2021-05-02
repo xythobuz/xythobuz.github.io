@@ -24,6 +24,9 @@ for p in posts:
 
     date = datetime.strptime(p.date, "%Y-%m-%d").strftime("%B %d, %Y")
     print "  * **[%s](%s)** - %s" % (p.post, p.url, date)
+
+    if p.get("description", "") != "":
+        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
 %-->
 
  [rss]: rss.xml

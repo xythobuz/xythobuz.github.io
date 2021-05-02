@@ -1,5 +1,6 @@
 title: Blog
 post: DisplayBacklight
+description: Mac OS X Arduino ambilight clone
 date: 2017-05-13
 comments: true
 flattr: true

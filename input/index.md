@@ -45,6 +45,9 @@ for p in posts[0:5]:
         print "  * **[%s](%s)** - %s" % (p.post, p.url, date)
     else:
         print "  * **[%s](%s)** - %s" % (p.title, p.url, date)
+
+    if p.get("description", "") != "":
+        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
 %-->
 
 ### Tweets
