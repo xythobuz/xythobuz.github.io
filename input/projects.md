@@ -20,6 +20,8 @@ mpages = [p for p in dpages if any(x in p.get("parent", "") for x in [ 'projects
 mpages.sort(key=lambda p: [int(p.get("position", "999"))])
 for p in mpages:
     print "  * **[%s](%s)**" % (p.title, p.url)
+    if p.get("description", "") != "":
+        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
 
 dpages = [p for p in enpages if p.get("date", "") != ""]
 mpages = [p for p in dpages if any(x in p.get("parent", "") for x in [ 'projects', 'stuff' ])]

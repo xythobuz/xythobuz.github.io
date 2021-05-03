@@ -13,6 +13,8 @@ mpages = [p for p in pages if p.get("parent", "") == "3d-printing" and p.lang ==
 mpages.sort(key=lambda p: int(p["position"]))
 for p in mpages:
     print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
+    if p.get("description", "") != "":
+        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
 %-->
 
 If you're interested in my 3D print designs, take a look [at my Thingiverse account](https://www.thingiverse.com/xythobuz/designs) or my [Git Repository](https://git.xythobuz.de/thomas/3d-print-designs).

@@ -1,5 +1,6 @@
 title: Blog
 post: Spacenav-Plus for Mac OS X
+description: Fork of Linux driver and added software support
 date: 2016-05-25
 comments: true
 flattr: true

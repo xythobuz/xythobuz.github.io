@@ -1,5 +1,6 @@
 title: Blog
 post: Flysky Mac OS X joystick driver
+description: Using cheap RC remotes with PC simulators
 date: 2015-12-20
 comments: true
 flattr: true

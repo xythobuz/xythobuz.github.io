@@ -1,5 +1,6 @@
 title: Blog
 post: Arduino FrSky Telemetry
+description: Custom telemetry display for cheap RC remotes
 date: 2016-11-05
 comments: true
 flattr: true

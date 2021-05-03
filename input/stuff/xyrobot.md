@@ -22,6 +22,8 @@ mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en
 mpages.sort(key=lambda p: int(p["position"]))
 for p in mpages:
     print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
+    if p.get("description", "") != "":
+        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
 %-->
 
 Now some pictures:

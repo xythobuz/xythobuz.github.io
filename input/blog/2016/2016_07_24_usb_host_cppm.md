@@ -1,5 +1,6 @@
 title: Blog
 post: Arduino USB Host CPPM
+description: Controlling quadcopter with USB joystick
 date: 2016-07-24
 comments: true
 flattr: true
