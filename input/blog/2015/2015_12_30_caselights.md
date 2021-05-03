@@ -1,5 +1,6 @@
 title: Blog
 post: CaseLights
+description: RGB LED / UV light controller with Arduino for Linux and Mac
 comments: true
 flattr: true
 github: https://github.com/xythobuz/CaseLights
@@ -75,3 +76,5 @@ And you can select one of the system audio input devices to visualize sounds and
 
 You can find all Arduino and Mac code in the [CaseLights GitHub repository](https://github.com/xythobuz/CaseLights).
 
+In August of 2019, I also added a Linux version of the host control software, as a PyQt status bar app.
+The code for that is in the repo as well.
