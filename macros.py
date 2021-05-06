@@ -212,14 +212,18 @@ _RSS_ITEM = """
 
 def hook_postconvert_rss():
     items = []
-    posts = [p for p in pages if "post" in p] # get all blog post pages
+    posts = [p for p in pages if "date" in p]
     posts.sort(key=lambda p: p.date, reverse=True)
     posts = posts[:10]
     for p in posts:
-        title = p.post
+        title = p.title
+        if "post" in p:
+            title = p.post
         link = "%s/%s" % (BASE_URL, p.url)
         desc = p.html.replace("href=\"img", "%s%s%s" % ("href=\"", BASE_URL, "/img"))
         desc = desc.replace("src=\"img", "%s%s%s" % ("src=\"", BASE_URL, "/img"))
+        desc = desc.replace("href=\"/img", "%s%s%s" % ("href=\"", BASE_URL, "/img"))
+        desc = desc.replace("src=\"/img", "%s%s%s" % ("src=\"", BASE_URL, "/img"))
         desc = htmlspecialchars(desc)
         date = time.mktime(time.strptime("%s 12" % p.date, "%Y-%m-%d %H"))
         date = email.utils.formatdate(date)
