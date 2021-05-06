@@ -6,7 +6,7 @@ comments: true
 flattr: true
 ---
 
-<span style="font-size: small;">[...back to 3D-Printing overview](3d-printing.html)</span>
+<span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>
 
 **More content coming soon!**
 

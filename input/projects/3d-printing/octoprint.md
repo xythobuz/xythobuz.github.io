@@ -6,7 +6,7 @@ comments: true
 flattr: true
 ---
 
-<span style="font-size: small;">[...back to 3D-Printing overview](3d-printing.html)</span>
+<span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>
 
 All my 3D printers are connected to a Raspberry Pi running [OctoPrint](https://octoprint.org/).
 For ease of use, I suggest downloading and installing a pre-made [OctoPi image](https://octoprint.org/download/).
@@ -203,4 +203,4 @@ Finally, add the script as a cronjob using `crontab -e`:
     */5 * * * * sudo -u pi /home/pi/foto-script/upload.sh >/dev/null 2>/dev/null
 
 And that's it. An updated photo will appear on your webserver every 5 minutes.
-
+You can take a look at it [on my website](printer.html).

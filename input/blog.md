@@ -9,7 +9,7 @@ noheader: true
 
 # Blog Archive
 
-To receive my latest updates, you can subscribe to the [RSS Feed! ![RSS Logo][logo]][rss]
+To receive my latest updates, you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
 
 <!--%
 from datetime import datetime
@@ -28,6 +28,3 @@ for p in posts:
     if p.get("description", "") != "":
         print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
 %-->
-
- [rss]: rss.xml
- [logo]: img/rss.png
