@@ -1,6 +1,7 @@
 title: Blog
 post: Open-Smartwatch
 date: 2021-05-05
+update: 2021-05-08
 ---
 
 Because of [a recent article on Hackaday](https://hackaday.com/2021/04/08/an-open-source-smart-watch-youd-actually-wear/) I was made aware of [the Open-Smartwatch project](https://open-smartwatch.github.io/) from [Paul's 3D Things](https://p3dt.net/).
@@ -37,7 +38,7 @@ Just for fun, and because for me it was the easier solution, I re-created the co
 The hole sizes can now be specified easily, and I tweaked some other small things.
 I added button labels to the top piece, added rounded edges to the strap parts and modified the strap mounting piece on the bottom part so all strap pieces are the same and you don't need two special ones.
 
-My design can be found in [the 'openscad' branch of my 3d-files fork](https://github.com/xythobuz/3d-files/tree/openscad).
+My design can be found in [the 'openscad' branch of my 3d-files fork](https://github.com/xythobuz/3d-files/tree/openscad) and I made [a pull request for them](https://github.com/Open-Smartwatch/3d-files/pull/7).
 
 <!--%
 lightgallery([
