@@ -232,7 +232,7 @@ def hook_postconvert_rss():
     items = "".join(items)
 
     title = "xythobuz.de Blog"
-    link = "%s/blog.html" % BASE_URL
+    link = "%s" % BASE_URL
     feed = "%s/rss.xml" % BASE_URL
     desc = htmlspecialchars("xythobuz Electronics & Software Projects")
     date = email.utils.formatdate()

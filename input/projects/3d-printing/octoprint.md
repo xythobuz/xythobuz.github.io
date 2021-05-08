@@ -27,15 +27,16 @@ I've decided to simply use the GPIOs at the top of the Raspberry Pi pinheader no
 
 ### Automatically Connect to Printer
 
-[Bernd Zeimetz has a great writeup on how to auto-connect to the serial port](https://bzed.de/post/2017/11/octoprint_autoconnect_printer/) of your 3D printer. Here is the very brief version of it:
+[Bernd Zeimetz has a great writeup on how to auto-connect to the serial port](https://bzed.de/post/2017/11/octoprint_autoconnect_printer/) of your 3D printer.
+Here is the brief version of it, slightly modified to work with current OctoPrint versions.
 
 Create the script `/home/pi/connect_octoprint.py` with the following contents:
 
 <pre class="sh_python">
-#!/home/pi/OctoPrint/venv/bin/python
+#!/home/pi/oprint/bin/python2
 
 OCTOPRINT_URL = 'http://localhost:5000/api/connection'
-API_KEY = 'AAABBB000YOURAPIKEYHERE000BBBAAA'
+API_KEY = 'YOUR_API_KEY_HERE'
 BAUDRATE = 115200
 
 import requests
@@ -44,15 +45,15 @@ import sys
 port = sys.argv[1]
 headers = {'X-Api-Key': API_KEY}
 json = {
-  "command": "connect",
-  "port": port,
-  "baudrate": BAUDRATE,
+    "command": "connect",
+    "port": port,
+    "baudrate": BAUDRATE,
 }
 
 r = requests.post(
-        OCTOPRINT_URL,
-        json=json,
-        headers=headers
+    OCTOPRINT_URL,
+    json=json,
+    headers=headers
 )
 
 if (r.status_code == 204):
@@ -64,6 +65,7 @@ else:
 
 Make sure to replace the API Key from your OctoPrint user settings page.
 Also change the baudrate if needed.
+Don't forget to make the script executable with `chmod a+x connect_octoprint.py`!
 
 Now create the file `/etc/systemd/system/octoprint_connect@.service` with the following contents:
 
@@ -87,7 +89,7 @@ sudo systemctl daemon-reload
 Find out the USB Vendor and Product ID of the 3D printer serial port:
 
 <pre class="sh_sh">
-lsusb -v | grep -iE ‘(^bus|idvendor|idproduct)’
+lsusb -v | grep -iE '(^bus|idvendor|idproduct)'
 </pre>
 
 Then create the file `/etc/udev/rules.d/3dprinter.rules` and modify its contents with the IDs you got from the previous step:
@@ -95,7 +97,13 @@ Then create the file `/etc/udev/rules.d/3dprinter.rules` and modify its contents
     KERNEL=="tty*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", \
         TAG+="systemd", ENV{SYSTEMD_WANTS}="octoprint_connect@%k.service"
 
-That should be it. If it doesn't work, there's some debugging hints in the article linked above.
+That should be it.
+If it doesn't work, there's some debugging hints in the article linked above, like:
+
+<pre class="sh_sh">
+systemctl list-units 'octoprint_connect*'
+journalctl -u octoprint_connect@ttyUSB0.service
+</pre>
 
 ### Physical Power Button
 
