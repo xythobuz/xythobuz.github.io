@@ -25,6 +25,34 @@ I've decided to simply use the GPIOs at the top of the Raspberry Pi pinheader no
 
 [Here are the instructions to add commands for controlling the printer power](https://github.com/foosel/OctoPrint/wiki/Controlling-a-relay-board-from-your-RPi#manual-way). I'd suggest using this way of adding some system actions to OctoPrint, as these can also be used from the Telegram Plugin for example. This is not the case when using the PSU Control Plugin in OctoPrint.
 
+The system commands are also described in the [OctoPrint docs](https://docs.octoprint.org/en/master/configuration/config_yaml.html#system).
+Mine look like this.
+
+    system:
+        actions:
+        -   action: all on
+            command: gpio -g mode 20 out && gpio -g write 20 0 && gpio -g mode 26 out
+                && gpio -g write 26 0
+            name: Turn on printer & lights
+        -   action: all off
+            command: gpio -g write 20 1 && gpio -g mode 20 in && gpio -g write 26 1 &&
+                gpio -g mode 26 in
+            confirm: You are about to turn off the printer and the lights.
+            name: Turn off printer & lights
+        -   action: lights on
+            command: gpio -g mode 20 out && gpio -g write 20 0
+            name: Turn on lights
+        -   action: lights off
+            command: gpio -g write 20 1 && gpio -g mode 20 in
+            name: Turn off lights
+        -   action: printer on
+            command: gpio -g mode 26 out && gpio -g write 26 0
+            name: Turn on printer
+        -   action: printer off
+            command: gpio -g write 26 1 && gpio -g mode 26 in
+            confirm: You are about to turn off the printer.
+            name: Turn off printer
+
 ### Automatically Connect to Printer
 
 [Bernd Zeimetz has a great writeup on how to auto-connect to the serial port](https://bzed.de/post/2017/11/octoprint_autoconnect_printer/) of your 3D printer.
