@@ -37,6 +37,25 @@ My design files for the mounting bracket [can be found on my Gitea server](https
 
 My design files for the filament holder [can be found on my Gitea server](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/ikea-lack).
 
+## Lights
+
+To be able to better see in-progress prints, I decided to mount some LED light strips to the bottom sides of the two upper tables.
+I am using 12V warm-white LED strips with 120 LEDs per meter.
+They are simply connected to the 12V power supply of the Fabrikator Mini.
+That was the easiest solution for now, although they flicker somewhat when the Fabrikator Mini is running.
+I have to think of another solution for that, probably a second power supply.
+
+<!--%
+lightgallery([
+    [ "img/lack_light_switches.png", "Design of my light switch mount" ],
+    [ "img/lack_lights_1.jpg", "Finished light switches" ],
+    [ "img/lack_lights_2.jpg", "Top level lights" ],
+    [ "img/lack_lights_3.jpg", "Bottom level lights" ]
+])
+%-->
+
+My design files for the light switch mount [can be found on my Gitea server](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/ikea-lack).
+
 ## Concrete slab for noise and vibration dampening
 
 Unfortunately, because the Ikea Lack tables are very lightweight and also hollow, they tend to amplify the sound coming from the 3D printers on them.

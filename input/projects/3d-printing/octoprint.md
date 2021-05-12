@@ -153,8 +153,8 @@ and enter something like this:
 import time
 import RPi.GPIO as GPIO
 
-sleep_timeout = 1000
-sleep_toggle = 5.0
+hold_timeout = 2000
+sleep_toggle = 2000
 pin_button = 5
 pin_power = 3
 
@@ -166,10 +166,12 @@ GPIO.setup(pin_power, GPIO.IN)
 GPIO.setup(pin_power, GPIO.OUT, initial=GPIO.input(pin_power))
 
 while True:
-    channel = GPIO.wait_for_edge(pin_button, GPIO.FALLING, timeout=sleep_timeout)
+    channel = GPIO.wait_for_edge(pin_button, GPIO.FALLING)
     if channel is not None:
-        GPIO.output(pin_power, not GPIO.input(pin_power))
-        time.sleep(sleep_toggle)
+        time.sleep(hold_timeout / 1000.0)
+        if not GPIO.input(pin_button):
+            GPIO.output(pin_power, not GPIO.input(pin_power))
+            time.sleep(sleep_toggle / 1000.0)
 
 GPIO.cleanup()
 </pre>
@@ -193,11 +195,11 @@ Now also make this script executable, register it for execution on boot, and run
 
 <pre class="sh_sh">
 sudo chmod a+x /etc/init.d/octopi-power-button
-sudo update-rc.d /etc/init.d/octopi-power-button defaults
+sudo update-rc.d octopi-power-button defaults
 sudo /etc/init.d/octopi-power-button
 </pre>
 
-Now every time you press the button (with a 5s debounce delay afterwards) the printer power will be toggled.
+Now simply hold your power button for two seconds and the printer power will be toggled.
 
 ### Automatic Photo Upload
 
