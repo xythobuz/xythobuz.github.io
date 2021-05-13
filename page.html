@@ -92,19 +92,21 @@ else:
                         print "<i>Last updated at %s.</i>" % date
         %-->
         {{ __content__ }}
+        <hr>
         <!--%
             # Disqus Comments (only show button to load afterwards)
             if page.get("comments", "false") == "true":
-                print '<div style="margin-top: 1em; text-align: center;">'
+                print '<div style="text-align: center;">'
                 print '<button class="show-comments">Load Disqus comments</button>'
+                print '<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>'
                 print '</div>'
                 print '<div id="disqus_thread"></div>'
-                print '<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>'
+                print '<hr>'
             elif page.get("comments", "false") != "false":
-                print '<p><a href="%s">Head over here to discuss this article!</a></p>' % page.get("comments", "false")
+                print '<div style="text-align: center;"><a href="%s">Head over here to discuss this article!</a></div>' % page.get("comments", "false")
+                print '<hr>'
         %-->
     </div>
-
     <div id="footer">
         <a href="https://hg.sr.ht/~obensonne/poole">Poole</a>
         &middot;
