@@ -1,9 +1,8 @@
 title: Ikea Lack Table DIY
 description: Another iteration of the DIY Ikea Lack 3D printer shelves
 parent: 3d-printing
-position: 40
+position: 30
 comments: true
-flattr: true
 ---
 
 <span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>

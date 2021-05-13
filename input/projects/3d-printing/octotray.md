@@ -1,7 +1,7 @@
 title: OctoTray
 description: Linux PyQt tray application to control OctoPrint
 parent: 3d-printing
-position: 35
+position: 50
 comments: true
 github: https://git.xythobuz.de/thomas/OctoTray
 date: 2021-05-08
@@ -24,7 +24,7 @@ lightgallery([
 You need to enter the hostnames / IPs and the API keys of your printers at the beginning of the python file in the repo.
 The program will automatically detect if you are using the [PSU Control OctoPrint Plugin](https://plugins.octoprint.org/plugins/psucontrol/) it will use that to toggle the power.
 Otherwise it looks for custom system commands, named "all on" and "all off", as described in the [OctoPrint docs](https://docs.octoprint.org/en/master/configuration/config_yaml.html#system).
-Mine look like this.
+To give you an example, mine look like this.
 
     system:
         actions:

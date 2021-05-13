@@ -1,9 +1,8 @@
 title: CTC i3 Pro B
-description: My modifications for the CTC i3 Pro B
+description: Experiences with and modifications to my chinese Prusa i3 clone
 parent: 3d-printing
 position: 20
 comments: true
-flattr: true
 ---
 
 <span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>

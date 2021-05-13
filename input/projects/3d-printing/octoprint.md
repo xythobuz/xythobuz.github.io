@@ -1,9 +1,8 @@
 title: OctoPrint Setup
 description: Setting up OctoPrint and some common improvements
 parent: 3d-printing
-position: 30
+position: 40
 comments: true
-flattr: true
 ---
 
 <span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>
@@ -12,7 +11,7 @@ All my 3D printers are connected to a Raspberry Pi running [OctoPrint](https://o
 For ease of use, I suggest downloading and installing a pre-made [OctoPi image](https://octoprint.org/download/).
 Here on this page I describe some common steps and improvements I do on each of them.
 
-### Controlling a Power Supply
+## Controlling a Power Supply
 
 To turn the power for the 3D printer on and off from within OctoPrint, there are different methods available depending on the setup of your 3D printer.
 If you are using a standard fixed-voltage brick power supply, you can use a cheap relais board to switch the power between your supply and the printer.
@@ -53,7 +52,7 @@ Mine look like this.
             confirm: You are about to turn off the printer.
             name: Turn off printer
 
-### Automatically Connect to Printer
+## Automatically Connect to Printer
 
 [Bernd Zeimetz has a great writeup on how to auto-connect to the serial port](https://bzed.de/post/2017/11/octoprint_autoconnect_printer/) of your 3D printer.
 Here is the brief version of it, slightly modified to work with current OctoPrint versions.
@@ -133,7 +132,7 @@ systemctl list-units 'octoprint_connect*'
 journalctl -u octoprint_connect@ttyUSB0.service
 </pre>
 
-### Physical Power Button
+## Physical Power Button
 
 Besides controlling eg. an ATX power supply or a relay connecting the printer to the power supply, I also wanted a push-button connected to the Raspberry Pi that can toggle the power supply using the aforementioned connection on the Pi.
 This can be solved using a simple Python script.
@@ -201,7 +200,7 @@ sudo /etc/init.d/octopi-power-button
 
 Now simply hold your power button for two seconds and the printer power will be toggled.
 
-### Automatic Photo Upload
+## Automatic Photo Upload
 
 As you may have seen, all my 3D printer are [uploading a photo every 5 minutes](printer.html) to this webserver.
 Achieving this is very simple.

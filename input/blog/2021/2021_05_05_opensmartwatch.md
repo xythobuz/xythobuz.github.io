@@ -1,5 +1,6 @@
 title: Blog
 post: Open-Smartwatch
+description: Case design in OpenSCAD for my new (broken) Open-Smartwatch
 date: 2021-05-05
 update: 2021-05-08
 ---
