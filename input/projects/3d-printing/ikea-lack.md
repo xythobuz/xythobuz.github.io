@@ -19,8 +19,14 @@ Nonetheless I decided to design my own simple brackets to mount the feet of one 
 
 For the middle level of the tower, I added some pieces of wood to make more space, so it can fit my large printer comfortably.
 
+I also mounted various tools that I often need while working with the printer to the side of the top Lack feet, just using some nails.
+This includes snips, a razor blade scraper, tweezers and a brass brush for the nozzle.
+
 <!--%
 lightgallery([
+    [ "img/lack_corner.jpg", "Closer view of mounting bracket" ],
+    [ "img/lack_extension.jpg", "Wooden extensions" ],
+    [ "img/lack_tools.jpg", "Tools mounted on extension" ],
     [ "img/lack-simple-bracket.png", "Design of my mounting bracket" ]
 ])
 %-->
@@ -31,9 +37,33 @@ My design files for the mounting bracket [can be found on my Gitea server](https
 
 
 
+<!--%
+lightgallery([
+    [ "img/fabmin_side2.jpg", "Side view of Fabrikator Mini on slide out table" ],
+    [ "img/lack_slide_table.jpg", "Closer view of slide out mechanism" ],
+])
+%-->
+
 ## Filament holder
 
+Before building this Lack tower, I had the filament spool mounted on a holder on top of the 3D printer.
+For the Fabrikator Mini this is still possible, as it is small enough, but the CTC i3 Pro B does not fit with spools ontop into the tower while having a resonable height for the third level.
+Because of that, I experimented with different spool mounting solutions.
+As a first temporary step, I had the spool on bearing rollers just on the table next to the Lack tower.
+To save space, I next attempted to mount a filament spool holder on the side of the tower, with the filament going through two rollers to direct it towards the extruder.
+This had far too much resistance however and I did not get any usable print results.
+My current solution is using the old plastic bar I had in use before, mounted on top of the printer.
+I simply affixed it to the front of the tower using a simple self-designed holder.
+Sidewards movement is prevented by two printed discs with two screws on each side.
+This solution works very well and does not take up too much further space.
 
+<!--%
+lightgallery([
+    [ "img/lack_spool_1.jpg", "Total view of the filament spool holder" ],
+    [ "img/lack_spool_2.jpg", "Close view of the mounting bracket" ],
+    [ "img/lack_spool_3.jpg", "Close view of the stopper" ]
+])
+%-->
 
 My design files for the filament holder [can be found on my Gitea server](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/ikea-lack).
 
@@ -121,3 +151,7 @@ lightgallery([
     [ "img/ikea_lack_concrete_v2_5.jpg", "After vibrating it" ]
 ])
 %-->
+
+To level out my uneven concrete plates, I have now added some insulating rubber mats (intended for washing machines) between the concrete and the printer, as well as some foam pieces between the concrete and the table.
+I've been told it should be the other way round for mechanical isolation reasons, but this would not work for evening out the surface for the printer to stand on.
+So I'm leaving it like that for now.

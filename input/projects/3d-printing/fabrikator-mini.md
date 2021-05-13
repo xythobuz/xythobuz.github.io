@@ -20,7 +20,12 @@ As a result, only very slow print speeds of about 20mm/s are feasible. I guess t
 
 Of course, as with every printer, there were some rough spots and problems, but with a bunch of modifications and different parts this machine is now firmly holding this place as my go-to workhorse printer.
 
-TODO photos
+<!--%
+lightgallery([
+    [ "img/fabmin_front.jpg", "Front view of Fabrikator Mini" ],
+    [ "img/fabmin_side.jpg", "Side view of Fabrikator Mini" ]
+])
+%-->
 
 ## Spool mount
 
@@ -140,7 +145,11 @@ Of course, the only real solution for these issues with PLA is a part cooling fa
 As there is not a lot of room available, there aren't many options, especially if the part cooling fan should be independently controllable from the 3D printer controller.
 Fortunately, [plasticmonk already designed a very good fan mount solution](https://www.thingiverse.com/thing:1469078), allowing a standard 5015 radial fan to be mounted to the bottom two screws of the hotend fan.
 
-TODO photo
+<!--%
+lightgallery([
+    [ "img/fabmin_filament_fan.jpg", "Filament fan on Fabrikator Mini" ]
+])
+%-->
 
 TODO wiring hotend heatbed part-fan hotend-fan
 
@@ -175,7 +184,11 @@ As the printer board is also connected to 12V and has its own 5V regulator, I de
 This way, the display backlight on my printer, as well as the mainboard, are turned off when the power supply relais is turned off.
 With an unmodified cable, the printer LEDs would be lit all the time the Pi is running.
 
-TODO photo
+<!--%
+lightgallery([
+    [ "img/fabmin_pi.jpg", "Raspberry Pi Zero mounted on Fabrikator Mini" ]
+])
+%-->
 
 ## Relay Board
 
@@ -185,7 +198,11 @@ As I already had my power supply, and because the current of the small Fabrikato
 
 Some more about controlling power supplies from OctoPrint [can be found on this page about my OctoPrint setups](octoprint.html).
 
-TODO photo
+<!--%
+lightgallery([
+    [ "img/fabmin_relais.jpg", "2-channel relais board mounted on Fabrikator Mini" ]
+])
+%-->
 
 ## Webcam
 
@@ -201,7 +218,8 @@ So one of my first self-made designs became the Webam Holder: an attachment piec
 
 <!--%
 lightgallery([
-    [ "img/fabmin_webcam_1.jpg", "My webcam holder" ]
+    [ "img/fabmin_webcam.jpg", "Side view of my webcam holder" ],
+    [ "img/fabmin_webcam_1.jpg", "Front view of my webcam holder" ]
 ])
 %-->
 
