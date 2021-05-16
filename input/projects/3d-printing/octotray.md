@@ -25,30 +25,15 @@ lightgallery([
 ])
 %-->
 
-You need to enter the hostnames / IPs and the OctoPrint API keys of your printers at the beginning of the python file in the repo.
+You need to enter the hostnames / IPs and the OctoPrint API keys of your printers in the settings dialog of the application.
 The program will automatically detect which method to use to switch the power.
 If you are using the [PSU Control OctoPrint Plugin](https://plugins.octoprint.org/plugins/psucontrol/) it will use that to toggle the power.
-Otherwise it looks for custom system commands, named "all on" and "all off", as described in the [OctoPrint docs](https://docs.octoprint.org/en/master/configuration/config_yaml.html#system).
+Also it looks for custom system commands, as described in the [OctoPrint docs](https://docs.octoprint.org/en/master/configuration/config_yaml.html#system).
 
 To give you an example of the system actions you could use to switch GPIOs from OctoPrint, take a look below at the excerpt of my 'config.yaml' file.
 
     system:
         actions:
-        -   action: all on
-            command: gpio -g mode 20 out && gpio -g write 20 0 && gpio -g mode 26 out
-                && gpio -g write 26 0
-            name: Turn on printer & lights
-        -   action: all off
-            command: gpio -g write 20 1 && gpio -g mode 20 in && gpio -g write 26 1 &&
-                gpio -g mode 26 in
-            confirm: You are about to turn off the printer and the lights.
-            name: Turn off printer & lights
-        -   action: lights on
-            command: gpio -g mode 20 out && gpio -g write 20 0
-            name: Turn on lights
-        -   action: lights off
-            command: gpio -g write 20 1 && gpio -g mode 20 in
-            name: Turn off lights
         -   action: printer on
             command: gpio -g mode 26 out && gpio -g write 26 0
             name: Turn on printer

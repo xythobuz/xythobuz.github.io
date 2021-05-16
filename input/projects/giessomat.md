@@ -4,8 +4,10 @@ parent: projects
 position: 6
 github: https://git.xythobuz.de/thomas/giess-o-mat
 date: 2021-03-29
-update: 2021-05-02
+update: 2021-05-16
 ---
+
+This project [was featured on Hackaday](https://hackaday.com/2021/05/14/automated-watering-machine-has-what-plants-crave-fertilizer/)!
 
 Since moving into my own flat in 2019 I started growing quite a bunch of plants.
 It started with carnivorous plants and some decorative stuff on the balcony (also good for the insects!).
