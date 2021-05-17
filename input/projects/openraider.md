@@ -10,6 +10,10 @@ In 2013 I decided to fork the [OpenRaider](http://openraider.sourceforge.net/) p
 I also wanted to learn a bit about 3D graphics and OpenGL.
 Without planning it, I completely rewrote the whole project in a span of about two years.
 
+<!--%
+printLatestRelease("xythobuz", "OpenRaider")
+%-->
+
 I wrote some blog posts about OpenRaider.
 
 * [Initial blog post about fork](2014_03_22_openraider.html)

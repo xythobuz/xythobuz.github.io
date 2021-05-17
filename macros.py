@@ -55,6 +55,61 @@ def lightgallery(links):
     print '</div>'
 
 # -----------------------------------------------------------------------------
+# github helper macros
+# -----------------------------------------------------------------------------
+
+import urllib, json
+
+def restRequest(url):
+    response = urllib.urlopen(url)
+    data = json.loads(response.read())
+    return data
+
+def restReleases(user, repo):
+    s = "https://api.github.com/repos/"
+    s += user
+    s += "/"
+    s += repo
+    s += "/releases"
+    return restRequest(s)
+
+def printLatestRelease(user, repo):
+    repo_url = "https://github.com/" + user + "/" + repo
+    print("<div class=\"releasecard\">")
+    print("Release builds for " + repo + " are <a href=\"" + repo_url + "/releases\">available on GitHub</a>.<br>\n")
+
+    releases = restReleases(user, repo)
+    if len(releases) <= 0:
+        print("No release has been published on GitHub yet.")
+        print("</div>")
+        return
+
+    releases.sort(key=lambda x: x["published_at"], reverse=True)
+    r = releases[0]
+    release_url = r["html_url"]
+    print("Latest release of <a href=\"" + repo_url + "\">" + repo + "</a>, at the time of this writing: <a href=\"" + release_url + "\">" + r["name"] + "</a> (" + datetime.strptime(r["published_at"], "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d %H:%M:%S") + ")\n")
+
+    if len(r["assets"]) <= 0:
+        print("<br>No release assets have been published on GitHub for that.")
+        print("</div>")
+        return
+
+    print("<ul>")
+    print("Release Assets:")
+    for a in r["assets"]:
+        size = int(a["size"])
+        ss = " "
+        if size >= (1024 * 1024):
+            ss += "(%.1f MiB)" % (size / (1024.0 * 1024.0))
+        elif size >= 1024:
+            ss += "(%d KiB)" % (size // 1024)
+        else:
+            ss += "(%d Byte)" % (size)
+
+        print("<li><a href=\"" + a["browser_download_url"] + "\">" + a["name"] + "</a>" + ss)
+    print("</ul></div>")
+
+# -----------------------------------------------------------------------------
 # preconvert hooks
 # -----------------------------------------------------------------------------
 
