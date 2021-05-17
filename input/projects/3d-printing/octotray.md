@@ -10,10 +10,6 @@ update: 2021-05-13
 
 <span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>
 
-<!--%
-printLatestRelease("xythobuz", "OctoTray")
-%-->
-
 To quickly print new stuff on one of my printers, I am using the [OctoPrint](https://octoprint.org) integration of [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer).
 Unfortunately, it does not allow me to turn on the printers power supply using the Raspberry Pi.
 But it is possible to do that via the [OctoPrint REST API](https://docs.octoprint.org/en/master/api/index.html).
@@ -22,11 +18,18 @@ It runs on Linux using the Python Qt5 bindings, but it has been tested on Window
 
 <!--%
 lightgallery([
-    [ "img/octotray_3.png", "Screenshot of OctoTray version 0.2" ],
+    [ "img/octotray_6.png", "Screenshot of OctoTray version 0.3" ],
+    [ "img/octotray_5.png", "Screenshot of settings dialog in OctoTray version 0.3" ],
     [ "img/octotray_2.png", "Screenshot of webcam viewer in OctoTray version 0.2" ],
-    [ "img/octotray_4.png", "Screenshot of status dialog in OctoTray version 0.2" ],
-    [ "img/octotray_1.png", "Screenshot of OctoTray version 0.1" ]
+    [ "img/octotray_4.png", "Screenshot of status dialog in OctoTray version 0.2" ]
 ])
+%-->
+
+To get started quickly, if you are running Windows or macOS, simply download the most recent pre-built binary from GitHub.
+For Linux, just run or install the program from the source repo directly.
+
+<!--%
+printLatestRelease("xythobuz", "OctoTray")
 %-->
 
 You need to enter the hostnames / IPs and the OctoPrint API keys of your printers in the settings dialog of the application.
@@ -49,3 +52,12 @@ To give you an example of the system actions you could use to switch GPIOs from 
 You can find the project [on my Gitea server](https://git.xythobuz.de/thomas/OctoTray) or on [GitHub](https://github.com/xythobuz/OctoTray).
 
 I also wrote a bit more about my OctoPrint setups [on this page](octoprint.html).
+
+Here are some older screenshots of OctoTray.
+
+<!--%
+lightgallery([
+    [ "img/octotray_3.png", "Screenshot of OctoTray version 0.2" ],
+    [ "img/octotray_1.png", "Screenshot of OctoTray version 0.1" ]
+])
+%-->
