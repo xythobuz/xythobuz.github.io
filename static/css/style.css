@@ -79,6 +79,7 @@ pre {
 .releasecard {
     border: 2px solid purple;
     width: max-content;
+    max-width: 100%;
     padding: 0.6em 1em 0em 1em;
     border-radius: 10px;
     background-color: lightgray;
