@@ -73,12 +73,20 @@ else:
                         print "<h1>%s</h1>" % (page.get("title", ""))
 
                 if page.get("date", "") != "":
-                    if page.get("lang", "en") == "de":
-                        date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%d.%m.%Y")
-                        print "<i>Ver&ouml;ffentlicht am %s.</i>" % date
+                    if page.get("title", "") == "Blog":
+                        if page.get("lang", "en") == "de":
+                            date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%d.%m.%Y")
+                            print "<i>Ver&ouml;ffentlicht am %s.</i>" % date
+                        else:
+                            date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
+                            print "<i>Published on %s.</i>" % date
                     else:
-                        date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-                        print "<i>Published at %s.</i>" % date
+                        if page.get("lang", "en") == "de":
+                            date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%d.%m.%Y")
+                            print "<i>Projekt gestartet am %s.</i>" % date
+                        else:
+                            date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
+                            print "<i>Project started on %s.</i>" % date
 
                 if page.get("date", "") != "" and page.get("update", "") != "":
                     print "<br>"
@@ -89,7 +97,7 @@ else:
                         print "<i>Zuletzt aktualisiert am %s.</i>" % date
                     else:
                         date = datetime.strptime(page["update"], "%Y-%m-%d").strftime("%B %d, %Y")
-                        print "<i>Last updated at %s.</i>" % date
+                        print "<i>Last updated on %s.</i>" % date
         %-->
         {{ __content__ }}
         <hr>
@@ -117,10 +125,6 @@ else:
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
         &middot;
         <a href="http://www.amazon.de/?_encoding=UTF8&amp;camp=1638&amp;creative=19454&amp;linkCode=ur2&amp;site-redirect=de&amp;tag=xythobuzorg-21">Amazon.de Affiliate</a>
-        &middot;
-        <a href="http://www.amazon.de/registry/wishlist/1TURV4XV2J3VT">Amazon.de Wishlist</a>
-        &middot;
-        <a href="http://steamcommunity.com/id/xythobuz/wishlist/?sort=price">Steam Wishlist</a>
         &middot;
         <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&nav=1&email=xythobuz@me.com">PayPal</a>
     </div>
