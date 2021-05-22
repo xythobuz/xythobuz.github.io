@@ -9,6 +9,22 @@ hr {
     color: purple; /* green; */ /* orange; */
 }
 
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid purple;
+}
+
+th, td {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
 #nav {
     border-bottom-style: solid;
     border-bottom-width: 2px;
