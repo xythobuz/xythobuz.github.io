@@ -8,6 +8,8 @@ update: 2021-05-21
 
 <span class="listdesc">[...back to RC-Vehicles overview](quadcopters.html)</span>
 
+The build started at the end of January 2017 and it was my main copter for flights indoors and outside in the garden for a long time.
+
 <!--%
 lightgallery([
     [ "img/xyaurora90_5.png", "Front left view" ],
@@ -17,16 +19,18 @@ lightgallery([
 %-->
 
 Here are some recordings of the FPV footage.
+Be aware that these videos are recorded from the received signal on the ground.
+Not only can you see lots of interference and other HF problems, the loss of quality from the video recorder and the YouTube encoding is also very noticeable.
+In real-life, the picture doesn't look *that* bad.
 
 <!--%
 lightgallery([
     [ "https://www.youtube.com/watch?v=VFPxYdl7hg0", "img/xyaurora90_firsttest_thumb.jpg", "First Brushless 90mm Quadcopter Testflight" ],
     [ "https://www.youtube.com/watch?v=V3l-RCW24_U", "img/xyaurora90_robocup_thumb.jpg", "Robocup German Open 2017 @Home Area Flyaround" ],
+    [ "https://www.youtube.com/watch?v=NqrONv2KYJw", "img/xyaurora90_test_flight_thumb.jpg", "Aurora90 test flight, crash and prop loss" ],
     [ "https://www.youtube.com/watch?v=b4heuNomMTk", "img/xyaurora90_wrong_channel_thumb.jpg", "Wrong FPV Channel" ]
 ])
 %-->
-
-The build started at the end of January 2017 and it was my main copter for flights indoors and outside in the garden for a long time.
 
 Initially I was worried about the **receiver** I'm using.
 I have an old modified transmitter with an FrSky DHT module, so I can only use D8-mode FrSky-compatible receivers.

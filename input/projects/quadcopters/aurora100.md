@@ -15,9 +15,13 @@ lightgallery([
 %-->
 
 Here are some recordings of the FPV footage.
+Be aware that these videos are recorded from the received signal on the ground.
+Not only can you see lots of interference and other HF problems, the loss of quality from the video recorder and the YouTube encoding is also very noticeable.
+In real-life, the picture doesn't look *that* bad.
 
 <!--%
 lightgallery([
+    [ "https://www.youtube.com/watch?v=MnF7B3rD5VM", "img/xyaurora100_crash_thumb.jpg", "Aurora100 flight with crash" ],
     [ "https://www.youtube.com/watch?v=798ncBkBHos", "img/xyaurora100_owl_thumb.jpg", "Micro Quadcopter attacked by Owl" ]
 ])
 %-->
