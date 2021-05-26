@@ -96,6 +96,12 @@ def printQuadcopterMenu():
     for p in mpages:
         printMenuItem(p, False, True, True)
 
+def printQuadcopterRelatedMenu():
+    mpages = [p for p in pages if p.get("show_in_quadcopters", "false") == "true"]
+    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+    for p in mpages:
+        printMenuItem(p, False, True, True)
+
 def printRobotMenuEnglish():
     mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
     mpages.sort(key=lambda p: int(p["position"]))

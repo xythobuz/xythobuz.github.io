@@ -6,6 +6,7 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/SerialGamepad
 parent: projects
+show_in_quadcopters: true
 position: 50
 ---
 

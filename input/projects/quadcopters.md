@@ -13,3 +13,9 @@ Of course I'm not flying illegally, I have a model flight insurance and I am a r
 <!--%
 printQuadcopterMenu()
 %-->
+
+The following projects are also related to my Quadcopter endeavours.
+
+<!--%
+printQuadcopterRelatedMenu()
+%-->

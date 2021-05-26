@@ -6,6 +6,7 @@ comments: true
 flattr: true
 github: https://github.com/xythobuz/FrSky-Telemetry-Arduino
 parent: projects
+show_in_quadcopters: true
 position: 90
 ---
 
