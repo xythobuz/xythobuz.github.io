@@ -12,19 +12,5 @@ noheader: true
 To receive my latest updates, you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
 
 <!--%
-from datetime import datetime
-posts = [p for p in pages if "post" in p] # get all blog post pages
-posts.sort(key=lambda p: p.get("date", "9999-01-01"), reverse=True) # sort post pages by date
-lastyear = "0"
-for p in posts:
-    year = p.get("date", "")[0:4]
-    if year != lastyear:
-        lastyear = year
-        print "\n\n#### %s\n" % (year)
-
-    date = datetime.strptime(p.date, "%Y-%m-%d").strftime("%B %d, %Y")
-    print "  * **[%s](%s)** - %s" % (p.post, p.url, date)
-
-    if p.get("description", "") != "":
-        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
+printBlogMenu()
 %-->
