@@ -11,10 +11,5 @@ All of these I'm flying with [FatShark Dominator v3 Camo Blue](https://hobbyking
 Of course I'm not flying illegally, I have a model flight insurance and I am a registered UAV pilot in the European Union! 👮
 
 <!--%
-mpages = [p for p in pages if p.get("parent", "") == "quadcopters" and p.lang == "en"]
-mpages.sort(key=lambda p: int(p["position"]))
-for p in mpages:
-    print "  * **[%s](%s)**" % (p.title, p.url)
-    if p.get("description", "") != "":
-        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
+printQuadcopterMenu()
 %-->

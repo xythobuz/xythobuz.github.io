@@ -10,6 +10,92 @@ DEFAULT_LANG = "en"
 BASE_URL = "https://www.xythobuz.de"
 
 # -----------------------------------------------------------------------------
+# menu helper macro
+# -----------------------------------------------------------------------------
+
+def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = ""):
+    title = p.title
+    if lang != "":
+        if p.get("title_" + lang, "") != "":
+            title = p.get("title_" + lang, "")
+    if p.title == "Blog":
+        title = p.post
+
+    year = p.get("date", "")[0:4]
+    if year != lastyear:
+        lastyear = year
+        if yearsAsHeading:
+            print "\n\n#### %s\n" % (year)
+
+    dateto = ""
+    if p.get("date", "" != ""):
+        year = p.get("date", "")[0:4]
+        if showOnlyStartDate:
+            dateto = " (%s)" % (year)
+
+        if p.get("update", "") != "" and p.get("update", "")[0:4] != year:
+            if showDateSpan:
+                dateto = " (%s - %s)" % (year, p.get("update", "")[0:4])
+
+        if nicelyFormatFullDate:
+            dateto = " - " + datetime.strptime(p.date, "%Y-%m-%d").strftime("%B %d, %Y")
+
+    print "  * **[%s](%s)**%s" % (title, p.url, dateto)
+
+    if p.get("description", "") != "":
+        description = p.get("description", "")
+        if lang != "":
+            if p.get("description_" + lang, "") != "":
+                description = p.get("description_" + lang, "")
+        print "<br><span class=\"listdesc\">" + description + "</span>"
+
+    return lastyear
+
+def printRecentMenu(count = 5):
+    posts = [p for p in pages if "date" in p]
+    posts.sort(key=lambda p: p.get("date"), reverse=True)
+    for p in posts[0:count]:
+        printMenuItem(p, False, False, False, True)
+
+def printBlogMenu():
+    posts = [p for p in pages if "post" in p]
+    posts.sort(key=lambda p: p.get("date", "9999-01-01"), reverse=True)
+    lastyear = "0"
+    for p in posts:
+        lastyear = printMenuItem(p, True, False, False, True, lastyear)
+
+def printProjectsMenu():
+    # prints all pages with parent 'projects' or 'stuff'.
+    # first the ones without date, sorted by position.
+    # then afterwards those with date, split by year.
+    # also supports blog posts with parent.
+    enpages = [p for p in pages if p.lang == "en"]
+
+    dpages = [p for p in enpages if p.get("date", "") == ""]
+    mpages = [p for p in dpages if any(x in p.get("parent", "") for x in [ 'projects', 'stuff' ])]
+    mpages.sort(key=lambda p: [int(p.get("position", "999"))])
+    for p in mpages:
+        printMenuItem(p)
+
+    dpages = [p for p in enpages if p.get("date", "") != ""]
+    mpages = [p for p in dpages if any(x in p.get("parent", "") for x in [ 'projects', 'stuff' ])]
+    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+    lastyear = "0"
+    for p in mpages:
+        lastyear = printMenuItem(p, True, True, False, False, lastyear)
+
+def print3DPrintingMenu():
+    mpages = [p for p in pages if p.get("parent", "") == "3d-printing" and p.lang == "en"]
+    mpages.sort(key=lambda p: int(p["position"]))
+    for p in mpages:
+        printMenuItem(p, False, True, True)
+
+def printQuadcopterMenu():
+    mpages = [p for p in pages if p.get("parent", "") == "quadcopters" and p.lang == "en"]
+    mpages.sort(key=lambda p: int(p["position"]))
+    for p in mpages:
+        printMenuItem(p, False, True, True)
+# -----------------------------------------------------------------------------
 # lightgallery helper macro
 # -----------------------------------------------------------------------------
 

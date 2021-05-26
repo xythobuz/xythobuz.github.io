@@ -38,18 +38,7 @@ To receive my latest updates, you can subscribe to the <a href="rss.xml"><img sr
 ### Recent Posts
 
 <!--%
-from datetime import datetime
-posts = [p for p in pages if "date" in p]
-posts.sort(key=lambda p: p.get("date"), reverse=True)
-for p in posts[0:5]:
-    date = datetime.strptime(p.date, "%Y-%m-%d").strftime("%B %d, %Y")
-    if "post" in p:
-        print "  * **[%s](%s)** - %s" % (p.post, p.url, date)
-    else:
-        print "  * **[%s](%s)** - %s" % (p.title, p.url, date)
-
-    if p.get("description", "") != "":
-        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
+printRecentMenu()
 %-->
 
 ### Tweets

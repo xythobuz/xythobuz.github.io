@@ -9,12 +9,7 @@ In the meantime, I've modified my printers quite a bit and also written about it
 Here are all the articles that are part of my 3D printing series:
 
 <!--%
-mpages = [p for p in pages if p.get("parent", "") == "3d-printing" and p.lang == "en"]
-mpages.sort(key=lambda p: int(p["position"]))
-for p in mpages:
-    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
-    if p.get("description", "") != "":
-        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
+print3DPrintingMenu()
 %-->
 
 If you're interested in my 3D print designs, take a look [at my Thingiverse account](https://www.thingiverse.com/xythobuz/designs) or my [Git Repository](https://git.xythobuz.de/thomas/3d-print-designs).
