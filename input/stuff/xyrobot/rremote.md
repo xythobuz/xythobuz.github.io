@@ -1,6 +1,7 @@
 title: rRemote
 title_de: rRemote
 description: Remote Control Casio FX9860-GII Calculator AddIn
+description_de: Remote Control Casio FX9860-GII Taschenrechner AddIn
 parent: xyrobot
 position: 2
 comments: true

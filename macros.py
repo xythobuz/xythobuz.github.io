@@ -95,6 +95,19 @@ def printQuadcopterMenu():
     mpages.sort(key=lambda p: int(p["position"]))
     for p in mpages:
         printMenuItem(p, False, True, True)
+
+def printRobotMenuEnglish():
+    mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
+    mpages.sort(key=lambda p: int(p["position"]))
+    for p in mpages:
+        printMenuItem(p)
+
+def printRobotMenuDeutsch():
+    mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "de"]
+    mpages.sort(key=lambda p: int(p["position"]))
+    for p in mpages:
+        printMenuItem(p, False, False, False, False, "0", "de")
+
 # -----------------------------------------------------------------------------
 # lightgallery helper macro
 # -----------------------------------------------------------------------------

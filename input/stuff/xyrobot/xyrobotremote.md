@@ -1,6 +1,7 @@
 title: xyRobotRemote
 title_de: xyRobotRemote
 description: Java Swing App to remote-control a robot
+description: Java Swing App um einen Roboter fernzusteuern
 parent: xyrobot
 position: 3
 comments: true

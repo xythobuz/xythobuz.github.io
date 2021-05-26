@@ -1,6 +1,7 @@
 title: Bluetooth UART (BTM-222)
 title_de: Bluetooth UART (BTM-222)
 description: PCB for the BTM-222 and 5V level converters
+description_de: Platine fuer BTM-222 und 5V Pegelwandler
 parent: xyrobot
 position: 0
 comments: true

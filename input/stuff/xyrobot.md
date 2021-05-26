@@ -18,12 +18,7 @@ The current software as well as Eagle files of the PCB are on [GitHub][7].
 Other articles that are part of xyRobot:
 
 <!--%
-mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
-mpages.sort(key=lambda p: int(p["position"]))
-for p in mpages:
-    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
-    if p.get("description", "") != "":
-        print "<br><span class=\"listdesc\">" + p.get("description", "") + "</span>"
+printRobotMenuEnglish()
 %-->
 
 Now some pictures:
@@ -78,8 +73,6 @@ Now some pictures:
 
 lang: de
 
-### {{ page.title_de }}
-
 Dies ist mein kleines Roboterprojekt. Eine eigene Platine mit einem AtMega2560 steuert den Roboter. Angeschlossen sind unter anderem mein [Bluetooth Modul][1], eine [Gameboy Kamera][2] und mein [RAM Modul][3]. Vom [Roboternetz][4] stammen das [RN-KeyLCD][5] und der [RN-VN2 Motortreiber][6].
 
 Die aktuelle Software sowie Eagle Dateien der Platine finden sich auf [GitHub][7].
@@ -87,10 +80,7 @@ Die aktuelle Software sowie Eagle Dateien der Platine finden sich auf [GitHub][7
 Andere Artikel die zu xyRobot gehören:
 
 <!--%
-mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "de"]
-mpages.sort(key=lambda p: int(p["position"]))
-for p in mpages:
-    print "  * **[%s](%s)**" % (p.title, p.url) # markdown list item
+printRobotMenuDeutsch()
 %-->
 
 Hier nun einige Bilder meines Roboters:
