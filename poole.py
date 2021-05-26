@@ -1,4 +1,5 @@
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 
 # =============================================================================
 #
@@ -61,7 +62,8 @@ else:
     import tempfile
     def exec_(code, envdic):
         with tempfile.NamedTemporaryFile() as tf:
-            tf.write(code)
+            tf.write('# -*- coding: utf-8 -*-\n')
+            tf.write(code.encode('utf-8'))
             tf.flush()
             execfile(tf.name, envdic)
 
@@ -388,7 +390,7 @@ def build(project, opts):
         """Abort because of an exception in inlined Python code."""
         print("abort  : Python %s in %s failed" % (itype, page))
         print((" %s raising the exception " % itype).center(79, "-"))
-        print(inline)
+        print(inline.encode('utf-8'))
         print(" exception ".center(79, "-"))
         print(exc)
         sys.exit(1)
