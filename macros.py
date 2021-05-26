@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import re
 import itertools
 import email.utils
@@ -8,6 +10,48 @@ from datetime import datetime
 
 DEFAULT_LANG = "en"
 BASE_URL = "https://www.xythobuz.de"
+
+# -----------------------------------------------------------------------------
+# table helper macro
+# -----------------------------------------------------------------------------
+
+def tableHelper(style, header, content):
+    print "<table>"
+    if (header != None) and (len(header) == len(style)):
+        print "<tr>"
+        for h in header:
+            print "<th>" + h + "</th>"
+        print "</tr>"
+    for ci in range(0, len(content)):
+        if len(content[ci]) != len(style):
+            # invalid call of table helper!
+            continue
+        print "<tr>"
+        for i in range(0, len(style)):
+            s = style[i]
+            if "align-last-right" in s:
+                if ci == (len(content) - 1):
+                    print "<td style=\"text-align: right;\">"
+                else:
+                    if "align-center" in s:
+                        print "<td style=\"text-align: center;\">"
+                    else:
+                        print "<td>"
+            elif "align-right" in s:
+                print "<td style=\"text-align: right;\">"
+            elif "align-center" in s:
+                print "<td style=\"text-align: center;\">"
+            else:
+                print "<td>"
+            if isinstance(content[ci][i], tuple):
+                text, link = content[ci][i]
+                print "<a href=\"" + link + "\">" + text + "</a>"
+            else:
+                text = content[ci][i]
+                print text
+            print "</td>"
+        print "</tr>"
+    print "</table>"
 
 # -----------------------------------------------------------------------------
 # menu helper macro

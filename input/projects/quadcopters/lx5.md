@@ -13,6 +13,10 @@ After my first failed attempts with large copters, gaining some experience with 
 But I had built up some skills and was ready for the next step.
 So I built a 220mm frame copter with 2205 motors.
 
+<!--%
+# TODO photos
+%-->
+
 Here are some recordings of the FPV footage.
 Be aware that these videos are recorded from the received signal on the ground.
 Not only can you see lots of interference and other HF problems, the loss of quality from the video recorder and the YouTube encoding is also very noticeable.
@@ -43,49 +47,22 @@ Everything else is mounted with rigid spacers.
 
 These are the original prices I paid back when I initially bought the parts.
 
-<table>
-<tr><th>Part</th><th>Description</th><th>Cost</th></tr>
-
-<tr><td style="text-align: right;">Frame</td>
-<td><a href="https://geprc.com/product/gep-lx5-frame/">GEP-LX5 Leopard Frame, Green Color</a></td>
-<td style="text-align: right;">47.20€</td></tr>
-
-<tr><td style="text-align: right;">FC</td>
-<td><a href="https://www.hobbywing.com/goods.php?id=590">Hobbywing XRotor Omnibus F4 Flight Controller</a></td>
-<td style="text-align: right;">34.08€</td></tr>
-
-<tr><td style="text-align: right;">ESCs</td>
-<td><a href="https://www.hobbywing.com/goods.php?id=588">Hobbywing XRotor Micro 40A 2-5S 4 in 1 ESC</a></td>
-<td style="text-align: right;">52.44€</td></tr>
-
-<tr><td style="text-align: right;">Motors</td>
-<td><a href="https://www.banggood.com/4X-Emax-RS2205-2300-2205-2300KV-Racing-Edition-CW-or-CCW-Motor-For-RC-FPV-Racing-Drone-p-1032857.html?cur_warehouse=CN">4x Emax RS2205 2300KV CW/CCW Motor</a></td>
-<td style="text-align: right;">46.32€</td></tr>
-
-<tr><td style="text-align: right;">Props</td>
-<td><a href="https://www.banggood.com/10-Pairs-Racerstar-S5048-PC-3-blade-Propeller-5_0mm-Mounting-Hole-for-RC-Multirotor-FPV-Racing-Drone-p-1169658.html">10 Pairs Racerstar S5048 PC 3-blade Propeller 5.0mm Mounting Hole</a></td>
-<td style="text-align: right;">10.48€</td></tr>
-
-<tr><td style="text-align: right;">Cam</td>
-<td><a href="https://shop.runcam.com/runcam-micro-sparrow/">RunCam Micro Sparrow 2.1mm</a></td>
-<td style="text-align: right;">26.22€</td></tr>
-
-<tr><td style="text-align: right;">VTx</td>
-<td><a href="https://www.team-blacksheep.com/products/prod:unify_pro">TBS Unify Pro V3 5V</a></td>
-<td style="text-align: right;">44.90€</td></tr>
-
-<tr><td style="text-align: right;">Rx</td>
-<td><a href="https://www.frsky-rc.com/product/xsr/">FrSky XSR</a></td>
-<td style="text-align: right;">13.98€</td></tr>
-
-<tr><td style="text-align: right;">Battery</td>
-<td><a href="https://www.stefansliposhop.de/en/batteries/sls-quantum/sls-quantum-65c/sls-quantum-1300mah-4s1p-14-8v-65c-130c::1602.html">SLS Quantum 1300mAh 4S1P 14,8V 65C/130C</a></td>
-<td style="text-align: right;">26.00€</td></tr>
-
-<tr><td></td>
-<td style="text-align: right;">Sum</td>
-<td style="text-align: right;">301.62€</td></tr>
-</table>
+<!--%
+tableHelper([ "align-right", "align-last-right", "align-right"],
+    [ "Part", "Description", "Cost" ], [
+        [ "Frame", ("GEP-LX5 Leopard Frame, Green Color", "https://geprc.com/product/gep-lx5-frame/"), "47.20€" ],
+        [ "FC", ("Hobbywing XRotor Omnibus F4 Flight Controller", "https://www.hobbywing.com/goods.php?id=590"), "34.08€" ],
+        [ "ESCs", ("Hobbywing XRotor Micro 40A 2-5S 4 in 1 ESC", "https://www.hobbywing.com/goods.php?id=588"), "52.44€" ],
+        [ "Motors", ("4x Emax RS2205 2300KV CW/CCW Motor", "https://www.banggood.com/4X-Emax-RS2205-2300-2205-2300KV-Racing-Edition-CW-or-CCW-Motor-For-RC-FPV-Racing-Drone-p-1032857.html?cur_warehouse=CN"), "46.32€" ],
+        [ "Props", ("10 Pairs Racerstar S5048 PC 3-blade Propeller 5.0mm Mounting Hole", "https://www.banggood.com/10-Pairs-Racerstar-S5048-PC-3-blade-Propeller-5_0mm-Mounting-Hole-for-RC-Multirotor-FPV-Racing-Drone-p-1169658.html"), "10.48€" ],
+        [ "Cam", ("RunCam Micro Sparrow 2.1mm", "https://shop.runcam.com/runcam-micro-sparrow/"), "26.22€" ],
+        [ "VTx", ("TBS Unify Pro V3 5V", "https://www.team-blacksheep.com/products/prod:unify_pro"), "44.90€" ],
+        [ "Rx", ("FrSky XSR", "https://www.frsky-rc.com/product/xsr/"), "13.98€" ],
+        [ "Battery", ("SLS Quantum 1300mAh 4S1P 14,8V 65C/130C", "https://www.stefansliposhop.de/en/batteries/sls-quantum/sls-quantum-65c/sls-quantum-1300mah-4s1p-14-8v-65c-130c::1602.html"), "26.00€" ],
+        [ "", "Sum", "301.62€" ]
+    ]
+)
+%-->
 
 I have 3D printed the following parts for this copter:
 

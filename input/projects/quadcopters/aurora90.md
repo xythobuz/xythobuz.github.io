@@ -80,53 +80,26 @@ The picture quality is okay but not great.
 
 ## Parts List
 
-<table>
-<tr><th>Part</th><th>Description</th><th>Cost</th></tr>
+These are the prices as recorded by Rotorbuilds.
+To be honest, I have no clue if they are what I paid back when I built this copter.
 
-<tr><td style="text-align: right;">Frame</td>
-<td><a href="https://www.banggood.com/Eachine-Aurora-90-90MM-Mini-Brushless-FPV-Multirotor-Racing-Frame-35g-Carbon-Fiber-Aluminium-Construction-p-1109742.html?p=3F201911077692015010">Eachine Aurora 90 90MM Mini Brushless FPV Racing Frame RC Drone 27g</a></td>
-<td style="text-align: right;">18.99$</td></tr>
-
-<tr><td style="text-align: right;">FC</td>
-<td><a href="https://www.banggood.com/CleanFlight-BetaFlight-Micro-F3-Flight-Controller-Built-in-PDB-Buzzer-20X20mm-For-FPV-Racing-p-1094615.html?p=3F201911077692015010">PIKO BLX CleanFlight & BetaFlight Micro F3 Flight Controller Built-in PDB Buzzer Port 20X20mm For RC Drone FPV</a></td>
-<td style="text-align: right;">15.99$</td></tr>
-
-<tr><td style="text-align: right;">ESCs</td>
-<td><a href="https://www.banggood.com/Racerstar-Mini-RS6Ax4-6A-1-2S-Blheli_S-BB2-4-In-1-ESC-with-5V-BEC-Support-Oneshot125-D-Shot-p-1110025.html?p=3F201911077692015010">Racerstar 20x20mm RS6Ax4 6A 1-2S Blheli_S 4 In 1 ESC with 5V BEC Dshot600</a></td>
-<td style="text-align: right;">29.69$</td></tr>
-
-<tr><td style="text-align: right;">Motors</td>
-<td><a href="https://www.banggood.com/4X-Racerstar-Racing-Edition-1103-BR1103-8000KV-1-2S-Brushless-Motor-Purple-For-50-80-100-Multirotor-p-1117646.html?p=3F201911077692015010&cur_warehouse=CN">4X Racerstar Racing Edition 1103 BR1103 8000KV 1-2S Brushless Motor Purple For 50 80 100 Multirotor</a></td>
-<td style="text-align: right;">31.99$</td></tr>
-
-<tr><td style="text-align: right;">Props</td>
-<td><a href="https://www.banggood.com/2-Pairs-Kingkong-45mm-3-Blade-Propeller-0_97mm-Mounting-Hole-For-90mm-150mm-DIY-Frame-Kit-p-1122784.html?p=3F201911077692015010&cur_warehouse=CN">2 Pairs Kingkong 45mm 3-Blade Propeller 0.97mm Mounting Hole For 90mm-150mm DIY Frame Kit</a></td>
-<td style="text-align: right;">1.99$</td></tr>
-
-<tr><td style="text-align: right;">Cam</td>
-<td><a href="https://www.banggood.com/Eachine-TX03-NTSC-Super-Mini-0-or-25mW-or-50mW-or-200mW-Switchable-AIO-5_8G-72CH-VTX-600TVL-1-or-3-Cmos-FPV-Camera-p-1104884.html?akmClientCountry=DE&p=3F201911077692015010&cur_warehouse=CN">Eachine TX03 NTSC Super Mini 0/25mW/50mW/200mW Switchable AIO 5.8G 72CH VTX 600TVL 1/3 Cmos FPV Camera</a></td>
-<td style="text-align: right;">19.99$</td></tr>
-
-<tr><td style="text-align: right;">Rx</td>
-<td><a href="https://www.banggood.com/FD800-Tiny-Frsky-8CH-PPM-or-SBUS-Receiver-Compatible-FRSKY-ACCST-X9D(Plus)DJT-or-DFT-or-DHT-For-QX95-QX90--p-1108071.html?akmClientCountry=DE&p=3F201911077692015010&cur_warehouse=CN&ID=527773">FD800 Tiny Frsky 8CH PPM/SBUS Receiver Compatible FRSKY ACCST X9D(Plus)DJT/DFT/DHT For QX95 QX90</a></td>
-<td style="text-align: right;">11.99$</td></tr>
-
-<tr><td style="text-align: right;">Bat</td>
-<td><a href="https://hobbyking.com/en_us/turnigy-nano-tech-460mah-2s-25-40c-lipo-pack.html">Turnigy nano-tech 460mah 2S 25~40C Lipo Pack</a></td>
-<td style="text-align: right;">4.71$</td></tr>
-
-<tr><td style="text-align: right;">LEDs</td>
-<td><a href="https://www.banggood.com/Eachine-Aurora-90-100-Mini-FPV-Racer-RC-Drone-Spare-Part-WS2812-LED-Board-LED-Strip-Light-p-1122903.html?akmClientCountry=DE&p=3F201911077692015010&cur_warehouse=CN">Eachine Aurora 90 100 Mini FPV Racer RC Drone Spare Part WS2812 LED Board LED Strip Light</a></td>
-<td style="text-align: right;">2.54$</td></tr>
-
-<tr><td style="text-align: right;">Strap</td>
-<td><a href="https://www.banggood.com/Realacc-58mm-Battery-Tie-Down-Strap-for-RC-Micro-FPV-Racing-Quadcopter-Multirotor-p-1118296.html?p=3F201911077692015010">Realacc 58mm Battery Tie Down Strap for RC Micro FPV Racing Quadcopter Multirotor</a></td>
-<td style="text-align: right;">1.09$</td></tr>
-
-<tr><td></td>
-<td style="text-align: right;">Sum</td>
-<td style="text-align: right;">138.97$</td></tr>
-</table>
+<!--%
+tableHelper([ "align-right", "align-last-right", "align-right"],
+    [ "Part", "Description", "Cost" ], [
+        [ "Frame", ("Eachine Aurora 90 90MM Mini Brushless FPV Racing Frame RC Drone 27g", "https://www.banggood.com/Eachine-Aurora-90-90MM-Mini-Brushless-FPV-Multirotor-Racing-Frame-35g-Carbon-Fiber-Aluminium-Construction-p-1109742.html?p=3F201911077692015010"), "18.99$" ],
+        [ "FC", ("PIKO BLX CleanFlight & BetaFlight Micro F3 Flight Controller Built-in PDB Buzzer Port 20X20mm For RC Drone FPV", "https://www.banggood.com/CleanFlight-BetaFlight-Micro-F3-Flight-Controller-Built-in-PDB-Buzzer-20X20mm-For-FPV-Racing-p-1094615.html?p=3F201911077692015010"), "15.99$" ],
+        [ "ESCs", ("Racerstar 20x20mm RS6Ax4 6A 1-2S Blheli_S 4 In 1 ESC with 5V BEC Dshot600", "https://www.banggood.com/Racerstar-Mini-RS6Ax4-6A-1-2S-Blheli_S-BB2-4-In-1-ESC-with-5V-BEC-Support-Oneshot125-D-Shot-p-1110025.html?p=3F201911077692015010"), "29.69$" ],
+        [ "Motors", ("4X Racerstar Racing Edition 1103 BR1103 8000KV 1-2S Brushless Motor Purple For 50 80 100 Multirotor", "https://www.banggood.com/4X-Racerstar-Racing-Edition-1103-BR1103-8000KV-1-2S-Brushless-Motor-Purple-For-50-80-100-Multirotor-p-1117646.html?p=3F201911077692015010&cur_warehouse=CN"), "31.99$" ],
+        [ "Props", ("2 Pairs Kingkong 45mm 3-Blade Propeller 0.97mm Mounting Hole For 90mm-150mm DIY Frame Kit", "https://www.banggood.com/2-Pairs-Kingkong-45mm-3-Blade-Propeller-0_97mm-Mounting-Hole-For-90mm-150mm-DIY-Frame-Kit-p-1122784.html?p=3F201911077692015010&cur_warehouse=CN"), "1.99$" ],
+        [ "Cam", ("Eachine TX03 NTSC Super Mini 0/25mW/50mW/200mW Switchable AIO 5.8G 72CH VTX 600TVL 1/3 Cmos FPV Camera", "https://www.banggood.com/Eachine-TX03-NTSC-Super-Mini-0-or-25mW-or-50mW-or-200mW-Switchable-AIO-5_8G-72CH-VTX-600TVL-1-or-3-Cmos-FPV-Camera-p-1104884.html?akmClientCountry=DE&p=3F201911077692015010&cur_warehouse=CN"), "19.99$" ],
+        [ "Rx", ("FD800 Tiny Frsky 8CH PPM/SBUS Receiver Compatible FRSKY ACCST X9D(Plus)DJT/DFT/DHT For QX95 QX90", "https://www.banggood.com/FD800-Tiny-Frsky-8CH-PPM-or-SBUS-Receiver-Compatible-FRSKY-ACCST-X9D(Plus)DJT-or-DFT-or-DHT-For-QX95-QX90--p-1108071.html?akmClientCountry=DE&p=3F201911077692015010&cur_warehouse=CN&ID=527773"), "11.99$" ],
+        [ "Bat", ("Turnigy nano-tech 460mah 2S 25~40C Lipo Pack", "https://hobbyking.com/en_us/turnigy-nano-tech-460mah-2s-25-40c-lipo-pack.html"), "4.71$" ],
+        [ "LEDs", ("Eachine Aurora 90 100 Mini FPV Racer RC Drone Spare Part WS2812 LED Board LED Strip Light", "https://www.banggood.com/Eachine-Aurora-90-100-Mini-FPV-Racer-RC-Drone-Spare-Part-WS2812-LED-Board-LED-Strip-Light-p-1122903.html?akmClientCountry=DE&p=3F201911077692015010&cur_warehouse=CN"), "2.54$" ],
+        [ "Strap", ("Realacc 58mm Battery Tie Down Strap for RC Micro FPV Racing Quadcopter Multirotor", "https://www.banggood.com/Realacc-58mm-Battery-Tie-Down-Strap-for-RC-Micro-FPV-Racing-Quadcopter-Multirotor-p-1118296.html?p=3F201911077692015010"), "1.09$" ],
+        [ "", "Sum", "138.97$" ]
+    ]
+)
+%-->
 
 Here are some more photos.
 
