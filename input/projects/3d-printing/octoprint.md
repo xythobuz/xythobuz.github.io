@@ -5,7 +5,7 @@ position: 40
 comments: true
 ---
 
-<span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>
+<!--% backToParent() %-->
 
 All my 3D printers are connected to a Raspberry Pi running [OctoPrint](https://octoprint.org/).
 For ease of use, I suggest downloading and installing a pre-made [OctoPi image](https://octoprint.org/download/).

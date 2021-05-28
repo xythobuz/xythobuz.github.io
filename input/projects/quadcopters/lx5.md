@@ -3,10 +3,9 @@ description: 4S LiPo, 220mm frame, 2205 2300KV motors
 parent: quadcopters
 position: 10
 date: 2017-11-01
-update: 2021-05-21
 ---
 
-<span class="listdesc">[...back to RC-Vehicles overview](quadcopters.html)</span>
+<!--% backToParent() %-->
 
 At the end of 2017 I had to give in to the urge of building a bigger more powerful copter.
 After my first failed attempts with large copters, gaining some experience with smaller frames seemed useful.

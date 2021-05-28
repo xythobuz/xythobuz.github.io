@@ -5,7 +5,7 @@ position: 20
 comments: true
 ---
 
-<span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>
+<!--% backToParent() %-->
 
 The CTC i3 Pro B is a very cheap chinese Prusa i3 clone.
 I bought it a couple of years ago for about 110 Euros.

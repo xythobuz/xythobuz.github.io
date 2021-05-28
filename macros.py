@@ -12,6 +12,17 @@ DEFAULT_LANG = "en"
 BASE_URL = "https://www.xythobuz.de"
 
 # -----------------------------------------------------------------------------
+# sub page helper macro
+# -----------------------------------------------------------------------------
+
+def backToParent():
+    url = page.get("parent", "") + ".html"
+    posts = [p for p in pages if p.url == url]
+    if len(posts) > 0:
+        p = posts[0]
+        print '<span class="listdesc">[...back to ' + p.title + ' overview](' + p.url + ')</span>'
+
+# -----------------------------------------------------------------------------
 # table helper macro
 # -----------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@ date: 2016-06-07
 update: 2016-06-12
 ---
 
-<span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>
+<!--% backToParent() %-->
 
 This is a manual Mesh Bed Leveling GUI utility for 3D printers with Marlin Firmware.
 

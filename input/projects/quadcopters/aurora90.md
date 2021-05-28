@@ -3,10 +3,9 @@ description: 2S LiPo, 90mm frame, 1103 8000KV motors
 parent: quadcopters
 position: 30
 date: 2017-03-07
-update: 2021-05-21
 ---
 
-<span class="listdesc">[...back to RC-Vehicles overview](quadcopters.html)</span>
+<!--% backToParent() %-->
 
 The build started at the end of January 2017 and it was my main copter for flights indoors and outside in the garden for a long time.
 

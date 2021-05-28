@@ -8,7 +8,7 @@ date: 2021-05-08
 update: 2021-05-13
 ---
 
-<span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>
+<!--% backToParent() %-->
 
 To quickly print new stuff on one of my printers, I am using the [OctoPrint](https://octoprint.org) integration of [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer).
 Unfortunately, it does not allow me to turn on the printers power supply using the Raspberry Pi.

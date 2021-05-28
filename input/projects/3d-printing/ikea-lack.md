@@ -5,7 +5,7 @@ position: 30
 comments: true
 ---
 
-<span class="listdesc">[...back to 3D-Printing overview](3d-printing.html)</span>
+<!--% backToParent() %-->
 
 As is common in the 3D printing community, I have built myself a tower of Ikea Lack tables to store my printers in.
 It has three levels.
