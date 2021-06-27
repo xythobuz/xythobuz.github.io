@@ -23,7 +23,8 @@ In real-life, the picture doesn't look *that* bad.
 <!--%
 lightgallery([
     [ "https://www.youtube.com/watch?v=MnF7B3rD5VM", "img/xyaurora100_crash_thumb.jpg", "Aurora100 flight with crash" ],
-    [ "https://www.youtube.com/watch?v=798ncBkBHos", "img/xyaurora100_owl_thumb.jpg", "Micro Quadcopter attacked by Owl" ]
+    [ "https://www.youtube.com/watch?v=798ncBkBHos", "img/xyaurora100_owl_thumb.jpg", "Micro Quadcopter attacked by Owl" ],
+    [ "https://www.youtube.com/watch?v=KEHhSCol_AY", "img/xybeast_prop_break_thumb.jpg", "Brushless 100mm 3S Quadcopter Test, 5-blade prop breaking in-flight" ]
 ])
 %-->
 
@@ -39,18 +40,18 @@ These are the prices as recorded by Rotorbuilds.
 To be honest, I have no clue if they are what I paid back when I built this copter.
 
 <!--%
-tableHelper([ "align-right", "align-last-right", "align-right"],
+tableHelper([ "align-right", "align-last-right", "align-right monospaced"],
     [ "Part", "Description", "Cost" ], [
         [ "Frame", ("Eachine Aurora 100 100MM Mini Brushless FPV Multirotor Racing Frame 14.5g Carbon Fiber", "https://www.banggood.com/Eachine-Aurora-100-100MM-Mini-Brushless-FPV-Multirotor-Racing-Frame-14_5g-Carbon-Fiber-p-1133462.html?p=3F201911077692015010"), "11.99$" ],
         [ "Spare", ("Eachine Aurora 100 Mini Brushless FPV Racer Spare Part 2mm 2.5mm Bottom Plate 3K Carbon Fiber", "https://www.banggood.com/Eachine-Aurora-100-Mini-Brushless-FPV-Racer-Spare-Part-2mm-2_5mm-Bottom-Plate-3K-Carbon-Fiber-p-1144532.html?p=3F201911077692015010&cur_warehouse=CN&ID=529763"), "5.39$" ],
         [ "FC", ("Eachine Minicube 20x20mm F4 OSD Compatible Frsky Flysky DSM RX Blheli_S 10A For Aurora 68 90 100", "https://www.banggood.com/Eachine-Minicube-20x20mm-F4-OSD-Compatible-Frsky-Flysky-DSM-RX-Blheli_S-10A-For-Aurora-68-90-100-p-1165366.html?p=3F201911077692015010"), "60.99$" ],
         [ "Motors", ("4 x Eachine Upgrade Motor 1104 6500KV Brushless Motor 1-3S For Eachine Aurora 90 100 RC Drone FPV Racing", "https://www.banggood.com/Eachine-1104-6500KV-1-3S-Brushless-Motor-For-Eachine-Aurora-90-100-Mini-FPV-Racer-p-1138072.html?p=3F201911077692015010&cur_warehouse=CN"), "35.56$" ],
         [ "Props", ("10 Pairs Racerstar 1935 50mm 5 Blade Racing Propeller 1.5mm Mounting Hole For Micro FPV Frame", "https://www.banggood.com/10-Pairs-Racerstar-1935-50mm-5-Blade-Racing-Propeller-1_5mm-Mounting-Hole-For-Micro-FPV-Frame-p-1129109.html?p=3F201911077692015010"), "8.29$" ],
-        [ "Cam", ("", ""), "$" ],
-        [ "VTx", ("", ""), "$" ],
+        [ "Cam", ("RunCam Micro Sparrow 2.1mm", "https://shop.runcam.com/runcam-micro-sparrow/"), "31.97$" ],
+        [ "VTx", ("TBS Unify Pro V3 5V", "https://www.team-blacksheep.com/products/prod:unify_pro"), "54.74$" ],
         [ "Bats", ("Tattu 450mAh 11.1V 75C 3S1P Lipo Battery Pack- Long Size for H Frame", "https://www.gensace.de/tattu-450mah-11-1v-75c-3s1p-lipo-battery-pack-long-size-for-h-frame.html"), "15.89$" ],
         [ "Misc", ("4 PCS Eachine Propeller Guard For Aurora 100 Mini FPV Racing RC Drone 1102 1103 1104 1105 Brushless Motor", "https://www.banggood.com/4-PCS-Eachine-Propeller-Guard-For-Aurora-100-Mini-FPV-Racing-RC-Drone-1102-1103-1104-1105-Brushless-Motor-p-1143685.html?akmClientCountry=DE&p=3F201911077692015010&cur_warehouse=CN&ID=224"), "2.49$" ],
-        [ "", "Sum", "$" ]
+        [ "", "Sum", "227.31$" ]
     ]
 )
 %-->

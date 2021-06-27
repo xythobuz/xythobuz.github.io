@@ -47,7 +47,7 @@ Everything else is mounted with rigid spacers.
 These are the original prices I paid back when I initially bought the parts.
 
 <!--%
-tableHelper([ "align-right", "align-last-right", "align-right"],
+tableHelper([ "align-right", "align-last-right", "align-right monospaced"],
     [ "Part", "Description", "Cost" ], [
         [ "Frame", ("GEP-LX5 Leopard Frame, Green Color", "https://geprc.com/product/gep-lx5-frame/"), "47.20€" ],
         [ "FC", ("Hobbywing XRotor Omnibus F4 Flight Controller", "https://www.hobbywing.com/goods.php?id=590"), "34.08€" ],

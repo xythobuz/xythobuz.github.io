@@ -24,8 +24,9 @@ In real-life, the picture doesn't look *that* bad.
 
 <!--%
 lightgallery([
-    [ "https://www.youtube.com/watch?v=VFPxYdl7hg0", "img/xyaurora90_firsttest_thumb.jpg", "First Brushless 90mm Quadcopter Testflight" ],
+    [ "https://www.youtube.com/watch?v=QzE69e-Zd_w", "img/xyaurora90_garden_thumb.jpg", "Aurora90 garden flight" ],
     [ "https://www.youtube.com/watch?v=V3l-RCW24_U", "img/xyaurora90_robocup_thumb.jpg", "Robocup German Open 2017 @Home Area Flyaround" ],
+    [ "https://www.youtube.com/watch?v=VFPxYdl7hg0", "img/xyaurora90_firsttest_thumb.jpg", "First Brushless 90mm Quadcopter Testflight" ],
     [ "https://www.youtube.com/watch?v=NqrONv2KYJw", "img/xyaurora90_test_flight_thumb.jpg", "Aurora90 test flight, crash and prop loss" ],
     [ "https://www.youtube.com/watch?v=b4heuNomMTk", "img/xyaurora90_wrong_channel_thumb.jpg", "Wrong FPV Channel" ]
 ])
@@ -83,7 +84,7 @@ These are the prices as recorded by Rotorbuilds.
 To be honest, I have no clue if they are what I paid back when I built this copter.
 
 <!--%
-tableHelper([ "align-right", "align-last-right", "align-right"],
+tableHelper([ "align-right", "align-last-right", "align-right monospaced"],
     [ "Part", "Description", "Cost" ], [
         [ "Frame", ("Eachine Aurora 90 90MM Mini Brushless FPV Racing Frame RC Drone 27g", "https://www.banggood.com/Eachine-Aurora-90-90MM-Mini-Brushless-FPV-Multirotor-Racing-Frame-35g-Carbon-Fiber-Aluminium-Construction-p-1109742.html?p=3F201911077692015010"), "18.99$" ],
         [ "FC", ("PIKO BLX CleanFlight & BetaFlight Micro F3 Flight Controller Built-in PDB Buzzer Port 20X20mm For RC Drone FPV", "https://www.banggood.com/CleanFlight-BetaFlight-Micro-F3-Flight-Controller-Built-in-PDB-Buzzer-20X20mm-For-FPV-Racing-p-1094615.html?p=3F201911077692015010"), "15.99$" ],

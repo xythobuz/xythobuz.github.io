@@ -40,20 +40,28 @@ def tableHelper(style, header, content):
         print "<tr>"
         for i in range(0, len(style)):
             s = style[i]
+            td_style = ""
+
+            if "monospaced" in s:
+                td_style += " font-family: monospace;"
+
             if "align-last-right" in s:
                 if ci == (len(content) - 1):
-                    print "<td style=\"text-align: right;\">"
+                    td_style += " text-align: right;"
                 else:
                     if "align-center" in s:
-                        print "<td style=\"text-align: center;\">"
-                    else:
-                        print "<td>"
+                        td_style += " text-align: center;"
             elif "align-right" in s:
-                print "<td style=\"text-align: right;\">"
+                td_style += " text-align: right;"
             elif "align-center" in s:
-                print "<td style=\"text-align: center;\">"
-            else:
-                print "<td>"
+                td_style += " text-align: center;"
+
+            td_args = ""
+            if td_style != "":
+                td_args = " style=\"" + td_style + "\""
+
+            print "<td" + td_args + ">"
+
             if isinstance(content[ci][i], tuple):
                 text, link = content[ci][i]
                 print "<a href=\"" + link + "\">" + text + "</a>"

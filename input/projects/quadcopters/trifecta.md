@@ -7,7 +7,7 @@ date: 2016-05-25
 
 <!--% backToParent() %-->
 
-As a second attempt for a self-built copter I decided to try and build a Tricopter.
+As a second attempt for a self-built copter, after my [far too big X666](x666.html), I decided to try and build a Tricopter.
 These only have three motors, with the third degree of freedom (yaw) being provided by tilting the back rotor using a servo.
 
 <!--%
@@ -46,7 +46,7 @@ I had some problems with the first servo I tried, but after switching to the met
 The prices listed below are just what I found while doing this page some years later, not the real prices I paid back then.
 
 <!--%
-tableHelper([ "align-right", "align-last-right", "align-right"],
+tableHelper([ "align-right", "align-last-right", "align-right monospaced"],
     [ "Part", "Description", "Cost" ], [
         [ "Frame", ("Quanum Trifecta Mini Foldable Tricopter Frame", "https://hobbyking.com/en_us/quanum-trifecta-mini-foldable-tricopter-frame-kit.html"), "27.67€" ],
         [ "Servo", ("Emax ES09MD Digital Metallgetriebe Mini Servo", "https://www.premium-modellbau.de/emax-es09md-digital-metallgetriebe-mini-servo-15g-0-08s-2-6kg-kugellager-es08md"), "12.90€" ],
