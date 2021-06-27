@@ -2,7 +2,31 @@ title: Dampfmaschine
 parent: none
 ---
 
-### 2013 & 2014
+Mein Großvater begann 1992 mit dem Bau einer eigenen Modell-Dampfmaschine im Maßstab 1 zu 2,7.
+Sie wiegt ca. 700kg und kann mit zwei dafür angefertigten Anhängern problemlos 8 Personen in Schrittgeschwindigkeit transportieren.
+
+Selbstverständlich wurde mir bereits in Kindheitstagen das Anheizen und Fahren der Maschine beigebracht.
+Regelmäßig fuhren wir im Sommer in der Siedlung um das Haus meines Großvaters, als große Attraktion für alle Nachbarskinder der Gegend.
+Außerdem besuchten wir einige [Dampffeste in Kürnbach](https://www.volksfeste-in-deutschland.de/kuernbacher-dampffest-in-bad-schussenried.html) und veranstalteten eigene an der kleinen Wirtschaft meiner Großmutter.
+
+## Videos
+
+Einige Videos, sowohl von der Technik der Dampfmaschine als auch dem Fahrbetrieb.
+
+<!--%
+lightgallery([
+    [ "https://www.youtube.com/watch?v=ikWtY_376n0", "img/dampf_2016_timelapse_thumb.jpg", "Zeitraffer vom Dampftreffen Kürnbach 2016" ],
+    [ "https://www.youtube.com/watch?v=HGC6uH_kcoM", "img/dampf_thumb_druckluft.jpg", "Druckluft Test" ],
+    [ "https://www.youtube.com/watch?v=OhMWQIR62rU", "img/dampf_thumb_pumpe.jpg", "Dampfpumpen Test" ],
+    [ "https://www.youtube.com/watch?v=dv08NrImbJE", "img/dampf_2015_thumb.jpg", "Aufnahmen eines Besuchers beim Dampftreffen Kürnbach 2015. Ich bin ganz am Anfang kurz zu sehen." ]
+])
+%-->
+
+## Fotos
+
+Hier eine kleine Auswahl der über die Zeit entstandenen Fotos der Maschine.
+
+### 2013 und 2014
 
 <!--%
 lightgallery([
@@ -12,6 +36,8 @@ lightgallery([
 %-->
 
 ### 2012
+
+Im Jahr 2012 fand das dritte und letzte unserer Dampffeste am Ines statt.
 
 <!--%
 lightgallery([
@@ -32,6 +58,8 @@ lightgallery([
 
 ### 2011
 
+Im Jahr 2011 fand unser zweites Dampffest statt.
+
 <!--%
 lightgallery([
     [ "img/dampf_2011_06_25_1.jpg", "Ausfahrt beim Dampffest" ],
@@ -44,13 +72,15 @@ lightgallery([
 
 ### 2009
 
+Im Jahr 2009 fand das erste Dampffest meines Großvaters am Bierstüberl Ines in Fischbach statt.
+
 <!--%
 lightgallery([
     [ "img/dampf_2009_06_13_1.jpg", "Beim Dampffest in Kürnbach" ],
     [ "img/dampf_2009_06_18_1.jpg", "Im heimischen Garten" ],
     [ "img/dampf_2009_06_18_2.jpg", "Ausfahrt in Kürnbach" ],
     [ "img/dampf_2009_06_18_3.jpg", "In Kürnbach?" ],
-    [ "img/dampf_2009_07_03_1.jpg", "Ausfahrt zur Brauerei beim Dampffest Kürnbach" ],
+    [ "img/dampf_2009_07_03_1.jpg", "Ausfahrt zur Schussenrieder Brauerei beim Dampffest Kürnbach" ],
     [ "img/dampf_2009_07_11_1.jpg", "Dampffest am Ines" ],
     [ "img/dampf_2009_07_11_2.jpg", "Vorbereitung zum Dampffest" ],
     [ "img/dampf_2009_07_11_3.jpg", "Spontane Reparaturen" ],
