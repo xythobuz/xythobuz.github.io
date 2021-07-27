@@ -8,13 +8,13 @@ update: 2021-05-28
 
 <!--% backToParent() %-->
 
-Over the year I have grown quite the collection of self-made or customized gear.
+Over the years of flying quadcopters and other stuff I have grown quite the collection of self-made or customized gear.
 
 ## Spectator Monitor
 
 When out flying alone or with a partner, often people walk their dogs nearby or families go on a walk together and see us.
 This often sparks a conversation.
-For these occasions, it turned out to be very useful to have some kind of second scree and receiver with me.
+For these occasions, it turned out to be very useful to have some kind of second screen and receiver with me.
 
 A friend of mine even has a spare cheap set of FPV goggles with him most of the time.
 
@@ -38,7 +38,14 @@ The quality of the Quanum monitor is great and it does not switch to a blue-scre
 The DVR does not work 100% reliable, but considering my FatShark Dominator v3 has a built-in DVR as well, I'm not really dependant on it.
 
 <!--%
-# TODO photos
+lightgallery([
+    [ "img/fpv_spectator_screen_1.jpg", "Top view of spectator monitor" ],
+    [ "img/fpv_spectator_screen_2.jpg", "Front view of spectator monitor" ],
+    [ "img/fpv_spectator_screen_3.jpg", "Charging side view of spectator monitor" ],
+    [ "img/fpv_spectator_screen_4.jpg", "Back view of spectator monitor" ],
+    [ "img/fpv_spectator_screen_5.jpg", "Fan side view of spectator monitor" ],
+    [ "img/fpv_spectator_screen_6.jpg", "Bottom view of spectator monitor" ]
+])
 %-->
 
 ## Customized Transmitter
