@@ -4,7 +4,7 @@ parent: projects
 position: 6
 github: https://git.xythobuz.de/thomas/giess-o-mat
 date: 2021-03-29
-update: 2021-05-16
+update: 2021-10-24
 ---
 
 This project [was featured on Hackaday](https://hackaday.com/2021/05/14/automated-watering-machine-has-what-plants-crave-fertilizer/)!
@@ -250,7 +250,7 @@ I have used a DB-9 connector, running the power switch as well as the other volt
 This is so the machine can be turned on and off at the UI.
 I also placed some cheap little voltmeter modules on the UI, showing the other voltages.
 
-## Future Extensions
+## Future Extensions (v1)
 
 I have now been running capacitive ground moisture level sensors in a couple of my plants for around a year, logging the data using my [ESP-Env project](https://git.xythobuz.de/thomas/esp-env) to an [InfluxDB](https://www.influxdata.com/) instance running on my NAS, with a [Grafana](https://grafana.com/) UI running on there as well.
 I used the [cheap chinese models](https://amzn.to/3sLG8SB) up to now, and they have not proven very useful.
@@ -278,6 +278,63 @@ Also, it would of course be possible to design a custom PCB for the hardware.
 But to be quite honest, I don't see the appeal in that currently.
 It would lose the ability to use a different number of pumps and valves, as needed by the specific application.
 And building all this up on perf-boards is really not much work.
+
+## Fertilizer Update (June 2021)
+
+After using the first version of this project for a while, I noticed some problems with the different fertilizers I'm using.
+
+The set of fertilizers I like to use consists of three parts, for different stages of the lifecycle of the plants and different requirements for different species.
+They differ in their contents, and also in the viscosity, from thick to thin.
+
+The third, thinnest, fertilizer pumps easily with my initial setup.
+Even when not using it for a while, the liquid simply stays in the hose, held against gravity by the inactive pump.
+For the next use, the pump simply can be started and immediately starts dispensing.
+
+Unfortunately, for the other two thicker fertilizers this does not work.
+As you can see in the example video linked above, they move much slower and take more work from the pump.
+But they also have a higher level of NAK and solid contents.
+This is not a problem initially, but after being held in the hose for a while, the nutrients in the fertilizer crystallize and completely block the hose.
+If the wait was short enough, the pump can overcome the obstacle and push it out and crush it, but you have to be lucky for that.
+After a short time, the pumps no longer move anything at all.
+
+Additionally, the solid contents settle at the bottom of the bottles.
+For hand-use, that is not a problem, you simply shake the bottle before use.
+But automating this takes some more work.
+
+To solve these issues, I initially thought about modifying the circuitry, using a dual H-Bridge motor driver to control the pumps of the problematic fertilizers.
+This way, the direction of the pump can be reversed to empty the hose.
+For this to work, of course the water level in the tank needs to be below the outlet level of the fertilizer hoses.
+But this can be achieved easily by shortening the hoses a bit.
+Then the hose can be completely emptied afer dispensing the required amount of liquid.
+Of course, the pump now needs to run longer to fertilize, as the liquid has to travel the length of the hose each time.
+But it should solve the crystallization issue.
+
+But before going this way, I decided to try diluting the fertilizer with water.
+In this case, the pumps need to run longer of course, but this is not a problem.
+It seems to work fine, regarding the crystallization problem, for now.
+
+For the solid contents settling, I bought two cheap chinese magnetic stirrers.
+The bottles need relatively flat bottom surfaces and they need to be positioned well on the stirrer, but they have enough power to move the rotor and stir even the thickest of my fertilizers.
+The stirrers run on 12V and can simply be connected to another relais.
+
+## Automation Update (October 2021)
+
+As mentioned above, I'm running InfluxDB in my home network.
+To be able to implement an automated watering feature more easily, I decided to use the database.
+The plan is to record usage data for a couple of months, which can then be analyzed by a script that generates the parameters for the watering timer.
+I have been running this for a while already, but I only recorded the runtime of the water in seconds.
+The data already shows differing flowrates for the different outlets.
+This is because some plants are higher up then others, causing less pressure differential and therefore reduced flow velocity.
+
+<!--%
+lightgallery([
+    [ "img/giessomat_watering_durations.png", "Data of the first three to four months" ]
+])
+%-->
+
+I now added some more code to be able to calibrate the flowrates.
+With this the exact water amounts required each watering period can be calculated, as well as the corresponding time to fill the tank.
+More to come in the future.
 
 ## Links
 
