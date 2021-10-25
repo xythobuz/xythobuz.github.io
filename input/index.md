@@ -30,7 +30,7 @@ difference_in_years = date_as_float(end_date) - date_as_float(start_date)
 
 print int(difference_in_years)
 
-%--> year old hard- and software developer from Germany.
+%--> year old software developer from Germany.
 All of my projects are released as free or open-source software on [my Gitea Server](https://git.xythobuz.de/thomas), [my GitHub profile](https://github.com/xythobuz) and here on my website. Have fun!
 
 To receive my latest updates, you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
