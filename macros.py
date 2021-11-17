@@ -191,7 +191,7 @@ def printRobotMenuDeutsch():
 
 def lightgallery(links):
     videos = [l for l in links if len(l) == 5]
-    v_i = 0
+    v_i = -1
     for v in videos:
         link, mime, thumb, poster, alt = v
         v_i += 1
@@ -203,7 +203,7 @@ def lightgallery(links):
         print '</div>'
         
     print '<div class="lightgallery">'
-    v_i = 0
+    v_i = -1
     for l in links:
         if (len(l) == 3) or (len(l) == 2):
             link = img = alt = ""
@@ -216,7 +216,7 @@ def lightgallery(links):
             print '<div class="border" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"></a></div>'
         elif len(l) == 5:
             v_i += 1
-            link, mime, thumb, poster, alt = v
+            link, mime, thumb, poster, alt = videos[v_i]
             print '<div class="border" data-poster="' + poster + '" data-sub-html="' + alt + '" data-html="#video' + str(v_i) + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>'
         else:
             raise NameError('Invalid number of arguments for lightgallery')
@@ -511,7 +511,7 @@ def hook_postconvert_mobilecompat():
     fp.close()
 
 def hook_postconvert_size():
-    file_ext = '|'.join(['pdf', 'zip', 'rar', 'ods', 'odt', 'odp', 'doc', 'xls', 'ppt', 'docx', 'xlsx', 'pptx', 'exe', 'brd', 'mp3', 'mp4', 'plist'])
+    file_ext = '|'.join(['pdf', 'zip', 'rar', 'ods', 'odt', 'odp', 'doc', 'xls', 'ppt', 'docx', 'xlsx', 'pptx', 'exe', 'brd', 'plist'])
     def matched_link(matchobj):
         try:
             path = matchobj.group(1)

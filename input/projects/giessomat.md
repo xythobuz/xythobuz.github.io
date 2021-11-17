@@ -4,7 +4,7 @@ parent: projects
 position: 6
 github: https://git.xythobuz.de/thomas/giess-o-mat
 date: 2021-03-29
-update: 2021-10-24
+update: 2021-11-17
 ---
 
 This project [was featured on Hackaday](https://hackaday.com/2021/05/14/automated-watering-machine-has-what-plants-crave-fertilizer/)!
@@ -136,34 +136,34 @@ lightgallery([
 %-->
 
 These are the circuit diagrams for the controller and user interface.
-Everything is powered by a 12V power supply.
+Everything is powered by a <del>12V</del> 13.5V power supply.
 I am using two 5V regulators, one for powering the ESP32 and one for powering the relais coils.
 This was my quick-and-dirty way of getting the power rails clean enough that the ESP is not resetting when toggling a relais.
-The valves are directly fed 12V and another regulator produces 6V for the peristaltic pumps.
+The valves are directly fed <del>12V</del> 13.5V and another regulator produces 6V for the peristaltic pumps.
 
 <div class="textwrap"><pre class="ascii">
 Giess-o-mat Controller Schematic
 
              -------|USB|-------                        -----------
-            |       |___|       |             +12V <---|x IN  OUT x|---> +5V_ESP
+            |       |___|       |           +13.5V <---|x IN  OUT x|---> +5V_ESP
             |  P06         +5V x|---> +5V_ESP          |  5V Buck  |
             |  P07         CMD  |              GND <---|x GND GND x|
             |  P08         P10  |                       -----------
      R5 <---|x P15         P09  |
      R6 <---|x P02         P13 x|                       -----------
-     R7 <---|x P00         GND x|---> GND     +12V <---|x IN  OUT x|---> +5V_R
+     R7 <---|x P00         GND x|---> GND   +13.5V <---|x IN  OUT x|---> +5V_R
      R8 <---|x P04    E    P12 x|                      |  5V Buck  |
             |  P16    S    P14 x|---> R2       GND <---|x GND GND x|
             |  P17    P    P27 x|---> R1                -----------
      R3 <---|x P05    -    P26 x|---> SW_B
      R4 <---|x P18    3    P25 x|---> SW_T              -----------
-            |x P19    2    P33 x|             +12V <---|x IN  OUT x|---> +6V
+            |x P19    2    P33 x|           +13.5V <---|x IN  OUT x|---> +6V
     GND <---|x GND         P32 x|                      |  6V Buck  |
 ESP_SDA <---|x P21         P35  |              GND <---|x GND GND x|
             |  P03         P34  |                       -----------
             |  P01          SN  |
 ESP_SCL <---|x P22          SP  |                        -------
-            |x P23          EN  |              +12V <---|x +12V |
+            |x P23          EN  |            +13.5V <---|x +12V |
     GND <---|x GND        +3V3 x|---> +3V3  ESP_SDA <---|x SDA  | UI
             |                   |           ESP_SCL <---|x SCL  | Conn.
              -------------------                GND <---|x GND  |
@@ -172,16 +172,16 @@ ESP_SCL <---|x P22          SP  |                        -------
            ---------------------                       ---------------------
           |        Relais       |                     |        Relais       |
   GND <---|x GND    ----   NC1 x|             GND <---|x GND    ----   NC1 x|
-   R1 <---|x R1    |    | COM1 x|---> +12V     R5 <---|x R1    |    | COM1 x|---> +12V
+   R1 <---|x R1    |    | COM1 x|---> +13.5V   R5 <---|x R1    |    | COM1 x|---> +13.5V
    R2 <---|x R2     ----   NO1 x|---> V1       R6 <---|x R2     ----   NO1 x|---> V5
    R3 <---|x R3     ----   NC2 x|              R7 <---|x R3     ----   NC2 x|
-   R4 <---|x R4    |    | COM2 x|---> +12V     R8 <---|x R4    |    | COM2 x|---> +6V
+   R4 <---|x R4    |    | COM2 x|---> +13.5V   R8 <---|x R4    |    | COM2 x|---> +6V
  +3V3 <---|x VCC    ----   NO2 x|---> V2     +3V3 <---|x VCC    ----   NO2 x|---> P1
           |         ----   NC3 x|                     |         ----   NC3 x|
-          |        |    | COM3 x|---> +12V            |        |    | COM3 x|---> +6V
+          |        |    | COM3 x|---> +13.5V          |        |    | COM3 x|---> +6V
           |         ----   NO3 x|---> V3              |         ----   NO3 x|---> P2
           |         ----   NC4 x|                     |         ----   NC4 x|
-          |        |    | COM4 x|---> +12V            |        |    | COM4 x|---> +6V
+          |        |    | COM4 x|---> +13.5V          |        |    | COM4 x|---> +6V
           |         ----   NO4 x|---> V4              |         ----   NO4 x|---> P3
           |x VCC                |                     |x VCC                |
 +5V_R <---|x JC-VCC             |           +5V_R <---|x JC-VCC             |
@@ -216,11 +216,11 @@ Giess-o-mat User Interface Schematic
 SDA_UI <---|x A4     O     D5 x|---> KP_R1
 SCL_UI <---|x A5           D4 x|---> KP_C3               Connector
            |x A6           D3 x|---> KP_C2                -------
-           |x A7     N     D2 x|---> KP_C1      +12V <---|x +12V |
+           |x A7     N     D2 x|---> KP_C1    +13.5V <---|x +12V |
 +5V_UI <---|x 5V     A    GND x|---> GND     ESP_SDA <---|x SDA  |
            |x RST    N    RST x|             ESP_SCL <---|x SCL  |
    GND <---|x GND    O     RX x|                 GND <---|x GND  |
-  +12V <---|x VIN          TX x|                          -------
++13.5V <---|x VIN          TX x|                          -------
            |                   |
             -------------------                  ----------
                                     ESP_SDA <---|   2.2k   |---
@@ -335,6 +335,44 @@ lightgallery([
 I now added some more code to be able to calibrate the flowrates.
 With this the exact water amounts required each watering period can be calculated, as well as the corresponding time to fill the tank.
 More to come in the future.
+
+## Moisture Sensor Update (November 2021)
+
+After taking a closer look to my soil moisture sensors, with the help of [the investigation by Stewart Cash](https://so-now.com/electronics/capsense.php), I found some issues with the cheap chinese sensors I used.
+
+The 1M resistor is actually properly connected to GND on my boards.
+However, mine have an NE555 IC fitted, which requires 5V.
+On some of the boards I have, the 3V regulator is still fitted, on some others it has been replaced with a 0 Ohm link.
+However, I was trying to power them using the 3.3V rail of my ESP32.
+With 5V they now output a nice signal when placing them directly in or out of a glass of water.
+
+Placing them back in the soil, they no longer seem to output much of a signal at all, anymore, only giving a relatively straight line.
+I'm not sure what's going on this time.
+Further experiments to come (maybe).
+
+## Chinese Magnetic Valve Update (November 2021)
+
+After a bit more then half a year of daily use, one of the four outlet valves has started to act up.
+It no longer opened up completely, letting only a small dribble of water out.
+I opened the valve, saw a bit of limestone, and cleaned the plunger.
+This helped for a short while, but the problems returned only a short while later.
+
+With a bit more investigation I found the cause: the supply voltage was too low.
+I was initially using a 12V power supply to drive the whole device and the vales.
+But because of cable losses, and high current use of the valves, only about 11.4V arrived at the valve.
+It turns out this is just low enough that, together with the increased friction of the scale buildup, the valve no longer opens properly.
+
+See the two videos below.
+
+<!--%
+lightgallery([
+    [ "img/valve_low_voltage.mp4", "video/mp4", "img/valve_low_voltage_thumb.png", "img/valve_low_voltage_poster.png", "Running the valve with 11.4V" ],
+    [ "img/valve_high_voltage.mp4", "video/mp4", "img/valve_high_voltage_thumb.png", "img/valve_high_voltage_poster.png", "Running the valve with 12.0V" ]
+])
+%-->
+
+For a work-around, I simply replaced the power supply, now driving everything with 13.5V instead of 12V.
+This seems to solve the issue for now.
 
 ## Links
 
