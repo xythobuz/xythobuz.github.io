@@ -5,31 +5,26 @@ body {
     padding: 0px;
 }
 
-hr {
-    color: purple; /* green; */ /* orange; */
-}
-
 table {
     margin: auto;
     border-collapse: collapse;
 }
 
 table, th, td {
-  border: 1px solid purple;
+    border-width: 1px;
+    border-style: solid;
 }
 
 th, td {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
 }
 
 #nav {
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    border-bottom-color: purple; /* green; */ /* orange; */
-    background-color: white;
     width: 100%;
     z-index: 2;
 }
@@ -58,7 +53,8 @@ pre {
     font-size: 0.9em;
     padding: 10px;
     margin: 1em;
-    border: 2px solid purple; /* green; */ /* orange; */
+    border-width: 2px;
+    border-style: solid;
     border-radius: 10px;
 }
 
@@ -88,17 +84,17 @@ pre {
     border: none;
     font: inherit;
     cursor: pointer;
-    border-bottom: 1px solid blue;
-    color: blue;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
 }
 
 .releasecard {
-    border: 2px solid purple;
+    border-width: 2px;
+    border-style: solid;
     width: max-content;
     max-width: 100%;
     padding: 0.6em 1em 0em 1em;
     border-radius: 10px;
-    background-color: lightgray;
     text-align: center;
     margin: auto;
 }
@@ -118,37 +114,27 @@ pre {
 }
 
 #nav a:link {
-    color: black;
     font-weight: bold;
     text-decoration: none;
 }
 
 #nav a:visited {
-    color: black;
     font-weight: bold;
     text-decoration: none;
 }
 
 #footer {
-    color: gray;
     text-align: center;
     margin-top: 1em;
     font-size: small;
-}
-
-#footer a:link {
-    color: gray;
-}
-
-#footer a:visited {
-    color: gray;
 }
 
 #index-avatar {
     width: 150px;
     height: 150px;
     float: right;
-    border: 2px, solid, #000000;
+    border-width: 2px;
+    border-style: solid;
     border-radius: 10px;
     background-image: url(https://www.gravatar.com/avatar/8d18fec40a74782052fb4c007d212475?s=150);
     margin-left: 2em;
@@ -193,7 +179,8 @@ span.font-small {
     border-radius: 10px;
     vertical-align: middle;
     margin: 3px 0 3px 0;
-    border: 2px solid purple; /* green; */ /* orange; */
+    border-width: 2px;
+    border-style: solid;
 }
 
 .border .pic {
@@ -204,4 +191,77 @@ span.font-small {
 .border:hover .pic {
     transform: scale(1.1, 1.1);
     filter: brightness(75%);
+}
+
+/* colors */
+
+body, #nav {
+    background-color: #FFFFFF;
+}
+
+.show-comments {
+    border-bottom-color: #0000CD;
+}
+
+a:link, .show-comments {
+    color: #0000CD;
+}
+
+a:visited {
+    color: #4B0082;
+}
+
+body, #nav, #nav a:link, #nav a:visited {
+    color: #000000;
+}
+
+#nav {
+    border-bottom-color: #32CD32;
+}
+
+hr {
+    color: #32CD32;
+}
+
+table, th, td, pre, .border, .releasecard, #index-avatar {
+    border-color: #32CD32;
+}
+
+.releasecard {
+    background-color: #C0C0C0;
+}
+
+#footer, #footer a:link, #footer a:visited {
+    color: #808080;
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+    body, #nav {
+        background-color: #111111;
+    }
+
+    .show-comments {
+        border-bottom-color: #7B68EE;
+    }
+
+    a:link, .show-comments {
+        color: #7B68EE;
+    }
+
+    a:visited {
+        color: #BA55D3;
+    }
+
+    .releasecard {
+        background-color: #232323;
+    }
+
+    body, #nav, #nav a:link, #nav a:visited {
+        color: #FFFFFF;
+    }
+
+    #footer, #footer a:link, #footer a:visited {
+        color: #B0B0B0;
+    }
 }

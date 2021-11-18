@@ -10,4 +10,3 @@ You can always use this [PGP Key](files/xythobuz.asc)!
 * Twitter: [@xythobuz](https://twitter.com/xythobuz)
 * Youtube: [xythobuz](http://www.youtube.com/user/xythobuz)
 * Thingiverse: [xythobuz](https://www.thingiverse.com/xythobuz/designs)
-* RotorBuilds: [xythobuz](https://rotorbuilds.com/profile/1970)

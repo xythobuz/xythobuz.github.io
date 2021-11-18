@@ -317,6 +317,12 @@ For the solid contents settling, I bought two cheap chinese magnetic stirrers.
 The bottles need relatively flat bottom surfaces and they need to be positioned well on the stirrer, but they have enough power to move the rotor and stir even the thickest of my fertilizers.
 The stirrers run on 12V and can simply be connected to another relais.
 
+<!--%
+lightgallery([
+    [ "img/giessomat_stirrers.jpg", "12V magnetic stirrers and diluted fertilizer bottles" ]
+])
+%-->
+
 ## Automation Update (October 2021)
 
 As mentioned above, I'm running InfluxDB in my home network.
