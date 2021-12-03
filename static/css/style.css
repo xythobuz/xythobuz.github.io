@@ -191,6 +191,7 @@ span.font-small {
 .border:hover .pic {
     transform: scale(1.1, 1.1);
     filter: brightness(75%);
+    cursor: zoom-in;
 }
 
 /* colors */
