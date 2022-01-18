@@ -1,3 +1,6 @@
+@import "sh_bright.min.css" (prefers-color-scheme: light);
+@import "sh_darkness.min.css" (prefers-color-scheme: dark);
+
 body {
     font-size: 1.2em;
     font-family: 'Droid Sans', sans-serif;
