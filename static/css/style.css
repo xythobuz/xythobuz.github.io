@@ -1,4 +1,4 @@
-@import "sh_bright.min.css" (prefers-color-scheme: light);
+@import "sh_bright.min.css";
 @import "sh_darkness.min.css" (prefers-color-scheme: dark);
 
 body {
@@ -52,7 +52,7 @@ th, td {
 
 pre {
     max-height: 300px;
-    overflow: scroll;
+    overflow: auto;
     font-size: 0.9em;
     padding: 10px;
     margin: 1em;
@@ -257,5 +257,9 @@ table, th, td, pre, .border, .releasecard, #index-avatar {
 
     #footer, #footer a:link, #footer a:visited {
         color: #B0B0B0;
+    }
+
+    pre {
+        background-color: #000000;
     }
 }
