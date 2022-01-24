@@ -133,6 +133,7 @@ journalctl -u octoprint_connect@ttyUSB0.service
 </pre>
 
 ## Physical Power Button
+<a class="anchor" name="power_button"></a>
 
 Besides controlling eg. an ATX power supply or a relay connecting the printer to the power supply, I also wanted a push-button connected to the Raspberry Pi that can toggle the power supply using the aforementioned connection on the Pi.
 This can be solved using a simple Python script.
@@ -237,7 +238,9 @@ rm printer.jpg
 Of course, you may need to adjust the destination path on your webserver.
 Finally, add the script as a cronjob using `crontab -e`:
 
-    */5 * * * * sudo -u pi /home/pi/foto-script/upload.sh >/dev/null 2>/dev/null
+<pre class="sh_sh">
+*/5 * * * * sudo -u pi /home/pi/foto-script/upload.sh >/dev/null 2>/dev/null
+</pre>
 
 And that's it. An updated photo will appear on your webserver every 5 minutes.
 You can take a look at it [on my website](printer.html).

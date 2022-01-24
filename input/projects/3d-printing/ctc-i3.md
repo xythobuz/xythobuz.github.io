@@ -48,7 +48,9 @@ lightgallery([
 
 ## Heatbed Replacement
 
-
+The original FR-4 heatbed is very flimsy and bends easily.
+For this reason, I replaced it immediately with a very commonly available replacement heatbed made out of 3mm aluminium, with 214mm x 214mm.
+Below it I mounted some self-adhesive foam insulation.
 
 <!--%
 lightgallery([
@@ -85,7 +87,10 @@ TODO photos
 
 ## MOSFET for Heatbed
 
-
+It is common knowledge that the heatbed MOSFETS on Anet A8 printers are not sufficient and present a fire hazard.
+Because my CTC-i3 has a different mainboard, I didn't think this problem applied to me.
+But sure enough, after a year or so of regular usage, the heatbed MOSFET, as well as some parts of the PCB of my mainboard stopped working and were visibly burnt.
+Because of this, I added the widely used beefy external MOSFET to power the heatbed.
 
 <!--%
 lightgallery([
@@ -116,7 +121,11 @@ When trying to achieve a print bed that is as level as possible, this is not goo
 So I simply got a properly sized piece of aluminium from ebay, drilled the holes for some small printed bearing holders and mounted the heatbed to it.
 This was easy and has worked very well as a replacement.
 
-TODO photos
+<!--%
+lightgallery([
+    [ "img/ctc_i3_bed.jpg", "Side view of printbed with insulation" ]
+])
+%-->
 
 ## Y-Axis Webcam Mount
 
@@ -207,7 +216,7 @@ lightgallery([
 
 ## Power Button
 
-
+To use the power button with the Pi, see [my page about setting up OctoPrint](octoprint.html#power_button).
 
 <!--%
 lightgallery([

@@ -48,6 +48,13 @@ th, td {
     #wrap {
         height: 5em;
     }
+
+    a.anchor {
+        display: block;
+        position: relative;
+        top: -175px;
+        visibility: hidden;
+    }
 }
 
 pre {
