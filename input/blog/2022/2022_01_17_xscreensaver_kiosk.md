@@ -2,6 +2,7 @@ title: Blog
 post: XScreenSaver as TV decoration
 description: Script for placing fullscreen windows
 date: 2022-01-17
+comments: true
 ---
 
 I got a new TV connected to my PC.

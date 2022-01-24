@@ -2,6 +2,7 @@ title: Blog
 post: Arch Linux on Medion Crawler E10
 description: Installation and keyboard LED setup
 date: 2022-01-18
+comments: true
 ---
 
 Together with a friend of mine we installed Arch Linux on her Medion Crawler E10 gaming laptop.
