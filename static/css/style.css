@@ -66,6 +66,12 @@ pre {
     border-width: 2px;
     border-style: solid;
     border-radius: 10px;
+    resize: vertical;
+}
+
+/* allow resizing larger than max-height */
+pre[style*="height"] {
+    max-height: unset;
 }
 
 .ascii {
