@@ -144,16 +144,6 @@ pre {
     margin-bottom: 1em;
 }
 
-#index-twitter-page {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-iframe[id^='twitter-widget-'] {
-    width: 100%;
-}
-
 div.fonts {
     display: inline;
     margin-top: 20px;

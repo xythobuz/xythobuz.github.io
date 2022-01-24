@@ -40,10 +40,3 @@ To receive my latest updates, you can subscribe to the <a href="rss.xml"><img sr
 <!--%
 printRecentMenu()
 %-->
-
-### Tweets
-
-<div id="index-twitter-page">
-<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/xythobuz" data-widget-id="318732638158471170" data-chrome="noheader nofooter">Tweets by @xythobuz</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</div>

@@ -56,13 +56,3 @@ pre {
     margin-left: 2em;
     margin-bottom: 1em;
 }
-
-#index-twitter-page {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-iframe[id^='twitter-widget-'] {
-    width: 100%;
-}
