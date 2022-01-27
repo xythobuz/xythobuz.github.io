@@ -8,7 +8,7 @@ comments: true
 <!--% backToParent() %-->
 
 The CTC i3 Pro B is a very cheap chinese Prusa i3 clone.
-I bought it a couple of years ago for about 110 Euros.
+I bought it in November of 2017 for the surprisingly cheap price of 110€.
 The frame and motor mountings are made out of pieces of laser cut wood.
 Because of this, the frame flexes a lot, which is the main reason I would not recommend this machine today.
 Nonetheless, this is my main printer.

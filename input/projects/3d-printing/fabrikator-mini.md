@@ -7,7 +7,7 @@ comments: true
 
 <!--% backToParent() %-->
 
-I bought the [Fabrikator Mini V1.5 from HobbyKing](https://hobbyking.com/en_us/fabrikator-mini-3d-printer-transparent-eu-230v-v1-5.html) in about March 2016.
+I bought the [Fabrikator Mini V1.5 from HobbyKing](https://hobbyking.com/en_us/fabrikator-mini-3d-printer-transparent-eu-230v-v1-5.html) in March of 2016.
 So that's pretty much exactly three and a half years ago, at the time of this writing.
 I'm unbelievably happy with this printer and how it held up over the years.
 
