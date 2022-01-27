@@ -104,8 +104,6 @@ pre[style*="height"] {
     border: none;
     font: inherit;
     cursor: pointer;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
 }
 
 .releasecard {
@@ -133,14 +131,16 @@ pre[style*="height"] {
     margin-right: 0.5em;
 }
 
-#nav a:link {
-    font-weight: bold;
+a:link, a:visited {
     text-decoration: none;
 }
 
-#nav a:visited {
+a:link:hover, a:visited:hover, .show-comments:hover {
+    text-decoration: underline;
+}
+
+#nav a:link, #nav a:visited {
     font-weight: bold;
-    text-decoration: none;
 }
 
 #footer {
