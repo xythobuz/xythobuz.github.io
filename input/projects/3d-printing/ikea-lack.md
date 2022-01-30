@@ -32,9 +32,11 @@ lightgallery([
 
 My design files for the mounting bracket [can be found on my Gitea server](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/ikea-lack).
 
-## Slide out table
+## Slide-out table
 
-
+To be able to better access the small Fabrikator Mini printer from all sides, I added a small shelf for it that can slide out.
+I simply used two common drawer rails for furniture.
+They have a spring mechanism that holds on relatively tight when the drawer is closed.
 
 <!--%
 lightgallery([
