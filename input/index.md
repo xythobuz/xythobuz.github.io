@@ -8,7 +8,7 @@ noheader: true
 
 # Hi there!
 
-<div id="index-avatar"></div>
+<img id="index-avatar" src="img/ava.jpg">
 
 I'm a <!--%
 from datetime import datetime
