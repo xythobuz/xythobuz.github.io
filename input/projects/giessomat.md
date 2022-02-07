@@ -4,7 +4,7 @@ parent: projects
 position: 6
 github: https://git.xythobuz.de/thomas/giess-o-mat
 date: 2021-03-29
-update: 2021-11-17
+update: 2022-02-07
 ---
 
 This project [was featured on Hackaday](https://hackaday.com/2021/05/14/automated-watering-machine-has-what-plants-crave-fertilizer/)!
@@ -244,6 +244,8 @@ KP_R4 <---| | * | | 0 | | # | |                |   --------------------   |
 
 As you can see, the schematic is relatively simple, not doing much more than connecting some modules with each other.
 I did not (have to) add any kind of filtering or other passive circuitry.
+The only exception are **flyback diodes** for all inductive loads connected after the relais.
+They are not included in the schematics, so **don't forget to add appropriate ones**, depending on the exact valves you use.
 
 On the schematic above, only the four required connections between controller and user interface are shown.
 I have used a DB-9 connector, running the power switch as well as the other voltages generated on the controller over it.
@@ -379,6 +381,102 @@ lightgallery([
 
 For a work-around, I simply replaced the power supply, now driving everything with 13.5V instead of 12V.
 This seems to solve the issue for now.
+
+## GPIO Expansion / Door Lock Update (February 2022)
+
+After a year of operating the Gieß-o-mat the time came to expand it with some more outlets.
+Because unused GPIOs on the ESP32 are starting to run out, I decided to try and add an I2C GPIO expansion for more relais.
+
+For this I used the [PCF8574](https://www.ti.com/product/PCF8574), which I already used in the past, but can now be bought easily [on nice little breakout boards](https://amzn.to/3LjmCav).
+As before, I added some [relais modules](https://amzn.to/3uwMYzT) to drive four more outlet [solenoid valves](https://www.ebay.de/itm/353234654746).
+As mentioned above, take care to add flyback diodes to all inductive loads (for the relais inductors, these are already included on the modules).
+
+<!--%
+lightgallery([
+    [ "img/giessomat_i2c_expansion.jpg", "Photo of I2C expansion, filtering caps still missing." ],
+])
+%-->
+
+Unfortunately, the breakout modules don't contain any filtering capacitors.
+Because of the long cable length to the expansion, as well as the relatively high power requirements of the loads, I had some issues with the power supply at the expansion.
+The ESP itself ran fine, only the PCF8574 saw a voltage glitch large enough that it resets.
+This caused the relais to try to turn on for a very brief time (milliseconds), immediately causing the supply voltage to the PCF to fall, which resets and then turns the relais off again.
+
+Adding liberal amounts of filtering capacitors (330µF) to all three power rails going to the expansion (12V, 5V, 3.3V), as well as more caps directly at the PCF module (3900µF), helped enough to completely fix the issue.
+
+<div class="textwrap"><pre class="ascii">
+Giess-o-mat I2C GPIO Expansion Schematic
+
+              --------
+  +13.5V <---|x +12V  |
+   +5V_R <---|x +5V_R |
+    +3V3 <---|x +3V3  |
+ ESP_SDA <---|x SDA   |
+ ESP_SCL <---|x SCL   |
+     GND <---|x GND   |
+              --------
+
+           ---------------------
+          |        Relais       |
+  GND <---|x GND    ----   NC1 x|
+   R1 <---|x R1    |    | COM1 x|---> +13.5V
+   R2 <---|x R2     ----   NO1 x|---> V6
+   R3 <---|x R3     ----   NC2 x|
+   R4 <---|x R4    |    | COM2 x|---> +13.5V
+ +3V3 <---|x VCC    ----   NO2 x|---> V7
+          |         ----   NC3 x|
+          |        |    | COM3 x|---> +13.5V
+          |         ----   NO3 x|---> V8
+          |         ----   NC4 x|
+          |        |    | COM4 x|---> +13.5V
+          |         ----   NO4 x|---> V9
+          |x VCC                |
++5V_R <---|x JC-VCC             |
+           ---------------------
+
+              -----------------
+    +3V3 <---|x VCC   P   IO1 x|--> R1
+     GND <---|x GND   C   IO2 x|--> R2
+ ESP_SDA <---|x SDA   F   IO3 x|--> R3
+ ESP_SCL <---|x SCL       IO4 x|--> R4
+             |        8   IO5 x|
+             |        5   IO6 x|
+             |        7   IO7 x|
+             |        4   IO8 x|
+              -----------------
+
+        330µF                    330µF
++3V3 <---||---> GND    +13.5V <---||---> GND
+       |    |
+        -||-            +5V_R <---||---> GND
+       3900µF                    330µF
+</pre></div>
+
+Below you can see some screenshots I took on my scope.
+
+<!--%
+lightgallery([
+    [ "img/giessomat_oszi_1.png", "12V rail glitching when turning on load" ],
+    [ "img/giessomat_oszi_3.png", "12V and 3.3V rail glitching when turning on load" ],
+    [ "img/giessomat_oszi_4.png", "As before, but moved side-by-side" ],
+    [ "img/giessomat_oszi_5.png", "With some more filtering caps" ],
+])
+%-->
+
+CH1 (yellow) is the 12V rail, CH2 (blue) is the 3.3V rail.
+In the first three screenshots you can see the glitch caused by switching on one of the loads at the GPIO expansion.
+The 12V rail goes down to about 5V and up to 19V.
+The 3.3V rail, at the same time, even goes slightly below 0V and up to nearly 7V.
+To be honest, I'm surprised nothing died in these experiments.
+On the last screenshot, with some filtering in place, you can see that the relais now keeps turned on, with the load dropping the 12V rail to about 8V.
+The last screenshot was still missing the 3900µF on the 3.3V rail, and there were still some problems then.
+
+Recently [bigclivedotcom reviewed chinese door lock solenoids](https://www.youtube.com/watch?v=hHuI2LSeTHI).
+I [ordered some](https://aliexpress.com/item/1005001526243239.html) as well and added them to my "greenhouse" doors.
+Because they pull a lot of current, I had to use another separate 12V power supply.
+
+The software [has been updated](https://git.xythobuz.de/thomas/giess-o-mat/commit/6de07b6cc9664cf78b337dc4b86d29a61fb20410) to now support 16 I2C GPIO expanders with 8 pins each, for all supported functions (valves, pumps, stirrers, locks).
+To unlock the doors I [added](https://git.xythobuz.de/thomas/giess-o-mat/commit/70659caf77d655febd31a877d98070db76cb462e) an optional PIN entry function on the start screen of the UI.
 
 ## Links
 
