@@ -2,6 +2,8 @@ title: OctoPrint Setup
 description: Setting up OctoPrint and some common improvements
 parent: 3d-printing
 position: 40
+date: 2019-09-08
+update: 2022-01-24
 comments: true
 ---
 

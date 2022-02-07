@@ -101,7 +101,7 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
                 dateto = " (%s - %s)" % (year, p.get("update", "")[0:4])
 
         if nicelyFormatFullDate:
-            dateto = " - " + datetime.strptime(p.date, "%Y-%m-%d").strftime("%B %d, %Y")
+            dateto = " - " + datetime.strptime(p.get("update", p.date), "%Y-%m-%d").strftime("%B %d, %Y")
 
     print "  * **[%s](%s)**%s" % (title, p.url, dateto)
 
@@ -116,7 +116,7 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
 
 def printRecentMenu(count = 5):
     posts = [p for p in pages if "date" in p]
-    posts.sort(key=lambda p: p.get("date"), reverse=True)
+    posts.sort(key=lambda p: p.get("update", p.get("date")), reverse=True)
     for p in posts[0:count]:
         printMenuItem(p, False, False, False, True)
 

@@ -2,6 +2,8 @@ title: CTC i3 Pro B
 description: Experiences with and modifications to my chinese Prusa i3 clone
 parent: 3d-printing
 position: 20
+date: 2017-11-01
+update: 2022-01-27
 comments: true
 ---
 
