@@ -38,5 +38,5 @@ To receive my latest updates, you can subscribe to the <a href="rss.xml"><img sr
 ### Recent Posts and Updates
 
 <!--%
-printRecentMenu()
+printRecentMenu(10)
 %-->
