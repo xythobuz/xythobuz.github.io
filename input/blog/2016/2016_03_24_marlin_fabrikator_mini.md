@@ -1,8 +1,12 @@
 title: Blog
 post: Configuring Marlin Firmware for the Fabrikator Mini
+description: Research, Hardware modifications and Firmware config
 date: 2016-03-24
+update: 2019-05-01
 comments: true
 flattr: true
+parent: 3d-printing
+position: 70
 ---
 
 **Update:**
