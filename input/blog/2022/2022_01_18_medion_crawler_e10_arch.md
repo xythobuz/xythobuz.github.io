@@ -2,6 +2,7 @@ title: Blog
 post: Arch Linux on Medion Crawler E10
 description: Installation and keyboard LED setup
 date: 2022-01-18
+update: 2022-02-16
 comments: true
 ---
 
@@ -12,7 +13,13 @@ Installation was very straight forward, everything seems to work fine pretty muc
 These are the basic steps we had to take, maybe it helps someone else.
 Some parts have been kept short, so always consider the current [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide) as well!
 
-Prepare the storage (SSD as cache for HDD, as described [here](https://unix.stackexchange.com/a/443415) / [here](https://lucaswerkmeister.de/posts/2018/05/12/luks-on-lvm/)), with full disk encryption and format the filesystems.
+<del>Prepare the storage (SSD as cache for HDD, as described [here](https://unix.stackexchange.com/a/443415) / [here](https://lucaswerkmeister.de/posts/2018/05/12/luks-on-lvm/)), with full disk encryption and format the filesystems.</del>
+
+**Update:** Even though it sounds good in theory, the real-world performance of the encrypted and cached LVM setup was very bad.
+For this reason we backed-up the root, re-formatted both the SSD and HDD to simple ext4 filesystems, put the data back on the SSD and modified the fstab and bootloader to boot from the now unencrypted root (mounting the HDD for data storage, if required in future).
+Performance is much better now!
+
+**So leave out the LVM related steps below and create a normal root partition.**
 
 <pre class="sh_sh">
 # set disk mode in UEFI to AHCI
@@ -86,7 +93,14 @@ visudo
 # enable multilib repos & ILoveCandy
 vim /etc/pacman.conf
 
-pacman -Syu xorg-server nvidia nvidia-utils nvidia-settings lib32-nvidia-utils sddm pipewire pipewire-alsa pipewire-pulse pipewire-jack lib32-pipewire lib32-pipewire-jack helvum wireplumber sddm-kcm plasma-meta vlc dolphin dolphin-plugins kdialog kfind ark yakuake libreoffice-fresh openssh breeze-gtk kde-gtk-config ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-dejavu ttf-bitstream-vera terminus-font wine steam gvim firefox firefox-i18n-de firefox-ublock-origin cups cups-pdf print-manager system-config-printer pacman-contrib bluez-utils
+pacman -Syu xorg-server nvidia nvidia-utils nvidia-settings lib32-nvidia-utils \
+sddm pipewire pipewire-alsa pipewire-pulse pipewire-jack lib32-pipewire \
+lib32-pipewire-jack helvum wireplumber sddm-kcm plasma-meta vlc dolphin \
+dolphin-plugins kdialog kfind ark yakuake libreoffice-fresh openssh breeze-gtk \
+kde-gtk-config ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-dejavu \
+ttf-bitstream-vera terminus-font wine steam gvim firefox firefox-i18n-de \
+firefox-ublock-origin cups cups-pdf print-manager system-config-printer \
+pacman-contrib bluez-utils
 
 systemctl enable sddm
 systemctl enable sshd
