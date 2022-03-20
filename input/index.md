@@ -35,6 +35,8 @@ All of my projects are released as free or open-source software on [my Gitea Ser
 
 To receive my latest updates, you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
 
+If you'd like, you can [support my open-source work on GitHub Sponsors](https://github.com/sponsors/xythobuz).
+
 ### Recent Posts and Updates
 
 <!--%
