@@ -4,7 +4,7 @@ parent: projects
 position: 6
 github: https://git.xythobuz.de/thomas/giess-o-mat
 date: 2021-03-29
-update: 2022-02-07
+update: 2022-03-25
 ---
 
 This project [was featured on Hackaday](https://hackaday.com/2021/05/14/automated-watering-machine-has-what-plants-crave-fertilizer/)!
@@ -477,6 +477,35 @@ Because they pull a lot of current, I had to use another separate 12V power supp
 
 The software [has been updated](https://git.xythobuz.de/thomas/giess-o-mat/commit/6de07b6cc9664cf78b337dc4b86d29a61fb20410) to now support 16 I2C GPIO expanders with 8 pins each, for all supported functions (valves, pumps, stirrers, locks).
 To unlock the doors I [added](https://git.xythobuz.de/thomas/giess-o-mat/commit/70659caf77d655febd31a877d98070db76cb462e) an optional PIN entry function on the start screen of the UI.
+
+## Valve Kickstarting Update (March 2022)
+
+Right at the beginning, another issue came up with the machine.
+The gravity-fed outlet valves work fine as planned, as long as the whole length of the outlet hose is primed / filled with water.
+Then, all the water in the lower part "pulls" downward from gravity, creating a negative pressure differential that sucks the liquid out of the tank.
+Unfortunately, with enough time between dispensing water, the hose starts slowly emptying into the plant.
+After enough time passes, all the water up to the highest point of the hose has flowed out.
+When then trying to dispense more water, nothing happens when opening the valve.
+The way I worked around that was by using a syringe to suck some air out of the bottom of the hose, at the plants.
+Not much is needed, only enough to bring the water below the height of the inlet in the tank.
+
+This was passable at the beginning.
+I am physically present at the machine anyway to tell it to start dispensing, so quickly priming the valves was not that much more work.
+But as the project matures, I'd like to use it to further automate the plant watering, so I had to find a way to fix this problem.
+
+The solution comes in the form of more pumps, one connected "in parallel" to each outlet valve.
+This way, the pumps can run for a couple of seconds at the beginning, to "kick start" the water flow.
+But because they are pretty noisy, they turn off after 10sec, after which the valves take over with gravity.
+
+To connect the pumps, I used more I2C port expanders with relais, as described in the GPIO Expansion Update above.
+
+The software [has been updated](https://git.xythobuz.de/thomas/giess-o-mat/commit/4dab9e16f5e5f28c05832694db125513b1513720) to allow setting optional kickstart pins for each outlet valve.
+
+<!--%
+lightgallery([
+    [ "img/giessomat_gpio_ext.jpg", "GPIO Expansion with valves and pumps" ],
+])
+%-->
 
 ## Links
 
