@@ -76,7 +76,15 @@ def tableHelper(style, header, content):
 # menu helper macro
 # -----------------------------------------------------------------------------
 
-def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = ""):
+def githubCommitBadge(p):
+    if p.get("github", "") != "":
+        link = p.get("git", p.github)
+        linkParts = p.github.split("/")
+        if len(linkParts) >= 5:
+            return "<a href=\"" + link + "\"><img src=\"https://img.shields.io/github/last-commit/" + linkParts[3] + "/" + linkParts[4] + ".svg?logo=git&style=flat\" /></a>"
+    return ""
+
+def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = "", showLastCommit = True):
     title = p.title
     if lang != "":
         if p.get("title_" + lang, "") != "":
@@ -112,13 +120,18 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
                 description = p.get("description_" + lang, "")
         print "<br><span class=\"listdesc\">" + description + "</span>"
 
+    if showLastCommit:
+        link = githubCommitBadge(p)
+        if len(link) > 0:
+            print "<br>" + link
+
     return lastyear
 
 def printRecentMenu(count = 5):
     posts = [p for p in pages if "date" in p]
     posts.sort(key=lambda p: p.get("update", p.get("date")), reverse=True)
     for p in posts[0:count]:
-        printMenuItem(p, False, False, False, True)
+        printMenuItem(p, False, False, False, True, "0", "", False)
 
 def printBlogMenu():
     posts = [p for p in pages if "post" in p]

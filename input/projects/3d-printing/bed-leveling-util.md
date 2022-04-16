@@ -3,7 +3,8 @@ description: Python wxWidgets Marlin Mesh Bed Leveling helper
 parent: 3d-printing
 position: 60
 comments: true
-github: https://git.xythobuz.de/thomas/Bed-Leveling-Utility
+git: https://git.xythobuz.de/thomas/Bed-Leveling-Utility
+github: https://github.com/xythobuz/Bed-Leveling-Utility
 date: 2016-06-07
 update: 2016-06-12
 ---

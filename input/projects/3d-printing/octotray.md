@@ -3,7 +3,8 @@ description: Linux PyQt tray application to control OctoPrint
 parent: 3d-printing
 position: 50
 comments: true
-github: https://git.xythobuz.de/thomas/OctoTray
+git: https://git.xythobuz.de/thomas/OctoTray
+github: https://github.com/xythobuz/OctoTray
 date: 2021-05-08
 update: 2021-05-13
 ---

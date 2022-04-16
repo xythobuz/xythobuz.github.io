@@ -2,7 +2,8 @@ title: Gieß-o-mat
 description: DIY fertilizer mixer and plant watering machine
 parent: projects
 position: 6
-github: https://git.xythobuz.de/thomas/giess-o-mat
+git: https://git.xythobuz.de/thomas/giess-o-mat
+github: https://github.com/xythobuz/giess-o-mat
 date: 2021-03-29
 update: 2022-03-25
 ---

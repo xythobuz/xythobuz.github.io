@@ -1,7 +1,8 @@
 title: OpenRaider
 description: Classic Tomb Raider game engine re-implementation
 parent: projects
-github: https://git.xythobuz.de/thomas/OpenRaider
+git: https://git.xythobuz.de/thomas/OpenRaider
+github: https://github.com/xythobuz/OpenRaider
 date: 2013-12-15
 update: 2015-08-13
 ---

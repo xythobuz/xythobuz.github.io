@@ -22,11 +22,18 @@ else:
 </head>
 <body onload="sh_highlightDocument('/js/sh/', '.min.js');">
     <!--%
+        link = ""
+
         if page.get("github", "") != "":
+            link = page.github
+        if page.get("git", "") != "":
+            link = page.git
+
+        if link != "":
             # GitHub Fork-Me Ribbon
             print '<div class="github-fork-ribbon-wrapper right-bottom">'
             print '<div class="github-fork-ribbon"><a href="'
-            print page.github
+            print link
             print '">Fork this with Git</a></div></div>'
     %-->
     <div id="wrap"><div id="nav">
@@ -97,6 +104,10 @@ else:
                     else:
                         date = datetime.strptime(page["update"], "%Y-%m-%d").strftime("%B %d, %Y")
                         print "<i>Last updated on %s.</i>" % date
+
+            link = githubCommitBadge(page)
+            if len(link) > 0:
+                print "<p>Recent activity on GitHub: " + link + "</p>"
         %-->
         {{ __content__ }}
         <hr>
