@@ -105,7 +105,7 @@ else:
                         date = datetime.strptime(page["update"], "%Y-%m-%d").strftime("%B %d, %Y")
                         print "<i>Last updated on %s.</i>" % date
 
-            link = githubCommitBadge(page)
+            link = githubCommitBadge(page, True)
             if len(link) > 0:
                 print "<p>Recent activity on GitHub: " + link + "</p>"
         %-->

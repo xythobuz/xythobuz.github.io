@@ -76,13 +76,19 @@ def tableHelper(style, header, content):
 # menu helper macro
 # -----------------------------------------------------------------------------
 
-def githubCommitBadge(p):
+def githubCommitBadge(p, showInline = False):
+    ret = ""
     if p.get("github", "") != "":
         link = p.get("git", p.github)
         linkParts = p.github.split("/")
         if len(linkParts) >= 5:
-            return "<a href=\"" + link + "\"><img src=\"https://img.shields.io/github/last-commit/" + linkParts[3] + "/" + linkParts[4] + ".svg?logo=git&style=flat\" /></a>"
-    return ""
+            ret += "<a href=\"" + link + "\"><img "
+            if showInline:
+                ret += "style =\"vertical-align: top;\" "
+            ret += "src=\"https://img.shields.io/github/last-commit/"
+            ret += linkParts[3] + "/" + linkParts[4]
+            ret += ".svg?logo=git&style=flat\" /></a>"
+    return ret
 
 def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = "", showLastCommit = True):
     title = p.title
