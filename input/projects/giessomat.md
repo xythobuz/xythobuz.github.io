@@ -513,7 +513,7 @@ lightgallery([
 
 The next step in automating the workflow is the "Full-Auto mode".
 This allows the user to enter the required fertilizers and plants at the beginning.
-The machine then first stirrst the fertilizers, dispenses them as needed, fills the tank, waters the plants, clears the tank from water, fills the tank again with a bit of clean water, empties that and finally lets the hoses run empty.
+The machine then first stirrs the fertilizers, dispenses them as needed, fills the tank, waters the plants, clears the tank from water, fills the tank again with a bit of clean water, empties that and finally lets the hoses run empty.
 
 This not only reduces user-interaction, only requiring button presses at the start of the operation.
 It also reduces the possiblity of fertilizer-water-mixture remaining in the hoses and tank, which causes algae growth.
