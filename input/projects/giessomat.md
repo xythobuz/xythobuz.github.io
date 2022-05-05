@@ -5,7 +5,7 @@ position: 6
 git: https://git.xythobuz.de/thomas/giess-o-mat
 github: https://github.com/xythobuz/giess-o-mat
 date: 2021-03-29
-update: 2022-03-25
+update: 2022-05-05
 ---
 
 This project [was featured on Hackaday](https://hackaday.com/2021/05/14/automated-watering-machine-has-what-plants-crave-fertilizer/)!
@@ -41,7 +41,8 @@ Still, I always manually close the mains-water-inlet with a proper hand-controll
 
 <!--%
 lightgallery([
-    [ "img/giessomat_web.png", "Screenshot of the web interface" ]
+    [ "img/giessomat_web.png", "Screenshot of the web interface" ],
+    [ "img/giessomat_ui_design.png", "Tweaked Web UI design" ],
 ])
 %-->
 
@@ -505,6 +506,24 @@ The software [has been updated](https://git.xythobuz.de/thomas/giess-o-mat/commi
 <!--%
 lightgallery([
     [ "img/giessomat_gpio_ext.jpg", "GPIO Expansion with valves and pumps" ],
+])
+%-->
+
+## Full-Auto mode and Web-UI tweaks (May 2022)
+
+The next step in automating the workflow is the "Full-Auto mode".
+This allows the user to enter the required fertilizers and plants at the beginning.
+The machine then first stirrst the fertilizers, dispenses them as needed, fills the tank, waters the plants, clears the tank from water, fills the tank again with a bit of clean water, empties that and finally lets the hoses run empty.
+
+This not only reduces user-interaction, only requiring button presses at the start of the operation.
+It also reduces the possiblity of fertilizer-water-mixture remaining in the hoses and tank, which causes algae growth.
+Running the hoses empty only works when kickstart pumps are added to each valve, of course.
+
+While doing this, I also slightly re-designed the web interface, reducing the size of the graphical indicators, so more fit on the screen.
+
+<!--%
+lightgallery([
+    [ "img/giessomat_ui_design.png", "Tweaked Web UI design" ],
 ])
 %-->
 
