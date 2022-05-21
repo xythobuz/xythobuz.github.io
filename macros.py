@@ -172,6 +172,12 @@ def print3DPrintingMenu():
     for p in mpages:
         printMenuItem(p, False, True, True)
 
+def printSmarthomeMenu():
+    mpages = [p for p in pages if p.get("parent", "") == "smarthome" and p.lang == "en"]
+    mpages.sort(key=lambda p: int(p["position"]))
+    for p in mpages:
+        printMenuItem(p, False, True, True)
+
 def printQuadcopterMenu():
     mpages = [p for p in pages if p.get("parent", "") == "quadcopters" and p.lang == "en"]
     mpages.sort(key=lambda p: int(p["position"]))

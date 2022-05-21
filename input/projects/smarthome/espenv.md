@@ -1,14 +1,20 @@
 title: ESP-Env
 description: ESP32 / ESP8266 & BME280 / SHT2x sensor with InfluxDB support
-parent: projects
+parent: smarthome
 git: https://git.xythobuz.de/thomas/esp-env
+position: 100
 date: 2020-01-06
-update: 2020-10-22
+update: 2022-05-21
 ---
 
 As a first step into smart home automation, I wanted to place temperature and humidity sensors in most rooms of my flat.
 To achieve this, I made some simple ESP8266 boards with an I2C sensor, either SHT21 or BME280, as well as a small 3.3V regulator and a USB connector.
 The data is written into an InfluxDB instance on my NAS.
+
+Over time I also added support for ESP32 as well as Arduino Uno Wifi Developer Edition boards, MQTT interfacing, relais control, CCS811 and soil moisture sensor support.
+
+Initially I had a separate project, [esp-relais](https://git.xythobuz.de/thomas/esp-relais), for controlling [this ESP8266 Relais board from Amazon](https://amzn.to/3FQdOXB).
+This functionality has since been integrated into esp-env!
 
 <!--%
 lightgallery([

@@ -2,7 +2,7 @@ title: Steam Engine
 title_de: Dampfmaschine
 description: My Grandfathers self-built model steam engine
 parent: projects
-position: 50
+position: 500
 ---
 
 In 1992 my grandfather began building his own live model steam engine, in 1:2.7 scale.

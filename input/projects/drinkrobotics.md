@@ -1,7 +1,7 @@
 title: DrinkRobotics
 description: Collection of various cocktail machine related things
 parent: projects
-position: 9
+position: 100
 ---
 
 ## Ubabot
