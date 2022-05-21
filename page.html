@@ -78,6 +78,9 @@ else:
                     else:
                         print "<h1>%s</h1>" % (page.get("title", ""))
 
+                if page.get("description", "") != "":
+                    print "<h5>%s</h5>" % (page.get("description", ""))
+
                 if page.get("date", "") != "":
                     if page.get("title", "") == "Blog":
                         if page.get("lang", "en") == "de":
