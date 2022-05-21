@@ -2,6 +2,7 @@ title: ESP-Env
 description: ESP32 / ESP8266 & BME280 / SHT2x sensor with InfluxDB support
 parent: smarthome
 git: https://git.xythobuz.de/thomas/esp-env
+github: https://github.com/xythobuz/esp-env
 position: 100
 date: 2020-01-06
 update: 2022-05-21
