@@ -6,7 +6,7 @@ flattr: true
 git: https://git.xythobuz.de/thomas/sovereign
 github: https://github.com/xythobuz/sovereign
 date: 2019-01-04
-update: 2022-05-21
+update: 2022-05-22
 ---
 
 I first started hosting my own web and mail server in [April 2013](/2013_04_02_zaphod.html), with a Debian 6 VPS at Hetzner, with manually configured Apache, Dovecot, Postfix and some other stuff.
@@ -29,3 +29,10 @@ Currently I run one instance for the page you're looking at now, one instance fo
 
 I also use sovereign to configure some things in my home network.
 This is a Linux VM running on my TrueNAS, which runs my IoT setup for my appliances, like [MQTT, Grafana](/influxdb.html) and [Node-RED](/nodered.html).
+
+<!--%
+lightgallery([
+    [ "img/sovereign_monit.png", "Screenshot of monit on VPS" ],
+    [ "img/sovereign_iot.png", "Screenshot of monit on VM" ],
+])
+%-->
