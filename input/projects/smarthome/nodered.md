@@ -3,7 +3,7 @@ description: Point 'n' Click workflow automation
 parent: smarthome
 position: 300
 date: 2021-11-01
-update: 2022-05-21
+update: 2022-05-23
 ---
 
 [Node-RED](https://nodered.org/) is a great tool for visually creating workflows based on events.
@@ -12,6 +12,7 @@ I use it in conjunction with my [ESP-Env sensor and actor hardware](espenv.html)
 I plan to extend these workflows as required when I add new hardware to my network.
 
 Here is a simple setup that automatically switches lights in my bathroom according to the sun position, using [node-red-contrib-sunevents](https://github.com/freakent/node-red-contrib-sunevents).
+It allows forcing a temporary override via another MQTT topic, for a lightswitch.
 
 The fan in my window-less bathroom is kept on all the time for now.
 In the future I want to add movement sensors to the bathroom and integrate them into this logic, as well as the temperature / humidity sensors I already have in there.
@@ -37,7 +38,7 @@ function copyEvent(id) {
 }
 </script>
 
-<pre id="jsonlights">
+<pre id="jsonlights" class="sh_javascript">
 [
     {
         "id": "490116e54af5ff9a",
@@ -96,7 +97,7 @@ function copyEvent(id) {
         "name": "Check for new Sun Events",
         "info": "",
         "x": 150,
-        "y": 160,
+        "y": 40,
         "wires": []
     },
     {
@@ -116,7 +117,7 @@ function copyEvent(id) {
         "onceDelay": "1",
         "topic": "",
         "x": 110,
-        "y": 200,
+        "y": 80,
         "wires": [
             [
                 "5151002c9539d2d6"
@@ -150,7 +151,7 @@ function copyEvent(id) {
         "to": "",
         "reg": false,
         "x": 270,
-        "y": 200,
+        "y": 80,
         "wires": [
             [
                 "bc6e8bf098875279"
@@ -166,7 +167,7 @@ function copyEvent(id) {
         "topic": "",
         "name": "Sun Events",
         "x": 430,
-        "y": 200,
+        "y": 80,
         "wires": [
             [
                 "4384fcd3b3567c6c",
@@ -191,8 +192,8 @@ function copyEvent(id) {
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 350,
-        "y": 360,
+        "x": 650,
+        "y": 260,
         "wires": [
             [
                 "98d848700eaa119d",
@@ -217,8 +218,8 @@ function copyEvent(id) {
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 350,
-        "y": 480,
+        "x": 650,
+        "y": 300,
         "wires": [
             [
                 "3e4a16697db5b83d",
@@ -245,8 +246,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 340,
+        "x": 1030,
+        "y": 240,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -262,8 +263,8 @@ function copyEvent(id) {
             "fd3c7a7a7a3b2e99"
         ],
         "timeout": "30",
-        "x": 960,
-        "y": 420,
+        "x": 1280,
+        "y": 580,
         "wires": [
             []
         ]
@@ -287,8 +288,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 460,
+        "x": 1040,
+        "y": 360,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -315,7 +316,7 @@ function copyEvent(id) {
         "to": "",
         "reg": false,
         "x": 800,
-        "y": 200,
+        "y": 80,
         "wires": [
             [
                 "23bd87871e2f0ecb"
@@ -343,11 +344,10 @@ function copyEvent(id) {
         "topic": "",
         "payloadType": "date",
         "x": 120,
-        "y": 360,
+        "y": 540,
         "wires": [
             [
-                "d8f1896d6ed5ca0d",
-                "d17e0c1b295d531a"
+                "ce6a5620f1e6af76"
             ]
         ]
     },
@@ -370,8 +370,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 340,
+        "x": 860,
+        "y": 240,
         "wires": [
             [
                 "895f005abb0c7a30"
@@ -397,8 +397,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 380,
+        "x": 860,
+        "y": 280,
         "wires": [
             [
                 "b7ea8636c374cd25"
@@ -424,8 +424,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 380,
+        "x": 1040,
+        "y": 280,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -451,8 +451,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 460,
+        "x": 860,
+        "y": 360,
         "wires": [
             [
                 "bbd4b1ede10ea09e"
@@ -478,8 +478,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 500,
+        "x": 860,
+        "y": 400,
         "wires": [
             [
                 "8c16ac287cbf877c"
@@ -505,8 +505,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 500,
+        "x": 1030,
+        "y": 400,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -520,7 +520,7 @@ function copyEvent(id) {
         "name": "Set Lights",
         "info": "",
         "x": 100,
-        "y": 320,
+        "y": 500,
         "wires": []
     },
     {
@@ -537,71 +537,8 @@ function copyEvent(id) {
         "statusVal": "",
         "statusType": "auto",
         "x": 980,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "b3edc5ecdc862850",
-        "type": "comment",
-        "z": "490116e54af5ff9a",
-        "name": "Initialize Sun State",
-        "info": "",
-        "x": 130,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "ac6c11189b8f1778",
-        "type": "inject",
-        "z": "490116e54af5ff9a",
-        "name": "Once",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "date",
-        "x": 90,
         "y": 80,
-        "wires": [
-            [
-                "f66b01b2a01a9c70"
-            ]
-        ]
-    },
-    {
-        "id": "f66b01b2a01a9c70",
-        "type": "change",
-        "z": "490116e54af5ff9a",
-        "name": "Sunrise Sun State",
-        "rules": [
-            {
-                "t": "set",
-                "p": "sunevent",
-                "pt": "global",
-                "to": "sunrise",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 80,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "9c21e093193d54e4",
@@ -621,7 +558,7 @@ function copyEvent(id) {
         "repair": false,
         "outputs": 1,
         "x": 610,
-        "y": 240,
+        "y": 120,
         "wires": [
             [
                 "0516f39aac309884"
@@ -646,7 +583,7 @@ function copyEvent(id) {
         "repair": false,
         "outputs": 1,
         "x": 610,
-        "y": 200,
+        "y": 80,
         "wires": [
             [
                 "0516f39aac309884"
@@ -660,7 +597,636 @@ function copyEvent(id) {
         "name": "Only store relevant states",
         "info": "",
         "x": 630,
-        "y": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "125e5ada06d3bb84",
+        "type": "mqtt in",
+        "z": "490116e54af5ff9a",
+        "name": "Forced Light",
+        "topic": "bathroom/force_light",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "5be146a97e98891c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "0e7e6ebfd46450f7",
+                "12082b0fb4909c57",
+                "42ee21fcc64e2f6b"
+            ]
+        ]
+    },
+    {
+        "id": "0e7e6ebfd46450f7",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Store Forced Light State",
+        "rules": [
+            {
+                "t": "set",
+                "p": "forced_light_bathroom",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 260,
+        "wires": [
+            [
+                "ce6a5620f1e6af76"
+            ]
+        ]
+    },
+    {
+        "id": "3bcc8e43c0acccd5",
+        "type": "comment",
+        "z": "490116e54af5ff9a",
+        "name": "Allow overriding light schedule",
+        "info": "",
+        "x": 160,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "12082b0fb4909c57",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Store Time of forcing",
+        "rules": [
+            {
+                "t": "set",
+                "p": "forced_light_bathroom_time",
+                "pt": "global",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce6a5620f1e6af76",
+        "type": "switch",
+        "z": "490116e54af5ff9a",
+        "name": "Lights Forced?",
+        "property": "forced_light_bathroom",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "none",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "big",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "small",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 400,
+        "y": 540,
+        "wires": [
+            [
+                "d8f1896d6ed5ca0d",
+                "d17e0c1b295d531a"
+            ],
+            [
+                "9241d0a69fa0e0ba"
+            ],
+            [
+                "0106c313423b119b",
+                "c5b95b0a9268e6d6"
+            ],
+            [
+                "72b9d0ad81123696",
+                "511135c0e9357ffe"
+            ]
+        ]
+    },
+    {
+        "id": "6ed0af4d2180e6c1",
+        "type": "comment",
+        "z": "490116e54af5ff9a",
+        "name": "Set Lights according to Sun Schedule",
+        "info": "",
+        "x": 730,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "9241d0a69fa0e0ba",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Turn Off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 480,
+        "wires": [
+            [
+                "5118b6346eb963da",
+                "169b79020e5cc427"
+            ]
+        ]
+    },
+    {
+        "id": "169b79020e5cc427",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Bathroom Small Light",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "bathroom/light_small",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 480,
+        "wires": [
+            [
+                "c8246e3ed2f6ac51"
+            ]
+        ]
+    },
+    {
+        "id": "5118b6346eb963da",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Bathroom Big Light",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "bathroom/light_big",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 520,
+        "wires": [
+            [
+                "c8246e3ed2f6ac51"
+            ]
+        ]
+    },
+    {
+        "id": "a4d3930695a8574e",
+        "type": "comment",
+        "z": "490116e54af5ff9a",
+        "name": "Forced Off",
+        "info": "",
+        "x": 640,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "617d2b7904f23127",
+        "type": "comment",
+        "z": "490116e54af5ff9a",
+        "name": "Forced Big Light",
+        "info": "",
+        "x": 660,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "0106c313423b119b",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Turn Off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 640,
+        "wires": [
+            [
+                "857e6aea1df251ba"
+            ]
+        ]
+    },
+    {
+        "id": "857e6aea1df251ba",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Bathroom Small Light",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "bathroom/light_small",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 640,
+        "wires": [
+            [
+                "c8246e3ed2f6ac51"
+            ]
+        ]
+    },
+    {
+        "id": "c5b95b0a9268e6d6",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Turn On",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 680,
+        "wires": [
+            [
+                "10e0fc6e5014f1a8"
+            ]
+        ]
+    },
+    {
+        "id": "10e0fc6e5014f1a8",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Bathroom Big Light",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "bathroom/light_big",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 680,
+        "wires": [
+            [
+                "c8246e3ed2f6ac51"
+            ]
+        ]
+    },
+    {
+        "id": "be6439f19a674c49",
+        "type": "comment",
+        "z": "490116e54af5ff9a",
+        "name": "Forced Small Light",
+        "info": "",
+        "x": 670,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "511135c0e9357ffe",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Turn Off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 820,
+        "wires": [
+            [
+                "d6c93118a00de8be"
+            ]
+        ]
+    },
+    {
+        "id": "0e14dde521822fd9",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Bathroom Small Light",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "bathroom/light_small",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 780,
+        "wires": [
+            [
+                "c8246e3ed2f6ac51"
+            ]
+        ]
+    },
+    {
+        "id": "72b9d0ad81123696",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Turn On",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 780,
+        "wires": [
+            [
+                "0e14dde521822fd9"
+            ]
+        ]
+    },
+    {
+        "id": "d6c93118a00de8be",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Bathroom Big Light",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "bathroom/light_big",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 820,
+        "wires": [
+            [
+                "c8246e3ed2f6ac51"
+            ]
+        ]
+    },
+    {
+        "id": "14e28adbe9d5ab9b",
+        "type": "inject",
+        "z": "490116e54af5ff9a",
+        "name": "Every 30sec",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 740,
+        "wires": [
+            [
+                "ca79c73ef3fd979b"
+            ]
+        ]
+    },
+    {
+        "id": "cfca4ed8e126b999",
+        "type": "comment",
+        "z": "490116e54af5ff9a",
+        "name": "Stop Override after time",
+        "info": "",
+        "x": 140,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "ca79c73ef3fd979b",
+        "type": "switch",
+        "z": "490116e54af5ff9a",
+        "name": "Lights Forced?",
+        "property": "forced_light_bathroom",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "none",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 740,
+        "wires": [
+            [
+                "3ec81549844232cc"
+            ]
+        ]
+    },
+    {
+        "id": "3ec81549844232cc",
+        "type": "function",
+        "z": "490116e54af5ff9a",
+        "name": "New Override State",
+        "func": "var trig_t = global.get(\"forced_light_bathroom_time\");\n//node.warn(\"trig_t = \" + trig_t);\n\ntrig_t += (1000 * 60 * 60 * 2); // 2 hours\n\n//trig_t += (1000 * 60); // 1 minute\n//node.warn(\"trig_t+1 = \" + trig_t);\n\nvar trig = new Date(trig_t);\n//node.warn(\"trig = \" + trig);\n\nvar now = new Date();\n//node.warn(\"now = \" + now);\n\nif (trig <= now) {\n    msg.payload = \"none\";\n    return msg;\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 840,
+        "wires": [
+            [
+                "d9c6f73e0340a93e"
+            ]
+        ]
+    },
+    {
+        "id": "88d475840651d470",
+        "type": "comment",
+        "z": "490116e54af5ff9a",
+        "name": "Disable after 2 hours",
+        "info": "",
+        "x": 150,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "d9c6f73e0340a93e",
+        "type": "change",
+        "z": "490116e54af5ff9a",
+        "name": "Store Forced Light State",
+        "rules": [
+            {
+                "t": "set",
+                "p": "forced_light_bathroom",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 840,
+        "wires": [
+            [
+                "100da1b7bffe4ab2",
+                "ce6a5620f1e6af76"
+            ]
+        ]
+    },
+    {
+        "id": "42ee21fcc64e2f6b",
+        "type": "debug",
+        "z": "490116e54af5ff9a",
+        "name": "Override",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "100da1b7bffe4ab2",
+        "type": "debug",
+        "z": "490116e54af5ff9a",
+        "name": "Override Refresh",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 900,
         "wires": []
     },
     {
@@ -841,6 +1407,114 @@ function copyEvent(id) {
         "x": 155,
         "y": 80,
         "wires": []
+    },
+    {
+        "id": "2f4447ab9df7cdc9",
+        "type": "comment",
+        "z": "b9932c4c66b18537",
+        "name": "Initialize States",
+        "info": "",
+        "x": 120,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b8d60dba22486026",
+        "type": "inject",
+        "z": "b9932c4c66b18537",
+        "name": "Once",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "0c523fcd13255b79",
+                "cdede78de7e379d1"
+            ]
+        ]
+    },
+    {
+        "id": "dd5d9dc12a9e14f0",
+        "type": "change",
+        "z": "b9932c4c66b18537",
+        "name": "Set Sun State",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sunevent",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c523fcd13255b79",
+        "type": "change",
+        "z": "b9932c4c66b18537",
+        "name": "Bathroom Lights not forced",
+        "rules": [
+            {
+                "t": "set",
+                "p": "forced_light_bathroom",
+                "pt": "global",
+                "to": "none",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cdede78de7e379d1",
+        "type": "function",
+        "z": "b9932c4c66b18537",
+        "name": "Return current approx. sun state",
+        "func": "var now = new Date();\nvar h = now.getHours();\n\nif ((h >= 8) && (h <= 19)) {\n    msg.payload = \"sunrise\";\n} else {\n    msg.payload = \"sunset\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 360,
+        "wires": [
+            [
+                "dd5d9dc12a9e14f0"
+            ]
+        ]
     }
 ]
 </pre>
