@@ -3,6 +3,7 @@ description: 4S LiPo, 220mm frame, 2205 2300KV motors
 parent: quadcopters
 position: 10
 date: 2017-11-01
+update: 2022-05-23
 ---
 
 <!--% backToParent() %-->
@@ -12,8 +13,16 @@ After my first failed attempts with large copters, gaining some experience with 
 But I had built up some skills and was ready for the next step.
 So I built a 220mm frame copter with 2205 motors.
 
+It has all the bells-and-whistles available at the time, like DShot, Betaflight OSD, Smartaudio, as well as S-Bus and Smartport for two-way communication.
+
 <!--%
-# TODO photos
+lightgallery([
+    [ "img/lx5_3.jpg", "Front view" ],
+    [ "img/lx5_1.jpg", "Left side view" ],
+    [ "img/lx5_2.jpg", "Right side view" ],
+    [ "img/lx5_4.jpg", "Left stack closeup view" ],
+    [ "img/lx5_5.jpg", "Right stack closeup view" ]
+])
 %-->
 
 Here are some recordings of the FPV footage.
