@@ -3,7 +3,7 @@ description: My gear and the modifications I did to it
 parent: quadcopters
 position: 80
 date: 2015-10-09
-update: 2021-05-28
+update: 2022-05-23
 ---
 
 <!--% backToParent() %-->
@@ -50,9 +50,14 @@ lightgallery([
 
 ## Customized Transmitter
 
+Many years ago, a long time before I even started getting into Quadcopters, my grandpa bought me a cheap 2.4GHz Transmitter from Conrad Elektronik.
+Because this was already available when I started building my own copters, I used it for that as well.
+Turns out, it is a Flysky-clone, with it's own shoddy PC software.
+So I wrote [my own Mac driver for it](2015_12_20_serialgamepad.html).
+After using it with its original receiver for a while, I decided to move into the FrSky ecosystem.
+So I swapped out the built-in transmitter for a [FrSky DHT](https://www.frsky-rc.com/product/dht-toggle-switch-2/) with the [TTL mod](http://majek.mamy.to/en/frsky-dht-ttl-mod/) to connect [my own telemetry display](2016_11_05_frsky_telemetry.html).
 
-
-Also see [the article about my Arduino FrSky Telemetry display](2016_11_05_frsky_telemetry.html) and [the article about my Saitek X52 USB joystick experiments](2016_07_24_usb_host_cppm.html).
+Also see [the article about my Saitek X52 USB joystick experiments](2016_07_24_usb_host_cppm.html).
 
 <!--%
 lightgallery([
@@ -67,11 +72,30 @@ lightgallery([
 ])
 %-->
 
-## FPV Monitor
+## Ammo Can Battery Charging
 
+Having so many high-capacity LiPo batteries around because of this hobby is kinda scary of course, after looking at a bunch of battery fires on YouTube.
+So I at least wanted to have some kind of fire-proof enclosure for charging my batteries in.
+I decided to go the common ammo-can route for this.
 
+When doing this, it is **very important** to modify the can so it no longer is pressure-tight.
+Otherwise you're building something more like a bomb.
+Many people remove the seal in the lid for this, but I decided to drill a couple of large holes into the can, as well as a rectangular cutout for the charging cables.
+
+The holes have a piece of mesh glued in front of them, to keep debris out.
+And the inner walls of the can have been padded with cardboard, to prevent any chance of short-circuiting on the metal sheet of the can.
 
 <!--%
+lightgallery([
+    [ "img/ammo_charger_1.jpg", "Front of can, with IMAX B5 charger clone" ],
+    [ "img/ammo_charger_2.jpg", "Inside of can" ],
+    [ "img/ammo_charger_3.jpg", "Side of can" ],
+])
+%-->
+
+<!--%
+## FPV Monitor
+
 # TODO photos
 %-->
 

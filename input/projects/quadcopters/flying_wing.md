@@ -12,11 +12,11 @@ So I decided to build a very simple FPV V-Tail Flying Wing model airplane.
 
 <!--%
 lightgallery([
-    [ "img/flying_wing_1.jpg", "" ],
-    [ "img/flying_wing_2.jpg", "" ],
-    [ "img/flying_wing_3.jpg", "" ],
-    [ "img/flying_wing_4.jpg", "" ],
-    [ "img/flying_wing_5.jpg", "" ]
+    [ "img/flying_wing_1.jpg", "Complete top view" ],
+    [ "img/flying_wing_2.jpg", "Closer view of electronics" ],
+    [ "img/flying_wing_3.jpg", "Closer view of Rx" ],
+    [ "img/flying_wing_4.jpg", "Brace for flaps" ],
+    [ "img/flying_wing_5.jpg", "Bottom view" ]
 ])
 %-->
 
