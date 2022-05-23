@@ -306,6 +306,10 @@ def printLatestRelease(user, repo):
 # preconvert hooks
 # -----------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
+# multi language support
+# -----------------------------------------------------------------------------
+
 def hook_preconvert_anotherlang():
     MKD_PATT = r'\.(?:md|mkd|mdown|markdown)$'
     _re_lang = re.compile(r'^[\s+]?lang[\s+]?[:=]((?:.|\n )*)', re.MULTILINE)
@@ -356,7 +360,9 @@ def hook_preconvert_anotherlang():
 
     pages[:] = vpages
 
-
+# -----------------------------------------------------------------------------
+# compatibility redirect for old website URLs
+# -----------------------------------------------------------------------------
 
 _COMPAT = """        case "%s":
             $loc = "%s/%s";
@@ -399,7 +405,9 @@ def hook_preconvert_compat():
     fp.write("?>")
     fp.close()
 
-
+# -----------------------------------------------------------------------------
+# sitemap generation
+# -----------------------------------------------------------------------------
 
 _SITEMAP = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -431,6 +439,10 @@ def hook_preconvert_sitemap():
 # postconvert hooks
 # -----------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
+# rss feed generation
+# -----------------------------------------------------------------------------
+
 _RSS = """<?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
@@ -443,6 +455,7 @@ _RSS = """<?xml version="1.0"?>
 <lastBuildDate>%s</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>Poole</generator>
+<ttl>720</ttl>
 %s
 </channel>
 </rss>
@@ -454,28 +467,43 @@ _RSS_ITEM = """
     <link>%s</link>
     <description>%s</description>
     <pubDate>%s</pubDate>
+    <atom:updated>%s</atom:updated>
     <guid>%s</guid>
 </item>
 """
 
 def hook_postconvert_rss():
     items = []
+
+    # all pages with "date" get put into feed
     posts = [p for p in pages if "date" in p]
-    posts.sort(key=lambda p: p.date, reverse=True)
-    posts = posts[:10]
+
+    # sort by update if available, date else
+    posts.sort(key=lambda p: p.get("update", p.date), reverse=True)
+
+    # only put 20 most recent items in feed
+    posts = posts[:20]
+
     for p in posts:
         title = p.title
         if "post" in p:
             title = p.post
+
         link = "%s/%s" % (BASE_URL, p.url)
+
         desc = p.html.replace("href=\"img", "%s%s%s" % ("href=\"", BASE_URL, "/img"))
         desc = desc.replace("src=\"img", "%s%s%s" % ("src=\"", BASE_URL, "/img"))
         desc = desc.replace("href=\"/img", "%s%s%s" % ("href=\"", BASE_URL, "/img"))
         desc = desc.replace("src=\"/img", "%s%s%s" % ("src=\"", BASE_URL, "/img"))
         desc = htmlspecialchars(desc)
+
         date = time.mktime(time.strptime("%s 12" % p.date, "%Y-%m-%d %H"))
         date = email.utils.formatdate(date)
-        items.append(_RSS_ITEM % (title, link, desc, date, link))
+
+        update = time.mktime(time.strptime("%s 12" % p.get("update", p.date), "%Y-%m-%d %H"))
+        update = email.utils.formatdate(update)
+
+        items.append(_RSS_ITEM % (title, link, desc, date, update, link))
 
     items = "".join(items)
 
@@ -490,6 +518,10 @@ def hook_postconvert_rss():
     fp = codecs.open(os.path.join(output, "rss.xml"), "w", "utf-8")
     fp.write(rss)
     fp.close()
+
+# -----------------------------------------------------------------------------
+# compatibility redirect for old mobile pages
+# -----------------------------------------------------------------------------
 
 _COMPAT_MOB = """        case "%s":
             $loc = "%s/%s";
@@ -534,6 +566,10 @@ def hook_postconvert_mobilecompat():
     fp.write("header('Location: '.$loc);\n")
     fp.write("?>")
     fp.close()
+
+# -----------------------------------------------------------------------------
+# displaying filesize for download links
+# -----------------------------------------------------------------------------
 
 def hook_postconvert_size():
     file_ext = '|'.join(['pdf', 'zip', 'rar', 'ods', 'odt', 'odp', 'doc', 'xls', 'ppt', 'docx', 'xlsx', 'pptx', 'exe', 'brd', 'plist'])
