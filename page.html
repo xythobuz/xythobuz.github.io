@@ -115,13 +115,9 @@ else:
         {{ __content__ }}
         <hr>
         <!--%
-            # Disqus Comments (only show button to load afterwards)
+            # Comments
             if page.get("comments", "false") == "true":
-                print '<div style="text-align: center;">'
-                print '<button class="show-comments">Load Disqus comments</button>'
-                print '<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>'
-                print '</div>'
-                print '<div id="disqus_thread"></div>'
+                print '<div id="commento"></div>'
                 print '<hr>'
             elif page.get("comments", "false") != "false":
                 print '<div style="text-align: center;"><a href="%s">Head over here to discuss this article!</a></div>' % page.get("comments", "false")
@@ -145,23 +141,8 @@ else:
     </div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!--%
-        # Dynamically load Disqus comments after user requested it
         if page.get("comments", "false") == "true":
-            print '<script type="text/javascript">'
-            print 'var disqus_shortname = "xythobuz";'
-            print 'var disqus_identifier = "http://xythobuz.org/' + page["url"] + '";'
-            print 'var disqus_url = "http://xythobuz.org/' + page["url"] + '";'
-            print '$(document).ready(function() {'
-            print '$(".show-comments").on("click", function(){'
-            print '(function() {'
-            print 'var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async  = true;'
-            print 'dsq.src = "http://" + disqus_shortname + ".disqus.com/embed.js";'
-            print '(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]    ).appendChild(dsq);'
-            print '})();'
-            print '$(this).fadeOut();'
-            print '});'
-            print '});'
-            print '</script>'
+            print '<script defer src="https://comments.xythobuz.de/js/commento.js"></script>'
     %-->
     <script type="text/javascript">
         $(document).ready(function() {
