@@ -40,6 +40,6 @@ lightgallery([
 
 When the bearing is too lose, the wheel has too much play and wiggles noticeably.
 Too tight on the other hand, and the wheel won't spin much after giving it a push.
-So try to find the sweet spot in the middle, then lock the second nut tightly agains the first one.
+So try to find the sweet spot in the middle, then lock the second nut tightly against the first one.
 
 That's it, hopefully now we're really good to go! 🚴
