@@ -125,3 +125,5 @@ Here are the verbatim notes I made back there, with some specs of my bike and wh
 
 Even though I heard bad things I have to say rebuilding a wheel is not that hard.
 Just read through some tutorials on the web or watch some YouTube videos on the topic and try it yourself!
+
+Also take a look at [part 2 of this repair](2022_05_25_bike_shifter.html)!
