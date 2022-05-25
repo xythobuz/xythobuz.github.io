@@ -283,7 +283,7 @@ table, th, td, pre, .border, .releasecard, #index-avatar {
         fill: #FFFFFF;
     }
 
-    #commento-textarea-root {
+    #commento-textarea-root, .commento-guest-details {
         color: #FFFFFF;
         background-color: #232323;
         border-color: #B0B0B0;
