@@ -278,4 +278,27 @@ table, th, td, pre, .border, .releasecard, #index-avatar {
     pre {
         background-color: #000000;
     }
+
+    .commento-profile-button {
+        fill: #FFFFFF;
+    }
+
+    #commento-textarea-root {
+        color: #FFFFFF;
+        background-color: #232323;
+        border-color: #B0B0B0;
+        border-width: 2px;
+    }
+
+    #commento-footer, .commento-markdown-button {
+        display: none !important;
+    }
+
+    .commento-card {
+        background-color: #232323 !important;
+    }
+
+    .commento-name, .commento-permalink, [id^=commento-comment-text] p {
+        color: #FFFFFF !important;
+    }
 }
