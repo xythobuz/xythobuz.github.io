@@ -6,6 +6,7 @@ git: https://git.xythobuz.de/thomas/giess-o-mat
 github: https://github.com/xythobuz/giess-o-mat
 date: 2021-03-29
 update: 2022-05-05
+comments: true
 ---
 
 This project [was featured on Hackaday](https://hackaday.com/2021/05/14/automated-watering-machine-has-what-plants-crave-fertilizer/)!

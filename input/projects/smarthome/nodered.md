@@ -4,6 +4,7 @@ parent: smarthome
 position: 300
 date: 2021-11-01
 update: 2022-05-23
+comments: true
 ---
 
 [Node-RED](https://nodered.org/) is a great tool for visually creating workflows based on events.

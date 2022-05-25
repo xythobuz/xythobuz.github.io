@@ -6,6 +6,7 @@ github: https://github.com/xythobuz/esp-env
 position: 100
 date: 2020-01-06
 update: 2022-05-21
+comments: true
 ---
 
 As a first step into smart home automation, I wanted to place temperature and humidity sensors in most rooms of my flat.

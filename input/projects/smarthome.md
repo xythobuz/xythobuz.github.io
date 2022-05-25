@@ -2,6 +2,7 @@ title: Smart Home
 description: Home automation without shady cloud companies
 parent: projects
 position: 50
+comments: true
 ---
 
 With the appearance of cheap WiFi-capable microcontrollers in recent years, like the ESP8266 and the ESP32, the Internet of Things and Smart Home automation have been on my mind.

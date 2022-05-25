@@ -4,6 +4,7 @@ parent: quadcopters
 position: 80
 date: 2015-10-09
 update: 2022-05-23
+comments: true
 ---
 
 <!--% backToParent() %-->

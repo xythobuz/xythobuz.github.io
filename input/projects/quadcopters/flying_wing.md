@@ -3,6 +3,7 @@ description: 2S LiPo, Soaring Wing, 2206 2200KV motor
 parent: quadcopters
 position: 40
 date: 2016-11-03
+comments: true
 ---
 
 <!--% backToParent() %-->

@@ -3,6 +3,7 @@ description: 3S LiPo, 100mm frame, 1104 6500KV motors
 parent: quadcopters
 position: 20
 date: 2017-07-17
+comments: true
 ---
 
 <!--% backToParent() %-->

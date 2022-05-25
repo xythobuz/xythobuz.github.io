@@ -3,6 +3,7 @@ description: 3S LiPo, Quanum Trifecta frame, 2204 2300KV motors
 parent: quadcopters
 position: 60
 date: 2016-05-25
+comments: true
 ---
 
 <!--% backToParent() %-->

@@ -4,6 +4,7 @@ parent: smarthome
 position: 200
 date: 2019-04-01
 update: 2022-05-21
+comments: true
 ---
 
 Besides the sensor inputs and actor outputs, which are handled by [my ESP-Env firmware](/espenv.html), a complete Smarthome setup also needs some software running on a central server.

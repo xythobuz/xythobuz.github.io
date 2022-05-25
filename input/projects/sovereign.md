@@ -7,6 +7,7 @@ git: https://git.xythobuz.de/thomas/sovereign
 github: https://github.com/xythobuz/sovereign
 date: 2019-01-04
 update: 2022-05-22
+comments: true
 ---
 
 I first started hosting my own web and mail server in [April 2013](/2013_04_02_zaphod.html), with a Debian 6 VPS at Hetzner, with manually configured Apache, Dovecot, Postfix and some other stuff.
