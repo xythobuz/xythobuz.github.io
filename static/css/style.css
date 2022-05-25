@@ -284,10 +284,10 @@ table, th, td, pre, .border, .releasecard, #index-avatar {
     }
 
     #commento-textarea-root, .commento-guest-details {
-        color: #FFFFFF;
-        background-color: #232323;
-        border-color: #B0B0B0;
-        border-width: 2px;
+        color: #FFFFFF !important;
+        background-color: #232323 !important;
+        border-color: #B0B0B0 !important;
+        border-width: 2px !important;
     }
 
     #commento-footer, .commento-markdown-button {
