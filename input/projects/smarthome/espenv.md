@@ -5,9 +5,11 @@ git: https://git.xythobuz.de/thomas/esp-env
 github: https://github.com/xythobuz/esp-env
 position: 100
 date: 2020-01-06
-update: 2022-05-21
+update: 2022-05-26
 comments: true
 ---
+
+<!--% backToParent() %-->
 
 As a first step into smart home automation, I wanted to place temperature and humidity sensors in most rooms of my flat.
 To achieve this, I made some simple ESP8266 boards with an I2C sensor, either SHT21 or BME280, as well as a small 3.3V regulator and a USB connector.
@@ -22,6 +24,7 @@ This functionality has since been integrated into esp-env!
 lightgallery([
     [ "img/espenv_10.jpg", "BME280 bedroom, front" ],
     [ "img/espenv_17.jpg", "SHT21 kitchen, front" ],
+    [ "img/esp_env_relais_2.jpg", "Bathroom Relais insides" ],
 ])
 %-->
 
@@ -60,6 +63,7 @@ I have no explanation for this, unfortunately.
 
 <!--%
 lightgallery([
+    [ "img/esp_env_relais_1.jpg", "Bathroom Relais in Box" ],
     [ "img/espenv_3.jpg", "BME280 livingroom, front" ],
     [ "img/espenv_4.jpg", "BME280 livingroom, front bare PCB" ],
     [ "img/espenv_5.jpg", "BME280 livingroom, back" ],
