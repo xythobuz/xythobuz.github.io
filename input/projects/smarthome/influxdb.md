@@ -7,6 +7,8 @@ update: 2022-05-21
 comments: true
 ---
 
+<!--% backToParent() %-->
+
 Besides the sensor inputs and actor outputs, which are handled by [my ESP-Env firmware](/espenv.html), a complete Smarthome setup also needs some software running on a central server.
 This usually consists of a message broker, like [MQTT](https://mqtt.org/).
 Some kind of database, preferably for time series data, like [InfluxDB](https://www.influxdata.com/products/influxdb-overview/).

@@ -245,6 +245,11 @@ table, th, td, pre, .border, .releasecard, #index-avatar {
     color: #808080;
 }
 
+.clip-btn {
+    font-size: 1em;
+    margin-left: 1em;
+}
+
 /* dark mode */
 @media (prefers-color-scheme: dark) {
     body, #nav {
@@ -277,6 +282,11 @@ table, th, td, pre, .border, .releasecard, #index-avatar {
 
     pre {
         background-color: #000000;
+    }
+
+    .clip-btn {
+        background-color: #232323;
+        color: #FFFFFF;
     }
 
     .commento-profile-button {

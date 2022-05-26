@@ -7,6 +7,8 @@ update: 2022-05-23
 comments: true
 ---
 
+<!--% backToParent() %-->
+
 [Node-RED](https://nodered.org/) is a great tool for visually creating workflows based on events.
 I use it in conjunction with my [ESP-Env sensor and actor hardware](espenv.html) and MQTT to automate my *smart* home.
 
@@ -28,7 +30,7 @@ lightgallery([
 %-->
 
 And here are the flows for importing in Node-RED.
-<button type="button" onclick="copyEvent('jsonlights')" style="font-size: 1em; margin-left: 1em;">Copy to clipboard</button>
+<button type="button" onclick="copyEvent('jsonlights')" class="clip-btn">Copy to clipboard</button>
 
 <!-- https://clay-atlas.com/us/blog/2021/06/30/html-en-copy-text-button/ -->
 <script>
