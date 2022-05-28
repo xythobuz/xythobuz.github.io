@@ -5,6 +5,7 @@ show_in_quadcopters: true
 date: 2017-04-01
 update: 2017-10-08
 github: https://github.com/xythobuz/SanAndreasUnity/tree/sim
+comments: true
 ---
 
 After re-playing GTA:SA, and also because of my general interest in old games, I one day searched GitHub for projects related to GTA San Andreas.

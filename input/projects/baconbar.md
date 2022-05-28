@@ -4,6 +4,7 @@ parent: projects
 github: https://github.com/xythobuz/BaconBar
 date: 2013-11-30
 update: 2015-12-21
+comments: true
 ---
 
 BaconBar is a small reddit client for Mac OS X, living in the system menu bar.

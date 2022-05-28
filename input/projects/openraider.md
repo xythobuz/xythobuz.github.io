@@ -5,6 +5,7 @@ git: https://git.xythobuz.de/thomas/OpenRaider
 github: https://github.com/xythobuz/OpenRaider
 date: 2013-12-15
 update: 2015-08-13
+comments: true
 ---
 
 In 2013 I decided to fork the [OpenRaider](http://openraider.sourceforge.net/) project to get it to run on a modern Mac OS X machine.

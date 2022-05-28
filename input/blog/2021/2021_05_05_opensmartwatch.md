@@ -3,6 +3,7 @@ post: Open-Smartwatch
 description: Case design in OpenSCAD for my new (broken) Open-Smartwatch
 date: 2021-05-05
 update: 2021-05-08
+comments: true
 ---
 
 Because of [a recent article on Hackaday](https://hackaday.com/2021/04/08/an-open-source-smart-watch-youd-actually-wear/) I was made aware of [the Open-Smartwatch project](https://open-smartwatch.github.io/) from [Paul's 3D Things](https://p3dt.net/).
