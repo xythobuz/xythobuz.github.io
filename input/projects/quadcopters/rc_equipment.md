@@ -3,7 +3,7 @@ description: My gear and the modifications I did to it
 parent: quadcopters
 position: 80
 date: 2015-10-09
-update: 2022-05-23
+update: 2022-05-31
 comments: true
 ---
 
@@ -91,6 +91,31 @@ lightgallery([
     [ "img/ammo_charger_1.jpg", "Front of can, with IMAX B5 charger clone" ],
     [ "img/ammo_charger_2.jpg", "Inside of can" ],
     [ "img/ammo_charger_3.jpg", "Side of can" ],
+])
+%-->
+
+## Ammo Can Battery Storage
+<a class="anchor" name="can_storage"></a>
+
+For far too long I stored all my LiPos in a cardboard box on a wooden shelf in my livingroom.
+After seeing one too many videos of LiPo fires, I decided to work on a solution for safe storage of the batteries outside, on my balcony. Like with the charger described right above this section, I decided to get some used ammo cans for this project.
+
+When you buy an ammo can like this used, I recommend giving it a thorough soap and sponge wash on both the inside and outside.
+Then you can pull out the gasket in the top with a large flathead screwdriver.
+Give it a good clean as well, and rub some oil on the gasket so it goes back in easier and lives longer.
+
+The most important part of a storage solution like this is the ability to vent gases that expand in case of a LiPo failure.
+So we absolutely need to add some holes to either the base can or the lid.
+This time I decided to put two 5mm holes in the lid of each one.
+Just to make sure no water gets in through the vents, I added rubber plugs, which can be pushed out easily by the expanding gas in an emergency.
+This way I feel relatively safe storing the cans on my balcony.
+
+Like with my charging can, I also added some cardboard on the inside for preventing any possibility of short circuits.
+
+<!--%
+lightgallery([
+    [ "img/ammo_can_bat_store_1.jpg", "Outside view of cans" ],
+    [ "img/ammo_can_bat_store_2.jpg", "Look inside the cans" ],
 ])
 %-->
 
