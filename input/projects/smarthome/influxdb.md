@@ -15,7 +15,7 @@ Some kind of database, preferably for time series data, like [InfluxDB](https://
 And a way of visualizing that data, like [Grafana](https://grafana.com/).
 
 The installation of all of these tools is in my case [handled by an ansible script](/sovereign.html).
-They are running on a VM on my NAS.
+They are running on a VM on [my NAS](nas_2018.html).
 
 I also have some other fun scripts running that feed data into Influx.
 This includes [fritzinfluxdb](https://github.com/karrot-dev/fritzinfluxdb), which polls statistics from a Fritz.Box and includes a nice pre-made Grafana dashboard.
