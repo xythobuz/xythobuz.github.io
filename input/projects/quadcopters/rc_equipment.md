@@ -116,6 +116,7 @@ Like with my charging can, I also added some cardboard on the inside for prevent
 lightgallery([
     [ "img/ammo_can_bat_store_1.jpg", "Outside view of cans" ],
     [ "img/ammo_can_bat_store_2.jpg", "Look inside the cans" ],
+    [ "img/ammo_can_plugs.jpg", "Close look at rubber plugs" ],
 ])
 %-->
 
