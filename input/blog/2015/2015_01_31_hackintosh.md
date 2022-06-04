@@ -1,6 +1,7 @@
 title: Blog
 post: My first Hackintosh
 date: 2015-01-31
+parent: projects
 comments: true
 flattr: true
 ---
@@ -270,6 +271,8 @@ Some [GpuTest](http://www.geeks3d.com/gputest/) results (always 1600x900 windowe
 After replacing the boxed Intel CPU cooler, the noise level already went down considerably. However, I'm still not quite happy. The CPU cooler fan in BIOS mode "Normal" seems to be about the same volume as the (included) case fans in "Silent" mode. This seems to be a pretty strong argument for these be quiet! fans for me, so I'm planning on replacing the fans with the [be quiet! Silent Wings 2 PWM](http://www.bequiet.com/de/casefans/321). My main board supports 3 PWM fans (4pin) and 1 non-PWM fan (3pin).
 
 My case supports many different fan configurations. Up to 3x120mm in front, 2x200mm at the top, 1x140mm at the back and 2x120mm at the bottom. I'm not sure how to match these options optimally. I'm thinking about 2x140mm intake at the front, 1x140mm and 1x200mm outwards at the back and the top. But we'll see.
+
+Also take a look at [my PWM Fan mod](2015_02_18_pwm_fan_mod.html).
 
 ### Amazon.de affiliate links
 
