@@ -42,3 +42,5 @@ If you'd like, you can [support my open-source work on GitHub Sponsors](https://
 <!--%
 printRecentMenu(10)
 %-->
+
+[Show all updates](updates.html).

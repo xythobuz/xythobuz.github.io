@@ -134,9 +134,11 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
     return lastyear
 
 def printRecentMenu(count = 5):
-    posts = [p for p in pages if "date" in p]
+    posts = [p for p in pages if "date" in p and p.lang == "en"]
     posts.sort(key=lambda p: p.get("update", p.get("date")), reverse=True)
-    for p in posts[0:count]:
+    if count > 0:
+        posts = posts[0:count]
+    for p in posts:
         printMenuItem(p, False, False, False, True, "0", "", False)
 
 def printBlogMenu():
