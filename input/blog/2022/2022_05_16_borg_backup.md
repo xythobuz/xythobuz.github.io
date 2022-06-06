@@ -192,3 +192,5 @@ Which can easily be combined with the following script, which tries to mount one
 </pre>
 
 I can now simply plug in a backup disk and run "mount-backup && backup-extern" to run a new backup.
+
+I'm also [using these scripts for Cloud backups](2022_06_06_hetzner_storage_box.html).
