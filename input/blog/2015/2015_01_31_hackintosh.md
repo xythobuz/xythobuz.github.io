@@ -1,5 +1,6 @@
 title: Blog
 post: My first Hackintosh
+description: Building an Intel Desktop PC for Mac OS X
 date: 2015-01-31
 parent: projects
 comments: true
