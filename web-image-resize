@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "No argument supplied"
+    exit 1
+fi
+
+dir=$(dirname "${1}")
+image=$(basename -- "${1}")
+ext="${image##*.}"
+name="${image%.*}"
+thumb="${name}_small.${ext}"
+orig="${name}_bak.${ext}"
+
+echo "Directory : $dir"
+echo "Input file: $image"
+#echo "Backup    : $orig"
+echo "Thumbnail : $thumb"
+
+cd "$dir"
+
+echo cp $image $orig
+cp "$image" "$orig"
+
+echo convert "$orig" -auto-orient -resize 1600x1600\> -strip "$image"
+convert "$orig" -auto-orient -resize 1600x1600\> -strip "$image"
+
+echo convert "$image" -auto-orient -thumbnail 300x300\> -strip "$thumb"
+convert "$image" -auto-orient -thumbnail 300x300\> -strip "$thumb"
+
+echo rm -rf "$orig"
+rm -rf "$orig"

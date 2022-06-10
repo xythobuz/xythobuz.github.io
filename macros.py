@@ -208,13 +208,42 @@ def printRobotMenuDeutsch():
 # lightgallery helper macro
 # -----------------------------------------------------------------------------
 
-# call this macro like this
+# call this macro like this:
+
 # lightgallery([
 #     [ "image-link", "description" ],
 #     [ "image-link", "thumbnail-link", "description" ],
 #     [ "youtube-link", "thumbnail-link", "description" ],
 #     [ "video-link", "mime", "thumbnail-link", "image-link", "description" ]
 # ])
+
+# it will also auto-generate thumbnails and resize and strip EXIF from images
+# using the included web-image-resize script.
+
+def lightgallery_check_thumbnail(link, thumb):
+    # only check local image links
+    if not link.startswith('img/'):
+        return
+
+    # generate thumbnail filename web-image-resize will create
+    x = link.rfind('.')
+    img = link[:x] + '_small' + link[x:]
+
+    # only run when desired thumb path matches calculated ones
+    if thumb != img:
+        return
+
+    # generate fs path to images
+    path = os.path.join(os.getcwd(), 'static', link)
+    img = os.path.join(os.getcwd(), 'static', thumb)
+
+    # no need to generate thumb again
+    if os.path.exists(img):
+        return
+
+    # run web-image-resize to generate thumbnail
+    script = os.path.join(os.getcwd(), 'web-image-resize')
+    os.system(script + ' ' + path)
 
 def lightgallery(links):
     videos = [l for l in links if len(l) == 5]
@@ -240,6 +269,7 @@ def lightgallery(links):
                 link, alt = l
                 x = link.rfind('.')
                 img = link[:x] + '_small' + link[x:]
+            lightgallery_check_thumbnail(link, img)
             print '<div class="border" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"></a></div>'
         elif len(l) == 5:
             v_i += 1
