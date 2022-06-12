@@ -66,6 +66,10 @@ Instead I ran a cable between them, only connecting GND and the UART Rx and Tx l
 This is the only place where the grounds of the +5V and +24V supply are connected.
 The mainboard is not fed any external +5V.
 
+As I've re-used 12V fans from my old printer, I had to add a small PCB with a 24V -> 12V converter to power them.
+I simply used a small LM2596 module soldered onto a perf-board with some connectors.
+The mainboard switches GND for all accessories, so using 12V fans is as simple as connecting the negative lead to the mainboard connector, and the positive lead to +12V instead of the mainboard connector.
+
 ## LCD Connection
 
 On a whim, I decided to get a [Fysetc 12864](https://wiki.fysetc.com/Mini12864_Panel/) clone.
@@ -112,6 +116,7 @@ lightgallery([
 %-->
 
 TODO problems with encoder, kill button pullups?!
+TODO display no longer showing anything
 
 TODO photo(s) of cabling
 
@@ -120,3 +125,216 @@ lightgallery([
     [ "img/am8_lcd_assy.jpg", "LCD mounted on printer" ],
 ])
 %-->
+
+## Klipper Firmware
+
+After hearing many good things about Klipper from Tobias and others, I really had to try it out myself.
+And I have to admit, even though I didn't believe it at first, it's much better than Marlin in many areas, even for non-fancy printers like mine.
+
+I'm using [MainsailOS](https://docs.mainsail.xyz/setup/mainsail-os) on a Raspberry Pi 3B.
+Installation and Configuration was really straight-forward with the configuration guides of [Klipper](https://www.klipper3d.org/Config_Reference.html) and [Mainsail](https://docs.mainsail.xyz/setup/mainsailos/first-boot).
+
+Here is my current printer config file.
+
+<pre class="sh_desktop">
+[include mainsail.cfg]
+
+##########################################
+################# System #################
+##########################################
+
+[printer]
+kinematics: corexz
+max_velocity: 200
+max_accel: 2000
+max_z_velocity: 200
+max_z_accel: 500
+
+[board_pins]
+aliases:
+    # EXP1 header
+    EXP1_1=PB5,   EXP1_3=PA9,   EXP1_5=PA10, EXP1_7=PB8, EXP1_9=<GND>,
+    EXP1_2=PA15,  EXP1_4=<RST>, EXP1_6=PB9,  EXP1_8=PD6, EXP1_10=<5V>,
+    # I/O header
+    IO_1=PD0, IO_2=PD2, IO_3=PD3, IO_4=PD4, IO_5=PD5,
+    # PWR-DET header
+    PWR_DET=PC12,
+    # Unused pin
+    UNUSED=PA6
+
+[mcu]
+#serial: /dev/ttyAMA0
+serial: /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A100OZQ1-if00-port0
+restart_method: command
+
+##########################################
+################# Motors #################
+##########################################
+
+# The stepper_x section is used to describe the X axis as well as the
+# stepper controlling the X+Z movement.
+[stepper_x]
+step_pin: PB13
+dir_pin: PB12
+enable_pin: !PB14
+microsteps: 16 # set by driver
+full_steps_per_rotation: 200 # motor specific
+gear_ratio: 36:20 # CoreXZ gearbox
+rotation_distance: 40 # 20 teeth * 2mm belt
+endstop_pin: ^!PC0
+position_endstop: 0.0
+position_max: 235
+homing_speed: 30
+
+# The stepper_y section is used to describe the stepper controlling
+# the Y axis.
+[stepper_y]
+step_pin: PB10
+dir_pin: !PB2
+enable_pin: !PB11
+microsteps: 16 # set by driver
+full_steps_per_rotation: 200 # motor specific
+gear_ratio: 1:1 # driven directly
+rotation_distance: 40 # 20 teeth * 2mm belt
+endstop_pin: ^!PC1
+position_endstop: 0.0
+position_max: 235
+homing_speed: 30
+
+# The stepper_z section is used to describe the Z axis as well as the
+# stepper controlling the X-Z movement.
+[stepper_z]
+step_pin: PB0
+dir_pin: !PC5
+enable_pin: !PB1
+microsteps: 16 # set by driver
+full_steps_per_rotation: 200 # motor specific
+gear_ratio: 36:20 # CoreXZ gearbox
+rotation_distance: 40 # 20 teeth * 2mm belt
+endstop_pin: ^!PC2
+position_endstop: 0.0
+position_max: 250
+homing_speed: 20
+
+[extruder]
+step_pin: PB3
+dir_pin: !PB4
+enable_pin: !PD1
+rotation_distance: 22.67895
+gear_ratio: 50:8
+microsteps: 16
+full_steps_per_rotation: 200
+nozzle_diameter: 0.400
+filament_diameter: 1.750
+heater_pin: PC8
+sensor_type: ATC Semitec 104GT-2
+sensor_pin: PA0
+control: pid
+pid_Kp: 21.527
+pid_Ki: 1.063
+pid_Kd: 108.982
+min_temp: 0
+max_temp: 250
+max_extrude_only_distance: 1400.0
+max_extrude_only_velocity: 75.0
+max_extrude_only_accel: 1500
+
+###########################################
+################# TMC2209 #################
+###########################################
+
+[tmc2209 stepper_x]
+uart_pin: PC11
+tx_pin: PC10
+uart_address: 0
+#stealthchop_threshold: 999999
+run_current: 0.5
+
+[tmc2209 stepper_y]
+uart_pin: PC11
+tx_pin: PC10
+uart_address: 2
+#stealthchop_threshold: 999999
+run_current: 0.3
+
+[tmc2209 stepper_z]
+uart_pin: PC11
+tx_pin: PC10
+uart_address: 1
+#stealthchop_threshold: 999999
+run_current: 0.5
+
+[tmc2209 extruder]
+uart_pin: PC11
+tx_pin: PC10
+uart_address: 3
+stealthchop_threshold: 999999
+#interpolate: True
+run_current: 0.3
+
+###########################################
+############### Accessories ###############
+###########################################
+
+[fan]
+pin: PC6 # fan 0
+
+[heater_fan nozzle_cooling_fan]
+pin: PC7 # fan 1
+
+[heater_fan controller_fan]
+pin: PB15 # fan 2
+
+###########################################
+########### LCD / Encoder / LED ###########
+###########################################
+
+[display]
+lcd_type: uc1701
+cs_pin: EXP1_2
+a0_pin: EXP1_3
+rst_pin: EXP1_5
+contrast: 63
+encoder_pins: ^IO_2, ^IO_3
+click_pin: ^!EXP1_1
+kill_pin: ^IO_1
+spi_software_miso_pin: UNUSED
+spi_software_mosi_pin: IO_5
+spi_software_sclk_pin: IO_4
+
+# index 1 is lcd backlight
+# index 2 is left encoder led
+# index 3 is right encoder led
+[neopixel lcd]
+pin: EXP1_6
+chain_count: 3
+color_order: RGB
+initial_RED: 0.3
+initial_GREEN: 0.3
+initial_BLUE: 0.3
+
+##########################################
+################# Beeper #################
+##########################################
+
+# M300 : Play tone. Usage:
+#   M300 [P<ms>] [S<Hz>]
+#   P is the tone duration, S the tone frequency.
+
+[output_pin beeper]
+pin: PWR_DET
+pwm: True
+value: 0 # Silent at power on, set to 1 if active low.
+shutdown_value: 0 # Disable at emergency shutdown (no PWM would be available anyway).
+cycle_time: 0.001
+
+[gcode_macro M300]
+gcode:
+    # Use a default 1kHz tone if S is omitted.
+    {&#37; set S = params.S|default(1000)|int &#37;}
+    # Use a 10ms duration is P is omitted.
+    {&#37; set P = params.P|default(100)|int &#37;}
+    SET_PIN PIN=beeper VALUE=0.5 CYCLE_TIME={ 1.0/S if S > 0 else 1 }
+    G4 P{P}
+    SET_PIN PIN=beeper VALUE=0
+</pre>
