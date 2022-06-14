@@ -10,11 +10,19 @@ x-comments: true
 <!--% backToParent() %-->
 
 In February 2022 I finally decided to re-build my [CTC i3 Pro B](ctc-i3.html) with an upgraded frame and better parts.
+
+<!--%
+lightgallery([
+    [ "img/am8_front_top.jpg", "Front top view, without bed"],
+    [ "img/am8_front_bottom.jpg", "Front bottom view, without bed"],
+])
+%-->
+
 The following are the new integral components:
 
  * ["AM8 - Metal Frame for Anet A8" by pheneeny](https://www.thingiverse.com/thing:2263216) on Thingiverse
      * 2040 extrusions and nuts from [Dold Mechatronik](https://www.dold-mechatronik.de/Aluminiumprofil-20x40-I-Typ-Nut-5)
-     * [Core XZ AM8 Conversion by 93djen](https://www.prusaprinters.org/prints/131210-core-xz-anet-am8-conversion) on PrusaPrinters.
+     * [Core XZ AM8 Conversion by 93djen](https://www.printables.com/model/131210-core-xz-anet-am8-conversion) on Printables.
  * [Sherpa Mini Extruder](https://github.com/Annex-Engineering/Sherpa_Mini-Extruder) on GitHub
      * Sourced from [AliExpress](https://de.aliexpress.com/item/1005003671542821.html?gatewayAdapt=glo2deu&mp=1)
  * [NF Crazy Hotend](https://3dprintbeginner.com/nf-crazy-hotend-a-mosqutio-hotend-alternative/)
@@ -115,14 +123,25 @@ lightgallery([
 ])
 %-->
 
-TODO problems with encoder, kill button pullups?!
 TODO display no longer showing anything
 
-TODO photo(s) of cabling
+TODO problems with encoder, kill button pullups?!
 
 <!--%
 lightgallery([
     [ "img/am8_lcd_assy.jpg", "LCD mounted on printer" ],
+    [ "img/am8_lcd_cable.jpg", "LCD cabling" ],
+])
+%-->
+
+For all other cables I tried to route them nicely as well.
+
+<!--%
+lightgallery([
+    [ "img/am8_mainboard.jpg", "Mainboard with cabling" ],
+    [ "img/am8_right_cables.jpg", "Cables on right side" ],
+    [ "img/am8_back_cables.jpg", "Cables on back side" ],
+    [ "img/am8_left_cables.jpg", "Cables on left side" ],
 ])
 %-->
 
@@ -135,8 +154,18 @@ I'm using [MainsailOS](https://docs.mainsail.xyz/setup/mainsail-os) on a Raspber
 Installation and Configuration was really straight-forward with the configuration guides of [Klipper](https://www.klipper3d.org/Config_Reference.html) and [Mainsail](https://docs.mainsail.xyz/setup/mainsailos/first-boot).
 
 Here is my current printer config file.
+<button type="button" onclick="copyEvent('printercfg')" class="clip-btn">Copy to clipboard</button>
 
-<pre class="sh_desktop">
+<!-- https://clay-atlas.com/us/blog/2021/06/30/html-en-copy-text-button/ -->
+<script>
+function copyEvent(id) {
+    var str = document.getElementById(id);
+    window.getSelection().selectAllChildren(str);
+    document.execCommand("Copy")
+}
+</script>
+
+<pre id="printercfg" class="sh_desktop">
 [include mainsail.cfg]
 
 ##########################################
