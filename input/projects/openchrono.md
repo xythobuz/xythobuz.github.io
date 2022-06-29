@@ -4,6 +4,7 @@ parent: projects
 git: https://git.xythobuz.de/thomas/OpenChrono
 github: https://github.com/xythobuz/OpenChrono
 date: 2022-06-26
+update: 2022-06-29
 comments: true
 ---
 
@@ -229,7 +230,7 @@ For the UV tracer option you also need the following parts.
 tableHelper([ "align-right", "align-right", "align-right monospaced", "align-left" ],
     [ "Description", "Type", "Count", "Link" ], [
         [ "UV LED 3mm", "", "2x", "<a href=\"https://www.ebay.de/itm/373071970513\">eBay.de</a>" ],
-        [ "Resistor", "50Ω", "1x", "<a href=\"https://www.ebay.de/itm/372813822157?var=642490601730\">eBay.de</a>" ],
+        [ "Resistor", "30Ω", "1x", "<a href=\"https://www.ebay.de/itm/372813822157?var=642490601725\">eBay.de</a>" ],
     ]
 )
 %-->
@@ -242,6 +243,8 @@ For LiPo battery use, also print the `lipo_lid`.
 Then select the proper threaded adapter for your gun.
 You will most likely need to print either `thread_profile_m14_cw` or `thread_profile_m14_ccw` for standard 14mm diameter, 1mm pitch threads.
 Other thread profiles can be added easily.
+
+If you don't need to customize anything you can also get pre-rendered STL files from [Printables](https://www.printables.com/model/232238-openchrono-airsoft-chronograph-and-tracer) or [Thingiverse](https://www.thingiverse.com/thing:5419855).
 
 Print the parts, remove supports and do some sanding as needed.
 Then put in the heat-melt inserts.
