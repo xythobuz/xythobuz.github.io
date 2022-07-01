@@ -4,7 +4,7 @@ parent: projects
 git: https://git.xythobuz.de/thomas/OpenChrono
 github: https://github.com/xythobuz/OpenChrono
 date: 2022-06-26
-update: 2022-06-29
+update: 2022-07-01
 comments: true
 ---
 
@@ -246,6 +246,8 @@ Other thread profiles can be added easily.
 
 If you don't need to customize anything you can also get pre-rendered STL files from [Printables](https://www.printables.com/model/232238-openchrono-airsoft-chronograph-and-tracer) or [Thingiverse](https://www.thingiverse.com/thing:5419855).
 
+### Left Half
+
 Print the parts, remove supports and do some sanding as needed.
 Then put in the heat-melt inserts.
 I recommend using a spare thick soldering iron tip.
@@ -320,6 +322,22 @@ lightgallery([
     [ "img/chrono_wiring_3.jpg", "IR LEDs and Arduino" ],
 ])
 %-->
+
+### Tracer Option
+
+If you want to build the left half with the UV LED tracer option included I recommend using the existing ground connections of the IR LEDs and phototransistors.
+That way you only need to run two additional wires.
+I placed the 30Ω resistor on the underside of the Arduino, shielding it with some heat-shrink tubing.
+
+<!--%
+lightgallery([
+    [ "img/chrono_tracer_1.jpg", "Tracer option, unfinished wiring" ],
+    [ "img/chrono_tracer_2.jpg", "Resistor below Arduino" ],
+    [ "img/chrono_tracer_3.jpg", "Completed UV tracer wiring" ],
+])
+%-->
+
+### Right Half
 
 Next we're going to prepare the right half.
 
@@ -625,8 +643,8 @@ OpenChrono is licensed under the [GNU General Public License](https://www.gnu.or
 ## More Pictures
 <a class="anchor" name="more_pictures"></a>
 
-Here are some more photographs I didn't use above.
-
+<div class="collapse">Some more photographs I didn't use above.</div>
+<div class="collapsecontent">
 <!--%
 lightgallery([
     [ "img/OpenChrono_bb.png", "AA 'Breadboard' wiring plan" ],
@@ -659,3 +677,4 @@ lightgallery([
     [ "img/chrono_m11_measurement_26.jpg", "" ],
 ])
 %-->
+</div>

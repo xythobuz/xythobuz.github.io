@@ -203,9 +203,36 @@ span.font-small {
     cursor: zoom-in;
 }
 
+.collapse {
+    cursor: pointer;
+    padding: 15px;
+}
+
+.collapse:after {
+    content: '\002B';
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.collapseactive:after {
+    content: "\2212";
+}
+
+.collapsecontent {
+    padding: 0;
+    margin: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-out;
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
 /* colors */
 
-body, #nav {
+body, #nav, .collapsecontent {
     background-color: #FFFFFF;
 }
 
@@ -233,11 +260,11 @@ hr {
     color: #32CD32;
 }
 
-table, th, td, pre, .border, .releasecard, #index-avatar {
+table, th, td, pre, .border, .releasecard, #index-avatar, .collapsecontent {
     border-color: #32CD32;
 }
 
-.releasecard {
+.releasecard, .collapse {
     background-color: #C0C0C0;
 }
 
@@ -250,9 +277,13 @@ table, th, td, pre, .border, .releasecard, #index-avatar {
     margin-left: 1em;
 }
 
+.collapseactive, .collapse:hover {
+    background-color: #999999;
+}
+
 /* dark mode */
 @media (prefers-color-scheme: dark) {
-    body, #nav {
+    body, #nav, .collapsecontent {
         background-color: #111111;
     }
 
@@ -268,7 +299,7 @@ table, th, td, pre, .border, .releasecard, #index-avatar {
         color: #BA55D3;
     }
 
-    .releasecard {
+    .releasecard, .collapse {
         background-color: #232323;
     }
 
@@ -310,5 +341,9 @@ table, th, td, pre, .border, .releasecard, #index-avatar {
 
     .commento-name, .commento-permalink, [id^=commento-comment-text] p {
         color: #FFFFFF !important;
+    }
+
+    .collapseactive, .collapse:hover {
+        background-color: #424242;
     }
 }
