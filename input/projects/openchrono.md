@@ -20,6 +20,7 @@ It combines different aspects of making, like 3D printing, electronics, low-leve
 
 <!--%
 lightgallery([
+    [ "img/chrono_1911.jpg", "OpenChrono on 1911 Airsoft gun" ],
     [ "img/chrono_m11.jpg", "OpenChrono on M11 Airsoft gun" ],
     [ "img/chrono_m11_measurement_4.jpg", "Graph of first M11 magazine" ],
     [ "img/chrono_complete_1.jpg", "Front view of completed unit" ],
@@ -190,9 +191,23 @@ With the first shots with a fresh capsule the speed is about 105m/s, which is 1.
 The speed then reduces with each shot and goes back up again when waiting long enough between shots, as the capsule slowly heats up again.
 With the last couple of shots I took only 0.23J were left.
 
-I also want to continue testing with the blowback 1911.
-But I first need to get a metal threaded adapter that can withstand the forces.
-A female printed thread should do much better than my first test run.
+After getting a metal threaded adapter from 14x1mm-CCW to 12x1mm-CW I was also able to continue testing with my 1911 blowback pistol.
+It worked fine!
+The printed female thread can withstand the forces much better.
+
+<!--%
+lightgallery([
+    [ "img/chrono_1911.jpg", "OpenChrono on 1911 with metal threaded adapter" ],
+    [ "img/chrono_1911_test.jpg", "First shots with 1911 metal threaded adapter" ],
+])
+%-->
+
+The measured speed / energy seeme a bit low, that's because I was using a propane magazine with a Co2 hammer spring.
+Another topic is the weight of the OpenChrono device.
+When attaching large weights to the front of a 1911-style mechanism, the force required to actuate the slide is much larger.
+Therefore the valve is open for a longer time, increasing the gas usage.
+So the magazine gas chamber empties quickly and, I suspect, the BB force is reduced as well.
+That's a drawback of this style of chronograph mounting for some guns.
 
 ## Build Guide
 <a class="anchor" name="build_guide"></a>
