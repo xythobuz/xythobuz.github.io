@@ -4,7 +4,7 @@ parent: projects
 git: https://git.xythobuz.de/thomas/OpenChrono
 github: https://github.com/xythobuz/OpenChrono
 date: 2022-06-26
-update: 2022-07-01
+update: 2022-07-07
 comments: true
 ---
 
@@ -146,6 +146,8 @@ lightgallery([
 
 Attaching the whole unit to a airsoft gun barrel turned out to be a bit tricky.
 
+### M1911 Red-Gas Blowback (Part 1)
+
 The first gun I wanted to test with is a full-metal TM 1911 clone with a gas blowback system.
 The repetition imparts a big impulse on any barrel attachment, big enough to break my self-made silencer adapters in the past after a single-digit number of shots.
 Of course OpenChrono is much heavier than a plastic silencer imitation, so predictably it broke after only three test shots, even though I supported the weight with my hand.
@@ -157,6 +159,8 @@ lightgallery([
     [ "img/chrono_threads_1911.jpg", "Broken threaded adapter for 1911" ],
 ])
 %-->
+
+### M11 Co2 Non-Blowback
 
 For the second test run I tried to use a non-blowback ASG Ingram M11 Co2 gun.
 Besides some unrelated problems with the magazines it worked relatively well.
@@ -191,6 +195,8 @@ With the first shots with a fresh capsule the speed is about 105m/s, which is 1.
 The speed then reduces with each shot and goes back up again when waiting long enough between shots, as the capsule slowly heats up again.
 With the last couple of shots I took only 0.23J were left.
 
+### M1911 Red-Gas Blowback (Part 2)
+
 After getting a metal threaded adapter from 14x1mm-CCW to 12x1mm-CW I was also able to continue testing with my 1911 blowback pistol.
 It worked fine!
 The printed female thread can withstand the forces much better.
@@ -202,18 +208,32 @@ lightgallery([
 ])
 %-->
 
-The measured speed / energy seeme a bit low, that's because I was using a propane magazine with a Co2 hammer spring.
+The measured speed / energy seeme a bit low.
+I suspect that's because I was using a propane magazine with a Co2 slide spring.
 Another topic is the weight of the OpenChrono device.
 When attaching large weights to the front of a 1911-style mechanism, the force required to actuate the slide is much larger.
 Therefore the valve is open for a longer time, increasing the gas usage.
 So the magazine gas chamber empties quickly and, I suspect, the BB force is reduced as well.
 That's a drawback of this style of chronograph mounting for some guns.
 
+### Tracer Unit
+
+Unfortunately the tests with the UV LED tracer did not work out that well.
+When dropping a BB through the device it actually visibly lights up as expected.
+But the velocity is far lower in this case compared to a real shot.
+When trying the same with either of my two guns the BB is not visible at all, even in complete darkness.
+The power output of the two LEDs is simply not enough (`2 × 3V × 20mA = 120mW`).
+[Experiments done by airsofttech.dk](http://airsofttech.dk/Guides.cshtml?Page=TracerUnit) suggest we need at least 20 times as much power, with ~3W going into the LEDs.
+
+So for now I do **not** recommend to build OpenChrono with the tracer option as it currently can be found in the repository.
+
 ## Build Guide
 <a class="anchor" name="build_guide"></a>
 
 Also take a look at [the "Hardware" section of the README.md](https://git.xythobuz.de/thomas/OpenChrono/src/branch/master/README.md#hardware).
 You can find detailed parts lists, schematic and wiring plan there as well.
+
+### Parts
 
 Before starting the build you need to acquire the following parts.
 
@@ -239,13 +259,13 @@ tableHelper([ "align-right", "align-right", "align-right monospaced", "align-lef
 )
 %-->
 
-For the UV tracer option you also need the following parts.
+<s>For the UV tracer option you also need the following parts.</s>
 
 <!--%
 tableHelper([ "align-right", "align-right", "align-right monospaced", "align-left" ],
     [ "Description", "Type", "Count", "Link" ], [
-        [ "UV LED 3mm", "", "2x", "<a href=\"https://www.ebay.de/itm/373071970513\">eBay.de</a>" ],
-        [ "Resistor", "30Ω", "1x", "<a href=\"https://www.ebay.de/itm/372813822157?var=642490601725\">eBay.de</a>" ],
+        [ "<s>UV LED 3mm</s>", "", "<s>2x</s>", "<s><a href=\"https://www.ebay.de/itm/373071970513\">eBay.de</a></s>" ],
+        [ "<s>Resistor</s>", "<s>30Ω</s>", "<s>1x</s>", "<s><a href=\"https://www.ebay.de/itm/372813822157?var=642490601725\">eBay.de</a></s>" ],
     ]
 )
 %-->
@@ -338,11 +358,11 @@ lightgallery([
 ])
 %-->
 
-### Tracer Option
+### <s>Tracer Option</s>
 
-If you want to build the left half with the UV LED tracer option included I recommend using the existing ground connections of the IR LEDs and phototransistors.
+<s>If you want to build the left half with the UV LED tracer option included I recommend using the existing ground connections of the IR LEDs and phototransistors.
 That way you only need to run two additional wires.
-I placed the 30Ω resistor on the underside of the Arduino, shielding it with some heat-shrink tubing.
+I placed the 30Ω resistor on the underside of the Arduino, shielding it with some heat-shrink tubing.</s>
 
 <!--%
 lightgallery([
@@ -603,12 +623,11 @@ That explains some strange design decisions, like using cylindrical screws for t
 I'm sure it is also possible to make better use of the space inside the device and make wiring much easier that way.
 
 Also the tracer feature has been kind of an afterthought.
-I have no real use for it and have not really tested it.
-So I'm not sure how well it will work in practice under different conditions.
+I have no real use for it and it does not work the way it currently is dimensioned.
 I also don't think it's realistic to take this bulky device onto a field, but who knows, I'm not really into that.
 
 To be quite honest, I'm happy with the device as it is now.
-But I'm always open to feedback and pull requests of course 😉
+But I'm always open to feedback and pull requests of course, especially ones improving the tracer option 😉
 
 ## Potential Other Uses
 <a class="anchor" name="potential_other_uses"></a>
