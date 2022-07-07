@@ -3,7 +3,7 @@ description: Point 'n' Click workflow automation
 parent: smarthome
 position: 300
 date: 2021-11-01
-update: 2022-05-23
+update: 2022-07-07
 comments: true
 ---
 
@@ -16,6 +16,8 @@ I plan to extend these workflows as required when I add new hardware to my netwo
 
 Here is a simple setup that automatically switches lights in my bathroom according to the sun position, using [node-red-contrib-sunevents](https://github.com/freakent/node-red-contrib-sunevents).
 It allows forcing a temporary override via another MQTT topic, for a lightswitch.
+In the automatic, non-overridden mode it also includes presence detection using [node-red-contrib-fritz](https://github.com/bashgroup/node-red-contrib-fritz).
+This is using the API of my Fritz!Box Router to check if specific MAC Addresses are connected to the WiFi network.
 
 The fan in my window-less bathroom is kept on all the time for now.
 In the future I want to add movement sensors to the bathroom and integrate them into this logic, as well as the temperature / humidity sensors I already have in there.
@@ -24,6 +26,7 @@ All these devices run my [ESP-Env](/espenv.html) firmware.
 <!--%
 lightgallery([
     [ "img/nodered_lights.png", "Switching the lights" ],
+    [ "img/nodered_wifi.png", "WiFi presence detection" ],
     [ "img/nodered_fan.png", "Keeping fan always on" ],
     [ "img/nodered_mqtt.png", "Helper function for MQTT" ],
 ])
@@ -55,6 +58,14 @@ function copyEvent(id) {
         "id": "74341bea93cc320d",
         "type": "tab",
         "label": "Bathroom Fan",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8a6a748b145123cb",
+        "type": "tab",
+        "label": "Presence Detection",
         "disabled": false,
         "info": "",
         "env": []
@@ -92,6 +103,15 @@ function copyEvent(id) {
         "willPayload": "",
         "willMsg": {},
         "sessionExpiry": ""
+    },
+    {
+        "id": "bec40e042190e5b4",
+        "type": "fritzbox-config",
+        "name": "Fritz Box",
+        "host": "fritz.box",
+        "port": "49000",
+        "ssl": false,
+        "user": "YOUR_USERNAME_HERE"
     },
     {
         "id": "4039bc1ca3cd6e11",
@@ -137,14 +157,14 @@ function copyEvent(id) {
                 "t": "set",
                 "p": "payload.latitude",
                 "pt": "msg",
-                "to": "47.6",
+                "to": "47.0",
                 "tot": "str"
             },
             {
                 "t": "set",
                 "p": "payload.longitude",
                 "pt": "msg",
-                "to": "9.4",
+                "to": "9.0",
                 "tot": "str"
             }
         ],
@@ -195,8 +215,8 @@ function copyEvent(id) {
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 650,
-        "y": 260,
+        "x": 770,
+        "y": 220,
         "wires": [
             [
                 "98d848700eaa119d",
@@ -221,8 +241,8 @@ function copyEvent(id) {
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 650,
-        "y": 300,
+        "x": 770,
+        "y": 260,
         "wires": [
             [
                 "3e4a16697db5b83d",
@@ -249,8 +269,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
-        "y": 240,
+        "x": 1150,
+        "y": 200,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -266,8 +286,8 @@ function copyEvent(id) {
             "fd3c7a7a7a3b2e99"
         ],
         "timeout": "30",
-        "x": 1280,
-        "y": 580,
+        "x": 1340,
+        "y": 560,
         "wires": [
             []
         ]
@@ -291,8 +311,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
-        "y": 360,
+        "x": 1160,
+        "y": 320,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -330,7 +350,7 @@ function copyEvent(id) {
         "id": "86248602292b2932",
         "type": "inject",
         "z": "490116e54af5ff9a",
-        "name": "Every 30sec",
+        "name": "Every 15sec",
         "props": [
             {
                 "p": "payload"
@@ -340,7 +360,7 @@ function copyEvent(id) {
                 "vt": "str"
             }
         ],
-        "repeat": "30",
+        "repeat": "15",
         "crontab": "",
         "once": true,
         "onceDelay": "5",
@@ -373,8 +393,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
-        "y": 240,
+        "x": 980,
+        "y": 200,
         "wires": [
             [
                 "895f005abb0c7a30"
@@ -400,8 +420,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
-        "y": 280,
+        "x": 980,
+        "y": 240,
         "wires": [
             [
                 "b7ea8636c374cd25"
@@ -427,8 +447,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
-        "y": 280,
+        "x": 1160,
+        "y": 240,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -454,8 +474,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
-        "y": 360,
+        "x": 980,
+        "y": 320,
         "wires": [
             [
                 "bbd4b1ede10ea09e"
@@ -481,8 +501,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
-        "y": 400,
+        "x": 980,
+        "y": 360,
         "wires": [
             [
                 "8c16ac287cbf877c"
@@ -508,8 +528,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
-        "y": 400,
+        "x": 1150,
+        "y": 360,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -531,7 +551,7 @@ function copyEvent(id) {
         "type": "debug",
         "z": "490116e54af5ff9a",
         "name": "Sun Event Data",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -724,8 +744,8 @@ function copyEvent(id) {
         "y": 540,
         "wires": [
             [
-                "d8f1896d6ed5ca0d",
-                "d17e0c1b295d531a"
+                "d0b79744f8f9eacb",
+                "3c92f7e580f2d926"
             ],
             [
                 "9241d0a69fa0e0ba"
@@ -746,8 +766,8 @@ function copyEvent(id) {
         "z": "490116e54af5ff9a",
         "name": "Set Lights according to Sun Schedule",
         "info": "",
-        "x": 730,
-        "y": 200,
+        "x": 850,
+        "y": 160,
         "wires": []
     },
     {
@@ -769,8 +789,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 480,
+        "x": 660,
+        "y": 580,
         "wires": [
             [
                 "5118b6346eb963da",
@@ -797,8 +817,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
-        "y": 480,
+        "x": 860,
+        "y": 580,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -824,8 +844,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 830,
-        "y": 520,
+        "x": 850,
+        "y": 620,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -838,8 +858,8 @@ function copyEvent(id) {
         "z": "490116e54af5ff9a",
         "name": "Forced Off",
         "info": "",
-        "x": 640,
-        "y": 440,
+        "x": 660,
+        "y": 540,
         "wires": []
     },
     {
@@ -848,8 +868,8 @@ function copyEvent(id) {
         "z": "490116e54af5ff9a",
         "name": "Forced Big Light",
         "info": "",
-        "x": 660,
-        "y": 600,
+        "x": 680,
+        "y": 700,
         "wires": []
     },
     {
@@ -871,8 +891,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 640,
+        "x": 660,
+        "y": 740,
         "wires": [
             [
                 "857e6aea1df251ba"
@@ -898,8 +918,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
-        "y": 640,
+        "x": 840,
+        "y": 740,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -925,8 +945,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 680,
+        "x": 660,
+        "y": 780,
         "wires": [
             [
                 "10e0fc6e5014f1a8"
@@ -952,8 +972,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 810,
-        "y": 680,
+        "x": 830,
+        "y": 780,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -966,8 +986,8 @@ function copyEvent(id) {
         "z": "490116e54af5ff9a",
         "name": "Forced Small Light",
         "info": "",
-        "x": 670,
-        "y": 740,
+        "x": 690,
+        "y": 840,
         "wires": []
     },
     {
@@ -989,8 +1009,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 820,
+        "x": 660,
+        "y": 920,
         "wires": [
             [
                 "d6c93118a00de8be"
@@ -1016,8 +1036,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
-        "y": 780,
+        "x": 840,
+        "y": 880,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -1043,8 +1063,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 780,
+        "x": 660,
+        "y": 880,
         "wires": [
             [
                 "0e14dde521822fd9"
@@ -1070,8 +1090,8 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 810,
-        "y": 820,
+        "x": 830,
+        "y": 920,
         "wires": [
             [
                 "c8246e3ed2f6ac51"
@@ -1082,7 +1102,7 @@ function copyEvent(id) {
         "id": "14e28adbe9d5ab9b",
         "type": "inject",
         "z": "490116e54af5ff9a",
-        "name": "Every 30sec",
+        "name": "Every 60sec",
         "props": [
             {
                 "p": "payload"
@@ -1092,7 +1112,7 @@ function copyEvent(id) {
                 "vt": "str"
             }
         ],
-        "repeat": "30",
+        "repeat": "60",
         "crontab": "",
         "once": true,
         "onceDelay": "5",
@@ -1203,7 +1223,7 @@ function copyEvent(id) {
         "type": "debug",
         "z": "490116e54af5ff9a",
         "name": "Override",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1220,7 +1240,7 @@ function copyEvent(id) {
         "type": "debug",
         "z": "490116e54af5ff9a",
         "name": "Override Refresh",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1230,6 +1250,55 @@ function copyEvent(id) {
         "statusType": "auto",
         "x": 390,
         "y": 900,
+        "wires": []
+    },
+    {
+        "id": "d0b79744f8f9eacb",
+        "type": "function",
+        "z": "490116e54af5ff9a",
+        "name": "User or Spouse Present?",
+        "func": "var user = global.get(\"user_present\");\nvar work = global.get(\"user_present_work\");\nvar spouse = global.get(\"spouse_present\");\n\nif ((user == \"1\") || (work == \"1\") || (spouse == \"1\")) {\n    msg.payload = \"none\";\n    return msg;\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 400,
+        "wires": [
+            [
+                "d8f1896d6ed5ca0d",
+                "d17e0c1b295d531a"
+            ]
+        ]
+    },
+    {
+        "id": "3c92f7e580f2d926",
+        "type": "function",
+        "z": "490116e54af5ff9a",
+        "name": "Nobody Present?",
+        "func": "var user = global.get(\"user_present\");\nvar work = global.get(\"user_present_work\");\nvar spouse = global.get(\"spouse_present\");\n\nif ((user == \"0\") && (work == \"0\") && (spouse == \"0\")) {\n    msg.payload = \"none\";\n    return msg;\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 440,
+        "wires": [
+            [
+                "9241d0a69fa0e0ba"
+            ]
+        ]
+    },
+    {
+        "id": "23201910ed265e74",
+        "type": "comment",
+        "z": "490116e54af5ff9a",
+        "name": "Presence Detection",
+        "info": "",
+        "x": 590,
+        "y": 360,
         "wires": []
     },
     {
@@ -1340,6 +1409,506 @@ function copyEvent(id) {
         ]
     },
     {
+        "id": "f80158f1.d27ab8",
+        "type": "inject",
+        "z": "8a6a748b145123cb",
+        "name": "MAC iPhone SE",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "{\"NewMACAddress\": \"XX:XX:XX:XX:XX:XX\" }",
+        "payloadType": "json",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "7b27936b.08bc8c"
+            ]
+        ]
+    },
+    {
+        "id": "7b27936b.08bc8c",
+        "type": "fritzbox-in",
+        "z": "8a6a748b145123cb",
+        "device": "bec40e042190e5b4",
+        "name": "",
+        "service": "urn:dslforum-org:service:Hosts:1",
+        "action": "GetSpecificHostEntry",
+        "arguments": "{\"NewMACAddress\":\"value\"}",
+        "x": 330,
+        "y": 80,
+        "wires": [
+            [
+                "12274598.0e46da",
+                "9c0d010be5886f15",
+                "b6d4657cbec9268d"
+            ]
+        ]
+    },
+    {
+        "id": "12274598.0e46da",
+        "type": "debug",
+        "z": "8a6a748b145123cb",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 570,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "9c0d010be5886f15",
+        "type": "switch",
+        "z": "8a6a748b145123cb",
+        "name": "Is Present?",
+        "property": "payload.NewActive",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 120,
+        "wires": [
+            [
+                "8e9714f633561c05"
+            ]
+        ]
+    },
+    {
+        "id": "b6d4657cbec9268d",
+        "type": "switch",
+        "z": "8a6a748b145123cb",
+        "name": "Is Not Present?",
+        "property": "payload.NewActive",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 160,
+        "wires": [
+            [
+                "3b561094f8825a29"
+            ]
+        ]
+    },
+    {
+        "id": "8e9714f633561c05",
+        "type": "change",
+        "z": "8a6a748b145123cb",
+        "name": "User present",
+        "rules": [
+            {
+                "t": "set",
+                "p": "user_present",
+                "pt": "global",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b561094f8825a29",
+        "type": "change",
+        "z": "8a6a748b145123cb",
+        "name": "User not present",
+        "rules": [
+            {
+                "t": "set",
+                "p": "user_present",
+                "pt": "global",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4ace639729b079b",
+        "type": "comment",
+        "z": "8a6a748b145123cb",
+        "name": "Main User Presence Detection",
+        "info": "",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2f609a2d2eb6c36a",
+        "type": "inject",
+        "z": "8a6a748b145123cb",
+        "name": "Samsung S20 FE",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "{\"NewMACAddress\": \"XX:XX:XX:XX:XX:XX\" }",
+        "payloadType": "json",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "1e09a8dddf0a36c2"
+            ]
+        ]
+    },
+    {
+        "id": "1e09a8dddf0a36c2",
+        "type": "fritzbox-in",
+        "z": "8a6a748b145123cb",
+        "device": "bec40e042190e5b4",
+        "name": "",
+        "service": "urn:dslforum-org:service:Hosts:1",
+        "action": "GetSpecificHostEntry",
+        "arguments": "{\"NewMACAddress\":\"value\"}",
+        "x": 330,
+        "y": 460,
+        "wires": [
+            [
+                "9b618d89591e4c32",
+                "6bae9ec64ae22aa4",
+                "ae2aacab4e21becd"
+            ]
+        ]
+    },
+    {
+        "id": "9b618d89591e4c32",
+        "type": "debug",
+        "z": "8a6a748b145123cb",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 570,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "6bae9ec64ae22aa4",
+        "type": "switch",
+        "z": "8a6a748b145123cb",
+        "name": "Is Present?",
+        "property": "payload.NewActive",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 500,
+        "wires": [
+            [
+                "9d204199083405ac"
+            ]
+        ]
+    },
+    {
+        "id": "ae2aacab4e21becd",
+        "type": "switch",
+        "z": "8a6a748b145123cb",
+        "name": "Is Not Present?",
+        "property": "payload.NewActive",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 540,
+        "wires": [
+            [
+                "7790892a62cafef9"
+            ]
+        ]
+    },
+    {
+        "id": "9d204199083405ac",
+        "type": "change",
+        "z": "8a6a748b145123cb",
+        "name": "Spouse present",
+        "rules": [
+            {
+                "t": "set",
+                "p": "spouse_present",
+                "pt": "global",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7790892a62cafef9",
+        "type": "change",
+        "z": "8a6a748b145123cb",
+        "name": "Spouse not present",
+        "rules": [
+            {
+                "t": "set",
+                "p": "spouse_present",
+                "pt": "global",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14272cd4a2102720",
+        "type": "comment",
+        "z": "8a6a748b145123cb",
+        "name": "Spouse Presence Detection",
+        "info": "",
+        "x": 160,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f2c68c21a68054df",
+        "type": "inject",
+        "z": "8a6a748b145123cb",
+        "name": "MAC Samsung S22",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "6",
+        "topic": "",
+        "payload": "{\"NewMACAddress\": \"XX:XX:XX:XX:XX:XX\" }",
+        "payloadType": "json",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "1b5d2574cd2e541f"
+            ]
+        ]
+    },
+    {
+        "id": "1b5d2574cd2e541f",
+        "type": "fritzbox-in",
+        "z": "8a6a748b145123cb",
+        "device": "bec40e042190e5b4",
+        "name": "",
+        "service": "urn:dslforum-org:service:Hosts:1",
+        "action": "GetSpecificHostEntry",
+        "arguments": "{\"NewMACAddress\":\"value\"}",
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "2cbb2b7a8ebf4ac8",
+                "08dca32f4d3512b3",
+                "b2d30bc31b36a369"
+            ]
+        ]
+    },
+    {
+        "id": "2cbb2b7a8ebf4ac8",
+        "type": "debug",
+        "z": "8a6a748b145123cb",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 570,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "08dca32f4d3512b3",
+        "type": "switch",
+        "z": "8a6a748b145123cb",
+        "name": "Is Present?",
+        "property": "payload.NewActive",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 280,
+        "wires": [
+            [
+                "09abca3d9ff5e44c"
+            ]
+        ]
+    },
+    {
+        "id": "b2d30bc31b36a369",
+        "type": "switch",
+        "z": "8a6a748b145123cb",
+        "name": "Is Not Present?",
+        "property": "payload.NewActive",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "10582e300715e0b0"
+            ]
+        ]
+    },
+    {
+        "id": "09abca3d9ff5e44c",
+        "type": "change",
+        "z": "8a6a748b145123cb",
+        "name": "User (Work) present",
+        "rules": [
+            {
+                "t": "set",
+                "p": "user_present_work",
+                "pt": "global",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "10582e300715e0b0",
+        "type": "change",
+        "z": "8a6a748b145123cb",
+        "name": "User (Work) not present",
+        "rules": [
+            {
+                "t": "set",
+                "p": "user_present_work",
+                "pt": "global",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "e6010f1672bac815",
         "type": "mqtt out",
         "z": "b9932c4c66b18537",
@@ -1362,7 +1931,7 @@ function copyEvent(id) {
         "type": "debug",
         "z": "b9932c4c66b18537",
         "name": "Debug Print",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1446,7 +2015,9 @@ function copyEvent(id) {
         "wires": [
             [
                 "0c523fcd13255b79",
-                "cdede78de7e379d1"
+                "cdede78de7e379d1",
+                "31d1f2ec3504d186",
+                "7d3895abe57fe91b"
             ]
         ]
     },
@@ -1469,7 +2040,7 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
+        "x": 580,
         "y": 360,
         "wires": [
             []
@@ -1494,7 +2065,7 @@ function copyEvent(id) {
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
+        "x": 340,
         "y": 320,
         "wires": [
             []
@@ -1511,12 +2082,87 @@ function copyEvent(id) {
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 350,
         "y": 360,
         "wires": [
             [
                 "dd5d9dc12a9e14f0"
             ]
+        ]
+    },
+    {
+        "id": "31d1f2ec3504d186",
+        "type": "change",
+        "z": "b9932c4c66b18537",
+        "name": "User present",
+        "rules": [
+            {
+                "t": "set",
+                "p": "user_present",
+                "pt": "global",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d3895abe57fe91b",
+        "type": "change",
+        "z": "b9932c4c66b18537",
+        "name": "Spouse present",
+        "rules": [
+            {
+                "t": "set",
+                "p": "spouse_present",
+                "pt": "global",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0cd19755c3e94219",
+        "type": "change",
+        "z": "b9932c4c66b18537",
+        "name": "User (Work) present",
+        "rules": [
+            {
+                "t": "set",
+                "p": "user_present_work",
+                "pt": "global",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 440,
+        "wires": [
+            []
         ]
     }
 ]
