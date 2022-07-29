@@ -12,6 +12,31 @@ There I got to know cocktail machines and later took part in [drinkrobotics](htt
 It originally used relais to power the pumps, but we had a motor driver PCB that we wanted to use instead, [so I wrote a Firmware for it](https://github.com/drinkrobotics/avr_pump_board).
 We got an award for this machine at Makerfaire Friedrichshafen, presented it at Makerfaire Hannover, visited the [Verschwörhaus Ulm](https://verschwoerhaus.de/) and various other events over the years.
 
+### MCH2022
+
+Here are some photos of our tent at the MCH2022 summer hacker camp in the Netherlands.
+
+<!--%
+lightgallery([
+    [ "img/mch_ubabot_3.jpg", "UbaBot on MCH2022, front." ],
+    [ "img/mch_ubabot_4.jpg", "UbaBot on MCH2022, back." ],
+    [ "img/mch_ubabot_1.jpg", "Copyright 2022 by EleRas. Used with permission." ],
+    [ "img/mch_ubabot_2.jpg", "Copyright 2022 by EleRas. Used with permission." ],
+])
+%-->
+
+We also developed an app for the MCH2022 Badge that can be used to login to the machine.
+The app source code can be found on [GitHub](https://github.com/drinkrobotics/ubabot-mch2022) and in the [MCH2022 Badge Hatchery](https://mch2022.badge.team/projects/ubabot).
+
+<!--%
+lightgallery([
+    [ "img/mch_app_2.png", "Login screen of UbaBot app" ],
+    [ "img/mch_app_4.png", "Status screen of UbaBot app" ],
+])
+%-->
+
+You can find some more on my [blog post about MCH2022](2022_07_29_MCH2022.html).
+
 ### CCCamp2019
 
 Here are some photos and videos of our tent at the CCCamp2019 summer hacker camp near Berlin.
