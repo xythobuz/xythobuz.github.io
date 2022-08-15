@@ -32,6 +32,11 @@ th, td {
     z-index: 2;
 }
 
+#navbar {
+    margin-top: 0px;
+    padding-top: 1em;
+}
+
 #content {
     width: 75%;
     margin-left: auto;
