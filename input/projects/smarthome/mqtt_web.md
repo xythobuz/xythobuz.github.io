@@ -29,7 +29,8 @@ Unfortunately this only seems to work with Chromium, not Firefox.
 
 <!--%
 lightgallery([
-    [ "img/mqtt_lights_web.png", "Screenshot of Lights Control" ],
+    [ "img/mqtt_lights_web_2.png", "Screenshot of Livingroom controls" ],
+    [ "img/mqtt_lights_web.png", "Screenshot of Bathroom controls" ],
 ])
 %-->
 
