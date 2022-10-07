@@ -226,6 +226,7 @@ Now, create a new script somewhere:
 <pre class="sh_sh">
 mkdir ~/foto-script
 vim ~/foto-script/upload.sh
+chmod a+x ~/foto-script/upload.sh
 </pre>
 
 and fill it with the following contents:

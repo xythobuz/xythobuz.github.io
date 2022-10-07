@@ -9,6 +9,18 @@ noheader: true
 
 This page contains photos from the Webcams on my 3D printers, live-updated every 5 minutes.
 
+## i3 AM8
+
+<div id="date-am8">
+    <noscript>
+        <a href="//www.xythobuz.de/printer-am8.jpg">
+            <img src="//www.xythobuz.de/printer-am8.jpg" alt="i3 AM8">
+        </a>
+    </noscript>
+</div>
+
+<hr>
+
 ## CTC i3 Pro B
 
 <div id="date-2">
@@ -46,6 +58,22 @@ This page contains photos from the Webcams on my 3D printers, live-updated every
             x.send();
         } catch(y) {}
     }
+    LastModUsingHeader("//www.xythobuz.de/printer-am8.jpg", function(i, u) {
+        var img = document.createElement("img");
+        img.src = window.URL.createObjectURL(i);
+        img.alt = "CTC i3 Pro B";
+
+        var link = document.createElement("a");
+        link.href = "//www.xythobuz.de/printer-am8.jpg";
+        link.appendChild(img);
+
+        var up = document.createElement("p");
+        up.appendChild(document.createTextNode("Upload Date: " + u));
+
+        var dt = document.getElementById("date-am8");
+        dt.appendChild(link);
+        dt.appendChild(up);
+    });
     LastModUsingHeader("//www.xythobuz.de/printer-2.jpg", function(i, u) {
         var img = document.createElement("img");
         img.src = window.URL.createObjectURL(i);
