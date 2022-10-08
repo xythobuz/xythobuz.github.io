@@ -25,6 +25,9 @@ Of course, to use these, I had to also get T8 nuts and print different Z-Carriag
 
 I also replaced all the ball bearings with [IGUS RJ4JP-01-08 polymer bushings](https://amzn.to/33FZDSz), replaced the fans and added [silent TMC2100 stepper motor drivers](https://reprap.org/wiki/TMC2100) to reduce noise.
 
+In 2022, I replaced the wooden frame with aluminium extrusions in the style of the [Anet AM8 mod](https://www.thingiverse.com/thing:2263216).
+You can read about this [on my i3 AM8 page](i3-am8.html).
+
 <!--%
 lightgallery([
     [ "img/ctc_i3_front.jpg", "Front view of CTC i3 Pro B" ],

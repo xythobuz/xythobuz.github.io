@@ -1,20 +1,21 @@
-title: i3 AM8
+title: i3 CoreXZ AM8
 description: Rebuild of my i3 clone with aluminium extrusions, CoreXZ, Klipper
-x-parent: 3d-printing
-x-position: 25
-x-date: 2022-02-01
-x-update: 2022-06-10
-x-comments: true
+parent: 3d-printing
+position: 10
+date: 2022-10-08
+comments: true
 ---
 
 <!--% backToParent() %-->
 
 In February 2022 I finally decided to re-build my [CTC i3 Pro B](ctc-i3.html) with an upgraded frame and better parts.
+It took me quite some time, until September of 2022, to finally get it running properly.
 
 <!--%
 lightgallery([
-    [ "img/am8_front_top.jpg", "Front top view, without bed"],
-    [ "img/am8_front_bottom.jpg", "Front bottom view, without bed"],
+    [ "img/am8_front.jpg", "Front view of completed printer"],
+    [ "img/am8_left.jpg", "View of PCBs on left side"],
+    [ "img/am8_right.jpg", "View of power supplies on right side"],
 ])
 %-->
 
@@ -31,26 +32,110 @@ The following are the new integral components:
  * [SKR Mini E3 v3.0 Mainboard](https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/tree/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0)
  * [Fysetc Mini 128x64 LCD panel V2.1](https://wiki.fysetc.com/Mini12864_Panel/)
      * Cloned version by [BCZAMD on Amazon](https://amzn.to/3MaaJ6T)
+ * [Magnetic Heatbed (Mk52 clone)](https://www.hta3d.com/en/magnetic-heated-bed-220x200mm-with-inserted-magnets-24v-similar-mk52-mk3)
 
 Initially I simply wanted to re-use the mechanical parts from my old printer.
 But after talking to my friend [Tobias](https://www.prusaprinters.org/social/199673-93djen/about) about the project, he came up with the idea to convert the AM8 into a CoreXZ machine, and also immediately delivered a complete design!
 We selected the parts based on what I mostly still had lying around.
 
+Other mechanical / electronical parts, like motors and the heatbed, I planned to re-use from my previous printer.
+In the end that plan didn't quite work out and the only part that's still "original" is my heatbed MOSFET, everything else was replaced.
+
+## Frame / CoreXZ
+
+<!--%
+lightgallery([
+    [ "img/am8_front_top.jpg", "Front top view, without bed"],
+    [ "img/am8_front_bottom.jpg", "Front bottom view, without bed"],
+])
+%-->
+
+This is my first time going from simple i3-style mechanics to something more complicated, like CoreXY or CoreXZ.
+It has some advantages and drawbacks.
+I really like that leveling the Z-axis, or losing steps on only one of the two Z steppers, is a thing of the past.
+Instead, now the rotation of the X-axis is determined by the relative tension of the two long belts.
+Tensioning one of the belts, the corresponding side of the X-axis rises or lowers.
+By using a simple [3D printed tool](https://www.printables.com/model/115460-belt-tension-gauge-source-file-included) the tension can be measured and dialed in relatively well.
+For fine tuning, you can induce an oscillation on the belt with your finger and compare the pitch of the resulting noise.
+
 <!--%
 lightgallery([
     [ "img/am8_corexz_1.png", "CAD screenshot of whole CoreXZ AM8"],
-    [ "img/am8_corexz_2.png", "CAD screenshot of extruder / hotend"],
     [ "img/am8_corexz_3.png", "CAD screenshot of XZ gearbox"],
 ])
 %-->
 
-Other mechanical / electronical parts, like motors and the heatbed, I re-used from my previous printer.
+At the beginning I had some problems getting the CoreXZ mechanism to work reliably.
+It took me far longer than I'd like to admit to find the root issue.
+The GT2 belt I ordered was not, in fact, a GT2 belt with 2mm pitch, but a T2.5 belt with 2.5mm pitch, and a slightly different tooth profile (square instead of rounded).
+This was close enough so you don't immediately notice a problem, but still caused some slip on the axes.
+This resulted in the axis dropping down in Z slightly with every move of the X axis.
+
+## Hotend
+
+<!--%
+lightgallery([
+    [ "img/am8_corexz_2.png", "CAD screenshot of extruder / hotend"],
+])
+%-->
+
+I'm using a [Sherpa Mini Extruder](https://github.com/Annex-Engineering/Sherpa_Mini-Extruder) together with an NF Crazy High-Flow hotend, both ordered from Mellow on AliExpress.
+These are put on the x-carriage with only a 5015 fan for the filament, a 4020 fan for the hotend and a BL-Touch for auto-leveling.
+This makes for a very lightweight carriage that can reach high accelerations and speeds.
+And thanks to the v-rollers in the aluminium extrusion it moves very silently, as well.
+
+<!--%
+lightgallery([
+    [ "img/am8_hotend.jpg", ""],
+    [ "img/am8_heatbreak.jpg", ""],
+])
+%-->
+
+I had some problems initially with the NF Crazy clogging with low layer heights.
+This required some disassembly and cleaning of molten plastic.
+I'm not quite sure yet what is going on there and will investigate further.
+
+## Heatbed
+
+I initially hoped to re-use my old heatbed, but it turned out it is only compatible to 12V.
+So I had to order a 24V variant.
+I decided to go with this [Mk52 clone magnetic heatbed](https://www.hta3d.com/en/magnetic-heated-bed-220x200mm-with-inserted-magnets-24v-similar-mk52-mk3) from HTA3D.
+The magnets in there are apparently good up to 140 degrees C.
+I was able to re-use the coated spring-steel-sheet printing surface from my old printer.
+It already came with a nice printed housing for the cable connections, and a Thermistor pre-installed.
+I asked the vendor, it is an `EPCOS 100K B57560G104F` in Klipper, or option 1 in Marlin.
+
+<!--%
+lightgallery([
+    [ "img/am8_bed_bottom.jpg", ""],
+    [ "img/am8_bed_conn.jpg", ""],
+    [ "img/am8_bed_insulation.jpg", ""],
+])
+%-->
+
+Of course I put a piece of [insulation foam](https://www.hta3d.com/en/adhesive-thermal-insulation-for-heatedbed) on the bottom of the bed.
+I installed it using some [flat 20mm springs](https://amzn.to/3ChnetC) on my [Y carriage](https://amzn.to/3CHQR8T).
+
+<!--%
+lightgallery([
+    [ "img/am8_y_carriage.jpg", ""],
+    [ "img/am8_bed_pcb.jpg", ""],
+    [ "img/am8_bed_spring.jpg", ""],
+])
+%-->
 
 ## Custom 3D-Printed Parts
 
-Mounts for PSUs, MOSFET, Mainboard, Pi, Relais.
+To install all the modules and PCBs to the frame I decided to design some simple mounting plates for myself.
 
-TODO links, photos
+<!--%
+lightgallery([
+    [ "img/am8_mounts_1.jpg", "View of PCB mounts"],
+    [ "img/am8_mounts_2.jpg", "View of PSU mounts"],
+])
+%-->
+
+You can find these files [on my Printables profile](https://www.printables.com/model/291049-mounting-plates-for-am8) or [in my Git repo](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/am8).
 
 ## Power Supply Wiring
 
@@ -123,9 +208,10 @@ lightgallery([
 ])
 %-->
 
-TODO display no longer showing anything
-
-TODO problems with encoder, kill button pullups?!
+This was the first time I tried to solder to ethernet cable.
+It seems to have some kind of coating that makes it not only hard to wet with tin,
+it also corroded one of my soldering tips pretty strongly.
+Not all connections were good, and I had some issues with the LCD not displaying anything after a short time.
 
 <!--%
 lightgallery([
@@ -153,9 +239,6 @@ And I have to admit, even though I didn't believe it at first, it's much better 
 I'm using [MainsailOS](https://docs.mainsail.xyz/setup/mainsail-os) on a Raspberry Pi 3B.
 Installation and Configuration was really straight-forward with the configuration guides of [Klipper](https://www.klipper3d.org/Config_Reference.html) and [Mainsail](https://docs.mainsail.xyz/setup/mainsailos/first-boot).
 
-Here is my current printer config file.
-<button type="button" onclick="copyEvent('printercfg')" class="clip-btn">Copy to clipboard</button>
-
 <!-- https://clay-atlas.com/us/blog/2021/06/30/html-en-copy-text-button/ -->
 <script>
 function copyEvent(id) {
@@ -164,6 +247,9 @@ function copyEvent(id) {
     document.execCommand("Copy")
 }
 </script>
+
+Here is my current `printer.cfg` file.
+<button type="button" onclick="copyEvent('printercfg')" class="clip-btn">Copy 'printer.cfg' to clipboard</button>
 
 <pre id="printercfg" class="sh_desktop">
 [include mainsail.cfg]
@@ -176,6 +262,7 @@ function copyEvent(id) {
 kinematics: corexz
 max_velocity: 200
 max_accel: 2000
+max_accel_to_decel: 2000
 max_z_velocity: 200
 max_z_accel: 500
 
@@ -196,6 +283,18 @@ aliases:
 serial: /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A100OZQ1-if00-port0
 restart_method: command
 
+[temperature_sensor microcontroller]
+sensor_type: temperature_mcu
+min_temp: 0
+max_temp: 90
+gcode_id: mcu
+
+[temperature_sensor raspberry_pi]
+sensor_type: temperature_host
+min_temp: 0
+max_temp: 90
+gcode_id: pi
+
 ##########################################
 ################# Motors #################
 ##########################################
@@ -204,22 +303,24 @@ restart_method: command
 # stepper controlling the X+Z movement.
 [stepper_x]
 step_pin: PB13
-dir_pin: PB12
+dir_pin: !PB12
 enable_pin: !PB14
 microsteps: 16 # set by driver
 full_steps_per_rotation: 200 # motor specific
 gear_ratio: 36:20 # CoreXZ gearbox
 rotation_distance: 40 # 20 teeth * 2mm belt
 endstop_pin: ^!PC0
-position_endstop: 0.0
-position_max: 235
-homing_speed: 30
+position_endstop: -7.0
+position_min: -7.0
+position_max: 228.0
+homing_speed: 40
+second_homing_speed: 10
 
 # The stepper_y section is used to describe the stepper controlling
 # the Y axis.
 [stepper_y]
 step_pin: PB10
-dir_pin: !PB2
+dir_pin: PB2
 enable_pin: !PB11
 microsteps: 16 # set by driver
 full_steps_per_rotation: 200 # motor specific
@@ -227,8 +328,10 @@ gear_ratio: 1:1 # driven directly
 rotation_distance: 40 # 20 teeth * 2mm belt
 endstop_pin: ^!PC1
 position_endstop: 0.0
-position_max: 235
-homing_speed: 30
+position_min: 0.0
+position_max: 210.0
+homing_speed: 40
+second_homing_speed: 10
 
 # The stepper_z section is used to describe the Z axis as well as the
 # stepper controlling the X-Z movement.
@@ -242,8 +345,10 @@ gear_ratio: 36:20 # CoreXZ gearbox
 rotation_distance: 40 # 20 teeth * 2mm belt
 endstop_pin: ^!PC2
 position_endstop: 0.0
-position_max: 250
-homing_speed: 20
+position_min: 0.0
+position_max: 275.0
+homing_speed: 40
+second_homing_speed: 10
 
 [extruder]
 step_pin: PB3
@@ -268,6 +373,17 @@ max_extrude_only_distance: 1400.0
 max_extrude_only_velocity: 75.0
 max_extrude_only_accel: 1500
 
+[heater_bed]
+heater_pin: PC9
+sensor_type: EPCOS 100K B57560G104F
+sensor_pin: PC4
+control: pid
+pid_Kp: 54.027
+pid_Ki: 0.770
+pid_Kd: 948.182
+min_temp: 0
+max_temp: 130
+
 ###########################################
 ################# TMC2209 #################
 ###########################################
@@ -276,21 +392,21 @@ max_extrude_only_accel: 1500
 uart_pin: PC11
 tx_pin: PC10
 uart_address: 0
-#stealthchop_threshold: 999999
+stealthchop_threshold: 999999
 run_current: 0.5
 
 [tmc2209 stepper_y]
 uart_pin: PC11
 tx_pin: PC10
 uart_address: 2
-#stealthchop_threshold: 999999
-run_current: 0.3
+stealthchop_threshold: 999999
+run_current: 0.6
 
 [tmc2209 stepper_z]
 uart_pin: PC11
 tx_pin: PC10
 uart_address: 1
-#stealthchop_threshold: 999999
+stealthchop_threshold: 999999
 run_current: 0.5
 
 [tmc2209 extruder]
@@ -298,20 +414,19 @@ uart_pin: PC11
 tx_pin: PC10
 uart_address: 3
 stealthchop_threshold: 999999
-#interpolate: True
-run_current: 0.3
+run_current: 0.5
 
 ###########################################
 ############### Accessories ###############
 ###########################################
 
-[fan]
+[heater_fan nozzle_cooling_fan]
 pin: PC6 # fan 0
 
-[heater_fan nozzle_cooling_fan]
+[fan]
 pin: PC7 # fan 1
 
-[heater_fan controller_fan]
+[controller_fan controller_fan]
 pin: PB15 # fan 2
 
 ###########################################
@@ -326,7 +441,7 @@ rst_pin: EXP1_5
 contrast: 63
 encoder_pins: ^IO_2, ^IO_3
 click_pin: ^!EXP1_1
-kill_pin: ^IO_1
+#kill_pin: ^IO_1
 spi_software_miso_pin: UNUSED
 spi_software_mosi_pin: IO_5
 spi_software_sclk_pin: IO_4
@@ -360,10 +475,84 @@ cycle_time: 0.001
 [gcode_macro M300]
 gcode:
     # Use a default 1kHz tone if S is omitted.
-    {&#37; set S = params.S|default(1000)|int &#37;}
+    \{% set S = params.S|default(1000)|int %}
     # Use a 10ms duration is P is omitted.
-    {&#37; set P = params.P|default(100)|int &#37;}
+    \{% set P = params.P|default(100)|int %}
     SET_PIN PIN=beeper VALUE=0.5 CYCLE_TIME={ 1.0/S if S > 0 else 1 }
     G4 P{P}
     SET_PIN PIN=beeper VALUE=0
+
+##########################################
+############## Idle Timeout ##############
+##########################################
+
+# https://moonraker.readthedocs.io/en/latest/configuration/#toggling-device-state-from-klipper
+
+[gcode_macro POWER_OFF_PRINTER]
+gcode:
+    {action_call_remote_method("set_device_power",
+                               device="printer",
+                               state="off")}
+[delayed_gcode delayed_printer_off]
+initial_duration: 0.
+gcode:
+    \{% if printer.idle_timeout.state == "Idle" %}
+        POWER_OFF_PRINTER
+    \{% endif %}
+
+[idle_timeout]
+gcode:
+    M84
+    TURN_OFF_HEATERS
+    UPDATE_DELAYED_GCODE ID=delayed_printer_off DURATION=60
+</pre>
+
+Here is my current `moonraker.conf` file.
+<button type="button" onclick="copyEvent('moonrakerconf')" class="clip-btn">Copy 'moonraker.conf' to clipboard</button>
+
+<pre id="moonrakerconf" class="sh_desktop">
+[server]
+host: 0.0.0.0
+port: 7125
+# Verbose logging used for debugging . Default False.
+enable_debug_logging: False
+# The maximum size allowed for a file upload (in MiB).  Default 1024 MiB
+max_upload_size: 1024
+
+[file_manager]
+config_path: ~/klipper_config
+log_path: ~/klipper_logs
+enable_object_processing: True
+queue_gcode_uploads: True
+
+# https://moonraker.readthedocs.io/en/latest/configuration/#power-on-g-code-uploads
+
+[job_queue]
+load_on_startup: True
+
+[power printer]
+type: gpio
+pin: gpiochip0/gpio4
+off_when_shutdown: True
+off_when_shutdown_delay: 2
+on_when_job_queued: True
+locked_while_printing: True
+restart_klipper_when_powered: True
+restart_delay: 1
+initial_state: off
+
+# enables partial support of Octoprint API
+[octoprint_compat]
+
+# enables moonraker to track and store print history.
+[history]
+
+# this enables moonraker's update manager
+[update_manager]
+refresh_interval: 168
+
+[update_manager mainsail]
+type: web
+repo: mainsail-crew/mainsail
+path: ~/mainsail
 </pre>

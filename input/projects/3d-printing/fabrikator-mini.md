@@ -1,7 +1,7 @@
 title: Fabrikator Mini
 description: My modifications for the TinyBoy Fabrikator Mini
 parent: 3d-printing
-position: 10
+position: 25
 date: 2016-03-01
 update: 2022-01-27
 comments: true
