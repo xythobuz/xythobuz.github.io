@@ -3,6 +3,7 @@ description: Rebuild of my i3 clone with aluminium extrusions, CoreXZ, Klipper
 parent: 3d-printing
 position: 10
 date: 2022-10-08
+update: 2022-10-12
 comments: true
 ---
 
@@ -39,7 +40,7 @@ But after talking to my friend [Tobias](https://www.prusaprinters.org/social/199
 We selected the parts based on what I mostly still had lying around.
 
 Other mechanical / electronical parts, like motors and the heatbed, I planned to re-use from my previous printer.
-In the end that plan didn't quite work out and the only part that's still "original" is my heatbed MOSFET, everything else was replaced.
+In the end that plan didn't quite work out and the only parts that are still "original" are my heatbed MOSFET and the webcam, everything else was replaced.
 
 ## Frame / CoreXZ
 
@@ -86,8 +87,8 @@ And thanks to the v-rollers in the aluminium extrusion it moves very silently, a
 
 <!--%
 lightgallery([
-    [ "img/am8_hotend.jpg", ""],
-    [ "img/am8_heatbreak.jpg", ""],
+    [ "img/am8_hotend.jpg", "Disassembled, clogged hotend"],
+    [ "img/am8_heatbreak.jpg", "Disassembled, clogged heatbreak"],
 ])
 %-->
 
@@ -107,9 +108,9 @@ I asked the vendor, it is an `EPCOS 100K B57560G104F` in Klipper, or option 1 in
 
 <!--%
 lightgallery([
-    [ "img/am8_bed_bottom.jpg", ""],
-    [ "img/am8_bed_conn.jpg", ""],
-    [ "img/am8_bed_insulation.jpg", ""],
+    [ "img/am8_bed_bottom.jpg", "Heatbed without insulation"],
+    [ "img/am8_bed_conn.jpg", "Heatbed wiring"],
+    [ "img/am8_bed_insulation.jpg", "Insulated Heatbed"],
 ])
 %-->
 
@@ -118,9 +119,9 @@ I installed it using some [flat 20mm springs](https://amzn.to/3ChnetC) on my [Y 
 
 <!--%
 lightgallery([
-    [ "img/am8_y_carriage.jpg", ""],
-    [ "img/am8_bed_pcb.jpg", ""],
-    [ "img/am8_bed_spring.jpg", ""],
+    [ "img/am8_y_carriage.jpg", "Y Carriage without Heatbed"],
+    [ "img/am8_bed_pcb.jpg", "Printer with Heatbed installed"],
+    [ "img/am8_bed_spring.jpg", "Close view of Heatbed springs"],
 ])
 %-->
 
@@ -238,6 +239,7 @@ And I have to admit, even though I didn't believe it at first, it's much better 
 
 I'm using [MainsailOS](https://docs.mainsail.xyz/setup/mainsail-os) on a Raspberry Pi 3B.
 Installation and Configuration was really straight-forward with the configuration guides of [Klipper](https://www.klipper3d.org/Config_Reference.html) and [Mainsail](https://docs.mainsail.xyz/setup/mainsailos/first-boot).
+I also installed the [Moonraker Telegram Bot](https://github.com/nlef/moonraker-telegram-bot/wiki/installation) according to their installation instructions.
 
 <!-- https://clay-atlas.com/us/blog/2021/06/30/html-en-copy-text-button/ -->
 <script>
@@ -364,9 +366,9 @@ heater_pin: PC8
 sensor_type: ATC Semitec 104GT-2
 sensor_pin: PA0
 control: pid
-pid_Kp: 21.527
-pid_Ki: 1.063
-pid_Kd: 108.982
+pid_Kp: 23.441
+pid_Ki: 0.919
+pid_Kd: 149.435
 min_temp: 0
 max_temp: 250
 max_extrude_only_distance: 1400.0
@@ -378,9 +380,9 @@ heater_pin: PC9
 sensor_type: EPCOS 100K B57560G104F
 sensor_pin: PC4
 control: pid
-pid_Kp: 54.027
-pid_Ki: 0.770
-pid_Kd: 948.182
+pid_Kp: 43.878
+pid_Ki: 0.255
+pid_Kd: 1888.933
 min_temp: 0
 max_temp: 130
 
@@ -493,6 +495,7 @@ gcode:
     {action_call_remote_method("set_device_power",
                                device="printer",
                                state="off")}
+
 [delayed_gcode delayed_printer_off]
 initial_duration: 0.
 gcode:
@@ -505,6 +508,19 @@ gcode:
     M84
     TURN_OFF_HEATERS
     UPDATE_DELAYED_GCODE ID=delayed_printer_off DURATION=60
+
+##########################################
+######### Telegram Bot Timelapse #########
+##########################################
+
+# https://github.com/nlef/moonraker-telegram-bot/wiki/installation#step-5-optional-include-the-macro-to-store-lapse-variables
+
+[gcode_macro _bot_data]
+variable_lapse_video_size: 0
+variable_lapse_filename: 'None'
+variable_lapse_path: 'None'
+gcode:
+    M118 Setting bot lapse variables
 </pre>
 
 Here is my current `moonraker.conf` file.
@@ -555,4 +571,12 @@ refresh_interval: 168
 type: web
 repo: mainsail-crew/mainsail
 path: ~/mainsail
+
+[update_manager client moonraker-telegram-bot]
+type: git_repo
+path: ~/moonraker-telegram-bot
+origin: https://github.com/nlef/moonraker-telegram-bot.git
+env: ~/moonraker-telegram-bot-env/bin/python
+requirements: scripts/requirements.txt
+install_script: scripts/install.sh
 </pre>
