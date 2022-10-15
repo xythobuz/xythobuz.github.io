@@ -3,7 +3,7 @@ description: Rebuild of my i3 clone with aluminium extrusions, CoreXZ, Klipper
 parent: 3d-printing
 position: 10
 date: 2022-10-08
-update: 2022-10-12
+update: 2022-10-15
 comments: true
 ---
 
@@ -57,7 +57,7 @@ I really like that leveling the Z-axis, or losing steps on only one of the two Z
 Instead, now the rotation of the X-axis is determined by the relative tension of the two long belts.
 Tensioning one of the belts, the corresponding side of the X-axis rises or lowers.
 By using a simple [3D printed tool](https://www.printables.com/model/115460-belt-tension-gauge-source-file-included) the tension can be measured and dialed in relatively well.
-For fine tuning, you can induce an oscillation on the belt with your finger and compare the pitch of the resulting noise.
+For fine tuning, you can induce an oscillation on the belt with your finger and compare the pitch of the resulting sound.
 
 <!--%
 lightgallery([
@@ -94,7 +94,12 @@ lightgallery([
 
 I had some problems initially with the NF Crazy clogging with low layer heights.
 This required some disassembly and cleaning of molten plastic.
-I'm not quite sure yet what is going on there and will investigate further.
+After experimenting a bit, I found that I could easily hold the filament, with the extruder no longer able to pull it.
+This turned out to be caused by the melt-in nut that holds the spring for the lever arm.
+It was pulled out slightly from the body of the extruder, therefore causing a larger distance between both rollers.
+Pushing in the nut as far as possible was enough to remedy the problem.
+Although I suspect it may come back in the future.
+Guess I have to re-print the extruder body until then.
 
 ## Heatbed
 
@@ -240,6 +245,9 @@ And I have to admit, even though I didn't believe it at first, it's much better 
 I'm using [MainsailOS](https://docs.mainsail.xyz/setup/mainsail-os) on a Raspberry Pi 3B.
 Installation and Configuration was really straight-forward with the configuration guides of [Klipper](https://www.klipper3d.org/Config_Reference.html) and [Mainsail](https://docs.mainsail.xyz/setup/mainsailos/first-boot).
 I also installed the [Moonraker Telegram Bot](https://github.com/nlef/moonraker-telegram-bot/wiki/installation) according to their installation instructions.
+
+With one of my first print attempts I ran into the "Rescheduled timer in the past" error message.
+Turns out there was a [bug in the microcontroller firmware](https://klipper.discourse.group/t/stm32g0-users-should-update-to-latest-klipper/3612), so I had to upgrade that, even though thats apparently not needed normally for all updates.
 
 <!-- https://clay-atlas.com/us/blog/2021/06/30/html-en-copy-text-button/ -->
 <script>
@@ -395,7 +403,7 @@ uart_pin: PC11
 tx_pin: PC10
 uart_address: 0
 stealthchop_threshold: 999999
-run_current: 0.5
+run_current: 0.6
 
 [tmc2209 stepper_y]
 uart_pin: PC11
@@ -409,7 +417,7 @@ uart_pin: PC11
 tx_pin: PC10
 uart_address: 1
 stealthchop_threshold: 999999
-run_current: 0.5
+run_current: 0.6
 
 [tmc2209 extruder]
 uart_pin: PC11
