@@ -1,28 +1,28 @@
 title: OctoTray
-description: Linux PyQt tray application to control OctoPrint
+description: PyQt tray application to control OctoPrint/Moonraker
 parent: 3d-printing
 position: 50
 comments: true
 git: https://git.xythobuz.de/thomas/OctoTray
 github: https://github.com/xythobuz/OctoTray
 date: 2021-05-08
-update: 2021-05-13
+update: 2022-10-16
 ---
 
 <!--% backToParent() %-->
 
 To quickly print new stuff on one of my printers, I am using the [OctoPrint](https://octoprint.org) integration of [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer).
 Unfortunately, it does not allow me to turn on the printers power supply using the Raspberry Pi.
-But it is possible to do that via the [OctoPrint REST API](https://docs.octoprint.org/en/master/api/index.html).
+But it is possible to do that via the [OctoPrint REST API](https://docs.octoprint.org/en/master/api/index.html) or the [Moonraker REST API](https://moonraker.readthedocs.io/en/latest/web_api/).
 Because of that, I wrote a small tool to trigger the power of my printers that lives in the system tray.
 It runs on Linux using the Python Qt5 bindings, but it has been tested on Windows and should run on macOS as well.
 
 <!--%
 lightgallery([
-    [ "img/octotray_6.png", "Screenshot of OctoTray version 0.3" ],
-    [ "img/octotray_5.png", "Screenshot of settings dialog in OctoTray version 0.3" ],
-    [ "img/octotray_2.png", "Screenshot of webcam viewer in OctoTray version 0.2" ],
-    [ "img/octotray_4.png", "Screenshot of status dialog in OctoTray version 0.2" ]
+    [ "img/octotray_7.png", "Screenshot of OctoTray version 0.5" ],
+    [ "img/octotray_8.png", "Screenshot of webcam viewer in OctoTray version 0.5" ],
+    [ "img/octotray_9.png", "Screenshot of settings dialog in OctoTray version 0.5" ],
+    [ "img/octotray_4.png", "Screenshot of status dialog in OctoTray version 0.2" ],
 ])
 %-->
 
@@ -54,11 +54,15 @@ You can find the project [on my Gitea server](https://git.xythobuz.de/thomas/Oct
 
 I also wrote a bit more about my OctoPrint setups [on this page](octoprint.html).
 
-Here are some older screenshots of OctoTray.
-
+<div class="collapse">Here are some older screenshots of OctoTray.</div>
+<div class="collapsecontent">
 <!--%
 lightgallery([
+    [ "img/octotray_6.png", "Screenshot of OctoTray version 0.3" ],
+    [ "img/octotray_5.png", "Screenshot of settings dialog in OctoTray version 0.3" ],
+    [ "img/octotray_2.png", "Screenshot of webcam viewer in OctoTray version 0.2" ],
     [ "img/octotray_3.png", "Screenshot of OctoTray version 0.2" ],
     [ "img/octotray_1.png", "Screenshot of OctoTray version 0.1" ]
 ])
 %-->
+</div>
