@@ -3,6 +3,7 @@ description: Using Bootstrap and JavaScript for universal controls
 parent: smarthome
 position: 400
 git: https://git.xythobuz.de/thomas/lights-web
+github: https://github.com/xythobuz/mqtt-lights-web
 date: 2022-08-14
 comments: true
 ---

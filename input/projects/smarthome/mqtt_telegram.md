@@ -3,6 +3,7 @@ description: Go server to control stuff from anywhere in the world
 parent: smarthome
 position: 500
 git: https://git.xythobuz.de/thomas/lights-telegram
+github: https://github.com/xythobuz/mqtt-lights-telegram
 date: 2022-08-23
 comments: true
 ---
