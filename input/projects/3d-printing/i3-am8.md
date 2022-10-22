@@ -3,7 +3,7 @@ description: Rebuild of my i3 clone with aluminium extrusions, CoreXZ, Klipper
 parent: 3d-printing
 position: 10
 date: 2022-10-08
-update: 2022-10-15
+update: 2022-10-22
 comments: true
 ---
 
@@ -76,6 +76,7 @@ This resulted in the axis dropping down in Z slightly with every move of the X a
 
 <!--%
 lightgallery([
+    [ "img/am8_bltouch.jpg", "BL Touch clone on hotend" ],
     [ "img/am8_corexz_2.png", "CAD screenshot of extruder / hotend"],
 ])
 %-->
@@ -354,7 +355,7 @@ full_steps_per_rotation: 200 # motor specific
 gear_ratio: 36:20 # CoreXZ gearbox
 rotation_distance: 40 # 20 teeth * 2mm belt
 endstop_pin: ^!PC2
-position_endstop: 0.0
+position_endstop: 0.200
 position_min: 0.0
 position_max: 275.0
 homing_speed: 40
@@ -438,6 +439,30 @@ pin: PC7 # fan 1
 
 [controller_fan controller_fan]
 pin: PB15 # fan 2
+
+############################################
+############### Bed Leveling ###############
+############################################
+
+[bltouch]
+sensor_pin: ^PC14
+control_pin: PA1
+x_offset: -37
+y_offset: -2
+z_offset: 3.151
+speed: 10
+
+[bed_mesh]
+speed: 200
+mesh_min: 5, 5
+mesh_max: 190, 195
+horizontal_move_z: 10
+probe_count: 5, 5
+mesh_pps: 4, 4
+
+[gcode_macro G29]
+gcode:
+    BED_MESH_CALIBRATE
 
 ###########################################
 ########### LCD / Encoder / LED ###########
