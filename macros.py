@@ -95,7 +95,7 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
     if lang != "":
         if p.get("title_" + lang, "") != "":
             title = p.get("title_" + lang, "")
-    if p.title == "Blog":
+    if title == "Blog":
         title = p.post
 
     year = p.get("date", "")[0:4]
@@ -142,7 +142,7 @@ def printRecentMenu(count = 5):
         printMenuItem(p, False, False, False, True, "0", "", False)
 
 def printBlogMenu():
-    posts = [p for p in pages if "post" in p]
+    posts = [p for p in pages if "post" in p and p.lang == "en"]
     posts.sort(key=lambda p: p.get("date", "9999-01-01"), reverse=True)
     lastyear = "0"
     for p in posts:
@@ -375,12 +375,6 @@ def hook_preconvert_anotherlang():
                                     else p["title"]
             # Keep track of the current lang of the virtual page
             vp["lang"] = lang
-            # Fix post name if exists
-            if vp.has_key("post"):
-                if lang == "en":
-                    vp["post"] = vp["post"][:]
-                else:
-                    vp["post"] = vp["post"][:-len(lang) - 1]
             page_vpages[lang] = vp
 
         # Each virtual page has to know about its sister vpages
