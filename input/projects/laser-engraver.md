@@ -51,10 +51,11 @@ The OpenSCAD and STL files for these parts [can be found on my Printables profil
 
 ### Electronics
 
-TODO intro
+As mentioned above I used the electronics, namely mainboard, LCD and fans, from my old 3D printer.
 
 <!--%
 lightgallery([
+    [ "img/laser_lcd.jpg", "LCD mounted to laser engraver" ],
     [ "img/laser_gt2560.jpg", "GT2560 mainboard of laser engraver" ],
 ])
 %-->
@@ -86,13 +87,17 @@ And the ground connection is also the one that's switched, when connecting the l
 So even when the MOSFET was turned off the laser still had a ground connection and was powered through the ground pin of the TTL connector, so it could never fully turn off.
 So if you do the same, make sure to only connect one of the two ground pins!
 
-TODO display
-
 ## Software
 
 ### MCU Firmware
 
-TODO marlin configuration
+Most DIY laser engravers or CNC machines seem to use the [GRBL firmware](https://github.com/gnea/grbl).
+Unfortunately this firmware only runs on Atmega328p MCUs, so I can not use it with the Atmega2560 on the GT2560 mainboard.
+There are some GRBL ports, for [ESP32](https://github.com/bdring/Grbl_Esp32) or [STM32](https://github.com/thomast777/grbl32) microcontrollers, but obviously these don't help either in my situation.
+
+So I decided to use the trusty old [Marlin Firmware](https://marlinfw.org/), which was already running previously on my old 3D printers and this mainboard.
+Configuring Marlin is pretty straight-forward, there's a [configuration guide](https://marlinfw.org/docs/configuration/configuration.html) but the settings in the two config header files are well commented and pretty much self explanatory.
+The only interesting parts are the laser-specific settings in `Configuration_adv.h`, like `LASER_FEATURE` and `LASER_POWER_SYNC`.
 
 Apparently I seem to be the first person that tries to run an Ultimaker Controller 2004 LCD without a Z-Axis.
 I had to add a couple of `#ifdef Z_AXIS` in `src/lcd/HD44780/marlinui_HD44780.cpp`.
@@ -123,7 +128,6 @@ Below I will try to document all different free software packages I tried for la
 The first solution I found out about is [LaserGRBL](https://lasergrbl.com/).
 It is a Windows-only program, but at least it is open-source / free software.
 As the name implies however, it is intended for use with the [GRBL firmware](https://github.com/gnea/grbl).
-This firmware only runs on Atmega328p MCUs, so I can not use it.
 
 The G-Code flavor of GRBL is considerably different compared to Marlin, but I was able to get it to work mostly.
 
