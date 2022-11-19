@@ -2,6 +2,8 @@ title: Ikea Lack Table DIY
 description: Another iteration of the DIY Ikea Lack 3D printer shelves
 parent: 3d-printing
 position: 30
+date: 2019-09-08
+update: 2022-11-19
 comments: true
 ---
 
@@ -156,3 +158,17 @@ lightgallery([
 To level out my uneven concrete plates, I have now added some insulating rubber mats (intended for washing machines) between the concrete and the printer, as well as some foam pieces between the concrete and the table.
 I've been told it should be the other way round for mechanical isolation reasons, but this would not work for evening out the surface for the printer to stand on.
 So I'm leaving it like that for now.
+
+## Bottom shelf and wheels
+
+For efficient use of the available space I also added another shelf on the bottom, with [heavy-duty wheels](https://amzn.to/3EJhhrM) that can take up the weight.
+
+<!--%
+lightgallery([
+    [ "img/lack_bottom_1.jpg", "Bottom shelf" ],
+    [ "img/lack_bottom_2.jpg", "Close up view of bottom shelf mount" ],
+])
+%-->
+
+This is currently used for storage of filament rolls.
+I plan to build a nicer storage solution for that in the future.
