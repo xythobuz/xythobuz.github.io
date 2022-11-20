@@ -204,7 +204,7 @@ ESP_SCL <---|x P22          SP  |                        -------
          ---    ---                                  ---    ---
           |      |                                    |      |
         +3.3V ---                                   +3.3V ---
-</pre><pre class="ascii gallery">
+</pre><pre class="ascii">
 Giess-o-mat User Interface Schematic
 
             -------|USB|-------

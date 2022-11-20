@@ -66,7 +66,7 @@ a.anchor {
     }
 }
 
-pre {
+._sh {
     max-height: 300px;
     overflow: auto;
     font-size: 0.9em;
@@ -78,16 +78,39 @@ pre {
     resize: vertical;
 }
 
+.sh_sourceCode, pre {
+    margin: 0 0;
+}
+
 /* allow resizing larger than max-height */
-pre[style*="height"] {
+._sh[style*="height"] {
     max-height: unset;
 }
 
+._sh_lines {
+    text-align: right;
+    float: left;
+    margin: 0 0.5em 0 0;
+    padding: 0 0.5em 0 0;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+._sh_lines span {
+    display: block;
+    font-family: monospace;
+}
+
 .ascii {
+    overflow: auto;
+    padding: 10px;
+    margin: 1em;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
     font-size: 0.7em;
     line-height: 1;
     max-height: max-content;
-    overflow-y: auto;
     font-weight: bold;
     width: max-content;
 }
@@ -261,11 +284,15 @@ body, #nav, #nav a:link, #nav a:visited {
     border-bottom-color: #32CD32;
 }
 
+._sh_lines {
+    border-right-color: #32CD32;
+}
+
 hr {
     color: #32CD32;
 }
 
-table, th, td, pre, .border, .releasecard, #index-avatar, .collapsecontent {
+table, th, td, ._sh, .ascii, .border, .releasecard, #index-avatar, .collapsecontent {
     border-color: #32CD32;
 }
 
@@ -316,7 +343,7 @@ table, th, td, pre, .border, .releasecard, #index-avatar, .collapsecontent {
         color: #B0B0B0;
     }
 
-    pre {
+    .ascii, ._sh {
         background-color: #000000;
     }
 

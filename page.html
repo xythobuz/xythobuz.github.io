@@ -18,9 +18,8 @@ else:
     <link type="text/css" rel="stylesheet" href="css/print.css" media="print" />
     <link type="text/css" rel="stylesheet" href="css/gh-fork-ribbon.css" />
     <link type="text/css" rel="stylesheet" href="css/lightgallery.min.css" />
-    <script type="text/javascript" src="js/sh_main.js"></script>
 </head>
-<body onload="sh_highlightDocument('/js/sh/', '.min.js');">
+<body onload="loadPage()">
     <!--%
         link = ""
 
@@ -145,6 +144,33 @@ else:
         &middot;
         <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&nav=1&email=xythobuz@me.com">PayPal</a>
     </div>
+    <script type="text/javascript">
+        function loadPage() {
+            // adapted from https://sourceforge.net/p/shjs/feature-requests/5/#0940
+            $("pre[class^='sh_']").each(function() {
+                // wrap pre with div._sh
+                $('<div class="_sh"><div class="_sh_lines"></div></div>').insertBefore($(this));
+                $(this).appendTo($(this).prev('._sh'));
+
+                // split content of pre with linebreaks so we can get total line number
+                var content = $.trim($(this).html());
+                var lines = content.split('\n');
+
+                // append line number to span._sh_lines
+                for(var line = 1; line < lines.length + 1; line++) {
+                    $(this).prev('._sh_lines').append('<span data-line="' + line + '">' + line + '</span>');
+                }
+            });
+            $("pre:not([class^='sh_']):not([class='ascii'])").each(function() {
+                // wrap pre with div._sh
+                $('<div class="_sh"></div>').insertBefore($(this));
+                $(this).appendTo($(this).prev('._sh'));
+            });
+
+            sh_highlightDocument('/js/sh/', '.min.js');
+        }
+    </script>
+    <script type="text/javascript" src="js/sh_main.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!--%
         if page.get("comments", "false") == "true":
