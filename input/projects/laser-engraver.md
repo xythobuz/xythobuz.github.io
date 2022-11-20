@@ -6,7 +6,7 @@ x-date: 2022-11-11
 comments: true
 ---
 
-After dabbling in 3D printing for a couple of years now, I now had to level-up my Makers toolkit.
+After dabbling in 3D printing for a couple of years now, I had to level-up my Makers toolkit.
 The next logical step, in my opinion, is laser engraving / laser cutting.
 I have to admit, I was initially a bit scared, and still have some respect for the potential hazards posed by the strong and focussed laser beam.
 So I decided to go slow and start with a low powered diode laser.
@@ -45,9 +45,11 @@ So when using these parts, the two wheels are not actually moved perpendicular t
 To avoid this problem I made the two holes in the lower bigger as well and used four instead of two eccentric nuts.
 I also slightly increased the distance between the two sets of wheels on the Y-axis, because it was very hard to fit the rail, even with the eccentric nuts as loose as possible.
 
-I also designed custom endstop mounts using M2.5 heat-melt inserts, as well as a support wheel for the free-hanging side of the cantilever arm.
+I also designed custom endstop mounts using M2.5 heat-melt inserts, as well as a support wheel for the free-hanging side of the cantilever arm and a mount for the Ultimaker Controller 2004 LCD.
 
 The OpenSCAD and STL files for these parts [can be found on my Printables profile](https://www.printables.com/model/314945-cantilever-laser-engraver-fixes).
+
+To fit the whole machine comfortably inside my [Ikea Lack tower](ikea-lack.html) I mounted it on a 18mm mutliplex base plate with 540x440mm.
 
 ### Electronics
 
@@ -103,6 +105,11 @@ Apparently I seem to be the first person that tries to run an Ultimaker Controll
 I had to add a couple of `#ifdef Z_AXIS` in `src/lcd/HD44780/marlinui_HD44780.cpp`.
 
 You can see all the modifications to the configuration I initially made to get the machine running [in this commit](https://git.xythobuz.de/thomas/marlin/commit/41cd87398d539f41c2ebe54b5f675c6c8b5ce04b).
+
+I also did some small changes to show the current laser power on the LCD status screen.
+These changes can be seen [in this commit](https://git.xythobuz.de/thomas/marlin/commit/58dbdff1d5b6e365bfd5ae4eeb7b42967688c51e).
+I also opened a [pull request](https://github.com/MarlinFirmware/Marlin/pull/25003) to hopefully upstream them.
+
 My current Marlin configuration for the laser engraver can be found [on my Gitea instance](https://git.xythobuz.de/thomas/marlin/src/branch/laser-engraver).
 
 ### Host Software
@@ -262,9 +269,95 @@ TODO
 
 I have not yet tested that.
 
-#### Generating G-Code
+#### Working with G-Code
 
-I also did some experimentation with programatically generating G-Code myself, using a simple Python script.
+One nice feature I saw in LaserGRBL, but was not able to use with Marlin, is the ability to draw the outline of the object to be cut, for positioning of the stock material.
+So I quickly made up a small Python script that analyzes a G-Code file, taking the coordinates from all G1 cutting moves and generating their bounding box, which is then drawn on the lowest possible power setting multiple times.
+I copy this file to the SD card, start it, and just abort it when I'm done with the preparations.
+
+<pre class="sh_python">
+#!/usr/bin/env python
+
+import sys
+
+if len(sys.argv) < 3:
+    print("Usage:")
+    print("    " + sys.argv[0] + " input.nc output.gcode")
+    sys.exit(1)
+
+in_file = sys.argv[1]
+out_file = sys.argv[2]
+
+x_min = None
+x_max = None
+y_min = None
+y_max = None
+mode_g1 = False
+
+pwr = 1
+iterations = 100
+speed = 3000
+
+with open(in_file, 'r') as fi, open(out_file, 'w') as fo:
+    for line in fi:
+        if line.startswith("G1"):
+            mode_g1 = True
+        elif line.startswith("G0"):
+            mode_g1 = False
+
+        if mode_g1:
+            x_pos = line.find("X")
+            if x_pos > -1:
+                x_str = line[x_pos + 1:]
+                x_num = float(x_str.split()[0])
+                #print("found x: " + str(x_num))
+                if (x_min == None) or (x_num < x_min):
+                    x_min = x_num
+                if (x_max == None) or (x_num > x_max):
+                    x_max = x_num
+
+            y_pos = line.find("Y")
+            if y_pos > -1:
+                y_str = line[y_pos + 1:]
+                y_num = float(y_str.split()[0])
+                #print("found y: " + str(y_num))
+                if (y_min == None) or (y_num < y_min):
+                    y_min = y_num
+                if (y_max == None) or (y_num > y_max):
+                    y_max = y_num
+
+    print("x_min: " + str(x_min))
+    print("x_max: " + str(x_max))
+    print("y_min: " + str(y_min))
+    print("y_max: " + str(y_max))
+
+    pos = [
+        ( x_min, y_min ),
+        ( x_max, y_min ),
+        ( x_max, y_max ),
+        ( x_min, y_max ),
+    ]
+
+    def write(s):
+        #print(s)
+        fo.write(s + "\n")
+
+    # header
+    write("G90")
+    write("M3 I")
+    write("M3 S0")
+
+    write("G0 X" + str(x_min) + " Y" + str(y_min) + " S0 F" + str(speed))
+
+    for i in range(0, iterations):
+        for x, y in pos:
+            write("G1 X" + str(x) + " Y" + str(y) + " S" + str(pwr) + " F" + str(speed))
+
+    write("M5")
+    write("G0 X" + str(x_min) + " Y" + str(y_min) + " S0 F" + str(speed))
+</pre>
+
+I also did some experimentation with programatically generating G-Code myself, using a simple Python script as well.
 It's drawing a grid for reference on the base plate of the machine, including numerical position indicators.
 
 <pre class="sh_python">
@@ -409,7 +502,7 @@ with open(filename, 'w') as f:
         write("G1 X" + str(w) + " Y" + str(y) + " S" + str(pwr) + " F" + str(speed_g1))
 
     for x in range(0, w, d):
-        n = int(x / 1)
+        n = int(x / 10)
         if n >= 10:
             draw_digit(f, int(n / 10), font_w, font_h, font_d + x, font_d)
             draw_digit(f, int(n % 10), font_w, font_h, 2 * font_d + font_w + x, font_d)
@@ -417,7 +510,7 @@ with open(filename, 'w') as f:
             draw_digit(f, n, font_w, font_h, font_d + x, font_d)
 
     for y in range(d, h, d):
-        n = int(y / 1)
+        n = int(y / 10)
         if n >= 10:
             draw_digit(f, int(n / 10), font_w, font_h, font_d, font_d + y)
             draw_digit(f, int(n % 10), font_w, font_h, 2 * font_d + font_w, font_d + y)
