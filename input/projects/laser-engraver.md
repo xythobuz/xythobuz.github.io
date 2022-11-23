@@ -13,6 +13,12 @@ So I decided to go slow and start with a low powered diode laser.
 
 ⚠️ Be sure to always use proper laser safety goggles when working with such machines! ⚠️
 
+<!--%
+lightgallery([
+    [ "img/laser_tower_1.jpg", "Frontal view in Ikea Lack tower" ],
+])
+%-->
+
 ## Hardware
 
 I know I say this in a lot of articles here, probably in an attempt to justify my hoarding of electronic parts. 😳
@@ -57,8 +63,8 @@ As mentioned above I used the electronics, namely mainboard, LCD and fans, from 
 
 <!--%
 lightgallery([
+    [ "img/laser_electronics.jpg", "GT2560 mainboard and laser control PCB on base plate" ],
     [ "img/laser_lcd.jpg", "LCD mounted to laser engraver" ],
-    [ "img/laser_gt2560.jpg", "GT2560 mainboard of laser engraver" ],
 ])
 %-->
 
@@ -521,3 +527,15 @@ with open(filename, 'w') as f:
     write("M5")
     write("G0 X0 Y0 F" + str(speed_g0))
 </pre>
+
+## More Pictures
+
+<div class="collapse">Some more photographs I didn't use above.</div>
+<div class="collapsecontent">
+<!--%
+lightgallery([
+    [ "img/laser_tower_2.jpg", "Frontal view in Ikea Lack tower" ],
+    [ "img/laser_gt2560.jpg", "GT2560 mainboard of laser engraver" ],
+])
+%-->
+</div>
