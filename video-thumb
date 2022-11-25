@@ -1,0 +1,36 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "No argument supplied"
+    exit 1
+fi
+
+sdir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+dir=$(dirname "${1}")
+video=$(basename -- "${1}")
+ext="${video##*.}"
+name="${video%.*}"
+thumb="${name}_thumb.png"
+poster="${name}_poster.png"
+tmp="${name}_tmp.png"
+
+echo $sdir
+
+echo "Directory : $dir"
+echo "Input file: $video"
+echo "Thumbnail : $thumb"
+echo "Poster    : $poster"
+
+cd "$dir"
+
+echo ffmpeg -i $video -vf "select=eq(n\,0)" -n -update 1 -frames:v 1 $poster
+ffmpeg -i $video -vf "select=eq(n\,0)" -n -update 1 -frames:v 1 $poster
+
+echo convert "$poster" -auto-orient -thumbnail 300x300\> -strip "$tmp"
+convert "$poster" -auto-orient -thumbnail 300x300\> -strip "$tmp"
+
+echo convert $tmp \( $sdir/static/lg/video-play.png -background none -gravity center \) -composite $thumb
+convert $tmp \( $sdir/static/lg/video-play.png -background none -gravity center \) -composite $thumb
+
+echo rm -rf $tmp
+rm -rf "$tmp"

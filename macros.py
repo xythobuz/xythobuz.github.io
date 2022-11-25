@@ -214,11 +214,13 @@ def printRobotMenuDeutsch():
 #     [ "image-link", "description" ],
 #     [ "image-link", "thumbnail-link", "description" ],
 #     [ "youtube-link", "thumbnail-link", "description" ],
-#     [ "video-link", "mime", "thumbnail-link", "image-link", "description" ]
+#     [ "video-link", "mime", "thumbnail-link", "image-link", "description" ],
+#     [ "video-link", "mime", "", "", "description" ],
 # ])
 
 # it will also auto-generate thumbnails and resize and strip EXIF from images
 # using the included web-image-resize script.
+# and it can generate video thumbnails and posters with the video-thumb script.
 
 def lightgallery_check_thumbnail(link, thumb):
     # only check local image links
@@ -243,6 +245,33 @@ def lightgallery_check_thumbnail(link, thumb):
 
     # run web-image-resize to generate thumbnail
     script = os.path.join(os.getcwd(), 'web-image-resize')
+    os.system(script + ' ' + path)
+
+def lightgallery_check_thumbnail_video(link, thumb, poster):
+    # only check local image links
+    if not link.startswith('img/'):
+        return
+
+    # generate thumbnail filenames video-thumb will create
+    x = link.rfind('.')
+    thumb_l = link[:x] + '_thumb.png'
+    poster_l = link[:x] + '_poster.png'
+
+    # only run when desired thumb path matches calculated ones
+    if (thumb_l != thumb) or (poster_l != poster):
+        return
+
+    # generate fs path to images
+    path = os.path.join(os.getcwd(), 'static', link)
+    thumb_p = os.path.join(os.getcwd(), 'static', thumb)
+    poster_p = os.path.join(os.getcwd(), 'static', poster)
+
+    # no need to generate thumb again
+    if os.path.exists(thumb_p) or os.path.exists(poster_p):
+        return
+
+    # run video-thumb to generate thumbnail
+    script = os.path.join(os.getcwd(), 'video-thumb')
     os.system(script + ' ' + path)
 
 def lightgallery(links):
@@ -274,6 +303,13 @@ def lightgallery(links):
         elif len(l) == 5:
             v_i += 1
             link, mime, thumb, poster, alt = videos[v_i]
+            if len(thumb) <= 0:
+                x = link.rfind('.')
+                thumb = link[:x] + '_thumb.png'
+            if len(poster) <= 0:
+                x = link.rfind('.')
+                poster = link[:x] + '_poster.png'
+            lightgallery_check_thumbnail_video(link, thumb, poster)
             print '<div class="border" data-poster="' + poster + '" data-sub-html="' + alt + '" data-html="#video' + str(v_i) + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>'
         else:
             raise NameError('Invalid number of arguments for lightgallery')

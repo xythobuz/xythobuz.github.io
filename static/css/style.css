@@ -25,6 +25,14 @@ th, td {
     padding-bottom: 0.2em;
 }
 
+s {
+    text-decoration-thickness: 0.2em;
+}
+
+s:hover {
+  text-decoration: none;
+}
+
 #nav {
     border-bottom-style: solid;
     border-bottom-width: 2px;
@@ -294,6 +302,10 @@ hr {
 
 table, th, td, ._sh, .ascii, .border, .releasecard, #index-avatar, .collapsecontent {
     border-color: #32CD32;
+}
+
+s {
+    text-decoration-color: #FF0000;
 }
 
 .releasecard, .collapse {
