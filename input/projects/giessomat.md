@@ -5,7 +5,7 @@ position: 6
 git: https://git.xythobuz.de/thomas/giess-o-mat
 github: https://github.com/xythobuz/giess-o-mat
 date: 2021-03-29
-update: 2022-05-05
+update: 2022-11-27
 comments: true
 ---
 
@@ -527,6 +527,28 @@ lightgallery([
     [ "img/giessomat_ui_design.png", "Tweaked Web UI design" ],
 ])
 %-->
+
+## Telegram Bot and MQTT API (November 2022)
+
+With increasing confidence in my machine I decided to add the ability to trigger watering cycles from external sources.
+The initial idea was to implement a Telegram bot that has a simple interface to trigger a "full-auto cycle" (described above).
+I did that using the [Universal-Arduino-Telegram-Bot library](https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot).
+Unfortunately it really takes a long time to poll for new messages, between one and two seconds.
+Because I don't really use interrupts and handle all timings of valves and pumps in a busy-loop that also polls all available input methods, this causes quite noticable delays in both the UI as well as the timing of operations.
+But it works, and with long polling times the machine is still usable.
+
+<!--%
+lightgallery([
+    [ "img/giessomat_telegram.png", "Telegram bot interaction" ],
+])
+%-->
+
+I then also quickly whipped up a MQTT API using the [pubsubclient library](https://github.com/knolleary/pubsubclient).
+This has no poll timing problems, but of course it's also not possible to reach from outside my home network without some kind of VPN or so.
+
+<pre class="sh_sh">
+$ mosquitto_pub -h SERVER_IP -u MQTT_USER -P MQTT_PASS -t giessomat -m "auto 2 1,2"
+</pre>
 
 ## Links
 
