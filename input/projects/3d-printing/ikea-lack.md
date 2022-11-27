@@ -3,7 +3,7 @@ description: Another iteration of the DIY Ikea Lack 3D printer shelves
 parent: 3d-printing
 position: 30
 date: 2019-09-08
-update: 2022-11-19
+update: 2022-11-27
 comments: true
 ---
 
@@ -172,3 +172,22 @@ lightgallery([
 
 This is currently used for storage of filament rolls.
 I plan to build a nicer storage solution for that in the future.
+
+## Laser Engraver (November 2022)
+
+Recently there have been some changes that also concern the Ikea Lack tower.
+The [CTC-i3](ctc-i3.html) has been replaced by the [i3-AM8](i3-am8.html), but that didn't change anything on the tower itself.
+But also the [Fabrikator Mini](fabrikator-mini.html) has been replaced by my [Laser Engraver](laser-engraver.html).
+For this I had to do some modifications to the tower.
+
+<!--%
+lightgallery([
+    [ "img/laser_tower_1.jpg", "Frontal view in Ikea Lack tower" ],
+    [ "img/laser_psu.jpg", "12V power supply on underside of Ikea Lack" ],
+    [ "img/laser_side_1.jpg", "View from left side" ],
+    [ "img/laser_side_2.jpg", "View from right side" ],
+])
+%-->
+
+The power supply previously used for the Fabrikator Mini now powers the laser and has moved to the top of the shelf space.
+And of course the slide-out table is gone as well.
