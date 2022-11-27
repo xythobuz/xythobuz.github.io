@@ -164,7 +164,7 @@ You can see all the modifications to the configuration I initially made to get t
 
 I also did some small changes to show the current laser power on the LCD status screen.
 These changes can be seen [in this commit](https://git.xythobuz.de/thomas/marlin/commit/58dbdff1d5b6e365bfd5ae4eeb7b42967688c51e).
-I also opened a [pull request](https://github.com/MarlinFirmware/Marlin/pull/25003) to hopefully upstream them.
+I also opened a [pull request](https://github.com/MarlinFirmware/Marlin/pull/25003) to upstream them, which was merged into `bugfix-2.1.x` in November 2022.
 
 Later I learned that Marlin does not allow setting home offsets further than 20mm away from endstops.
 So I also [added a custom menu command](https://git.xythobuz.de/thomas/marlin/commit/74cafcd77625003623d3a8a6378a4ff0ac6eda72) that simply executes [`G92`](https://marlinfw.org/docs/gcode/G092.html) `X0 Y0` to set the current position to zero.
@@ -349,6 +349,8 @@ It is also possible to [run LaserGRBL in Wine](https://github.com/arkypita/Laser
 At first I was not able to run this PlayOnLinux script due to Winetricks downloads failing with invalid checksums.
 But after trying a couple of days later, with the exact same script, the installation worked fine.
 I had to make the same changes to the settings as described for VirtualBox above.
+Unfortunately in Wine LaserGRBL hangs when attempting to load rasterized images.
+So I went back to the VM for that.
 
 Also for all the above tests with LaserGRBL I have imported raster bitmap images and either rastered them, or vectorized them within LaserGRBLs UI.
 With bitmaps it is possible to position the resulting G-Code paths with an offset from the zero position of the machine.
