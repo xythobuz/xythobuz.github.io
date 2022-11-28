@@ -535,7 +535,9 @@ The initial idea was to implement a Telegram bot that has a simple interface to 
 I did that using the [Universal-Arduino-Telegram-Bot library](https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot).
 Unfortunately it really takes a long time to poll for new messages, between one and two seconds.
 Because I don't really use interrupts and handle all timings of valves and pumps in a busy-loop that also polls all available input methods, this causes quite noticable delays in both the UI as well as the timing of operations.
-But it works, and with long polling times the machine is still usable.
+
+My friend [Philipp](https://www.phschoen.de/) suggested I should use the [AsyncTelegram2](https://github.com/cotestatnt/AsyncTelegram2) library instead, which I did.
+This greatly reduces the overhead of polling for new messages, so there is no noticeable impact on the UI and functionality.
 
 <!--%
 lightgallery([
