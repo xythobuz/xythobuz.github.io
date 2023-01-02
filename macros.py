@@ -323,6 +323,8 @@ import urllib, json
 
 def restRequest(url):
     response = urllib.urlopen(url)
+    if response.getcode() != 200:
+        raise Exception("invalid response code", response.getcode())
     data = json.loads(response.read())
     return data
 
@@ -369,6 +371,13 @@ def printLatestRelease(user, repo):
 
         print("<li><a href=\"" + a["browser_download_url"] + "\">" + a["name"] + "</a>" + ss)
     print("</ul></div>")
+
+def include_url(url):
+    response = urllib.urlopen(url)
+    if response.getcode() != 200:
+        raise Exception("invalid response code", response.getcode())
+    data = response.read()
+    print data,
 
 # -----------------------------------------------------------------------------
 # preconvert hooks
