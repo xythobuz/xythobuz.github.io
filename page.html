@@ -7,7 +7,7 @@ else:
 %-->
 <head>
     <meta charset="{{ htmlspecialchars(__encoding__) }}" />
-    <title>{{ htmlspecialchars(page.title) }} - xythobuz.de</title>
+    <title>{{ htmlspecialchars(page.get("post", "Blog")) if page.title == "Blog" else htmlspecialchars(page.title) }} - xythobuz.de</title>
     <meta name="description" content="{{ htmlspecialchars(page.get("description", "Electronics & Software Projects")) }}" />
     <meta name="keywords" content="{{ htmlspecialchars(page.get("keywords", "xythobuz")) }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
