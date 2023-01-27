@@ -208,7 +208,7 @@ lightgallery([
 %-->
 
 The most important changes need to happen in the Printer Settings.
-There you need to adjust the display size to 854x480, the display size to 99.82x56.10mm, maximum height to 120mm, the orientation to landscape and disable all mirroring.
+There you need to adjust the display size to 854x480, the display size to 98.57x54.99mm, maximum height to 120mm, the orientation to landscape and disable all mirroring.
 
 In the Material Settings I recommend setting the exposure time to 15s and the initial exposure time to 120s.
 But this may change depending on the resin you plan to use.
@@ -227,9 +227,23 @@ This gave similar correction factors in both axes.
     101.854mm * 0.98 = 99.81692mm
     57.248mm * 0.98 = 56.10304mm
 
-I'm sure these numbers are still not totally exact, but they seem to be close enough for my purposes.
+With these I printed another calibration cube, this time with 20mm, to be able to measure it with more accuracy.
+Now I got these correction factors, as the cube was still a little bit too small.
 
-You can also [download my PrusaSlicer configuration for the Sparkmaker](files/config_sparkmaker.ini) or even for [all of my printers](files/PrusaSlicer_config_bundle.ini), if you're so inclined.
+    99.8169mm * 0.9875 = 98.56918875mm
+    56.103mm * 0.99 = 55.54197mm
+
+Now the X axis measured spot-on at 20mm, but the Y axis still only gave 19.8mm.
+So I corrected it again.
+
+    55.54197mm * 0.99 = 54.9865503mm
+
+To be honest, I'm not sure why this calibration took so many attempts, or what I'm doing wrong.
+I'm also sure these numbers are still not totally exact, but they seem to be close enough for my purposes.
+
+For the Z axis I arrived at a correction factor of 0.995, which can be set in PrusaSlicer as "Printer scaling correction Z".
+
+You can [download my PrusaSlicer configuration for the Sparkmaker](files/config_sparkmaker.ini) or even for [all of my printers](files/PrusaSlicer_config_bundle.ini), if you're so inclined.
 
 As a test I printed [this model](https://www.printables.com/model/296411-metal-gear-mk-ii-from-game-metal-gear-solid-4), scaled down to 50% with a layer height of 0.1mm.
 This took about 3½ hours.
@@ -238,6 +252,7 @@ Even scaled down the very fine connections between the body and head are strong 
 
 <!--%
 lightgallery([
+    [ "img/sparkmaker_30.jpg", "Calibration cubes in 5mm, 10mm and 20mm" ],
     [ "img/sparkmaker_21.jpg", "Small Metal Gear Mk. II figurine" ],
 ])
 %-->
