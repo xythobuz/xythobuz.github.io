@@ -7,6 +7,7 @@ flattr: true
 github: https://github.com/xythobuz/Saitek-X52-PPM
 parent: projects
 show_in_quadcopters: true
+show_in_input_devices: true
 position: 80
 ---
 

@@ -174,6 +174,18 @@ def print3DPrintingMenu():
     for p in mpages:
         printMenuItem(p, False, True, True)
 
+def printInputDevicesMenu():
+    mpages = [p for p in pages if p.get("parent", "") == "input_devices" and p.lang == "en"]
+    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+    for p in mpages:
+        printMenuItem(p, False, True, True)
+
+def printInputDevicesRelatedMenu():
+    mpages = [p for p in pages if p.get("show_in_input_devices", "false") == "true"]
+    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+    for p in mpages:
+        printMenuItem(p, False, True, True)
+
 def printSmarthomeMenu():
     mpages = [p for p in pages if p.get("parent", "") == "smarthome" and p.lang == "en"]
     mpages.sort(key=lambda p: int(p["position"]))

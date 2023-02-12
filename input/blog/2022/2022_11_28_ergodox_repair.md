@@ -3,6 +3,7 @@ post: Ergodox Infinity Repair
 description: Kit-built open-source split ergonomic keyboard
 date: 2022-11-28
 comments: true
+show_in_input_devices: true
 ---
 
 It occurs to me that I never really wrote about my [Ergodox Infinity](https://deskthority.net/wiki/Infinity_ErgoDox) keyboard on here.

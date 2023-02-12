@@ -266,6 +266,29 @@ span.font-small {
     border-radius: 10px;
 }
 
+blockquote {
+    position: relative;
+    padding: 1em 0.5em;
+    border-left-width: 10px;
+    border-left-style: solid;
+}
+
+blockquote:before {
+    position: absolute;
+    content: open-quote;
+    font-size: 4em;
+}
+
+blockquote:before {
+    position: absolute;
+    content: open-quote;
+    font-size: 4em;
+}
+
+blockquote p {
+    margin: 0 0 0 2em;
+}
+
 /* colors */
 
 body, #nav, .collapsecontent {
@@ -323,6 +346,15 @@ s {
 
 .collapseactive, .collapse:hover {
     background-color: #999999;
+}
+
+blockquote {
+    background: #DEDEDE;
+    border-left-color: #444444;
+}
+
+blockquote:before, blockquote:after {
+    color: #444444;
 }
 
 /* dark mode */
@@ -389,5 +421,14 @@ s {
 
     .collapseactive, .collapse:hover {
         background-color: #424242;
+    }
+
+    blockquote {
+        background: #252525;
+        border-left-color: #888888;
+    }
+
+    blockquote:before, blockquote:after {
+        color: #888888;
     }
 }
