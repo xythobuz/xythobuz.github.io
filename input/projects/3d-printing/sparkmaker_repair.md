@@ -4,6 +4,7 @@ parent: 3d-printing
 position: 35
 git: https://git.xythobuz.de/thomas/gcode-tools
 date: 2023-01-03
+update: 2023-02-26
 comments: true
 ---
 
@@ -17,6 +18,7 @@ Here I describe what we had to do to get it working.
 <!--%
 lightgallery([
     [ "img/sparkmaker_17.jpg", "Sparkmaker SLA printer" ],
+    [ "img/sparkmaker_shelf_1.jpg", "Sparkmaker and tools on shelf" ],
 ])
 %-->
 
@@ -27,6 +29,7 @@ lightgallery([
 * [First Slicing Experiments](sparkmaker_repair.html#experiments)
 * [SL1 to WOW File Format Converter Script](sparkmaker_repair.html#script)
 * [Configuring PrusaSlicer for the Sparkmaker](sparkmaker_repair.html#prusaslicer)
+* [Shelf Space (February 2023)](sparkmaker_repair.html#shelf_space)
 * [More Pictures](sparkmaker_repair.html#more_pictures)
 
 ## Endstop Fix
@@ -256,6 +259,62 @@ lightgallery([
     [ "img/sparkmaker_21.jpg", "Small Metal Gear Mk. II figurine" ],
 ])
 %-->
+
+## Shelf Space (February 2023)
+<a class="anchor" name="shelf_space"></a>
+
+I still had some drawer rails and a wooden plate left over from replacing my [Fabrikator Mini](fabrikator-mini.html) with my new [Laser Engraver](laser-engraver.html) in my [Ikea Lack tower](ikea-lack.html).
+So I decided to re-use these to properly store the Sparkmaker.
+
+<!--%
+lightgallery([
+    [ "img/sparkmaker_shelf_1.jpg", "Sparkmaker and tools on shelf" ],
+    [ "img/sparkmaker_shelf_2.jpg", "Sparkmaker shelf, right side" ],
+    [ "img/sparkmaker_shelf_3.jpg", "Sparkmaker shelf, left side" ],
+])
+%-->
+
+The [drawer rails](https://amzn.to/41pvjYV) are 300mm long, 45mm high and have a spring mechanism for soft closing.
+
+To fit the drawer parts I had to print six additional spacers.
+The design for these can be whipped out very quickly using OpenSCAD:
+
+<pre class="sh_javascript">
+od = 12;
+id = 5;
+h = 5;
+$fn = 42;
+
+difference() {
+    cylinder(d = od, h = h);
+
+    translate([0, 0, -1])
+    cylinder(d = id, h = h + 2);
+}
+</pre>
+
+<!--%
+lightgallery([
+    [ "img/sparkmaker_shelf_5.jpg", "Sparkmaker shelf, spacers" ],
+])
+%-->
+
+For easier pulling I added the ["Solid Drawer Handle" by dodasch](https://www.printables.com/model/308296-solid-drawer-handle), scaled down to a height of 16mm.
+
+<!--%
+lightgallery([
+    [ "img/sparkmaker_shelf_4.jpg", "Sparkmaker shelf, handle" ],
+])
+%-->
+
+Like with my laser engraver the power supply is hidden on the top of the shelf unit.
+
+This setup provides enough space for storage of the printer, resin and the usual tools.
+
+I'm now using an air-tight container filled with isopropanol to clean the prints.
+The only thing still missing is a good solution for curing / hardening.
+I'm thinking of some kind of small turntable and UV lamp or LED strip.
+That's still to come, so stay tuned! 🧐
 
 ## More Pictures
 <a class="anchor" name="more_pictures"></a>
