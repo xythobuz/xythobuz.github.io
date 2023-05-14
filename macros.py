@@ -7,6 +7,7 @@ import os.path
 import time
 import codecs
 from datetime import datetime
+import urlparse
 
 DEFAULT_LANG = "en"
 BASE_URL = "https://www.xythobuz.de"
@@ -16,8 +17,17 @@ BASE_URL = "https://www.xythobuz.de"
 # -----------------------------------------------------------------------------
 
 def backToParent():
-    url = page.get("parent", "") + ".html"
-    posts = [p for p in pages if p.url == url]
+    # check for special parent cases
+    posts = []
+    if page.get("show_in_quadcopters", "false") == "true":
+        posts = [p for p in pages if p.url == "quadcopters.html"]
+
+    # if not, check for actual parent
+    if len(posts) == 0:
+        url = page.get("parent", "") + ".html"
+        posts = [p for p in pages if p.url == url]
+
+    # print if any parent link found
     if len(posts) > 0:
         p = posts[0]
         print '<span class="listdesc">[...back to ' + p.title + ' overview](' + p.url + ')</span>'
@@ -304,14 +314,23 @@ def lightgallery(links):
     for l in links:
         if (len(l) == 3) or (len(l) == 2):
             link = img = alt = ""
+            style = img2 = ""
             if len(l) == 3:
                 link, img, alt = l
             else:
                 link, alt = l
-                x = link.rfind('.')
-                img = link[:x] + '_small' + link[x:]
+                if "youtube.com" in link:
+                    img = "https://img.youtube.com/vi/"
+                    img += urlparse.parse_qs(urlparse.urlparse(link).query)['v'][0]
+                    img += "/0.jpg" # full size preview
+                    #img += "/default.jpg" # default thumbnail
+                    style = ' style="width:300px;"'
+                    img2 = '<img src="lg/video-play.png" class="picthumb">'
+                else:
+                    x = link.rfind('.')
+                    img = link[:x] + '_small' + link[x:]
             lightgallery_check_thumbnail(link, img)
-            print '<div class="border" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"></a></div>'
+            print '<div class="border" style="position:relative;" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"' + style + '>' + img2 + '</a></div>'
         elif len(l) == 5:
             v_i += 1
             link, mime, thumb, poster, alt = videos[v_i]

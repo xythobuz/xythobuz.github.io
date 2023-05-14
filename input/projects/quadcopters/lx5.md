@@ -3,7 +3,8 @@ description: 4S LiPo, 220mm frame, 2205 2300KV motors
 parent: quadcopters
 position: 10
 date: 2017-11-01
-update: 2022-05-23
+update: 2023-05-14
+git: https://git.xythobuz.de/thomas/copter-configs/src/branch/master/5_lx5
 comments: true
 ---
 
@@ -35,7 +36,9 @@ In real-life, the picture doesn't look *that* bad.
 lightgallery([
     [ "https://www.youtube.com/watch?v=5Fv40mtiXZU", "img/xylx5_test_flight_thumb.jpg", "LX5 Quadcopter Test Flight"],
     [ "https://www.youtube.com/watch?v=Xgcp8qG9qD8", "img/xylx5_chase_thumb.jpg", "LX5 Quadcopter chase" ],
-    [ "https://www.youtube.com/watch?v=wUiboR8pkoA", "img/xylx5_range_thumb.jpg", "LX5 Quadcopter range" ]
+    [ "https://www.youtube.com/watch?v=wUiboR8pkoA", "img/xylx5_range_thumb.jpg", "LX5 Quadcopter range" ],
+    [ "https://www.youtube.com/watch?v=SRrjPk51ng0", "Flying below a bridge, over a creek" ],
+    [ "https://www.youtube.com/watch?v=Zh9_t0R_MWw", "First flights after BF 4.4.1 upgrade" ],
 ])
 %-->
 
@@ -79,3 +82,5 @@ I have 3D printed the following parts for this copter:
  * ["GEP LX TBS Unify Pro VTX Antenna Holder" by SnappyFPV](https://www.thingiverse.com/thing:2544507)
  * ["Adapter for Runcam Micro to Full Size" by phezter](https://www.thingiverse.com/thing:2616057)
  * ["FrSky XSR stack mount with holes for zip ties" by tozes](https://www.thingiverse.com/thing:2171446)
+
+You can find my Betaflight configuration dumps [here](https://git.xythobuz.de/thomas/copter-configs/src/branch/master/5_lx5).

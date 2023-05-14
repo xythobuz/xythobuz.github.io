@@ -10,6 +10,7 @@ comments: true
 <!--% backToParent() %-->
 
 Over the years of flying quadcopters and other stuff I have grown quite the collection of self-made or customized gear.
+I transport it all in a [Quadguard BP X3 backpack](https://www.lowepro.com/global/quadguard-bp-x3-lp37090-pww/).
 
 ## Spectator Monitor
 

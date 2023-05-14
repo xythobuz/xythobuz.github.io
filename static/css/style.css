@@ -1,5 +1,5 @@
-@import "sh_bright.min.css";
-@import "sh_darkness.min.css" (prefers-color-scheme: dark);
+@import "/css/sh_bright.min.css";
+@import "/css/sh_darkness.min.css" (prefers-color-scheme: dark);
 
 body {
     font-size: 1.2em;
@@ -235,6 +235,20 @@ span.font-small {
 
 .border:hover .pic {
     transform: scale(1.1, 1.1);
+    filter: brightness(75%);
+    cursor: zoom-in;
+}
+
+.border .picthumb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s;
+}
+
+.border:hover .picthumb {
+    transform: translate(-50%, -50%) scale(1.1, 1.1);
     filter: brightness(75%);
     cursor: zoom-in;
 }

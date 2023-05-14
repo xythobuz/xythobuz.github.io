@@ -4,6 +4,7 @@ parent: quadcopters
 position: 50
 date: 2016-10-09
 update: 2022-05-24
+git: https://git.xythobuz.de/thomas/copter-configs/src/branch/master/2_brushed
 comments: true
 ---
 
@@ -55,3 +56,5 @@ tableHelper([ "align-right", "align-last-right", "align-right monospaced"],
     ]
 )
 %-->
+
+You can find my Betaflight configuration dumps [here](https://git.xythobuz.de/thomas/copter-configs/src/branch/master/2_brushed).
