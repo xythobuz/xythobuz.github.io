@@ -3,6 +3,7 @@ post: Digging Deeper - Classless Kulla
 description: Recommending a bunch of books, talks and music
 description_de: Buch-, Vortrags- und Musikempfehlungen
 date: 2023-05-14
+update: 2023-05-18
 comments: true
 ---
 
@@ -101,3 +102,6 @@ lightgallery([
 ])
 %-->
 
+There you go.
+Ein großartiger Mensch der viele tolle Dinge veröffentlicht hat.
+[Große Empfehlung!](http://classless.org/)
