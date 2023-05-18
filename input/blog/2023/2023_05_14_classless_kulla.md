@@ -74,7 +74,7 @@ Er kombiniert diesen Rauschbegriff auch mit einer historischen Betrachtung von D
 Ein sehr spannendes Buch mit vielen Zitaten und Quellenangaben.
 Hiermit also eine weitere dringende Empfehlung, die auch im thematischen Zusammenhang mit meiner [letzten Buchempfehlung](2022_10_11_carl_hart.html) steht.
 
-Ähnlich interessant kommt ["Entschwörungstheorie"](https://www.classless.org/2007/04/06/buch-entschworungstheorie-released/).
+Ähnlich interessant kommt ["Entschwörungstheorie"](https://www.classless.org/2007/04/06/buch-entschworungstheorie-released/) daher.
 Allerdings gab es gerade beim Thema Verschwörungstheorien in den letzten Jahren besorgniserregend rasante neue Entwicklungen, welche vom Buch natürlich nicht aufgegriffen werden können.
 Dennoch sind viele Erkentnisse auf die aktuellen Geschehnisse übertragbar.
 
