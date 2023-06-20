@@ -208,7 +208,7 @@ lightgallery([
 ])
 %-->
 
-The measured speed / energy seeme a bit low.
+The measured speed / energy seems a bit low.
 I suspect that's because I was using a propane magazine with a Co2 slide spring.
 Another topic is the weight of the OpenChrono device.
 When attaching large weights to the front of a 1911-style mechanism, the force required to actuate the slide is much larger.
