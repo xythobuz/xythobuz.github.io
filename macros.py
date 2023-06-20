@@ -546,6 +546,7 @@ def hook_preconvert_sitemap():
 # -----------------------------------------------------------------------------
 
 _RSS = """<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="%s" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>%s</title>
@@ -609,13 +610,14 @@ def hook_postconvert_rss():
 
     items = "".join(items)
 
+    style = "/css/rss.xsl"
     title = "xythobuz.de Blog"
     link = "%s" % BASE_URL
     feed = "%s/rss.xml" % BASE_URL
     desc = htmlspecialchars("xythobuz Electronics & Software Projects")
     date = email.utils.formatdate()
 
-    rss = _RSS % (title, link, feed, desc, date, date, items)
+    rss = _RSS % (style, title, link, feed, desc, date, date, items)
 
     fp = codecs.open(os.path.join(output, "rss.xml"), "w", "utf-8")
     fp.write(rss)
