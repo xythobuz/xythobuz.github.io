@@ -13,6 +13,14 @@ Of course I learned heating and driving the machine from an early age.
 In the summers, we regularly drove around the neighborhood where my grandfather lived, for the joy of the neighboring children.
 We also visited some [steam fairs in Kürnbach](https://www.volksfeste-in-deutschland.de/kuernbacher-dampffest-in-bad-schussenried.html), as well as holding our own at the small 'pub' my grandmother ran.
 
+## Links
+
+Here are all other pages related to the operation of the steam engine.
+
+<!--%
+printSteamMenuEnglish()
+%-->
+
 ## Videos
 
 Some videos, of both the mechanics as well as driving the steam engine.
@@ -120,6 +128,14 @@ Sie wiegt ca. 700kg und kann mit zwei dafür angefertigten Anhängern problemlos
 Selbstverständlich wurde mir bereits in Kindheitstagen das Anheizen und Fahren der Maschine beigebracht.
 Regelmäßig fuhren wir im Sommer in der Siedlung um das Haus meines Großvaters, als große Attraktion für alle Nachbarskinder der Gegend.
 Außerdem besuchten wir einige [Dampffeste in Kürnbach](https://www.volksfeste-in-deutschland.de/kuernbacher-dampffest-in-bad-schussenried.html) und veranstalteten eigene an der kleinen Wirtschaft meiner Großmutter.
+
+## Links
+
+Hier sind alle anderen Seiten im Zusammenhang mit dem Betrieb der Dampfmaschine.
+
+<!--%
+printSteamMenuDeutsch()
+%-->
 
 ## Videos
 

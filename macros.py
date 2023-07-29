@@ -226,6 +226,16 @@ def printRobotMenuDeutsch():
     for p in mpages:
         printMenuItem(p, False, False, False, False, "0", "de")
 
+def printSteamMenuEnglish():
+    mpages = [p for p in pages if p.get("parent", "") == "steam" and p.lang == "en"]
+    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+    for p in mpages:
+        printMenuItem(p, False, False, False, True)
+
+def printSteamMenuDeutsch():
+    # TODO show german pages, or english pages when german not available
+    printSteamMenuEnglish()
+
 # -----------------------------------------------------------------------------
 # lightgallery helper macro
 # -----------------------------------------------------------------------------
