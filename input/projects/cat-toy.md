@@ -2,6 +2,7 @@ title: Cat Toy
 description: Laser pointer on two servos with Raspberry Pi Pico W
 parent: projects
 git: https://git.xythobuz.de/thomas/CatToy
+github: https://github.com/xythobuz/CatToy
 date: 2023-04-22
 comments: true
 ---
