@@ -360,12 +360,22 @@ def lightgallery(links):
 # github helper macros
 # -----------------------------------------------------------------------------
 
-import urllib, json
+import urllib, json, sys
 
 def restRequest(url):
     response = urllib.urlopen(url)
     if response.getcode() != 200:
-        raise Exception("invalid response code", response.getcode())
+        sys.stderr.write("\n")
+        sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        sys.stderr.write("!!!!!!!                  WARNING                 !!!!!\n")
+        sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        sys.stderr.write("invalid response code: " + str(response.getcode()) + "\n")
+        sys.stderr.write("url: \"" + url + "\"\n")
+        sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        sys.stderr.write("!!!!!!!                  WARNING                 !!!!!\n")
+        sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        sys.stderr.write("\n")
+        return ""
     data = json.loads(response.read())
     return data
 
