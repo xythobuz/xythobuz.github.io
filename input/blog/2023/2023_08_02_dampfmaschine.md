@@ -18,7 +18,7 @@ lightgallery([
 %-->
 
 Most of the steam-engine-related parts are put into my cellar space for now.
-This include ~35kg coal, cleaning tools and a multitude of spare or unused parts.
+This includes ~35kg coal, cleaning tools and a multitude of spare or unused parts.
 Also some tools from the steam-engine-shed.
 
 <!--%
