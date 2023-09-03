@@ -12,6 +12,17 @@ There I got to know cocktail machines and later took part in [drinkrobotics](htt
 It originally used relais to power the pumps, but we had a motor driver PCB that we wanted to use instead, [so I wrote a Firmware for it](https://github.com/drinkrobotics/avr_pump_board).
 We got an award for this machine at Makerfaire Friedrichshafen, presented it at Makerfaire Hannover, visited the [Verschwörhaus Ulm](https://verschwoerhaus.de/) and various other events over the years.
 
+### CCCamp2023
+
+Of course we also visited the CCCamp in 2023.
+
+<!--%
+lightgallery([
+    [ "img/cccamp23_ubabot_1.jpg", "Setting up the Cocktail machine (1)" ],
+    [ "img/cccamp23_ubabot_2.jpg", "Setting up the Cocktail machine (2)" ],
+])
+%-->
+
 ### MCH2022
 
 Here are some photos of our tent at the MCH2022 summer hacker camp in the Netherlands.
