@@ -3,7 +3,7 @@ description: Rebuild of my i3 clone with aluminium extrusions, CoreXZ, Klipper
 parent: 3d-printing
 position: 10
 date: 2022-10-08
-update: 2023-08-31
+update: 2023-09-03
 comments: true
 ---
 
@@ -285,3 +285,20 @@ And [here](https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/con
 include_url("https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini")
 %-->
 </pre>
+
+## Printing at CCCamp23
+
+I brought the printer with me for CCCamp23 and offered printing services on-site at Frubar island.
+Surprisingly it worked without any issues.
+Transporting to and from the camp in the trunk of a car was no problem and I didn't have to fix or adjust anything.
+
+<!--%
+lightgallery([
+    [ "img/cccamp23_printer_1.jpg", "Printer in Frubar (1)" ],
+    [ "img/cccamp23_printer_2.jpg", "Printer and LED Matrix in FruBar" ],
+    [ "img/cccamp23_printer_3.jpg", "Printer in Frubar (2)" ],
+    [ "img/cccamp23_printer_5.jpg", "Printer printing" ],
+])
+%-->
+
+I'd say that was a good stress test for the hardware and I'm very happy with the result!
