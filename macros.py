@@ -307,15 +307,21 @@ def lightgallery_check_thumbnail_video(link, thumb, poster):
     os.system(script + ' ' + path)
 
 def lightgallery(links):
+    global v_ii
+    try:
+        v_ii += 1
+    except NameError:
+        v_ii = 0
+
     videos = [l for l in links if len(l) == 5]
     v_i = -1
     for v in videos:
         link, mime, thumb, poster, alt = v
         v_i += 1
-        print '<div style="display:none;" id="video' + str(v_i) + '">'
+        print '<div style="display:none;" id="video' + str(v_i) + '_' + str(v_ii) + '">'
         print '<video class="lg-video-object lg-html5" controls preload="none">'
         print '<source src="' + link + '" type="' + mime + '">'
-        print 'Your browser does not support HTML5 video.'
+        print '<a href="' + link + '">' + alt + '</a>'
         print '</video>'
         print '</div>'
         
@@ -351,7 +357,7 @@ def lightgallery(links):
                 x = link.rfind('.')
                 poster = link[:x] + '_poster.png'
             lightgallery_check_thumbnail_video(link, thumb, poster)
-            print '<div class="border" data-poster="' + poster + '" data-sub-html="' + alt + '" data-html="#video' + str(v_i) + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>'
+            print '<div class="border" data-poster="' + poster + '" data-sub-html="' + alt + '" data-html="#video' + str(v_i) + '_' + str(v_ii) + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>'
         else:
             raise NameError('Invalid number of arguments for lightgallery')
     print '</div>'
