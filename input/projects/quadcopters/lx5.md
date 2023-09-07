@@ -3,7 +3,7 @@ description: 4S LiPo, 220mm frame, 2205 2300KV motors
 parent: quadcopters
 position: 10
 date: 2017-11-01
-update: 2023-05-14
+update: 2023-09-08
 git: https://git.xythobuz.de/thomas/copter-configs/src/branch/master/5_lx5
 comments: true
 ---
@@ -23,7 +23,8 @@ lightgallery([
     [ "img/lx5_1.jpg", "Left side view" ],
     [ "img/lx5_2.jpg", "Right side view" ],
     [ "img/lx5_4.jpg", "Left stack closeup view" ],
-    [ "img/lx5_5.jpg", "Right stack closeup view" ]
+    [ "img/lx5_5.jpg", "Right stack closeup view" ],
+    [ "img/lx5_toolbox_instagram.mp4", "video/mp4", "", "", "Footage of me flying at a cocktail machine related event" ],
 ])
 %-->
 

@@ -27,10 +27,11 @@ Some videos, of both the mechanics as well as driving the steam engine.
 
 <!--%
 lightgallery([
+    [ "img/dampf_makerfaire_fn_toolbox_instagram.mp4", "video/mp4", "", "", "Driving at Makerfaire Friedrichshafen 2018" ],
     [ "https://www.youtube.com/watch?v=ikWtY_376n0", "img/dampf_2016_timelapse_thumb.jpg", "Timelapse of the meet-up in Kürnbach 2016" ],
     [ "https://www.youtube.com/watch?v=dv08NrImbJE", "img/dampf_2015_thumb.jpg", "Recording made by a visitor of the meet-up in Kürnbach 2015. You can see me shortly in the beginning." ],
     [ "https://www.youtube.com/watch?v=HGC6uH_kcoM", "img/dampf_thumb_druckluft.jpg", "Air Test" ],
-    [ "https://www.youtube.com/watch?v=OhMWQIR62rU", "img/dampf_thumb_pumpe.jpg", "Steam pump Test" ]
+    [ "https://www.youtube.com/watch?v=OhMWQIR62rU", "img/dampf_thumb_pumpe.jpg", "Steam pump Test" ],
 ])
 %-->
 
@@ -143,10 +144,11 @@ Einige Videos, sowohl von der Technik der Dampfmaschine als auch dem Fahrbetrieb
 
 <!--%
 lightgallery([
+    [ "img/dampf_makerfaire_fn_toolbox_instagram.mp4", "video/mp4", "", "", "Fahrt auf der Makerfaire Friedrichshafen 2018" ],
     [ "https://www.youtube.com/watch?v=ikWtY_376n0", "img/dampf_2016_timelapse_thumb.jpg", "Zeitraffer vom Dampftreffen Kürnbach 2016" ],
     [ "https://www.youtube.com/watch?v=dv08NrImbJE", "img/dampf_2015_thumb.jpg", "Aufnahmen eines Besuchers beim Dampftreffen Kürnbach 2015. Ich bin ganz am Anfang kurz zu sehen." ],
     [ "https://www.youtube.com/watch?v=HGC6uH_kcoM", "img/dampf_thumb_druckluft.jpg", "Druckluft Test" ],
-    [ "https://www.youtube.com/watch?v=OhMWQIR62rU", "img/dampf_thumb_pumpe.jpg", "Dampfpumpen Test" ]
+    [ "https://www.youtube.com/watch?v=OhMWQIR62rU", "img/dampf_thumb_pumpe.jpg", "Dampfpumpen Test" ],
 ])
 %-->
 
