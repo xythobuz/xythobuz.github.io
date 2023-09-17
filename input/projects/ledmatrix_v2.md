@@ -2,6 +2,7 @@ title: RGB LED Matrix visualizer
 description: For HUB75 modules, running on Raspberry Pi and Pico W
 parent: projects
 git: https://git.xythobuz.de/thomas/rgb-matrix-visualizer
+github: https://github.com/xythobuz/rgb-matrix-visualizer
 date: 2023-09-05
 comments: true
 ---
