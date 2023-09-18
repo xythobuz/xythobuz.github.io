@@ -94,7 +94,7 @@ def githubCommitBadge(p, showInline = False):
         if len(linkParts) >= 5:
             ret += "<a href=\"" + link + "\"><img "
             if showInline:
-                ret += "style =\"vertical-align: top;\" "
+                ret += "style =\"vertical-align: middle; padding-bottom: 0.25em;\" "
             ret += "src=\"https://img.shields.io/github/last-commit/"
             ret += linkParts[3] + "/" + linkParts[4]
             ret += ".svg?logo=git&style=flat\" /></a>"
