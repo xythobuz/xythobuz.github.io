@@ -225,7 +225,7 @@ lightgallery([
 ])
 %-->
 
-For the USB device implementation the Pico SDK includes [TinuyUSB](https://github.com/hathach/tinyusb).
+For the USB device implementation the Pico SDK includes [TinyUSB](https://github.com/hathach/tinyusb).
 From the Pico SDK I based my work on their [HID Composite example](https://github.com/raspberrypi/pico-examples/tree/master/usb/device/dev_hid_composite) ported from TinyUSB, as well as the [CDC MSC example](https://github.com/hathach/tinyusb/tree/master/examples/device/cdc_msc) directly from TinyUSB.
 
 This was very comfortable to use.
@@ -295,7 +295,7 @@ lightgallery([
 ])
 %-->
 
-With the white ball you see no movement at all, with the right ball there is movement, but there is no immediately obvious difference in the other datapoints.
+With the white ball you see no movement at all, with the orange ball there is movement, but there is no immediately obvious difference in the other datapoints.
 
 The PMW3360 also has a "Frame Capture" mode.
 This can be used to grab a full picture of what the image sensor is seeing.
@@ -403,7 +403,7 @@ They can be heated to firmly keep them in place.
 Please refer to the application note *PMS0122‐LM19‐LSI‐AN* for more details.
 
 Instead of the official (confidential 🙄) method I recommend simply heating a screw or other piece of metal for 5 seconds with a lighter, then pressing it lightly on the post.
-Make sure everything is clean and the kapto tape removed between sensor and lens.
+Make sure everything is clean and the kapton tape removed between sensor and lens.
 You can see the before and after in the pictures below.
 
 <!--%
