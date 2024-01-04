@@ -2,7 +2,7 @@ title: Blog
 post: 'OpenAutoLab' by Kauzerei
 description: Open-Source automatic film development machine
 date: 2023-12-29
-update: 2024-01-02
+update: 2024-01-04
 comments: false
 github: https://github.com/kauzerei/openautolab
 ---
@@ -11,9 +11,10 @@ My good friend [Kauzerei](https://github.com/kauzerei) has built [the automatic 
 
 <!--%
 lightgallery([
-    [ "https://www.youtube.com/watch?v=qe7pgEp7S68", "OpenAutoLab demo video" ],
+    [ "https://www.youtube.com/watch?v=Ryzbz89Sy8g", "OpenAutoLab demo video" ],
     [ "img/openautolab_front.png", "OpenAutoLab without heating option" ],
     [ "img/openautolab_37c3.jpg", "OpenAutoLab with RGB LEDs at 37C3" ],
+    [ "https://www.youtube.com/watch?v=qe7pgEp7S68", "Old OpenAutoLab demo video" ],
 ])
 %-->
 
