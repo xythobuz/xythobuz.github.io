@@ -24,7 +24,7 @@ lightgallery([
 The "physics" "simulation" in my code is not working very well.
 To reach the state that can be seen in the video above already took a lot of tweaking, and the result is obviously not optimal yet.
 
-Together with my [SerialGamepad project](http://localhost:8080/2015_12_20_serialgamepad.html) I was even able to fly in the SA:Unity sim with my usual quadcopter transmitter.
+Together with my [SerialGamepad project](2015_12_20_serialgamepad.html) I was even able to fly in the SA:Unity sim with my usual quadcopter transmitter.
 
 But my curiosity was satisfied at this point and I had no more interest in working on it further.
 

@@ -72,7 +72,7 @@ lightgallery([
 %-->
 
 This time I used [MicroPython](https://docs.micropython.org/en/latest/rp2/quickref.html) again to build the software.
-Is it my second time using it, after [the MCH2022 cocktail machine badge app](http://localhost:8080/2022_07_29_MCH2022.html#app).
+Is it my second time using it, after [the MCH2022 cocktail machine badge app](2022_07_29_MCH2022.html#app).
 It was a little bit more complicated to first get my head around it, compared to the usual C/C++ firmwares, and I was not able to figure out an easy way for OTA firmware updates yet.
 But in the end it was much quicker to build a working prototype with it.
 I recommend using [rshell](https://github.com/dhylands/rshell), there's also a small script for it [in my repo](https://git.xythobuz.de/thomas/CatToy/src/branch/master/copy.sh) to use it to copy the firmware to the device.
