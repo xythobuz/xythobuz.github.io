@@ -3,6 +3,7 @@ description: Properly playing sound files for visualization on an oscilloscope
 parent: projects
 git: https://git.xythobuz.de/thomas/osci-music-player
 date: 2024-02-11
+update: 2024-02-25
 comments: true
 ---
 
@@ -222,7 +223,7 @@ Install it [as usual](https://www.raspberrypi.com/software/), set up a user acco
 Prepare the environment by installing all required dependencies:
 
 <pre class="sh_sh">
-sudo sh -c 'echo "\n[all]\ndtoverlay=hifiberry-dac" >> /boot/config.txt'
+sudo sh -c 'echo "dtoverlay=hifiberry-dac" >> /boot/config.txt'
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install python3 python3-pip python3-pil libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7 libtiff5 ffmpeg
