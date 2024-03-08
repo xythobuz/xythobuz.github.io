@@ -3,7 +3,7 @@ description: Properly playing sound files for visualization on an oscilloscope
 parent: projects
 git: https://git.xythobuz.de/thomas/osci-music-player
 date: 2024-02-11
-update: 2024-02-25
+update: 2024-03-08
 comments: true
 ---
 
@@ -14,6 +14,8 @@ So I decided to tackle the topic again this year.
 
 <!--%
 lightgallery([
+    [ "img/toolbox10_1.jpg", "© 2024 Falko." ],
+    [ "img/toolbox10_3.jpg", "© 2024 Falko." ],
     [ "img/osci_music_7.jpg", "'Reconstruct' with the Osci Music Player" ],
     [ "img/osci_music_2.jpg", "Front of Osci Music Player" ],
     [ "img/osci_music_8.mp4", "video/mp4", "", "", "'Function' with the Osci Music Player" ],

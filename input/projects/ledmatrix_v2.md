@@ -4,6 +4,7 @@ parent: projects
 git: https://git.xythobuz.de/thomas/rgb-matrix-visualizer
 github: https://github.com/xythobuz/rgb-matrix-visualizer
 date: 2023-09-05
+update: 2024-03-08
 comments: true
 ---
 
@@ -11,6 +12,12 @@ I initially bought a 32x32 RGB LED matrix in 2018.
 Back then the idea was to fit it onto a bag, as some kind of wearable device, for 35C3.
 But it never really worked out.
 So in preparation for CCCamp23 I noticed the LED panel again and decided to order some more of them.
+
+<!--%
+lightgallery([
+    [ "img/toolbox10_2.jpg", "LED Matrix at Toolbox anniversary. © 2024 Falko." ],
+])
+%-->
 
 These are the [32x32 4mm pitch RGB LED Matrix Panels from Pimoroni](https://shop.pimoroni.com/products/rgb-led-matrix-panel?variant=35962488650), with either the [Interstate 75 W](https://shop.pimoroni.com/products/interstate-75-w?variant=40453881299027) or the [Adafruit RGB Matrix Bonnet](https://shop.pimoroni.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi?variant=2257849155594) to run them with a RP2040 or a Raspberry Pi, respectively.
 
