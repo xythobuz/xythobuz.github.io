@@ -2,9 +2,16 @@ title: Blog
 post: Toolbox Markdorf anniversary
 description: 10 year anniversary and day of the open Toolbox
 date: 2024-03-09
+update: 2024-03-18
 ---
 
 Last saturday our local hackerspace, the Toolbox Markdorf, held it's [10 year anniversary celebrations](https://toolbox-bodensee.de/blog/recap-tag-der-offenen-toolbox/) with an open-door-day.
+
+<!--%
+lightgallery([
+    [ "https://www.youtube.com/watch?v=W0bIb0fHymg", "FPV flights with LX5 at Toolbox Markdorf" ],
+])
+%-->
 
 I set up my tents in the `E-Lab 2` to show off some projects, mainly the [Oscilloscope Music player](osci_music_player.html) and the [LED Matrix](ledmatrix_v2.html) as well as my [Quadcopter stuff](quadcopters.html).
 
