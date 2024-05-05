@@ -4,7 +4,7 @@ description: For KiCad PCBs and STL files, made with mdBook
 date: 2024-05-05
 ---
 
-I recurring problem I ran into with my projects is documentation.
+A recurring problem I ran into with my projects is documentation.
 Especially with 3D printed parts or PCBs it's often required to generate preview images or PDFs so someone interested can take a look without having to clone the repo and install some development tools to open the original files.
 Doing this manually is time-consuming and repetitive.
 So it should be automated.
