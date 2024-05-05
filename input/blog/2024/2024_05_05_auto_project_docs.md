@@ -2,6 +2,7 @@ title: Blog
 post: Auto-generated project docs with 3D preview
 description: For KiCad PCBs and STL files, made with mdBook
 date: 2024-05-05
+comments: true
 ---
 
 A recurring problem I ran into with my projects is documentation.

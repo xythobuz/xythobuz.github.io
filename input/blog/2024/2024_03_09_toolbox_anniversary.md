@@ -3,6 +3,7 @@ post: Toolbox Markdorf anniversary
 description: 10 year anniversary and day of the open Toolbox
 date: 2024-03-09
 update: 2024-03-18
+comments: true
 ---
 
 Last saturday our local hackerspace, the Toolbox Markdorf, held it's [10 year anniversary celebrations](https://toolbox-bodensee.de/blog/recap-tag-der-offenen-toolbox/) with an open-door-day.
