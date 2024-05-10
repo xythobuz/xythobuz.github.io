@@ -3,7 +3,7 @@ description: 4S LiPo, 220mm frame, 2205 2300KV motors
 parent: quadcopters
 position: 10
 date: 2017-11-01
-update: 2024-03-08
+update: 2024-05-10
 git: https://git.xythobuz.de/thomas/copter-configs/src/branch/master/5_lx5
 comments: true
 ---
@@ -41,6 +41,7 @@ lightgallery([
     [ "https://www.youtube.com/watch?v=wUiboR8pkoA", "img/xylx5_range_thumb.jpg", "LX5 Quadcopter range" ],
     [ "https://www.youtube.com/watch?v=SRrjPk51ng0", "Flying below a bridge, over a creek" ],
     [ "https://www.youtube.com/watch?v=Zh9_t0R_MWw", "First flights after BF 4.4.1 upgrade" ],
+    [ "https://www.youtube.com/watch?v=CLe2nqUcd8E", "Prop Explosion" ],
 ])
 %-->
 
