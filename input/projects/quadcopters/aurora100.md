@@ -3,6 +3,7 @@ description: 3S LiPo, 100mm frame, 1104 6500KV motors
 parent: quadcopters
 position: 20
 date: 2017-07-17
+update: 2024-05-10
 git: https://git.xythobuz.de/thomas/copter-configs/src/branch/master/4_aurora100
 comments: true
 ---
@@ -10,10 +11,12 @@ comments: true
 <!--% backToParent() %-->
 
 Not being totally happy with the power available with [my 2S xyAurora90](aurora90.html) I decided to build a 3S Aurora100 in July 2017.
+The total weight with a 3S 450mAh battery is around 131g.
 
 <!--%
 lightgallery([
-    [ "img/xyaurora100_1.jpg", "Original Setup with AIO cam, Front Top view" ]
+    [ "img/xyaurora100_1.jpg", "Original Setup with AIO cam, Front Top view" ],
+    [ "img/aurora100_weight.jpg", "RTF with battery on a scale" ],
 ])
 %-->
 
