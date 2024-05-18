@@ -75,6 +75,7 @@ For now...
 <!--%
 lightgallery([
     [ "img/lars_v2_1.jpg", "LARS V2" ],
+    [ "img/lars_loop_controls.jpg", "LARS Loop Station controls" ],
 ])
 %-->
 
