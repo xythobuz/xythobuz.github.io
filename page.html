@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--%
 if page.get("lang", "en") == "de":
-    print '<html lang="de">'
+    print('<html lang="de">')
 else:
-    print '<html lang="en">'
+    print('<html lang="en">')
 %-->
 <head>
     <meta charset="{{ htmlspecialchars(__encoding__) }}" />
@@ -29,10 +29,10 @@ else:
 
         if link != "":
             # GitHub Fork-Me Ribbon
-            print '<div class="github-fork-ribbon-wrapper right-bottom">'
-            print '<div class="github-fork-ribbon"><a href="'
-            print link
-            print '">Fork this with Git</a></div></div>'
+            print('<div class="github-fork-ribbon-wrapper right-bottom">')
+            print('<div class="github-fork-ribbon"><a href="')
+            print(link)
+            print('">Fork this with Git</a></div></div>')
     %-->
     <div id="wrap"><div id="nav">
         <ul id="navbar">
@@ -55,11 +55,12 @@ else:
                 <li><a class="inc" href="#"><span class="font-small">A</span><span class="font-big">A</span></a></li>
             </div>
             <!--%
-                tmp = [p for p in page["lang_links"].iteritems()]
+                PY3 = sys.version_info[0] == 3
+                tmp = [p for p in ((iter(page["lang_links"].items())) if PY3 else (page["lang_links"].iteritems()))]
                 if len(tmp) > 1:
-                    print '            <li>'
-                    print " ".join(["<li><a href='%s'>%s</a></li>" % (url, lang) for lang, url in page["lang_links"].iteritems()]).replace(">en<", '><img src="img/en.png" alt="English"><').replace(">de<", '><img src="img/de.png" alt="Deutsch"><')
-                    print "</li>"
+                    print('            <li>')
+                    print(" ".join(["<li><a href='%s'>%s</a></li>" % (url, lang) for lang, url in ((iter(page["lang_links"].items())) if PY3 else (page["lang_links"].iteritems()))]).replace(">en<", '><img src="img/en.png" alt="English"><').replace(">de<", '><img src="img/de.png" alt="Deutsch"><'))
+                    print("</li>")
             %-->
         </ul>
     </div></div>
@@ -69,63 +70,63 @@ else:
 
             if page.get("noheader", "false") == "false":
                 if page.get("title", "") == "Blog":
-                    print "<h1>%s</h1>" % (page.get("post", ""))
+                    print("<h1>%s</h1>" % (page.get("post", "")))
                 else:
                     if page.get("lang", "en") == "de":
-                        print "<h1>%s</h1>" % (page.get("title_de", ""))
+                        print("<h1>%s</h1>" % (page.get("title_de", "")))
                     else:
-                        print "<h1>%s</h1>" % (page.get("title", ""))
+                        print("<h1>%s</h1>" % (page.get("title", "")))
 
                 if page.get("lang", "en") == "de":
                     if page.get("description_de", "") != "":
-                        print "<h5>%s</h5>" % (page.get("description_de", ""))
+                        print("<h5>%s</h5>" % (page.get("description_de", "")))
                     elif page.get("description", "") != "":
-                        print "<h5>%s</h5>" % (page.get("description", ""))
+                        print("<h5>%s</h5>" % (page.get("description", "")))
                 else:
                     if page.get("description", "") != "":
-                        print "<h5>%s</h5>" % (page.get("description", ""))
+                        print("<h5>%s</h5>" % (page.get("description", "")))
 
                 if page.get("date", "") != "":
                     if page.get("title", "") == "Blog":
                         if page.get("lang", "en") == "de":
                             date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%d.%m.%Y")
-                            print "<i>Ver&ouml;ffentlicht am %s.</i>" % date
+                            print("<i>Ver&ouml;ffentlicht am %s.</i>" % date)
                         else:
                             date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-                            print "<i>Published on %s.</i>" % date
+                            print("<i>Published on %s.</i>" % date)
                     else:
                         if page.get("lang", "en") == "de":
                             date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%d.%m.%Y")
-                            print "<i>Projekt gestartet am %s.</i>" % date
+                            print("<i>Projekt gestartet am %s.</i>" % date)
                         else:
                             date = datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
-                            print "<i>Project started on %s.</i>" % date
+                            print("<i>Project started on %s.</i>" % date)
 
                 if page.get("date", "") != "" and page.get("update", "") != "":
-                    print "<br>"
+                    print("<br>")
 
                 if page.get("update", "") != "":
                     if page.get("lang", "en") == "de":
                         date = datetime.strptime(page["update"], "%Y-%m-%d").strftime("%d.%m.%Y")
-                        print "<i>Zuletzt aktualisiert am %s.</i>" % date
+                        print("<i>Zuletzt aktualisiert am %s.</i>" % date)
                     else:
                         date = datetime.strptime(page["update"], "%Y-%m-%d").strftime("%B %d, %Y")
-                        print "<i>Last updated on %s.</i>" % date
+                        print("<i>Last updated on %s.</i>" % date)
 
             link = githubCommitBadge(page, True)
             if len(link) > 0:
-                print "<p>Recent activity on GitHub: " + link + "</p>"
+                print("<p>Recent activity on GitHub: " + link + "</p>")
         %-->
         {{ __content__ }}
         <hr>
         <!--%
             # Comments
             if page.get("comments", "false") == "true":
-                print '<div id="commento"></div>'
-                print '<hr>'
+                print('<div id="commento"></div>')
+                print('<hr>')
             elif page.get("comments", "false") != "false":
-                print '<div style="text-align: center;"><a href="%s">Head over here to discuss this article!</a></div>' % page.get("comments", "false")
-                print '<hr>'
+                print('<div style="text-align: center;"><a href="%s">Head over here to discuss this article!</a></div>' % page.get("comments", "false"))
+                print('<hr>')
         %-->
     </div>
     <div id="footer">
@@ -173,7 +174,7 @@ else:
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!--%
         if page.get("comments", "false") == "true":
-            print '<script defer src="https://comments.xythobuz.de/js/commento.js"></script>'
+            print('<script defer src="https://comments.xythobuz.de/js/commento.js"></script>')
     %-->
     <script type="text/javascript">
         $(document).ready(function() {

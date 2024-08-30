@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import sys
 import re
 import itertools
 import email.utils
@@ -7,10 +8,25 @@ import os.path
 import time
 import codecs
 from datetime import datetime
-import urlparse
 
 DEFAULT_LANG = "en"
 BASE_URL = "https://www.xythobuz.de"
+
+# =============================================================================
+# Python 2/3 hacks
+# =============================================================================
+
+PY3 = sys.version_info[0] == 3
+
+if PY3:
+    import urllib
+    import urllib.request
+    def urlparse_foo(link):
+        return urllib.parse.parse_qs(urllib.parse.urlparse(link).query)['v'][0]
+else:
+    import urlparse
+    def urlparse_foo(link):
+        return urlparse.parse_qs(urlparse.urlparse(link).query)['v'][0]
 
 # -----------------------------------------------------------------------------
 # sub page helper macro
@@ -30,24 +46,24 @@ def backToParent():
     # print if any parent link found
     if len(posts) > 0:
         p = posts[0]
-        print '<span class="listdesc">[...back to ' + p.title + ' overview](' + p.url + ')</span>'
+        print('<span class="listdesc">[...back to ' + p.title + ' overview](' + p.url + ')</span>')
 
 # -----------------------------------------------------------------------------
 # table helper macro
 # -----------------------------------------------------------------------------
 
 def tableHelper(style, header, content):
-    print "<table>"
+    print("<table>")
     if (header != None) and (len(header) == len(style)):
-        print "<tr>"
+        print("<tr>")
         for h in header:
-            print "<th>" + h + "</th>"
-        print "</tr>"
+            print("<th>" + h + "</th>")
+        print("</tr>")
     for ci in range(0, len(content)):
         if len(content[ci]) != len(style):
             # invalid call of table helper!
             continue
-        print "<tr>"
+        print("<tr>")
         for i in range(0, len(style)):
             s = style[i]
             td_style = ""
@@ -70,17 +86,17 @@ def tableHelper(style, header, content):
             if td_style != "":
                 td_args = " style=\"" + td_style + "\""
 
-            print "<td" + td_args + ">"
+            print("<td" + td_args + ">")
 
             if isinstance(content[ci][i], tuple):
                 text, link = content[ci][i]
-                print "<a href=\"" + link + "\">" + text + "</a>"
+                print("<a href=\"" + link + "\">" + text + "</a>")
             else:
                 text = content[ci][i]
-                print text
-            print "</td>"
-        print "</tr>"
-    print "</table>"
+                print(text)
+            print("</td>")
+        print("</tr>")
+    print("</table>")
 
 # -----------------------------------------------------------------------------
 # menu helper macro
@@ -112,7 +128,7 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
     if year != lastyear:
         lastyear = year
         if yearsAsHeading:
-            print "\n\n#### %s\n" % (year)
+            print("\n\n#### %s\n" % (year))
 
     dateto = ""
     if p.get("date", "" != ""):
@@ -127,19 +143,19 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
         if nicelyFormatFullDate:
             dateto = " - " + datetime.strptime(p.get("update", p.date), "%Y-%m-%d").strftime("%B %d, %Y")
 
-    print "  * **[%s](%s)**%s" % (title, p.url, dateto)
+    print("  * **[%s](%s)**%s" % (title, p.url, dateto))
 
     if p.get("description", "") != "":
         description = p.get("description", "")
         if lang != "":
             if p.get("description_" + lang, "") != "":
                 description = p.get("description_" + lang, "")
-        print "<br><span class=\"listdesc\">" + description + "</span>"
+        print("<br><span class=\"listdesc\">" + description + "</span>")
 
     if showLastCommit:
         link = githubCommitBadge(p)
         if len(link) > 0:
-            print "<br>" + link
+            print("<br>" + link)
 
     return lastyear
 
@@ -318,14 +334,14 @@ def lightgallery(links):
     for v in videos:
         link, mime, thumb, poster, alt = v
         v_i += 1
-        print '<div style="display:none;" id="video' + str(v_i) + '_' + str(v_ii) + '">'
-        print '<video class="lg-video-object lg-html5" controls preload="none">'
-        print '<source src="' + link + '" type="' + mime + '">'
-        print '<a href="' + link + '">' + alt + '</a>'
-        print '</video>'
-        print '</div>'
+        print('<div style="display:none;" id="video' + str(v_i) + '_' + str(v_ii) + '">')
+        print('<video class="lg-video-object lg-html5" controls preload="none">')
+        print('<source src="' + link + '" type="' + mime + '">')
+        print('<a href="' + link + '">' + alt + '</a>')
+        print('</video>')
+        print('</div>')
         
-    print '<div class="lightgallery">'
+    print('<div class="lightgallery">')
     v_i = -1
     for l in links:
         if (len(l) == 3) or (len(l) == 2):
@@ -337,7 +353,7 @@ def lightgallery(links):
                 link, alt = l
                 if "youtube.com" in link:
                     img = "https://img.youtube.com/vi/"
-                    img += urlparse.parse_qs(urlparse.urlparse(link).query)['v'][0]
+                    img += urlparse_foo(link)
                     img += "/0.jpg" # full size preview
                     #img += "/default.jpg" # default thumbnail
                     style = ' style="width:300px;"'
@@ -346,7 +362,7 @@ def lightgallery(links):
                     x = link.rfind('.')
                     img = link[:x] + '_small' + link[x:]
             lightgallery_check_thumbnail(link, img)
-            print '<div class="border" style="position:relative;" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"' + style + '>' + img2 + '</a></div>'
+            print('<div class="border" style="position:relative;" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"' + style + '>' + img2 + '</a></div>')
         elif len(l) == 5:
             v_i += 1
             link, mime, thumb, poster, alt = videos[v_i]
@@ -357,19 +373,19 @@ def lightgallery(links):
                 x = link.rfind('.')
                 poster = link[:x] + '_poster.png'
             lightgallery_check_thumbnail_video(link, thumb, poster)
-            print '<div class="border" data-poster="' + poster + '" data-sub-html="' + alt + '" data-html="#video' + str(v_i) + '_' + str(v_ii) + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>'
+            print('<div class="border" data-poster="' + poster + '" data-sub-html="' + alt + '" data-html="#video' + str(v_i) + '_' + str(v_ii) + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>')
         else:
             raise NameError('Invalid number of arguments for lightgallery')
-    print '</div>'
+    print('</div>')
 
 # -----------------------------------------------------------------------------
 # github helper macros
 # -----------------------------------------------------------------------------
 
-import urllib, json, sys
+import json, sys
 
 def restRequest(url):
-    response = urllib.urlopen(url)
+    response = urllib.request.urlopen(url) if PY3 else urllib.urlopen(url)
     if response.getcode() != 200:
         sys.stderr.write("\n")
         sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
@@ -430,11 +446,11 @@ def printLatestRelease(user, repo):
     print("</ul></div>")
 
 def include_url(url):
-    response = urllib.urlopen(url)
+    response = urllib.request.urlopen(url) if PY3 else urllib.urlopen(url)
     if response.getcode() != 200:
         raise Exception("invalid response code", response.getcode())
     data = response.read()
-    print data,
+    print(data,)
 
 # -----------------------------------------------------------------------------
 # preconvert hooks
@@ -457,7 +473,7 @@ def hook_preconvert_anotherlang():
                                         [lang.strip() for lang in text_lang[1::2]], \
                                         text_lang[::2]))
 
-        for lang, text in text_grouped.iteritems():
+        for lang, text in (iter(text_grouped.items()) if PY3 else text_grouped.iteritems()):
             spath = p.fname.split(os.path.sep)
             langs.append(lang)
 
@@ -469,19 +485,19 @@ def hook_preconvert_anotherlang():
             vp = Page(filename, virtual=text)
             # Copy real page attributes to the virtual page
             for attr in p:
-                if not vp.has_key(attr):
+                if not ((attr in vp) if PY3 else vp.has_key(attr)):
                     vp[attr] = p[attr]
             # Define a title in the proper language
             vp["title"] = p["title_%s" % lang] \
-                                    if p.has_key("title_%s" % lang) \
+                                    if ((("title_%s" % lang) in p) if PY3 else p.has_key("title_%s" % lang)) \
                                     else p["title"]
             # Keep track of the current lang of the virtual page
             vp["lang"] = lang
             page_vpages[lang] = vp
 
         # Each virtual page has to know about its sister vpages
-        for lang, vpage in page_vpages.iteritems():
-            vpage["lang_links"] = dict([(l, v["url"]) for l, v in page_vpages.iteritems()])
+        for lang, vpage in (iter(page_vpages.items()) if PY3 else page_vpages.iteritems()):
+            vpage["lang_links"] = dict([(l, v["url"]) for l, v in (iter(page_vpages.items()) if PY3 else page_vpages.iteritems())])
             vpage["other_lang"] = langs # set other langs and link
 
         vpages += page_vpages.values()
@@ -719,7 +735,7 @@ def hook_postconvert_size():
             else:
                 return  "<a href=\"%s\">%s</a>&nbsp;(%d Byte)" % (matchobj.group(1), matchobj.group(3), size)
         except:
-            print "Unable to estimate file size for %s" % matchobj.group(1)
+            print("Unable to estimate file size for %s" % matchobj.group(1))
             return '<a href=\"%s\">%s</a>' % (matchobj.group(1), matchobj.group(3))
     _re_url = '<a href=\"([^\"]*?\.(%s))\">(.*?)<\/a>' % file_ext
     for p in pages:

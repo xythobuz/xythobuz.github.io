@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 # =============================================================================
@@ -27,20 +27,14 @@ from __future__ import with_statement
 
 import codecs
 import glob
-import imp
 import optparse
 import os
 from os.path import join as opj
 from os.path import exists as opx
 import re
 import shutil
-import StringIO
 import sys
 import traceback
-import urlparse
-
-from SimpleHTTPServer import SimpleHTTPRequestHandler
-from BaseHTTPServer import HTTPServer
 
 try:
     import markdown
@@ -58,14 +52,39 @@ PY3 = sys.version_info[0] == 3
 if PY3:
     import builtins
     exec_ = getattr(builtins, "exec")
+    import importlib.util
+    import importlib.machinery
+    def imp_load_source(modname, filename):
+        loader = importlib.machinery.SourceFileLoader(modname, filename)
+        spec = importlib.util.spec_from_file_location(modname, filename, loader=loader)
+        module = importlib.util.module_from_spec(spec)
+        # The module is always executed and not cached in sys.modules.
+        # Uncomment the following line to cache the module.
+        # sys.modules[module.__name__] = module
+        loader.exec_module(module)
+        return module
+    import urllib
+    def urlparse_urljoin(a, b):
+        return urllib.parse.urljoin(a, b)
+    from io import StringIO
+    from http.server import HTTPServer, SimpleHTTPRequestHandler
 else:
     import tempfile
+    from StringIO import StringIO
+    from SimpleHTTPServer import SimpleHTTPRequestHandler
+    from BaseHTTPServer import HTTPServer
     def exec_(code, envdic):
         with tempfile.NamedTemporaryFile() as tf:
             tf.write('# -*- coding: utf-8 -*-\n')
             tf.write(code.encode('utf-8'))
             tf.flush()
             execfile(tf.name, envdic)
+    import imp
+    def imp_load_source(module_name, module_path):
+        imp.load_source(module_name, module_path)
+    import urlparse
+    def urlparse_urljoin(a, b):
+        return urlparse.urljoin(a, b)
 
 # =============================================================================
 # init site
@@ -402,7 +421,7 @@ def build(project, opts):
     regx_escp = re.compile(r'\\((?:(?:&lt;|<)!--|{)(?:{|%))') # escaped code
     repl_escp = r'\1'
     regx_rurl = re.compile(r'(?<=(?:(?:\n| )src|href)=")([^#/&%].*?)(?=")')
-    repl_rurl = lambda m: urlparse.urljoin(opts.base_url, m.group(1))
+    repl_rurl = lambda m: urlparse_urljoin(opts.base_url, m.group(1))
 
     regx_eval = re.compile(r'(?<!\\)(?:(?:<!--|{){)(.*?)(?:}(?:-->|}))', re.S)
 
@@ -415,10 +434,14 @@ def build(project, opts):
         except:
             abort_iex(page, "expression", expr, traceback.format_exc())
         else:
-            if not isinstance(repl, basestring): # e.g. numbers
-                repl = unicode(repl)
-            elif not isinstance(repl, unicode):
-                repl = repl.decode("utf-8")
+            if PY3:
+                if not isinstance(repl, str):
+                    repl = str(repl)
+            else:
+                if not isinstance(repl, basestring): # e.g. numbers
+                    repl = unicode(repl)
+                elif not isinstance(repl, unicode):
+                    repl = repl.decode("utf-8")
             return repl
 
     regx_exec = re.compile(r'(?<!\\)(?:(?:<!--|{)%)(.*?)(?:%(?:-->|}))', re.S)
@@ -434,7 +457,7 @@ def build(project, opts):
         stmt = ind_rex.sub('', stmt)
 
         # execute
-        sys.stdout = StringIO.StringIO()
+        sys.stdout = StringIO()
         try:
             exec_(stmt, macros.copy())
         except:
@@ -443,8 +466,9 @@ def build(project, opts):
         else:
             repl = sys.stdout.getvalue()[:-1] # remove last line break
             sys.stdout = sys.__stdout__
-            if not isinstance(repl, unicode):
-                repl = repl.decode(opts.input_enc)
+            if not PY3:
+                if not isinstance(repl, unicode):
+                    repl = repl.decode(opts.input_enc)
             return repl
 
     # -------------------------------------------------------------------------
@@ -473,7 +497,7 @@ def build(project, opts):
 
     # macro module
     fname = opj(opts.project, "macros.py")
-    macros = imp.load_source("macros", fname).__dict__ if opx(fname) else {}
+    macros = imp_load_source("macros", fname).__dict__ if opx(fname) else {}
 
     macros["__encoding__"] = opts.output_enc
     macros["options"] = opts
@@ -495,7 +519,7 @@ def build(project, opts):
     pages = []
     custom_converter = macros.get('converter', {})
 
-    for cwd, dirs, files in os.walk(dir_in.decode(opts.filename_enc)):
+    for cwd, dirs, files in os.walk(dir_in if PY3 else dir_in.decode(opts.filename_enc)):
         cwd_site = cwd[len(dir_in):].lstrip(os.path.sep)
         for sdir in dirs[:]:
             if re.search(opts.ignore, opj(cwd_site, sdir)):
@@ -621,7 +645,7 @@ def removeEmptyFolders(path):
     # if folder empty, delete it
     files = os.listdir(path)
     if len(files) == 0:
-        print "info   : removing empty folder: ", path
+        print("info   : removing empty folder: ", path)
         os.rmdir(path)
 
 # =============================================================================
@@ -666,7 +690,7 @@ def options():
     og.add_option("", "--base-url", default="/", metavar="URL",
                   help="base url for relative links (default: /)")
     og.add_option("" , "--ignore", default=r"^\.|~$", metavar="REGEX",
-                  help="input files to ignore (default: '^\.|~$')")
+                  help="input files to ignore (default: '^\\.|~$')")
     og.add_option("" , "--md-ext", default=[], metavar="EXT",
                   action="append", help="enable a markdown extension")
     og.add_option("", "--input-enc", default="utf-8", metavar="ENC",
