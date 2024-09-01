@@ -1,4 +1,4 @@
-title: Osci Music Player
+title: Oscilloscope Music Player
 description: Properly playing sound files for visualization on an oscilloscope
 parent: projects
 git: https://git.xythobuz.de/thomas/osci-music-player
