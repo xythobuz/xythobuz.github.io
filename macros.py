@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
+
 import sys
 import re
 import itertools
@@ -24,6 +26,7 @@ if PY3:
     def urlparse_foo(link):
         return urllib.parse.parse_qs(urllib.parse.urlparse(link).query)['v'][0]
 else:
+    import urllib
     import urlparse
     def urlparse_foo(link):
         return urlparse.parse_qs(urlparse.urlparse(link).query)['v'][0]
@@ -398,7 +401,7 @@ def restRequest(url):
         sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
         sys.stderr.write("\n")
         return ""
-    data = json.loads(response.read())
+    data = json.loads(response.read().decode("utf-8"))
     return data
 
 def restReleases(user, repo):
@@ -449,8 +452,8 @@ def include_url(url):
     response = urllib.request.urlopen(url) if PY3 else urllib.urlopen(url)
     if response.getcode() != 200:
         raise Exception("invalid response code", response.getcode())
-    data = response.read()
-    print(data,)
+    data = response.read().decode("utf-8")
+    print(data, end="")
 
 # -----------------------------------------------------------------------------
 # preconvert hooks

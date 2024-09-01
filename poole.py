@@ -24,6 +24,7 @@
 # =============================================================================
 
 from __future__ import with_statement
+from __future__ import print_function
 
 import codecs
 import glob
@@ -81,7 +82,7 @@ else:
             execfile(tf.name, envdic)
     import imp
     def imp_load_source(module_name, module_path):
-        imp.load_source(module_name, module_path)
+        return imp.load_source(module_name, module_path)
     import urlparse
     def urlparse_urljoin(a, b):
         return urlparse.urljoin(a, b)
