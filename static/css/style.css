@@ -46,7 +46,7 @@ s:hover {
 }
 
 #content {
-    width: 75%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -71,6 +71,24 @@ a.anchor {
 
     a.anchor {
         top: -175px;
+    }
+}
+
+@media (min-width: 1000px) {
+    #content {
+        width: 75%;
+    }
+}
+
+@media (min-width: 1500px) {
+    #content {
+        width: 50%;
+    }
+
+    #navbar {
+        position: relative;
+        left: 12.5%;
+        width: 75%;
     }
 }
 
