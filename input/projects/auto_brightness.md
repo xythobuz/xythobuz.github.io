@@ -4,6 +4,7 @@ parent: projects
 git: https://git.xythobuz.de/thomas/AutoBrightness
 github: https://github.com/xythobuz/AutoBrightness
 date: 2024-09-07
+update: 2024-09-09
 comments: true
 ---
 
@@ -141,6 +142,26 @@ All this just runs once per second.
 
 Unfortunately, using ddcutil to adjust the brightness causes a noticable stutter of the whole system each time the value is changed.
 So this is not a good long-term solution.
+
+Telling ddcutil [to directly talk to the I2C bus](https://git.xythobuz.de/thomas/AutoBrightness/commit/b4888f009f3685c036866fa689759ffdbe9227cb) helped a bit, but it still stutters slightly.
+
+To alleviate this a bit I'm now using a [KWin script](https://develop.kde.org/docs/plasma/kwin/) to check for a full-screen app so I can pause brightness updates.
+
+<pre class="sh_javascript">
+var win = workspace.activeWindow;
+var name = win.caption;
+var pid = win.pid;
+var state = (win.bufferGeometry == win.output.geometry);
+print('{ "name": "' + name + '", "pid": ' + pid + ', "fullscreen": ' + state + ' }');
+</pre>
+
+As usual I'm also sending all these values to my local InfluxDB.
+
+<!--%
+lightgallery([
+    [ "img/autobrightness_influx.png", "Input and Output data in Grafana" ],
+])
+%-->
 
 ## Proper Client
 
