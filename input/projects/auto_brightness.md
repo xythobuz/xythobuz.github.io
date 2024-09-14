@@ -148,11 +148,9 @@ Telling ddcutil [to directly talk to the I2C bus](https://git.xythobuz.de/thomas
 To alleviate this a bit I'm now using a [KWin script](https://develop.kde.org/docs/plasma/kwin/) to check for a full-screen app so I can pause brightness updates.
 
 <pre class="sh_javascript">
-var win = workspace.activeWindow;
-var name = win.caption;
-var pid = win.pid;
-var state = (win.bufferGeometry == win.output.geometry);
-print('{ "name": "' + name + '", "pid": ' + pid + ', "fullscreen": ' + state + ' }');
+<!--%
+include_url("https://git.xythobuz.de/thomas/AutoBrightness/raw/branch/main/client/kwin_check.js")
+%-->
 </pre>
 
 As usual I'm also sending all these values to my local InfluxDB.
