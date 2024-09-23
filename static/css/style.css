@@ -341,25 +341,14 @@ body, #nav, #nav a:link, #nav a:visited {
     color: #000000;
 }
 
+/* gradients from https://cesque.com/gaydient/ */
+
 #nav::after {
     content: "";
     height: 2px;
     width: 100%;
     display: block;
-    background: linear-gradient(
-        90deg,
-        rgba(255,   0,   0, 1)  0%,
-        rgba(255, 154,   0, 1)  10%,
-        rgba(208, 222,  33, 1)  20%,
-        rgba( 79, 220,  74, 1)  30%,
-        rgba( 63, 218, 216, 1)  40%,
-        rgba( 47, 201, 226, 1)  50%,
-        rgba( 28, 127, 238, 1)  60%,
-        rgba( 95,  21, 242, 1)  70%,
-        rgba(186,  12, 248, 1)  80%,
-        rgba(251,   7, 217, 1)  90%,
-        rgba(255,   0,   0, 1) 100%
-    );
+    background: linear-gradient(to right, rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 27%, rgb(241, 235, 27), rgb(241, 235, 27) 33%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
 }
 
 ._sh_lines {
@@ -367,20 +356,7 @@ body, #nav, #nav a:link, #nav a:visited {
 }
 
 hr {
-    background: linear-gradient(
-        90deg,
-        rgba(255,   0,   0, 1)  0%,
-        rgba(255, 154,   0, 1)  10%,
-        rgba(208, 222,  33, 1)  20%,
-        rgba( 79, 220,  74, 1)  30%,
-        rgba( 63, 218, 216, 1)  40%,
-        rgba( 47, 201, 226, 1)  50%,
-        rgba( 28, 127, 238, 1)  60%,
-        rgba( 95,  21, 242, 1)  70%,
-        rgba(186,  12, 248, 1)  80%,
-        rgba(251,   7, 217, 1)  90%,
-        rgba(255,   0,   0, 1) 100%
-    );
+    background: linear-gradient(to right, rgb(85, 205, 252), rgb(179, 157, 233), rgb(247, 168, 184), rgb(246, 216, 221), rgb(255, 255, 255) 45%, rgb(255, 255, 255), rgb(255, 255, 255) 55%, rgb(246, 216, 221), rgb(247, 168, 184), rgb(179, 157, 233), rgb(85, 205, 252));
     height: 2px;
     border: none;
 }
