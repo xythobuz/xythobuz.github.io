@@ -341,14 +341,26 @@ body, #nav, #nav a:link, #nav a:visited {
     color: #000000;
 }
 
-/* gradients from https://cesque.com/gaydient/ */
-
 #nav::after {
     content: "";
-    height: 2px;
+    height: 0.25em;
     width: 100%;
     display: block;
-    background: linear-gradient(to right, rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 27%, rgb(241, 235, 27), rgb(241, 235, 27) 33%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
+    background: linear-gradient(
+        to right,
+        rgb(228, 3, 3) 0%,
+        rgb(228, 3, 3) 16.65%,
+        rgb(255, 140, 0) 16.65%,
+        rgb(255, 140, 0) 33.3%,
+        rgb(255, 237, 0) 33.3%,
+        rgb(255, 237, 0) 50%,
+        rgb(0, 128, 38) 50%,
+        rgb(0, 128, 38) 66.6%,
+        rgb(0, 76, 255) 66.6%,
+        rgb(0, 76, 255) 83.25%,
+        rgb(115, 41, 130) 83.25%,
+        rgb(115, 41, 130) 100%
+    );
 }
 
 ._sh_lines {
@@ -356,9 +368,35 @@ body, #nav, #nav a:link, #nav a:visited {
 }
 
 hr {
-    background: linear-gradient(to right, rgb(85, 205, 252), rgb(179, 157, 233), rgb(247, 168, 184), rgb(246, 216, 221), rgb(255, 255, 255) 45%, rgb(255, 255, 255), rgb(255, 255, 255) 55%, rgb(246, 216, 221), rgb(247, 168, 184), rgb(179, 157, 233), rgb(85, 205, 252));
-    height: 2px;
     border: none;
+    height: 0.25em;
+    background: linear-gradient(
+        to right,
+        rgb(214, 2, 112) 0%,
+        rgb(214, 2, 112) 40%,
+        rgb(155, 79, 150) 40%,
+        rgb(155, 79, 150) 60%,
+        rgb(0, 56, 168) 60%,
+        rgb(0, 56, 168) 100%
+    );
+}
+
+#footbar {
+    border: none;
+    height: 0.25em;
+    background: linear-gradient(
+        to right,
+        rgb(91, 206, 250) 0%,
+        rgb(91, 206, 250) 20%,
+        rgb(245, 169, 184) 20%,
+        rgb(245, 169, 184) 40%,
+        rgb(255, 255, 255) 40%,
+        rgb(255, 255, 255) 60%,
+        rgb(245, 169, 184) 60%,
+        rgb(245, 169, 184) 80%,
+        rgb(91, 206, 250) 80%,
+        rgb(91, 206, 250) 100%
+    );
 }
 
 table, th, td, ._sh, .ascii, .border, .releasecard, #index-avatar, .collapsecontent {
