@@ -170,9 +170,15 @@ def printRecentMenu(count = 5):
     for p in posts:
         printMenuItem(p, False, False, False, True, "0", "", False)
 
-def printBlogMenu():
+def printBlogMenu(year_min=None, year_max=None):
     posts = [p for p in pages if "post" in p and p.lang == "en"]
     posts.sort(key=lambda p: p.get("date", "9999-01-01"), reverse=True)
+
+    if year_min != None:
+        posts = [p for p in posts if int(p.get("date", "9999-01-01")[0:4]) >= int(year_min)]
+    if year_max != None:
+        posts = [p for p in posts if int(p.get("date", "9999-01-01")[0:4]) <= int(year_max)]
+
     lastyear = "0"
     for p in posts:
         lastyear = printMenuItem(p, True, False, False, True, lastyear)
