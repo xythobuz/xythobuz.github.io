@@ -11,12 +11,9 @@ import time
 import codecs
 from datetime import datetime
 
-DEFAULT_LANG = "en"
-BASE_URL = "https://www.xythobuz.de"
-
-# =============================================================================
+# -----------------------------------------------------------------------------
 # Python 2/3 hacks
-# =============================================================================
+# -----------------------------------------------------------------------------
 
 PY3 = sys.version_info[0] == 3
 
@@ -30,6 +27,50 @@ else:
     import urlparse
     def urlparse_foo(link):
         return urlparse.parse_qs(urlparse.urlparse(link).query)['v'][0]
+
+# -----------------------------------------------------------------------------
+# config "system"
+# -----------------------------------------------------------------------------
+
+conf = {
+    "default_lang": "en",
+    "base_url": "https://www.xythobuz.de",
+
+    "birthday": datetime(1994, 1, 22, 0, 0),
+    "blog_years_back": 6,
+}
+
+def get_conf(name):
+    return conf[name]
+
+# -----------------------------------------------------------------------------
+# local vars for compatibility
+# -----------------------------------------------------------------------------
+
+DEFAULT_LANG = get_conf("default_lang")
+BASE_URL = get_conf("base_url")
+
+# -----------------------------------------------------------------------------
+# birthday calculation
+# -----------------------------------------------------------------------------
+
+from datetime import timedelta
+from calendar import isleap
+
+size_of_day = 1. / 366.
+size_of_second = size_of_day / (24. * 60. * 60.)
+
+def date_as_float(dt):
+    days_from_jan1 = dt - datetime(dt.year, 1, 1)
+    if not isleap(dt.year) and days_from_jan1.days >= 31+28:
+        days_from_jan1 += timedelta(1)
+    return dt.year + days_from_jan1.days * size_of_day + days_from_jan1.seconds * size_of_second
+
+def difference_in_years(start_date, end_date):
+    return int(date_as_float(end_date) - date_as_float(start_date))
+
+def own_age():
+    return difference_in_years(get_conf("birthday"), datetime.now())
 
 # -----------------------------------------------------------------------------
 # sub page helper macro
@@ -119,7 +160,7 @@ def githubCommitBadge(p, showInline = False):
             ret += ".svg?logo=git&style=flat\" /></a>"
     return ret
 
-def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = "", showLastCommit = True):
+def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = "", showLastCommit = True, hide_description = False, indent_count = 0, updates_as_heading = False):
     title = p.title
     if lang != "":
         if p.get("title_" + lang, "") != "":
@@ -127,7 +168,10 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
     if title == "Blog":
         title = p.post
 
-    year = p.get("date", "")[0:4]
+    if updates_as_heading:
+        year = p.get("update", p.get("date", ""))[0:4]
+    else:
+        year = p.get("date", "")[0:4]
     if year != lastyear:
         lastyear = year
         if yearsAsHeading:
@@ -146,14 +190,16 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
         if nicelyFormatFullDate:
             dateto = " - " + datetime.strptime(p.get("update", p.date), "%Y-%m-%d").strftime("%B %d, %Y")
 
-    print("  * **[%s](%s)**%s" % (title, p.url, dateto))
+    indent = "  " * (indent_count + 1)
+    print(indent + "* **[%s](%s)**%s" % (title, p.url, dateto))
 
-    if p.get("description", "") != "":
-        description = p.get("description", "")
-        if lang != "":
-            if p.get("description_" + lang, "") != "":
-                description = p.get("description_" + lang, "")
-        print("<br><span class=\"listdesc\">" + description + "</span>")
+    if hide_description == False:
+        if p.get("description", "") != "":
+            description = p.get("description", "")
+            if lang != "":
+                if p.get("description_" + lang, "") != "":
+                    description = p.get("description_" + lang, "")
+            print("<br><span class=\"listdesc\">" + description + "</span>")
 
     if showLastCommit:
         link = githubCommitBadge(p)
@@ -165,10 +211,13 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
 def printRecentMenu(count = 5):
     posts = [p for p in pages if "date" in p and p.lang == "en"]
     posts.sort(key=lambda p: p.get("update", p.get("date")), reverse=True)
+
     if count > 0:
         posts = posts[0:count]
+
+    lastyear = "0"
     for p in posts:
-        printMenuItem(p, False, False, False, True, "0", "", False)
+        lastyear = printMenuItem(p, count == 0, False, False, True, lastyear, "", False, False, 0, True)
 
 def printBlogMenu(year_min=None, year_max=None):
     posts = [p for p in pages if "post" in p and p.lang == "en"]
@@ -186,22 +235,43 @@ def printBlogMenu(year_min=None, year_max=None):
 def printProjectsMenu():
     # prints all pages with parent 'projects' or 'stuff'.
     # first the ones without date, sorted by position.
+    # this first section includes sub-headings for children
     # then afterwards those with date, split by year.
     # also supports blog posts with parent.
     enpages = [p for p in pages if p.lang == "en"]
 
+    # select pages without date
     dpages = [p for p in enpages if p.get("date", "") == ""]
+    # only those that have a parent in ['projects', 'stuff']
     mpages = [p for p in dpages if any(x in p.get("parent", "") for x in [ 'projects', 'stuff' ])]
+    # sort by position
     mpages.sort(key=lambda p: [int(p.get("position", "999"))])
+    # print all pages
     for p in mpages:
         printMenuItem(p)
 
+        # print subpages for these top-level items
+        subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
+        for sp in subpages:
+            printMenuItem(sp, False, True, True, False, "0", "", False, True, 1)
+
+    # slect pages with a date
     dpages = [p for p in enpages if p.get("date", "") != ""]
+    # only those that have a parent in ['projects', 'stuff']
     mpages = [p for p in dpages if any(x in p.get("parent", "") for x in [ 'projects', 'stuff' ])]
+    # sort by date
     mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+
+    # print all pages
     lastyear = "0"
     for p in mpages:
         lastyear = printMenuItem(p, True, True, False, False, lastyear)
+
+        # print subpages for these top-level items
+        subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
+        subpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+        for sp in subpages:
+            printMenuItem(sp, False, True, True, False, "0", "", False, True, 1)
 
 def print3DPrintingMenu():
     mpages = [p for p in pages if p.get("parent", "") == "3d-printing" and p.lang == "en"]
@@ -487,9 +557,9 @@ def hook_preconvert_anotherlang():
             langs.append(lang)
 
             if lang == "en":
-                filename = re.sub(MKD_PATT, "%s\g<0>" % "", p.fname).split(os.path.sep)[-1]
+                filename = re.sub(MKD_PATT, r"%s\g<0>" % "", p.fname).split(os.path.sep)[-1]
             else:
-                filename = re.sub(MKD_PATT, ".%s\g<0>" % lang, p.fname).split(os.path.sep)[-1]
+                filename = re.sub(MKD_PATT, r".%s\g<0>" % lang, p.fname).split(os.path.sep)[-1]
 
             vp = Page(filename, virtual=text)
             # Copy real page attributes to the virtual page
@@ -746,6 +816,6 @@ def hook_postconvert_size():
         except:
             print("Unable to estimate file size for %s" % matchobj.group(1))
             return '<a href=\"%s\">%s</a>' % (matchobj.group(1), matchobj.group(3))
-    _re_url = '<a href=\"([^\"]*?\.(%s))\">(.*?)<\/a>' % file_ext
+    _re_url = r'<a href=\"([^\"]*?\.(%s))\">(.*?)<\/a>' % file_ext
     for p in pages:
         p.html = re.sub(_re_url, matched_link, p.html)

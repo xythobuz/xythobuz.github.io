@@ -7,10 +7,11 @@ noheader: true
 
 [Click here](blog.html) for the more recent blog posts.
 
-To receive my latest updates, you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
+To receive my latest updates you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
 
 <!--%
 import datetime
 year = int(datetime.date.today().year)
-printBlogMenu(None, str(year - 5 - 1))
+
+printBlogMenu(None, str(year - get_conf("blog_years_back")))
 %-->

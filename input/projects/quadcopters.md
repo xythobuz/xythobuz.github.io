@@ -2,6 +2,7 @@ title: Flying RC Vehicles
 description: My self-made Quadcopters and other model stuff
 parent: projects
 position: 20
+child-id: quadcopters
 ---
 
 In the last couple of years I built multiple quadcopters and some other related flying remote-controlled model vehicles.

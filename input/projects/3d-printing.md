@@ -2,6 +2,7 @@ title: 3D Printing
 description: Reports of my different endeavours in 3D printing
 parent: projects
 position: 10
+child-id: 3d-printing
 ---
 
 In 2016 I've started experimenting with 3D printers.

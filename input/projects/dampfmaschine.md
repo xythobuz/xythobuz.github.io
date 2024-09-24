@@ -4,6 +4,7 @@ description: My Grandfathers self-built model steam engine
 parent: projects
 position: 500
 comments: true
+child-id: steam
 ---
 
 In 1992 my grandfather began building his own live model steam engine, in 1:2.7 scale.

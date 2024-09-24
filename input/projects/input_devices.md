@@ -2,6 +2,7 @@ title: Input Devices
 description: Mechanical Keyboards and other Human-Machine-Interfaces
 parent: projects
 position: 15
+child-id: input_devices
 ---
 
 One of the recurring topics in my projects are different kind of input devices.
