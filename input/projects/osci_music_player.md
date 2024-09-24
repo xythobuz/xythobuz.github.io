@@ -14,11 +14,16 @@ So I decided to tackle the topic again this year.
 
 <!--%
 lightgallery([
+    [ "img/osci_music_2.jpg", "Front of Osci Music Player" ],
     [ "img/toolbox10_1.jpg", "© 2024 Falko." ],
     [ "img/toolbox10_3.jpg", "© 2024 Falko." ],
-    [ "img/osci_music_7.jpg", "'Reconstruct' with the Osci Music Player" ],
-    [ "img/osci_music_2.jpg", "Front of Osci Music Player" ],
+])
+%-->
+
+<!--%
+lightgallery([
     [ "img/osci_music_8.mp4", "video/mp4", "", "", "'Function' with the Osci Music Player" ],
+    [ "img/osci_music_7.jpg", "'Reconstruct' with the Osci Music Player" ],
 ])
 %-->
 
