@@ -22,7 +22,7 @@ Buildroot supports the OLinuXino out-of-the-box, but is using the Freescale-Prov
 
 ## Result
 
-You can get the results [from GitHub](https://github.com/xythobuz/camcorder-buildroot) or [my Server](http://xythobuz.de/git/camcorder-buildroot/). Follow the instructions in the README.md to create your own Image using the current 4.4.x mainline Linux Kernel and flash it.
+You can get the results [from GitHub](https://github.com/xythobuz/camcorder-buildroot) or [my Server](https://git.xythobuz.de/thomas/camcorder-buildroot). Follow the instructions in the README.md to create your own Image using the current 4.4.x mainline Linux Kernel and flash it.
 
 <div class="lightgallery">
     <a href="img/olinuxino.jpg">

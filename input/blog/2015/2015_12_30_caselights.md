@@ -14,13 +14,13 @@ update: 2020-06-07
 
 I’ve recently (accidentally) bought a dead-simple [12V RGB LED strip](http://www.hobbyking.com/hobbyking/store/__28515__LED_Red_Green_Blue_RGB_Strip_50cm_w_Flying_Lead.html), aiming to mount it on my Quadcopter, thinking it would be made of individually addressable LEDs. Of course, I didn’t read the description and was wrong. So, what to do?
 
-As you [may remember](http://xythobuz.de/2015_01_31_hackintosh.html), I’ve built a new computer in January with a very spacious case. It already had [two UV lights](http://www.aquatuning.de/modding/kathoden/13168/revoltec-kaltlicht-kathode-30cm-twin-set-uv-rev.-2) that were controlled manually using a switch in a PCI slot. Both the RGB LED strip and my computer seem to be a match made in heaven :P
+As you [may remember](2015_01_31_hackintosh.html), I’ve built a new computer in January with a very spacious case. It already had [two UV lights](http://www.aquatuning.de/modding/kathoden/13168/revoltec-kaltlicht-kathode-30cm-twin-set-uv-rev.-2) that were controlled manually using a switch in a PCI slot. Both the RGB LED strip and my computer seem to be a match made in heaven :P
 
 Incidentally, there’s still a unused RS232 port directly on my Motherboard that I never wired to the outside. That could be used to talk to an Arduino controlling the RGB LEDs and the UV lights. And there are plenty of free 12V rails of course.
 
 ### Hardware
 
-So I bought a five-pack of cheap [Arduino Pro Mini](https://www.arduino.cc/en/Main/ArduinoBoardProMini) clones from china. I still had some [IRF530 N-Channel MOSFETS](https://arduinodiy.wordpress.com/2012/05/02/using-mosfets-with-ttl-levels/) left over from the [LED-Cube](http://xythobuz.de/ledcube.html) that can be used for this. And I needed to build a small [RS232-TTL converter](http://picprojects.org.uk/projects/simpleSIO/ssio.htm) (using 2N3904 and 2N3906 as Transistors).
+So I bought a five-pack of cheap [Arduino Pro Mini](https://www.arduino.cc/en/Main/ArduinoBoardProMini) clones from china. I still had some [IRF530 N-Channel MOSFETS](https://arduinodiy.wordpress.com/2012/05/02/using-mosfets-with-ttl-levels/) left over from the [LED-Cube](ledcube.html) that can be used for this. And I needed to build a small [RS232-TTL converter](http://picprojects.org.uk/projects/simpleSIO/ssio.htm) (using 2N3904 and 2N3906 as Transistors).
 
 <div class="lightgallery">
     <a href="img/CaseLights-schem.png">

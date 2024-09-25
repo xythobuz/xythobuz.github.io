@@ -5,7 +5,7 @@ comments: true
 flattr: true
 ---
 
-One of the last remaining problems with my [Hackintosh build](http://xythobuz.de/2015_01_31_hackintosh.html) were the case fans. After a quick glance in the Mainboard manual I decided that I could control three PWM fans and one non-PWM fan using the on-board hardware.
+One of the last remaining problems with my [Hackintosh build](2015_01_31_hackintosh.html) were the case fans. After a quick glance in the Mainboard manual I decided that I could control three PWM fans and one non-PWM fan using the on-board hardware.
 
 So I bought three Silent Wings 2 140mm PWM fans and one Thermaltake Pure 200mm fan. The 200mm fan additionally got a small temperature-sensing PCB mounted directly on it.
 
