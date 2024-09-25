@@ -6,7 +6,9 @@ It uses an (old, modified) version of [poole](https://hg.sr.ht/~obensonne/poole)
 To run a local test instance call the `localtest.sh` script.
 This is also a good starting point for integration into a CI workflow.
 
-Includes [SHJS](https://shjs.sourceforge.net/) and [llightGallery](https://github.com/sachinchoolur/lightGallery).
+An automated cloud mirror on GitHub is available on [xythobuz.github.io](https://xythobuz.github.io).
+
+Includes [SHJS](https://shjs.sourceforge.net/) and [lightGallery](https://github.com/sachinchoolur/lightGallery).
 
 ## To Do
 

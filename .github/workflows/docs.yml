@@ -30,6 +30,7 @@ jobs:
         run: |
           rm -rf output
           mkdir output
+          sed -i 's|https://www.xythobuz.de|https://xythobuz.github.io|g' macros.py
           ./poole.py --build
           cp -r static/* output/
 
