@@ -160,7 +160,7 @@ def githubCommitBadge(p, showInline = False):
             ret += ".svg?logo=git&style=flat\" /></a>"
     return ret
 
-def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = "", showLastCommit = True, hide_description = False, indent_count = 0, updates_as_heading = False):
+def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = "", showLastCommit = True, hide_description = False, updates_as_heading = False):
     title = p.title
     if lang != "":
         if p.get("title_" + lang, "") != "":
@@ -175,7 +175,7 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
     if year != lastyear:
         lastyear = year
         if yearsAsHeading:
-            print("\n\n#### %s\n" % (year))
+            print("<h4>" + str(year) + "</h4>")
 
     dateto = ""
     if p.get("date", "" != ""):
@@ -190,8 +190,8 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
         if nicelyFormatFullDate:
             dateto = " - " + datetime.strptime(p.get("update", p.date), "%Y-%m-%d").strftime("%B %d, %Y")
 
-    indent = "  " * (indent_count + 1)
-    print(indent + "* **[%s](%s)**%s" % (title, p.url, dateto))
+    print("<li>")
+    print("<a href=\"" + p.url + "\"><b>" + title + "</b></a>" + dateto)
 
     if hide_description == False:
         if p.get("description", "") != "":
@@ -206,6 +206,8 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
         if len(link) > 0:
             print("<br>" + link)
 
+    print("</li>")
+
     return lastyear
 
 def printRecentMenu(count = 5):
@@ -215,9 +217,13 @@ def printRecentMenu(count = 5):
     if count > 0:
         posts = posts[0:count]
 
+    print("<ul id='menulist'>")
+
     lastyear = "0"
     for p in posts:
-        lastyear = printMenuItem(p, count == 0, False, False, True, lastyear, "", False, False, 0, True)
+        lastyear = printMenuItem(p, count == 0, False, False, True, lastyear, "", False, False, True)
+
+    print("</ul>")
 
 def printBlogMenu(year_min=None, year_max=None):
     posts = [p for p in pages if "post" in p and p.lang == "en"]
@@ -228,9 +234,13 @@ def printBlogMenu(year_min=None, year_max=None):
     if year_max != None:
         posts = [p for p in posts if int(p.get("date", "9999-01-01")[0:4]) <= int(year_max)]
 
+    print("<ul id='menulist'>")
+
     lastyear = "0"
     for p in posts:
         lastyear = printMenuItem(p, True, False, False, True, lastyear)
+
+    print("</ul>")
 
 def printProjectsMenu():
     # prints all pages with parent 'projects' or 'stuff'.
@@ -246,14 +256,20 @@ def printProjectsMenu():
     mpages = [p for p in dpages if any(x in p.get("parent", "") for x in [ 'projects', 'stuff' ])]
     # sort by position
     mpages.sort(key=lambda p: [int(p.get("position", "999"))])
+
+    print("<ul id='menulist'>")
+
     # print all pages
     for p in mpages:
         printMenuItem(p)
 
         # print subpages for these top-level items
         subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
-        for sp in subpages:
-            printMenuItem(sp, False, True, True, False, "0", "", False, True, 1)
+        if len(subpages) > 0:
+            print("<ul>")
+            for sp in subpages:
+                printMenuItem(sp, False, True, True, False, "0", "", False, True)
+            print("</ul>")
 
     # slect pages with a date
     dpages = [p for p in enpages if p.get("date", "") != ""]
@@ -270,62 +286,94 @@ def printProjectsMenu():
         # print subpages for these top-level items
         subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
         subpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
-        for sp in subpages:
-            printMenuItem(sp, False, True, True, False, "0", "", False, True, 1)
+        if len(subpages) > 0:
+            print("<ul>")
+            for sp in subpages:
+                printMenuItem(sp, False, True, True, False, "0", "", False, True)
+            print("</ul>")
+
+    print("</ul>")
 
 def print3DPrintingMenu():
     mpages = [p for p in pages if p.get("parent", "") == "3d-printing" and p.lang == "en"]
     mpages.sort(key=lambda p: int(p["position"]))
+
+    print("<ul id='menulist'>")
     for p in mpages:
         printMenuItem(p, False, True, True)
+    print("</ul>")
 
 def printInputDevicesMenu():
     mpages = [p for p in pages if p.get("parent", "") == "input_devices" and p.lang == "en"]
     mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+
+    print("<ul id='menulist'>")
     for p in mpages:
         printMenuItem(p, False, True, True)
+    print("</ul>")
 
 def printInputDevicesRelatedMenu():
     mpages = [p for p in pages if p.get("show_in_input_devices", "false") == "true"]
     mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+
+    print("<ul id='menulist'>")
     for p in mpages:
         printMenuItem(p, False, True, True)
+    print("</ul>")
 
 def printSmarthomeMenu():
     mpages = [p for p in pages if p.get("parent", "") == "smarthome" and p.lang == "en"]
     mpages.sort(key=lambda p: int(p["position"]))
+
+    print("<ul id='menulist'>")
     for p in mpages:
         printMenuItem(p, False, True, True)
+    print("</ul>")
 
 def printQuadcopterMenu():
     mpages = [p for p in pages if p.get("parent", "") == "quadcopters" and p.lang == "en"]
     mpages.sort(key=lambda p: int(p["position"]))
+
+    print("<ul id='menulist'>")
     for p in mpages:
         printMenuItem(p, False, True, True)
+    print("</ul>")
 
 def printQuadcopterRelatedMenu():
     mpages = [p for p in pages if p.get("show_in_quadcopters", "false") == "true"]
     mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+
+    print("<ul id='menulist'>")
     for p in mpages:
         printMenuItem(p, False, True, True)
+    print("</ul>")
 
 def printRobotMenuEnglish():
     mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
     mpages.sort(key=lambda p: int(p["position"]))
+
+    print("<ul id='menulist'>")
     for p in mpages:
         printMenuItem(p)
+    print("</ul>")
 
 def printRobotMenuDeutsch():
     mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "de"]
     mpages.sort(key=lambda p: int(p["position"]))
+
+    print("<ul id='menulist'>")
     for p in mpages:
         printMenuItem(p, False, False, False, False, "0", "de")
+    print("</ul>")
 
 def printSteamMenuEnglish():
     mpages = [p for p in pages if p.get("parent", "") == "steam" and p.lang == "en"]
     mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+
+    print("<ul id='menulist'>")
     for p in mpages:
         printMenuItem(p, False, False, False, True)
+    print("</ul>")
 
 def printSteamMenuDeutsch():
     # TODO show german pages, or english pages when german not available
