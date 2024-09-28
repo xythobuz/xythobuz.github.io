@@ -1,0 +1,113 @@
+title: UbaBot
+description: As seen on the CCCamps and other events
+parent: drinkrobotics
+position: 100
+comments: true
+update: 2023-09-03
+---
+
+<!--% backToParent() %-->
+
+Starting in 2017 I did some work for the robot lab of the RWU.
+There I got to know cocktail machines and later took part in [drinkrobotics](http://drinkrobotics.de/), where I did some work on our proper, big, cocktail machine Ubabot, [as seen on Hackaday / CCCamp2019](https://web.archive.org/web/20201108013437/https://hackaday.com/2019/08/22/ubabot-mixes-up-50-cocktails-to-quench-cccamp-thirst/).
+It originally used relais to power the pumps, but we had a motor driver PCB that we wanted to use instead, [so I wrote a Firmware for it](https://github.com/drinkrobotics/avr_pump_board).
+We got an award for this machine at Makerfaire Friedrichshafen, presented it at Makerfaire Hannover, visited the [Verschwörhaus Ulm](https://verschwoerhaus.de/) and various other events over the years.
+
+### CCCamp2023
+
+Of course we also visited the CCCamp in 2023.
+
+<!--%
+lightgallery([
+    [ "img/cccamp23_ubabot_1.jpg", "Setting up the Cocktail machine (1)" ],
+    [ "img/cccamp23_ubabot_2.jpg", "Setting up the Cocktail machine (2)" ],
+])
+%-->
+
+### MCH2022
+
+Here are some photos of our tent at the MCH2022 summer hacker camp in the Netherlands.
+
+<!--%
+lightgallery([
+    [ "img/mch_ubabot_3.jpg", "UbaBot on MCH2022, front." ],
+    [ "img/mch_ubabot_4.jpg", "UbaBot on MCH2022, back." ],
+    [ "img/mch_ubabot_1.jpg", "Copyright 2022 by EleRas. Used with permission." ],
+    [ "img/mch_ubabot_2.jpg", "Copyright 2022 by EleRas. Used with permission." ],
+])
+%-->
+
+We also developed an app for the MCH2022 Badge that can be used to login to the machine.
+The app source code can be found on [GitHub](https://github.com/drinkrobotics/ubabot-mch2022) and in the [MCH2022 Badge Hatchery](https://mch2022.badge.team/projects/ubabot).
+
+<!--%
+lightgallery([
+    [ "img/mch_app_2.png", "Login screen of UbaBot app" ],
+    [ "img/mch_app_4.png", "Status screen of UbaBot app" ],
+])
+%-->
+
+You can find some more on my [blog post about MCH2022](2022_07_29_MCH2022.html).
+
+### CCCamp2019
+
+Here are some photos and videos of our tent at the CCCamp2019 summer hacker camp near Berlin.
+
+[Project page on camp wiki](https://web.archive.org/web/20201025144323/https://events.ccc.de/camp/2019/wiki/Projects:UbaBot). [Hackaday feature](https://web.archive.org/web/20201108013437/https://hackaday.com/2019/08/22/ubabot-mixes-up-50-cocktails-to-quench-cccamp-thirst/).
+
+<!--%
+lightgallery([
+    [ "https://www.youtube.com/watch?v=rzQB0l1Imt4", "img/camp_hackaday_small.jpg", "Steffen demonstrating the machine for Hackaday" ],
+
+    [ "https://www.youtube.com/watch?v=CsiNMK3guS0", "img/camp_machine_small.jpg", "One run of the machine at CCCamp2019" ],
+
+    [ "img/ubabot_camp19_1.jpg", "Steffen demonstrating the machine for Hackaday" ],
+
+    [ "img/ubabot_camp19_2.jpg", "Side view of the pumps, from Hackaday" ]
+])
+%-->
+
+[Source](https://hackaday.com/2019/08/22/ubabot-mixes-up-50-cocktails-to-quench-cccamp-thirst/), by Mike Szczys.
+
+### Verschwörhaus Ulm
+
+Here are some photos and a video from when we were invited to Verschwörläum 2018 in Ulm.
+
+<!--%
+lightgallery([
+    [ "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ubabot%2C_Vslaeum_2018%2C_Ulm.webm", "video/webm", "img/ulm_machine_small.jpg", "img/ulm_machine.jpg", "The machine in operation" ],
+
+    [ "img/ubabot_ulm_7.jpg", "Front view of the machine" ],
+    [ "img/ubabot_ulm_2.jpg", "Side Front view of the machine" ],
+    [ "img/ubabot_ulm_1.jpg", "Back view of the machine. The green PCB is the motor driver with my firmware." ],
+    [ "img/ubabot_ulm_3.jpg", "A drink is poured" ],
+    [ "img/ubabot_ulm_4.jpg", "A drink is poured" ],
+    [ "img/ubabot_ulm_5.jpg", "A drink is poured" ],
+    [ "img/ubabot_ulm_6.jpg", "A drink is poured" ]
+])
+%-->
+
+[Source](https://commons.wikimedia.org/wiki/Category:Ubabot), by [Matti Blume](https://commons.wikimedia.org/wiki/User:MB-one), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+### Makerfaire Friedrichshafen
+
+In 2017, we rebuilt Ubabot as part of the Maker Challenge of the Makerfaire Friedrichshafen.
+
+<!--%
+lightgallery([
+    [ "img/ubabot_makerfaire_1.jpg", "The winning teams with their cocktail machines" ],
+    [ "img/ubabot_makerfaire_2.jpg", "Closer shot of this early Ubabot prototype" ]
+])
+%-->
+
+[A video of our machine in action can be found on heise online](https://www.heise.de/make/meldung/Maker-Faire-Bodensee-2017-Cocktails-Cosplay-und-Casemodding-3772515.html#nav_im_wettbewerb_0) (scroll down).
+
+### Stuff
+
+I designed a 3D model for a cap enclosing the large open glass bottles we have for some ingredients. It is a 2-color model that can be printed with a dual-nozzle printer, or you can just leave out the "filling" and print it with a single-nozzle printer. The design [can be found in my Git Repo](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/cocktail-maschine).
+
+<!--%
+lightgallery([
+    [ "img/drinkrobotics_deckel.png", "The 3D design of the bottle cap." ]
+])
+%-->
