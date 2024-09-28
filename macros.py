@@ -265,6 +265,11 @@ def printProjectsMenu():
 
         # print subpages for these top-level items
         subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
+        order = p.get("sort-order", "date")
+        if order == "position":
+            subpages.sort(key=lambda p: p["position"])
+        else:
+            subpages.sort(key=lambda p: p["date"], reverse = True)
         if len(subpages) > 0:
             print("<ul>")
             for sp in subpages:
@@ -285,7 +290,11 @@ def printProjectsMenu():
 
         # print subpages for these top-level items
         subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
-        subpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+        order = p.get("sort-order", "date")
+        if order == "position":
+            subpages.sort(key=lambda p: p["position"])
+        else:
+            subpages.sort(key=lambda p: p["date"], reverse = True)
         if len(subpages) > 0:
             print("<ul>")
             for sp in subpages:
@@ -294,7 +303,7 @@ def printProjectsMenu():
 
     print("</ul>")
 
-def printMenu(mpages = None, sortKey = None, sortReverse = True):
+def printMenuGeneric(mpages = None, sortKey = None, sortReverse = True):
     if mpages == None:
         mpages = [p for p in pages if p.get("parent", "__none__") == page["child-id"] and p.lang == "en"]
     if sortKey != None:
@@ -308,10 +317,17 @@ def printMenu(mpages = None, sortKey = None, sortReverse = True):
 
 def printMenuDate(mpages = None, sortReverse = True):
     sortKey = lambda p: p["date"]
-    printMenu(mpages, sortKey, sortReverse)
+    printMenuGeneric(mpages, sortKey, sortReverse)
 
 def printMenuPositional(mpages = None):
-    printMenu(mpages, lambda p: int(p["position"]), False)
+    printMenuGeneric(mpages, lambda p: int(p["position"]), False)
+
+def printMenu(mpages = None):
+    order = page.get("sort-order", "date")
+    if order == "position":
+        printMenuPositional(mpages)
+    else:
+        printMenuDate(mpages)
 
 def printRobotMenuEnglish():
     mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]

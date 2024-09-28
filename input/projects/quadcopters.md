@@ -3,6 +3,7 @@ description: My self-made Quadcopters and other model stuff
 parent: projects
 position: 20
 child-id: quadcopters
+sort-order: position
 ---
 
 In the last couple of years I built multiple quadcopters and some other related flying remote-controlled model vehicles.
@@ -12,7 +13,7 @@ All of these I'm flying with [FatShark Dominator v3 Camo Blue](https://hobbyking
 Of course I'm not flying illegally, I have a model flight insurance and I am a registered UAV pilot in the European Union! 👮
 
 <!--%
-printMenuPositional()
+printMenu()
 %-->
 
 The following projects and blog posts are also related to my Quadcopter endeavours.

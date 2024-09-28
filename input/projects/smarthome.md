@@ -3,6 +3,7 @@ description: Home automation without shady cloud companies
 parent: projects
 position: 50
 child-id: smarthome
+sort-order: position
 ---
 
 With the appearance of cheap WiFi-capable microcontrollers in recent years, like the ESP8266 and the ESP32, the Internet of Things and Smart Home automation have been on my mind.
@@ -12,5 +13,5 @@ And the data should also be hosted on machines I control.
 The pages in this category document different parts of my setup at home.
 
 <!--%
-printMenuPositional()
+printMenu()
 %-->
