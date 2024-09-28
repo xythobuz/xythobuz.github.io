@@ -9,11 +9,12 @@ One of the recurring topics in my projects are different kind of input devices.
 Here you can find all pages in this category.
 
 <!--%
-printInputDevicesMenu()
+printMenuDate()
 %-->
 
 The following pages are also related to this topic.
 
 <!--%
-printInputDevicesRelatedMenu()
+mpages = [p for p in pages if p.get("show_in_input_devices", "false") == "true"]
+printMenuDate(mpages)
 %-->

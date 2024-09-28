@@ -10,7 +10,7 @@ In the meantime, I've modified my printers quite a bit and also written about it
 Here are all the articles that are part of my 3D printing series:
 
 <!--%
-print3DPrintingMenu()
+printMenuPositional()
 %-->
 
 If you're interested in my 3D print designs, take a look [at my Thingiverse account](https://www.thingiverse.com/xythobuz/designs) or my [Git Repository](https://git.xythobuz.de/thomas/3d-print-designs).

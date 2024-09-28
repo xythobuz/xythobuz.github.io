@@ -12,5 +12,5 @@ And the data should also be hosted on machines I control.
 The pages in this category document different parts of my setup at home.
 
 <!--%
-printSmarthomeMenu()
+printMenuPositional()
 %-->

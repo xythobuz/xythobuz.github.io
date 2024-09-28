@@ -12,13 +12,14 @@ All of these I'm flying with [FatShark Dominator v3 Camo Blue](https://hobbyking
 Of course I'm not flying illegally, I have a model flight insurance and I am a registered UAV pilot in the European Union! 👮
 
 <!--%
-printQuadcopterMenu()
+printMenuPositional()
 %-->
 
 The following projects and blog posts are also related to my Quadcopter endeavours.
 
 <!--%
-printQuadcopterRelatedMenu()
+mpages = [p for p in pages if p.get("show_in_quadcopters", "false") == "true"]
+printMenuDate(mpages)
 %-->
 
 You can find all my Betaflight configuration dumps and related files [here](https://git.xythobuz.de/thomas/copter-configs).

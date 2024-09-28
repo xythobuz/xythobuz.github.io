@@ -294,59 +294,24 @@ def printProjectsMenu():
 
     print("</ul>")
 
-def print3DPrintingMenu():
-    mpages = [p for p in pages if p.get("parent", "") == "3d-printing" and p.lang == "en"]
-    mpages.sort(key=lambda p: int(p["position"]))
+def printMenu(mpages = None, sortKey = None, sortReverse = True):
+    if mpages == None:
+        mpages = [p for p in pages if p.get("parent", "__none__") == page["child-id"] and p.lang == "en"]
+    if sortKey != None:
+        mpages.sort(key = sortKey, reverse = sortReverse)
 
-    print("<ul id='menulist'>")
-    for p in mpages:
-        printMenuItem(p, False, True, True)
-    print("</ul>")
+    if len(mpages) > 0:
+        print("<ul id='menulist'>")
+        for p in mpages:
+            printMenuItem(p, False, True, True)
+        print("</ul>")
 
-def printInputDevicesMenu():
-    mpages = [p for p in pages if p.get("parent", "") == "input_devices" and p.lang == "en"]
-    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+def printMenuDate(mpages = None, sortReverse = True):
+    sortKey = lambda p: p["date"]
+    printMenu(mpages, sortKey, sortReverse)
 
-    print("<ul id='menulist'>")
-    for p in mpages:
-        printMenuItem(p, False, True, True)
-    print("</ul>")
-
-def printInputDevicesRelatedMenu():
-    mpages = [p for p in pages if p.get("show_in_input_devices", "false") == "true"]
-    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
-
-    print("<ul id='menulist'>")
-    for p in mpages:
-        printMenuItem(p, False, True, True)
-    print("</ul>")
-
-def printSmarthomeMenu():
-    mpages = [p for p in pages if p.get("parent", "") == "smarthome" and p.lang == "en"]
-    mpages.sort(key=lambda p: int(p["position"]))
-
-    print("<ul id='menulist'>")
-    for p in mpages:
-        printMenuItem(p, False, True, True)
-    print("</ul>")
-
-def printQuadcopterMenu():
-    mpages = [p for p in pages if p.get("parent", "") == "quadcopters" and p.lang == "en"]
-    mpages.sort(key=lambda p: int(p["position"]))
-
-    print("<ul id='menulist'>")
-    for p in mpages:
-        printMenuItem(p, False, True, True)
-    print("</ul>")
-
-def printQuadcopterRelatedMenu():
-    mpages = [p for p in pages if p.get("show_in_quadcopters", "false") == "true"]
-    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
-
-    print("<ul id='menulist'>")
-    for p in mpages:
-        printMenuItem(p, False, True, True)
-    print("</ul>")
+def printMenuPositional(mpages = None):
+    printMenu(mpages, lambda p: int(p["position"]), False)
 
 def printRobotMenuEnglish():
     mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
