@@ -70,7 +70,9 @@ def difference_in_years(start_date, end_date):
     return int(date_as_float(end_date) - date_as_float(start_date))
 
 def own_age():
-    return difference_in_years(get_conf("birthday"), datetime.now())
+    age_dec = difference_in_years(get_conf("birthday"), datetime.now())
+    age_hex = '0x%X' % age_dec
+    return '<abbr title="' + str(age_dec) + '">' + str(age_hex) + '</abbr>'
 
 # -----------------------------------------------------------------------------
 # sub page helper macro
