@@ -20,6 +20,7 @@ PY3 = sys.version_info[0] == 3
 if PY3:
     import urllib
     import urllib.request
+    from urllib.error import HTTPError, URLError
     def urlparse_foo(link):
         return urllib.parse.parse_qs(urllib.parse.urlparse(link).query)['v'][0]
 else:
@@ -494,21 +495,46 @@ def lightgallery(links):
 
 import json, sys
 
-def restRequest(url):
-    response = urllib.request.urlopen(url) if PY3 else urllib.urlopen(url)
+def print_cnsl_error(s, url):
+    sys.stderr.write("\n")
+    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    sys.stderr.write("warning: !!!!!!!                  WARNING                 !!!!!\n")
+    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    sys.stderr.write("warning: " + s + "\n")
+    sys.stderr.write("warning: URL: \"" + url + "\"\n")
+    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    sys.stderr.write("warning: !!!!!!!                  WARNING                 !!!!!\n")
+    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    sys.stderr.write("\n")
+
+def http_request(url):
+    sys.stderr.write('sub    : fetching %s\n' % url)
+
+    if PY3:
+        try:
+            response = urllib.request.urlopen(url, timeout = 10)
+        except HTTPError as error:
+            print_cnsl_error("HTTPError: '%s'" % error)
+            return ""
+        except URLError as error:
+            print_cnsl_error("URLError: '%s'" % error)
+            return ""
+    else:
+        try:
+            response = urllib.urlopen(url)
+        except IOError as error:
+            print_cnsl_error("HTTPError: '%s'" % error)
+            return ""
+
     if response.getcode() != 200:
-        sys.stderr.write("\n")
-        sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
-        sys.stderr.write("!!!!!!!                  WARNING                 !!!!!\n")
-        sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
-        sys.stderr.write("invalid response code: " + str(response.getcode()) + "\n")
-        sys.stderr.write("url: \"" + url + "\"\n")
-        sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
-        sys.stderr.write("!!!!!!!                  WARNING                 !!!!!\n")
-        sys.stderr.write("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
-        sys.stderr.write("\n")
+        print_cnsl_error("invalid response code: " + str(response.getcode()), url)
         return ""
-    data = json.loads(response.read().decode("utf-8"))
+    else:
+        data = response.read().decode("utf-8")
+        return data
+
+def restRequest(url):
+    data = json.loads(http_request(url))
     return data
 
 def restReleases(user, repo):
@@ -556,10 +582,7 @@ def printLatestRelease(user, repo):
     print("</ul></div>")
 
 def include_url(url):
-    response = urllib.request.urlopen(url) if PY3 else urllib.urlopen(url)
-    if response.getcode() != 200:
-        raise Exception("invalid response code", response.getcode())
-    data = response.read().decode("utf-8")
+    data = http_request(url)
     print(data, end="")
 
 # -----------------------------------------------------------------------------
