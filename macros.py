@@ -18,12 +18,14 @@ from datetime import datetime
 PY3 = sys.version_info[0] == 3
 
 if PY3:
+    import html
     import urllib
     import urllib.request
     from urllib.error import HTTPError, URLError
     def urlparse_foo(link):
         return urllib.parse.parse_qs(urllib.parse.urlparse(link).query)['v'][0]
 else:
+    import cgi
     import urllib
     import urlparse
     def urlparse_foo(link):
@@ -583,7 +585,11 @@ def printLatestRelease(user, repo):
 
 def include_url(url):
     data = http_request(url)
-    print(data, end="")
+    if PY3:
+        encoded = html.escape(data)
+    else:
+        encoded = cgi.escape(data)
+    print(encoded, end="")
 
 # -----------------------------------------------------------------------------
 # preconvert hooks
