@@ -514,16 +514,16 @@ def http_request(url):
         try:
             response = urllib.request.urlopen(url, timeout = 10)
         except HTTPError as error:
-            print_cnsl_error("HTTPError: '%s'" % error)
+            print_cnsl_error("HTTPError: '%s'" % error, url)
             return ""
         except URLError as error:
-            print_cnsl_error("URLError: '%s'" % error)
+            print_cnsl_error("URLError: '%s'" % error, url)
             return ""
     else:
         try:
             response = urllib.urlopen(url)
         except IOError as error:
-            print_cnsl_error("HTTPError: '%s'" % error)
+            print_cnsl_error("HTTPError: '%s'" % error, url)
             return ""
 
     if response.getcode() != 200:
