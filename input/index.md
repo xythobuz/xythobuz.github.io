@@ -22,3 +22,17 @@ printRecentMenu(10)
 %-->
 
 [Show all updates](updates.html).
+
+<script>
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    var img = document.getElementById("index-avatar");
+    if (getRandomInt(2) == 0) {
+        setTimeout(function() {
+            img.src = "img/gb_cam.png";
+            img.style.width = "150px"; // 128*1.17188
+            img.style.height = "131px"; // 112*1.17188
+        }, 500 + getRandomInt(10000));
+    }
+</script>
