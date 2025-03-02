@@ -510,32 +510,46 @@ def print_cnsl_error(s, url):
     sys.stderr.write("\n")
 
 def http_request(url):
-    sys.stderr.write('sub    : fetching %s\n' % url)
-
     if PY3:
-        try:
-            response = urllib.request.urlopen(url, timeout = 10)
-        except HTTPError as error:
-            print_cnsl_error("HTTPError: '%s'" % error, url)
-            return ""
-        except URLError as error:
-            print_cnsl_error("URLError: '%s'" % error, url)
-            return ""
+        response = urllib.request.urlopen(url, timeout = 5)
     else:
-        try:
-            response = urllib.urlopen(url)
-        except IOError as error:
-            print_cnsl_error("HTTPError: '%s'" % error, url)
-            return ""
+        response = urllib.urlopen(url)
 
     if response.getcode() != 200:
-        print_cnsl_error("invalid response code: " + str(response.getcode()), url)
-        return ""
+        raise RuntimeError("invalid response code: " + str(response.getcode()))
+
+    data = response.read().decode("utf-8")
+    return data
+
+def include_url(url, fallback = None):
+    sys.stderr.write('sub    : fetching page "%s"\n' % url)
+
+    if fallback == None:
+        print_cnsl_error("include_url() without fallback option", url)
+
+    try:
+        data = http_request(url)
+    except Exception as e:
+        if fallback != None:
+            sys.stderr.write('sub    : fetching fallback page "%s"\n' % url)
+            try:
+                data = http_request(fallback)
+            except Exception as e:
+                print_cnsl_error(str(e), fallback)
+                return
+        else:
+            print_cnsl_error(str(e), url)
+            return
+
+    if PY3:
+        encoded = html.escape(data)
     else:
-        data = response.read().decode("utf-8")
-        return data
+        encoded = cgi.escape(data)
+
+    print(encoded, end="")
 
 def restRequest(url):
+    sys.stderr.write('sub    : fetching REST "%s"\n' % url)
     data = json.loads(http_request(url))
     return data
 
@@ -582,14 +596,6 @@ def printLatestRelease(user, repo):
 
         print("<li><a href=\"" + a["browser_download_url"] + "\">" + a["name"] + "</a>" + ss)
     print("</ul></div>")
-
-def include_url(url):
-    data = http_request(url)
-    if PY3:
-        encoded = html.escape(data)
-    else:
-        encoded = cgi.escape(data)
-    print(encoded, end="")
 
 # -----------------------------------------------------------------------------
 # preconvert hooks

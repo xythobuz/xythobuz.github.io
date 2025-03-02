@@ -96,7 +96,10 @@ function copyEvent(id) {
 
 <pre id="generatedocs" class="sh_sh">
 <!--%
-include_url("https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh")
+include_url(
+    "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh",
+    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh"
+)
 %-->
 </pre>
 
@@ -109,7 +112,10 @@ Add the `.github/workflows/docs.yml` script:
 
 <pre id="docsyml" class="sh_yaml">
 <!--%
-include_url("https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml")
+include_url(
+    "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml",
+    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml"
+)
 %-->
 </pre>
 
@@ -130,7 +136,10 @@ If you want to visualize 3D print files, do the same with `3dprint/generate_stls
 
 <pre id="generatestls" class="sh_sh">
 <!--%
-include_url("https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh")
+include_url(
+    "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh",
+    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh"
+)
 %-->
 </pre>
 
@@ -139,7 +148,10 @@ include_url("https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6
 
 <pre id="scadyml" class="sh_yaml">
 <!--%
-include_url("https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml")
+include_url(
+    "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml",
+    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml"
+)
 %-->
 </pre>
 
@@ -158,7 +170,10 @@ If you want to generate gerber files from PCBs, do something similar with `pcb/g
 
 <pre id="generatefab" class="sh_sh">
 <!--%
-include_url("https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh")
+include_url(
+    "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh",
+    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh"
+)
 %-->
 </pre>
 
@@ -167,7 +182,10 @@ include_url("https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6
 
 <pre id="kicadyml" class="sh_yaml">
 <!--%
-include_url("https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml")
+include_url(
+    "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml",
+    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml"
+)
 %-->
 </pre>
 
@@ -180,7 +198,10 @@ If you want to visualize KiCad schematics and PCBs in 2D and 3D, add `pcb/genera
 
 <pre id="generateplot" class="sh_sh">
 <!--%
-include_url("https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh")
+include_url(
+    "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh",
+    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh"
+)
 %-->
 </pre>
 
