@@ -509,9 +509,9 @@ def print_cnsl_error(s, url):
     sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
     sys.stderr.write("\n")
 
-def http_request(url):
+def http_request(url, timeout = 5):
     if PY3:
-        response = urllib.request.urlopen(url, timeout = 5)
+        response = urllib.request.urlopen(url, timeout = timeout)
     else:
         response = urllib.urlopen(url)
 
@@ -521,19 +521,20 @@ def http_request(url):
     data = response.read().decode("utf-8")
     return data
 
-def include_url(url, fallback = None):
+def include_url(url, fallback = None, timeout = 2):
     sys.stderr.write('sub    : fetching page "%s"\n' % url)
 
     if fallback == None:
         print_cnsl_error("include_url() without fallback option", url)
+        timeout = timeout * 3
 
     try:
-        data = http_request(url)
+        data = http_request(url, timeout)
     except Exception as e:
         if fallback != None:
-            sys.stderr.write('sub    : fetching fallback page "%s"\n' % url)
+            sys.stderr.write('sub    : fetching fallback page "%s"\n' % fallback)
             try:
-                data = http_request(fallback)
+                data = http_request(fallback, timeout * 3)
             except Exception as e:
                 print_cnsl_error(str(e), fallback)
                 return

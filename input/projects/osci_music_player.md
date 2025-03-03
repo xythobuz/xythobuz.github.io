@@ -2,6 +2,7 @@ title: Oscilloscope Music Player
 description: Properly playing sound files for visualization on an oscilloscope
 parent: projects
 git: https://git.xythobuz.de/thomas/osci-music-player
+github: https://github.com/xythobuz/osci-music-player
 date: 2024-02-11
 update: 2024-03-08
 comments: true
@@ -257,7 +258,10 @@ Here is [`~/osci-pi.py`](https://git.xythobuz.de/thomas/osci-music-player/raw/br
 
 <pre id="oscipipy" class="sh_python">
 <!--%
-include_url("https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci-pi.py")
+include_url(
+    "https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci-pi.py",
+    "https://raw.githubusercontent.com/xythobuz/osci-music-player/refs/heads/master/osci-pi.py"
+)
 %-->
 </pre>
 
@@ -267,7 +271,10 @@ Adjust the username and path accordingly.
 
 <pre id="osciservice" class="sh_desktop">
 <!--%
-include_url("https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci.service")
+include_url(
+    "https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci.service",
+    "https://raw.githubusercontent.com/xythobuz/osci-music-player/refs/heads/master/osci.service"
+)
 %-->
 </pre>
 
