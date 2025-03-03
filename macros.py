@@ -165,7 +165,7 @@ def githubCommitBadge(p, showInline = False):
             ret += ".svg?logo=git&style=flat\" /></a>"
     return ret
 
-def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = "", showLastCommit = True, hide_description = False, updates_as_heading = False):
+def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = "", showLastCommit = True, hide_description = False, updates_as_heading = False, desc_has_collapse = False):
     title = p.title
     if lang != "":
         if p.get("title_" + lang, "") != "":
@@ -202,9 +202,11 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
         if p.get("description", "") != "":
             description = p.get("description", "")
             if lang != "":
-                if p.get("description_" + lang, "") != "":
-                    description = p.get("description_" + lang, "")
-            print("<br><span class=\"listdesc\">" + description + "</span>")
+                description = p.get("description_" + lang, description)
+            if desc_has_collapse:
+                print("<br><span class=\"listdesc collapse_menu\">" + description + "</span>")
+            else:
+                print("<br><span class=\"listdesc\">" + description + "</span>")
 
     if showLastCommit:
         link = githubCommitBadge(p)
@@ -251,6 +253,7 @@ def printProjectsMenu():
     # prints all pages with parent 'projects' or 'stuff'.
     # first the ones without date, sorted by position.
     # this first section includes sub-headings for children
+    # in a hidden div, expanding when clicking the description.
     # then afterwards those with date, split by year.
     # also supports blog posts with parent.
     enpages = [p for p in pages if p.lang == "en"]
@@ -266,20 +269,24 @@ def printProjectsMenu():
 
     # print all pages
     for p in mpages:
-        printMenuItem(p)
-
-        # print subpages for these top-level items
+        # fetch subpages for these top-level items
         subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
         order = p.get("sort-order", "date")
         if order == "position":
             subpages.sort(key=lambda p: p["position"])
         else:
             subpages.sort(key=lambda p: p["date"], reverse = True)
+
+        printMenuItem(p, False, False, False, False, "0", "", True, False, False, len(subpages) > 0)
+
+        # print subpages
         if len(subpages) > 0:
+            print("<div class='collapsecontent_menu'>")
             print("<ul>")
             for sp in subpages:
                 printMenuItem(sp, False, True, True, False, "0", "", False, True)
             print("</ul>")
+            print("</div>")
 
     # slect pages with a date
     dpages = [p for p in enpages if p.get("date", "") != ""]
@@ -291,20 +298,24 @@ def printProjectsMenu():
     # print all pages
     lastyear = "0"
     for p in mpages:
-        lastyear = printMenuItem(p, True, True, False, False, lastyear)
-
-        # print subpages for these top-level items
+        # fetch subpages for these top-level items
         subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
         order = p.get("sort-order", "date")
         if order == "position":
             subpages.sort(key=lambda p: p["position"])
         else:
             subpages.sort(key=lambda p: p["date"], reverse = True)
+
+        lastyear = printMenuItem(p, True, True, False, False, lastyear, "", True, False, False, len(subpages) > 0)
+
+        # print subpages
         if len(subpages) > 0:
+            print("<div class='collapsecontent_menu'>")
             print("<ul>")
             for sp in subpages:
                 printMenuItem(sp, False, True, True, False, "0", "", False, True)
             print("</ul>")
+            print("</div>")
 
     print("</ul>")
 

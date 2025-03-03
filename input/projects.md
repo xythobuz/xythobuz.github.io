@@ -12,3 +12,19 @@ To receive my latest updates you can subscribe to the <a href="rss.xml"><img src
 <!--%
 printProjectsMenu()
 %-->
+
+<script>
+    var coll = document.getElementsByClassName("collapse_menu");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("collapseactive_menu");
+            var content = this.parentElement.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>

@@ -274,28 +274,41 @@ span.font-small {
     cursor: zoom-in;
 }
 
-.collapse {
+.collapse, .collapse_menu {
     cursor: pointer;
+}
+
+.collapse {
     padding: 15px;
 }
 
-.collapse:after {
+.collapse:after, .collapse_menu:before {
     content: '\002B';
     font-weight: bold;
+}
+
+.collapse:after {
     float: right;
     margin-left: 5px;
 }
 
-.collapseactive:after {
+.collapse_menu:before {
+    margin-right: 5px;
+}
+
+.collapseactive:after, .collapseactive_menu:before {
     content: "\2212";
 }
 
-.collapsecontent {
+.collapsecontent, .collapsecontent_menu {
     padding: 0;
-    margin: 15px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.1s ease-out;
+}
+
+.collapsecontent {
+    margin: 15px;
     border-width: 0px;
     border-style: solid;
     border-radius: 10px;
@@ -412,7 +425,7 @@ s {
     text-decoration-color: #FF0000;
 }
 
-.releasecard, .collapse {
+.releasecard, .collapse, .collapse_menu:before {
     background-color: #C0C0C0;
 }
 
@@ -425,7 +438,7 @@ s {
     margin-left: 1em;
 }
 
-.collapseactive, .collapse:hover {
+.collapseactive, .collapse:hover, .collapse_menu:hover {
     background-color: #999999;
 }
 
@@ -456,7 +469,7 @@ blockquote:before, blockquote:after {
         color: #BA55D3;
     }
 
-    .releasecard, .collapse {
+    .releasecard, .collapse, .collapse_menu:before {
         background-color: #232323;
     }
 
@@ -500,7 +513,7 @@ blockquote:before, blockquote:after {
         color: #FFFFFF !important;
     }
 
-    .collapseactive, .collapse:hover {
+    .collapseactive, .collapse:hover, .collapse_menu:hover {
         background-color: #424242;
     }
 
