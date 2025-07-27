@@ -4,7 +4,7 @@ parent: projects
 git: https://git.xythobuz.de/thomas/AutoBrightness
 github: https://github.com/xythobuz/AutoBrightness
 date: 2024-09-07
-update: 2024-09-09
+update: 2025-07-27
 comments: true
 ---
 
@@ -179,6 +179,19 @@ But as you may have noticed, I'm more the prototype kind of guy and don't really
 So...
 
 **To Do** 😅
+
+## Update after a year (2025-07)
+
+I have now been running this little gadget for nearly a year.
+It has been working great, and the calibration features above really seem unnecessary.
+
+To improve usability slightly I've now also made a system-tray application.
+
+<!--%
+lightgallery([
+    [ "img/autobrightness_tray.png", "System tray application" ],
+])
+%-->
 
 ## License
 <a class="anchor" name="license"></a>
