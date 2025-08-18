@@ -90,6 +90,12 @@ a.anchor {
     }
 }
 
+.sh_link_upstream {
+    font-size: small;
+    padding-left: 2em;
+    margin-top: -0.75em
+}
+
 ._sh {
     max-height: 300px;
     overflow: auto;
@@ -337,7 +343,42 @@ blockquote p {
     margin: 0 0 0 2em;
 }
 
+:not(pre) > code {
+    padding: 0.25em 0.5em;
+    border-radius: 0.5em;
+}
+
+#nav::after {
+    content: "";
+    height: 0.25em;
+    width: 100%;
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.125em;
+}
+
+hr {
+    border: none;
+    height: 0.25em;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.125em;
+}
+
+#footbar {
+    border: none;
+    height: 0.25em;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.125em;
+}
+
 /* colors */
+
+:not(pre) > code {
+    background: #DEDEDE;
+}
 
 body, #nav, .collapsecontent {
     background-color: #FFFFFF;
@@ -360,10 +401,7 @@ body, #nav, #nav a:link, #nav a:visited {
 }
 
 #nav::after {
-    content: "";
-    height: 0.25em;
-    width: 100%;
-    display: block;
+    /* pride colors https://www.flagcolorcodes.com/pride-rainbow */
     background: linear-gradient(
         to right,
         rgb(228, 3, 3) 0%,
@@ -379,15 +417,11 @@ body, #nav, #nav a:link, #nav a:visited {
         rgb(115, 41, 130) 83.25%,
         rgb(115, 41, 130) 100%
     );
-}
-
-._sh_lines {
-    border-right-color: #32CD32;
+    border-color: #DDDDDD;
 }
 
 hr {
-    border: none;
-    height: 0.25em;
+    /* bisexual colors https://www.flagcolorcodes.com/bisexual */
     background: linear-gradient(
         to right,
         rgb(214, 2, 112) 0%,
@@ -397,11 +431,11 @@ hr {
         rgb(0, 56, 168) 60%,
         rgb(0, 56, 168) 100%
     );
+    border-color: #DDDDDD;
 }
 
 #footbar {
-    border: none;
-    height: 0.25em;
+    /* transgender colors https://www.flagcolorcodes.com/transgender */
     background: linear-gradient(
         to right,
         rgb(91, 206, 250) 0%,
@@ -415,9 +449,14 @@ hr {
         rgb(91, 206, 250) 80%,
         rgb(91, 206, 250) 100%
     );
+    border-color: #DDDDDD;
 }
 
-table, th, td, ._sh, .ascii, .border, .releasecard, #index-avatar, .collapsecontent {
+._sh_lines {
+    border-right-color: #32CD32;
+}
+
+table, th, td, ._sh, .ascii, .border, .releasecard, #index-avatar, .collapsecontent, #toc {
     border-color: #32CD32;
 }
 
@@ -449,6 +488,10 @@ blockquote {
 
 blockquote:before, blockquote:after {
     color: #444444;
+}
+
+#toc {
+    background-color: #E2E2E2;
 }
 
 /* dark mode */
@@ -517,6 +560,10 @@ blockquote:before, blockquote:after {
         background-color: #424242;
     }
 
+    :not(pre) > code {
+        background: #252525;
+    }
+
     blockquote {
         background: #252525;
         border-left-color: #888888;
@@ -524,5 +571,13 @@ blockquote:before, blockquote:after {
 
     blockquote:before, blockquote:after {
         color: #888888;
+    }
+
+    #nav::after, hr, #footbar {
+        border-color: #111111;
+    }
+
+    #toc {
+        background-color: #1D1D1D;
     }
 }

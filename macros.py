@@ -10,6 +10,20 @@ import os.path
 import time
 import codecs
 from datetime import datetime
+import json
+
+def print_cnsl_error(s, url = None):
+    sys.stderr.write("\n")
+    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    sys.stderr.write("warning: !!!!!!!                  WARNING                 !!!!!\n")
+    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    sys.stderr.write("warning: " + s + "\n")
+    if url != None:
+        sys.stderr.write("warning: URL: \"" + url + "\"\n")
+    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    sys.stderr.write("warning: !!!!!!!                  WARNING                 !!!!!\n")
+    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    sys.stderr.write("\n")
 
 # -----------------------------------------------------------------------------
 # Python 2/3 hacks
@@ -109,10 +123,16 @@ def tableHelper(style, header, content):
             print("<th>" + h + "</th>")
         print("</tr>")
     for ci in range(0, len(content)):
-        if len(content[ci]) != len(style):
+        if len(content[ci]) < len(style):
             # invalid call of table helper!
+            print_cnsl_error("invalid table: {}[{}] != {}", len(content[ci]), ci, len(style))
             continue
-        print("<tr>")
+
+        if len(content[ci]) > len(style):
+            print("<tr " + content[ci][len(style)] + ">")
+        else:
+            print("<tr>")
+
         for i in range(0, len(style)):
             s = style[i]
             td_style = ""
@@ -144,6 +164,7 @@ def tableHelper(style, header, content):
                 text = content[ci][i]
                 print(text)
             print("</td>")
+
         print("</tr>")
     print("</table>")
 
@@ -482,9 +503,12 @@ def lightgallery(links):
                     #img += "/default.jpg" # default thumbnail
                     style = ' style="width:300px;"'
                     img2 = '<img src="lg/video-play.png" class="picthumb">'
-                else:
+                elif link.startswith('img/'):
                     x = link.rfind('.')
                     img = link[:x] + '_small' + link[x:]
+                else:
+                    img = link
+                    style = ' style="max-width:300px;max-height:300px;"'
             lightgallery_check_thumbnail(link, img)
             print('<div class="border" style="position:relative;" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"' + style + '>' + img2 + '</a></div>')
         elif len(l) == 5:
@@ -506,20 +530,6 @@ def lightgallery(links):
 # github helper macros
 # -----------------------------------------------------------------------------
 
-import json, sys
-
-def print_cnsl_error(s, url):
-    sys.stderr.write("\n")
-    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
-    sys.stderr.write("warning: !!!!!!!                  WARNING                 !!!!!\n")
-    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
-    sys.stderr.write("warning: " + s + "\n")
-    sys.stderr.write("warning: URL: \"" + url + "\"\n")
-    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
-    sys.stderr.write("warning: !!!!!!!                  WARNING                 !!!!!\n")
-    sys.stderr.write("warning: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
-    sys.stderr.write("\n")
-
 def http_request(url, timeout = 5):
     if PY3:
         response = urllib.request.urlopen(url, timeout = timeout)
@@ -532,7 +542,7 @@ def http_request(url, timeout = 5):
     data = response.read().decode("utf-8")
     return data
 
-def include_url(url, fallback = None, timeout = 2):
+def include_url(url, fallback = None, data_slice = None, timeout = 2):
     sys.stderr.write('sub    : fetching page "%s"\n' % url)
 
     if fallback == None:
@@ -553,12 +563,57 @@ def include_url(url, fallback = None, timeout = 2):
             print_cnsl_error(str(e), url)
             return
 
+    if isinstance(data_slice, tuple):
+        start, end = data_slice
+        if end < start:
+            print_cnsl_error("invalid slice: end={} < start={}", end, start)
+        else:
+            lines = data.split("\n")
+            slc = lines[max(0, start - 1) : end]
+            data = "\n".join(slc)
+            #sys.stderr.write("\n")
+            #sys.stderr.write("Selected Slice:\n")
+            #sys.stderr.write(str(len(slc)))
+            #sys.stderr.write("\n")
+            #for l in slc:
+            #    sys.stderr.write(l + "\n")
+            #sys.stderr.write("\n\n")
+    elif isinstance(data_slice, list):
+        lines = data.split("\n")
+        data = []
+        for ds in data_slice:
+            start, end = ds
+            if end < start:
+                print_cnsl_error("invalid slice: end={} < start={}", end, start)
+            else:
+                slc = lines[max(0, start - 1) : end]
+                data.append("\n".join(slc))
+        data = "\n\n// ...\n\n".join(data)
+
     if PY3:
         encoded = html.escape(data)
     else:
         encoded = cgi.escape(data)
 
     print(encoded, end="")
+
+def include_sourcecode_slice(sh_type, data_slice, filename, url_pre, fallback_pre = None, timeout = 2):
+    url = url_pre + filename
+    fallback = (fallback_pre + filename) if fallback_pre != None else None
+    off = data_slice[0] if data_slice != None else 1
+
+    print('<pre class="sh_' + sh_type + '" offset="' + str(off))
+    if isinstance(data_slice, list):
+        print(' skip_line_no')
+    print('">')
+
+    include_url(url, fallback, data_slice, timeout)
+
+    print('</pre>')
+    print('<p class="sh_link_upstream">Link to the complete file "<a href="' + url + '">' + url.split("/")[-1] + '</a>"')
+    if fallback != None:
+        print(' (<a href="' + fallback + '">alternative</a>)')
+    print('</p>')
 
 def restRequest(url):
     sys.stderr.write('sub    : fetching REST "%s"\n' % url)
