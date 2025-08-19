@@ -124,6 +124,9 @@ else:
             link = githubCommitBadge(page, True)
             if len(link) > 0:
                 print("<p>Recent activity on GitHub: " + link + "</p>")
+
+            if page.get("auto_toc", "false") == "true":
+                print('<p class="access_link" id="toc_toggle_wrap"></p>')
         %-->
         {{ __content__ }}
         <hr id="footbar">
@@ -137,6 +140,7 @@ else:
                 print('<hr>')
         %-->
     </div>
+    <div id="scroll_up"></div>
     <div id="footer">
         <a href="https://hg.sr.ht/~obensonne/poole">Poole</a>
         &middot;
@@ -159,7 +163,38 @@ else:
         </span>
     </div>
     <script type="text/javascript">
-        function loadPage() {
+        // helper to show or hide scroll-up-button depending on scroll position
+        function scroll_visibility() {
+            if ($(document).scrollTop() > 0) {
+                $("#scroll_up").show("fast");
+            } else {
+                $("#scroll_up").hide("fast");
+            }
+        }
+
+        function add_scroll_up() {
+            // don't show on short pages
+            if ($("html").outerHeight() <= $(window).height()) {
+                return;
+            }
+
+            // add button, initially hidden
+            $("<a>", {
+                text: "⌃",
+                id: "scroll_up_btn",
+                click: function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return false;
+                },
+            }).appendTo('#scroll_up');
+            $("#scroll_up").hide();
+
+            // register handler and set initial state
+            scroll_visibility();
+            $(window).scroll(scroll_visibility);
+        }
+
+        function prepare_syntax_highlighting() {
             // adapted from https://sourceforge.net/p/shjs/feature-requests/5/#0940
             $("pre[class^='sh_']").each(function() {
                 // wrap pre with div._sh
@@ -196,14 +231,18 @@ else:
 
             sh_highlightDocument('/js/sh/', '.min.js');
         }
+
+        function loadPage() {
+            add_scroll_up();
+            prepare_syntax_highlighting();
+        }
     </script>
     <script type="text/javascript" src="js/sh_main.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!--%
         if page.get("comments", "false") == "true":
             print('<script defer src="https://comments.xythobuz.de/js/commento.js"></script>')
-    %-->
-    <!--%
+
         if page.get("auto_toc", "false") == "true":
             print('<script defer src="js/auto_toc.js"></script>')
     %-->

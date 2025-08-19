@@ -58,8 +58,8 @@ And here is one last look into the steam engine shed, affectionately called "Dam
 
 Another trip to the house will have to follow soon, to get all the smaller parts, tools, documents, etc.
 
+<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
 ## More Pictures
-<a class="anchor" name="more_pictures"></a>
 
 <div class="collapse">Some more photographs I didn't use above.</div>
 <div class="collapsecontent">

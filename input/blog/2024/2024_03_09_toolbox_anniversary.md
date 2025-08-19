@@ -37,8 +37,8 @@ lightgallery([
 We had a surprisingly large number of visitors.
 Hopefully this will help get things going again after the Covid dull.
 
+<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
 ## More Pictures
-<a class="anchor" name="more_pictures"></a>
 
 <div class="collapse">Some more photographs I didn't use above.</div>
 <div class="collapsecontent">

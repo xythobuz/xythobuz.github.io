@@ -196,8 +196,8 @@ lightgallery([
 I haven't yet given up that plan completely, but I have to think of a solution for diffusing the light first.
 The LEDs are too small and spaced too far apart to look good in this configuration.
 
+<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
 ## More Pictures
-<a class="anchor" name="more_pictures"></a>
 
 <div class="collapse">Some more photographs I didn't use above.</div>
 <div class="collapsecontent">

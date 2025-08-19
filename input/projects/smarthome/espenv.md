@@ -84,8 +84,8 @@ lightgallery([
 
 The source code can be found [on my Gitea server](https://git.xythobuz.de/thomas/esp-env).
 
+<a class="anchor al2" name="relais_update" href="#relais_update"></a>
 ## Relais Update (August 2022)
-<a class="anchor" name="relais_update"></a>
 
 After successfully using the first [4x relais board](https://amzn.to/3FQdOXB) I ordered to control my bathroom lights and fan for a couple of months, I decided to use two more of the same boards for my livingroom lights.
 This turned out to be quite the feat however.

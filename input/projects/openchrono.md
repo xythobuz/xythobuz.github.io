@@ -55,8 +55,8 @@ You can find everything you need to build it yourself in [the git repository](ht
  * [License](openchrono.html#license)
  * [More Pictures](openchrono.html#more_pictures)
 
+<a class="anchor al2" name="prototype" href="#prototype"></a>
 ## Prototype
-<a class="anchor" name="prototype"></a>
 
 Because the optical sensing is dependent on environment conditions I decided to not do any breadboard prototyping and immediately went ahead and designed a case to test with.
 In this initial attempt I used an Arduino Nano, an SSD1306 128x64 OLED LCD and an AA-battery holder, all of which I still had left from other projects.
@@ -99,8 +99,8 @@ I think it makes sense to drive the LEDs at their current limit, so ~20mA.
 Also the pull-up resistors for the transistors need their value to be low enough to quickly drive the signal to near supply voltage when the BB interrupts the light beam.
 A value of 1kΩ seems to work well there.
 
+<a class="anchor al2" name="mounting_options" href="#mounting_options"></a>
 ## Mounting Options
-<a class="anchor" name="mounting_options"></a>
 
 Unfortunately the OpenChrono IR photo-sensing is a bit constrained in regards to the path of the BB.
 The sensors are only 3mm wide, and the BBs are 6mm wide commonly.
@@ -141,8 +141,8 @@ lightgallery([
 ])
 %-->
 
+<a class="anchor al2" name="test_results" href="#test_results"></a>
 ## Test Results
-<a class="anchor" name="test_results"></a>
 
 Attaching the whole unit to a airsoft gun barrel turned out to be a bit tricky.
 
@@ -227,8 +227,8 @@ The power output of the two LEDs is simply not enough (`2 × 3V × 20mA = 120mW`
 
 So for now I do **not** recommend to build OpenChrono with the tracer option as it currently can be found in the repository.
 
+<a class="anchor al2" name="build_guide" href="#build_guide"></a>
 ## Build Guide
-<a class="anchor" name="build_guide"></a>
 
 Also take a look at [the "Hardware" section of the README.md](https://git.xythobuz.de/thomas/OpenChrono/src/branch/master/README.md#hardware).
 You can find detailed parts lists, schematic and wiring plan there as well.
@@ -429,8 +429,8 @@ If for some reason the hole through the device is not perfectly aligned with you
 In that case, you will not hit what you are aiming at!
 So beware of your environment, wear proper safety gear and start out with a short distance to your bullet stop, increasing only slowly as you are sure everything works as expected.
 
+<a class="anchor al2" name="firmware" href="#firmware"></a>
 ## Firmware
-<a class="anchor" name="firmware"></a>
 
 To achieve high measurement accuracy I used some of the hardware features of the AtMega328p MCU included in standard Arduinos.
 
@@ -614,8 +614,8 @@ This is very easy to implement using the great [u8g2 library](https://github.com
 If you're interested I recommend taking a look at [the code](https://git.xythobuz.de/thomas/OpenChrono/src/branch/master/firmware/OpenChrono).
 I think it should be relatively easy to understand and well commented 😅
 
+<a class="anchor al2" name="possible_future_improvements" href="#possible_future_improvements"></a>
 ## Possible Future Improvements
-<a class="anchor" name="possible_future_improvements"></a>
 
 As usual I was mostly using parts that I already had.
 That explains some strange design decisions, like using cylindrical screws for the battery compartment lid, which honestly look and feel ugly and stand out from the device.
@@ -629,8 +629,8 @@ I also don't think it's realistic to take this bulky device onto a field, but wh
 To be quite honest, I'm happy with the device as it is now.
 But I'm always open to feedback and pull requests of course, especially ones improving the tracer option 😉
 
+<a class="anchor al2" name="potential_other_uses" href="#potential_other_uses"></a>
 ## Potential Other Uses
-<a class="anchor" name="potential_other_uses"></a>
 
 One thing I'd like to talk about is using this device for measuring other things besides Airsoft BBs.
 It is definitely feasible to use OpenChrono to measure the speed of air rifle pellets, and this is something I would be interested in as well.
@@ -646,16 +646,16 @@ All the hot gases coming out of a real gun will probably also be problematic, bo
 
 But all this is not something I can or want to test, and I also do not recommend you do it, either! 👮
 
+<a class="anchor al2" name="links" href="#links"></a>
 ## Links
-<a class="anchor" name="links"></a>
 
 You can find [all the source code and design files for OpenChrono](https://git.xythobuz.de/thomas/OpenChrono) on my [Gitea instance](https://git.xythobuz.de).
 The project is also [mirrored on GitHub](https://github.com/xythobuz/OpenChrono).
 
 If you decide to build it yourself I would be interested in any kind of feedback!
 
+<a class="anchor al2" name="license" href="#license"></a>
 ## License
-<a class="anchor" name="license"></a>
 
 OpenChrono is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
@@ -674,8 +674,8 @@ OpenChrono is licensed under the [GNU General Public License](https://www.gnu.or
     You should have received a copy of the GNU General Public License
     along with OpenChrono.  If not, see <https://www.gnu.org/licenses/>.
 
+<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
 ## More Pictures
-<a class="anchor" name="more_pictures"></a>
 
 <div class="collapse">Some more photographs I didn't use above.</div>
 <div class="collapsecontent">

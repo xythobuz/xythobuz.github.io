@@ -48,8 +48,8 @@ You can find everything you need to build it yourself in [the git repository](ht
  * [License](trackball_v1.html#license)
  * [More Pictures](trackball_v1.html#more_pictures)
 
+<a class="anchor al2" name="part_selection" href="#part_selection"></a>
 ## Part Selection
-<a class="anchor" name="part_selection"></a>
 
 Before embarking on this project some decisions and orders had to be made.
 
@@ -128,8 +128,8 @@ Therefore, if you only want to build a single trackball, it will be more expensi
 What you see on top is the actual price I paid for the parts, reduced to the amount required for a single device.
 Also some parts, like screws or 3D printing materials, I consider as normal parts of a workshop, so they are not added to the cost either.
 
+<a class="anchor al2" name="3d_design" href="#3d_design"></a>
 ## 3D Design
-<a class="anchor" name="3d_design"></a>
 
 The most important part of the 3D design is the mounting of the sensor and lens assembly in relation to the tracking surface, in our case the ball.
 The datasheet has lots of dimensional drawings which kind of hide all the important measurements somewhere in there.
@@ -179,8 +179,8 @@ Rendering takes ¾ of an hour on my machine.
 For development the `$fn` parameter can be set to a lower value.
 That helps somewhat.
 
+<a class="anchor al2" name="firmware_devel" href="#firmware_devel"></a>
 ## Firmware Development
-<a class="anchor" name="firmware_devel"></a>
 
 Before designing and printing the complete device I made a small test bed to hold the sensor and ball.
 
@@ -244,8 +244,8 @@ I simply reserved a bunch of memory in RAM that acts as the disk device.
 Before it is mounted by the user, the disk is formatted and filled with the required data.
 Then the host can mount it and read the files.
 
+<a class="anchor al2" name="wiring" href="#wiring"></a>
 ## Wiring
-<a class="anchor" name="wiring"></a>
 
 Wiring up the device is very easy, especially because the RP2040 provides great flexibility in its use of the GPIOs and the hardware periphery, in our case SPI.
 
@@ -276,8 +276,8 @@ GPIO 27 (pin 32)      -> Switch (right button)
 The switches use the internal pull-up resistors in the RP2040 GPIOs.
 So they should be wired active-low, with their common connection to GND.
 
+<a class="anchor al2" name="sensor_problems" href="#sensor_problems"></a>
 ## Sensor Problems
-<a class="anchor" name="sensor_problems"></a>
 
 With the firmware mostly done I hoped to be able to use the device immediately.
 But it didn't quite work.
@@ -331,8 +331,8 @@ Now all billard balls work fine, regardless of their colour.
 Even the white ball works without any problems.
 With the electronics and the firmware ready, we could now move on to refining the mechanics.
 
+<a class="anchor al2" name="first_prototype" href="#first_prototype"></a>
 ## First Prototype
-<a class="anchor" name="first_prototype"></a>
 
 The first top case was printed on Philipps [Anycubic Photon Mono 4K](https://www.anycubic.com/products/photon-mono-4k) SLA printer with [Anycubic Standard Resin + Grey](https://amzn.to/3RSLslf).
 This turned out to not be the best choice.
@@ -379,8 +379,8 @@ lightgallery([
 ])
 %-->
 
+<a class="anchor al2" name="improvements" href="#improvements"></a>
 ## Improvements
-<a class="anchor" name="improvements"></a>
 
 For the second iteration we didn't do that many changes in the 3D design.
 The button orientation has been overhauled.
@@ -434,8 +434,8 @@ lightgallery([
 ])
 %-->
 
+<a class="anchor al2" name="user_experience" href="#user_experience"></a>
 ## User Experience
-<a class="anchor" name="user_experience"></a>
 
 I have been using these Trackballs for about six weeks at the time of this writing.
 From a software and electronics perspective they work absolutely fine.
@@ -449,8 +449,8 @@ The second version, with some more thought put into the placement and orientatio
 But using a device each day that I've built completely myself, from the grounds up in pretty much all aspects, brings me a lot of joy.
 I highly recommend it.
 
+<a class="anchor al2" name="license" href="#license"></a>
 ## License
-<a class="anchor" name="license"></a>
 
 The Trackball is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
@@ -466,8 +466,8 @@ The Trackball is licensed under the [GNU General Public License](https://www.gnu
 
     See <http://www.gnu.org/licenses/>.
 
+<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
 ## More Pictures
-<a class="anchor" name="more_pictures"></a>
 
 <div class="collapse">Some more photographs I didn't use above.</div>
 <div class="collapsecontent">

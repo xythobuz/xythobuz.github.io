@@ -32,8 +32,8 @@ lightgallery([
 * [Shelf Space (February 2023)](sparkmaker_repair.html#shelf_space)
 * [More Pictures](sparkmaker_repair.html#more_pictures)
 
+<a class="anchor al2" name="endstop" href="#endstop"></a>
 ## Endstop Fix
-<a class="anchor" name="endstop"></a>
 
 The printer only has a single axis, Z, with an optical endstop switch at the bottom.
 This switch is triggered by a large plastic shim screwed to the Z carriage.
@@ -48,8 +48,8 @@ lightgallery([
 ])
 %-->
 
+<a class="anchor al2" name="encoder" href="#encoder"></a>
 ## Encoder Replacement
-<a class="anchor" name="encoder"></a>
 
 After only a couple of hours of use, the encoder at the front of the machine stopped working properly.
 You can see this in the video below.
@@ -98,8 +98,8 @@ lightgallery([
 
 With the hardware back in working order I could now focus on the PC software side of things.
 
+<a class="anchor al2" name="experiments" href="#experiments"></a>
 ## First Slicing Experiments
-<a class="anchor" name="experiments"></a>
 
 After getting the hardware back running the next step is generating some sliced files.
 Unfortunately the official Sparkmaker website no longer exists and the downloads from there are hard to find.
@@ -130,8 +130,8 @@ lightgallery([
 Even though one corner was warping strongly, the results of the first print attempt were promising.
 It is an SA-profile keycap, sliced with ChituBox with 0.1mm layer height.
 
+<a class="anchor al2" name="script" href="#script"></a>
 ## SL1 to WOW File Format Converter Script
-<a class="anchor" name="script"></a>
 
 But there is one open-source alternative, [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer), and it has support for SLA slicing for the [Prusa SL1 printer](https://www.prusa3d.com/product/original-prusa-sl1s-speed-3d-printer/).
 But it only produces `.sl1` files, their custom file format.
@@ -198,8 +198,8 @@ So G-Code always needs to take care to turn the LEDs off at the end of a print.
 For some reason we once managed to have the LEDs turned on with an error message showing.
 This requires draining the resin and scraping off any remaining bits.
 
+<a class="anchor al2" name="prusaslicer" href="#prusaslicer"></a>
 ## Configuring PrusaSlicer for the Sparkmaker
-<a class="anchor" name="prusaslicer"></a>
 
 To configure PrusaSlicer I recommend starting out with their built-in profile for the SL1.
 Selecting it as the machine automatically switches the program over into "SLA mode", where the support and pad generation work differently compared to the normal FDM mode.
@@ -263,8 +263,8 @@ lightgallery([
 ])
 %-->
 
+<a class="anchor al2" name="shelf_space" href="#shelf_space"></a>
 ## Shelf Space (February 2023)
-<a class="anchor" name="shelf_space"></a>
 
 I still had some drawer rails and a wooden plate left over from replacing my [Fabrikator Mini](fabrikator-mini.html) with my new [Laser Engraver](laser-engraver.html) in my [Ikea Lack tower](ikea-lack.html).
 So I decided to re-use these to properly store the Sparkmaker.
@@ -319,8 +319,8 @@ The only thing still missing is a good solution for curing / hardening.
 I'm thinking of some kind of small turntable and UV lamp or LED strip.
 That's still to come, so stay tuned! 🧐
 
+<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
 ## More Pictures
-<a class="anchor" name="more_pictures"></a>
 
 <div class="collapse">Some more photographs I didn't use above.</div>
 <div class="collapsecontent">

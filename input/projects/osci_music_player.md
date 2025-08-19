@@ -40,8 +40,8 @@ Skip to the [interesting part](osci_music_player.html#hardware) then!
 * [Hardware](osci_music_player.html#hardware)
 * [Software](osci_music_player.html#software)
 
+<a class="anchor al2" name="introduction" href="#introduction"></a>
 ## Introduction
-<a class="anchor" name="introduction"></a>
 
 An oscilloscope usually displays one or more waveforms of an electrical signal.
 To achieve this a single dot is moved across the screen, with the voltage or amplitude of the signal controlling the vertical deflection (Y axis), and time controlling the horizontal deflection (X axis), meaning the dot automatically moves from left to right with a pre-configured speed.
@@ -70,8 +70,8 @@ lightgallery([
 ])
 %-->
 
+<a class="anchor al2" name="artists" href="#artists"></a>
 ## Artists
-<a class="anchor" name="artists"></a>
 
 To generate the proper sounds you usually need some kind of software or self-written code.
 Many people have already experimented with this, with small scripts running on a PC, or directly on a microcontroller.
@@ -98,8 +98,8 @@ lightgallery([
 ])
 %-->
 
+<a class="anchor al2" name="playback" href="#playback"></a>
 ## Playback
-<a class="anchor" name="playback"></a>
 
 So there are some technical challenges involved in playing these properly on an oscilloscope.
 
@@ -134,8 +134,8 @@ These are DC coupled, support 192kHz and are cheap and easy to get.
 Now the image finally looks like in the YouTube videos.
 The only problem is, this is supposed to be used and operated at Toolbox events, so it needs to be easy to use and kind of sturdy.
 
+<a class="anchor al2" name="oscisettings" href="#oscisettings"></a>
 ## Oscilloscope Settings
-<a class="anchor" name="oscisettings"></a>
 
 To get the proper picture out of your oscilloscope you need to set it up correctly.
 Every oscilloscope has its own kind of front panel buttons, but in general they all have more or less the same kind of settings.
@@ -166,8 +166,8 @@ lightgallery([
 ])
 %-->
 
+<a class="anchor al2" name="hardware" href="#hardware"></a>
 ## Hardware
-<a class="anchor" name="hardware"></a>
 
 We need to consider the environments this device will be used in.
 Both at the Toolbox anniversary, as well as the IBO fair, it will be displayed as part of a public show, with many people walking by and maybe stopping for a short time.
@@ -222,8 +222,8 @@ This worked relatively well.
 Just take care with the lid, it was quite hard in my case, causing it to crack when I tried to drill a hole that was too big.
 But some superglue saved the day.
 
+<a class="anchor al2" name="software" href="#software"></a>
 ## Software
-<a class="anchor" name="software"></a>
 
 I've been using the [Raspberry Pi OS (Legacy, 32bit) Lite](https://downloads.raspberrypi.com/raspios_oldstable_lite_armhf/images/raspios_oldstable_lite_armhf-2023-12-06/2023-12-05-raspios-bullseye-armhf-lite.img.xz) image.
 Install it [as usual](https://www.raspberrypi.com/software/), set up a user account, wireless network connection and SSH login.

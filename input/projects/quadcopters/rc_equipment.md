@@ -95,8 +95,8 @@ lightgallery([
 ])
 %-->
 
+<a class="anchor al2" name="can_storage" href="#can_storage"></a>
 ## Ammo Can Battery Storage
-<a class="anchor" name="can_storage"></a>
 
 For far too long I stored all my LiPos in a cardboard box on a wooden shelf in my livingroom.
 After seeing one too many videos of LiPo fires, I decided to work on a solution for safe storage of the batteries outside, on my balcony. Like with the charger described right above this section, I decided to get some used ammo cans for this project.

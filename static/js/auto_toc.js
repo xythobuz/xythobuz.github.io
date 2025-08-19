@@ -37,7 +37,7 @@ function generate_toc() {
         output += '<a href="#' + link + '">' + title + '</a>';
         output += '</li>';
 
-        $(this).after('<a class="anchor" name="' + link + '"></a>')
+        $(this).before('<a class="anchor al' + this_level + '" name="' + link + '" href="#' + link + '"></a>')
 
         counters[this_level - 2]++;
     });
@@ -47,4 +47,17 @@ function generate_toc() {
     $("#toc_wrap").html(output);
 }
 
+function register_toc_toggle() {
+    $("<a>", {
+        text: "toggle ToC visibility",
+        href: "",
+        id: "toc_toggle",
+        click: function() {
+            $("#toc_wrap").toggle("fast");
+            return false;
+        },
+    }).appendTo('#toc_toggle_wrap');
+}
+
 generate_toc();
+register_toc_toggle();

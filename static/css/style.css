@@ -1,6 +1,10 @@
 @import "/css/sh_bright.min.css";
 @import "/css/sh_darkness.min.css" (prefers-color-scheme: dark);
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-size: 1.2em;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -53,7 +57,42 @@ a.anchor {
     display: block;
     position: relative;
     visibility: hidden;
-    top: -60px;
+    height: 0px;
+    top: -0.5rem;
+}
+
+a.anchor:link:after {
+    content: "🔗";
+    position: relative;
+    visibility: visible;
+    left: -1rem;
+    font-size: 0.8rem;
+}
+
+a.anchor.al2:link:after {
+    top: 2.2rem;
+}
+
+a.anchor.al3:link:after {
+    top: 1.8rem;
+}
+
+a.anchor.al4:link:after {
+    top: 1.9rem;
+}
+
+#scroll_up {
+    display: none;
+}
+
+#scroll_up_btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.access_link {
+    font-size: small;
+    display: none;
 }
 
 @media (min-height: 750px) {
@@ -68,7 +107,19 @@ a.anchor {
     }
 
     a.anchor {
-        top: -175px;
+        top: -5.5rem;
+    }
+
+    a.anchor.al2:link:after {
+        top: 7.2rem;
+    }
+
+    a.anchor.al3:link:after {
+        top: 6.8rem;
+    }
+
+    a.anchor.al4:link:after {
+        top: 6.9rem;
     }
 }
 
@@ -76,11 +127,26 @@ a.anchor {
     #content {
         width: 75%;
     }
+
+    #scroll_up {
+        display: block;
+        position: fixed;
+        left: 5%;
+        bottom: 0;
+    }
+
+    .access_link {
+        display: block;
+    }
 }
 
 @media (min-width: 1500px) {
     #content {
         width: 50%;
+    }
+
+    #scroll_up {
+        left: 12.5%;
     }
 
     #navbar {
@@ -372,6 +438,10 @@ hr {
     border-width: 1px;
     border-style: solid;
     border-radius: 0.125em;
+}
+
+a.anchor:link:after {
+    opacity: 0.666;
 }
 
 /* colors */
