@@ -11,7 +11,8 @@ noheader: true
 <img id="index-avatar" src="img/ava.jpg">
 
 I'm a <!--% print(own_age()) %--> year old software developer from Germany.
-All of my projects are released as free or open-source software on [my Gitea Server](https://git.xythobuz.de/thomas), [my GitHub profile](https://github.com/xythobuz) and here on my website. Have fun!
+All of my projects are released as free or open-source software on [my Codeberg profile](https://codeberg.org/xythobuz), [my Gitea Server](https://git.xythobuz.de/thomas), [my GitHub profile](https://github.com/xythobuz) or here on my website.
+Have fun!
 
 To receive my latest updates, you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
 

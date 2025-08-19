@@ -49,9 +49,10 @@ else:
                     print(entry % (htmlspecialchars(p["url"]), htmlspecialchars(p["title"])))
             %-->
             <li>-</li>
+            <li><a href="https://codeberg.org/xythobuz">Codeberg</a></li>
             <li><a href="https://git.xythobuz.de/explore/repos">Gitea</a></li>
             <li><a href="https://github.com/xythobuz">GitHub</a></li>
-            <li><a href="printer.html">🔨</a></li>
+            <!-- <li><a href="printer.html">🔨</a></li> -->
             <div class="fonts">
                 <li><span class="font-big">Text:</span></li>
                 <li><a class="dec" href="#"><span class="font-big">A</span><span class="font-small">A</span></a></li>
@@ -180,11 +181,16 @@ else:
 
             // add button, initially hidden
             $("<a>", {
-                text: "⌃",
+                text: "⇑",
                 id: "scroll_up_btn",
                 click: function() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    return false;
+                    var hash = location.hash.replace("#","");
+                    if (hash != "") {
+                        const location = window.location.href.split('#')[0];
+                        window.history.pushState({}, "", location);
+                    }
+                    window.scrollTo({ top: 0, behavior: "auto" });
+                    return true;
                 },
             }).appendTo('#scroll_up');
             $("#scroll_up").hide();
@@ -233,8 +239,8 @@ else:
         }
 
         function loadPage() {
-            add_scroll_up();
             prepare_syntax_highlighting();
+            add_scroll_up();
         }
     </script>
     <script type="text/javascript" src="js/sh_main.js"></script>

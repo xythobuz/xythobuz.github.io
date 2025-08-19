@@ -563,6 +563,9 @@ def include_url(url, fallback = None, data_slice = None, timeout = 2):
             print_cnsl_error(str(e), url)
             return
 
+    # kinda ugly, use 4 spaces for tabs for everything except Makefiles
+    data = data.expandtabs(8 if url.lower().endswith("makefile") else 4)
+
     if isinstance(data_slice, tuple):
         start, end = data_slice
         if end < start:
@@ -612,7 +615,7 @@ def include_sourcecode_slice(sh_type, data_slice, filename, url_pre, fallback_pr
     print('</pre>')
     print('<p class="sh_link_upstream">Link to the complete file "<a href="' + url + '">' + url.split("/")[-1] + '</a>"')
     if fallback != None:
-        print(' (<a href="' + fallback + '">alternative</a>)')
+        print(' (<a href="' + fallback + '">alternative link</a>)')
     print('</p>')
 
 def restRequest(url):

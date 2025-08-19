@@ -85,8 +85,12 @@ a.anchor.al4:link:after {
     display: none;
 }
 
+#scroll_up_btn {
+    font-size: 3em;
+    border-radius: 10px;
+}
+
 #scroll_up_btn:hover {
-    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -132,7 +136,7 @@ a.anchor.al4:link:after {
         display: block;
         position: fixed;
         left: 5%;
-        bottom: 0;
+        bottom: 5px;
     }
 
     .access_link {
@@ -267,6 +271,15 @@ a:link, a:visited {
 a:link:hover, a:visited:hover, .show-comments:hover {
     text-decoration: underline;
 }
+
+/*
+a[href*='//']:after {
+    content: "↗️";
+    font-size: 0.7em;
+    vertical-align: middle;
+    opacity: 0.666;
+}
+*/
 
 #nav a:link, #nav a:visited {
     font-weight: bold;
@@ -560,7 +573,7 @@ blockquote:before, blockquote:after {
     color: #444444;
 }
 
-#toc {
+#toc, #scroll_up_btn {
     background-color: #E2E2E2;
 }
 
@@ -647,7 +660,7 @@ blockquote:before, blockquote:after {
         border-color: #111111;
     }
 
-    #toc {
+    #toc, #scroll_up_btn {
         background-color: #1D1D1D;
     }
 }

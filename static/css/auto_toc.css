@@ -70,3 +70,11 @@
 #toc ul {
     padding-left: 1em;
 }
+
+#toc_close {
+    opacity: 0.666;
+}
+
+#toc_close:hover {
+    cursor: pointer;
+}
