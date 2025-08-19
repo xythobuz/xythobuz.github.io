@@ -1,6 +1,7 @@
 title: i3 CoreXZ AM8
 description: Rebuild of my i3 clone with aluminium extrusions, CoreXZ, Klipper
 parent: 3d-printing
+second_parent: projects
 position: 10
 date: 2022-10-08
 update: 2023-09-03

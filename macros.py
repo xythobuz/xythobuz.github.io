@@ -271,7 +271,7 @@ def printBlogMenu(year_min=None, year_max=None):
     print("</ul>")
 
 def printProjectsMenu():
-    # prints all pages with parent 'projects' or 'stuff'.
+    # prints all pages with parent or second_parent 'projects' or 'stuff'.
     # first the ones without date, sorted by position.
     # this first section includes sub-headings for children
     # in a hidden div, expanding when clicking the description.
@@ -282,7 +282,7 @@ def printProjectsMenu():
     # select pages without date
     dpages = [p for p in enpages if p.get("date", "") == ""]
     # only those that have a parent in ['projects', 'stuff']
-    mpages = [p for p in dpages if any(x in p.get("parent", "") for x in [ 'projects', 'stuff' ])]
+    mpages = [p for p in dpages if any((x in p.get("parent", "")) or (x in p.get("second_parent", "")) for x in [ 'projects', 'stuff' ])]
     # sort by position
     mpages.sort(key=lambda p: [int(p.get("position", "999"))])
 
@@ -312,7 +312,7 @@ def printProjectsMenu():
     # slect pages with a date
     dpages = [p for p in enpages if p.get("date", "") != ""]
     # only those that have a parent in ['projects', 'stuff']
-    mpages = [p for p in dpages if any(x in p.get("parent", "") for x in [ 'projects', 'stuff' ])]
+    mpages = [p for p in dpages if any((x in p.get("parent", "")) or (x in p.get("second_parent", "")) for x in [ 'projects', 'stuff' ])]
     # sort by date
     mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
 

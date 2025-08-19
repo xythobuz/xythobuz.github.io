@@ -1,6 +1,7 @@
 title: OctoTray
 description: PyQt tray application to control OctoPrint/Moonraker
 parent: 3d-printing
+second_parent: projects
 position: 50
 comments: true
 git: https://git.xythobuz.de/thomas/OctoTray

@@ -1,6 +1,7 @@
 title: Smart Meter Bridge
 description: Reading SML power meter data transmitted via LoRa
 parent: smarthome
+second_parent: projects
 position: 150
 git: https://git.xythobuz.de/thomas/esp-env
 github: https://github.com/xythobuz/esp-env
