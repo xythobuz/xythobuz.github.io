@@ -628,9 +628,10 @@ The included cartridge graphic in `artwork/cartridge.xcf` is based on the ['Fron
         event.target.style.height = `${event.target.clientWidth * 160 / 144}px`;
     });
 
+    EJS_language = '';
     EJS_player = "#duality_game";
     EJS_core = "gb";
-    EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+    EJS_pathtodata = "emu_js/";
     EJS_gameUrl = "https://xythobuz.github.io/Duality/duality.gb";
     EJS_alignStartButton = "center";
     EJS_backgroundImage = "https://xythobuz.github.io/Duality/cartridge.png";
@@ -680,4 +681,4 @@ The included cartridge graphic in `artwork/cartridge.xcf` is based on the ['Fron
     };
     EJS_startButtonName = "Start Duality";
 </script>
-<script src="https://cdn.emulatorjs.org/stable/data/loader.js" async defer></script>
+<script src="emu_js/loader.js" async defer></script>
