@@ -4,6 +4,7 @@ parent: projects
 git: https://codeberg.org/xythobuz/Duality
 github: https://github.com/xythobuz/Duality
 date: 2025-08-19
+update: 2025-09-01
 comments: true
 favicon: https://xythobuz.github.io/Duality/favicon.png
 auto_toc: true
@@ -541,11 +542,31 @@ The Duality in-game theme song was more difficult.
 It consists more of noises and some LFOs instead of clearly defined notes, so transcribing was pretty hard.
 In the end I used a trial version of [AnthemScore](https://www.lunaverus.com/) in Wine to get an approximate idea of the notes, but the result is not great.
 
+Here are some direct comparisons.
+First the San Andreas Theme, used as menu music.
+
 <!--%
 lightgallery([
     [ "https://www.youtube.com/watch?v=7qfbi3HACV8", "San Andreas Theme" ],
+    [ "img/duality_music_menu.opus", "audio/ogg", "", "Duality Menu Music" ],
+])
+%-->
+
+Next the score screen music, which comes from the FF7 victory fanfare.
+
+<!--%
+lightgallery([
     [ "https://www.youtube.com/watch?v=rgUksX6eM0Y", "Final Fantasy VII Victory Fanfare" ],
+    [ "img/duality_music_score.opus", "audio/ogg", "", "Duality Score Music" ],
+])
+%-->
+
+And the in-game music, from the original Duality.
+
+<!--%
+lightgallery([
     [ "https://www.youtube.com/watch?v=duiUhk5ZkaA", "Duality Theme" ],
+    [ "img/duality_music_game.opus", "audio/ogg", "", "Duality Gameplay Music" ],
 ])
 %-->
 

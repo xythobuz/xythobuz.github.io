@@ -404,11 +404,12 @@ def printSteamMenuDeutsch():
 # call this macro like this:
 
 # lightgallery([
-#     [ "image-link", "description" ],
-#     [ "image-link", "thumbnail-link", "description" ],
-#     [ "youtube-link", "thumbnail-link", "description" ],
-#     [ "video-link", "mime", "thumbnail-link", "image-link", "description" ],
-#     [ "video-link", "mime", "", "", "description" ],
+#     [ "image-link", "description" ], # 2 elements
+#     [ "image-link", "thumbnail-link", "description" ], # 3 elements
+#     [ "youtube-link", "thumbnail-link", "description" ], # 3 elements
+#     [ "audio-link", "mime", "", "description" ], # 4 elements
+#     [ "video-link", "mime", "thumbnail-link", "image-link", "description" ], # 5 elements
+#     [ "video-link", "mime", "", "", "description" ], # 5 elements
 # ])
 
 # it will also auto-generate thumbnails and resize and strip EXIF from images
@@ -511,6 +512,11 @@ def lightgallery(links):
                     style = ' style="max-width:300px;max-height:300px;"'
             lightgallery_check_thumbnail(link, img)
             print('<div class="border" style="position:relative;" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"' + style + '>' + img2 + '</a></div>')
+        elif len(l) == 4:
+            link, mime, none, alt = l
+            print('<div class="border">')
+            print('<audio controls style="display:block;"><source src="' + link + '" type="' + mime + '" /></audio>')
+            print('<p class="audio_text"><a href="' + link + '">Download audio</a></p></div>')
         elif len(l) == 5:
             v_i += 1
             link, mime, thumb, poster, alt = videos[v_i]
