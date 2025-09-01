@@ -8,6 +8,7 @@ update: 2025-09-01
 comments: true
 favicon: https://xythobuz.github.io/Duality/favicon.png
 auto_toc: true
+no_gen_ai: true
 ---
 
 ## Introduction

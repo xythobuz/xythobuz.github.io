@@ -16,6 +16,8 @@ Have fun!
 
 To receive my latest updates, you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
 
+All my projects and all content of this website are proudly made without _any_ generative artificial intelligence.
+
 ### Recent Posts and Updates
 
 <!--%

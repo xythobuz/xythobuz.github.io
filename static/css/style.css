@@ -99,6 +99,22 @@ a.anchor.al4:link:after {
     display: none;
 }
 
+.seal_bottom_left {
+    position: fixed;
+    max-width: 15%;
+    bottom: 0;
+    left: 0;
+}
+
+.seal_bottom_left:hover {
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.seal_img {
+    width: 100%;
+}
+
 @media (min-height: 750px) {
     #nav {
         position: fixed;
@@ -142,6 +158,10 @@ a.anchor.al4:link:after {
     .access_link {
         display: block;
     }
+
+    .seal_bottom_left {
+        max-width: 4.5%;
+    }
 }
 
 @media (min-width: 1500px) {
@@ -157,6 +177,10 @@ a.anchor.al4:link:after {
         position: relative;
         left: 12.5%;
         width: 75%;
+    }
+
+    .seal_bottom_left {
+        max-width: 12%;
     }
 }
 
@@ -469,6 +493,10 @@ a.anchor:link:after {
     background: #DEDEDE;
 }
 
+.seal_bottom_left:hover {
+    background-color: #DEDEDE;
+}
+
 body, #nav, .collapsecontent {
     background-color: #FFFFFF;
 }
@@ -651,6 +679,10 @@ blockquote:before, blockquote:after {
 
     :not(pre) > code {
         background: #252525;
+    }
+
+    .seal_bottom_left:hover {
+        background-color: #252525;
     }
 
     blockquote {

@@ -24,19 +24,24 @@ else:
 </head>
 <body onload="loadPage()">
     <!--%
+        # GitHub Fork-Me Ribbon
         link = ""
-
         if page.get("github", "") != "":
             link = page.github
         if page.get("git", "") != "":
             link = page.git
-
         if link != "":
-            # GitHub Fork-Me Ribbon
             print('<div class="github-fork-ribbon-wrapper right-bottom">')
             print('<div class="github-fork-ribbon"><a href="')
             print(link)
             print('">Fork this with Git</a></div></div>')
+
+        # No Gen-AI seal
+        if page.get("no_gen_ai", "false") == "true":
+            print('<div class="seal_bottom_left">')
+            print('<a href="https://www.polygon-treehouse.com/no-gen-ai-seal">')
+            print('<img class="seal_img" src="img/NoGenAI_Seal.png" alt="This developer assures that No Gen AI was used in this indie game" />')
+            print('</a></div>')
     %-->
     <div id="wrap"><div id="nav">
         <ul id="navbar">
