@@ -349,8 +349,10 @@ else:
 
                     setTimeout(function() {
                         content.style.borderWidth = null;
-                    }, 800);
+                        content.style.display = "none";
+                    }, 120);
                 } else {
+                    content.style.display = "block";
                     content.style.maxHeight = content.scrollHeight + "px";
                     content.style.borderWidth = "2px";
                 }

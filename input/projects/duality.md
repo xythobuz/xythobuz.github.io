@@ -46,6 +46,40 @@ tableHelper([ "align-center monospaced", "align-center monospaced", "align-cente
 Although you can use EmulatorJS I recommend a native emulator for your target device if you experience stuttering music or bad performance with the emulator on this page.
 </p>
 
+Alternatively here's a short gameplay video and some screenshots.
+
+<!--%
+lightgallery([
+    [ "img/duality_gameplay.webm", "video/webm", "", "", "Gameplay screen recording" ],
+])
+%-->
+
+<!--%
+lightgallery([
+    [ "img/duality_ss_menu.png", "Start screen" ],
+    [ "img/duality_ss_shoot2.png", "Gameplay" ],
+    [ "img/duality_ss_accel.png", "Accelerating" ],
+    [ "img/duality_ss_over.png", "Scoring name entry screen" ],
+])
+%-->
+
+<p></p>
+<div class="collapse">Click for more screenshots.</div>
+<div class="collapsecontent">
+<!--%
+lightgallery([
+    [ "img/duality_ss_damage.png", "Damaged from black hole" ],
+    [ "img/duality_ss_score.png", "Score list" ],
+    [ "img/duality_ss_about.png", "About screen" ],
+    [ "img/duality_ss_conf.png", "Configuration menu" ],
+    [ "img/duality_ss_continue.png", "Continue screen" ],
+    [ "img/duality_ss_shoot.png", "Shooting" ],
+    [ "img/duality_ss_debug.png", "Debug menu" ],
+    [ "img/duality_ss_thanks.png", "Acknowledgements screen" ],
+])
+%-->
+</div>
+
 ### Quick Start Guide
 
 Press `Left` or `Right` on the title screen to show either the black or white highscores.
