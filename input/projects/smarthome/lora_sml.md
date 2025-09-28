@@ -3,9 +3,10 @@ description: Reading SML power meter data transmitted via LoRa
 parent: smarthome
 second_parent: projects
 position: 150
-git: https://git.xythobuz.de/thomas/esp-env
+git: https://codeberg.org/xythobuz/esp-env
 github: https://github.com/xythobuz/esp-env
 date: 2024-07-06
+update: 2025-09-28
 comments: true
 ---
 
@@ -61,7 +62,7 @@ And I had to use the watchdog in the ESP32 and also do an auto-reset when no mes
 So somewhere the code hangs, sometimes.
 But with these hacks in place it seems to work well.
 
-The code is integrated into my [ESP-Env project](espenv.html) and [repo](https://git.xythobuz.de/thomas/esp-env).
+The code is integrated into my [ESP-Env project](espenv.html) and [repo](https://codeberg.org/xythobuz/esp-env).
 
 <!--%
 lightgallery([

@@ -257,7 +257,7 @@ I also placed some cheap little voltmeter modules on the UI, showing the other v
 
 ## Future Extensions (v1)
 
-I have now been running capacitive ground moisture level sensors in a couple of my plants for around a year, logging the data using my [ESP-Env project](https://git.xythobuz.de/thomas/esp-env) to an [InfluxDB](https://www.influxdata.com/) instance running on my NAS, with a [Grafana](https://grafana.com/) UI running on there as well.
+I have now been running capacitive ground moisture level sensors in a couple of my plants for around a year, logging the data using my [ESP-Env project](https://codeberg.org/xythobuz/esp-env) to an [InfluxDB](https://www.influxdata.com/) instance running on my NAS, with a [Grafana](https://grafana.com/) UI running on there as well.
 I used the [cheap chinese models](https://amzn.to/3sLG8SB) up to now, and they have not proven very useful.
 They of course don't corrode as fast as the resistive-measurement-based sensors, but they still age because of the permanent water contact.
 I tried to work-around that by using [Plastik70](http://www.kontaktchemie.com/koc/KOCproductdetail.csp?division=&product=PLASTIK%2070&ilang=en&plang=en) in liberal amounts with multiple coatings on the sensor, but even with that they show quite considerable drift over a couple of months.

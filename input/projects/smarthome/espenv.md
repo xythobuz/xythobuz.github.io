@@ -1,7 +1,7 @@
 title: ESP-Env
 description: ESP32 / ESP8266 & BME280 / SHT2x / CCS811 sensor / actor with InfluxDB support
 parent: smarthome
-git: https://git.xythobuz.de/thomas/esp-env
+git: https://codeberg.org/xythobuz/esp-env
 github: https://github.com/xythobuz/esp-env
 position: 100
 date: 2020-01-06
@@ -82,7 +82,7 @@ lightgallery([
 %-->
 </div>
 
-The source code can be found [on my Gitea server](https://git.xythobuz.de/thomas/esp-env).
+The source code can be found [on Codeberg](https://codeberg.org/xythobuz/esp-env).
 
 <a class="anchor al2" name="relais_update" href="#relais_update"></a>
 ## Relais Update (August 2022)
