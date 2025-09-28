@@ -76,4 +76,18 @@ The spike with 1.3kW is heating water for coffee.
 The other power readings come from tasmota sockets or my NAS UPS.
 
 Also the battery usage of the LoRa transmitter is very low.
-I will update when I have to recharge them for the first time.
+<s>I will update when I have to recharge them for the first time.</s>
+
+**Update** from September 2025:
+
+The device works for around two to three months on a single charge.
+This is with an over five year old Panasonic NCR18650B that was previously used in an E-Cigarette mod, with nominal 3400mAh.
+Here is the battery status from the previous year.
+
+<!--%
+lightgallery([
+    [ "img/lora_sml_batt_usage.png", "Battery voltage over a whole year" ],
+])
+%-->
+
+As you can tell I even accidentally deep-discharged the cell last christmas, but it still runs fine.
