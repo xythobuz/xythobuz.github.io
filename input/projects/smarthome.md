@@ -6,6 +6,8 @@ child-id: smarthome
 sort-order: position
 ---
 
+<!--% backToParent() %-->
+
 With the appearance of cheap WiFi-capable microcontrollers in recent years, like the ESP8266 and the ESP32, the Internet of Things and Smart Home automation have been on my mind.
 There are many such products out there, but I would like to avoid using badly supported devices without any upstream support from dodgy manufacturers.
 And the data should also be hosted on machines I control.

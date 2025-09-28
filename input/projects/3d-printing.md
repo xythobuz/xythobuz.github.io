@@ -6,6 +6,8 @@ child-id: 3d-printing
 sort-order: position
 ---
 
+<!--% backToParent() %-->
+
 In 2016 I've started experimenting with 3D printers.
 In the meantime, I've modified my printers quite a bit and also written about it.
 Here are all the articles that are part of my 3D printing series:

@@ -6,6 +6,8 @@ child-id: input_devices
 sort-order: date
 ---
 
+<!--% backToParent() %-->
+
 One of the recurring topics in my projects are different kind of input devices.
 Here you can find all pages in this category.
 
