@@ -88,7 +88,10 @@ I also wrote [this blog post](2016_03_24_marlin_fabrikator_mini.html) about my M
 
 ## Mesh Bed Leveling
 
-Even though it probably shouldn't be necessary for such a small printbed, I did still have some first layer adhesion issues with the aluminum printbed. Especially one corner seems to be a bit bent. So I enabled Mesh Bed Leveling in my Marlin Firwmare (see below) and also wrote a little [GUI Tool to assist the leveling process](https://git.xythobuz.de/thomas/Bed-Leveling-Utility). It is also on [GitHub](https://github.com/xythobuz/Bed-Leveling-Utility).
+Even though it probably shouldn't be necessary for such a small printbed, I did still have some first layer adhesion issues with the aluminum printbed.
+Especially one corner seems to be a bit bent.
+So I enabled Mesh Bed Leveling in my Marlin Firwmare (see below) and also wrote a little [GUI Tool to assist the leveling process](https://codeberg.org/xythobuz/Bed-Leveling-Utility).
+It is also on [GitHub](https://github.com/xythobuz/Bed-Leveling-Utility).
 
 Here is my latest measured mesh, for example. Also be aware that these values differ significantly between a hot and a cold bed, so always do the leveling on a fully heated bed!
 

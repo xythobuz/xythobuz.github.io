@@ -1,7 +1,7 @@
 title: OpenChrono
 description: Airsoft Chronograph and Tracer Unit made with Arduino and 3D Printing
 parent: projects
-git: https://git.xythobuz.de/thomas/OpenChrono
+git: https://codeberg.org/xythobuz/OpenChrono
 github: https://github.com/xythobuz/OpenChrono
 date: 2022-06-26
 update: 2022-07-07
@@ -40,7 +40,7 @@ lightgallery([
 %-->
 
 As usual the project is released as free and open-source software / hardware.
-You can find everything you need to build it yourself in [the git repository](https://git.xythobuz.de/thomas/OpenChrono)!
+You can find everything you need to build it yourself in [the git repository](https://codeberg.org/xythobuz/OpenChrono)!
 
 ### Table Of Contents
 
@@ -230,7 +230,7 @@ So for now I do **not** recommend to build OpenChrono with the tracer option as 
 <a class="anchor al2" name="build_guide" href="#build_guide"></a>
 ## Build Guide
 
-Also take a look at [the "Hardware" section of the README.md](https://git.xythobuz.de/thomas/OpenChrono/src/branch/master/README.md#hardware).
+Also take a look at [the "Hardware" section of the README.md](https://codeberg.org/xythobuz/OpenChrono/src/branch/master/README.md#hardware).
 You can find detailed parts lists, schematic and wiring plan there as well.
 
 ### Parts
@@ -270,7 +270,7 @@ tableHelper([ "align-right", "align-right", "align-right monospaced", "align-lef
 )
 %-->
 
-Next you need to generate the STL files with [OpenSCAD](https://openscad.org/) using [the script in the repository](https://git.xythobuz.de/thomas/OpenChrono/src/branch/master/hardware/openchrono.scad).
+Next you need to generate the STL files with [OpenSCAD](https://openscad.org/) using [the script in the repository](https://codeberg.org/xythobuz/OpenChrono/src/branch/master/hardware/openchrono.scad).
 You can set `include_uv_leds` to `true` or `false` in there.
 At the bottom, comment out the proper parts you need to print.
 Besides the `left_half`, you need to select the proper `right_half_xxx` depending on your power source.
@@ -408,7 +408,7 @@ lightgallery([
 Turn the right half to the inside and cut the power supply wires to an appropriate length.
 Then solder them to the power supply wires of the Arduino, insulating with some heat-shrink tubing.
 
-To flash the firmware onto your Arduino please also take a look at [the "Software" section of the README.md](https://git.xythobuz.de/thomas/OpenChrono/src/branch/master/README.md#software).
+To flash the firmware onto your Arduino please also take a look at [the "Software" section of the README.md](https://codeberg.org/xythobuz/OpenChrono/src/branch/master/README.md#software).
 
 **Beware:** _Always_ leave the power switch in the off position when connecting a USB cable to flash the Arduino.
 
@@ -611,7 +611,7 @@ ISR(TIMER2_OVF_vect) {
 In the main-loop I'm simply updating the LCD to show the measured values.
 This is very easy to implement using the great [u8g2 library](https://github.com/olikraus/u8g2).
 
-If you're interested I recommend taking a look at [the code](https://git.xythobuz.de/thomas/OpenChrono/src/branch/master/firmware/OpenChrono).
+If you're interested I recommend taking a look at [the code](https://codeberg.org/xythobuz/OpenChrono/src/branch/master/firmware/OpenChrono).
 I think it should be relatively easy to understand and well commented 😅
 
 <a class="anchor al2" name="possible_future_improvements" href="#possible_future_improvements"></a>
@@ -649,7 +649,7 @@ But all this is not something I can or want to test, and I also do not recommend
 <a class="anchor al2" name="links" href="#links"></a>
 ## Links
 
-You can find [all the source code and design files for OpenChrono](https://git.xythobuz.de/thomas/OpenChrono) on my [Gitea instance](https://git.xythobuz.de).
+You can find [all the source code and design files for OpenChrono](https://codeberg.org/xythobuz/OpenChrono) on Codeberg.
 The project is also [mirrored on GitHub](https://github.com/xythobuz/OpenChrono).
 
 If you decide to build it yourself I would be interested in any kind of feedback!

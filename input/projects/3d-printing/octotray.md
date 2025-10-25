@@ -4,7 +4,7 @@ parent: 3d-printing
 second_parent: projects
 position: 50
 comments: true
-git: https://git.xythobuz.de/thomas/OctoTray
+git: https://codeberg.org/xythobuz/OctoTray
 github: https://github.com/xythobuz/OctoTray
 date: 2021-05-08
 update: 2022-10-16
@@ -51,7 +51,7 @@ To give you an example of the system actions you could use to switch GPIOs from 
             confirm: You are about to turn off the printer.
             name: Turn off printer
 
-You can find the project [on my Gitea server](https://git.xythobuz.de/thomas/OctoTray) or on [GitHub](https://github.com/xythobuz/OctoTray).
+You can find the project on [Codeberg](https://codeberg.org/xythobuz/OctoTray) or on [GitHub](https://github.com/xythobuz/OctoTray).
 
 I also wrote a bit more about my OctoPrint setups [on this page](octoprint.html).
 

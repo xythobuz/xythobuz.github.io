@@ -11,10 +11,10 @@ position: 70
 
 **Update:**
 
-As the Marlin Firmware is changing quite often, I’m maintaining [a branch with my configuration on my git server](https://git.xythobuz.de/thomas/marlin/src/branch/fabrikator-mini). Get it like this:
+As the Marlin Firmware is changing quite often, I’m maintaining [a branch with my configuration on my git server](https://codeberg.org/xythobuz/marlin-mods/src/branch/fabrikator-mini). Get it like this:
 
 <pre class="sh_sh">
-git clone https://git.xythobuz.de/thomas/marlin.git
+git clone https://codeberg.org/xythobuz/marlin-mods.git
 cd marlin
 git checkout fabrikator-mini
 </pre>

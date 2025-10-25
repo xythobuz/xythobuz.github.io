@@ -1,7 +1,7 @@
 title: Cat Toy
 description: Laser pointer on two servos with Raspberry Pi Pico W
 parent: projects
-git: https://git.xythobuz.de/thomas/CatToy
+git: https://codeberg.org/xythobuz/CatToy
 github: https://github.com/xythobuz/CatToy
 date: 2023-04-22
 comments: true
@@ -75,7 +75,7 @@ This time I used [MicroPython](https://docs.micropython.org/en/latest/rp2/quickr
 Is it my second time using it, after [the MCH2022 cocktail machine badge app](2022_07_29_MCH2022.html#app).
 It was a little bit more complicated to first get my head around it, compared to the usual C/C++ firmwares, and I was not able to figure out an easy way for OTA firmware updates yet.
 But in the end it was much quicker to build a working prototype with it.
-I recommend using [rshell](https://github.com/dhylands/rshell), there's also a small script for it [in my repo](https://git.xythobuz.de/thomas/CatToy/src/branch/master/copy.sh) to use it to copy the firmware to the device.
+I recommend using [rshell](https://github.com/dhylands/rshell), there's also a small script for it [in my repo](https://codeberg.org/xythobuz/CatToy/src/branch/master/copy.sh) to use it to copy the firmware to the device.
 
 The RP2040 continues to be a delight to work with!
 I really like the available tools and documentation.

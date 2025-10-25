@@ -1,7 +1,7 @@
 title: Laser Engraver
 description: Marlin based CNC laser engraver / cutter with 3D printed parts
 parent: projects
-git: https://git.xythobuz.de/thomas/marlin/src/branch/laser-engraver
+git: https://codeberg.org/xythobuz/marlin-mods/src/branch/laser-engraver
 date: 2022-11-25
 update: 2023-01-02
 comments: true
@@ -161,17 +161,17 @@ The only interesting parts are the laser-specific settings in `Configuration_adv
 Apparently I seem to be the first person that tries to run an Ultimaker Controller 2004 LCD without a Z-Axis.
 I had to add a couple of `#ifdef Z_AXIS` in `src/lcd/HD44780/marlinui_HD44780.cpp`.
 
-You can see all the modifications to the configuration I initially made to get the machine running [in this commit](https://git.xythobuz.de/thomas/marlin/commit/41cd87398d539f41c2ebe54b5f675c6c8b5ce04b).
+You can see all the modifications to the configuration I initially made to get the machine running [in this commit](https://codeberg.org/xythobuz/marlin-mods/commit/41cd87398d539f41c2ebe54b5f675c6c8b5ce04b).
 
 I also did some small changes to show the current laser power on the LCD status screen.
-These changes can be seen [in this commit](https://git.xythobuz.de/thomas/marlin/commit/58dbdff1d5b6e365bfd5ae4eeb7b42967688c51e).
+These changes can be seen [in this commit](https://codeberg.org/xythobuz/marlin-mods/commit/58dbdff1d5b6e365bfd5ae4eeb7b42967688c51e).
 I also opened a [pull request](https://github.com/MarlinFirmware/Marlin/pull/25003) to upstream them, which was merged into `bugfix-2.1.x` in November 2022.
 
 Later I learned that Marlin does not allow setting home offsets further than 20mm away from endstops.
-So I also [added a custom menu command](https://git.xythobuz.de/thomas/marlin/commit/74cafcd77625003623d3a8a6378a4ff0ac6eda72) that simply executes [`G92`](https://marlinfw.org/docs/gcode/G092.html) `X0 Y0` to set the current position to zero.
+So I also [added a custom menu command](https://codeberg.org/xythobuz/marlin-mods/commit/74cafcd77625003623d3a8a6378a4ff0ac6eda72) that simply executes [`G92`](https://marlinfw.org/docs/gcode/G092.html) `X0 Y0` to set the current position to zero.
 Using this I can generate G-Code where the object to cut starts at coordinates `(0, 0)` while being able to position it arbitrarily on the machine itself.
 
-My current Marlin configuration for the laser engraver can be found [on my Gitea instance](https://git.xythobuz.de/thomas/marlin/src/branch/laser-engraver).
+My current Marlin configuration for the laser engraver can be found [in the Git repo](https://codeberg.org/xythobuz/marlin-mods/src/branch/laser-engraver).
 
 <a class="anchor al3" name="host_software" href="#host_software"></a>
 ### Host Software
@@ -283,7 +283,7 @@ include_url([
 %-->
 </pre>
 
-You can also find this script [on my Gitea server](https://git.xythobuz.de/thomas/gcode-tools/src/branch/master/tools/convert_lasergrbl.py).
+You can also find this script [in the Git repo](https://codeberg.org/xythobuz/gcode-tools/src/branch/master/tools/convert_lasergrbl.py).
 
 Here is my first attempt of cutting a vector outline of an image out of a piece of paper.
 I used Marlins default speed and a PWM setting of 150 out of 255.
@@ -350,7 +350,7 @@ include_url([
 %-->
 </pre>
 
-You can also find this script [on my Gitea server](https://git.xythobuz.de/thomas/gcode-tools/src/branch/master/tools/outline_gcode.py).
+You can also find this script [in the Git repo](https://codeberg.org/xythobuz/gcode-tools/src/branch/master/tools/outline_gcode.py).
 
 I also did some experimentation with programatically generating G-Code myself, using a simple Python script as well.
 It's drawing a grid for reference on the base plate of the machine, including numerical position indicators.
@@ -365,7 +365,7 @@ include_url([
 %-->
 </pre>
 
-You can also find this script [on my Gitea server](https://git.xythobuz.de/thomas/gcode-tools/src/branch/master/generators/grid_gcode.py).
+You can also find this script [in the Git repo](https://codeberg.org/xythobuz/gcode-tools/src/branch/master/generators/grid_gcode.py).
 
 I like the idea but unfortunately it has some problems in practice.
 When changing the focus level of my laser diode, it's very easy to also change the offset in the X and Y axes.
@@ -395,7 +395,7 @@ include_url([
 %-->
 </pre>
 
-You can also find this script [on my Gitea server](https://git.xythobuz.de/thomas/gcode-tools/src/branch/master/tools/send_gcode.py).
+You can also find this script [in the Git repo](https://codeberg.org/xythobuz/gcode-tools/src/branch/master/tools/send_gcode.py).
 
 Of course it's important to use the proper speed, power and number of iterations for each object to cut.
 Not enough power or iterations, or too high of a speed, and the object will still be part of the stock material.
@@ -414,7 +414,7 @@ include_url([
 %-->
 </pre>
 
-You can also find this script [on my Gitea server](https://git.xythobuz.de/thomas/gcode-tools/src/branch/master/generators/cut_test_gcode.py).
+You can also find this script [in the Git repo](https://codeberg.org/xythobuz/gcode-tools/src/branch/master/generators/cut_test_gcode.py).
 
 I'm drawing digits again, like in the Grid G-Code generator above.
 It seems I need to create some kind of library or so if I continue this route of generating G-Code.

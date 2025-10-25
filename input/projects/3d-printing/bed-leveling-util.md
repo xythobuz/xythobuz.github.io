@@ -3,7 +3,7 @@ description: Python wxWidgets Marlin Mesh Bed Leveling helper
 parent: 3d-printing
 position: 60
 comments: true
-git: https://git.xythobuz.de/thomas/Bed-Leveling-Utility
+git: https://codeberg.org/xythobuz/Bed-Leveling-Utility
 github: https://github.com/xythobuz/Bed-Leveling-Utility
 date: 2016-06-07
 update: 2016-06-12
@@ -36,4 +36,4 @@ You will need pySerial (>= v3.0) and wxPython for the program to work.
 
 This has been developed and tested on a Mac OS X 10.10.5 machine with Python 2.7 and dependencies installed with MacPorts, connected to a modified Fabrikator Mini V1.5 with Marlin 1.1.0-RC6.
 
-The source code can be found [on my Gitea server](https://git.xythobuz.de/thomas/Bed-Leveling-Utility) as well as [on GitHub](https://github.com/xythobuz/Bed-Leveling-Utility/).
+The source code can be found [on Codeberg](https://codeberg.org/xythobuz/Bed-Leveling-Utility) as well as [on GitHub](https://github.com/xythobuz/Bed-Leveling-Utility).

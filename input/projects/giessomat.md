@@ -2,7 +2,7 @@ title: Gieß-o-mat
 description: DIY fertilizer mixer and plant watering machine
 parent: projects
 position: 6
-git: https://git.xythobuz.de/thomas/giess-o-mat
+git: https://codeberg.org/xythobuz/giess-o-mat
 github: https://github.com/xythobuz/giess-o-mat
 date: 2021-03-29
 update: 2022-11-27
@@ -91,7 +91,7 @@ All this is mounted on an old piece of shelf-board, using some custom designed 3
 The water tank is realized using a generic 5l liquid tank, with two holes drilled for the fill switches. The holders for the fertilizer bottles, as well as the bottlecaps, are specifically designed to fit my 1l fertilizer bottles.
 
 I designed all the 3D printed parts with OpenSCAD.
-You can find [the files](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/giessomat) on my Gitea.
+You can find [the files](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/giessomat) in the Git repo.
 
 <!--%
 lightgallery([
@@ -126,7 +126,8 @@ lightgallery([
 The software can easily be configured to run with more or less fertilizers and outlets, as much as the ESP32 GPIOs can provide.
 Alternatively, you can also use an Arduino for the controller instead of the ESP, losing the web interface.
 Or you can also compile the software to run both UI and control on one Arduino, as long as it has enough GPIOs for your needs (or an ESP, but I haven't tested that).
-You can of course also just leave out the UI and use solely the web interface on the ESP. See the [README.md of the project](https://git.xythobuz.de/thomas/giess-o-mat/src/branch/master/README.md) for more details.
+You can of course also just leave out the UI and use solely the web interface on the ESP.
+See the [README.md of the project](https://codeberg.org/xythobuz/giess-o-mat/src/branch/master/README.md) for more details.
 
 Doing some programming, it would also be possible to use some kind of port-extender or run also the UI on an ESP.
 And of course also the now-obsolete SerialLCD could be replaced with something different without too much work.
@@ -478,8 +479,8 @@ Recently [bigclivedotcom reviewed chinese door lock solenoids](https://www.youtu
 I [ordered some](https://aliexpress.com/item/1005001526243239.html) as well and added them to my "greenhouse" doors.
 Because they pull a lot of current, I had to use another separate 12V power supply.
 
-The software [has been updated](https://git.xythobuz.de/thomas/giess-o-mat/commit/6de07b6cc9664cf78b337dc4b86d29a61fb20410) to now support 16 I2C GPIO expanders with 8 pins each, for all supported functions (valves, pumps, stirrers, locks).
-To unlock the doors I [added](https://git.xythobuz.de/thomas/giess-o-mat/commit/70659caf77d655febd31a877d98070db76cb462e) an optional PIN entry function on the start screen of the UI.
+The software [has been updated](https://codeberg.org/xythobuz/giess-o-mat/commit/6de07b6cc9664cf78b337dc4b86d29a61fb20410) to now support 16 I2C GPIO expanders with 8 pins each, for all supported functions (valves, pumps, stirrers, locks).
+To unlock the doors I [added](https://codeberg.org/xythobuz/giess-o-mat/commit/70659caf77d655febd31a877d98070db76cb462e) an optional PIN entry function on the start screen of the UI.
 
 ## Valve Kickstarting Update (March 2022)
 
@@ -502,7 +503,7 @@ But because they are pretty noisy, they turn off after 10sec, after which the va
 
 To connect the pumps, I used more I2C port expanders with relais, as described in the GPIO Expansion Update above.
 
-The software [has been updated](https://git.xythobuz.de/thomas/giess-o-mat/commit/4dab9e16f5e5f28c05832694db125513b1513720) to allow setting optional kickstart pins for each outlet valve.
+The software [has been updated](https://codeberg.org/xythobuz/giess-o-mat/commit/4dab9e16f5e5f28c05832694db125513b1513720) to allow setting optional kickstart pins for each outlet valve.
 
 <!--%
 lightgallery([
@@ -554,7 +555,7 @@ $ mosquitto_pub -h SERVER_IP -u MQTT_USER -P MQTT_PASS -t giessomat -m "auto 2 1
 
 ## Links
 
-You can find [all the source code for the device itself](https://git.xythobuz.de/thomas/giess-o-mat) (both the UI and the Controller) as well as the OpenSCAD [design files for the 3D printed parts](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/giessomat) on my [Gitea instance](https://git.xythobuz.de).
+You can find [all the source code for the device itself](https://codeberg.org/xythobuz/giess-o-mat) (both the UI and the Controller) as well as the OpenSCAD [design files for the 3D printed parts](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/giessomat) in their Git repos.
 The project is also [mirrored on GitHub](https://github.com/xythobuz/giess-o-mat).
 
 ## License
