@@ -162,7 +162,13 @@ else:
         &middot;
         <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&nav=1&email=xythobuz@me.com">PayPal</a>
         <br><span style="font-size: xx-small">
-            Static HTML generated at <!--% print(datetime.now().strftime("%Y-%m-%d %H:%M:%S %z")) %-->
+            Static HTML generated at <!--%
+                import datetime as dt
+                if hasattr(dt, "UTC"):
+                    print(datetime.now(dt.UTC).strftime("%Y-%m-%d %H:%M:%S UTC"))
+                else:
+                    print(datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"))
+            %-->
         </span>
         <br><span style="font-size: xx-small">
             <a href="<!--% print(page.get('fname').replace('./input/', '').replace('.de.md', '.md')) %-->">View Source '<!--% print(page.get("fname").replace('./input/', '').replace('.de.md', '.md')) %-->'</a>
