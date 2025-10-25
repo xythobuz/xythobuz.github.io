@@ -16,5 +16,4 @@ Here are all the articles that are part of my 3D printing series:
 printMenu()
 %-->
 
-If you're interested in my 3D print designs, take a look [at my Thingiverse account](https://www.thingiverse.com/xythobuz/designs) or my [Git Repository](https://git.xythobuz.de/thomas/3d-print-designs).
-
+If you're interested in my 3D print designs take a look at my [Printables profile](https://www.printables.com/social/216011-xythobuz), [Thingiverse account](https://www.thingiverse.com/xythobuz/designs) and my [Git Repository](https://codeberg.org/xythobuz/3d-print-designs).

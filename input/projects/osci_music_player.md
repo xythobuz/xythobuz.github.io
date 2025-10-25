@@ -1,7 +1,7 @@
 title: Oscilloscope Music Player
 description: Properly playing sound files for visualization on an oscilloscope
 parent: projects
-git: https://git.xythobuz.de/thomas/osci-music-player
+git: https://codeberg.org/xythobuz/osci-music-player
 github: https://github.com/xythobuz/osci-music-player
 date: 2024-02-11
 update: 2024-03-08
@@ -253,19 +253,20 @@ function copyEvent(id) {
 </script>
 
 Next put the script that controls playback on the device.
-Here is [`~/osci-pi.py`](https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci-pi.py).
+Here is [`~/osci-pi.py`](https://codeberg.org/xythobuz/osci-music-player/raw/branch/master/osci-pi.py).
 <button type="button" onclick="copyEvent('oscipipy')" class="clip-btn">Copy to clipboard</button>
 
 <pre id="oscipipy" class="sh_python">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/osci-music-player/refs/heads/master/osci-pi.py",
+    "https://codeberg.org/xythobuz/osci-music-player/raw/branch/master/osci-pi.py",
     "https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci-pi.py",
 ])
 %-->
 </pre>
 
-And you'll also need [`/etc/systemd/system/osci.service`](https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci.service) to start the script automatically.
+And you'll also need [`/etc/systemd/system/osci.service`](https://codeberg.org/xythobuz/osci-music-player/raw/branch/master/osci.service) to start the script automatically.
 Adjust the username and path accordingly.
 <button type="button" onclick="copyEvent('osciservice')" class="clip-btn">Copy to clipboard</button>
 
@@ -273,6 +274,7 @@ Adjust the username and path accordingly.
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/osci-music-player/refs/heads/master/osci.service",
+    "https://codeberg.org/xythobuz/osci-music-player/raw/branch/master/osci.service",
     "https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci.service",
 ])
 %-->
@@ -292,4 +294,4 @@ sudo systemctl enable --now osci.service
 The device should now start playing the music as soon as the power is turned on.
 Before switching the device off, use the on-board button of the PiSugar to properly shutdown the OS, and only then move the power switch to the `Off` position.
 
-You can also check out [the code in its Git repository](https://git.xythobuz.de/thomas/osci-music-player).
+You can also check out [the code in its Git repository](https://codeberg.org/xythobuz/osci-music-player).

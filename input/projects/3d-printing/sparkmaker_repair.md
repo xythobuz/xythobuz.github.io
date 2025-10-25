@@ -2,7 +2,7 @@ title: Reviving an old Sparkmaker SLA printer
 description: Fixing the hardware and creating a free-software slicing workflow
 parent: 3d-printing
 position: 35
-git: https://git.xythobuz.de/thomas/gcode-tools
+git: https://codeberg.org/xythobuz/gcode-tools
 date: 2023-01-03
 update: 2023-02-26
 comments: true
@@ -145,13 +145,14 @@ The route to take was therefore obvious: write a script that takes `.sl1` files 
 <pre class="sh_python">
 <!--%
 include_url([
+    "https://raw.githubusercontent.com/xythobuz/gcode-tools/refs/heads/master/tools/convert_sparkmaker.py",
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/tools/convert_sparkmaker.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/tools/convert_sparkmaker.py",
 ])
 %-->
 </pre>
 
-You can find it [on my Gitea server](https://git.xythobuz.de/thomas/gcode-tools/src/branch/master/tools/convert_sparkmaker.py).
+You can find it [in my Git repo](https://codeberg.org/xythobuz/gcode-tools/src/branch/master/tools/convert_sparkmaker.py).
 
 This is what running the script looks like.
 

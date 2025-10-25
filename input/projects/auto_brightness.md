@@ -150,7 +150,7 @@ To alleviate this a bit I'm now using a [KWin script](https://develop.kde.org/do
 <pre class="sh_javascript">
 <!--%
 include_url([
-    "https://github.com/xythobuz/AutoBrightness/raw/refs/heads/main/client/kwin_check.js",
+    "https://raw.githubusercontent.com/xythobuz/AutoBrightness/refs/heads/main/client/kwin_check.js",
     "https://git.xythobuz.de/thomas/AutoBrightness/raw/branch/main/client/kwin_check.js",
 ])
 %-->

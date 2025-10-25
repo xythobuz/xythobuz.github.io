@@ -143,7 +143,7 @@ lightgallery([
 ])
 %-->
 
-You can find these files [on my Printables profile](https://www.printables.com/model/291049-mounting-plates-for-am8) or [in my Git repo](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/am8).
+You can find these files [on my Printables profile](https://www.printables.com/model/291049-mounting-plates-for-am8) or [in my Git repo](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/am8).
 
 ## Power Supply Wiring
 
@@ -260,36 +260,39 @@ function copyEvent(id) {
 }
 </script>
 
-[Here](https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/printer.cfg) is my current `printer.cfg` file.
+[Here](https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/printer.cfg) is my current `printer.cfg` file.
 <button type="button" onclick="copyEvent('printercfg')" class="clip-btn">Copy 'printer.cfg' to clipboard</button>
 
 <pre id="printercfg" class="sh_desktop">
 <!--%
 include_url([
+    "https://raw.githubusercontent.com/xythobuz/3d-print-designs/refs/heads/master/configs/i3-AM8/printer.cfg",
     "https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/printer.cfg",
     "https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/printer.cfg",
 ])
 %-->
 </pre>
 
-[Here](https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/moonraker.conf) is my current `moonraker.conf` file.
+[Here](https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/moonraker.conf) is my current `moonraker.conf` file.
 <button type="button" onclick="copyEvent('moonrakerconf')" class="clip-btn">Copy 'moonraker.conf' to clipboard</button>
 
 <pre id="moonrakerconf" class="sh_desktop">
 <!--%
 include_url([
+    "https://raw.githubusercontent.com/xythobuz/3d-print-designs/refs/heads/master/configs/i3-AM8/moonraker.conf",
     "https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/moonraker.conf",
     "https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/moonraker.conf",
 ])
 %-->
 </pre>
 
-And [here](https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini) is my PrusaSlicer config bundle.
+And [here](https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini) is my PrusaSlicer config bundle.
 <button type="button" onclick="copyEvent('prusabundle')" class="clip-btn">Copy PrusaSlicer config to clipboard</button>
 
 <pre id="prusabundle" class="sh_desktop">
 <!--%
 include_url([
+    "https://raw.githubusercontent.com/xythobuz/3d-print-designs/refs/heads/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini",
     "https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini",
     "https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini",
 ])

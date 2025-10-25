@@ -32,7 +32,7 @@ lightgallery([
 ])
 %-->
 
-My design files for the mounting bracket [can be found on my Gitea server](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/ikea-lack).
+My design files for the mounting bracket [can be found in my Git repo](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/ikea-lack).
 
 ## Slide-out table
 
@@ -68,7 +68,7 @@ lightgallery([
 ])
 %-->
 
-My design files for the filament holder [can be found on my Gitea server](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/ikea-lack).
+My design files for the filament holder [can be found in my Git repo](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/ikea-lack).
 
 ## Lights
 
@@ -87,7 +87,7 @@ lightgallery([
 ])
 %-->
 
-My design files for the light switch mount [can be found on my Gitea server](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/ikea-lack).
+My design files for the light switch mount [can be found in my Git repo](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/ikea-lack).
 
 ## Concrete slab for noise and vibration dampening
 

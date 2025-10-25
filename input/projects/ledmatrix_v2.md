@@ -1,7 +1,7 @@
 title: RGB LED Matrix visualizer
 description: For HUB75 modules, running on Raspberry Pi and Pico W
 parent: projects
-git: https://git.xythobuz.de/thomas/rgb-matrix-visualizer
+git: https://codeberg.org/xythobuz/rgb-matrix-visualizer
 github: https://github.com/xythobuz/rgb-matrix-visualizer
 date: 2023-09-05
 update: 2024-03-08
@@ -29,7 +29,7 @@ lightgallery([
 ])
 %-->
 
-Everything runs from a single Python [codebase](https://git.xythobuz.de/thomas/rgb-matrix-visualizer), either simulated in a GUI window on a development PC, on the Raspbian Python interpreter or directly on the Pico MicroPython environment.
+Everything runs from a single Python [codebase](https://codeberg.org/xythobuz/rgb-matrix-visualizer), either simulated in a GUI window on a development PC, on the Raspbian Python interpreter or directly on the Pico MicroPython environment.
 
 <!--%
 lightgallery([
@@ -72,7 +72,7 @@ lightgallery([
 %-->
 
 I wasn't really able to get breakout into a playable state before CCCamp23.
-But luckily I also got a patch set ([1](https://git.xythobuz.de/thomas/rgb-matrix-visualizer/commit/8e257111464a90a983bd2bc4f6092c12ebf08374), [2](https://git.xythobuz.de/thomas/rgb-matrix-visualizer/commit/8ff126684afb7dfa48a2d7060e390e8233045bb9), [3](https://git.xythobuz.de/thomas/rgb-matrix-visualizer/commit/43d0b92700f2c2a8adf915bb5a020476409e8e08), [4](https://git.xythobuz.de/thomas/rgb-matrix-visualizer/commit/2399961348fefa849d1892cdf5b5001265a28ffd)) from Jannis that fixed the collision behaviour of the ball in breakout!
+But luckily I also got a patch set ([1](https://codeberg.org/xythobuz/rgb-matrix-visualizer/commit/8e257111464a90a983bd2bc4f6092c12ebf08374), [2](https://codeberg.org/xythobuz/rgb-matrix-visualizer/commit/8ff126684afb7dfa48a2d7060e390e8233045bb9), [3](https://codeberg.org/xythobuz/rgb-matrix-visualizer/commit/43d0b92700f2c2a8adf915bb5a020476409e8e08), [4](https://codeberg.org/xythobuz/rgb-matrix-visualizer/commit/2399961348fefa849d1892cdf5b5001265a28ffd)) from Jannis that fixed the collision behaviour of the ball in breakout!
 We met on the camp and had a very nice time together.
 And soon afterwards the patches appeared in my inbox and actually made the game playable!
 This was really awesome 😊💪
@@ -98,7 +98,7 @@ sudo ./rgb-matrix.sh
 # Answer y, Bonnet, Quality (and solder the mentioned link on the board)
 cd ..
 
-git clone https://git.xythobuz.de/thomas/rgb-matrix-visualizer
+git clone https://codeberg.org/xythobuz/rgb-matrix-visualizer
 sudo pip3 install Pillow bdfparser "qrcode[pil]" evdev
 
 cd Raspberry-Pi-Installer-Scripts/rpi-rgb-led-matrix/bindings/python

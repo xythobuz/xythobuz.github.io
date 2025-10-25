@@ -91,13 +91,14 @@ function copyEvent(id) {
 }
 </script>
 
-[Here](https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh) is an example `generate_docs.sh` file.
+[Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh) is an example `generate_docs.sh` file.
 <button type="button" onclick="copyEvent('generatedocs')" class="clip-btn">Copy 'generate_docs.sh' to clipboard</button>
 
 <pre id="generatedocs" class="sh_sh">
 <!--%
 include_url([
-    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh",
+    "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh",
+    "https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh",
     "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh",
 ])
 %-->
@@ -107,13 +108,14 @@ include_url([
 
 Add the `.github/workflows/docs.yml` script:
 
-[Here](https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml) is an example `docs.yml` file.
+[Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml) is an example `docs.yml` file.
 <button type="button" onclick="copyEvent('docsyml')" class="clip-btn">Copy 'docs.yml' to clipboard</button>
 
 <pre id="docsyml" class="sh_yaml">
 <!--%
 include_url([
-    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml",
+    "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml",
+    "https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml",
     "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml",
 ])
 %-->
@@ -131,25 +133,27 @@ lightgallery([
 
 If you want to visualize 3D print files, do the same with `3dprint/generate_stls.sh` and `.github/workflows/scad.yml`:
 
-[Here](https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh) is an example `generate_stls.sh` file.
+[Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh) is an example `generate_stls.sh` file.
 <button type="button" onclick="copyEvent('generatestls')" class="clip-btn">Copy 'generate_stls.sh' to clipboard</button>
 
 <pre id="generatestls" class="sh_sh">
 <!--%
 include_url([
-    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh",
+    "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh",
+    "https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh",
     "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh",
 ])
 %-->
 </pre>
 
-[Here](https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml) is an example `scad.yml` file.
+[Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml) is an example `scad.yml` file.
 <button type="button" onclick="copyEvent('scadyml')" class="clip-btn">Copy 'scad.yml' to clipboard</button>
 
 <pre id="scadyml" class="sh_yaml">
 <!--%
 include_url([
-    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml",
+    "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml",
+    "https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml",
     "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml",
 ])
 %-->
@@ -165,25 +169,27 @@ And then add something like this to the mdBook sources where you want the visual
 
 If you want to generate gerber files from PCBs, do something similar with `pcb/generate_fab.sh` and `.github/workflows/kicad.yml`:
 
-[Here](https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh) is an example `generate_fab.sh` file.
+[Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh) is an example `generate_fab.sh` file.
 <button type="button" onclick="copyEvent('generatefab')" class="clip-btn">Copy 'generate_fab.sh' to clipboard</button>
 
 <pre id="generatefab" class="sh_sh">
 <!--%
 include_url([
-    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh",
+    "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh",
+    "https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh",
     "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh",
 ])
 %-->
 </pre>
 
-[Here](https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml) is an example `kicad.yml` file.
+[Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml) is an example `kicad.yml` file.
 <button type="button" onclick="copyEvent('kicadyml')" class="clip-btn">Copy 'kicad.yml' to clipboard</button>
 
 <pre id="kicadyml" class="sh_yaml">
 <!--%
 include_url([
-    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml",
+    "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml",
+    "https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml",
     "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml",
 ])
 %-->
@@ -193,13 +199,14 @@ include_url([
 
 If you want to visualize KiCad schematics and PCBs in 2D and 3D, add `pcb/generate_plot.sh`:
 
-[Here](https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh) is an example `generate_plot.sh` file.
+[Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh) is an example `generate_plot.sh` file.
 <button type="button" onclick="copyEvent('generateplot')" class="clip-btn">Copy 'generate_plot.sh' to clipboard</button>
 
 <pre id="generateplot" class="sh_sh">
 <!--%
 include_url([
-    "https://github.com/xythobuz/lars/raw/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh",
+    "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh",
+    "https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh",
     "https://git.xythobuz.de/thomas/drumkit/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh",
 ])
 %-->

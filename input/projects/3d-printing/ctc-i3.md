@@ -140,7 +140,7 @@ First, while I was still using an Orange Pi instead of a Raspberry Pi, I mounted
 Later, after the switch to the Raspi, I also switched the camera to a Logitech C270.
 I also added another print that can hold a piece of LED strip under the camera, so you have more light for the picture.
 
-The design files can be found [on my Gitea server](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/opi-pc-plus).
+The design files can be found [in my Git repo](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/opi-pc-plus).
 
 <!--%
 lightgallery([
@@ -183,7 +183,7 @@ If you use a strong spring for the extruder arm to get a high contact force with
 
 For the extruder motor, I used a NEMA17 with only half the usual height to increase clearance to the top frame brace, which is described below.
 
-My modified design files [can be found on my Gitea server](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/i3-e3d-v6-direct-extruder).
+My modified design files [can be found in my Git repo](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/i3-e3d-v6-direct-extruder).
 
 <!--%
 lightgallery([

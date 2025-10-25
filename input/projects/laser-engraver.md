@@ -276,6 +276,7 @@ But my script below should work for all variants I have seen up to now.
 <pre class="sh_python">
 <!--%
 include_url([
+    "https://raw.githubusercontent.com/xythobuz/gcode-tools/refs/heads/master/tools/convert_lasergrbl.py",
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/tools/convert_lasergrbl.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/tools/convert_lasergrbl.py",
 ])
@@ -342,6 +343,7 @@ I copy this file to the SD card, start it, and just abort it when I'm done with 
 <pre class="sh_python">
 <!--%
 include_url([
+    "https://raw.githubusercontent.com/xythobuz/gcode-tools/refs/heads/master/tools/outline_gcode.py",
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/tools/outline_gcode.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/tools/outline_gcode.py",
 ])
@@ -356,6 +358,7 @@ It's drawing a grid for reference on the base plate of the machine, including nu
 <pre class="sh_python">
 <!--%
 include_url([
+    "https://raw.githubusercontent.com/xythobuz/gcode-tools/refs/heads/master/generators/grid_gcode.py",
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/generators/grid_gcode.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/generators/grid_gcode.py",
 ])
@@ -385,6 +388,7 @@ As I grew tired of removing, flashing and re-inserting of the SD card, I decided
 <pre class="sh_python">
 <!--%
 include_url([
+    "https://raw.githubusercontent.com/xythobuz/gcode-tools/refs/heads/master/tools/send_gcode.py",
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/tools/send_gcode.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/tools/send_gcode.py",
 ])
@@ -403,6 +407,7 @@ I then made another Python script go generate G-Code for a cutting test, varying
 <pre class="sh_python">
 <!--%
 include_url([
+    "https://raw.githubusercontent.com/xythobuz/gcode-tools/refs/heads/master/generators/cut_test_gcode.py",
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/generators/cut_test_gcode.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/generators/cut_test_gcode.py",
 ])
