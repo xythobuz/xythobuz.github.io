@@ -131,10 +131,10 @@ To find out how to convert the graphics assets I'm encoding the mode in the file
 
 <!--%
 include_sourcecode_slice(
-    "makefile", (146, 168), "Makefile",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "makefile", (146, 168), "Makefile", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 Like with the documentation, the emulation ecosystem for the Game Boy is also very healthy.
@@ -160,10 +160,10 @@ So I had to cheat by putting the GBC CPU into a double-clock mode.
 
 <!--%
 include_sourcecode_slice(
-    "c", (646, 649), "src/main.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (646, 649), "src/main.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 To get some randomness into the gameplay I'm initially showing a splash screen after reset, where the user has to press `Start`.
@@ -171,10 +171,10 @@ The timing of this button-press is used to initialize a random number generator 
 
 <!--%
 include_sourcecode_slice(
-    "c", (662, 676), "src/main.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (662, 676), "src/main.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 The splash screen in `main.c` also handles the configuration and debug menus (try the Konami code).
@@ -195,10 +195,10 @@ For timekeeping I'm also configuring the internal timer and handle all of these 
 
 <!--%
 include_sourcecode_slice(
-    "c", (29, 33), "src/timer.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (29, 33), "src/timer.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 One pattern I've used repeatedly is storing (`const`) lists of "things" in ROM to be able to use them easily in other places.
@@ -207,10 +207,10 @@ For example, this is the start of the list of sprite graphics.
 
 <!--%
 include_sourcecode_slice(
-    "c", (56, 79), "src/sprite_data.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (56, 79), "src/sprite_data.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 By then calling the sprite functions the correct data is automatically loaded into VRAM and used accordingly.
@@ -219,10 +219,10 @@ The music and sample lists are both `const` though.
 
 <!--%
 include_sourcecode_slice(
-    "c", (73, 76), "src/sprites.h",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (73, 76), "src/sprites.h", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 It's not possible to rotate sprites by arbitrary angles, only the X and Y axis can be flipped individually.
@@ -308,10 +308,10 @@ include_sourcecode_slice(
         (105, 131),
         (159, 177),
         (191, 204),
-    ], "src/sound_over.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    ], "src/sound_over.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 `over_notes` and `over_notes2` are the frequencies for the two pulse channels.
@@ -321,20 +321,20 @@ The `snd_play()` function in `sound.c` is then walking through this list after t
 
 <!--%
 include_sourcecode_slice(
-    "c", (37, 219), "src/sound.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (37, 219), "src/sound.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 For the sound effect sample player I've transcribed the assembly ISR from the GBDK examples to C, which was a fun little exercise in SM83 assembly.
 
 <!--%
 include_sourcecode_slice(
-    "c", (88, 184), "src/sample.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (88, 184), "src/sample.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 ### Banking
@@ -409,20 +409,20 @@ To easily bank-switch I made some small helper macros.
 
 <!--%
 include_sourcecode_slice(
-    "c", (25, 27), "src/banks.h",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (25, 27), "src/banks.h", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 `const` data has the same restrictions, so when you need to read `const` data from one bank in a function from another compilation unit you may need to add a small `NONBANKED` helper function.
 
 <!--%
 include_sourcecode_slice(
-    "c", (209, 215), "src/window.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (209, 215), "src/window.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 Of course you can never directly switch banks inside a function that is not `NONBANKED` as this would replace the currently executed opcodes.
@@ -441,20 +441,20 @@ I'm simply enabling and setting RAM bank 0 at the beginning, before reading the 
 
 <!--%
 include_sourcecode_slice(
-    "c", (51, 72), "src/config.ba0.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (51, 72), "src/config.ba0.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 Similar to the `png2asset` calls the RAM bank of a compilation unit is specified in the filename (`foo.baN.c` where N is the RAM bank number).
 
 <!--%
 include_sourcecode_slice(
-    "makefile", (170, 174), "Makefile",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "makefile", (170, 174), "Makefile", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 This is what the memory usage for my game looks like at the moment.
@@ -481,10 +481,10 @@ The data is read in blocks of two tile rows which are blacked out after transmis
 
 <!--%
 include_sourcecode_slice(
-    "c", (176, 249), "src/gbprinter.c",
-    "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-    "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
-)
+    "c", (176, 249), "src/gbprinter.c", [
+        "https://codeberg.org/xythobuz/Duality/raw/commit/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+        "https://raw.githubusercontent.com/xythobuz/Duality/4315e0f8c17c29cfeb3be8a3eda745ff6a51b450/",
+])
 %-->
 
 Here is a screencast of printing in the [GBE+](https://github.com/shonumi/gbe-plus) emulator and a copy of the results.

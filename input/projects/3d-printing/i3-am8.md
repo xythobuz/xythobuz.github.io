@@ -265,10 +265,10 @@ function copyEvent(id) {
 
 <pre id="printercfg" class="sh_desktop">
 <!--%
-include_url(
+include_url([
     "https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/printer.cfg",
     "https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/printer.cfg",
-)
+])
 %-->
 </pre>
 
@@ -277,10 +277,10 @@ include_url(
 
 <pre id="moonrakerconf" class="sh_desktop">
 <!--%
-include_url(
+include_url([
     "https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/moonraker.conf",
     "https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/moonraker.conf",
-)
+])
 %-->
 </pre>
 
@@ -289,10 +289,10 @@ And [here](https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/con
 
 <pre id="prusabundle" class="sh_desktop">
 <!--%
-include_url(
+include_url([
     "https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini",
     "https://git.xythobuz.de/thomas/3d-print-designs/raw/branch/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini",
-)
+])
 %-->
 </pre>
 

@@ -258,10 +258,10 @@ Here is [`~/osci-pi.py`](https://git.xythobuz.de/thomas/osci-music-player/raw/br
 
 <pre id="oscipipy" class="sh_python">
 <!--%
-include_url(
+include_url([
     "https://raw.githubusercontent.com/xythobuz/osci-music-player/refs/heads/master/osci-pi.py",
     "https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci-pi.py",
-)
+])
 %-->
 </pre>
 
@@ -271,10 +271,10 @@ Adjust the username and path accordingly.
 
 <pre id="osciservice" class="sh_desktop">
 <!--%
-include_url(
+include_url([
     "https://raw.githubusercontent.com/xythobuz/osci-music-player/refs/heads/master/osci.service",
     "https://git.xythobuz.de/thomas/osci-music-player/raw/branch/master/osci.service",
-)
+])
 %-->
 </pre>
 

@@ -144,10 +144,10 @@ The route to take was therefore obvious: write a script that takes `.sl1` files 
 
 <pre class="sh_python">
 <!--%
-include_url(
+include_url([
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/tools/convert_sparkmaker.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/tools/convert_sparkmaker.py",
-)
+])
 %-->
 </pre>
 

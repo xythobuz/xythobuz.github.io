@@ -275,10 +275,10 @@ But my script below should work for all variants I have seen up to now.
 
 <pre class="sh_python">
 <!--%
-include_url(
+include_url([
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/tools/convert_lasergrbl.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/tools/convert_lasergrbl.py",
-)
+])
 %-->
 </pre>
 
@@ -341,10 +341,10 @@ I copy this file to the SD card, start it, and just abort it when I'm done with 
 
 <pre class="sh_python">
 <!--%
-include_url(
+include_url([
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/tools/outline_gcode.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/tools/outline_gcode.py",
-)
+])
 %-->
 </pre>
 
@@ -355,10 +355,10 @@ It's drawing a grid for reference on the base plate of the machine, including nu
 
 <pre class="sh_python">
 <!--%
-include_url(
+include_url([
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/generators/grid_gcode.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/generators/grid_gcode.py",
-)
+])
 %-->
 </pre>
 
@@ -384,10 +384,10 @@ As I grew tired of removing, flashing and re-inserting of the SD card, I decided
 
 <pre class="sh_python">
 <!--%
-include_url(
+include_url([
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/tools/send_gcode.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/tools/send_gcode.py",
-)
+])
 %-->
 </pre>
 
@@ -402,10 +402,10 @@ I then made another Python script go generate G-Code for a cutting test, varying
 
 <pre class="sh_python">
 <!--%
-include_url(
+include_url([
     "https://codeberg.org/xythobuz/gcode-tools/raw/branch/master/generators/cut_test_gcode.py",
     "https://git.xythobuz.de/thomas/gcode-tools/raw/branch/master/generators/cut_test_gcode.py",
-)
+])
 %-->
 </pre>
 

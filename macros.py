@@ -548,26 +548,25 @@ def http_request(url, timeout = 5):
     data = response.read().decode("utf-8")
     return data
 
-def include_url(url, fallback = None, data_slice = None, timeout = 2):
-    sys.stderr.write('sub    : fetching page "%s"\n' % url)
-
-    if fallback == None:
-        print_cnsl_error("include_url() without fallback option", url)
+def include_url(urls, data_slice = None, timeout = 2):
+    if len(urls) < 2:
+        print_cnsl_error("include_url() without fallback option", urls[0])
         timeout = timeout * 3
 
-    try:
-        data = http_request(url, timeout)
-    except Exception as e:
-        if fallback != None:
-            sys.stderr.write('sub    : fetching fallback page "%s"\n' % fallback)
-            try:
-                data = http_request(fallback, timeout * 3)
-            except Exception as e:
-                print_cnsl_error(str(e), fallback)
-                return
-        else:
+    for idx, url in enumerate(urls):
+        sys.stderr.write('sub    : fetching page "%s"\n' % url)
+
+        try:
+            data = http_request(url, timeout if idx == 0 else timeout * 3)
+            break
+        except Exception as e:
             print_cnsl_error(str(e), url)
-            return
+
+            if idx >= (len(urls) - 1):
+                sys.stderr.write('sub    : COULD NOT FETCH INCLUDE_URL\n')
+                return
+            else:
+                sys.stderr.write('sub    : fetching fallback page\n')
 
     # kinda ugly, use 4 spaces for tabs for everything except Makefiles
     data = data.expandtabs(8 if url.lower().endswith("makefile") else 4)
@@ -606,9 +605,8 @@ def include_url(url, fallback = None, data_slice = None, timeout = 2):
 
     print(encoded, end="")
 
-def include_sourcecode_slice(sh_type, data_slice, filename, url_pre, fallback_pre = None, timeout = 2):
-    url = url_pre + filename
-    fallback = (fallback_pre + filename) if fallback_pre != None else None
+def include_sourcecode_slice(sh_type, data_slice, filename, urls_pre, timeout = 2):
+    urls = [ url_pre + filename for url_pre in urls_pre ]
     off = data_slice[0] if data_slice != None else 1
 
     print('<pre class="sh_' + sh_type + '" offset="' + str(off))
@@ -616,12 +614,12 @@ def include_sourcecode_slice(sh_type, data_slice, filename, url_pre, fallback_pr
         print(' skip_line_no')
     print('">')
 
-    include_url(url, fallback, data_slice, timeout)
+    include_url(urls, data_slice, timeout)
 
     print('</pre>')
-    print('<p class="sh_link_upstream">Link to the complete file "<a href="' + url + '">' + url.split("/")[-1] + '</a>"')
-    if fallback != None:
-        print(' (<a href="' + fallback + '">alternative link</a>)')
+    print('<p class="sh_link_upstream">Link to the complete file "<a href="' + urls[0] + '">' + urls[0].split("/")[-1] + '</a>"')
+    for idx, fallback in enumerate(urls[1:]):
+        print(' (<a href="' + fallback + '">alt ' + str(idx + 1) + '</a>)')
     print('</p>')
 
 def restRequest(url):
