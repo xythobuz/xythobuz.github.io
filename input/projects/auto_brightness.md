@@ -1,7 +1,7 @@
 title: AutoBrightness
 description: USB ambient light sensor for DDC/CI backlight control
 parent: projects
-git: https://git.xythobuz.de/thomas/AutoBrightness
+git: https://codeberg.org/xythobuz/AutoBrightness
 github: https://github.com/xythobuz/AutoBrightness
 date: 2024-09-07
 update: 2025-07-27
@@ -75,7 +75,7 @@ uint16_t luxGet(void) {
 
 The Digispark has the USB D+ and D- signals directly connected to GPIOs of the AtTiny85.
 So the USB protocol is bit-banged using the [V-USB library](https://github.com/obdev/v-usb).
-Because I did not use the Arduino Cores already available, I had to do some [fiddling](https://git.xythobuz.de/thomas/AutoBrightness/commit/d50da00006edd87d9363d83befc8eb5bc9274fb5) to configure the library properly for this device.
+Because I did not use the Arduino Cores already available, I had to do some [fiddling](https://codeberg.org/xythobuz/AutoBrightness/commit/d50da00006edd87d9363d83befc8eb5bc9274fb5) to configure the library properly for this device.
 
 The code is based on the [custom-class example](https://github.com/obdev/v-usb/tree/master/examples/custom-class) from V-USB.
 This abuses USB control transfers to transmit data.
@@ -106,7 +106,7 @@ I'm using the shared V-USB vendor and product IDs, so I [have to](https://github
 ## Prototype Client
 
 With the hardware side out of the way the next step was adjusting the display brightness.
-I made a [short prototype](https://git.xythobuz.de/thomas/AutoBrightness/commit/6fcab3b981bb5705028e1dd0f3b52e4eed609253) using [ddcutil](https://www.ddcutil.com/) to set the values.
+I made a [short prototype](https://codeberg.org/xythobuz/AutoBrightness/commit/6fcab3b981bb5705028e1dd0f3b52e4eed609253) using [ddcutil](https://www.ddcutil.com/) to set the values.
 
 To calculate the resulting values I made some measurements at midday (~500 lux) and night (~50 lux).
 And I thought about my habits (the MSI display seems ~10% brighter than the HP).
@@ -143,7 +143,7 @@ All this just runs once per second.
 Unfortunately, using ddcutil to adjust the brightness causes a noticable stutter of the whole system each time the value is changed.
 So this is not a good long-term solution.
 
-Telling ddcutil [to directly talk to the I2C bus](https://git.xythobuz.de/thomas/AutoBrightness/commit/b4888f009f3685c036866fa689759ffdbe9227cb) helped a bit, but it still stutters slightly.
+Telling ddcutil [to directly talk to the I2C bus](https://codeberg.org/xythobuz/AutoBrightness/commit/b4888f009f3685c036866fa689759ffdbe9227cb) helped a bit, but it still stutters slightly.
 
 To alleviate this a bit I'm now using a [KWin script](https://develop.kde.org/docs/plasma/kwin/) to check for a full-screen app so I can pause brightness updates.
 
@@ -151,6 +151,7 @@ To alleviate this a bit I'm now using a [KWin script](https://develop.kde.org/do
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/AutoBrightness/refs/heads/main/client/kwin_check.js",
+    "https://codeberg.org/xythobuz/AutoBrightness/raw/branch/main/client/kwin_check.js",
     "https://git.xythobuz.de/thomas/AutoBrightness/raw/branch/main/client/kwin_check.js",
 ])
 %-->
@@ -196,7 +197,7 @@ lightgallery([
 <a class="anchor al2" name="license" href="#license"></a>
 ## License
 
-The [AutoBrightness project](https://git.xythobuz.de/thomas/AutoBrightness) is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html).
+The [AutoBrightness project](https://codeberg.org/xythobuz/AutoBrightness) is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

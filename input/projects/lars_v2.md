@@ -1,7 +1,7 @@
 title: LARS v2
 description: Upgrading the Looping Automated Rhythm Station
 parent: projects
-git: https://git.xythobuz.de/thomas/drumkit
+git: https://codeberg.org/xythobuz/lars
 github: https://github.com/xythobuz/lars
 date: 2024-09-07
 update: 2024-09-16

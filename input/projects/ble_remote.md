@@ -1,7 +1,7 @@
 title: Pico BLE Vape Remote
 description: Replacement for S&B Vaporizer app
 parent: projects
-git: https://git.xythobuz.de/thomas/sb-py
+git: https://codeberg.org/xythobuz/Volcano-Remote
 github: https://github.com/xythobuz/Volcano-Remote
 date: 2024-12-07
 comments: true
@@ -22,7 +22,7 @@ The webapp doesn't have this problem, but instead the workflows are no longer cu
 This is not satisfying, of course, and also presented itself as a great opportunity to play around with BLE.
 
 Fortunately the official web app is made with non-minimized an unobfuscated JavaScript, so the BLE protocol for the different devices can easily be reverse engineered.
-I wrote a small [script](https://git.xythobuz.de/thomas/sb-py/src/branch/master/web-app/fetch.sh) that helps with downloading and beautifying the official sources.
+I wrote a small [script](https://codeberg.org/xythobuz/Volcano-Remote/src/branch/master/web-app/fetch.sh) that helps with downloading and beautifying the official sources.
 
 As a first attempt I implemented the Volcano workflow functionality in Python on the PC.
 I had some problems, so I made two implementations, with [bleak](https://bleak.readthedocs.io/en/latest/) and [SimplePyBLE](https://simpleble.readthedocs.io/en/latest/simplepyble/usage.html).
@@ -90,4 +90,4 @@ It has many things I expect from nice modern embedded projects, and I've used a 
   * [st7789](https://github.com/hepingood/st7789) for interacting with the LCD
   * [picowota](https://github.com/usedbytes/picowota) bootloader ([modified](https://github.com/xythobuz/picowota) to work with the Flash config storage and LCD)
 
-As usual you can find everything on my [Gitea](https://git.xythobuz.de/thomas/sb-py) and on [GitHub](https://github.com/xythobuz/Volcano-Remote).
+As usual you can find everything on [Codeberg](https://codeberg.org/xythobuz/Volcano-Remote) and on [GitHub](https://github.com/xythobuz/Volcano-Remote).

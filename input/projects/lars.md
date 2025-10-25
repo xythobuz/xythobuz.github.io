@@ -1,7 +1,7 @@
 title: LARS - Looping Automated Rhythm Station
 description: Loopstation drumkit with hand-made solenoids and RP2040
 parent: projects
-git: https://git.xythobuz.de/thomas/drumkit
+git: https://codeberg.org/xythobuz/lars
 github: https://github.com/xythobuz/lars
 date: 2024-03-25
 comments: true
@@ -66,7 +66,7 @@ lightgallery([
 
 Unfortunately there was no time yet to take good pictures or a video of LARS in action.
 
-As usual all 3D print files, PCB layout design and firmware source code is [available in the repo](https://git.xythobuz.de/thomas/drumkit).
+As usual all 3D print files, PCB layout design and firmware source code is [available in the repo](https://codeberg.org/xythobuz/lars).
 You can also order the PCB pre-fabricated from an online supplier, the repo includes a script to generate the gerber files.
 
 The software is not quite finished yet, but without access to the hardware I'm not really able to work on it further.

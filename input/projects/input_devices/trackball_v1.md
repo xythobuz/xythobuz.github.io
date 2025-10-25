@@ -2,7 +2,7 @@ title: Trackball
 description: 3D printed mouse replacement with Raspberry Pi Pico and PMW3360
 parent: input_devices
 second_parent: projects
-git: https://git.xythobuz.de/thomas/Trackball
+git: https://codeberg.org/xythobuz/Trackball
 github: https://github.com/xythobuz/Trackball
 date: 2023-02-12
 comments: true
@@ -34,7 +34,7 @@ lightgallery([
 %-->
 
 As usual the project is released as free and open-source software / hardware.
-You can find everything you need to build it yourself in [the git repository](https://git.xythobuz.de/thomas/Trackball)!
+You can find everything you need to build it yourself in [the git repository](https://codeberg.org/xythobuz/Trackball)!
 
 ### Table Of Contents
 
