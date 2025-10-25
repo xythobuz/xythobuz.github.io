@@ -104,7 +104,9 @@ lightgallery([
 
 ### Stuff
 
-I designed a 3D model for a cap enclosing the large open glass bottles we have for some ingredients. It is a 2-color model that can be printed with a dual-nozzle printer, or you can just leave out the "filling" and print it with a single-nozzle printer. The design [can be found in my Git Repo](https://git.xythobuz.de/thomas/3d-print-designs/src/branch/master/cocktail-maschine).
+I designed a 3D model for a cap enclosing the large open glass bottles we have for some ingredients.
+It is a 2-color model that can be printed with a dual-nozzle printer, or you can just leave out the "filling" and print it with a single-nozzle printer.
+The design [can be found in my Git Repo](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/cocktail-maschine).
 
 <!--%
 lightgallery([

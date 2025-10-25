@@ -4,7 +4,7 @@ parent: quadcopters
 position: 20
 date: 2017-07-17
 update: 2024-05-10
-git: https://git.xythobuz.de/thomas/copter-configs/src/branch/master/4_aurora100
+git: https://codeberg.org/xythobuz/copter-configs/src/branch/master/4_aurora100
 comments: true
 ---
 
@@ -63,4 +63,4 @@ tableHelper([ "align-right", "align-last-right", "align-right monospaced"],
 
 This write-up was first published on [Rotorbuilds](https://rotorbuilds.com/build/5577).
 
-You can find my Betaflight configuration dumps [here](https://git.xythobuz.de/thomas/copter-configs/src/branch/master/4_aurora100).
+You can find my Betaflight configuration dumps [here](https://codeberg.org/xythobuz/copter-configs/src/branch/master/4_aurora100).

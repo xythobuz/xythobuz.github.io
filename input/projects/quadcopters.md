@@ -25,4 +25,4 @@ mpages = [p for p in pages if p.get("show_in_quadcopters", "false") == "true"]
 printMenuDate(mpages)
 %-->
 
-You can find all my Betaflight configuration dumps and related files [here](https://git.xythobuz.de/thomas/copter-configs).
+You can find all my Betaflight configuration dumps and related files [here](https://codeberg.org/xythobuz/copter-configs).

@@ -1,7 +1,7 @@
 title: OpenRaider
 description: Classic Tomb Raider game engine re-implementation
 parent: projects
-git: https://git.xythobuz.de/thomas/OpenRaider
+git: https://codeberg.org/xythobuz/OpenRaider
 github: https://github.com/xythobuz/OpenRaider
 date: 2013-12-15
 update: 2015-08-13
@@ -29,7 +29,7 @@ I also wrote a bit about my progress in some GitHub release notes.
 * [Look n Feel n Architecture, 2014-07-27](https://github.com/xythobuz/OpenRaider/releases/tag/0.1.3-20140727)
 * [Rewrite, 2015-03-13](https://github.com/xythobuz/OpenRaider/releases/tag/0.1.4-20150313)
 
-You can find the latest state of the project [on my server](https://git.xythobuz.de/thomas/OpenRaider) and [on GitHub](https://github.com/xythobuz/OpenRaider).
+You can find the latest state of the project [on Codeberg](https://codeberg.org/xythobuz/OpenRaider) and [on GitHub](https://github.com/xythobuz/OpenRaider).
 Pre-made Mac OS X binaries are available in the [GitHub releases](https://github.com/xythobuz/OpenRaider/releases).
 
 A package for Arch Linux was also available on the AUR, but it has since been removed due to inactivity.

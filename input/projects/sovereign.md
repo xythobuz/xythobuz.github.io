@@ -3,7 +3,7 @@ description: My changes to the 'Sovereign' project
 parent: projects
 comments: true
 flattr: true
-git: https://git.xythobuz.de/thomas/sovereign
+git: https://codeberg.org/xythobuz/sovereign
 github: https://github.com/xythobuz/sovereign
 date: 2019-01-04
 update: 2022-05-22
@@ -21,8 +21,8 @@ At the same time, of course I continued my progression as a programmer and compu
 By coincidence, I read about the [Sovereign project](https://github.com/sovereign/sovereign) on [that orange page](https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=github.com%2Fsovereign&sort=byPopularity&type=story).
 I decided to fork this, take the pieces that I need, remove stuff that is not useful for my usecases and add other software to it.
 
-The result can be found [on Gitea](https://git.xythobuz.de/thomas/sovereign) or [on GitHub](https://github.com/xythobuz/sovereign).
-Please take a look at the [README.md](https://git.xythobuz.de/thomas/sovereign/src/branch/master/README.md) in the repo.
+The result can be found [on Codeberg](https://codeberg.org/xythobuz/sovereign) or [on GitHub](https://github.com/xythobuz/sovereign).
+Please take a look at the [README.md](https://codeberg.org/xythobuz/sovereign/src/branch/master/README.md) in the repo.
 It lists all the included software and where I tested it.
 
 I still host my stuff with Hetzner, now in their [Cloud product line](https://www.hetzner.com/cloud).

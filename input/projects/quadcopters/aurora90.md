@@ -3,7 +3,7 @@ description: 2S LiPo, 90mm frame, 1103 8000KV motors
 parent: quadcopters
 position: 30
 date: 2017-03-07
-git: https://git.xythobuz.de/thomas/copter-configs/src/branch/master/3_aurora90
+git: https://codeberg.org/xythobuz/copter-configs/src/branch/master/3_aurora90
 comments: true
 ---
 
@@ -114,4 +114,4 @@ lightgallery([
 
 This write-up was first published on [Rotorbuilds](https://rotorbuilds.com/build/2428).
 
-You can find my Betaflight configuration dumps [here](https://git.xythobuz.de/thomas/copter-configs/src/branch/master/3_aurora90).
+You can find my Betaflight configuration dumps [here](https://codeberg.org/xythobuz/copter-configs/src/branch/master/3_aurora90).

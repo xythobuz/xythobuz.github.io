@@ -4,7 +4,7 @@ parent: quadcopters
 position: 10
 date: 2017-11-01
 update: 2024-05-10
-git: https://git.xythobuz.de/thomas/copter-configs/src/branch/master/5_lx5
+git: https://codeberg.org/xythobuz/copter-configs/src/branch/master/5_lx5
 comments: true
 ---
 
@@ -86,4 +86,4 @@ I have 3D printed the following parts for this copter:
  * ["Adapter for Runcam Micro to Full Size" by phezter](https://www.thingiverse.com/thing:2616057)
  * ["FrSky XSR stack mount with holes for zip ties" by tozes](https://www.thingiverse.com/thing:2171446)
 
-You can find my Betaflight configuration dumps [here](https://git.xythobuz.de/thomas/copter-configs/src/branch/master/5_lx5).
+You can find my Betaflight configuration dumps [here](https://codeberg.org/xythobuz/copter-configs/src/branch/master/5_lx5).

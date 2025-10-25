@@ -3,7 +3,7 @@ description: 3S LiPo, Quanum Trifecta frame, 2204 2300KV motors
 parent: quadcopters
 position: 60
 date: 2016-05-25
-git: https://git.xythobuz.de/thomas/copter-configs/src/branch/master/1_tri
+git: https://codeberg.org/xythobuz/copter-configs/src/branch/master/1_tri
 comments: true
 ---
 
@@ -85,4 +85,4 @@ lightgallery([
 ])
 %-->
 
-You can find my Betaflight configuration dumps [here](https://git.xythobuz.de/thomas/copter-configs/src/branch/master/1_tri).
+You can find my Betaflight configuration dumps [here](https://codeberg.org/xythobuz/copter-configs/src/branch/master/1_tri).
