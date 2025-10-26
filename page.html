@@ -16,13 +16,13 @@ else:
     <link type="text/css" rel="stylesheet" href="css/style.css" />
     <link type="text/css" rel="stylesheet" href="css/print.css" media="print" />
     <link type="text/css" rel="stylesheet" href="css/gh-fork-ribbon.css" />
-    <link type="text/css" rel="stylesheet" href="css/lightgallery.min.css" />
+    <link type="text/css" rel="stylesheet" href="lg/lightgallery-bundle.min.css" />
     <!--%
         if page.get("auto_toc", "false") == "true":
             print('<link type="text/css" rel="stylesheet" href="css/auto_toc.css" />')
     %-->
 </head>
-<body onload="loadPage()">
+<body>
     <!--%
         # GitHub Fork-Me Ribbon
         link = ""
@@ -208,88 +208,10 @@ else:
             <a href="<!--% print(page.get('fname').replace('./input/', '').replace('.de.md', '.md')) %-->">View Source '<!--% print(page.get("fname").replace('./input/', '').replace('.de.md', '.md')) %-->'</a>
         </span>
     </div>
-    <script type="text/javascript">
-        // helper to show or hide scroll-up-button depending on scroll position
-        function scroll_visibility() {
-            if ($(document).scrollTop() > 0) {
-                $("#scroll_up").show("fast");
-            } else {
-                $("#scroll_up").hide("fast");
-            }
-        }
-
-        function add_scroll_up() {
-            // don't show on short pages
-            if ($("html").outerHeight() <= $(window).height()) {
-                return;
-            }
-
-            // add button, initially hidden
-            $("<a>", {
-                text: "⇑",
-                id: "scroll_up_btn",
-                click: function() {
-                    var hash = location.hash.replace("#","");
-                    if (hash != "") {
-                        const location = window.location.href.split('#')[0];
-                        window.history.pushState({}, "", location);
-                    }
-                    window.scrollTo({ top: 0, behavior: "auto" });
-                    return true;
-                },
-            }).appendTo('#scroll_up');
-            $("#scroll_up").hide();
-
-            // register handler and set initial state
-            scroll_visibility();
-            $(window).scroll(scroll_visibility);
-        }
-
-        function prepare_syntax_highlighting() {
-            // adapted from https://sourceforge.net/p/shjs/feature-requests/5/#0940
-            $("pre[class^='sh_']").each(function() {
-                // wrap pre with div._sh
-                $('<div class="_sh"><div class="_sh_lines"></div></div>').insertBefore($(this));
-                $(this).appendTo($(this).prev('._sh'));
-
-                // allow skipping line numbers
-                if ($(this).attr("skip_line_no") != undefined) {
-                    return;
-                }
-
-                // split content of pre with linebreaks so we can get total line number
-                var content = $.trim($(this).html());
-                var lines = content.split('\n');
-
-                // configurable line number offset
-                var line_cnt_off = "1";
-                if ($(this).attr("offset") != undefined) {
-                    line_cnt_off = $(this).attr("offset");
-                }
-                var max = lines.length + parseInt(line_cnt_off);
-
-                // append line number to span._sh_lines
-                for (var line = line_cnt_off; line < max; line++) {
-                    $(this).prev('._sh_lines').append('<span data-line="' + line + '">' + line + '</span>');
-                }
-            });
-
-            $("pre:not([class^='sh_']):not([class='ascii'])").each(function() {
-                // wrap pre with div._sh
-                $('<div class="_sh"></div>').insertBefore($(this));
-                $(this).appendTo($(this).prev('._sh'));
-            });
-
-            sh_highlightDocument('/js/sh/', '.min.js');
-        }
-
-        function loadPage() {
-            prepare_syntax_highlighting();
-            add_scroll_up();
-        }
-    </script>
     <script type="text/javascript" src="js/sh_main.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scroller.js"></script>
+    <script type="text/javascript" src="js/shjs.js"></script>
     <!--%
         if page.get("comments", "false") == "true":
             print('<script defer src="https://comments.xythobuz.de/js/commento.js"></script>')
@@ -297,120 +219,18 @@ else:
         if page.get("auto_toc", "false") == "true":
             print('<script defer src="js/auto_toc.js"></script>')
     %-->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            jQuery(window).resize(function() {
-                $('#wrap').css('height', $('#nav').css('height'));
-            });
-
-            var fontSize = parseInt($('body').css('font-size'), 10);
-            var initialFontSize = fontSize;
-
-            $('.inc').on('click', function() {
-                fontSize += 1;
-                $('#content').css('font-size', fontSize + 'px');
-            })
-            $('.dec').on('click', function() {
-                if (fontSize > 1) {
-                    fontSize -= 1;
-                    $('#content').css('font-size', fontSize + 'px');
-                }
-            })
-            $('.reset').on('click', function() {
-                if (fontSize != initialFontSize) {
-                    fontSize = initialFontSize;
-                    $('#content').css('font-size', initialFontSize + 'px');
-                }
-            })
-
-            $(document).keypress(function(event) {
-                if (event.charCode == '+'.charCodeAt(0)) {
-                    fontSize += 1;
-                    $('#content').css('font-size', fontSize + 'px');
-                }
-                if (event.charCode == '-'.charCodeAt(0)) {
-                    if (fontSize > 1) {
-                        fontSize -= 1;
-                        $('#content').css('font-size', fontSize + 'px');
-                    }
-                }
-                if (event.charCode == '0'.charCodeAt(0)) {
-                    if (fontSize != initialFontSize) {
-                        fontSize = initialFontSize;
-                        $('#content').css('font-size', initialFontSize + 'px');
-                    }
-                }
-            });
-        })
-    </script>
+    <script type="text/javascript" src="js/resize.js"></script>
+    <script type="text/javascript" src="js/collapse.js"></script>
     <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
-    <script type="text/javascript" src="js/lightgallery-all.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            var lg = document.getElementsByClassName("lightgallery");
-            for (var i = 0; i < lg.length; i++) {
-                var settings = {
-                    loadYoutubeThumbnail: true,
-                    youtubeThumbSize: 'mqdefault',
-                    loadVimeoThumbnail: true,
-                    vimeoThumbSize: 'thumbnail_medium',
-                    youtubePlayerParams: {
-                        modestbranding: 1,
-                        showinfo: 0,
-                        rel: 0
-                    },
-                    vimeoPlayerParams: {
-                        byline: 0,
-                        portrait: 0
-                    },
-                    thumbnail:true,
-                    animateThumb: true,
-                    showThumbByDefault: false,
-                    galleryId: i,
-                    hideBarsDelay: 2500
-                };
-                var d = lg.item(i);
-                if ($(d).find(".border").length > 0) {
-                    settings.selector = '.border';
-                }
-                $(d).lightGallery(settings);
-            }
-        });
-    </script>
-    <script>
-        var coll = document.getElementsByClassName("collapse");
-        var i;
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("collapseactive");
-                var content = this.nextElementSibling;
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-
-                    setTimeout(function() {
-                        content.style.borderWidth = null;
-                        content.style.display = "none";
-                    }, 120);
-                } else {
-                    content.style.display = "block";
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    content.style.borderWidth = "2px";
-                }
-            });
-        }
-    </script>
-    <script>
-        (function(f, a, t, h, o, m){
-            a[h]=a[h]||function(){
-                (a[h].q=a[h].q||[]).push(arguments)
-            };
-            o=f.createElement('script'),
-            m=f.getElementsByTagName('script')[0];
-            o.async=1; o.src=t; o.id='fathom-script';
-            m.parentNode.insertBefore(o,m)
-        })(document, window, '//stats.xythobuz.de/tracker.js', 'fathom');
-        fathom('set', 'siteId', 'APYRK');
-        fathom('trackPageview');
-    </script>
+    <script type="text/javascript" src="lg/lightgallery.min.js"></script>
+    <script type="text/javascript" src="lg/lg-autoplay.min.js"></script>
+    <script type="text/javascript" src="lg/lg-fullscreen.min.js"></script>
+    <script type="text/javascript" src="lg/lg-hash.min.js"></script>
+    <script type="text/javascript" src="lg/lg-rotate.min.js"></script>
+    <script type="text/javascript" src="lg/lg-thumbnail.min.js"></script>
+    <script type="text/javascript" src="lg/lg-video.min.js"></script>
+    <script type="text/javascript" src="lg/lg-zoom.min.js"></script>
+    <script type="text/javascript" src="js/lightgallery.js"></script>
+    <script type="text/javascript" src="js/tracking.js"></script>
 </body>
 </html>

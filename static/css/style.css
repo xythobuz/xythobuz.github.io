@@ -340,7 +340,7 @@ span.font-small {
     font-size: 0.6em;
 }
 
-.lightgallery {
+.lightgallery, .lightgallery_new {
     display: flex;
     justify-content: space-evenly;
     align-items: center;

@@ -29,8 +29,8 @@ ffmpeg -i $video -vf "select=eq(n\,0)" -n -update 1 -frames:v 1 $poster
 echo convert "$poster" -auto-orient -thumbnail 300x300\> -strip "$tmp"
 convert "$poster" -auto-orient -thumbnail 300x300\> -strip "$tmp"
 
-echo convert $tmp \( $sdir/static/lg/video-play.png -background none -gravity center \) -composite $thumb
-convert $tmp \( $sdir/static/lg/video-play.png -background none -gravity center \) -composite $thumb
+echo convert $tmp \( $sdir/static/img/video-play.png -background none -gravity center \) -composite $thumb
+convert $tmp \( $sdir/static/img/video-play.png -background none -gravity center \) -composite $thumb
 
 echo rm -rf $tmp
 rm -rf "$tmp"

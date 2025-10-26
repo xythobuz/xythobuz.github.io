@@ -11,6 +11,7 @@ import time
 import codecs
 from datetime import datetime
 import json
+from subprocess import check_output
 
 def print_cnsl_error(s, url = None):
     sys.stderr.write("\n")
@@ -430,6 +431,7 @@ def printSteamMenuDeutsch():
 # it will also auto-generate thumbnails and resize and strip EXIF from images
 # using the included web-image-resize script.
 # and it can generate video thumbnails and posters with the video-thumb script.
+# also, if possible, image and video dimensions are automatically passed to lightgallery.
 
 def lightgallery_check_thumbnail(link, thumb):
     # only check local image links
@@ -483,33 +485,80 @@ def lightgallery_check_thumbnail_video(link, thumb, poster):
     script = os.path.join(os.getcwd(), 'video-thumb')
     os.system(script + ' ' + path)
 
-def lightgallery(links):
-    global v_ii
-    try:
-        v_ii += 1
-    except NameError:
-        v_ii = 0
+def query_image_size(link):
+    # only check local image links
+    if not link.startswith('img/'):
+        return None
 
-    videos = [l for l in links if len(l) == 5]
-    v_i = -1
-    for v in videos:
-        link, mime, thumb, poster, alt = v
-        v_i += 1
-        print('<div style="display:none;" id="video' + str(v_i) + '_' + str(v_ii) + '">')
-        print('<video class="lg-video-object lg-html5" controls preload="none">')
-        print('<source src="' + link + '" type="' + mime + '">')
-        print('<a href="' + link + '">' + alt + '</a>')
-        print('</video>')
-        print('</div>')
-        
-    print('<div class="lightgallery">')
-    v_i = -1
+    try:
+        path = os.path.join(os.getcwd(), 'static')
+        size = check_output(['identify', '-ping', '-format', '%w %h', link], cwd=path)
+        (w, h) = [ t(s) for t, s in zip((int, int), size.split()) ]
+        sys.stderr.write(link + " is " + str(w) + "-" + str(h) + "\n")
+        return (w, h)
+    except Exception:
+        return None
+
+def query_video_size(link):
+    # only check local image links
+    if not link.startswith('img/'):
+        return None
+
+    try:
+        path = os.path.join(os.getcwd(), 'static')
+        size = check_output([os.path.join(os.getcwd(), 'video-get-size'), link], cwd=path)
+        (w, h) = [ t(s) for t, s in zip((int, int), size.split()) ]
+        sys.stderr.write(link + " is " + str(w) + "-" + str(h) + "\n")
+        return (w, h)
+    except Exception:
+        return None
+
+def get_image_size(link):
+    # only check local image links
+    if not link.startswith('img/'):
+        return None
+
+    try:
+        path = os.path.join(os.getcwd(), 'static', link + ".txt")
+        with open(path, "r") as f: size = f.read()
+        (w, h) = [ t(s) for t, s in zip((int, int), size.split()) ]
+        return (w, h)
+    except Exception:
+        size = query_image_size(link)
+        if size != None:
+            sys.stderr.write("caching size of " + link + "\n")
+            with open(path, "w") as f: f.write("%d %d" % size)
+        return size
+
+def get_video_size(link):
+    # only check local image links
+    if not link.startswith('img/'):
+        return None
+
+    try:
+        path = os.path.join(os.getcwd(), 'static', link + ".txt")
+        with open(path, "r") as f: size = f.read()
+        (w, h) = [ t(s) for t, s in zip((int, int), size.split()) ]
+        return (w, h)
+    except Exception:
+        size = query_video_size(link)
+        if size != None:
+            sys.stderr.write("caching size of " + link + "\n")
+            with open(path, "w") as f: f.write("%d %d" % size)
+        return size
+
+def lightgallery(links):
+    print('<div class="lightgallery_new">')
+
     for l in links:
         if (len(l) == 3) or (len(l) == 2):
+            # image or youtube video
             link = img = alt = ""
             style = img2 = ""
             if len(l) == 3:
                 link, img, alt = l
+                if "youtube.com" in link:
+                    img2 = '<img src="img/video-play.png" class="picthumb">'
             else:
                 link, alt = l
                 if "youtube.com" in link:
@@ -517,34 +566,52 @@ def lightgallery(links):
                     img += urlparse_foo(link)
                     img += "/0.jpg" # full size preview
                     #img += "/default.jpg" # default thumbnail
-                    style = ' style="width:300px;"'
-                    img2 = '<img src="lg/video-play.png" class="picthumb">'
+                    style = ' style="width:300px;" data-poster="' + img + '"'
+                    img2 = '<img src="img/video-play.png" class="picthumb">'
                 elif link.startswith('img/'):
                     x = link.rfind('.')
                     img = link[:x] + '_small' + link[x:]
                 else:
                     img = link
                     style = ' style="max-width:300px;max-height:300px;"'
+
             lightgallery_check_thumbnail(link, img)
-            print('<div class="border" style="position:relative;" data-src="' + link + '"><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"' + style + '>' + img2 + '</a></div>')
+
+            size = get_image_size(link)
+            size_str = ''
+            if size != None:
+                size_str = ' data-lg-size="' + str(int(size[0])) + '-' + str(int(size[1])) + '"'
+
+            print('<div class="border" style="position:relative;" data-src="' + link + '"' + size_str + '><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"' + style + '>' + img2 + '</a></div>')
         elif len(l) == 4:
+            # audio
             link, mime, none, alt = l
-            print('<div class="border">')
-            print('<audio controls style="display:block;"><source src="' + link + '" type="' + mime + '" /></audio>')
+
+            print('<div class="border" data-src="' + link + '" data-iframe="true">')
+            print('<audio controls preload="none" style="display:block;"><source src="' + link + '" type="' + mime + '" /></audio>')
             print('<p class="audio_text"><a href="' + link + '">Download audio</a></p></div>')
         elif len(l) == 5:
-            v_i += 1
-            link, mime, thumb, poster, alt = videos[v_i]
+            # HTML5 video
+            link, mime, thumb, poster, alt = l
             if len(thumb) <= 0:
                 x = link.rfind('.')
                 thumb = link[:x] + '_thumb.png'
             if len(poster) <= 0:
                 x = link.rfind('.')
                 poster = link[:x] + '_poster.png'
+
             lightgallery_check_thumbnail_video(link, thumb, poster)
-            print('<div class="border" data-poster="' + poster + '" data-sub-html="' + alt + '" data-html="#video' + str(v_i) + '_' + str(v_ii) + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>')
+
+            size = get_video_size(link)
+            size_str = ''
+            if size != None:
+                size_str = ' data-lg-size="' + str(int(size[0])) + '-' + str(int(size[1])) + '"'
+
+            video_src = "'" + '{"source": [{"src":"' + link + '", "type":"' + mime + '"}], "attributes": {"preload": false, "playsinline": true, "controls": true}}' + "'"
+            print('<div class="border" data-video=' + video_src + size_str + ' data-poster="' + poster + '" data-sub-html="' + alt + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>')
         else:
             raise NameError('Invalid number of arguments for lightgallery')
+
     print('</div>')
 
 # -----------------------------------------------------------------------------
