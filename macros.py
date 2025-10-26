@@ -238,9 +238,20 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
 
     return lastyear
 
+# https://stackoverflow.com/a/56842689
+class SortReversor:
+    def __init__(self, obj):
+        self.obj = obj
+
+    def __eq__(self, other):
+        return other.obj == self.obj
+
+    def __lt__(self, other):
+        return other.obj < self.obj
+
 def printRecentMenu(count = 5):
     posts = [p for p in pages if "date" in p and p.lang == "en"]
-    posts.sort(key=lambda p: p.get("update", p.get("date")), reverse=True)
+    posts.sort(key=lambda p: [ SortReversor(p.get("update", p.get("date"))), p["title"] ])
 
     if count > 0:
         posts = posts[0:count]
@@ -255,7 +266,7 @@ def printRecentMenu(count = 5):
 
 def printBlogMenu(year_min=None, year_max=None):
     posts = [p for p in pages if "post" in p and p.lang == "en"]
-    posts.sort(key=lambda p: p.get("date", "9999-01-01"), reverse=True)
+    posts.sort(key=lambda p: [ SortReversor(p.get("date", "9999-01-01")), p["title"] ])
 
     if year_min != None:
         posts = [p for p in posts if int(p.get("date", "9999-01-01")[0:4]) >= int(year_min)]
@@ -284,7 +295,7 @@ def printProjectsMenu():
     # only those that have a parent in ['projects', 'stuff']
     mpages = [p for p in dpages if any((x in p.get("parent", "")) or (x in p.get("second_parent", "")) for x in [ 'projects', 'stuff' ])]
     # sort by position
-    mpages.sort(key=lambda p: [int(p.get("position", "999"))])
+    mpages.sort(key=lambda p: [ int(p.get("position", "999")), p["title"] ])
 
     print("<ul id='menulist'>")
 
@@ -294,9 +305,9 @@ def printProjectsMenu():
         subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
         order = p.get("sort-order", "date")
         if order == "position":
-            subpages.sort(key=lambda p: p["position"])
+            subpages.sort(key=lambda p: [ p["position"], p["title"] ])
         else:
-            subpages.sort(key=lambda p: p["date"], reverse = True)
+            subpages.sort(key=lambda p: [ SortReversor(p.get("date", "9999-01-01")), p["title"] ])
 
         printMenuItem(p, False, False, False, False, "0", "", True, False, False, len(subpages) > 0)
 
@@ -314,7 +325,7 @@ def printProjectsMenu():
     # only those that have a parent in ['projects', 'stuff']
     mpages = [p for p in dpages if any((x in p.get("parent", "")) or (x in p.get("second_parent", "")) for x in [ 'projects', 'stuff' ])]
     # sort by date
-    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+    mpages.sort(key=lambda p: [ SortReversor(p.get("date", "9999-01-01")), p["title"] ])
 
     # print all pages
     lastyear = "0"
@@ -323,9 +334,9 @@ def printProjectsMenu():
         subpages = [sub for sub in enpages if sub.get("parent", "none") == p.get("child-id", "unknown")]
         order = p.get("sort-order", "date")
         if order == "position":
-            subpages.sort(key=lambda p: p["position"])
+            subpages.sort(key=lambda p: [ p["position"], p["title"] ])
         else:
-            subpages.sort(key=lambda p: p["date"], reverse = True)
+            subpages.sort(key=lambda p: [ SortReversor(p.get("date", "9999-01-01")), p["title"] ])
 
         lastyear = printMenuItem(p, True, True, False, False, lastyear, "", True, False, False, len(subpages) > 0)
 
@@ -340,11 +351,11 @@ def printProjectsMenu():
 
     print("</ul>")
 
-def printMenuGeneric(mpages = None, sortKey = None, sortReverse = True):
+def printMenuGeneric(mpages = None, sortKey = None):
     if mpages == None:
         mpages = [p for p in pages if p.get("parent", "__none__") == page["child-id"] and p.lang == "en"]
     if sortKey != None:
-        mpages.sort(key = sortKey, reverse = sortReverse)
+        mpages.sort(key = sortKey)
 
     if len(mpages) > 0:
         print("<ul id='menulist'>")
@@ -352,12 +363,12 @@ def printMenuGeneric(mpages = None, sortKey = None, sortReverse = True):
             printMenuItem(p, False, True, True)
         print("</ul>")
 
-def printMenuDate(mpages = None, sortReverse = True):
-    sortKey = lambda p: p["date"]
-    printMenuGeneric(mpages, sortKey, sortReverse)
+def printMenuDate(mpages = None):
+    sortKey = lambda p: [ SortReversor(p.get("date", "9999-01-01")), p["title"] ]
+    printMenuGeneric(mpages, sortKey)
 
 def printMenuPositional(mpages = None):
-    printMenuGeneric(mpages, lambda p: int(p["position"]), False)
+    printMenuGeneric(mpages, lambda p: [ int(p["position"]), p["title"] ])
 
 def printMenu(mpages = None):
     order = page.get("sort-order", "date")
@@ -368,7 +379,7 @@ def printMenu(mpages = None):
 
 def printRobotMenuEnglish():
     mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
-    mpages.sort(key=lambda p: int(p["position"]))
+    mpages.sort(key=lambda p: [ int(p["position"]), p["title"] ])
 
     print("<ul id='menulist'>")
     for p in mpages:
@@ -377,7 +388,7 @@ def printRobotMenuEnglish():
 
 def printRobotMenuDeutsch():
     mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "de"]
-    mpages.sort(key=lambda p: int(p["position"]))
+    mpages.sort(key=lambda p: [ int(p["position"]), p["title"] ])
 
     print("<ul id='menulist'>")
     for p in mpages:
@@ -386,7 +397,7 @@ def printRobotMenuDeutsch():
 
 def printSteamMenuEnglish():
     mpages = [p for p in pages if p.get("parent", "") == "steam" and p.lang == "en"]
-    mpages.sort(key=lambda p: [p.get("date", "9999-01-01")], reverse = True)
+    mpages.sort(key=lambda p: [ SortReversor(p.get("date", "9999-01-01")), p["title"] ])
 
     print("<ul id='menulist'>")
     for p in mpages:
@@ -646,7 +657,7 @@ def printLatestRelease(user, repo):
         print("</div>")
         return
 
-    releases.sort(key=lambda x: x["published_at"], reverse=True)
+    releases.sort(key=lambda x: SortReversor(x["published_at"]))
     r = releases[0]
     release_url = r["html_url"]
     print("Latest release of <a href=\"" + repo_url + "\">" + repo + "</a>, at the time of this writing: <a href=\"" + release_url + "\">" + r["name"] + "</a> (" + datetime.strptime(r["published_at"], "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d %H:%M:%S") + ")\n")
@@ -843,7 +854,7 @@ def hook_postconvert_rss():
     posts = [p for p in pages if "date" in p]
 
     # sort by update if available, date else
-    posts.sort(key=lambda p: p.get("update", p.date), reverse=True)
+    posts.sort(key=lambda p: [ SortReversor(p.get("update", p.date)), p["title"] ])
 
     # only put 20 most recent items in feed
     posts = posts[:20]

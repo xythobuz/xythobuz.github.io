@@ -48,7 +48,7 @@ else:
             <li id="home"><a href="index.html">xythobuz.de</a></li>
             <!--%
                 mpages = [p for p in pages if p.get("parent", "") == "main" and p.lang == "en"]
-                mpages.sort(key=lambda p: int(p["position"]))
+                mpages.sort(key=lambda p: [ int(p["position"]), p["title"] ])
                 entry = '            <li><a href="%s">%s</a></li>'
                 for p in mpages[1:]:
                     print(entry % (htmlspecialchars(p["url"]), htmlspecialchars(p["title"])))
