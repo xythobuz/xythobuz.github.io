@@ -1,6 +1,7 @@
 title: Serial Debug
 title_de: Serial Debug
 description: Displaying incoming UART characters on a 8x5 LED Matrix with an ATTiny2313
+description_de: Eingehende UART Zeichen mit einem ATTiny2313 auf einer 8x5 LED Matrix anzeigen
 parent: stuff
 position: 50
 comments: true

@@ -1,6 +1,7 @@
 title: YASAB AVR Bootloader
 title_de: YASAB AVR Bootloader
-description: Yet another simple AVR Bootloader with Upload Software for Unix and Android.
+description: Yet another simple AVR Bootloader with Upload Software for Unix and Android
+description_de: Ein weiterer einfacher AVR Bootloader mit Uploadsoftware für Unix und Android
 parent: projects
 position: 30
 comments: true

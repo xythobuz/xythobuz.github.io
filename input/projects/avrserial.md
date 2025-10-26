@@ -1,6 +1,7 @@
 title: AVR Serial Library
 title_de: AVR Serial Library
 description: Hardware UART library for many AVR MCUs
+description_de: Hardware UART library für viele AVR MCUs
 parent: projects
 position: 20
 comments: true

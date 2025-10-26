@@ -1,6 +1,7 @@
 title: xyRobot
 title_de: xyRobot
 description: ATMega2560 robotics platform with Gameboy Camera
+description_de: ATMega2560 Roboterplattform mit Gameboy Kamera
 parent: stuff
 position: 10
 comments: true

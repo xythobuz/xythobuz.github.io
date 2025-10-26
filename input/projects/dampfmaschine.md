@@ -1,6 +1,7 @@
 title: Steam Engine
 title_de: Dampfmaschine
 description: My Grandfathers self-built model steam engine
+description_de: Die selbstgebaute Dampfmaschine meines Großvaters
 parent: projects
 position: 500
 comments: true

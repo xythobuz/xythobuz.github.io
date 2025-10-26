@@ -1,6 +1,7 @@
 title: LED Matrix
 title_de: LED Matrix
 description: ATTiny2313 displaying simple animations on an 8x10 LED Matrix
+description_de: ATTiny2313 zeigt einfache Animationen auf einer 8x10 LED Matrix
 parent: stuff
 position: 40
 comments: true

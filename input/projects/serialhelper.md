@@ -1,6 +1,7 @@
 title: Serial Helper
 title_de: Serial Helper
 description: Reading and Writing a Serial Port from the Command Line
+description_de: Einen seriellen Port von der Kommandozeile lesen und schreiben
 parent: stuff
 position: 60
 comments: true
