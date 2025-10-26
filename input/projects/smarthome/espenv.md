@@ -17,7 +17,7 @@ The data is written into an InfluxDB instance on my NAS.
 
 Over time I also added support for ESP32 as well as Arduino Uno Wifi Developer Edition boards, MQTT interfacing, relais control, CCS811 and soil moisture sensor support.
 
-Initially I had a separate project, [esp-relais](https://git.xythobuz.de/thomas/esp-relais), for controlling [this ESP8266 Relais board from Amazon](https://amzn.to/3FQdOXB).
+Initially I had a separate project, [esp-relais](https://codeberg.org/xythobuz/esp-relais), for controlling [this ESP8266 Relais board from Amazon](https://amzn.to/3FQdOXB).
 This functionality has since been integrated into esp-env!
 
 <!--%

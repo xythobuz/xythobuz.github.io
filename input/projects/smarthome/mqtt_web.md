@@ -2,7 +2,7 @@ title: MQTT Webinterface
 description: Using Bootstrap and JavaScript for universal controls
 parent: smarthome
 position: 400
-git: https://git.xythobuz.de/thomas/lights-web
+git: https://codeberg.org/xythobuz/mqtt-lights-web
 github: https://github.com/xythobuz/mqtt-lights-web
 date: 2022-08-14
 comments: true
@@ -35,5 +35,5 @@ lightgallery([
 ])
 %-->
 
-You can [find the source code on my Gitea](https://git.xythobuz.de/thomas/lights-web).
+You can [find the source code on Codeberg](https://codeberg.org/xythobuz/mqtt-lights-web).
 I also added the installation and setup instructions to my [ansible scripts](sovereign.html).

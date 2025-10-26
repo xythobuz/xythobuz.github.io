@@ -2,7 +2,7 @@ title: MQTT Telegram Bot
 description: Go server to control stuff from anywhere in the world
 parent: smarthome
 position: 500
-git: https://git.xythobuz.de/thomas/lights-telegram
+git: https://codeberg.org/xythobuz/mqtt-lights-telegram
 github: https://github.com/xythobuz/mqtt-lights-telegram
 date: 2022-08-23
 comments: true
@@ -23,7 +23,7 @@ lightgallery([
 ])
 %-->
 
-You can [find the source code on my Gitea](https://git.xythobuz.de/thomas/lights-telegram), as well as installation and setup instructions.
+You can [find the source code on Codeberg](https://codeberg.org/xythobuz/mqtt-lights-telegram), as well as installation and setup instructions.
 
 This was my first time doing something with Go.
 I think the language is interesting and I will probably continue using it in the future.
