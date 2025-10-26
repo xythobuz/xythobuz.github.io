@@ -55,11 +55,11 @@
               </a>
               <br />
               <span class="listdesc">
-                Published: <xsl:value-of select="substring(pubDate, 1, string-length(pubDate) - 15)" />
+                Published: <xsl:value-of select="substring(pubDate, 1, string-length(pubDate) - 6)" />
               </span>
               <br />
               <span class="listdesc">
-                Updated: <xsl:value-of select="substring(atom:updated, 1, string-length(atom:updated) - 15)" />
+                Updated: <xsl:value-of select="substring(atom:updated, 1, string-length(atom:updated) - 6)" />
               </span>
             </li>
           </xsl:for-each>

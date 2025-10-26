@@ -214,7 +214,11 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
                 dateto = " (%s - %s)" % (year, p.get("update", "")[0:4])
 
         if nicelyFormatFullDate:
-            dateto = " - " + datetime.strptime(p.get("update", p.date), "%Y-%m-%d").strftime("%B %d, %Y")
+            padded_date = p.get("update", p.date) + " 12:00:00"
+            try:
+                dateto = " - " + datetime.strptime(padded_date, "%Y-%m-%d %H:%M:%S").strftime("%B %d, %Y")
+            except ValueError:
+                dateto = " - " + datetime.strptime(padded_date[:-9], "%Y-%m-%d %H:%M:%S").strftime("%B %d, %Y")
 
     print("<li>")
     print("<a href=\"" + p.url + "\"><b>" + title + "</b></a>" + dateto)
@@ -872,10 +876,19 @@ def hook_postconvert_rss():
         desc = desc.replace("src=\"/img", "%s%s%s" % ("src=\"", BASE_URL, "/img"))
         desc = htmlspecialchars(desc)
 
-        date = time.mktime(time.strptime("%s 12" % p.date, "%Y-%m-%d %H"))
-        date = email.utils.formatdate(date)
+        padded_date = p.date + " 12:00:00"
+        try:
+            date = time.mktime(time.strptime(padded_date, "%Y-%m-%d %H:%M:%S"))
+        except ValueError:
+            date = time.mktime(time.strptime(padded_date[:-9], "%Y-%m-%d %H:%M:%S"))
 
-        update = time.mktime(time.strptime("%s 12" % p.get("update", p.date), "%Y-%m-%d %H"))
+        padded_update = p.get("update", p.date) + " 12:00:00"
+        try:
+            update = time.mktime(time.strptime(padded_update, "%Y-%m-%d %H:%M:%S"))
+        except ValueError:
+            update = time.mktime(time.strptime(padded_update[:-9], "%Y-%m-%d %H:%M:%S"))
+
+        date = email.utils.formatdate(date)
         update = email.utils.formatdate(update)
 
         items.append(_RSS_ITEM % (title, link, desc, date, update, link))
