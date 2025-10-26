@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var settings = {
-        allowMediaOverlap: true,
+        allowMediaOverlap: false,
         backdropDuration: 100,
         licenseKey: 'gpl-foobar',
         hideBarsDelay: 2500,
@@ -20,7 +20,7 @@ $(document).ready(function() {
         speed: 100,
         startAnimationDuration: 100,
         showZoomInOutIcons: true,
-        toggleThumb: true,
+        toggleThumb: true, // no effect due to allowMediaOverlap=false
         autoplayVideoOnSlide: true,
         youTubePlayerParams: {
             modestbranding: 1,
@@ -28,7 +28,7 @@ $(document).ready(function() {
             rel: 0,
             mute: 0,
         },
-        galleryId: "",
+        galleryId: "0",
     };
 
     var old_selector = $("div.lightgallery a").toArray();
