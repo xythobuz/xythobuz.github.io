@@ -82,19 +82,9 @@ If you want to visualize SVG images for KiCad schematics and boards, add svg-pan
 
 Add the `docs/generate_docs.sh` script and adapt the config and calls to other script at the beginning, as needed for your project:
 
-<!-- https://clay-atlas.com/us/blog/2021/06/30/html-en-copy-text-button/ -->
-<script>
-function copyEvent(id) {
-    var str = document.getElementById(id);
-    window.getSelection().selectAllChildren(str);
-    document.execCommand("Copy")
-}
-</script>
-
 [Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh) is an example `generate_docs.sh` file.
-<button type="button" onclick="copyEvent('generatedocs')" class="clip-btn">Copy 'generate_docs.sh' to clipboard</button>
 
-<pre id="generatedocs" class="sh_sh">
+<pre class="sh_sh">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/docs/generate_docs.sh",
@@ -109,9 +99,8 @@ include_url([
 Add the `.github/workflows/docs.yml` script:
 
 [Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml) is an example `docs.yml` file.
-<button type="button" onclick="copyEvent('docsyml')" class="clip-btn">Copy 'docs.yml' to clipboard</button>
 
-<pre id="docsyml" class="sh_yaml">
+<pre class="sh_yaml">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/docs.yml",
@@ -134,9 +123,8 @@ lightgallery([
 If you want to visualize 3D print files, do the same with `3dprint/generate_stls.sh` and `.github/workflows/scad.yml`:
 
 [Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh) is an example `generate_stls.sh` file.
-<button type="button" onclick="copyEvent('generatestls')" class="clip-btn">Copy 'generate_stls.sh' to clipboard</button>
 
-<pre id="generatestls" class="sh_sh">
+<pre class="sh_sh">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/3dprint/generate_stls.sh",
@@ -147,9 +135,8 @@ include_url([
 </pre>
 
 [Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml) is an example `scad.yml` file.
-<button type="button" onclick="copyEvent('scadyml')" class="clip-btn">Copy 'scad.yml' to clipboard</button>
 
-<pre id="scadyml" class="sh_yaml">
+<pre class="sh_yaml">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/scad.yml",
@@ -170,9 +157,8 @@ And then add something like this to the mdBook sources where you want the visual
 If you want to generate gerber files from PCBs, do something similar with `pcb/generate_fab.sh` and `.github/workflows/kicad.yml`:
 
 [Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh) is an example `generate_fab.sh` file.
-<button type="button" onclick="copyEvent('generatefab')" class="clip-btn">Copy 'generate_fab.sh' to clipboard</button>
 
-<pre id="generatefab" class="sh_sh">
+<pre class="sh_sh">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_fab.sh",
@@ -183,9 +169,8 @@ include_url([
 </pre>
 
 [Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml) is an example `kicad.yml` file.
-<button type="button" onclick="copyEvent('kicadyml')" class="clip-btn">Copy 'kicad.yml' to clipboard</button>
 
-<pre id="kicadyml" class="sh_yaml">
+<pre class="sh_yaml">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/.github/workflows/kicad.yml",
@@ -200,9 +185,8 @@ include_url([
 If you want to visualize KiCad schematics and PCBs in 2D and 3D, add `pcb/generate_plot.sh`:
 
 [Here](https://codeberg.org/xythobuz/lars/raw/commit/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh) is an example `generate_plot.sh` file.
-<button type="button" onclick="copyEvent('generateplot')" class="clip-btn">Copy 'generate_plot.sh' to clipboard</button>
 
-<pre id="generateplot" class="sh_sh">
+<pre class="sh_sh">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/lars/314bf218ca5e958d6ffa825d92d702cb5431abf6/pcb2/generate_plot.sh",

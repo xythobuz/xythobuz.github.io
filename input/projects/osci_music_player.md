@@ -243,20 +243,10 @@ sudo usermod -a -G spi,gpio,i2c $USER
 Reboot after the last command so the new settings take effect and the power manager can do its thing.
 If in doubt, also take a look at the [PiSugar 2 manual](https://github.com/PiSugar/PiSugar/wiki/PiSugar2).
 
-<!-- https://clay-atlas.com/us/blog/2021/06/30/html-en-copy-text-button/ -->
-<script>
-function copyEvent(id) {
-    var str = document.getElementById(id);
-    window.getSelection().selectAllChildren(str);
-    document.execCommand("Copy")
-}
-</script>
-
 Next put the script that controls playback on the device.
 Here is [`~/osci-pi.py`](https://codeberg.org/xythobuz/osci-music-player/raw/branch/master/osci-pi.py).
-<button type="button" onclick="copyEvent('oscipipy')" class="clip-btn">Copy to clipboard</button>
 
-<pre id="oscipipy" class="sh_python">
+<pre class="sh_python">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/osci-music-player/refs/heads/master/osci-pi.py",
@@ -268,9 +258,8 @@ include_url([
 
 And you'll also need [`/etc/systemd/system/osci.service`](https://codeberg.org/xythobuz/osci-music-player/raw/branch/master/osci.service) to start the script automatically.
 Adjust the username and path accordingly.
-<button type="button" onclick="copyEvent('osciservice')" class="clip-btn">Copy to clipboard</button>
 
-<pre id="osciservice" class="sh_desktop">
+<pre class="sh_desktop">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/osci-music-player/refs/heads/master/osci.service",

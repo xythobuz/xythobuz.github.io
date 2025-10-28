@@ -489,6 +489,15 @@ a.anchor:link:after {
     opacity: 0.666;
 }
 
+.clip-btn {
+    font-size: 1em;
+    float: right;
+    position: relative;
+    bottom: 1em;
+    right: 1.5em;
+    border-radius: 5px
+}
+
 /* colors */
 
 :not(pre) > code {
@@ -575,7 +584,7 @@ hr {
     border-right-color: #32CD32;
 }
 
-table, th, td, ._sh, .ascii, .border, .releasecard, #index-avatar, .collapsecontent, #toc {
+table, th, td, ._sh, .ascii, .border, .releasecard, #index-avatar, .collapsecontent, #toc, .clip-btn {
     border-color: #32CD32;
 }
 
@@ -589,11 +598,6 @@ s {
 
 #footer, #footer a:link, #footer a:visited {
     color: #808080;
-}
-
-.clip-btn {
-    font-size: 1em;
-    margin-left: 1em;
 }
 
 .collapseactive, .collapse:hover, .collapse_menu:hover {

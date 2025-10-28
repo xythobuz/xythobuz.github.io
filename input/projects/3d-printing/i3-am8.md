@@ -251,19 +251,9 @@ I also installed the [Moonraker Telegram Bot](https://github.com/nlef/moonraker-
 With one of my first print attempts I ran into the "Rescheduled timer in the past" error message.
 Turns out there was a [bug in the microcontroller firmware](https://klipper.discourse.group/t/stm32g0-users-should-update-to-latest-klipper/3612), so I had to upgrade that, even though thats apparently not needed normally for all updates.
 
-<!-- https://clay-atlas.com/us/blog/2021/06/30/html-en-copy-text-button/ -->
-<script>
-function copyEvent(id) {
-    var str = document.getElementById(id);
-    window.getSelection().selectAllChildren(str);
-    document.execCommand("Copy")
-}
-</script>
-
 [Here](https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/printer.cfg) is my current `printer.cfg` file.
-<button type="button" onclick="copyEvent('printercfg')" class="clip-btn">Copy 'printer.cfg' to clipboard</button>
 
-<pre id="printercfg" class="sh_desktop">
+<pre class="sh_desktop">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/3d-print-designs/refs/heads/master/configs/i3-AM8/printer.cfg",
@@ -274,9 +264,8 @@ include_url([
 </pre>
 
 [Here](https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/moonraker.conf) is my current `moonraker.conf` file.
-<button type="button" onclick="copyEvent('moonrakerconf')" class="clip-btn">Copy 'moonraker.conf' to clipboard</button>
 
-<pre id="moonrakerconf" class="sh_desktop">
+<pre class="sh_desktop">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/3d-print-designs/refs/heads/master/configs/i3-AM8/moonraker.conf",
@@ -287,9 +276,8 @@ include_url([
 </pre>
 
 And [here](https://codeberg.org/xythobuz/3d-print-designs/raw/branch/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini) is my PrusaSlicer config bundle.
-<button type="button" onclick="copyEvent('prusabundle')" class="clip-btn">Copy PrusaSlicer config to clipboard</button>
 
-<pre id="prusabundle" class="sh_desktop">
+<pre class="sh_desktop">
 <!--%
 include_url([
     "https://raw.githubusercontent.com/xythobuz/3d-print-designs/refs/heads/master/configs/i3-AM8/PrusaSlicer_config_bundle.ini",

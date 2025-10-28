@@ -33,18 +33,8 @@ lightgallery([
 %-->
 
 And here are the flows for importing in Node-RED.
-<button type="button" onclick="copyEvent('jsonlights')" class="clip-btn">Copy to clipboard</button>
 
-<!-- https://clay-atlas.com/us/blog/2021/06/30/html-en-copy-text-button/ -->
-<script>
-function copyEvent(id) {
-    var str = document.getElementById(id);
-    window.getSelection().selectAllChildren(str);
-    document.execCommand("Copy")
-}
-</script>
-
-<pre id="jsonlights" class="sh_javascript">
+<pre class="sh_javascript">
 [
     {
         "id": "490116e54af5ff9a",

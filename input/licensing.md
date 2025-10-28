@@ -26,6 +26,7 @@ librejs_helper([
     # Own code
     [ "js/auto_toc.js", "gpl3" ],
     [ "js/collapse.js", "gpl3" ],
+    [ "js/copy.js", "gpl3" ],
     [ "js/lightgallery.js", "gpl3" ],
     [ "js/resize.js", "gpl3" ],
     [ "js/scroller.js", "gpl3" ],
