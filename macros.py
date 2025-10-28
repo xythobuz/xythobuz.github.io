@@ -37,14 +37,22 @@ if PY3:
     import urllib
     import urllib.request
     from urllib.error import HTTPError, URLError
-    def urlparse_foo(link):
-        return urllib.parse.parse_qs(urllib.parse.urlparse(link).query)['v'][0]
+
+    def urlparse_queryparam(link, param='v'):
+        return urllib.parse.parse_qs(urllib.parse.urlparse(link).query)[param][0]
+
+    def urlparse_path(link):
+        return urllib.parse.urlparse(link).path
 else:
     import cgi
     import urllib
     import urlparse
-    def urlparse_foo(link):
-        return urlparse.parse_qs(urlparse.urlparse(link).query)['v'][0]
+
+    def urlparse_queryparam(link, param='v'):
+        return urlparse.parse_qs(urlparse.urlparse(link).query)[param][0]
+
+    def urlparse_path(link):
+        return urlparse.urlparse(link).path
 
 # -----------------------------------------------------------------------------
 # config "system"
@@ -67,6 +75,66 @@ def get_conf(name):
 
 DEFAULT_LANG = get_conf("default_lang")
 BASE_URL = get_conf("base_url")
+
+# -----------------------------------------------------------------------------
+# JavaScript licensing
+# -----------------------------------------------------------------------------
+
+# https://www.gnu.org/software/librejs/free-your-javascript.html
+
+# example:
+# librejs_helper([
+#     [ "/js/jquery-2.1.1.min.js", LICENSE ], # for canonical == minified
+#     [ "/js/jquery-2.1.1.min.js", LICENSE, "/js/jquery-2.1.1.js" ], # for canonical != minified
+# ])
+#
+# LICENSE can be (name, url) tuple or a pre-defined license.
+# only use from this list https://www.gnu.org/software/librejs/manual/html_node/Setting-Your-JavaScript-Free.html#License-tags
+#
+#   "gpl" or "gpl3"
+#   "expat" or "mit"
+
+known_licenses = [
+    [ [ "gpl", "gpl3" ], "GNU-GPL-3.0-or-later", "http://www.gnu.org/licenses/gpl-3.0.html" ],
+    [ [ "expat", "mit" ], "Expat (MIT)", "http://www.jclark.com/xml/copying.txt" ],
+]
+
+def get_known_license(license):
+    for l in known_licenses:
+        if type(l[0]) == str:
+            if license.lower() == l[0].lower():
+                return l[1:]
+        else:
+            for lic in l[0]:
+                if license.lower() == lic.lower():
+                    return l[1:]
+    raise ValueError("unknown license type")
+
+def librejs_helper(modules):
+    print('<table id="jslicense-labels1">')
+    for m in modules:
+        print('<tr>')
+
+        if len(m) == 2:
+            minified, license = m
+            canonical = minified
+        elif len(m) == 3:
+            minified, license, canonical = m
+        else:
+            raise ValueError("invalid number of arguments")
+
+        if type(license) == str:
+            license = get_known_license(license)
+
+        minified = [ urlparse_path(minified).split('/')[-1], minified ]
+        canonical = [ urlparse_path(canonical).split('/')[-1], canonical ]
+
+        for n in [ minified, license, canonical ]:
+            name, link = n
+            print('<td><a href="' + link + '">' + name + '</a></td>')
+
+        print('</tr>')
+    print('</table>')
 
 # -----------------------------------------------------------------------------
 # birthday calculation
@@ -563,7 +631,7 @@ def lightgallery(links):
                 link, alt = l
                 if "youtube.com" in link:
                     img = "https://img.youtube.com/vi/"
-                    img += urlparse_foo(link)
+                    img += urlparse_queryparam(link)
                     img += "/0.jpg" # full size preview
                     #img += "/default.jpg" # default thumbnail
                     style = ' style="width:300px;" data-poster="' + img + '"'

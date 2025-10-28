@@ -27,6 +27,7 @@ printRecentMenu(10)
 [Show all updates](updates.html).
 
 <script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
@@ -38,4 +39,5 @@ printRecentMenu(10)
             img.style.height = "131px"; // 112*1.17188
         }, 500 + getRandomInt(10000));
     }
+// @license-end
 </script>

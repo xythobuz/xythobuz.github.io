@@ -1,3 +1,4 @@
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
 function generate_toc() {
     var output = '<div id="toc">';
     output += '<h3 class="toc">Table of Contents <a id="toc_close">❎</a></h3>';
@@ -104,3 +105,4 @@ function listen_for_anchor_scrolls() {
 generate_toc();
 register_toc_toggle();
 listen_for_anchor_scrolls();
+// @license-end

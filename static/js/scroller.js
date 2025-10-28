@@ -1,3 +1,5 @@
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
+
 // helper to show or hide scroll-up-button depending on scroll position
 function scroll_visibility() {
     if ($(document).scrollTop() > 0) {
@@ -33,3 +35,4 @@ $(document).ready(function() {
     scroll_visibility();
     $(window).scroll(scroll_visibility);
 });
+// @license-end

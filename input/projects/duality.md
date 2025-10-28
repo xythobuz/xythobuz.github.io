@@ -678,6 +678,7 @@ The included cartridge graphic in `artwork/cartridge.xcf` is based on the ['Fron
     }
 </style>
 <script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
     dw = document.getElementById("duality_wrap");
     dw.addEventListener('resize', function(event) {
         event.target.style.width = `${event.target.clientWidth}px`;
@@ -736,5 +737,6 @@ The included cartridge graphic in `artwork/cartridge.xcf` is based on the ['Fron
         3: {}
     };
     EJS_startButtonName = "Start Duality";
+// @license-end
 </script>
 <script src="emu_js/loader.js" async defer></script>

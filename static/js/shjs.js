@@ -1,3 +1,4 @@
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
 $(document).ready(function() {
     // adapted from https://sourceforge.net/p/shjs/feature-requests/5/#0940
     $("pre[class^='sh_']").each(function() {
@@ -35,3 +36,4 @@ $(document).ready(function() {
 
     sh_highlightDocument('/js/sh/', '.min.js');
 });
+// @license-end
