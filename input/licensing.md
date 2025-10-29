@@ -21,7 +21,6 @@ These are all licensed as GPLv3 or MIT.
 librejs_helper([
     # jQuery
     [ "js/jquery-3.7.1.min.js", "MIT", "js/jquery-3.7.1.js" ],
-    [ "js/jquery.mousewheel-3.2.2.min.js", "MIT", "js/jquery.mousewheel-3.2.2.js" ],
 
     # Own code
     [ "js/auto_toc.js", "gpl3" ],
@@ -45,13 +44,16 @@ librejs_helper([
     # Fathom tracking
     [ "js/tracking.js", "MIT", "https://github.com/usefathom/fathom/blob/master/assets/src/js/components/SiteSettings.js#L121-L134" ],
 
-    # SHJS languages converted from GNU source highlight
-    [ "js/sh/sh_gcode.min.js", "gpl3" ],
-    [ "js/sh/sh_go.min.js", "gpl3" ],
-    [ "js/sh/sh_yaml.min.js", "gpl3" ],
-
     # SHJS
     [ "js/sh_main.min.js", "gpl3", "js/sh_main.js" ],
+
+    # SHJS languages converted from GNU source highlight
+    [ "js/sh/sh_gcode.min.js", "gpl3", "js/sh/sh_gcode.js" ],
+    [ "js/sh/sh_go.min.js", "gpl3", "js/sh/sh_go.js" ],
+    [ "js/sh/sh_yaml.min.js", "gpl3", "js/sh/sh_yaml.js" ],
+    [ "js/sh/sh_desktop.min.js", "gpl3", "js/sh/sh_desktop.js" ],
+
+    # SHJS languages from official distribution
     [ "js/sh/sh_bison.min.js", "gpl3", "js/sh/sh_bison.js" ],
     [ "js/sh/sh_caml.min.js", "gpl3", "js/sh/sh_caml.js" ],
     [ "js/sh/sh_changelog.min.js", "gpl3", "js/sh/sh_changelog.js" ],
@@ -59,7 +61,6 @@ librejs_helper([
     [ "js/sh/sh_cpp.min.js", "gpl3", "js/sh/sh_cpp.js" ],
     [ "js/sh/sh_csharp.min.js", "gpl3", "js/sh/sh_csharp.js" ],
     [ "js/sh/sh_css.min.js", "gpl3", "js/sh/sh_css.js" ],
-    [ "js/sh/sh_desktop.min.js", "gpl3", "js/sh/sh_desktop.js" ],
     [ "js/sh/sh_diff.min.js", "gpl3", "js/sh/sh_diff.js" ],
     [ "js/sh/sh_flex.min.js", "gpl3", "js/sh/sh_flex.js" ],
     [ "js/sh/sh_glsl.min.js", "gpl3", "js/sh/sh_glsl.js" ],
