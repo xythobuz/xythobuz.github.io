@@ -352,6 +352,8 @@ class Page(dict):
         self["url"] = self["url"][len(self._pstrip):].lstrip(os.path.sep)
         self["url"] = self["url"].replace(os.path.sep, "/")
 
+        self["page_flags"] = {}
+
         if virtual:
             self.raw = virtual
         else:

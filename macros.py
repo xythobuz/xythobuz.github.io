@@ -616,6 +616,10 @@ def get_video_size(link):
         return size
 
 def lightgallery(links):
+    if not "lightgallery" in page["page_flags"]:
+        page["page_flags"]["lightgallery"] = 0
+    page["page_flags"]["lightgallery"] += 1
+
     print('<div class="lightgallery_new">')
 
     for l in links:
@@ -771,6 +775,11 @@ def include_sourcecode_slice(sh_type, data_slice, filename, urls_pre, timeout = 
     for idx, fallback in enumerate(urls[1:]):
         print(' (<a href="' + fallback + '">alt ' + str(idx + 1) + '</a>)')
     print('</p>')
+
+    # manually count because this does not appear in page.source
+    if not "shjs" in page["page_flags"]:
+        page["page_flags"]["shjs"] = 0
+    page["page_flags"]["shjs"] += 1
 
 def restRequest(url):
     sys.stderr.write('sub    : fetching REST "%s"\n' % url)
@@ -946,6 +955,22 @@ def hook_preconvert_sitemap():
     fp = open(fname, 'w')
     fp.write(_SITEMAP % "".join(urls))
     fp.close()
+
+# -----------------------------------------------------------------------------
+# counting SHJS and lightGallery occurences
+# -----------------------------------------------------------------------------
+
+def hook_preconvert_count_stuff():
+    for page in pages:
+        if not "lightgallery" in page["page_flags"]:
+            page["page_flags"]["lightgallery"] = 0
+        page["page_flags"]["lightgallery"] += page.source.count('class="lightgallery')
+
+        if not "shjs" in page["page_flags"]:
+            page["page_flags"]["shjs"] = 0
+        page["page_flags"]["shjs"] += page.source.count('<pre')
+
+        page["page_flags"]["collapse"] = page.source.count('<div class="collapse">')
 
 
 # -----------------------------------------------------------------------------

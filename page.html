@@ -197,7 +197,7 @@ else:
         <a href="http://www.amazon.de/?_encoding=UTF8&amp;camp=1638&amp;creative=19454&amp;linkCode=ur2&amp;site-redirect=de&amp;tag=xythobuzorg-21">Amazon.de Affiliate</a>
         &middot;
         <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&nav=1&email=xythobuz@me.com">PayPal</a>
-        <br><span style="font-size: xx-small">
+        <br><span style="font-size: xx-small" title="<!--% print(page["page_flags"]) %-->">
             Static HTML generated at <!--%
                 import datetime as dt
                 if hasattr(dt, "UTC"):
@@ -210,22 +210,25 @@ else:
             <a href="<!--% print(page.get('fname').replace('./input/', '').replace('.de.md', '.md')) %-->">View Source '<!--% print(page.get("fname").replace('./input/', '').replace('.de.md', '.md')) %-->'</a>
         </span>
     </div>
-    <script type="text/javascript" src="js/sh_main.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.mousewheel-3.2.2.min.js"></script>
+    <script type="text/javascript" src="js/tracking.js"></script>
     <script type="text/javascript" src="js/scroller.js"></script>
-    <script type="text/javascript" src="js/shjs.js"></script>
-    <!--%
-        if page.get("comments", "false") == "true":
-            print('<script defer src="https://comments.xythobuz.de/js/commento.js"></script>')
-
-        if page.get("auto_toc", "false") == "true":
-            print('<script defer src="js/auto_toc.js"></script>')
-    %-->
-    <script type="text/javascript" src="js/copy.js"></script>
     <script type="text/javascript" src="js/resize.js"></script>
-    <script type="text/javascript" src="js/collapse.js"></script>
-    <script type="text/javascript" src="lg/lightgallery.min.js"></script>
+    <!--%
+        if page.get("auto_toc", "false") == "true":
+            print('<script src="js/auto_toc.js"></script>')
+
+        if page["page_flags"]["collapse"] > 0:
+            print('<script type="text/javascript" src="js/collapse.js"></script>')
+
+        if page["page_flags"]["shjs"] > 0:
+            print("""<script type="text/javascript" src="js/sh_main.min.js"></script>
+    <script type="text/javascript" src="js/shjs.js"></script>
+    <script type="text/javascript" src="js/copy.js"></script>""")
+
+        if page["page_flags"]["lightgallery"] > 0:
+            print("""<script type="text/javascript" src="lg/lightgallery.min.js"></script>
     <script type="text/javascript" src="lg/lg-autoplay.min.js"></script>
     <script type="text/javascript" src="lg/lg-fullscreen.min.js"></script>
     <script type="text/javascript" src="lg/lg-hash.min.js"></script>
@@ -233,7 +236,10 @@ else:
     <script type="text/javascript" src="lg/lg-thumbnail.min.js"></script>
     <script type="text/javascript" src="lg/lg-video.min.js"></script>
     <script type="text/javascript" src="lg/lg-zoom.min.js"></script>
-    <script type="text/javascript" src="js/lightgallery.js"></script>
-    <script type="text/javascript" src="js/tracking.js"></script>
+    <script type="text/javascript" src="js/lightgallery.js"></script>""")
+
+        if page.get("comments", "false") == "true":
+            print('<script defer src="https://comments.xythobuz.de/js/commento.js"></script>')
+    %-->
 </body>
 </html>
