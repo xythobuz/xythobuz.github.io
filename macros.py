@@ -137,7 +137,7 @@ def librejs_helper(modules):
     print('</table>')
 
 # -----------------------------------------------------------------------------
-# birthday calculation
+# birthday calculation and other date stuff
 # -----------------------------------------------------------------------------
 
 from datetime import timedelta
@@ -159,6 +159,16 @@ def own_age():
     age_dec = difference_in_years(get_conf("birthday"), datetime.now())
     age_hex = '0x%X' % age_dec
     return '<abbr title="' + str(age_dec) + '">' + str(age_hex) + '</abbr>'
+
+def page_to_datetime(date):
+    padded_date = date + " 12:00:00"
+    try:
+        date_has_time = False
+        dt = datetime.strptime(padded_date, "%Y-%m-%d %H:%M:%S")
+    except ValueError:
+        date_has_time = True
+        dt = datetime.strptime(padded_date[:-9], "%Y-%m-%d %H:%M:%S")
+    return (dt, date_has_time)
 
 # -----------------------------------------------------------------------------
 # sub page helper macro
@@ -283,11 +293,8 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
                 dateto = " (%s - %s)" % (year, p.get("update", "")[0:4])
 
         if nicelyFormatFullDate:
-            padded_date = p.get("update", p.date) + " 12:00:00"
-            try:
-                dateto = " - " + datetime.strptime(padded_date, "%Y-%m-%d %H:%M:%S").strftime("%B %d, %Y")
-            except ValueError:
-                dateto = " - " + datetime.strptime(padded_date[:-9], "%Y-%m-%d %H:%M:%S").strftime("%B %d, %Y")
+            dt, date_has_time = page_to_datetime(p.get("update", p.date))
+            dateto = " - " + dt.strftime("%B %d, %Y")
 
     print("<li>")
     print("<a href=\"" + p.url + "\"><b>" + title + "</b></a>" + dateto)
@@ -1036,20 +1043,11 @@ def hook_postconvert_rss():
         desc = desc.replace("src=\"/img", "%s%s%s" % ("src=\"", BASE_URL, "/img"))
         desc = htmlspecialchars(desc)
 
-        padded_date = p.date + " 12:00:00"
-        try:
-            date = time.mktime(time.strptime(padded_date, "%Y-%m-%d %H:%M:%S"))
-        except ValueError:
-            date = time.mktime(time.strptime(padded_date[:-9], "%Y-%m-%d %H:%M:%S"))
+        date, date_has_time = page_to_datetime(p.date)
+        update, update_has_time = page_to_datetime(p.get("update", p.date))
 
-        padded_update = p.get("update", p.date) + " 12:00:00"
-        try:
-            update = time.mktime(time.strptime(padded_update, "%Y-%m-%d %H:%M:%S"))
-        except ValueError:
-            update = time.mktime(time.strptime(padded_update[:-9], "%Y-%m-%d %H:%M:%S"))
-
-        date = email.utils.formatdate(date)
-        update = email.utils.formatdate(update)
+        date = email.utils.formatdate(time.mktime(date.timetuple()))
+        update = email.utils.formatdate(time.mktime(update.timetuple()))
 
         items.append(_RSS_ITEM % (title, link, desc, date, update, link))
 

@@ -101,64 +101,49 @@ else:
                         print("<h5>%s</h5>" % (page.get("description", "")))
 
                 if page.get("date", "") != "":
-                    padded_date = page["date"] + " 12:00:00"
-                    try:
-                        date_has_time = False
-                        date_obj = datetime.strptime(padded_date, "%Y-%m-%d %H:%M:%S")
-                    except ValueError:
-                        date_has_time = True
-                        date_obj = datetime.strptime(padded_date[:-9], "%Y-%m-%d %H:%M:%S")
+                    date_obj, date_has_time = page_to_datetime(page["date"])
+
+                    if page.get("lang", "en") == "de":
+                        if date_has_time:
+                            date = date_obj.strftime("%d.%m.%Y um %H:%M")
+                        else:
+                            date = date_obj.strftime("%d.%m.%Y")
+                    else:
+                        if date_has_time:
+                            date = date_obj.strftime("%B %d, %Y at %I:%M %p")
+                        else:
+                            date = date_obj.strftime("%B %d, %Y")
 
                     if page.get("title", "") == "Blog":
                         if page.get("lang", "en") == "de":
-                            if date_has_time:
-                                date = date_obj.strftime("%d.%m.%Y um %H:%M")
-                            else:
-                                date = date_obj.strftime("%d.%m.%Y")
                             print("<i>Ver&ouml;ffentlicht am %s.</i>" % date)
                         else:
-                            if date_has_time:
-                                date = date_obj.strftime("%B %d, %Y at %I:%M %p")
-                            else:
-                                date = date_obj.strftime("%B %d, %Y")
                             print("<i>Published on %s.</i>" % date)
                     else:
                         if page.get("lang", "en") == "de":
-                            if date_has_time:
-                                date = date_obj.strftime("%d.%m.%Y um %H:%M")
-                            else:
-                                date = date_obj.strftime("%d.%m.%Y")
                             print("<i>Projekt gestartet am %s.</i>" % date)
                         else:
-                            if date_has_time:
-                                date = date_obj.strftime("%B %d, %Y at %I:%M %p")
-                            else:
-                                date = date_obj.strftime("%B %d, %Y")
                             print("<i>Project started on %s.</i>" % date)
 
                 if page.get("date", "") != "" and page.get("update", "") != "":
                     print("<br>")
 
                 if page.get("update", "") != "":
-                    padded_update = page["update"] + " 12:00:00"
-                    try:
-                        update_has_time = False
-                        update_obj = datetime.strptime(padded_update, "%Y-%m-%d %H:%M:%S")
-                    except ValueError:
-                        update_has_time = True
-                        update_obj = datetime.strptime(padded_update[:-9], "%Y-%m-%d %H:%M:%S")
+                    update_obj, update_has_time = page_to_datetime(page["update"])
 
                     if page.get("lang", "en") == "de":
                         if update_has_time:
                             date = update_obj.strftime("%d.%m.%Y um %H:%M")
                         else:
                             date = update_obj.strftime("%d.%m.%Y")
+
                         print("<i>Zuletzt aktualisiert am %s.</i>" % date)
                     else:
                         if update_has_time:
                             date = update_obj.strftime("%B %d, %Y at %I:%M %p")
                         else:
                             date = update_obj.strftime("%B %d, %Y")
+
                         print("<i>Last updated on %s.</i>" % date)
 
             link = githubCommitBadge(page, True)
