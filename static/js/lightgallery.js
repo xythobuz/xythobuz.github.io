@@ -40,8 +40,13 @@ $(document).ready(function() {
     }
 
     $(".border:has(>a>img) .pic").each(function() {
-        // filter out youtube videos (they have data-poster in the thumbnail)
+        // filter out youtube videos with auto thumbnails (they have data-poster in the thumbnail)
         if ($(this).attr("data-poster") != undefined) {
+            return;
+        }
+
+        // filter out youtube videos with custom thumbnail (they have a sibling .picthumb enxt to thumbnail)
+        if ($(this).siblings().hasClass("picthumb")) {
             return;
         }
 
@@ -53,8 +58,18 @@ $(document).ready(function() {
         }
 
         // set thumbnail as background image of .border div
-        var w = border.width();
-        var h = border.height();
+        var w = $(this).prop('naturalWidth');
+        var h = $(this).prop('naturalHeight');
+        if (w > 300) {
+            var scale = 300 / w;
+            w *= scale;
+            h *= scale;
+        }
+        if (h > 300) {
+            var scale = 300 / h;
+            w *= scale;
+            h *= scale;
+        }
         border.css("background-size", w.toString() + "px " + h.toString() + "px");
         border.css("background-position", "0px 0px");
         border.css("background-image", "url(" + $(this).attr('src') + ")");
