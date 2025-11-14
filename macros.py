@@ -790,8 +790,14 @@ def include_sourcecode_slice(sh_type, data_slice, filename, urls_pre, timeout = 
 
 def restRequest(url):
     sys.stderr.write('sub    : fetching REST "%s"\n' % url)
-    data = json.loads(http_request(url))
-    return data
+
+    try:
+        data = json.loads(http_request(url))
+        return data
+    except Exception as e:
+        print_cnsl_error(str(e), url)
+        sys.stderr.write('sub    : COULD NOT FETCH REST API\n')
+        return []
 
 def restReleases(user, repo):
     s = "https://api.github.com/repos/"
