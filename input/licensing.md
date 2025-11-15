@@ -23,13 +23,13 @@ librejs_helper([
     [ "js/jquery-3.7.1.min.js", "MIT", "js/jquery-3.7.1.js" ],
 
     # Own code
-    [ "js/auto_toc.js", "gpl3" ],
-    [ "js/collapse.js", "gpl3" ],
-    [ "js/copy.js", "gpl3" ],
-    [ "js/lightgallery.js", "gpl3" ],
-    [ "js/resize.js", "gpl3" ],
-    [ "js/scroller.js", "gpl3" ],
-    [ "js/shjs.js", "gpl3" ],
+    [ "js/auto_toc.min.js", "gpl3", "js/auto_toc.js" ],
+    [ "js/collapse.min.js", "gpl3", "js/collapse.js" ],
+    [ "js/copy.min.js", "gpl3", "js/copy.js" ],
+    [ "js/lightgallery.min.js", "gpl3", "js/lightgallery.js" ],
+    [ "js/resize.min.js", "gpl3", "js/resize.js" ],
+    [ "js/scroller.min.js", "gpl3", "js/scroller.js" ],
+    [ "js/shjs.min.js", "gpl3", "js/shjs.js" ],
 
     # Lightgallery
     [ "lg/lightgallery.min.js", "gpl3" ],

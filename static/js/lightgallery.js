@@ -1,5 +1,5 @@
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
-$(document).ready(function() {
+$(function() {
     var settings = {
         allowMediaOverlap: false,
         backdropDuration: 100,
@@ -74,14 +74,14 @@ $(document).ready(function() {
         border.css("background-position", "0px 0px");
         border.css("background-image", "url(" + $(this).attr('src') + ")");
 
-        // make thumbnail (and css hover animation) invisible
+        // make thumbnail (and css hover animation) invisible, but keep zoom cursor
         $(this).css("opacity", 0);
 
-        const mouse_scale = 5;
-        const zoom_fact = 1.0 + (1.0 / mouse_scale);
+        var mouse_scale = 5;
+        var zoom_fact = 1.0 + (1.0 / mouse_scale);
 
         // zoom .border div on mouseenter
-        border.on("mouseenter", function(e) {
+        border.on("mouseenter", function() {
             // zoom thumbnail
             var w = $(this).width();
             var h = $(this).height();
@@ -95,21 +95,27 @@ $(document).ready(function() {
             $(this).css("background-position", dx.toString() + "px " + dy.toString() + "px");
 
             // dim thumbnail
-            $(this).css("filter", "brightness(75%)");
+            $(this).css("filter", "brightness(0.75)");
         });
 
         // unzoom .border div on mouseleave
-        border.on("mouseleave", function(e) {
+        border.on("mouseleave", function() {
             // revert changes
             var w = $(this).width();
             var h = $(this).height();
             $(this).css("background-size", w.toString() + "px " + h.toString() + "px");
             $(this).css("background-position", "0px 0px");
-            $(this).css("filter", "brightness(100%)");
+            $(this).css("filter", "brightness(1.0)");
         });
 
         // make zoomed thumbnail follow mouse cursor in .border div
         border.on("mousemove", function(e) {
+            // edge-case when page is loaded while mouse is already inside thumbnail
+            // --> we get mousemove without ever mouseenter-ing
+            if ($(this).css("filter") != "brightness(0.75)") {
+                $(this).trigger("mouseenter");
+            }
+
             var offset = $(this).offset();
             var w = $(this).width();
             var h = $(this).height();

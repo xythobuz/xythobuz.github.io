@@ -9,6 +9,10 @@ mkdir output
 echo "Building"
 ./poole.py --build
 
+echo "Minifying"
+./minify.py static/js
+#./minify.py static/js/sh
+
 echo "Copying"
 cp -r static/* output/
 

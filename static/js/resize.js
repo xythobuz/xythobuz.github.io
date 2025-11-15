@@ -1,44 +1,71 @@
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
-$(document).ready(function() {
-    jQuery(window).resize(function() {
+$(function() {
+    // ensure nav bar does not hide content after resizes
+    $(window).on('resize', function() {
         $('#wrap').css('height', $('#nav').css('height'));
     });
 
-    var fontSize = parseInt($('body').css('font-size'), 10);
-    var initialFontSize = fontSize;
+    // get initial font size from localstorage, if it exists
+    var initialFontSize = 100;
+    var fontSize = localStorage.getItem('font-size');
+    if (fontSize == null) {
+        fontSize = initialFontSize;
+    } else {
+        fontSize = parseInt(fontSize);
+    }
 
+    // apply initial zoom
+    $('#content').css('font-size', fontSize + '%');
+
+    // click on 'increase'
     $('.inc').on('click', function() {
-        fontSize += 1;
-        $('#content').css('font-size', fontSize + 'px');
+        fontSize = parseInt(fontSize) + 10;
+        $('#content').css('font-size', fontSize + '%');
+        localStorage.setItem('font-size', fontSize);
     })
+
+    // click on 'decrease'
     $('.dec').on('click', function() {
-        if (fontSize > 1) {
-            fontSize -= 1;
-            $('#content').css('font-size', fontSize + 'px');
-        }
-    })
-    $('.reset').on('click', function() {
-        if (fontSize != initialFontSize) {
-            fontSize = initialFontSize;
-            $('#content').css('font-size', initialFontSize + 'px');
+        if (parseInt(fontSize) > 10) {
+            fontSize = parseInt(fontSize) - 10;
+            $('#content').css('font-size', fontSize + '%');
+            localStorage.setItem('font-size', fontSize);
         }
     })
 
-    $(document).keypress(function(event) {
-        if (event.charCode == '+'.charCodeAt(0)) {
-            fontSize += 1;
-            $('#content').css('font-size', fontSize + 'px');
+    // click on 'reset'
+    $('.reset').on('click', function() {
+        if (parseInt(fontSize) != initialFontSize) {
+            fontSize = initialFontSize;
+            $('#content').css('font-size', initialFontSize + '%');
+            localStorage.setItem('font-size', fontSize);
         }
-        if (event.charCode == '-'.charCodeAt(0)) {
-            if (fontSize > 1) {
-                fontSize -= 1;
-                $('#content').css('font-size', fontSize + 'px');
+    })
+
+    // keyboard shortcuts
+    $(document).on('keypress', function(e) {
+        // hotkey for 'increase'
+        if (e.key == '+') {
+            fontSize = parseInt(fontSize) + 10;
+            $('#content').css('font-size', fontSize + '%');
+            localStorage.setItem('font-size', fontSize);
+        }
+
+        // hotkey for 'decrease'
+        if (e.key == '-') {
+            if (parseInt(fontSize) > 10) {
+                fontSize = parseInt(fontSize) - 10;
+                $('#content').css('font-size', fontSize + '%');
+                localStorage.setItem('font-size', fontSize);
             }
         }
-        if (event.charCode == '0'.charCodeAt(0)) {
-            if (fontSize != initialFontSize) {
+
+        // hotkey for 'reset'
+        if (e.key == '0') {
+            if (parseInt(fontSize) != initialFontSize) {
                 fontSize = initialFontSize;
-                $('#content').css('font-size', initialFontSize + 'px');
+                $('#content').css('font-size', initialFontSize + '%');
+                localStorage.setItem('font-size', fontSize);
             }
         }
     });

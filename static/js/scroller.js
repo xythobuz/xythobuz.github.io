@@ -9,7 +9,7 @@ function scroll_visibility() {
     }
 }
 
-$(document).ready(function() {
+$(function() {
     // don't show on short pages
     if ($("html").outerHeight() <= $(window).height()) {
         return;
@@ -22,8 +22,8 @@ $(document).ready(function() {
         click: function() {
             var hash = location.hash.replace("#","");
             if (hash != "") {
-                const location = window.location.href.split('#')[0];
-                window.history.pushState({}, "", location);
+                var loc = window.location.href.split('#')[0];
+                window.history.pushState({}, "", loc);
             }
             window.scrollTo({ top: 0, behavior: "auto" });
             return true;
@@ -33,6 +33,6 @@ $(document).ready(function() {
 
     // register handler and set initial state
     scroll_visibility();
-    $(window).scroll(scroll_visibility);
+    $(window).on("scroll", scroll_visibility);
 });
 // @license-end
