@@ -851,6 +851,10 @@ def printLatestRelease(user, repo):
 # multi language support
 # -----------------------------------------------------------------------------
 
+# TODO currently i'm moving all .md and .html files to the output top-dir
+# TODO ugly legacy. can we change this to False in the future?
+move_output_html_to_top = True # .html rendered files
+
 def hook_preconvert_anotherlang():
     MKD_PATT = r'\.(?:md|mkd|mdown|markdown)$'
     _re_lang = re.compile(r'^[\s+]?lang[\s+]?[:=]((?:.|\n )*)', re.MULTILINE)
@@ -865,15 +869,32 @@ def hook_preconvert_anotherlang():
                                         text_lang[::2]))
 
         for lang, text in (iter(text_grouped.items()) if PY3 else text_grouped.iteritems()):
-            spath = p.fname.split(os.path.sep)
             langs.append(lang)
 
+            # extract filename component of path (and modify if needed)
             if lang == "en":
-                filename = re.sub(MKD_PATT, r"%s\g<0>" % "", p.fname).split(os.path.sep)[-1]
+                # keep english path as original
+                fn = re.sub(MKD_PATT, r"%s\g<0>" % "", p.fname)
             else:
-                filename = re.sub(MKD_PATT, r".%s\g<0>" % lang, p.fname).split(os.path.sep)[-1]
+                # other languages get .lang before the file extension (eg. foo.html -> foo.de.html)
+                fn = re.sub(MKD_PATT, r".%s\g<0>" % lang, p.fname)
 
-            vp = Page(filename, virtual=text)
+            # only take last component of path (filename without subdirs)
+            filename_top = fn.split(os.path.sep)[-1]
+
+            # add other path components back in (without ./input/)
+            spath = p.fname.split(os.path.sep)[2:]
+            spath[-1] = filename_top
+            filename_sub = os.path.sep.join(spath)
+
+            if move_output_html_to_top == False:
+                filename = filename_sub
+            else:
+                filename = filename_top
+
+            # create new virtual Page
+            vp = Page(filename, virtual=text, fullpath=filename_sub)
+
             # Copy real page attributes to the virtual page
             for attr in p:
                 if not ((attr in vp) if PY3 else vp.has_key(attr)):
@@ -893,6 +914,7 @@ def hook_preconvert_anotherlang():
 
         vpages += page_vpages.values()
 
+    # have the new virtual pages replace the original one
     pages[:] = vpages
 
 # -----------------------------------------------------------------------------

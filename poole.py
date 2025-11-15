@@ -323,7 +323,7 @@ class Page(dict):
     _sec_macros = "macros"
     _modmacs = None
 
-    def __init__(self, fname, virtual=None, **attrs):
+    def __init__(self, fname, virtual=None, fullpath=None, **attrs):
         """Create a new page.
 
         Page content is read from `fname`, except when `virtual` is given (a
@@ -342,15 +342,23 @@ class Page(dict):
         self.update(self._template)
         self.update(attrs)
 
+        print("info   : Page for %s (%s)" % (fname, "real" if virtual == None else "virtual"))
         self._virtual = virtual is not None
 
+        # add './input' before filename
         fname = opj(self._pstrip, fname) if virtual else fname
 
-        self["fname"] = fname
+        if virtual is not None:
+            print("info   :   (virt) %s" % fname)
 
-        self["url"] = re.sub(MKD_PATT, ".html", fname)
-        self["url"] = self["url"][len(self._pstrip):].lstrip(os.path.sep)
-        self["url"] = self["url"].replace(os.path.sep, "/")
+        self["fname"] = fname
+        self["fullpath"] = fullpath if fullpath is not None else fname
+        print("info   :   (full) %s" % self["fullpath"])
+
+        self["url"] = re.sub(MKD_PATT, ".html", fname) # .md to .html
+        self["url"] = self["url"][len(self._pstrip):].lstrip(os.path.sep) # remove ./input/
+        self["url"] = self["url"].replace(os.path.sep, "/") # ensure path separator is /
+        print("info   :    (url) %s" % self["url"])
 
         self["page_flags"] = {}
 
@@ -522,43 +530,70 @@ def build(project, opts):
     pages = []
     custom_converter = macros.get('converter', {})
 
+    # TODO currently i'm moving all .md and .html files to the output top-dir
+    # TODO ugly legacy. can we change this to False in the future?
+    move_copied_files_to_top = True # .md and other copied files
+
     for cwd, dirs, files in os.walk(dir_in if PY3 else dir_in.decode(opts.filename_enc)):
         cwd_site = cwd[len(dir_in):].lstrip(os.path.sep)
         for sdir in dirs[:]:
             if re.search(opts.ignore, opj(cwd_site, sdir)):
+                print('info   : removing ignored dir %s' % sdir)
                 dirs.remove(sdir)
             else:
+                print('info   : creating dir %s' % opj(dir_out, cwd_site, sdir))
                 os.mkdir(opj(dir_out, cwd_site, sdir))
+
         for f in files:
             if re.search(opts.ignore, opj(cwd_site, f)):
+                print('info   : ignoring file %s' % opj(cwd_site, f))
                 pass
             elif re.search(MKD_PATT, f):
-                page = Page(opj(cwd, f))
+                path_in = opj(cwd, f)
+                if move_copied_files_to_top == True:
+                    # move .md files to output top-level
+                    path_out = opj(dir_out, f)
+                else:
+                    # keep .md files in their subdirs
+                    path_out = opj(dir_out, cwd_site, f)
+                page = Page(path_in) # 'real' pages get the full input .md path with subdirs
                 pages.append(page)
-                foo = opj(cwd, f)
-                bar = opj(dir_out, f)
-                print('info   : copy %s' % bar)
-                shutil.copyfile(foo, bar)
+                print('info   : copy from %s' % path_in)
+                print('info   :        to %s' % path_out)
+                shutil.copyfile(path_in, path_out)
             else:
                 # either use a custom converter or do a plain copy
                 for patt, (func, ext) in custom_converter.items():
                     if re.search(patt, f):
                         f_src = opj(cwd, f)
-                        f_dst = opj(dir_out, cwd_site, f)
+                        if move_copied_files_to_top == True:
+                            # move custom converted files to output top-level
+                            f_dst = opj(dir_out, f)
+                        else:
+                            # keep custom converted files in their subdirs
+                            f_dst = opj(dir_out, cwd_site, f)
                         f_dst = '%s.%s' % (os.path.splitext(f_dst)[0], ext)
-                        print('info   : convert %s (%s)' % (f_src, func.__name__))
+                        print('info   : custom convert from %s (%s)' % (f_src, func.__name__))
+                        print('info   :                  to %s' % f_dst)
                         func(f_src, f_dst)
                         break
                 else:
-                    src = opj(cwd, f)
+                    path_in = opj(cwd, f)
+                    if move_copied_files_to_top == True:
+                        # move copied custom files to output top-level
+                        path_out = dir_out
+                    else:
+                        # keep copied custom files in their subdirs
+                        path_out = opj(dir_out, cwd_site)
+                    print('info   : custom copy from %s' % path_in)
+                    print('info   :               to %s' % opj(path_out, f))
                     try:
-                        shutil.copy(src, opj(dir_out, cwd_site))
+                        shutil.copy(path_in, path_out)
                     except OSError:
                         # some filesystems like FAT won't allow shutil.copy
-                        shutil.copyfile(src, opj(dir_out, cwd_site, f))
+                        shutil.copyfile(path_in, opj(path_out, f))
 
     pages.sort(key=lambda p: int(p.get("sval", "0")))
-
     macros["pages"] = pages
 
     # -------------------------------------------------------------------------
@@ -574,7 +609,6 @@ def build(project, opts):
     # -------------------------------------------------------------------------
 
     for page in pages:
-
         print("info   : convert %s" % page)
 
         # replace expressions and statements in page source

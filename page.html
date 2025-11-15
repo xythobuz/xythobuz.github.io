@@ -120,14 +120,14 @@ else:
 
                     if page.get("title", "") == "Blog":
                         if page.get("lang", "en") == "de":
-                            print("<i>Ver&ouml;ffentlicht am %s.</i>" % date)
+                            print("<i>Artikel ver&ouml;ffentlicht am %s.</i>" % date)
                         else:
-                            print("<i>Published on %s.</i>" % date)
+                            print("<i>Post published on %s.</i>" % date)
                     else:
                         if page.get("lang", "en") == "de":
-                            print("<i>Projekt gestartet am %s.</i>" % date)
+                            print("<i>Projekt ver&ouml;ffentlicht am %s.</i>" % date)
                         else:
-                            print("<i>Project started on %s.</i>" % date)
+                            print("<i>Project published on %s.</i>" % date)
 
                 if page.get("date", "") != "" and page.get("update", "") != "":
                     print("<br>")
@@ -196,7 +196,7 @@ else:
             %-->
         </span>
         <br><span style="font-size: xx-small">
-            <a href="<!--% print(page.get('fname').replace('./input/', '').replace('.de.md', '.md')) %-->">View Source '<!--% print(page.get("fname").replace('./input/', '').replace('.de.md', '.md')) %-->'</a>
+            <a href="<!--% print('https://codeberg.org/xythobuz/website/src/branch/master/input/' + page.get('fullpath').replace('.de.md', '.md') + '?display=source') %-->">View Source '<!--% print(page.get("fullpath").replace('.de.md', '.md')) %-->'</a> (<a href="<!--% print(page.get('fname').replace('./input/', '').replace('.de.md', '.md')) %-->">locally</a>)
         </span>
     </div>
     <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
