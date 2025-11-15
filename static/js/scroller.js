@@ -10,11 +10,6 @@ function scroll_visibility() {
 }
 
 $(function() {
-    // don't show on short pages
-    if ($("html").outerHeight() <= $(window).height()) {
-        return;
-    }
-
     // add button, initially hidden
     $("<a>", {
         text: "⇑",

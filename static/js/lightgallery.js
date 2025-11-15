@@ -1,5 +1,6 @@
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
-$(function() {
+$(window).on("load", function() {
+    // configuration for lightgallery
     var settings = {
         allowMediaOverlap: false,
         backdropDuration: 100,
@@ -32,6 +33,7 @@ $(function() {
         galleryId: "0",
     };
 
+    // create a single lightgallery instance for all relevant divs
     var old_selector = $("div.lightgallery a").toArray();
     var new_selector = $("div.lightgallery_new .border:has(>a>img)").toArray();
     settings.selector = old_selector.concat(new_selector);
@@ -39,6 +41,7 @@ $(function() {
         lightGallery(document.body, settings);
     }
 
+    // attach mouse following thumbnail zoom stuff to lightgallery images
     $(".border:has(>a>img) .pic").each(function() {
         // filter out youtube videos with auto thumbnails (they have data-poster in the thumbnail)
         if ($(this).attr("data-poster") != undefined) {
@@ -79,6 +82,36 @@ $(function() {
 
         var mouse_scale = 5;
         var zoom_fact = 1.0 + (1.0 / mouse_scale);
+
+        // allow zooming the thumbnail when scolling while holding down shift
+        border.on('wheel', function(e) {
+            var diff = 0;
+            if (e.originalEvent.deltaY < 0) {
+                if (e.originalEvent.shiftKey) {
+                    diff = -1;
+                }
+            } else if (e.originalEvent.deltaY > 0) {
+                if (e.originalEvent.shiftKey) {
+                    diff = 1;
+                }
+            }
+
+            if (diff != 0) {
+                mouse_scale += diff;
+                if (mouse_scale > 10) {
+                    mouse_scale = 10;
+                }
+                if (mouse_scale < 1) {
+                    mouse_scale = 1;
+                }
+
+                zoom_fact = 1.0 + (1.0 / mouse_scale);
+                $(this).trigger("mouseenter");
+                return false;
+            }
+
+            return true;
+        });
 
         // zoom .border div on mouseenter
         border.on("mouseenter", function() {
