@@ -35,9 +35,11 @@ minifiers = [
     # used for static/js
     { "name": "uglify", "func": minify_uglify, "count": 0, "errors": 0 },
 
+    # used for static/css
+    { "name": "yuicompressor", "func": minify_yuicompressor, "count": 0, "errors": 0 },
+
     # not giving any useful results
     #{ "name": "rjsmin", "func": minify_rjsmin, "count": 0, "errors": 0 },
-    #{ "name": "yuicompressor", "func": minify_yuicompressor, "count": 0, "errors": 0 },
     #{ "name": "crimp", "func": minify_crimp, "count": 0, "errors": 0 },
 ]
 
@@ -87,11 +89,11 @@ def minify_file(fp_in, fp_out):
     with open(fp_out, "w") as f:
         f.write(minified)
 
-def minify_dir(dirpath):
+def minify_dir(dirpath, extension):
     for filename in os.listdir(dirpath):
-        if filename.endswith(".js") and not filename.endswith(".min.js"):
+        if filename.endswith(extension) and not filename.endswith(".min" + extension):
             fp_in = os.path.join(dirpath, filename)
-            fp_out = os.path.splitext(fp_in)[0] + ".min.js"
+            fp_out = os.path.splitext(fp_in)[0] + ".min" + extension
             print("minify " + fp_in + " to " + fp_out)
             minify_file(fp_in, fp_out)
             print()
@@ -103,6 +105,7 @@ def minify_dir(dirpath):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("--extension", help="file extension (start with .)", default=".js")
     parser.add_argument("directory", help="working directory", default=".")
     args = parser.parse_args()
-    minify_dir(args.directory)
+    minify_dir(args.directory, args.extension)

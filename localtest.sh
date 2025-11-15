@@ -12,6 +12,7 @@ echo "Building"
 echo "Minifying"
 ./minify.py static/js
 #./minify.py static/js/sh
+./minify.py --extension .css static/css
 
 echo "Copying"
 cp -r static/* output/
