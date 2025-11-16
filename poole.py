@@ -71,7 +71,7 @@ if PY3:
     from http.server import HTTPServer, SimpleHTTPRequestHandler
 else:
     import tempfile
-    from io import StringIO
+    from StringIO import StringIO
     from SimpleHTTPServer import SimpleHTTPRequestHandler
     from BaseHTTPServer import HTTPServer
     def exec_(code, envdic):
