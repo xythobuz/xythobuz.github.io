@@ -1,1 +1,1 @@
-#duality_wrap{width:90%;aspect-ratio:160 / 144;margin:0 auto;border-radius:5px;padding:5px;display:block;resize:horizontal;z-index:666}@media(min-width:1000px){#duality_wrap{width:70%}}@media(min-width:1500px){#duality_wrap{width:50%}}
+#duality_wrap{width:90%;aspect-ratio:160 / 144;margin:0 auto;border-radius:5px;padding:5px;display:block;resize:horizontal;position:relative;z-index:666}@media(min-width:1000px){#duality_wrap{width:70%}}@media(min-width:1500px){#duality_wrap{width:50%}}
