@@ -194,7 +194,7 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al2" name="license" href="#license"></a>
+<a class="anchor al2" id="license" href="#license"></a>
 ## License
 
 The [AutoBrightness project](https://codeberg.org/xythobuz/AutoBrightness) is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html).

@@ -9,6 +9,7 @@ comments: true
 favicon: https://xythobuz.github.io/Duality/favicon.png
 auto_toc: true
 no_gen_ai: true
+additional_css: css/duality.min.css
 ---
 
 ## Introduction
@@ -239,7 +240,7 @@ lightgallery([
 
 To get the proper movement and shot velocity vectors for the current angle I'm also pre-calculating these tables.
 
-<pre class="sh_c" skip_line_no>
+<pre class="sh_c" data-skip=1>
 const int8_t table_speed_move[table_speed_move_SIZE] = {
     0, 23, // 0.0
     9, 21, // 22.5
@@ -385,7 +386,7 @@ Which unit goes into which bank can be decided automatically (autobanking).
 First enable autobanking by passing the proper compiler flag `-Wm-yoA`.
 Now, at the start of each `.c` and `.h` files, declare a reference to the bank of this compilation unit.
 
-<pre class="sh_c" skip_line_no>
+<pre class="sh_c" data-skip=1>
 /* in some_name.c */
 BANKREF(some_name)
 
@@ -397,7 +398,7 @@ Of course each unit needs a unique `some_name` (does not need to be the filename
 
 Now you can declare your non-static functions with an attribute to place them in the correct bank.
 
-<pre class="sh_c" skip_line_no>
+<pre class="sh_c" data-skip=1>
 void foo(void) BANKED;
 void bar(void) NONBANKED;
 </pre>
@@ -652,91 +653,5 @@ The included cartridge label graphic in `artwork/cart_label.xcf` is based on the
 
 The included cartridge graphic in `artwork/cartridge.xcf` is based on the ['Front-End-Assets' by Duimon](https://github.com/Duimon/Front-End-Assets).
 
-<!--% #################################################################### %-->
-
-<style>
-    #duality_wrap {
-        width: 90%;
-        aspect-ratio: 160 / 144;
-        margin: 0px auto;
-        border-radius: 5px;
-        padding: 5px;
-        display: block;
-        resize: horizontal;
-    }
-
-    @media (min-width: 1000px) {
-        #duality_wrap {
-            width: 70%;
-        }
-    }
-
-    @media (min-width: 1500px) {
-        #duality_wrap {
-            width: 50%;
-        }
-    }
-</style>
-<script>
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
-    dw = document.getElementById("duality_wrap");
-    dw.addEventListener('resize', function(event) {
-        event.target.style.width = `${event.target.clientWidth}px`;
-        event.target.style.height = `${event.target.clientWidth * 160 / 144}px`;
-    });
-
-    EJS_language = '';
-    EJS_player = "#duality_game";
-    EJS_core = "gb";
-    EJS_pathtodata = "emu_js/";
-    EJS_gameUrl = "https://xythobuz.github.io/Duality/duality.gb";
-    EJS_alignStartButton = "center";
-    EJS_backgroundImage = "https://xythobuz.github.io/Duality/cartridge.png";
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        EJS_backgroundColor = "#111111";
-    } else {
-        EJS_backgroundColor = "#DDDDDD";
-    }
-    EJS_defaultControls = {
-        0: {
-            0: {
-                'value': 'a',
-                'value2': 'BUTTON_2'
-            },
-            2: {
-                'value': 'space',
-                'value2': 'SELECT'
-            },
-            3: {
-                'value': 'enter',
-                'value2': 'START'
-            },
-            4: {
-                'value': 'up arrow',
-                'value2': 'DPAD_UP'
-            },
-            5: {
-                'value': 'down arrow',
-                'value2': 'DPAD_DOWN'
-            },
-            6: {
-                'value': 'left arrow',
-                'value2': 'DPAD_LEFT'
-            },
-            7: {
-                'value': 'right arrow',
-                'value2': 'DPAD_RIGHT'
-            },
-            8: {
-                'value': 's',
-                'value2': 'BUTTON_1'
-            }
-        },
-        1: {},
-        2: {},
-        3: {}
-    };
-    EJS_startButtonName = "Start Duality";
-// @license-end
-</script>
+<script src="js/duality.min.js"></script>
 <script src="emu_js/loader.js" async defer></script>

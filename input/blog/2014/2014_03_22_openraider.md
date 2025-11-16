@@ -1,5 +1,6 @@
 title: Blog
 post: OpenRaider fork
+lang: de
 date: 2014-03-22
 comments: true
 flattr: true

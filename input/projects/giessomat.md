@@ -145,7 +145,8 @@ I am using two 5V regulators, one for powering the ESP32 and one for powering th
 This was my quick-and-dirty way of getting the power rails clean enough that the ESP is not resetting when toggling a relais.
 The valves are directly fed <del>12V</del> 13.5V and another regulator produces 6V for the peristaltic pumps.
 
-<div class="textwrap"><pre class="ascii">
+<div class="textwrap"><pre class="ascii"><!--%
+s = """
 Giess-o-mat Controller Schematic
 
              -------|USB|-------                        -----------
@@ -205,7 +206,10 @@ ESP_SCL <---|x P22          SP  |                        -------
          ---    ---                                  ---    ---
           |      |                                    |      |
         +3.3V ---                                   +3.3V ---
-</pre><pre class="ascii">
+"""
+print(htmlspecialchars(s))
+%--></pre><pre class="ascii"><!--%
+s = """
 Giess-o-mat User Interface Schematic
 
             -------|USB|-------
@@ -244,7 +248,9 @@ KP_R3 <---| | 7 | | 8 | | 9 | |                |  |         LCD        |  |
 KP_R4 <---| | * | | 0 | | # | |                |   --------------------   |
           |  ---   ---   ---  |                |                          |
            -------------------                  --------------------------
-</pre></div>
+"""
+print(htmlspecialchars(s))
+%--></pre></div>
 
 As you can see, the schematic is relatively simple, not doing much more than connecting some modules with each other.
 I did not (have to) add any kind of filtering or other passive circuitry.
@@ -408,7 +414,8 @@ This caused the relais to try to turn on for a very brief time (milliseconds), i
 
 Adding liberal amounts of filtering capacitors (330µF) to all three power rails going to the expansion (12V, 5V, 3.3V), as well as more caps directly at the PCF module (3900µF), helped enough to completely fix the issue.
 
-<div class="textwrap"><pre class="ascii">
+<div class="textwrap"><pre class="ascii"><!--%
+s = """
 Giess-o-mat I2C GPIO Expansion Schematic
 
               --------
@@ -454,7 +461,9 @@ Giess-o-mat I2C GPIO Expansion Schematic
        |    |
         -||-            +5V_R <---||---> GND
        3900µF                    330µF
-</pre></div>
+"""
+print(htmlspecialchars(s))
+%--></pre></div>
 
 Below you can see some screenshots I took on my scope.
 

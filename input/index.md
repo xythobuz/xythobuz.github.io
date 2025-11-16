@@ -8,13 +8,13 @@ noheader: true
 
 # Hi there!
 
-<img id="index-avatar" src="img/ava.jpg">
+<img id="index-avatar" src="img/ava.jpg" alt="Photo of website author">
 
 I'm a <!--% print(own_age()) %--> year old software developer from Germany.
 All of my projects are released as free or open-source software on [my Codeberg profile](https://codeberg.org/xythobuz), [my GitHub profile](https://github.com/xythobuz) or here on my website.
 Have fun!
 
-To receive my latest updates, you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
+To receive my latest updates, you can subscribe to the <a href="rss.xml"><img src="img/rss.png" alt="RSS feed icon">RSS Feed</a>.
 
 All my projects and all content of this website are proudly made without _any_ generative artificial intelligence.
 

@@ -31,7 +31,7 @@
                 </a>
               </li>
               <li>
-                <img src="img/rss.png" />
+                <img src="img/rss.png" alt="RSS feed icon" />
               </li>
             </ul>
           </div>

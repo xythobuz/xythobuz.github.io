@@ -19,7 +19,7 @@ This page contains photos from the Webcams on my 3D printers, live-updated every
     </noscript>
 </div>
 
-<script type="text/javascript">
+<script>
     function LastModUsingHeader(sFile, callback) {
         try {
             var x = new XMLHttpRequest;

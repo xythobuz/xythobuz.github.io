@@ -617,7 +617,7 @@ def build(project, opts):
         out = regx_exec.sub(repl_exec, out)
 
         # convert to HTML
-        page.html = markdown.Markdown(extensions=opts.md_ext).convert(out)
+        page.html = markdown.Markdown(extensions=opts.md_ext, output_format="html").convert(out)
 
     # -------------------------------------------------------------------------
     # run post-convert hooks in macro module

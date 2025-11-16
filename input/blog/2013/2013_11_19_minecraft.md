@@ -1,5 +1,6 @@
 title: Blog
 post: CraftBukkit 1.6.4-R2.0 build
+lang: de
 date: 2013-11-19
 comments: true
 ---

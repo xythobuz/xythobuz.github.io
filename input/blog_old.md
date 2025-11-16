@@ -7,7 +7,7 @@ noheader: true
 
 [Click here](blog.html) for the more recent blog posts.
 
-To receive my latest updates you can subscribe to the <a href="rss.xml"><img src="img/rss.png">RSS Feed</a>.
+To receive my latest updates you can subscribe to the <a href="rss.xml"><img src="img/rss.png" alt="RSS feed icon">RSS Feed</a>.
 
 <!--%
 import datetime

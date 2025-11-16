@@ -15,7 +15,7 @@ A 8x5 LED Matrix controlled by an AtTiny2313 which communicates via a FT232R wit
 [![Photo][1]][2]
 [![Schematics][3]][4]
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/WMnwJV9WJf8" frameborder="0" allowfullscreen></iframe>
+<iframe style="width:420px;height:315px;border-style:none;" src="http://www.youtube.com/embed/WMnwJV9WJf8"></iframe>
 [`Youtube Link`](http://www.youtube.com/watch?v=WMnwJV9WJf8)
 
 [Download sourcecode and hex file (9kB)][5]
@@ -33,7 +33,7 @@ Eine 8x5 LED Matrix an einem AtTiny2313, welcher über einen FT232R mit einem Co
 [![Photo][1]][2]
 [![Schematics][3]][4]
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/WMnwJV9WJf8" frameborder="0" allowfullscreen></iframe>
+<iframe style="width:420px;height:315px;border-style:none;" src="http://www.youtube.com/embed/WMnwJV9WJf8"></iframe>
 [`Youtube Direktlink`](http://www.youtube.com/watch?v=WMnwJV9WJf8)
 
 [Download Sourcecode und Hex Datei (9kB)][5]

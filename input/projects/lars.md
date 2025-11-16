@@ -73,7 +73,7 @@ The software is not quite finished yet, but without access to the hardware I'm n
 
 [For now](lars_v2.html)...
 
-<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
+<a class="anchor al2" id="more_pictures" href="#more_pictures"></a>
 ## More Pictures
 
 <div class="collapse">Some more photographs I didn't use above.</div>

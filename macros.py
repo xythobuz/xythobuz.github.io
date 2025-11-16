@@ -33,9 +33,9 @@ def print_cnsl_error(s, url = None):
 PY3 = sys.version_info[0] == 3
 
 if PY3:
-    import html
     import urllib
     import urllib.request
+    import urllib.parse
     from urllib.error import HTTPError, URLError
 
     def urlparse_queryparam(link, param='v'):
@@ -43,8 +43,10 @@ if PY3:
 
     def urlparse_path(link):
         return urllib.parse.urlparse(link).path
+
+    def url_escape(link):
+        return urllib.parse.quote_plus(link)
 else:
-    import cgi
     import urllib
     import urlparse
 
@@ -53,6 +55,9 @@ else:
 
     def urlparse_path(link):
         return urlparse.urlparse(link).path
+
+    def url_escape(link):
+        return urllib.quote_plus(link)
 
 # -----------------------------------------------------------------------------
 # config "system"
@@ -262,7 +267,7 @@ def githubCommitBadge(p, showInline = False):
                 ret += "style =\"vertical-align: middle; padding-bottom: 0.25em;\" "
             ret += "src=\"https://img.shields.io/github/last-commit/"
             ret += linkParts[3] + "/" + linkParts[4]
-            ret += ".svg?logo=git&style=flat\" /></a>"
+            ret += ".svg?logo=git&style=flat\" alt=\"GitHub commit badge\"></a>"
     return ret
 
 def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStartDate = False, nicelyFormatFullDate = False, lastyear = "0", lang = "", showLastCommit = True, hide_description = False, updates_as_heading = False, desc_has_collapse = False):
@@ -280,7 +285,7 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
     if year != lastyear:
         lastyear = year
         if yearsAsHeading:
-            print("<h4>" + str(year) + "</h4>")
+            print("<li class=\"yearheading\">" + str(year) + "</li>")
 
     dateto = ""
     if p.get("date", "" != ""):
@@ -309,12 +314,14 @@ def printMenuItem(p, yearsAsHeading = False, showDateSpan = False, showOnlyStart
             else:
                 print("<br><span class=\"listdesc\">" + description + "</span>")
 
-    if showLastCommit:
+    # TODO can not show commit badge when it is a parent page with collapsable description
+    if showLastCommit and not desc_has_collapse:
         link = githubCommitBadge(p)
         if len(link) > 0:
             print("<br>" + link)
 
-    print("</li>")
+    if not desc_has_collapse:
+        print("</li>")
 
     return lastyear
 
@@ -330,13 +337,13 @@ class SortReversor:
         return other.obj < self.obj
 
 def printRecentMenu(count = 5):
-    posts = [p for p in pages if "date" in p and p.lang == "en"]
+    posts = [p for p in pages if "date" in p and p.ordinal == 0]
     posts.sort(key=lambda p: [ SortReversor(p.get("update", p.get("date"))), p["title"] ])
 
     if count > 0:
         posts = posts[0:count]
 
-    print("<ul id='menulist'>")
+    print("<ul class='menulist'>")
 
     lastyear = "0"
     for p in posts:
@@ -345,7 +352,7 @@ def printRecentMenu(count = 5):
     print("</ul>")
 
 def printBlogMenu(year_min=None, year_max=None):
-    posts = [p for p in pages if "post" in p and p.lang == "en"]
+    posts = [p for p in pages if "post" in p and p.ordinal == 0]
     posts.sort(key=lambda p: [ SortReversor(p.get("date", "9999-01-01")), p["title"] ])
 
     if year_min != None:
@@ -353,7 +360,7 @@ def printBlogMenu(year_min=None, year_max=None):
     if year_max != None:
         posts = [p for p in posts if int(p.get("date", "9999-01-01")[0:4]) <= int(year_max)]
 
-    print("<ul id='menulist'>")
+    print("<ul class='menulist'>")
 
     lastyear = "0"
     for p in posts:
@@ -368,7 +375,7 @@ def printProjectsMenu():
     # in a hidden div, expanding when clicking the description.
     # then afterwards those with date, split by year.
     # also supports blog posts with parent.
-    enpages = [p for p in pages if p.lang == "en"]
+    enpages = [p for p in pages if p.ordinal == 0]
 
     # select pages without date
     dpages = [p for p in enpages if p.get("date", "") == ""]
@@ -377,7 +384,7 @@ def printProjectsMenu():
     # sort by position
     mpages.sort(key=lambda p: [ int(p.get("position", "999")), p["title"] ])
 
-    print("<ul id='menulist'>")
+    print("<ul class='menulist'>")
 
     # print all pages
     for p in mpages:
@@ -399,6 +406,12 @@ def printProjectsMenu():
                 printMenuItem(sp, False, True, True, False, "0", "", False, True)
             print("</ul>")
             print("</div>")
+            print("</li>")
+
+            # manually count because this does not appear in page.source
+            if not "collapse" in page["page_flags"]:
+                page["page_flags"]["collapse"] = 0
+            page["page_flags"]["collapse"] += 1
 
     # slect pages with a date
     dpages = [p for p in enpages if p.get("date", "") != ""]
@@ -428,17 +441,23 @@ def printProjectsMenu():
                 printMenuItem(sp, False, True, True, False, "0", "", False, True)
             print("</ul>")
             print("</div>")
+            print("</li>")
+
+            # manually count because this does not appear in page.source
+            if not "collapse" in page["page_flags"]:
+                page["page_flags"]["collapse"] = 0
+            page["page_flags"]["collapse"] += 1
 
     print("</ul>")
 
 def printMenuGeneric(mpages = None, sortKey = None):
     if mpages == None:
-        mpages = [p for p in pages if p.get("parent", "__none__") == page["child-id"] and p.lang == "en"]
+        mpages = [p for p in pages if p.get("parent", "__none__") == page["child-id"] and p.ordinal == 0]
     if sortKey != None:
         mpages.sort(key = sortKey)
 
     if len(mpages) > 0:
-        print("<ul id='menulist'>")
+        print("<ul class='menulist'>")
         for p in mpages:
             printMenuItem(p, False, True, True)
         print("</ul>")
@@ -461,7 +480,7 @@ def printRobotMenuEnglish():
     mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "en"]
     mpages.sort(key=lambda p: [ int(p["position"]), p["title"] ])
 
-    print("<ul id='menulist'>")
+    print("<ul class='menulist'>")
     for p in mpages:
         printMenuItem(p)
     print("</ul>")
@@ -470,23 +489,28 @@ def printRobotMenuDeutsch():
     mpages = [p for p in pages if p.get("parent", "") == "xyrobot" and p.lang == "de"]
     mpages.sort(key=lambda p: [ int(p["position"]), p["title"] ])
 
-    print("<ul id='menulist'>")
+    print("<ul class='menulist'>")
     for p in mpages:
         printMenuItem(p, False, False, False, False, "0", "de")
     print("</ul>")
 
 def printSteamMenuEnglish():
-    mpages = [p for p in pages if p.get("parent", "") == "steam" and p.lang == "en"]
+    mpages = [p for p in pages if p.get("parent", "") == "steam" and ((p.lang == "en") or (p.ordinal == 0))]
     mpages.sort(key=lambda p: [ SortReversor(p.get("date", "9999-01-01")), p["title"] ])
 
-    print("<ul id='menulist'>")
+    print("<ul class='menulist'>")
     for p in mpages:
         printMenuItem(p, False, False, False, True)
     print("</ul>")
 
 def printSteamMenuDeutsch():
-    # TODO show german pages, or english pages when german not available
-    printSteamMenuEnglish()
+    mpages = [p for p in pages if p.get("parent", "") == "steam" and ((p.lang == "de") or (p.ordinal == 0))]
+    mpages.sort(key=lambda p: [ SortReversor(p.get("date", "9999-01-01")), p["title"] ])
+
+    print("<ul class='menulist'>")
+    for p in mpages:
+        printMenuItem(p, False, False, False, True)
+    print("</ul>")
 
 # -----------------------------------------------------------------------------
 # lightgallery helper macro
@@ -637,7 +661,7 @@ def lightgallery(links):
             if len(l) == 3:
                 link, img, alt = l
                 if "youtube.com" in link:
-                    img2 = '<img src="img/video-play.png" class="picthumb">'
+                    img2 = '<img src="img/video-play.png" class="picthumb" alt="Media play button">'
             else:
                 link, alt = l
                 if "youtube.com" in link:
@@ -646,7 +670,7 @@ def lightgallery(links):
                     img += "/0.jpg" # full size preview
                     #img += "/default.jpg" # default thumbnail
                     style = ' style="width:300px;" data-poster="' + img + '"'
-                    img2 = '<img src="img/video-play.png" class="picthumb">'
+                    img2 = '<img src="img/video-play.png" class="picthumb" alt="Media play button">'
                 elif link.startswith('img/'):
                     x = link.rfind('.')
                     img = link[:x] + '_small' + link[x:]
@@ -667,7 +691,7 @@ def lightgallery(links):
             link, mime, none, alt = l
 
             print('<div class="border" data-src="' + link + '" data-iframe="true">')
-            print('<audio controls preload="none" style="display:block;"><source src="' + link + '" type="' + mime + '" /></audio>')
+            print('<audio controls preload="none" style="display:block;"><source src="' + link + '" type="' + mime + '" >Your browser does not support audio.</audio>')
             print('<p class="audio_text"><a href="' + link + '">Download audio</a></p></div>')
         elif len(l) == 5:
             # HTML5 video
@@ -687,7 +711,7 @@ def lightgallery(links):
                 size_str = ' data-lg-size="' + str(int(size[0])) + '-' + str(int(size[1])) + '"'
 
             video_src = "'" + '{"source": [{"src":"' + link + '", "type":"' + mime + '"}], "attributes": {"preload": false, "playsinline": true, "controls": true}}' + "'"
-            print('<div class="border" data-video=' + video_src + size_str + ' data-poster="' + poster + '" data-sub-html="' + alt + '"><a href="' + link + '"><img class="pic" src="' + thumb + '"></a></div>')
+            print('<div class="border" data-video=' + video_src + size_str + ' data-poster="' + poster + '" data-sub-html="' + alt + '"><a href="' + link + '"><img class="pic" src="' + thumb + '" alt="' + alt + '"></a></div>')
         else:
             raise NameError('Invalid number of arguments for lightgallery')
 
@@ -759,20 +783,16 @@ def include_url(urls, data_slice = None, timeout = 2):
                 data.append("\n".join(slc))
         data = "\n\n// ...\n\n".join(data)
 
-    if PY3:
-        encoded = html.escape(data)
-    else:
-        encoded = cgi.escape(data)
-
+    encoded = htmlspecialchars(data)
     print(encoded, end="")
 
 def include_sourcecode_slice(sh_type, data_slice, filename, urls_pre, timeout = 2):
     urls = [ url_pre + filename for url_pre in urls_pre ]
     off = data_slice[0] if data_slice != None else 1
 
-    print('<pre class="sh_' + sh_type + '" offset="' + str(off))
+    print('<pre class="sh_' + sh_type + '" data-offset="' + str(off))
     if isinstance(data_slice, list):
-        print(' skip_line_no')
+        print(' data-skip=1')
     print('">')
 
     include_url(urls, data_slice, timeout)
@@ -828,8 +848,8 @@ def printLatestRelease(user, repo):
         print("</div>")
         return
 
-    print("<ul>")
     print("Release Assets:")
+    print("<ul>")
     for a in r["assets"]:
         size = int(a["size"])
         ss = " "
@@ -860,7 +880,7 @@ def hook_preconvert_anotherlang():
     _re_lang = re.compile(r'^[\s+]?lang[\s+]?[:=]((?:.|\n )*)', re.MULTILINE)
     vpages = [] # Set of all virtual pages
     for p in pages:
-        current_lang = DEFAULT_LANG # Default language
+        current_lang = p.get("lang", DEFAULT_LANG) # Page-set or default language
         langs = [] # List of languages for the current page
         page_vpages = {} # Set of virtual pages for the current page
         text_lang = re.split(_re_lang, p.source)
@@ -868,12 +888,15 @@ def hook_preconvert_anotherlang():
                                         [lang.strip() for lang in text_lang[1::2]], \
                                         text_lang[::2]))
 
+        lang_count = 0
+
         for lang, text in (iter(text_grouped.items()) if PY3 else text_grouped.iteritems()):
+            sys.stderr.write('lang   : language %s for %s\n' % (lang, p.fname))
             langs.append(lang)
 
             # extract filename component of path (and modify if needed)
-            if lang == "en":
-                # keep english path as original
+            if lang == current_lang:
+                # keep first language path as original, without prefix
                 fn = re.sub(MKD_PATT, r"%s\g<0>" % "", p.fname)
             else:
                 # other languages get .lang before the file extension (eg. foo.html -> foo.de.html)
@@ -899,12 +922,19 @@ def hook_preconvert_anotherlang():
             for attr in p:
                 if not ((attr in vp) if PY3 else vp.has_key(attr)):
                     vp[attr] = p[attr]
+
             # Define a title in the proper language
             vp["title"] = p["title_%s" % lang] \
                                     if ((("title_%s" % lang) in p) if PY3 else p.has_key("title_%s" % lang)) \
                                     else p["title"]
+
             # Keep track of the current lang of the virtual page
             vp["lang"] = lang
+
+            # Keep a running counter of languages for this page, 0 is main
+            vp["ordinal"] = lang_count
+            lang_count += 1
+
             page_vpages[lang] = vp
 
         # Each virtual page has to know about its sister vpages
@@ -1005,7 +1035,9 @@ def hook_preconvert_count_stuff():
             page["page_flags"]["shjs"] = 0
         page["page_flags"]["shjs"] += page.source.count('<pre')
 
-        page["page_flags"]["collapse"] = page.source.count('<div class="collapse">')
+        if not "collapse" in page["page_flags"]:
+            page["page_flags"]["collapse"] = 0
+        page["page_flags"]["collapse"] += page.source.count('collapsecontent')
 
 
 # -----------------------------------------------------------------------------

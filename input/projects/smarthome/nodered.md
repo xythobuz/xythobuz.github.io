@@ -34,7 +34,8 @@ lightgallery([
 
 And here are the flows for importing in Node-RED.
 
-<pre class="sh_javascript">
+<pre class="sh_javascript"><!--%
+conf_str = """
 [
     {
         "id": "490116e54af5ff9a",
@@ -2156,6 +2157,9 @@ And here are the flows for importing in Node-RED.
         ]
     }
 ]
-</pre>
+"""
+
+print(htmlspecialchars(conf_str))
+%--></pre>
 
 The Node-RED installation is [handled by an ansible script](/sovereign.html).

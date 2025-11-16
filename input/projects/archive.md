@@ -36,7 +36,7 @@ Simple utility to modify hardcoded TR4 font table. [Download](files/leikkuri_v04
 
 Should work on PPC and Intel, starting from Mac OS X 10.3.9. [Download](files/xdumb.zip) [Source](http://www.theisozone.com/downloads/playstation/ps2-homebrew/xdumb---ps2-hdd-utility-for-mac-users/)
 
-You will also need the corresponding server ELF (0.8.6) for your PS2. [Download](files/hdl dump 0.8.6_hdl_dumx-0.8.6.zip) [Source](http://www.4shared.com/get/bwAA4VN_/hdl_dump_086_hdl_dumx-086.html)
+You will also need the corresponding server ELF (0.8.6) for your PS2. [Download](files/hdl_dump_0.8.6_hdl_dumx-0.8.6.zip) [Source](http://www.4shared.com/get/bwAA4VN_/hdl_dump_086_hdl_dumx-086.html)
 
 There are also these modified server ELFs, version u0.8.6 and 0.9.1 as well as 0.8.6 with a size fix (160GB HDDs). [Download](files/hdl_dumx_unofficial.zip) [Source](http://psx-scene.com/forums/f98/unofficial-hdld_svr-0-8-6-0-9-1-soft-reset-boot-elf-loading-59236/) [Source](http://psx-scene.com/forums/f98/hdld_svr-elf-w1zard-0f-0z-patched-48bit-lba-support-zer0-x-27874/)
 

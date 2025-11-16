@@ -88,7 +88,8 @@ lightgallery([
 
 Here are my notes for installing everything on a Raspbian OS.
 
-<pre class="sh_sh">
+<pre class="sh_sh"><!--%
+s = """
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install python3-pip git vim htop
@@ -120,7 +121,9 @@ cd rgb-matrix-visualizer
 sudo ./pi.py
 
 sudo sh -c 'echo enable_uart=1 &gt;&gt; /boot/config.txt'
-</pre>
+"""
+print(htmlspecialchars(s))
+%--></pre>
 
 Although I'm currently still having some problems getting the `wetterdienst` dependency running on the Raspberry Pi.
 
@@ -155,7 +158,8 @@ lightgallery([
 
 I added some simple compensation to mostly adjust for this issue.
 
-<pre class="sh_python">
+<pre class="sh_python"><!--%
+s = """
 # For some reason the red and green LEDs on older Pimoroni panels
 # are far brighter than on newer panels.
 # Adjust this by multiplying rg channels with 0.75 and b channel
@@ -170,7 +174,9 @@ class MapperColorAdjust(MapperNull):
             color = (int(color[0] * 0.75), int(color[1] * 0.75), color[2] * 0.85)
 
         self.gui.set_pixel(x, y, color)
-</pre>
+"""
+print(htmlspecialchars(s))
+%--></pre>
 
 I also planned to build a large LED matrix based on WS2812 LED strips.
 They can be [driven easily with a Raspberry Pi](https://iosoft.blog/2020/09/29/raspberry-pi-multi-channel-ws2812/).
@@ -196,7 +202,7 @@ lightgallery([
 I haven't yet given up that plan completely, but I have to think of a solution for diffusing the light first.
 The LEDs are too small and spaced too far apart to look good in this configuration.
 
-<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
+<a class="anchor al2" id="more_pictures" href="#more_pictures"></a>
 ## More Pictures
 
 <div class="collapse">Some more photographs I didn't use above.</div>

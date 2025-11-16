@@ -1,5 +1,6 @@
 title: IB-NAS6210 Linux
 description: Booting your own Linux on an Icybox NAS6210 box
+lang: de
 parent: stuff
 position: 20
 comments: true

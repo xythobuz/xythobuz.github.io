@@ -40,7 +40,7 @@ lightgallery([
 * [Cutting Parameters](laser-engraver.html#cutting_parameters)
 * [More Pictures](laser-engraver.html#more_pictures)
 
-<a class="anchor al2" name="hardware" href="#hardware"></a>
+<a class="anchor al2" id="hardware" href="#hardware"></a>
 ## Hardware
 
 I know I say this in a lot of articles here, probably in an attempt to justify my hoarding of electronic parts. 😳
@@ -49,7 +49,7 @@ The rails I bought many years ago and never used.
 The steppers, mainboard, display, fans and cables came from my now disassembled [CTC i3](ctc-i3.html).
 Everything else came out of my parts bin.
 
-<a class="anchor al3" name="mechanics" href="#mechanics"></a>
+<a class="anchor al3" id="mechanics" href="#mechanics"></a>
 ### Mechanics
 
 The mechanism is based on the ["Cantilever Laser Engraver" by Meatball](https://www.printables.com/model/213526-cantilever-laser-engraver).
@@ -91,7 +91,7 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al3" name="electronics" href="#electronics"></a>
+<a class="anchor al3" id="electronics" href="#electronics"></a>
 ### Electronics
 
 As mentioned above I used the electronics, namely mainboard, LCD and fans, from my old 3D printer.
@@ -141,13 +141,13 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al2" name="software" href="#software"></a>
+<a class="anchor al2" id="software" href="#software"></a>
 ## Software
 
 There's a surprisingly large amount of software involved in this project.
 All just to move a lamp around a bit 💡🤔
 
-<a class="anchor al3" name="mcu_firmware" href="#mcu_firmware"></a>
+<a class="anchor al3" id="mcu_firmware" href="#mcu_firmware"></a>
 ### MCU Firmware
 
 Most DIY laser engravers or CNC machines seem to use the [GRBL firmware](https://github.com/gnea/grbl).
@@ -173,7 +173,7 @@ Using this I can generate G-Code where the object to cut starts at coordinates `
 
 My current Marlin configuration for the laser engraver can be found [in the Git repo](https://codeberg.org/xythobuz/marlin-mods/src/branch/laser-engraver).
 
-<a class="anchor al3" name="host_software" href="#host_software"></a>
+<a class="anchor al3" id="host_software" href="#host_software"></a>
 ### Host Software
 
 Besides the microcontroller firmware, we also need some host software to prepare the G-Code from whatever kind of input file we start out with.
@@ -192,7 +192,7 @@ But it is commercial paid software, not under any free software license, so [it 
 
 Below I will try to document all different free software packages I tried for laser engraving.
 
-<a class="anchor al4" name="lasergrbl" href="#lasergrbl"></a>
+<a class="anchor al4" id="lasergrbl" href="#lasergrbl"></a>
 #### LaserGRBL
 
 The first solution I found out about is [LaserGRBL](https://lasergrbl.com/).
@@ -313,7 +313,7 @@ This is not possible when using LaserGRBL to import SVG vector paths.
 With them, the output will always start at coordinates `(0, 0)`.
 You will then have to set the proper offset on the machine itself, as described in the Marlin section above.
 
-<a class="anchor al4" name="inkscape" href="#inkscape"></a>
+<a class="anchor al4" id="inkscape" href="#inkscape"></a>
 #### Inkscape
 
 Inkscape includes the [G-Code Tools Plugin from the russian-language CNC-Club forums](https://www.cnc-club.ru/forum/viewtopic.php?t=35).
@@ -324,7 +324,7 @@ I was able to get it to generate G-Code from a path, but not with any laser powe
 This section will be updated if I have more success in the future.
 Until then I'm just using Inkscape to export svg files for LaserGRBL.
 
-<a class="anchor al4" name="freecad" href="#freecad"></a>
+<a class="anchor al4" id="freecad" href="#freecad"></a>
 #### FreeCAD
 
 FreeCAD has the [Path Workbench](https://wiki.freecadweb.org/Path_Workbench), which can be used to create G-Code instructions for all kinds of CNC machines.
@@ -333,7 +333,7 @@ And it is also not designed for pure 2D machines, like laser engravers, by defau
 
 I have not yet tested that.
 
-<a class="anchor al4" name="g_code" href="#g_code"></a>
+<a class="anchor al4" id="g_code" href="#g_code"></a>
 #### Working with G-Code
 
 One nice feature I saw in LaserGRBL, but was not able to use with Marlin, is the ability to draw the outline of the object to be cut, for positioning of the stock material.
@@ -433,7 +433,7 @@ I also still had the text not aligned properly.
 The 3x1 and 3x3 runs on the left side were made after properly focussing the laser and fixing the text alignment.
 Here 200mm/min with 10 iterations was already enough to cut through the 3mm plywood.
 
-<a class="anchor al2" name="cutting_tests" href="#cutting_tests"></a>
+<a class="anchor al2" id="cutting_tests" href="#cutting_tests"></a>
 ## Cutting Tests
 
 For the first 'real' test I decided to cut the assembly jig for the [Pagoda antenna](https://www.maartenbaert.be/quadcopters/antennas/pagoda-antenna/#design-files) by Maarten Baert.
@@ -479,7 +479,7 @@ lightgallery([
 The end-result does not seem to be really affected by this however, although with 200mm/min and 15 iterations the parts were not removable as easily as I hoped.
 So I think I either have to adjust the focus better or go up to 20 iterations for the 3mm birch plywood.
 
-<a class="anchor al2" name="future_improvements" href="#future_improvements"></a>
+<a class="anchor al2" id="future_improvements" href="#future_improvements"></a>
 ## Future Improvements
 
 I didn't expect it to be this bad, but cutting wood really produces a noticeable amount of smoke and the smell of burnt wood.
@@ -493,7 +493,7 @@ I also came across the [LaserWeb project](https://laserweb.yurl.ch/) which seems
 This would be a very useful addition and solve a lot of the software workflow problems illustrated above.
 Also theres more than enough room left on my base plate for a SBC.
 
-<a class="anchor al2" name="cutting_parameters" href="#cutting_parameters"></a>
+<a class="anchor al2" id="cutting_parameters" href="#cutting_parameters"></a>
 ## Cutting Parameters
 
 Here are the results of all cutting tests I've made up to now.
@@ -513,7 +513,7 @@ tableHelper([ "align-right", "align-right", "align-right", "align-right", "align
 )
 %-->
 
-<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
+<a class="anchor al2" id="more_pictures" href="#more_pictures"></a>
 ## More Pictures
 
 <div class="collapse">Some more photographs I didn't use above.</div>

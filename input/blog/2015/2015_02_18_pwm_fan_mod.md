@@ -50,24 +50,24 @@ Adapting this circuit, I first tested it on a PCB and then slimmed it down even 
 
 ### Affiliate links
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=ss_til&ad_type=product_link&tracking_id=xythobuzorg-21&marketplace=amazon&region=DE&placement=B00K9R1KLW&asins=B00K9R1KLW&linkId=OCW45GIRZOZFZVS2&show_border=true&link_opens_in_new_window=true">
+<iframe style="width:120px;height:240px;margin:0px;border-style:none;" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=DE&amp;source=ss&amp;ref=ss_til&amp;ad_type=product_link&amp;tracking_id=xythobuzorg-21&amp;marketplace=amazon&amp;region=DE&amp;placement=B00K9R1KLW&amp;asins=B00K9R1KLW&amp;linkId=OCW45GIRZOZFZVS2&amp;show_border=true&amp;link_opens_in_new_window=true">
 </iframe>
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=ss_til&ad_type=product_link&tracking_id=xythobuzorg-21&marketplace=amazon&region=DE&placement=B00AKO0GRI&asins=B00AKO0GRI&linkId=D6BYOYZ4PQGYKJSV&show_border=true&link_opens_in_new_window=true">
+<iframe style="width:120px;height:240px;margin:0px;border-style:none;" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=DE&amp;source=ss&amp;ref=ss_til&amp;ad_type=product_link&amp;tracking_id=xythobuzorg-21&amp;marketplace=amazon&amp;region=DE&amp;placement=B00AKO0GRI&amp;asins=B00AKO0GRI&amp;linkId=D6BYOYZ4PQGYKJSV&amp;show_border=true&amp;link_opens_in_new_window=true">
 </iframe>
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=ss_til&ad_type=product_link&tracking_id=xythobuzorg-21&marketplace=amazon&region=DE&placement=B00KESSNFM&asins=B00KESSNFM&linkId=QRUOKJX7YXKH42UV&show_border=true&link_opens_in_new_window=true">
+<iframe style="width:120px;height:240px;margin:0px;border-style:none;" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=DE&amp;source=ss&amp;ref=ss_til&amp;ad_type=product_link&amp;tracking_id=xythobuzorg-21&amp;marketplace=amazon&amp;region=DE&amp;placement=B00KESSNFM&amp;asins=B00KESSNFM&amp;linkId=QRUOKJX7YXKH42UV&amp;show_border=true&amp;link_opens_in_new_window=true">
 </iframe>
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=ss_til&ad_type=product_link&tracking_id=xythobuzorg-21&marketplace=amazon&region=DE&placement=B005OQIDCC&asins=B005OQIDCC&linkId=XYQ2NBTOZDPGWV77&show_border=true&link_opens_in_new_window=true">
+<iframe style="width:120px;height:240px;margin:0px;border-style:none;" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=DE&amp;source=ss&amp;ref=ss_til&amp;ad_type=product_link&amp;tracking_id=xythobuzorg-21&amp;marketplace=amazon&amp;region=DE&amp;placement=B005OQIDCC&amp;asins=B005OQIDCC&amp;linkId=XYQ2NBTOZDPGWV77&amp;show_border=true&amp;link_opens_in_new_window=true">
 </iframe>
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=ss_til&ad_type=product_link&tracking_id=xythobuzorg-21&marketplace=amazon&region=DE&placement=B00KHU1SOK&asins=B00KHU1SOK&linkId=FASON76UURJMIW4H&show_border=true&link_opens_in_new_window=true">
+<iframe style="width:120px;height:240px;margin:0px;border-style:none;" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=DE&amp;source=ss&amp;ref=ss_til&amp;ad_type=product_link&amp;tracking_id=xythobuzorg-21&amp;marketplace=amazon&amp;region=DE&amp;placement=B00KHU1SOK&amp;asins=B00KHU1SOK&amp;linkId=FASON76UURJMIW4H&amp;show_border=true&amp;link_opens_in_new_window=true">
 </iframe>
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=ss_til&ad_type=product_link&tracking_id=xythobuzorg-21&marketplace=amazon&region=DE&placement=B00188K5FI&asins=B00188K5FI&linkId=ELXR5Y4EAO2YNDKC&show_border=true&link_opens_in_new_window=true">
+<iframe style="width:120px;height:240px;margin:0px;border-style:none;" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=DE&amp;source=ss&amp;ref=ss_til&amp;ad_type=product_link&amp;tracking_id=xythobuzorg-21&amp;marketplace=amazon&amp;region=DE&amp;placement=B00188K5FI&amp;asins=B00188K5FI&amp;linkId=ELXR5Y4EAO2YNDKC&amp;show_border=true&amp;link_opens_in_new_window=true">
 </iframe>
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=ss_til&ad_type=product_link&tracking_id=xythobuzorg-21&marketplace=amazon&region=DE&placement=B00CSM5YJA&asins=B00CSM5YJA&linkId=K6O55EESGTI3BI4H&show_border=true&link_opens_in_new_window=true">
+<iframe style="width:120px;height:240px;margin:0px;border-style:none;" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=DE&amp;source=ss&amp;ref=ss_til&amp;ad_type=product_link&amp;tracking_id=xythobuzorg-21&amp;marketplace=amazon&amp;region=DE&amp;placement=B00CSM5YJA&amp;asins=B00CSM5YJA&amp;linkId=K6O55EESGTI3BI4H&amp;show_border=true&amp;link_opens_in_new_window=true">
 </iframe>
 

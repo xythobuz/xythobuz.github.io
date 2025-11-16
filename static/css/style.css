@@ -53,6 +53,14 @@ s:hover {
     margin-right: auto;
 }
 
+.yearheading {
+    display: block;
+    font-size: 1.00em;
+    font-weight: bold;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
+
 a.anchor {
     display: block;
     position: relative;
@@ -283,7 +291,7 @@ a.anchor.al4:link:after {
     margin-right: 0.5em;
 }
 
-#menulist ul {
+.menulist ul {
     font-size: 0.75em;
     margin-bottom: 1em;
 }
@@ -326,7 +334,7 @@ a[href*='//']:after {
     margin-bottom: 1em;
 }
 
-div.fonts {
+.fonts {
     display: inline;
     margin-top: 20px;
     margin-left: 23px;

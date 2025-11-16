@@ -1,6 +1,7 @@
 title: Blog
 post: Telekom Speedport Reset Script
 date: 2015-07-22
+lang: de
 comments: true
 flattr: true
 ---

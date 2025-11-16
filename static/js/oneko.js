@@ -94,7 +94,7 @@ $(function() {
 
   function init() {
     //let nekoFile = "./oneko.gif"
-    let nekoFile = "/js/oneko.gif"
+    let nekoFile = "/data/oneko.gif"
 
     const curScript = document.currentScript
     if (curScript && curScript.dataset.cat) {

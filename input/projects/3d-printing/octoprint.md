@@ -134,7 +134,7 @@ systemctl list-units 'octoprint_connect*'
 journalctl -u octoprint_connect@ttyUSB0.service
 </pre>
 
-<a class="anchor al2" name="power_button" href="#power_button"></a>
+<a class="anchor al2" id="power_button" href="#power_button"></a>
 ## Physical Power Button
 
 Besides controlling eg. an ATX power supply or a relay connecting the printer to the power supply, I also wanted a push-button connected to the Raspberry Pi that can toggle the power supply using the aforementioned connection on the Pi.

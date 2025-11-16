@@ -18,7 +18,7 @@ Here's the Layout of a BTM-222 Bluetooth PCB, following the [Roboternetz Guideli
 
 [Layout and Circuit Diagram as Eagle files (54kB)][12].
 
-<table border="1">
+<table>
   <tr><th>ID</th><th>Value</th><th>Shop</th></tr>
   <tr><td>R1</td><td>200k Ohm</td><td>-</td></tr>
   <tr><td>R2</td><td>5k Ohm Poti</td><td><a href="http://www.conrad.de/ce/de/product/430722/">Conrad</a></td></tr>
@@ -59,7 +59,7 @@ Hier das Layout einer Adapterplatine für den BTM-222 Bluetooth IC im [Roboterne
 
 [Layout und Schaltplan als Eagle Dateien][12].
 
-<table border="1">
+<table>
   <tr><th>ID</th><th>Wert</th><th>Shop</th></tr>
   <tr><td>R1</td><td>200k Ohm</td><td>-</td></tr>
   <tr><td>R2</td><td>5k Ohm Poti</td><td><a href="http://www.conrad.de/ce/de/product/430722/">Conrad</a></td></tr>

@@ -14,7 +14,7 @@ update: 2014-09-01
 
 ### Current Progress
 
-<iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/b5MhLgDhQ2c" frameborder="0" allowfullscreen></iframe>
+<iframe style="width:560px;height:315px;border-style:none;" src="http://www.youtube-nocookie.com/embed/b5MhLgDhQ2c"></iframe>
 [`Youtube Link`](http://www.youtube.com/watch?v=b5MhLgDhQ2c)
 
 [xyControl][gh] is a Quadrocopter Flight Controller based on Atmels Atmega2560 microcontroller.

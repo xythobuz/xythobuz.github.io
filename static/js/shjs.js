@@ -7,7 +7,7 @@ $(function() {
         $(this).appendTo($(this).prev('._sh'));
 
         // allow skipping line numbers
-        if ($(this).attr("skip_line_no") != undefined) {
+        if ($(this).attr("data-skip") != undefined) {
             return;
         }
 
@@ -17,8 +17,8 @@ $(function() {
 
         // configurable line number offset
         var line_cnt_off = "1";
-        if ($(this).attr("offset") != undefined) {
-            line_cnt_off = $(this).attr("offset");
+        if ($(this).attr("data-offset") != undefined) {
+            line_cnt_off = $(this).attr("data-offset");
         }
         var max = lines.length + parseInt(line_cnt_off);
 

@@ -99,7 +99,8 @@ That’s it. You can now open the `Marlin/Marlin.ino` file in the Arduino IDE, s
 
 The following is a git patch for all required changes:
 
-<pre class="sh_diff">
+<pre class="sh_diff"><!--%
+s = """
 From 284c1d4bdeda82c18477f01f99aada0cbfb10de7 Mon Sep 17 00:00:00 2001
 From: Thomas Buck <xythobuz@xythobuz.de>
 Date: Fri, 25 Mar 2016 00:04:54 +0100
@@ -327,11 +328,14 @@ index c75acd8..aa43d90 100644
 +
 -- 
 2.7.2
-</pre>
+"""
+print(htmlspecialchars(s))
+%--></pre>
 
 This is another patch that improves the feel of the rotary encoder on the display.
 
-<pre class="sh_diff">
+<pre class="sh_diff"><!--%
+s = """
 From 6a5672200c4246a92abe34e7efa8ab3ec52861a8 Mon Sep 17 00:00:00 2001
 From: Thomas Buck <xythobuz@xythobuz.de>
 Date: Sat, 26 Mar 2016 18:51:30 +0100
@@ -464,5 +468,6 @@ index 41d61d2..7ecf285 100644
    // if a file is deleted, it frees a block. hence, the order is not purely chronological. To still have auto0.g accessible, there is again the option to do that.
 -- 
 2.7.2
-</pre>
-
+"""
+print(htmlspecialchars(s))
+%--></pre>

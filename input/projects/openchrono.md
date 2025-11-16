@@ -55,7 +55,7 @@ You can find everything you need to build it yourself in [the git repository](ht
  * [License](openchrono.html#license)
  * [More Pictures](openchrono.html#more_pictures)
 
-<a class="anchor al2" name="prototype" href="#prototype"></a>
+<a class="anchor al2" id="prototype" href="#prototype"></a>
 ## Prototype
 
 Because the optical sensing is dependent on environment conditions I decided to not do any breadboard prototyping and immediately went ahead and designed a case to test with.
@@ -99,7 +99,7 @@ I think it makes sense to drive the LEDs at their current limit, so ~20mA.
 Also the pull-up resistors for the transistors need their value to be low enough to quickly drive the signal to near supply voltage when the BB interrupts the light beam.
 A value of 1kΩ seems to work well there.
 
-<a class="anchor al2" name="mounting_options" href="#mounting_options"></a>
+<a class="anchor al2" id="mounting_options" href="#mounting_options"></a>
 ## Mounting Options
 
 Unfortunately the OpenChrono IR photo-sensing is a bit constrained in regards to the path of the BB.
@@ -141,7 +141,7 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al2" name="test_results" href="#test_results"></a>
+<a class="anchor al2" id="test_results" href="#test_results"></a>
 ## Test Results
 
 Attaching the whole unit to a airsoft gun barrel turned out to be a bit tricky.
@@ -227,7 +227,7 @@ The power output of the two LEDs is simply not enough (`2 × 3V × 20mA = 120mW`
 
 So for now I do **not** recommend to build OpenChrono with the tracer option as it currently can be found in the repository.
 
-<a class="anchor al2" name="build_guide" href="#build_guide"></a>
+<a class="anchor al2" id="build_guide" href="#build_guide"></a>
 ## Build Guide
 
 Also take a look at [the "Hardware" section of the README.md](https://codeberg.org/xythobuz/OpenChrono/src/branch/master/README.md#hardware).
@@ -253,8 +253,8 @@ tableHelper([ "align-right", "align-right", "align-right monospaced", "align-lef
         [ "Screws (Display)", "M2 10mm", "4x", "<a href=\"https://www.ebay.de/itm/261298209327?var=560230293993\">eBay.de</a>" ],
         [ "Screws (Switch)", "M2.5 10mm", "2x", "<a href=\"https://www.ebay.de/itm/261298209327?var=560230293999\">eBay.de</a>" ],
         [ "Screws (Body)", "M3 16mm", "8x", "<a href=\"https://www.ebay.de/itm/261298209327?var=560230294009\">eBay.de</a>" ],
-        [ "Screws (Lid)", "M3 <= 6mm", "4x", "<a href=\"https://www.ebay.de/itm/261298209327?var=560230294003\">eBay.de</a>" ],
-        [ "Heatmelt Insert", "M3 <= 10mm", "8x", "<a href=\"https://www.ebay.de/itm/184650202586?var=692369947868\">eBay.de</a>" ],
+        [ "Screws (Lid)", "M3 &lt;= 6mm", "4x", "<a href=\"https://www.ebay.de/itm/261298209327?var=560230294003\">eBay.de</a>" ],
+        [ "Heatmelt Insert", "M3 &lt;= 10mm", "8x", "<a href=\"https://www.ebay.de/itm/184650202586?var=692369947868\">eBay.de</a>" ],
     ]
 )
 %-->
@@ -429,7 +429,7 @@ If for some reason the hole through the device is not perfectly aligned with you
 In that case, you will not hit what you are aiming at!
 So beware of your environment, wear proper safety gear and start out with a short distance to your bullet stop, increasing only slowly as you are sure everything works as expected.
 
-<a class="anchor al2" name="firmware" href="#firmware"></a>
+<a class="anchor al2" id="firmware" href="#firmware"></a>
 ## Firmware
 
 To achieve high measurement accuracy I used some of the hardware features of the AtMega328p MCU included in standard Arduinos.
@@ -440,39 +440,13 @@ When the BB passes the transistor the interrupt pins are pulled high.
 
 So I'm triggering them on rising edges and measure the current time in the interrupt routines and set a flag.
 
-<pre class="sh_cpp">
-void interrupt_init() {
-    // trigger both on rising edge
-    EICRA = (1 << ISC00) | (1 << ISC01);
-    EICRA |= (1 << ISC10) | (1 << ISC11);
-
-    // enable interrupts
-    EIMSK = (1 << INT0) | (1 << INT1);
-}
-
-/*
- * this is supposed to be the "input" sensor,
- * the one that triggers first on firing.
- */
-ISR(INT0_vect) {
-    time_a = timer_get();
-    trigger_a = 1;
-}
-
-/*
- * this is supposed to be the "output" sensor,
- * the one that triggers after the other sensor.
- */
-ISR(INT1_vect) {
-    time_b = timer_get();
-    trigger_b = 1;
-
-    // we now need to turn on the UV led
-    // and make sure it will only be on shortly!
-    timer_start();
-    digitalWrite(UV_LED_PIN, HIGH);
-}
-</pre>
+<!--%
+include_sourcecode_slice(
+    "cpp", (38, 68), "firmware/OpenChrono/timing.cpp", [
+        "https://raw.githubusercontent.com/xythobuz/OpenChrono/72a8108141888993b1cecf5a63921959e1a5d79b/",
+        "https://codeberg.org/xythobuz/OpenChrono/src/commit/72a8108141888993b1cecf5a63921959e1a5d79b/",
+])
+%-->
 
 For `timer_get()` and `timer_start()` I'm using another feature of AVR MCUs, their internal Timers.
 The 328p has three timers.
@@ -485,128 +459,48 @@ The clock source prescaler determines the maximum and minimum possible measureme
 When the external interrupts fire, they simply record the current value of Timer1.
 Later when both have fired and the UI code is not busy, both stored timer values will be used to calculate the time it took for the BB to travel the distance between the measurements.
 
-<pre class="sh_cpp">
-static void timer1_init() {
-    // normal mode
-    TCCR1A = 0;
-
-    // prescaler
-#if TIMER_PRESCALER == 1
-    TCCR1B = (1 << CS10);
-#elif TIMER_PRESCALER == 8
-    TCCR1B = (1 << CS11);
-#elif TIMER_PRESCALER == 64
-    TCCR1B = (1 << CS11) | (1 << CS10);
-#elif TIMER_PRESCALER == 256
-    TCCR1B = (1 << CS12);
-#elif TIMER_PRESCALER == 1024
-    TCCR1B = (1 << CS12) | (1 << CS10);
-#else
-#error Invalid Prescaler for Timer1
-#endif
-}
-
-uint16_t timer_get() {
-    return TCNT1;
-}
-
-// ...
-
-void calculate(uint16_t a, uint16_t b) {
-    uint16_t ticks = 0;
-
-    if (b >= a) {
-        // simple case - just return difference
-        ticks = b - a;
-    } else {
-        // the timer overflowed between measurements!
-        int32_t tmp = ((int32_t)b) - ((int32_t)a);
-        tmp += 0x10000;
-        ticks = (uint16_t)tmp;
-    }
-
-    // ...
-}
-</pre>
+<!--%
+include_sourcecode_slice(
+    "cpp", [
+        (72, 90),
+        (106, 108),
+    ], "firmware/OpenChrono/timing.cpp", [
+        "https://raw.githubusercontent.com/xythobuz/OpenChrono/72a8108141888993b1cecf5a63921959e1a5d79b/",
+        "https://codeberg.org/xythobuz/OpenChrono/src/commit/72a8108141888993b1cecf5a63921959e1a5d79b/",
+])
+# TODO allow combining from multiple files?
+include_sourcecode_slice(
+    "cpp", (29, 48), "firmware/OpenChrono/OpenChrono.ino", [
+        "https://raw.githubusercontent.com/xythobuz/OpenChrono/72a8108141888993b1cecf5a63921959e1a5d79b/",
+        "https://codeberg.org/xythobuz/OpenChrono/src/commit/72a8108141888993b1cecf5a63921959e1a5d79b/",
+])
+%-->
 
 From this the speed and (given the BB weight) the energy can be calculated easily.
 
-<pre class="sh_cpp">
-double tick_to_metric(uint16_t ticks) {
-    // v = d / t
-    double period = 1000.0 / ((double)(F_CPU / TIMER_PRESCALER));
-    double time = period * (double)ticks;
-    double speed = (double)SENSOR_DISTANCE / time;
-    return speed;
-}
-
-double metric_to_imperial(double speed) {
-    // convert m/s to f/s
-    speed *= 3.28084;
-    return speed;
-}
-
-double metric_to_joules(double speed, double mass) {
-    // e = 0.5 * m * v^2
-    double energy = 0.5 * mass * speed * speed / 1000.0;
-    return energy;
-}
-</pre>
+<!--%
+include_sourcecode_slice(
+    "cpp", (117, 135), "firmware/OpenChrono/ticks.cpp", [
+        "https://raw.githubusercontent.com/xythobuz/OpenChrono/72a8108141888993b1cecf5a63921959e1a5d79b/",
+        "https://codeberg.org/xythobuz/OpenChrono/src/commit/72a8108141888993b1cecf5a63921959e1a5d79b/",
+])
+%-->
 
 Timer2 is used for the tracer feature, to turn on the UV LEDs only for as long as needed.
 This could enable a future improvement where the UV LEDs could be pulsed with a far higher current to achieve more light output.
 To pulse the LEDs I'm only connecting the timer to a clock source when the LEDs have been turned on, with an initial value of the timer that determines how long it will take to count up to 0xFF.
 Then in the overflow interrupt I'm turning off both the LEDs and the Timer again.
 
-<pre class="sh_cpp">
-static void timer2_init() {
-    // normal mode, no clock source
-    TCCR2A = 0;
-    TCCR2B = 0;
-
-    // enable overflow interrupt
-    TIMSK2 = (1 << TOIE2);
-}
-
-void timer_start() {
-    /*
-     * the distance between the second IR sensor
-     * and the UV LEDs is 7.5mm.
-     * Our bullet will travel with a speed of
-     * ~10m/s up to ~300m/s approximately.
-     * So it will move the 7.5mm in
-     * 750us to 25us respectively.
-     * So it makes sense to keep the UV LED
-     * on for 1ms.
-     *
-     * We reach exactly 1ms when counting to 250
-     * with a prescaler of 64 at 16MHz.
-     *
-     * If you __really__ want to increase the brightness
-     * of the tracer, reduce the pulse length here.
-     * Then you can also reduce the UV LED resistor for
-     * higher currents, according to the datasheet of
-     * your UV LED.
-     * Make sure to keep within 40mA the AVR GPIO can provide.
-     * Otherwise you need to add a transistor for switching.
-     */
-    const static uint8_t pulse_length = 250;
-
-    // initial value we count up from
-    TCNT2 = 0xFF - pulse_length;
-
-    // prescaler 64
-    TCCR2B = (1 << CS22);
-}
-
-ISR(TIMER2_OVF_vect) {
-    // turn off UV LED
-    digitalWrite(UV_LED_PIN, LOW);
-
-    // and also stop timer
-    TCCR2B = 0;
-}
-</pre>
+<!--%
+include_sourcecode_slice(
+    "cpp", [
+        (92, 99),
+        (110, 169),
+    ], "firmware/OpenChrono/timing.cpp", [
+        "https://raw.githubusercontent.com/xythobuz/OpenChrono/72a8108141888993b1cecf5a63921959e1a5d79b/",
+        "https://codeberg.org/xythobuz/OpenChrono/src/commit/72a8108141888993b1cecf5a63921959e1a5d79b/",
+])
+%-->
 
 In the main-loop I'm simply updating the LCD to show the measured values.
 This is very easy to implement using the great [u8g2 library](https://github.com/olikraus/u8g2).
@@ -614,7 +508,7 @@ This is very easy to implement using the great [u8g2 library](https://github.com
 If you're interested I recommend taking a look at [the code](https://codeberg.org/xythobuz/OpenChrono/src/branch/master/firmware/OpenChrono).
 I think it should be relatively easy to understand and well commented 😅
 
-<a class="anchor al2" name="possible_future_improvements" href="#possible_future_improvements"></a>
+<a class="anchor al2" id="possible_future_improvements" href="#possible_future_improvements"></a>
 ## Possible Future Improvements
 
 As usual I was mostly using parts that I already had.
@@ -629,7 +523,7 @@ I also don't think it's realistic to take this bulky device onto a field, but wh
 To be quite honest, I'm happy with the device as it is now.
 But I'm always open to feedback and pull requests of course, especially ones improving the tracer option 😉
 
-<a class="anchor al2" name="potential_other_uses" href="#potential_other_uses"></a>
+<a class="anchor al2" id="potential_other_uses" href="#potential_other_uses"></a>
 ## Potential Other Uses
 
 One thing I'd like to talk about is using this device for measuring other things besides Airsoft BBs.
@@ -646,7 +540,7 @@ All the hot gases coming out of a real gun will probably also be problematic, bo
 
 But all this is not something I can or want to test, and I also do not recommend you do it, either! 👮
 
-<a class="anchor al2" name="links" href="#links"></a>
+<a class="anchor al2" id="links" href="#links"></a>
 ## Links
 
 You can find [all the source code and design files for OpenChrono](https://codeberg.org/xythobuz/OpenChrono) on Codeberg.
@@ -654,7 +548,7 @@ The project is also [mirrored on GitHub](https://github.com/xythobuz/OpenChrono)
 
 If you decide to build it yourself I would be interested in any kind of feedback!
 
-<a class="anchor al2" name="license" href="#license"></a>
+<a class="anchor al2" id="license" href="#license"></a>
 ## License
 
 OpenChrono is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html).
@@ -674,7 +568,7 @@ OpenChrono is licensed under the [GNU General Public License](https://www.gnu.or
     You should have received a copy of the GNU General Public License
     along with OpenChrono.  If not, see <https://www.gnu.org/licenses/>.
 
-<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
+<a class="anchor al2" id="more_pictures" href="#more_pictures"></a>
 ## More Pictures
 
 <div class="collapse">Some more photographs I didn't use above.</div>

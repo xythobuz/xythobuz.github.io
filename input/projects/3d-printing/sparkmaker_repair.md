@@ -32,7 +32,7 @@ lightgallery([
 * [Shelf Space (February 2023)](sparkmaker_repair.html#shelf_space)
 * [More Pictures](sparkmaker_repair.html#more_pictures)
 
-<a class="anchor al2" name="endstop" href="#endstop"></a>
+<a class="anchor al2" id="endstop" href="#endstop"></a>
 ## Endstop Fix
 
 The printer only has a single axis, Z, with an optical endstop switch at the bottom.
@@ -48,7 +48,7 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al2" name="encoder" href="#encoder"></a>
+<a class="anchor al2" id="encoder" href="#encoder"></a>
 ## Encoder Replacement
 
 After only a couple of hours of use, the encoder at the front of the machine stopped working properly.
@@ -98,7 +98,7 @@ lightgallery([
 
 With the hardware back in working order I could now focus on the PC software side of things.
 
-<a class="anchor al2" name="experiments" href="#experiments"></a>
+<a class="anchor al2" id="experiments" href="#experiments"></a>
 ## First Slicing Experiments
 
 After getting the hardware back running the next step is generating some sliced files.
@@ -130,7 +130,7 @@ lightgallery([
 Even though one corner was warping strongly, the results of the first print attempt were promising.
 It is an SA-profile keycap, sliced with ChituBox with 0.1mm layer height.
 
-<a class="anchor al2" name="script" href="#script"></a>
+<a class="anchor al2" id="script" href="#script"></a>
 ## SL1 to WOW File Format Converter Script
 
 But there is one open-source alternative, [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer), and it has support for SLA slicing for the [Prusa SL1 printer](https://www.prusa3d.com/product/original-prusa-sl1s-speed-3d-printer/).
@@ -199,7 +199,7 @@ So G-Code always needs to take care to turn the LEDs off at the end of a print.
 For some reason we once managed to have the LEDs turned on with an error message showing.
 This requires draining the resin and scraping off any remaining bits.
 
-<a class="anchor al2" name="prusaslicer" href="#prusaslicer"></a>
+<a class="anchor al2" id="prusaslicer" href="#prusaslicer"></a>
 ## Configuring PrusaSlicer for the Sparkmaker
 
 To configure PrusaSlicer I recommend starting out with their built-in profile for the SL1.
@@ -264,7 +264,7 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al2" name="shelf_space" href="#shelf_space"></a>
+<a class="anchor al2" id="shelf_space" href="#shelf_space"></a>
 ## Shelf Space (February 2023)
 
 I still had some drawer rails and a wooden plate left over from replacing my [Fabrikator Mini](fabrikator-mini.html) with my new [Laser Engraver](laser-engraver.html) in my [Ikea Lack tower](ikea-lack.html).
@@ -320,7 +320,7 @@ The only thing still missing is a good solution for curing / hardening.
 I'm thinking of some kind of small turntable and UV lamp or LED strip.
 That's still to come, so stay tuned! 🧐
 
-<a class="anchor al2" name="more_pictures" href="#more_pictures"></a>
+<a class="anchor al2" id="more_pictures" href="#more_pictures"></a>
 ## More Pictures
 
 <div class="collapse">Some more photographs I didn't use above.</div>

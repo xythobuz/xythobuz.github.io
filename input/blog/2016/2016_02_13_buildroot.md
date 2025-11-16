@@ -33,7 +33,8 @@ Follow the instructions in the README.md to create your own Image using the curr
 
 ## Bootlog
 
-<pre>
+<pre><!--%
+s = """
 HTLCLC
 
 U-Boot 2016.01 (Feb 12 2016 - 14:14:51 +0100)
@@ -188,4 +189,6 @@ Starting network...
 
 Welcome to the CamCorder
 olinuxino login:
-</pre>
+"""
+print(htmlspecialchars(s))
+%--></pre>

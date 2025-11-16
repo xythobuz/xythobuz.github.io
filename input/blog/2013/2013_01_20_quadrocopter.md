@@ -1,5 +1,6 @@
 title: Blog
 post: Quadrocopter Ueberblick
+lang: de
 date: 2013-01-20
 comments: true
 flattr: true

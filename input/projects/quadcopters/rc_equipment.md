@@ -95,7 +95,7 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al2" name="can_storage" href="#can_storage"></a>
+<a class="anchor al2" id="can_storage" href="#can_storage"></a>
 ## Ammo Can Battery Storage
 
 For far too long I stored all my LiPos in a cardboard box on a wooden shelf in my livingroom.

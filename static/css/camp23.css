@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "Questrial-CCCamp23";
+    src: url("/camp23/Questrial-Regular.ttf");
+}
+
+@font-face {
+    font-family: "SairaStencilOne-CCCamp23";
+    src: url("/camp23/SairaStencilOne-Regular.ttf");
+}
+
+body {
+    background-image: url("/camp23/Fisty-sprayed-Stencil_Neonpink.svg"), url("/camp23/Mildenberg.svg"), url("/camp23/sprayed-23.svg");
+    background-size: 30%;
+    background-position-y: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position-x: left, center, right;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+    font-family: "SairaStencilOne-CCCamp23";
+    text-transform: uppercase;
+}
+
+#content h1 {
+    font-size: 2.5em;
+}
+
+#content h2 {
+    font-size: 1.8em;
+}
+
+#content h3, #content h4, #content h5, #content h6 {
+    font-size: 1.2em;
+}
+
+#content {
+    font-family: "Questrial-CCCamp23";
+    font-size: 1.2em;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #32CD32;
+}
+
+#footer {
+    width: fit-content;
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+}
+
+.collapsecontent {
+    background-color: rgba(0, 0, 0, 0.0)
+}
+
+#content, #footer {
+    background-color: rgba(255, 255, 255, 0.9)
+}
+
+@media (prefers-color-scheme: dark) {
+    #content, #footer {
+        background-color: rgba(17, 17, 17, 0.9)
+    }
+}
+
+#bg-img img {
+    width: 100%;
+    height: 90%;
+    position: fixed;
+    top: 10%;
+    z-index: -2;
+    opacity: 0%;
+}
+
+#bg-img canvas {
+    width: 100%;
+    height: 90%;
+    position: fixed;
+    top: 10%;
+    z-index: -1;
+}

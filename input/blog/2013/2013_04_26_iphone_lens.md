@@ -1,5 +1,6 @@
 title: Blog
 post: iPhone Linse
+lang: de
 date: 2013-04-26
 comments: true
 ---

@@ -40,7 +40,7 @@ Skip to the [interesting part](osci_music_player.html#hardware) then!
 * [Hardware](osci_music_player.html#hardware)
 * [Software](osci_music_player.html#software)
 
-<a class="anchor al2" name="introduction" href="#introduction"></a>
+<a class="anchor al2" id="introduction" href="#introduction"></a>
 ## Introduction
 
 An oscilloscope usually displays one or more waveforms of an electrical signal.
@@ -70,7 +70,7 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al2" name="artists" href="#artists"></a>
+<a class="anchor al2" id="artists" href="#artists"></a>
 ## Artists
 
 To generate the proper sounds you usually need some kind of software or self-written code.
@@ -98,7 +98,7 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al2" name="playback" href="#playback"></a>
+<a class="anchor al2" id="playback" href="#playback"></a>
 ## Playback
 
 So there are some technical challenges involved in playing these properly on an oscilloscope.
@@ -134,7 +134,7 @@ These are DC coupled, support 192kHz and are cheap and easy to get.
 Now the image finally looks like in the YouTube videos.
 The only problem is, this is supposed to be used and operated at Toolbox events, so it needs to be easy to use and kind of sturdy.
 
-<a class="anchor al2" name="oscisettings" href="#oscisettings"></a>
+<a class="anchor al2" id="oscisettings" href="#oscisettings"></a>
 ## Oscilloscope Settings
 
 To get the proper picture out of your oscilloscope you need to set it up correctly.
@@ -166,7 +166,7 @@ lightgallery([
 ])
 %-->
 
-<a class="anchor al2" name="hardware" href="#hardware"></a>
+<a class="anchor al2" id="hardware" href="#hardware"></a>
 ## Hardware
 
 We need to consider the environments this device will be used in.
@@ -222,7 +222,7 @@ This worked relatively well.
 Just take care with the lid, it was quite hard in my case, causing it to crack when I tried to drill a hole that was too big.
 But some superglue saved the day.
 
-<a class="anchor al2" name="software" href="#software"></a>
+<a class="anchor al2" id="software" href="#software"></a>
 ## Software
 
 I've been using the [Raspberry Pi OS (Legacy, 32bit) Lite](https://downloads.raspberrypi.com/raspios_oldstable_lite_armhf/images/raspios_oldstable_lite_armhf-2023-12-06/2023-12-05-raspios-bullseye-armhf-lite.img.xz) image.

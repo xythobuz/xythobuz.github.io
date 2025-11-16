@@ -1,5 +1,6 @@
 title: Blog
 post: Telekom Speedport Status Widget
+lang: de
 date: 2015-07-15
 comments: true
 flattr: true

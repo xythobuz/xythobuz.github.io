@@ -21,7 +21,8 @@ Performance is much better now!
 
 **So leave out the LVM related steps below and create a normal root partition.**
 
-<pre class="sh_sh">
+<pre class="sh_sh"><!--%
+s = """
 # set disk mode in UEFI to AHCI
 
 fdisk
@@ -47,11 +48,14 @@ mount /dev/mapper/root /mnt
 mkdir /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
 swapon /dev/sda1
-</pre>
+"""
+print(htmlspecialchars(s))
+%--></pre>
 
 Install everything that's needed.
 
-<pre class="sh_sh">
+<pre class="sh_sh"><!--%
+s = """
 reflector --verbose --latest 40 --number 15 --sort rate --protocol https --country "Germany" --save /etc/pacman.d/mirrorlist
 
 pacstrap /mnt base base-devel linux linux-firmware
@@ -118,11 +122,14 @@ pacman -Syu nvidia-prime
 # use prime-run for PRIME render offloading
 
 # install AUR helper, we used bauerbill
-</pre>
+"""
+print(htmlspecialchars(s))
+%--></pre>
 
 Setup LED keyboard backlight control. As described [here at NovaCustom](https://configurelaptop.eu/clevo-keyboard-backlight-control-for-linux/).
 
-<pre class="sh_sh">
+<pre class="sh_sh"><!--%
+s = """
 # install dmidecode
 sudo dmidecode | grep "Product Name"
 # --> CRAWLER E10
@@ -139,6 +146,8 @@ sudo tee /etc/modules-load.d/clevo-xsm-wmi.conf <<< clevo-xsm-wmi
 
 # https://aur.archlinux.org/packages/clevo-xsm-wmi-util/
 # for graphical control
-</pre>
+"""
+print(htmlspecialchars(s))
+%--></pre>
 
 Afterwards, install required user applications (Gimp, Okular, ...) and configure the KDE desktop to personal preferences. Also check out the [General Recommendations in the Arch Wiki](https://wiki.archlinux.org/title/General_recommendations).

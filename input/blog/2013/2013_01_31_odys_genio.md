@@ -1,5 +1,6 @@
 title: Blog
 post: Odys Genio USB Debugging am Mac
+lang: de
 date: 2013-01-31
 comments: true
 flattr: true

@@ -14,7 +14,7 @@ update: 2016-04-03
 
 Get the [current Codebase as Zip][1].
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/czxCxTBSgHM" frameborder="0" allowfullscreen></iframe>
+<iframe style="width:640px;height:360px;border-style:none;" src="//www.youtube.com/embed/czxCxTBSgHM"></iframe>
 [`Youtube Link`](http://www.youtube.com/watch?v=czxCxTBSgHM)
 
 My friends Max (<hutattedonmyarm@me.com>) and Felix built this single-color 8x8x8 LED Cube with me. On this page, you can get the Software as well as Schematics and the PCB Layout licensed under the GPLv3. Have fun!
@@ -110,7 +110,7 @@ Get the whole code, as well as schematics and the PCB layout as PNG and Eagle fi
 
 Frank built this Cube, slightly improved the code and made a Slow-Motion movie. You can see the Multiplexing very nice:
 
-<iframe width="640" height="480" src="//www.youtube.com/embed/fezxkVmkyYw" frameborder="0" allowfullscreen></iframe>
+<iframe style="width:640px;height:480px;border-style:none;" src="//www.youtube.com/embed/fezxkVmkyYw"></iframe>
 [`Youtube Link`](http://www.youtube.com/watch?v=fezxkVmkyYw)
 
 Andrej built this cube and sent an X-Ray photograph that he made at his workplace, manufacturing the [Eledus - SCIOX X-Ray inspection device](http://www.eledus.cz/en/sciox/). Thanks!
@@ -129,7 +129,7 @@ lang: de
 
 Downloade die [aktuelle Codebase als Zip][1].
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/czxCxTBSgHM" frameborder="0" allowfullscreen></iframe>
+<iframe style="width:640px;height:360px;border-style:none;" src="//www.youtube.com/embed/czxCxTBSgHM"></iframe>
 [`Youtube Direktlink`](http://www.youtube.com/watch?v=czxCxTBSgHM)
 
 Als Schulprojekt und für den Explore-IT Wettbewerb von SAP in Markdorf haben meine zwei Teamkollegen, Max <hutattedonmyarm@me.com> und Felix, zusammen mit mir diesen einfarbigen 8x8x8 LED Cube gebaut. Für Interessierte hier alle Software sowie Schaltplan und Boardlayout unter der GPLv3. Viel Freude damit.
@@ -223,7 +223,7 @@ Im [GitHub Repository][15] findet sich der gesamte Code sowie die Eagle Dateien 
 
 Frank hat den Cube nachgebaut, den Code etwas verbessert und dieses Slow-Motion Video gemacht. Man kann sehr schön das Multiplexing verfolgen:
 
-<iframe width="640" height="480" src="//www.youtube.com/embed/fezxkVmkyYw" frameborder="0" allowfullscreen></iframe>
+<iframe style="width:640px;height:480px;border-style:none;" src="//www.youtube.com/embed/fezxkVmkyYw"></iframe>
 [`Youtube Direktlink`](http://www.youtube.com/watch?v=fezxkVmkyYw)
 
 Andrej hat den Würfel nachgebaut und eine Röntgenaufnahme der Platine angefertigt, da sein Arbeitgeber das [Eledus - SCIOX X-Ray inspection device](http://www.eledus.cz/en/sciox/) produziert. Vielen Dank dafür!

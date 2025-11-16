@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<!--%
-if page.get("lang", "en") == "de":
-    print('<html lang="de">')
-else:
-    print('<html lang="en">')
-%-->
+<html lang="{{ page.get('lang', 'en') }}">
 <head>
-    <meta charset="{{ htmlspecialchars(__encoding__) }}" />
+    <meta charset="{{ htmlspecialchars(__encoding__) }}">
     <title>{{ htmlspecialchars(page.get("post", "Blog")) if page.title == "Blog" else htmlspecialchars(page.title) }} - xythobuz.de</title>
-    <meta name="description" content="{{ htmlspecialchars(page.get("description", "Electronics & Software Projects")) }}" />
-    <meta name="keywords" content="{{ htmlspecialchars(page.get("keywords", "xythobuz")) }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="{{ page.get("favicon", "img/favicon.ico") }}" />
-    <link rel="alternate" type="application/rss+xml" title="xythobuz.de" href="rss.xml" />
-    <link type="text/css" rel="stylesheet" href="css/style.min.css" />
-    <link type="text/css" rel="stylesheet" href="css/print.min.css" media="print" />
+    <meta name="description" content="{{ htmlspecialchars(page.get('description', 'Electronics & Software Projects')) }}">
+    <meta name="keywords" content="{{ htmlspecialchars(page.get('keywords', 'xythobuz')) }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ page.get('favicon', 'img/favicon.ico') }}">
+    <link rel="alternate" type="application/rss+xml" title="xythobuz.de" href="rss.xml">
+    <link type="text/css" rel="stylesheet" href="css/style.min.css">
+    <link type="text/css" rel="stylesheet" href="css/print.min.css" media="print">
     <!--%
         if page.get("github", page.get("git", "")) != "":
-            print('<link type="text/css" rel="stylesheet" href="css/gh-fork-ribbon.min.css" />')
+            print('<link type="text/css" rel="stylesheet" href="css/gh-fork-ribbon.min.css">')
 
         if page["page_flags"]["lightgallery"] > 0:
-            print('<link type="text/css" rel="stylesheet" href="lg/lightgallery-bundle.min.css" />')
+            print('<link type="text/css" rel="stylesheet" href="lg/lightgallery-bundle.min.css">')
 
         if page.get("auto_toc", "false") == "true":
-            print('<link type="text/css" rel="stylesheet" href="css/auto_toc.min.css" />')
+            print('<link type="text/css" rel="stylesheet" href="css/auto_toc.min.css">')
+
+        if page.get("additional_css", "") != "":
+            print('<link type="text/css" rel="stylesheet" href="' + page.get("additional_css", "") + '">')
     %-->
 </head>
 <body>
@@ -44,7 +42,7 @@ else:
         if page.get("no_gen_ai", "false") == "true":
             print('<div class="seal_bottom_left">')
             print('<a href="https://www.polygon-treehouse.com/no-gen-ai-seal">')
-            print('<img class="seal_img" src="img/NoGenAI_Seal.png" alt="This developer assures that No Gen AI was used in this indie game" />')
+            print('<img class="seal_img" src="img/NoGenAI_Seal.png" alt="This developer assures that No Gen AI was used in this indie game">')
             print('</a></div>')
     %-->
     <div id="wrap"><div id="nav">
@@ -62,19 +60,19 @@ else:
             <!-- <li><a href="https://git.xythobuz.de/explore/repos">Gitea</a></li> -->
             <li><a href="https://github.com/xythobuz">GitHub</a></li>
             <!-- <li><a href="printer.html">🔨</a></li> -->
-            <div class="fonts">
+            <li><ul class="fonts">
                 <li><span class="font-big">Text:</span></li>
                 <li><a class="dec" href="#"><span class="font-big">A</span><span class="font-small">A</span></a></li>
                 <li><a class="reset" href="#"><span class="font-big">A</span><span class="font-big">A</span></a></li>
                 <li><a class="inc" href="#"><span class="font-small">A</span><span class="font-big">A</span></a></li>
-            </div>
+            </ul></li>
             <!--%
                 PY3 = sys.version_info[0] == 3
                 tmp = [p for p in ((iter(page["lang_links"].items())) if PY3 else (page["lang_links"].iteritems()))]
                 if len(tmp) > 1:
-                    print('            <li>')
+                    print('<li><ul class="fonts">')
                     print(" ".join(["<li><a href='%s'>%s</a></li>" % (url, lang) for lang, url in ((iter(page["lang_links"].items())) if PY3 else (page["lang_links"].iteritems()))]).replace(">en<", '><img src="img/en.png" alt="English"><').replace(">de<", '><img src="img/de.png" alt="Deutsch"><'))
-                    print("</li>")
+                    print("</ul></li>")
             %-->
         </ul>
     </div></div>
@@ -91,9 +89,9 @@ else:
                     print("<h1>%s</h1>" % (page.get("post", "")))
                 else:
                     if page.get("lang", "en") == "de":
-                        print("<h1>%s</h1>" % (page.get("title_de", "")))
+                        print("<h1>%s</h1>" % (page.get("title_de", page.get("title", ""))))
                     else:
-                        print("<h1>%s</h1>" % (page.get("title", "")))
+                        print("<h1>%s</h1>" % (page.get("title", page.get("title_de", ""))))
 
                 if page.get("lang", "en") == "de":
                     if page.get("description_de", "") != "":
@@ -152,7 +150,10 @@ else:
 
             link = githubCommitBadge(page, True)
             if len(link) > 0:
-                print("<p>Recent activity on GitHub: " + link + "</p>")
+                if page.get("lang", "en") == "de":
+                    print("<p>K&uuml;rzliche Aktivit&auml;t auf GitHub: " + link + "</p>")
+                else:
+                    print("<p>Recent activity on GitHub: " + link + "</p>")
 
             if page.get("auto_toc", "false") == "true":
                 print('<p class="access_link" id="toc_toggle_wrap"></p>')
@@ -206,37 +207,42 @@ else:
                     print(datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"))
             %-->
         </span>
+        <br><!--%
+        encoded = url_escape(page.get("fname").replace("./input", get_conf("base_url")).replace('.md', '.html'))
+        print('<a href="https://validator.w3.org/nu/?doc=' + encoded + '"><img src="data/valid-html.svg" alt="Valid HTML"></a>')
+        print('<a href="https://jigsaw.w3.org/css-validator/validator?uri=' + encoded + '"><img src="data/valid-css.svg" alt="Valid CSS"></a>')
+        %-->
     </div>
-    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="js/tracking.min.js"></script>
-    <script type="text/javascript" src="js/scroller.min.js"></script>
-    <script type="text/javascript" src="js/resize.min.js"></script>
-    <script type="text/javascript" src="js/oneko.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/tracking.min.js"></script>
+    <script src="js/scroller.min.js"></script>
+    <script src="js/resize.min.js"></script>
+    <script src="js/oneko.min.js"></script>
     <!--%
         if page.get("auto_toc", "false") == "true":
-            print('<script type="text/javascript" src="js/auto_toc.min.js"></script>')
+            print('<script src="js/auto_toc.min.js"></script>')
 
         if page["page_flags"]["collapse"] > 0:
-            print('<script type="text/javascript" src="js/collapse.min.js"></script>')
+            print('<script src="js/collapse.min.js"></script>')
 
         if page["page_flags"]["shjs"] > 0:
-            print("""<script type="text/javascript" src="js/sh_main.min.js"></script>
-    <script type="text/javascript" src="js/shjs.min.js"></script>
-    <script type="text/javascript" src="js/copy.min.js"></script>""")
+            print("""<script src="js/sh_main.min.js"></script>
+    <script src="js/shjs.min.js"></script>
+    <script src="js/copy.min.js"></script>""")
 
         if page["page_flags"]["lightgallery"] > 0:
-            print("""<script type="text/javascript" src="lg/lightgallery.min.js"></script>
-    <script type="text/javascript" src="lg/lg-autoplay.min.js"></script>
-    <script type="text/javascript" src="lg/lg-fullscreen.min.js"></script>
-    <script type="text/javascript" src="lg/lg-hash.min.js"></script>
-    <script type="text/javascript" src="lg/lg-rotate.min.js"></script>
-    <script type="text/javascript" src="lg/lg-thumbnail.min.js"></script>
-    <script type="text/javascript" src="lg/lg-video.min.js"></script>
-    <script type="text/javascript" src="lg/lg-zoom.min.js"></script>
-    <script type="text/javascript" src="js/lightgallery.min.js"></script>""")
+            print("""<script src="lg/lightgallery.min.js"></script>
+    <script src="lg/lg-autoplay.min.js"></script>
+    <script src="lg/lg-fullscreen.min.js"></script>
+    <script src="lg/lg-hash.min.js"></script>
+    <script src="lg/lg-rotate.min.js"></script>
+    <script src="lg/lg-thumbnail.min.js"></script>
+    <script src="lg/lg-video.min.js"></script>
+    <script src="lg/lg-zoom.min.js"></script>
+    <script src="js/lightgallery.min.js"></script>""")
 
         if page.get("comments", "false") == "true":
-            print('<script type="text/javascript" src="https://comments.xythobuz.de/js/commento.js"></script>')
+            print('<script src="https://comments.xythobuz.de/js/commento.js"></script>')
     %-->
 </body>
 </html>

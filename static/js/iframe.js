@@ -13,12 +13,11 @@ $("iframe").one("load", function() {
 
     // apply js scripts to iframe body
     function add_script(elem, name) {
-        const link = document.createElement("script");
-        link.src = name;
-        link.type = "text/javascript";
-        link.async = false; // firefox defaults to async for dynamic script tags
-        link.defer = true;
-        $(elem).prop('contentDocument').body.append(link);
+        const script = document.createElement("script");
+        script.src = name;
+        script.async = false; // firefox defaults to async for dynamic script tags
+        script.defer = true;
+        $(elem).prop('contentDocument').body.append(script);
     }
 
     // make all links open in parent page instead of iframe

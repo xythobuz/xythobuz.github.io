@@ -1,5 +1,6 @@
 title: Blog
 post: xyCopter mit GraphView
+lang: de
 date: 2013-03-05
 comments: true
 flattr: true
