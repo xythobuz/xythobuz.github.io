@@ -71,7 +71,7 @@ if PY3:
     from http.server import HTTPServer, SimpleHTTPRequestHandler
 else:
     import tempfile
-    from StringIO import StringIO
+    from io import StringIO
     from SimpleHTTPServer import SimpleHTTPRequestHandler
     from BaseHTTPServer import HTTPServer
     def exec_(code, envdic):
@@ -635,7 +635,6 @@ def build(project, opts):
         skeleton = fp.read()
 
     for page in pages:
-
         print("info   : render %s" % page.url)
 
         # replace expressions and statements in page.html
