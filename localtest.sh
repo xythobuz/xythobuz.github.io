@@ -21,7 +21,7 @@ echo "Validating HTML"
 java -jar ~/bin/vnu.jar $VNU_EXT output | tee errors_html.log
 
 echo "Validating CSS"
-java -jar ~/bin/vnu.jar $VNU_EXT static/css | tee errors_css.log
+java -jar ~/bin/vnu.jar $VNU_EXT static/css static/lg static/emu_js | tee errors_css.log
 
 echo "Copying"
 cp -r static/* output/
