@@ -10,6 +10,8 @@ An automated cloud mirror on GitHub is available on [xythobuz.github.io](https:/
 
 Includes [SHJS](https://shjs.sourceforge.net/) and [lightGallery](https://github.com/sachinchoolur/lightGallery).
 
+Also includes a slightly modified version of [oneko.js](https://github.com/adryd325/oneko.js).
+
 ## To Do
 
 All large static files (photos, videos) are just put into this git repo.

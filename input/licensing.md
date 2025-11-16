@@ -22,6 +22,9 @@ librejs_helper([
     # jQuery
     [ "js/jquery-3.7.1.min.js", "MIT", "js/jquery-3.7.1.js" ],
 
+    # oneko.js
+    [ "js/oneko.min.js", "MIT", "js/oneko.js" ],
+
     # Own code
     [ "js/auto_toc.min.js", "gpl3", "js/auto_toc.js" ],
     [ "js/collapse.min.js", "gpl3", "js/collapse.js" ],
