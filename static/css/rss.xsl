@@ -117,7 +117,7 @@
           </span>
           <br />
           <span style="font-size: xx-small">
-              Static HTML generated at <xsl:value-of select="substring(/rss/channel/lastBuildDate, 1, string-length(/rss/channel/lastBuildDate) - 6)" />
+              RSS feed generated at <xsl:value-of select="substring(/rss/channel/lastBuildDate, 1, string-length(/rss/channel/lastBuildDate) - 6)" />
           </span>
         </div>
         <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>

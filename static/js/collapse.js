@@ -19,9 +19,17 @@ $(function() {
                     $(content).css("max-height", $(content).prop('scrollHeight') + "px");
                 } else {
                     // special case for iframes, also get the height of their contents
+                    // used for rss.xsl
                     var f = $(content).children("iframe").first();
                     var h = $(f).prop('contentWindow').document.body.scrollHeight;
-                    h += 100; // TODO need some padding to avoid scrollbar in iframe?!
+
+                    // limit height to 800px
+                    if (h > 800) {
+                        h = 800;
+                    } else {
+                        h += 50; // TODO need some padding to avoid scrollbar in iframe?!
+                    }
+
                     $(f).css("height", h + "px"); // set iframe height also
                     $(content).css("max-height", h + "px");
                 }

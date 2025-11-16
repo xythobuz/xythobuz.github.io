@@ -1065,6 +1065,8 @@ def hook_postconvert_rss():
 
         link = "%s/%s" % (BASE_URL, p.url)
 
+        # TODO very basic way of making image links absolute
+        # TODO improve? how?
         desc = p.html.replace("href=\"img", "%s%s%s" % ("href=\"", BASE_URL, "/img"))
         desc = desc.replace("src=\"img", "%s%s%s" % ("src=\"", BASE_URL, "/img"))
         desc = desc.replace("href=\"/img", "%s%s%s" % ("href=\"", BASE_URL, "/img"))

@@ -1,5 +1,29 @@
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
-$(window).on("load", function() {
+
+const in_iframe = (window.self !== window.top);
+if (in_iframe) {
+    var plugins = [
+        lgAutoplay,
+        lgFullscreen,
+        //lgHash,
+        lgRotate,
+        lgThumbnail,
+        lgVideo,
+        lgZoom,
+    ];
+} else {
+    var plugins = [
+        lgAutoplay,
+        lgFullscreen,
+        lgHash,
+        lgRotate,
+        lgThumbnail,
+        lgVideo,
+        lgZoom,
+    ];
+}
+
+function init_lg() {
     // configuration for lightgallery
     var settings = {
         allowMediaOverlap: false,
@@ -10,15 +34,7 @@ $(window).on("load", function() {
         iframeMaxHeight: "75%",
         iframeMaxWidth: "75%",
         mousewheel: true,
-        plugins: [
-            lgAutoplay,
-            lgFullscreen,
-            lgHash,
-            lgRotate,
-            lgThumbnail,
-            lgVideo,
-            lgZoom,
-        ],
+        plugins: plugins,
         speed: 100,
         startAnimationDuration: 100,
         showZoomInOutIcons: true,
@@ -167,5 +183,12 @@ $(window).on("load", function() {
             $(this).css("background-position", x.toString() + "px " + y.toString() + "px");
         });
     });
-});
+}
+
+if (in_iframe) {
+    $(init_lg);
+} else {
+    $(window).on("load", init_lg);
+}
+
 // @license-end
