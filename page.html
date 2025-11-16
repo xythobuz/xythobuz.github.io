@@ -120,12 +120,12 @@ else:
 
                     if page.get("title", "") == "Blog":
                         if page.get("lang", "en") == "de":
-                            print("<i>Artikel ver&ouml;ffentlicht am %s.</i>" % date)
+                            print("<i>Artikel veröffentlicht am %s.</i>" % date)
                         else:
                             print("<i>Post published on %s.</i>" % date)
                     else:
                         if page.get("lang", "en") == "de":
-                            print("<i>Projekt ver&ouml;ffentlicht am %s.</i>" % date)
+                            print("<i>Projekt veröffentlicht am %s.</i>" % date)
                         else:
                             print("<i>Project published on %s.</i>" % date)
 
@@ -172,26 +172,26 @@ else:
     <div id="scroll_up"></div>
     <div id="footer">
         <a rel="jslicense" href="licensing.html" data-jslicense="1">Licensing</a>
-        &middot;
+        ·
         <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>
-        &middot;
+        ·
         <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>
         <br>
-        <a href="https://jquery.com">jQuery</a>
-        &middot;
         <a href="https://hg.sr.ht/~obensonne/poole">Poole</a>
-        &middot;
+        ·
+        <a href="https://jquery.com">jQuery</a>
+        ·
         <a href="http://shjs.sourceforge.net">SHJS</a>
-        &middot;
+        ·
         <a href="https://github.com/sachinchoolur/lightGallery">lightGallery</a>
-        &middot;
+        ·
         <a href="https://github.com/adryd325/oneko.js">oneko.js</a>
         <br>
         <a href="https://github.com/sponsors/xythobuz">GitHub Sponsors</a>
-        &middot;
+        ·
         <a href="http://www.amazon.de/?_encoding=UTF8&amp;camp=1638&amp;creative=19454&amp;linkCode=ur2&amp;site-redirect=de&amp;tag=xythobuzorg-21">Amazon.de Affiliate</a>
-        &middot;
-        <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&nav=1&email=xythobuz@me.com">PayPal</a>
+        ·
+        <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&amp;nav=1&amp;email=xythobuz@me.com">PayPal</a>
         <br>
         <span style="font-size: x-small">
             <a href="<!--% print('https://codeberg.org/xythobuz/website/src/branch/master/input/' + page.get('fullpath').replace('.de.md', '.md') + '?display=source') %-->">View Source '<!--% print(page.get("fullpath").replace('.de.md', '.md')) %-->'</a> (<a href="<!--% print(page.get('fname').replace('./input/', '').replace('.de.md', '.md')) %-->">locally</a>)
@@ -214,7 +214,7 @@ else:
     <script type="text/javascript" src="js/oneko.min.js"></script>
     <!--%
         if page.get("auto_toc", "false") == "true":
-            print('<script src="js/auto_toc.min.js"></script>')
+            print('<script type="text/javascript" src="js/auto_toc.min.js"></script>')
 
         if page["page_flags"]["collapse"] > 0:
             print('<script type="text/javascript" src="js/collapse.min.js"></script>')

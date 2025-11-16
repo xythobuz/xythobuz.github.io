@@ -33,6 +33,7 @@ librejs_helper([
     [ "js/resize.min.js", "gpl3", "js/resize.js" ],
     [ "js/scroller.min.js", "gpl3", "js/scroller.js" ],
     [ "js/shjs.min.js", "gpl3", "js/shjs.js" ],
+    [ "js/iframe.min.js", "gpl3", "js/iframe.js" ],
 
     # Lightgallery
     [ "lg/lightgallery.min.js", "gpl3" ],
