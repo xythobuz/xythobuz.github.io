@@ -112,13 +112,20 @@
           <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&amp;nav=1&amp;email=xythobuz@me.com">PayPal</a>
           <br />
           <span style="font-size: x-small">
-              <a href="https://codeberg.org/xythobuz/website/src/branch/master/static/css/rss.xsl?display=source">
-                View Source 'css/rss.xsl'</a> (<a href="/css/rss.xsl">locally</a>)
+            <a href="https://codeberg.org/xythobuz/website/src/branch/master/static/css/rss.xsl?display=source">
+              View Source 'css/rss.xsl'</a> (<a href="/css/rss.xsl">locally</a>)
           </span>
           <br />
           <span style="font-size: xx-small">
               RSS feed generated at <xsl:value-of select="substring(/rss/channel/lastBuildDate, 1, string-length(/rss/channel/lastBuildDate) - 6)" />
           </span>
+          <br />
+          <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.xythobuz.de%2Frss.xml">
+            <img src="data/valid-rss.png" alt="Valid RSS" />
+          </a>
+          <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.xythobuz.de%2Fcss%2Fstyle.min.css">
+            <img src="data/valid-css.svg" alt="Valid CSS" />
+          </a>
         </div>
         <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
         <script type="text/javascript" src="js/tracking.min.js"></script>
