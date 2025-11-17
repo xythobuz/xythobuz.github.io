@@ -27,13 +27,15 @@ librejs_helper([
 
     # Own code
     [ "js/auto_toc.min.js", "gpl3", "js/auto_toc.js" ],
+    [ "js/camp23.min.js", "gpl3", "js/camp23.js" ],
     [ "js/collapse.min.js", "gpl3", "js/collapse.js" ],
     [ "js/copy.min.js", "gpl3", "js/copy.js" ],
+    [ "js/duality.min.js", "gpl3", "js/duality.js" ],
+    [ "js/iframe.min.js", "gpl3", "js/iframe.js" ],
     [ "js/lightgallery.min.js", "gpl3", "js/lightgallery.js" ],
     [ "js/resize.min.js", "gpl3", "js/resize.js" ],
     [ "js/scroller.min.js", "gpl3", "js/scroller.js" ],
     [ "js/shjs.min.js", "gpl3", "js/shjs.js" ],
-    [ "js/iframe.min.js", "gpl3", "js/iframe.js" ],
 
     # Lightgallery
     [ "lg/lightgallery.min.js", "gpl3" ],

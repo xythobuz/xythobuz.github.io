@@ -658,10 +658,12 @@ def lightgallery(links):
             # image or youtube video
             link = img = alt = ""
             style = img2 = ""
+            size_str = ''
             if len(l) == 3:
                 link, img, alt = l
                 if "youtube.com" in link:
                     img2 = '<img src="img/video-play.png" class="picthumb" alt="Media play button">'
+                    size_str += ' style="position:relative;"'
             else:
                 link, alt = l
                 if "youtube.com" in link:
@@ -671,6 +673,7 @@ def lightgallery(links):
                     #img += "/default.jpg" # default thumbnail
                     style = ' style="width:300px;" data-poster="' + img + '"'
                     img2 = '<img src="img/video-play.png" class="picthumb" alt="Media play button">'
+                    size_str += ' style="position:relative;"'
                 elif link.startswith('img/'):
                     x = link.rfind('.')
                     img = link[:x] + '_small' + link[x:]
@@ -681,11 +684,10 @@ def lightgallery(links):
             lightgallery_check_thumbnail(link, img)
 
             size = get_image_size(link)
-            size_str = ''
             if size != None:
-                size_str = ' data-lg-size="' + str(int(size[0])) + '-' + str(int(size[1])) + '"'
+                size_str += ' data-lg-size="' + str(int(size[0])) + '-' + str(int(size[1])) + '"'
 
-            print('<div class="border" style="position:relative;" data-src="' + link + '"' + size_str + '><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"' + style + '>' + img2 + '</a></div>')
+            print('<div class="border" data-src="' + link + '"' + size_str + '><a href="' + link + '"><img class="pic" src="' + img + '" alt="' + alt + '"' + style + '>' + img2 + '</a></div>')
         elif len(l) == 4:
             # audio
             link, mime, none, alt = l
@@ -1108,10 +1110,10 @@ def hook_postconvert_rss():
         date, date_has_time = page_to_datetime(p.date)
         update, update_has_time = page_to_datetime(p.get("update", p.date))
 
-        date = email.utils.formatdate(time.mktime(date.timetuple()))
-        update = email.utils.formatdate(time.mktime(update.timetuple()))
+        date_s = email.utils.formatdate(time.mktime(date.timetuple()))
+        update_s = update.isoformat() + "Z"
 
-        items.append(_RSS_ITEM % (title, link, desc, date, update, link))
+        items.append(_RSS_ITEM % (title, link, desc, date_s, update_s, link))
 
     items = "".join(items)
 

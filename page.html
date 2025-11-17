@@ -20,8 +20,9 @@
         if page.get("auto_toc", "false") == "true":
             print('<link type="text/css" rel="stylesheet" href="css/auto_toc.min.css">')
 
-        if page.get("additional_css", "") != "":
-            print('<link type="text/css" rel="stylesheet" href="' + page.get("additional_css", "") + '">')
+        styles = page.get("additional_css", "").split()
+        for s in styles:
+            print('<link type="text/css" rel="stylesheet" href="' + s + '">')
     %-->
 </head>
 <body>
@@ -219,6 +220,10 @@
     <script src="js/resize.min.js"></script>
     <script src="js/oneko.min.js"></script>
     <!--%
+        scripts = page.get("additional_js", "").split()
+        for s in scripts:
+            print('<script src="' + s + '"></script>')
+
         if page.get("auto_toc", "false") == "true":
             print('<script src="js/auto_toc.min.js"></script>')
 

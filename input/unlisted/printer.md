@@ -20,6 +20,7 @@ This page contains photos from the Webcams on my 3D printers, live-updated every
 </div>
 
 <script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
     function LastModUsingHeader(sFile, callback) {
         try {
             var x = new XMLHttpRequest;
@@ -50,4 +51,5 @@ This page contains photos from the Webcams on my 3D printers, live-updated every
         dt.appendChild(link);
         dt.appendChild(up);
     });
+// @license-end
 </script>

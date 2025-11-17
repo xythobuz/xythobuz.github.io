@@ -10,6 +10,7 @@ favicon: https://xythobuz.github.io/Duality/favicon.png
 auto_toc: true
 no_gen_ai: true
 additional_css: css/duality.min.css
+additional_js: js/duality.min.js emu_js/loader.js
 ---
 
 ## Introduction
@@ -652,6 +653,3 @@ The [8x8 font](https://github.com/DavidDiPaola/font_vincent) is public domain.
 The included cartridge label graphic in `artwork/cart_label.xcf` is based on the ['Cartridge-Label-Templates' by Dinierto](https://github.com/Dinierto/Cartridge-Label-Templates) licensed as CC0.
 
 The included cartridge graphic in `artwork/cartridge.xcf` is based on the ['Front-End-Assets' by Duimon](https://github.com/Duimon/Front-End-Assets).
-
-<script src="js/duality.min.js"></script>
-<script src="emu_js/loader.js" async defer></script>

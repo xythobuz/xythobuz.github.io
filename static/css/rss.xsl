@@ -67,7 +67,7 @@
               </span>
               <br />
               <span class="listdesc">
-                Updated: <xsl:value-of select="substring(atom:updated, 1, string-length(atom:updated) - 6)" />
+                Updated: <xsl:value-of select="substring(atom:updated, 1, 10)" />
               </span>
               <div class="collapse">
                 Expand article contents.
