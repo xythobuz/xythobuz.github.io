@@ -24,9 +24,8 @@ Here are the results.
 
 You can either [download the ROM](https://xythobuz.github.io/Duality/duality.gb) or try it out right here, if you have JavaScript enabled, thanks to [EmulatorJS](https://emulatorjs.org/).
 
-<div id="duality_wrap" class="border">
+<div id="duality_wrap" class="border has_js">
     <div id="duality_game"></div>
-    <noscript>Enable JavaScript to play the game right here in your browser.</noscript>
 </div>
 
 On PCs use keyboard input with the keys given below. On mobile devices a touch overlay should automatically appear over the emulator.

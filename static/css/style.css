@@ -1,6 +1,10 @@
 @import "/css/sh_bright.min.css";
 @import "/css/sh_darkness.min.css" (prefers-color-scheme: dark);
 
+.js_off .has_js, .js_off .collapse {
+    display: none !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -198,7 +202,7 @@ a.anchor.al4:link:after {
     margin-top: -0.75em
 }
 
-._sh {
+._sh, #content > pre {
     max-height: 300px;
     overflow: auto;
     font-size: 0.9em;
@@ -427,10 +431,19 @@ span.font-small {
 
 .collapsecontent {
     margin: 15px;
-    border-width: 0px;
     border-style: solid;
     border-radius: 10px;
+}
+
+.js_on .collapsecontent {
+    border-width: 0px;
     display: none;
+}
+
+.js_off .collapsecontent, .js_off .collapsecontent_menu {
+    border-width: 2px;
+    display: block;
+    max-height: fit-content !important;
 }
 
 .audio_text {
@@ -592,7 +605,7 @@ hr {
     border-right-color: #32CD32;
 }
 
-table, th, td, ._sh, .ascii, .border, .releasecard, #index-avatar, .collapsecontent, #toc, .clip-btn {
+table, th, td, ._sh, #content > pre, .ascii, .border, .releasecard, #index-avatar, .collapsecontent, #toc, .clip-btn {
     border-color: #32CD32;
 }
 
@@ -655,7 +668,7 @@ blockquote:before, blockquote:after {
         color: #B0B0B0;
     }
 
-    .ascii, ._sh {
+    .ascii, ._sh, #content > pre {
         background-color: #000000;
     }
 

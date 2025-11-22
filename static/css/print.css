@@ -1,5 +1,9 @@
 @import "sh_bright.min.css";
 
+.has_js, .collapse {
+    display: none !important;
+}
+
 #wrap, .github-fork-ribbon-wrapper, #nav {
     display: none;
 }

@@ -25,7 +25,8 @@
             print('<link type="text/css" rel="stylesheet" href="' + s + '">')
     %-->
 </head>
-<body>
+<body class="js_off">
+    <script>document.body.className = document.body.className.replace('js_off', 'js_on');</script>
     <!--%
         # GitHub Fork-Me Ribbon
         link = ""
@@ -61,7 +62,7 @@
             <!-- <li><a href="https://git.xythobuz.de/explore/repos">Gitea</a></li> -->
             <li><a href="https://github.com/xythobuz">GitHub</a></li>
             <!-- <li><a href="printer.html">🔨</a></li> -->
-            <li><ul class="fonts">
+            <li class="has_js"><ul class="fonts">
                 <li><span class="font-big">Text:</span></li>
                 <li><a class="dec" href="#"><span class="font-big">A</span><span class="font-small">A</span></a></li>
                 <li><a class="reset" href="#"><span class="font-big">A</span><span class="font-big">A</span></a></li>
