@@ -6,6 +6,8 @@
 // added changes from https://github.com/adryd325/oneko.js/pull/40
 
 // xythobuz: replaced .gif path, added license header, reduced z-index to stay below lightgallery.
+// xythobuz: exploding hearts have random timeout and z-index, and are no longer selectable text.
+// xythobuz: right-click lowers z-index of oneko to keep below content.
 
 $(function() {
   const isReducedMotion =
@@ -287,6 +289,25 @@ $(function() {
 
   init();
 
+  // --------------------------------------------------------------------------
+
+  // add right-click option that keeps oneko below page content
+
+  $(nekoEl).one("contextmenu", function(e) {
+    e.preventDefault();
+    //$(this).remove();
+
+    $(this).css("z-index", "23");
+
+    $("#content").css("z-index", "30");
+    $("#content").css("position", "relative");
+  });
+
+  // --------------------------------------------------------------------------
+
+  // exploding hearts on click
+  // from https://github.com/tylxr59/oneko.js
+
   function explodeHearts() {
     const parent = nekoEl.parentElement;
     const rect = nekoEl.getBoundingClientRect();
@@ -308,7 +329,7 @@ $(function() {
 
       setTimeout(() => {
         parent.removeChild(heart);
-      }, 1000);
+      }, 750 + (Math.random() * 500));
     }
   }
 
@@ -320,10 +341,12 @@ $(function() {
 }
 .heart {
   position: absolute;
+  z-index: 40;
   font-size: 2em;
   animation: heartBurst 1s ease-out;
   animation-fill-mode: forwards;
   color: #ab9df2;
+  user-select: none;
 }`;
   document.head.appendChild(style);
 

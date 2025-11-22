@@ -120,7 +120,7 @@ a.anchor.al4:link:after {
 
 .seal_bottom_left:hover {
     border-radius: 10px;
-    z-index: 1;
+    z-index: 35;
 }
 
 .seal_img {
@@ -529,7 +529,7 @@ a.anchor:link:after {
     background-color: #DEDEDE;
 }
 
-body, #nav, .collapsecontent {
+body, #nav, #content, .collapsecontent {
     background-color: #FFFFFF;
 }
 
@@ -640,7 +640,7 @@ blockquote:before, blockquote:after {
 
 /* dark mode */
 @media (prefers-color-scheme: dark) {
-    body, #nav, .collapsecontent {
+    body, #nav, #content, .collapsecontent {
         background-color: #111111;
     }
 
