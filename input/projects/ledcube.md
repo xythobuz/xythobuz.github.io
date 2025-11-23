@@ -1,5 +1,5 @@
 title: 8x8x8 LED Cube
-title_de: 8x8x8 LED W&uuml;rfel
+title_de: 8x8x8 LED Würfel
 description: AVR LED Cube with Java Software and Music Visualization
 description_de: AVR LED Würfel mit Java Software und Musikvisualisierung
 parent: projects

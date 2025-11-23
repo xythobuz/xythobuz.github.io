@@ -166,6 +166,9 @@ def own_age():
     return '<abbr title="' + str(age_dec) + '">' + str(age_hex) + '</abbr>'
 
 def page_to_datetime(date):
+    if date == None:
+        return (None, False)
+
     padded_date = date + " 12:00:00"
     try:
         date_has_time = False
@@ -999,28 +1002,68 @@ def hook_preconvert_compat():
 # -----------------------------------------------------------------------------
 
 _SITEMAP = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml-stylesheet href="%s" type="text/xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 %s
 </urlset>
 """
 
-_SITEMAP_URL = """
-<url>
-    <loc>%s/%s</loc>
-    <lastmod>%s</lastmod>
-    <changefreq>%s</changefreq>
-    <priority>%s</priority>
-</url>
-"""
+_SITEMAP_URL = """    <url>
+        <xhtml:title>%s</xhtml:title>
+        <loc>%s</loc>
+        <lastmod>%s</lastmod>
+        <changefreq>%s</changefreq>
+        <priority>%s</priority>%s
+    </url>"""
+
+_SITEMAP_URL_LANG = """
+        <xhtml:link rel="alternate" hreflang="%s" href="%s" />"""
 
 def hook_preconvert_sitemap():
-    date = datetime.strftime(datetime.now(), "%Y-%m-%d")
+    posts = [p for p in pages]
+
+    # sort by update if available, date else, followed by title
+    posts.sort(key=lambda p: [ SortReversor(p.get("update", p.get("date", "0001-01-01"))), p["title"] ])
+
     urls = []
-    for p in pages:
-        urls.append(_SITEMAP_URL % (BASE_URL, p.url, date, p.get("changefreq", "monthly"), p.get("priority", "0.5")))
-    fname = os.path.join(options.project, "output", "sitemap.xml")
-    fp = open(fname, 'w')
-    fp.write(_SITEMAP % "".join(urls))
+    for p in posts:
+        title = p.title
+        if "post" in p:
+            title = p.post
+
+        url = "%s/%s" % (BASE_URL, p.url)
+        freq = p.get("changefreq", "monthly")
+        prio = p.get("priority", "0.5")
+
+        update, update_has_time = page_to_datetime(p.get("update", p.get("date", None)))
+        date = update if update is not None else datetime.now()
+        date_s = datetime.strftime(date, "%Y-%m-%d")
+
+        langs = []
+        for lang in p["other_lang"]:
+            if lang == p["lang"]:
+                continue
+            lang_url = "%s/%s" % (BASE_URL, p["lang_links"][lang])
+            link = _SITEMAP_URL_LANG % (lang, lang_url)
+            langs.append(link)
+
+        additional = ""
+        if len(langs) > 0:
+            additional = "\n".join(langs)
+
+        item = _SITEMAP_URL % (title, url, date_s, freq, prio, additional)
+        urls.append(item)
+
+    style = "/css/sitemap.xsl"
+    items = "\n".join(urls)
+
+    sitemap = _SITEMAP % (style, items)
+
+    fp = codecs.open(os.path.join(output, "sitemap.xml"), "w", "utf-8")
+    fp.write(sitemap)
     fp.close()
 
 # -----------------------------------------------------------------------------

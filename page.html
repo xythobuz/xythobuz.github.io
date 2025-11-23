@@ -20,9 +20,19 @@
         if page.get("auto_toc", "false") == "true":
             print('<link type="text/css" rel="stylesheet" href="css/auto_toc.min.css">')
 
+        # optionally add additional stylesheets
         styles = page.get("additional_css", "").split()
         for s in styles:
             print('<link type="text/css" rel="stylesheet" href="' + s + '">')
+
+        # add links to alternate language versions
+        for lang in page["other_lang"]:
+            if lang == page["lang"]:
+                # skip this language
+                continue
+
+            url = BASE_URL + '/' + page["lang_links"][lang]
+            print('<link rel="alternate" hreflang="' + lang + '" href="' + url + '">')
     %-->
 </head>
 <body class="js_off">
@@ -36,9 +46,9 @@
             link = page.git
         if link != "":
             print('<div class="github-fork-ribbon-wrapper right-bottom">')
-            print('<div class="github-fork-ribbon"><a href="')
-            print(link)
-            print('">Fork this with Git</a></div></div>')
+            print('<div class="github-fork-ribbon">')
+            print('<a href="' + link + '">Fork this with Git</a>')
+            print('</div></div>')
 
         # No Gen-AI seal
         if page.get("no_gen_ai", "false") == "true":
@@ -69,12 +79,11 @@
                 <li><a class="inc" href="#"><span class="font-small">A</span><span class="font-big">A</span></a></li>
             </ul></li>
             <!--%
-                PY3 = sys.version_info[0] == 3
-                tmp = [p for p in ((iter(page["lang_links"].items())) if PY3 else (page["lang_links"].iteritems()))]
-                if len(tmp) > 1:
-                    print('<li><ul class="fonts">')
-                    print(" ".join(["<li><a href='%s'>%s</a></li>" % (url, lang) for lang, url in ((iter(page["lang_links"].items())) if PY3 else (page["lang_links"].iteritems()))]).replace(">en<", '><img src="img/en.png" alt="English"><').replace(">de<", '><img src="img/de.png" alt="Deutsch"><'))
-                    print("</ul></li>")
+                if len(page["other_lang"]) > 1:
+                    markup = " ".join(["<li><a href='%s'>%s</a></li>" % (page["lang_links"][lang], lang) for lang in page["other_lang"]])
+                    markup = markup.replace(">en<", '><img src="img/en.png" alt="English"><')
+                    markup = markup.replace(">de<", '><img src="img/de.png" alt="Deutsch"><')
+                    print('<li><ul class="fonts">' + markup + '</ul></li>')
             %-->
         </ul>
     </div></div>
@@ -179,6 +188,8 @@
         <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>
         &middot;
         <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>
+        &middot;
+        <a rel="license" href="/sitemap.xml">Sitemap</a>
         <br>
         <a href="https://hg.sr.ht/~obensonne/poole">Poole</a>
         &middot;

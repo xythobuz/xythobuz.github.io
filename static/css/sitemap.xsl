@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"
-                xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+                xmlns:xhtml="http://www.w3.org/1999/xhtml"
+                xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9">
   <xsl:output method="html" version="5" encoding="UTF-8" indent="yes" />
   <xsl:template match="/">
     <html lang="en">
       <head>
         <meta charset="utf-8" />
-        <title>RSS Feed - xythobuz.de</title>
-        <meta name="description">
-          <xsl:attribute name="content">
-            <xsl:value-of select="/rss/channel/description" />
-          </xsl:attribute>
-        </meta>
+        <title>Sitemap - xythobuz.de</title>
+        <meta name="description" content="Electronics &amp; Software Projects" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="author" href="xythobuz@xythobuz.de" />
         <link rel="shortcut icon" href="img/favicon.ico" />
@@ -23,67 +19,62 @@
           <div id="nav">
             <ul id="navbar">
               <li id="home">
-                <a>
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="/rss/channel/link" />
-                  </xsl:attribute>
-                  <xsl:value-of select="/rss/channel/title" />
-                </a>
-              </li>
-              <li>
-                <img src="img/rss.png" alt="RSS feed icon" />
+                <a href="/">xythobuz.de - Sitemap</a>
               </li>
             </ul>
           </div>
         </div>
         <div id="content">
-          <h1>
-            RSS Feed
-          </h1>
+          <h1>Sitemap</h1>
           <p>
-            This is the RSS feed for my blog.
-            You can use it to get notified about new posts automatically.
+            This is the Sitemap for my blog.
+            You can use it to find every subpage on this website.
           </p>
-          <p>
-            If you're already used to this and wondering why this looks strange, this is a styled RSS feed.
-            Just copy the URL into your newsreader.
-          </p>
-          <p>
-            If you don't know what RSS is check out <a href="https://aboutfeeds.com">About Feeds</a> to get started.
-          </p>
-          <h2>Recent Blog Posts</h2>
           <ul>
-          <xsl:for-each select="/rss/channel/item">
+          <xsl:for-each select="/sitemap:urlset/sitemap:url">
             <li>
               <a>
                 <xsl:attribute name="href">
-                  <xsl:value-of select="link" />
+                  <xsl:value-of select="sitemap:loc" />
                 </xsl:attribute>
-                <xsl:value-of select="title" />
+                <xsl:value-of select="xhtml:title" />
               </a>
               <br />
               <span class="listdesc">
-                Published: <xsl:value-of select="substring(pubDate, 1, string-length(pubDate) - 6)" />
+                Updated: <xsl:value-of select="sitemap:lastmod" />
               </span>
               <br />
               <span class="listdesc">
-                Updated: <xsl:value-of select="substring(atom:updated, 1, 10)" />
+                Change Frequency: <xsl:value-of select="sitemap:changefreq" />
               </span>
-              <div class="collapse">
-                Expand article contents.
-              </div>
-              <div class="collapsecontent">
-                <iframe style="width: 100%; border-width: 0px;">
-                  <xsl:attribute name="srcdoc">
-                    <xsl:value-of select="description" />
-                  </xsl:attribute>
-                </iframe>
-              </div>
+              <br />
+              <span class="listdesc">
+                Priority: <xsl:value-of select="sitemap:priority" />
+              </span>
+              <xsl:choose>
+                <xsl:when test="xhtml:link">
+                  <br />
+                  <span class="listdesc">
+                    Alternative language: <a>
+                      <xsl:attribute name="href">
+                        <xsl:value-of select="xhtml:link/@href" />
+                      </xsl:attribute>
+                      <xsl:value-of select="xhtml:link/@hreflang" />
+                    </a>
+                  </span>
+                </xsl:when>
+                <xsl:otherwise>
+                  <br />
+                  <span class="listdesc">
+                    No other languages for this page.
+                  </span>
+                </xsl:otherwise>
+              </xsl:choose>
             </li>
           </xsl:for-each>
           </ul>
           <p>
-            Styled RSS feed inspired by <a href="https://darekkay.com/blog/rss-styling/">Darek Kay</a> and <a href="https://github.com/genmon/aboutfeeds/blob/main/tools/pretty-feed-v3.xsl">pretty-feed-v3</a>.
+            Styled Sitemap inspired by <a href="rss.xml">Styled RSS Feed</a>.
           </p>
           <hr id="footbar" />
         </div>
@@ -112,17 +103,10 @@
           <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money&amp;nav=1&amp;email=xythobuz@me.com">PayPal</a>
           <br />
           <span style="font-size: x-small">
-            <a href="https://codeberg.org/xythobuz/website/src/branch/master/static/css/rss.xsl?display=source">
-              View Source 'css/rss.xsl'</a> (<a href="/css/rss.xsl">locally</a>)
+            <a href="https://codeberg.org/xythobuz/website/src/branch/master/static/css/sitemap.xsl?display=source">
+              View Source 'css/sitemap.xsl'</a> (<a href="/css/sitemap.xsl">locally</a>)
           </span>
           <br />
-          <span style="font-size: xx-small">
-              RSS feed generated at <xsl:value-of select="substring(/rss/channel/lastBuildDate, 1, string-length(/rss/channel/lastBuildDate) - 6)" />
-          </span>
-          <br />
-          <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.xythobuz.de%2Frss.xml">
-            <img src="data/valid-rss.png" alt="Valid RSS" />
-          </a>
           <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.xythobuz.de%2Fcss%2Fstyle.min.css">
             <img src="data/valid-css.svg" alt="Valid CSS" />
           </a>
@@ -132,8 +116,6 @@
         <script type="text/javascript" src="js/scroller.min.js"></script>
         <script type="text/javascript" src="js/resize.min.js"></script>
         <script type="text/javascript" src="js/oneko.min.js"></script>
-        <script type="text/javascript" src="js/collapse.min.js"></script>
-        <script type="text/javascript" src="js/iframe.min.js"></script>
       </body>
     </html>
   </xsl:template>
