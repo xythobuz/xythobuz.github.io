@@ -162,9 +162,9 @@
             link = githubCommitBadge(page, True)
             if len(link) > 0:
                 if page.get("lang", "en") == "de":
-                    print("<p>K&uuml;rzliche Aktivit&auml;t auf GitHub: " + link + "</p>")
+                    print("<p>K&uuml;rzliche Aktivit&auml;t im Repo: " + link + "</p>")
                 else:
-                    print("<p>Recent activity on GitHub: " + link + "</p>")
+                    print("<p>Recent activity in the repo: " + link + "</p>")
 
             if page.get("auto_toc", "false") == "true":
                 print('<p class="access_link" id="toc_toggle_wrap"></p>')
