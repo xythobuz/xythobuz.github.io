@@ -287,6 +287,8 @@ include_url([
 %-->
 </pre>
 
+Some other related configs can also be found [in the repo](https://codeberg.org/xythobuz/3d-print-designs/src/branch/master/configs/i3-AM8).
+
 ## Printing at CCCamp23
 
 I brought the printer with me for CCCamp23 and offered printing services on-site at Frubar island.

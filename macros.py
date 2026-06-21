@@ -761,6 +761,9 @@ def include_url(urls, data_slice = None, timeout = 2):
     # kinda ugly, use 4 spaces for tabs for everything except Makefiles
     data = data.expandtabs(8 if url.lower().endswith("makefile") else 4)
 
+    # try to escape stuff that looks like pooles template language
+    data = data.replace("{%", "\\{%")
+
     if isinstance(data_slice, tuple):
         start, end = data_slice
         if end < start:

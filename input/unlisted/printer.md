@@ -1,5 +1,5 @@
-title: 3D Printers
-description: Live updated images of my 3D printers
+title: 3D Printer
+description: Live updated images of my 3D printer
 parent: none
 position: 0
 noheader: true
@@ -7,7 +7,7 @@ noheader: true
 
 # {{ page.title }}
 
-This page contains photos from the Webcams on my 3D printers, live-updated every 5 minutes.
+This page contains photos from the Webcam on my 3D printer, live-updated every 5 minutes.
 
 ## i3 AM8
 
