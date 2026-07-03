@@ -212,7 +212,7 @@ def tableHelper(style, header, content):
     for ci in range(0, len(content)):
         if len(content[ci]) < len(style):
             # invalid call of table helper!
-            print_cnsl_error("invalid table: {}[{}] != {}", len(content[ci]), ci, len(style))
+            print_cnsl_error("invalid table: " + str(len(content[ci])) + "[" + str(ci) + "] != " + str(len(style)))
             continue
 
         if len(content[ci]) > len(style):

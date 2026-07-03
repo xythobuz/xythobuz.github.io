@@ -320,7 +320,7 @@ index c75acd8..aa43d90 100644
  #define IS_RAMPS_EFB
  
 -#include "pins_RAMPS_13.h"
-\ No newline at end of file
+\\ No newline at end of file
 +#include "pins_RAMPS_13.h"
 +
 +#undef FAN_PIN
