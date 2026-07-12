@@ -2,6 +2,7 @@ title: Blog
 post: E-Scooter Battery Build
 description: Replacement 13S6P Li-Ion AliExpress Kit for my Xiaomi Mi 2
 date: 2026-07-04
+update: 2026-07-12
 comments: true
 ---
 
@@ -137,10 +138,46 @@ tableHelper([ "align-right", "align-right monospaced", "align-right monospaced",
         [ ("High Viscosity Stripe Fiber Tape, Non-Marking Tape, Battery Bundling, Wear-Resistant, Waterproof, and High-Temperature Resistant (50mm)", "https://de.aliexpress.com/item/1005009381533331.html"), "1x", "3.55€", "3.55€" ],
         [ ("5m 18650 Battery Electrical Insulating Adhesive Paper Thickness Battery Pack Insulator Gasket Tape Warp Electrode Insulated Pads (65mm)", "https://de.aliexpress.com/item/1005010613670195.html"), "1x", "3.29€", "3.29€" ],
         [ ("400 Pieces of Self-Adhesive Solid/Hollow 18650 Battery Insulation Pads, 18650 Battery Insulation Rings, 18650 High-Density Paper, Insulation Pad Circles, Single-Sided Adhesive Batteries (Hollow)", "https://de.aliexpress.com/item/1005009644859705.html"), "1x", "1.59€", "1.59€" ],
-        [ "Sum", "", "", "120.39€" ]
+        [ ("ANL Fuse Holder Bolt-on Fuse Automotive Fuse Holders Fusible Link with fuse 40A 60A 80A 100A 200A 250A 300A Fuses AMP (2x 40A)", "https://de.aliexpress.com/item/1005005885492561.html"), "1x", "4.99€", "4.99€" ],
+        [ "Sum", "", "", "125.38€" ]
     ]
 )
 %-->
 
 With these 2.85Ah cells, arranged as 6 in parallel, the resulting capacity of the pack is `17Ah`.
 And the 13 strings of these in series give a nominal voltage of `48V`.
+
+# Fuse Update
+
+After building the battery I noticed that UL certified batteries are required to have a fuse or some other mechanism to prevent thermal runaway events.
+The BMS has short-circuit-protection, but I guess adding an actual fuse may help in some cases.
+So I bought some [40A fuses and a matching fuse block](https://de.aliexpress.com/item/1005005885492561.html) from AliExpress.
+Turns out they are way bigger than I expected.
+Reading the specs before buying may be helpful, lesson learned.
+
+<!--%
+lightgallery([
+    [ "img/scooter_bat_21.jpg", "DC Fuse Block" ],
+    [ "img/scooter_bat_22.jpg", "DC Fuse with heat shrink tube" ],
+])
+%-->
+
+So I just skipped the fuse block and wired the fuse directly into the positive wire.
+
+<!--%
+lightgallery([
+    [ "img/scooter_bat_23.jpg", "Original wiring inside battery" ],
+    [ "img/scooter_bat_24.jpg", "Positive wire cut, with screw lugs" ],
+])
+%-->
+
+It's a bit tight, but with some M5x12 screws to mount the cables I was able to make it fit.
+
+<!--%
+lightgallery([
+    [ "img/scooter_bat_25.jpg", "Fuse connected with heat shrink tubing" ],
+    [ "img/scooter_bat_26.jpg", "Fuse inside battery" ],
+])
+%-->
+
+I also took this opportunity and replaced the original six Philips M2.5x16 screws with ones that have internal hex heads.
