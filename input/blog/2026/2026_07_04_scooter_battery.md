@@ -1,14 +1,15 @@
 title: Blog
 post: E-Scooter Battery Build
-description: Replacement 13S6P Li-Ion AliExpress Kit for my Xiaomi Mi 2
+description: Replacement 800Wh 13S6P Li-Ion AliExpress Kit for my Xiaomi Mi 3
 date: 2026-07-04
 update: 2026-07-12
 comments: true
+auto_toc: true
 ---
 
 ## Background
 
-For some years now I own a Xiaomi Mi 2 scooter.
+For over two years now, since February 2024, I own a Xiaomi Mi 3 scooter.
 Of course I flashed it with SHFW using the ST-Link method, which then allows using the normal SHFW Android app to do all updating and configuring.
 
 This worked perfectly fine for about 2500km.
@@ -147,13 +148,13 @@ tableHelper([ "align-right", "align-right monospaced", "align-right monospaced",
 With these 2.85Ah cells, arranged as 6 in parallel, the resulting capacity of the pack is `17Ah`.
 And the 13 strings of these in series give a nominal voltage of `48V`.
 
-# Fuse Update
+## Fuse Update
 
 After building the battery I noticed that UL certified batteries are required to have a fuse or some other mechanism to prevent thermal runaway events.
 The BMS has short-circuit-protection, but I guess adding an actual fuse may help in some cases.
 So I bought some [40A fuses and a matching fuse block](https://de.aliexpress.com/item/1005005885492561.html) from AliExpress.
 Turns out they are way bigger than I expected.
-Reading the specs before buying may be helpful, lesson learned.
+Reading the specs before buying may be helpful, lesson learned... 😅
 
 <!--%
 lightgallery([
