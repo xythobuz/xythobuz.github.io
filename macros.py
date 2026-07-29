@@ -849,14 +849,15 @@ def printLatestRelease(user, repo):
     releases.sort(key=lambda x: SortReversor(x["published_at"]))
     r = releases[0]
     release_url = r["html_url"]
-    print("Latest release of <a href=\"" + repo_url + "\">" + repo + "</a>, at the time of this writing: <a href=\"" + release_url + "\">" + r["name"] + "</a> (" + datetime.strptime(r["published_at"], "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d %H:%M:%S") + ")\n")
+    print("Latest release of <a href=\"" + repo_url + "\">" + repo + "</a>: <a href=\"" + release_url + "\">" + r["name"] + "</a> (" + datetime.strptime(r["published_at"], "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d %H:%M:%S") + ")<br>\n")
+    print("<span style=\"font-size: x-small\">(at the time of this writing)</span>\n<br>")
 
     if len(r["assets"]) <= 0:
         print("<br>No release assets have been published on GitHub for that.")
         print("</div>")
         return
 
-    print("Release Assets:")
+    print("<br>Release Assets:")
     print("<ul>")
     for a in r["assets"]:
         size = int(a["size"])
