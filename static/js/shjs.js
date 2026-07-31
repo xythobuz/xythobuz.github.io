@@ -2,8 +2,8 @@
 $(function() {
     // adapted from https://sourceforge.net/p/shjs/feature-requests/5/#0940
     $("pre[class^='sh_']").each(function() {
-        // wrap pre with div._sh
-        $('<div class="_sh"><div class="_sh_lines"></div></div>').insertBefore($(this));
+        // wrap pre with div._sh and .copy for Copy To Clipboard buttons
+        $('<div class="_sh copy"><div class="_sh_lines"></div></div>').insertBefore($(this));
         $(this).appendTo($(this).prev('._sh'));
 
         // allow skipping line numbers
